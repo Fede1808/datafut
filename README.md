@@ -27,6 +27,7 @@ python src/clean.py     # 2. lo normaliza y lo deja en data/clean/matches.csv
 python src/report.py    # 3. genera el diagnostico en data/clean/report.md
 python src/model.py     # 4. entrena el modelo -> data/outputs/modelo.json
 python src/evaluate.py  # 5. mide si sirve -> data/outputs/evaluacion.md
+python src/simulate.py  # 6. simula el torneo -> data/outputs/simulacion.md
 ```
 
 Para actualizar todo despues de una fecha nueva, se corren de nuevo.
@@ -51,6 +52,11 @@ Es un Poisson bivariado con correccion de Dixon-Coles y decaimiento temporal.
 **`evaluate.py` — medir.** Entrena con el pasado y predice el futuro, temporada por
 temporada, y compara contra cuatro referencias. **Un modelo sin evaluacion no es un
 modelo: es una opinion con decimales.**
+
+**`simulate.py` — simular.** Juega diez mil veces el torneo que falta, con las
+probabilidades del modelo, y cuenta quien salio campeon. Hace falta porque en
+Argentina el campeon no es el que mas puntos hace: hay que llegar a los playoffs y
+despues ganar cuatro partidos unicos.
 
 ## Como anda el modelo hoy
 
@@ -101,6 +107,7 @@ datafut/
 │   └── clean/          matches.csv + report.md    (no se versiona)
 ├── reference/
 │   ├── team_names.csv        tabla de nombres     (SI se versiona)
+│   ├── zonas.csv             que equipo en que zona (SI se versiona)
 │   └── formato-torneos.md    como se juega        (SI se versiona)
 └── src/
     ├── ingest.py
