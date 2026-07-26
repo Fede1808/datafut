@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#efece4;font-family:'IBM Plex Sans',sans-serif}
+  .dv-turn{padding:44px 48px 60px}
+  .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 24px}
+  .dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 8px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+  .dv-tname{font:600 14px/1.2 'IBM Plex Sans',sans-serif;color:#1a1a1a}
+  .dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+  .dv-opt{flex:none;display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px;width:760px}
+  .dv-oid{font:700 11px ui-monospace,Menlo,monospace;padding:3px 8px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+  .dv-olabel{display:flex;align-items:baseline;gap:10px;font:400 12px/1.3 'IBM Plex Sans',sans-serif;color:rgba(0,0,0,.6)}
+  .dv-oline{font:italic 400 13px/1.5 'IBM Plex Sans',sans-serif;color:rgba(0,0,0,.65);margin:0;max-width:720px}
+  .dv-row{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+  .dv-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden}
+  .dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+  .dv-next{margin:22px 0 0;font:12px/1.6 'IBM Plex Sans',sans-serif;color:rgba(0,0,0,.55)}
+  .swatch{width:36px;height:36px;border-radius:3px;flex:none}
+  .tchip{display:inline-flex;align-items:center;gap:6px;font:500 11px 'IBM Plex Sans',sans-serif}
+  .tsplit{width:14px;height:14px;border-radius:2px;flex:none;display:inline-block}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Tres direcciones — sitio de probabilidades de la Liga Profesional</span></div>
+
+<div class="dv-opts">
+
+<!-- ============ OPTION 1A: EDITORIAL DE ARCHIVO ============ -->
+<div class="dv-opt" id="1a">
+  <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Editorial de archivo</div>
+  <p class="dv-oline">Comunica un anuario deportivo serio: papel, serifa, cifras tratadas como titulares de diario — nunca como panel de casa de apuestas.</p>
+
+  <div class="dv-row">
+    <!-- MOBILE -->
+    <div class="dv-card" style="width:340px;height:680px;position:relative;background:#faf7f0">
+      <div style="height:100%;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:14px 16px 10px;border-bottom:1px solid #d8d2c2">
+          <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:19px;color:#1c1a14;letter-spacing:.2px">EL MODELO — F.C.</div>
+          <div style="font-size:9.5px;color:#8a8370;margin-top:2px;letter-spacing:.4px">PROBABILIDADES · LIGA PROFESIONAL</div>
+        </div>
+        <div style="background:#1c1a14;color:#f2ede0;font-size:10px;padding:6px 16px;line-height:1.4">
+          Proyecto independiente. Sin afiliación con clubes ni con AFA.
+        </div>
+        <div style="padding:14px 16px 6px">
+          <div style="font-size:10px;letter-spacing:.6px;color:#8a8370;font-weight:600;text-transform:uppercase">Candidatos al título</div>
+          <div style="display:flex;gap:0;margin-top:8px;margin-bottom:8px;border-bottom:1px solid #e3ddcc;padding-bottom:10px">
+            <div style="flex:1;border-right:1px solid #e3ddcc;padding-right:8px;min-width:0">
+              <div style="display:flex;align-items:center;gap:5px;min-width:0"><span class="tsplit" style="background:linear-gradient(135deg,#0a1e63 50%,#f7d117 50%)"></span><span style="font-size:11px;font-weight:600;color:#1c1a14;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Boca Juniors</span></div>
+              <div style="font-family:'Source Serif 4',serif;font-size:30px;font-weight:700;color:#1c1a14;line-height:1.1;margin-top:2px">18.7<span style="font-size:15px">%</span></div>
+            </div>
+            <div style="flex:1;padding-left:8px;min-width:0">
+              <div style="display:flex;align-items:center;gap:5px;min-width:0"><span class="tsplit" style="background:linear-gradient(135deg,#d10a2e 50%,#ffffff 50%);border:1px solid #e3ddcc"></span><span style="font-size:11px;font-weight:600;color:#1c1a14;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">River Plate</span></div>
+              <div style="font-family:'Source Serif 4',serif;font-size:30px;font-weight:700;color:#1c1a14;line-height:1.1;margin-top:2px">16.5<span style="font-size:15px">%</span></div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:6px;font-size:10px;color:#5c5642;padding-top:2px">
+            <span style="white-space:nowrap">Racing 7.2%</span><span style="white-space:nowrap">Est. LP 6.1%</span><span style="white-space:nowrap">Indep. 5.7%</span>
+          </div>
+          <div style="font-size:9px;color:#a39c86;margin-top:10px">Máximo del torneo: 18.7% · se define por playoffs</div>
+        </div>
+        <div style="padding:10px 16px 4px;font-size:10px;letter-spacing:.6px;color:#8a8370;font-weight:600;text-transform:uppercase">Fecha 24 — próximos partidos</div>
+        <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;flex-direction:column;padding:10px 16px;border-top:1px solid #e3ddcc">
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;color:#1c1a14">
+              <span style="display:flex;align-items:center;gap:5px"><span class="tsplit" style="width:10px;height:10px;background:linear-gradient(135deg,#e2751a 50%,#1c1a14 50%)"></span>Riestra</span>
+              <span style="display:flex;align-items:center;gap:5px">Boca<span class="tsplit" style="width:10px;height:10px;background:linear-gradient(135deg,#0a1e63 50%,#f7d117 50%)"></span></span>
+            </div>
+            <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:6px;background:#e3ddcc">
+              <div style="width:25%;background:#e2751a"></div><div style="width:37%;background:#c9c2ac"></div><div style="width:38%;background:#0a1e63"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#5c5642;margin-top:3px"><span>25%</span><span>37%</span><span>38%</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;padding:10px 16px;border-top:1px solid #e3ddcc">
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;color:#1c1a14">
+              <span style="display:flex;align-items:center;gap:5px"><span class="tsplit" style="width:10px;height:10px;background:linear-gradient(135deg,#d10a2e 50%,#ffffff 50%);border:1px solid #e3ddcc"></span>River</span>
+              <span style="display:flex;align-items:center;gap:5px">Barracas C.<span class="tsplit" style="width:10px;height:10px;background:linear-gradient(135deg,#2f6b3a 50%,#ffffff 50%);border:1px solid #e3ddcc"></span></span>
+            </div>
+            <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:6px;background:#e3ddcc">
+              <div style="width:68%;background:#d10a2e"></div><div style="width:21%;background:#c9c2ac"></div><div style="width:11%;background:#2f6b3a"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#5c5642;margin-top:3px"><span>68%</span><span>21%</span><span>11%</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;padding:10px 16px;border-top:1px solid #e3ddcc">
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;color:#1c1a14">
+              <span style="display:flex;align-items:center;gap:5px"><span class="tsplit" style="width:10px;height:10px;background:linear-gradient(135deg,#c8102e 50%,#ffffff 50%);border:1px solid #e3ddcc"></span>Estudiantes (LP)</span>
+              <span style="display:flex;align-items:center;gap:5px">Independiente<span class="tsplit" style="width:10px;height:10px;background:#d0122a"></span></span>
+            </div>
+            <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:6px;background:#e3ddcc">
+              <div style="width:41%;background:#c8102e"></div><div style="width:32%;background:#c9c2ac"></div><div style="width:27%;background:#d0122a"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#5c5642;margin-top:3px"><span>41%</span><span>32%</span><span>27%</span></div>
+          </div>
+        </div>
+        <div style="padding:10px 16px;border-top:1px solid #d8d2c2;font-size:11px;color:#8a8370;text-align:center">Ver los 12 partidos de la fecha ↓</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="dv-card" style="width:400px;height:680px;background:#faf7f0">
+      <div style="height:100%;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:16px 20px;border-bottom:1px solid #d8d2c2;display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:20px;color:#1c1a14">EL MODELO — F.C.</div>
+          <div style="font-size:10px;color:#8a8370;letter-spacing:.4px">FECHA 24 · SIN AFILIACIÓN CON CLUBES NI AFA</div>
+        </div>
+        <div style="display:flex;flex:1;overflow:hidden">
+          <div style="flex:1.5;padding:14px 18px;border-right:1px solid #e3ddcc;overflow:hidden">
+            <div style="font-size:10px;letter-spacing:.6px;color:#8a8370;font-weight:600;text-transform:uppercase;margin-bottom:10px">Próximos partidos</div>
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <div style="border-bottom:1px solid #e3ddcc;padding-bottom:8px">
+                <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:#1c1a14"><span>Racing Club</span><span>Gimnasia (LP)</span></div>
+                <div style="display:flex;height:5px;border-radius:2px;overflow:hidden;margin-top:5px;background:#e3ddcc"><div style="width:56%;background:#7ec8e3"></div><div style="width:27%;background:#c9c2ac"></div><div style="width:18%;background:#1c1a14"></div></div>
+              </div>
+              <div style="border-bottom:1px solid #e3ddcc;padding-bottom:8px">
+                <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:#1c1a14"><span>Newell's</span><span>Talleres (C)</span></div>
+                <div style="display:flex;height:5px;border-radius:2px;overflow:hidden;margin-top:5px;background:#e3ddcc"><div style="width:34%;background:#a12028"></div><div style="width:33%;background:#c9c2ac"></div><div style="width:33%;background:#0f2f6b"></div></div>
+              </div>
+              <div style="border-bottom:1px solid #e3ddcc;padding-bottom:8px">
+                <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:#1c1a14"><span>Vélez</span><span>Instituto</span></div>
+                <div style="display:flex;height:5px;border-radius:2px;overflow:hidden;margin-top:5px;background:#e3ddcc"><div style="width:49%;background:#123c7a"></div><div style="width:30%;background:#c9c2ac"></div><div style="width:20%;background:#8a1620"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:#1c1a14"><span>Huracán</span><span>Banfield</span></div>
+                <div style="display:flex;height:5px;border-radius:2px;overflow:hidden;margin-top:5px;background:#e3ddcc"><div style="width:45%;background:#c8102e"></div><div style="width:33%;background:#c9c2ac"></div><div style="width:22%;background:#2f6b3a"></div></div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1;padding:14px 18px">
+            <div style="font-size:10px;letter-spacing:.6px;color:#8a8370;font-weight:600;text-transform:uppercase;margin-bottom:10px">Candidatos al título</div>
+            <div style="display:flex;flex-direction:column;gap:7px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #e3ddcc;padding-bottom:6px">
+                <span style="font-size:11.5px;font-weight:600">Boca Juniors</span><span style="font-family:'Source Serif 4',serif;font-size:18px;font-weight:700">18.7%</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #e3ddcc;padding-bottom:6px">
+                <span style="font-size:11.5px;font-weight:600">River Plate</span><span style="font-family:'Source Serif 4',serif;font-size:18px;font-weight:700">16.5%</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#5c5642"><span>Racing Club</span><span>7.2%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#5c5642"><span>Estudiantes (LP)</span><span>6.1%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#5c5642"><span>Independiente</span><span>5.7%</span></div>
+              <div style="font-size:9px;color:#a39c86;margin-top:4px">Playoff a partido único · máx. 18.7%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dv-row">
+    <!-- MATCH COMPONENT -->
+    <div class="dv-card" style="width:340px;background:#faf7f0;padding:18px 20px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px;color:#1c1a14"><span class="tsplit" style="background:linear-gradient(135deg,#0a1e63 50%,#f7d117 50%)"></span>Boca Juniors</div>
+        <div style="font-family:'Source Serif 4',serif;font-style:italic;font-size:11px;color:#8a8370">vs</div>
+        <div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px;color:#1c1a14">River Plate<span class="tsplit" style="background:linear-gradient(135deg,#d10a2e 50%,#ffffff 50%);border:1px solid #e3ddcc"></span></div>
+      </div>
+      <div style="display:flex;justify-content:space-around;margin-top:14px;padding:12px 0;border-top:1px solid #e3ddcc;border-bottom:1px solid #e3ddcc">
+        <div style="text-align:center"><div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:700;color:#1c1a14">41%</div><div style="font-size:9.5px;color:#8a8370;letter-spacing:.4px">LOCAL</div></div>
+        <div style="text-align:center"><div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:700;color:#1c1a14">30%</div><div style="font-size:9.5px;color:#8a8370;letter-spacing:.4px">EMPATE</div></div>
+        <div style="text-align:center"><div style="font-family:'Source Serif 4',serif;font-size:26px;font-weight:700;color:#1c1a14">29%</div><div style="font-size:9.5px;color:#8a8370;letter-spacing:.4px">VISITA</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:10px;letter-spacing:.5px;color:#8a8370;font-weight:600;text-transform:uppercase">Marcadores más probables</div>
+      <div style="display:flex;gap:6px;margin-top:8px">
+        <div style="flex:1;text-align:center;background:#f2ede0;border-radius:2px;padding:8px 0"><div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:15px">1-1</div><div style="font-size:9.5px;color:#8a8370">14.3%</div></div>
+        <div style="flex:1;text-align:center;background:#f2ede0;border-radius:2px;padding:8px 0"><div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:15px">1-0</div><div style="font-size:9.5px;color:#8a8370">11.5%</div></div>
+        <div style="flex:1;text-align:center;background:#f2ede0;border-radius:2px;padding:8px 0"><div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:15px">0-0</div><div style="font-size:9.5px;color:#8a8370">11.2%</div></div>
+        <div style="flex:1;text-align:center;background:#f2ede0;border-radius:2px;padding:8px 0"><div style="font-family:'Source Serif 4',serif;font-weight:700;font-size:15px">0-1</div><div style="font-size:9.5px;color:#8a8370">9.2%</div></div>
+      </div>
+      <div style="font-size:10px;color:#a39c86;margin-top:10px">Goles esperados: 1.4 — 1.2 · el modelo se equivoca ~4 de cada 10 veces</div>
+    </div>
+
+    <!-- PALETTE -->
+    <div class="dv-card" style="width:380px;background:#faf7f0;padding:18px 20px">
+      <div style="font-size:10px;letter-spacing:.5px;color:#8a8370;font-weight:600;text-transform:uppercase;margin-bottom:8px">Paleta y tipografía</div>
+      <div style="display:flex;gap:6px;margin-bottom:10px">
+        <div class="swatch" style="background:#faf7f0;border:1px solid #d8d2c2"></div>
+        <div class="swatch" style="background:#1c1a14"></div>
+        <div class="swatch" style="background:#e2751a"></div>
+        <div class="swatch" style="background:#8a8370"></div>
+      </div>
+      <div style="font-size:12px;color:#1c1a14;line-height:1.6">
+        <b style="font-family:'Source Serif 4',serif">Source Serif 4</b> para titulares y toda cifra grande · <b>IBM Plex Sans</b> para etiquetas y UI.<br>
+        Fondo papel crudo, tinta casi negra, un solo acento terracota (nunca verde casino).<br>
+        Identidad de equipo: un chip diagonal partido a la mitad con los dos colores del club, sin escudo.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OPTION 1B: LABORATORIO DE DATOS (DARK) ============ -->
+<div class="dv-opt" id="1b">
+  <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Laboratorio de datos</div>
+  <p class="dv-oline">Comunica un instrumento de precisión, no un diario ni una casa de apuestas: modo oscuro, grotesca técnica, números en monoespaciada como salida de un modelo.</p>
+
+  <div class="dv-row">
+    <!-- MOBILE -->
+    <div class="dv-card" style="width:340px;height:680px;background:#15161a">
+      <div style="height:100%;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:14px 16px 10px;border-bottom:1px solid #2a2c33">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#f2f1ec">MODELO/24</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#7c8089;margin-top:2px">DIXON-COLES · MONTE CARLO · FECHA 24</div>
+        </div>
+        <div style="background:#2a2c33;color:#c9cbd1;font-size:10px;padding:6px 16px;line-height:1.4;font-family:'IBM Plex Mono',monospace">
+          Proyecto no oficial. Sin vínculo con clubes ni AFA.
+        </div>
+        <div style="padding:14px 16px 6px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.6px;color:#7c8089;text-transform:uppercase">Prob. de campeón</div>
+          <div style="display:flex;gap:10px;margin-top:8px;padding-bottom:10px;border-bottom:1px solid #2a2c33">
+            <div style="flex:1">
+              <div style="display:flex;align-items:center;gap:6px"><span class="tsplit" style="width:10px;height:10px;background:linear-gradient(135deg,#0a1e63 50%,#f7d117 50%)"></span><span style="font-size:11px;color:#f2f1ec">Boca</span></div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:#ffcf5c;line-height:1.1">18.7%</div>
+            </div>
+            <div style="flex:1">
+              <div style="display:flex;align-items:center;gap:6px"><span class="tsplit" style="width:10px;height:10px;background:linear-gradient(135deg,#d10a2e 50%,#ffffff 50%)"></span><span style="font-size:11px;color:#f2f1ec">River</span></div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:#ffcf5c;line-height:1.1">16.5%</div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#7c8089;padding-top:2px">
+            <span style="white-space:nowrap">RAC 7.2</span><span style="white-space:nowrap">EDLP 6.1</span><span style="white-space:nowrap">IND 5.7</span>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#565962;margin-top:10px">MÁX 18.7% — define playoff, partido único</div>
+        </div>
+        <div style="padding:10px 16px 4px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.6px;color:#7c8089;text-transform:uppercase">Próximos</div>
+        <div style="flex:1;overflow:hidden">
+          <div style="padding:9px 16px;border-top:1px solid #2a2c33">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#f2f1ec"><span style="display:flex;align-items:center;gap:5px"><span class="tsplit" style="width:9px;height:9px;background:linear-gradient(135deg,#e2751a 50%,#111 50%)"></span>Riestra</span><span>Boca<span class="tsplit" style="width:9px;height:9px;background:linear-gradient(135deg,#0a1e63 50%,#f7d117 50%);margin-left:5px"></span></span></div>
+            <div style="display:flex;height:4px;margin-top:6px;background:#2a2c33;border-radius:2px;overflow:hidden"><div style="width:25%;background:#e2751a"></div><div style="width:37%;background:#565962"></div><div style="width:38%;background:#5c7cfa"></div></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#7c8089;margin-top:3px">25 · 37 · 38</div>
+          </div>
+          <div style="padding:9px 16px;border-top:1px solid #2a2c33">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#f2f1ec"><span style="display:flex;align-items:center;gap:5px"><span class="tsplit" style="width:9px;height:9px;background:linear-gradient(135deg,#d10a2e 50%,#fff 50%)"></span>River</span><span>Barracas C.<span class="tsplit" style="width:9px;height:9px;background:linear-gradient(135deg,#2f6b3a 50%,#fff 50%);margin-left:5px"></span></span></div>
+            <div style="display:flex;height:4px;margin-top:6px;background:#2a2c33;border-radius:2px;overflow:hidden"><div style="width:68%;background:#ff5c7a"></div><div style="width:21%;background:#565962"></div><div style="width:11%;background:#5cc27e"></div></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#7c8089;margin-top:3px">68 · 21 · 11</div>
+          </div>
+          <div style="padding:9px 16px;border-top:1px solid #2a2c33">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#f2f1ec"><span>Newell's</span><span>Talleres (C)</span></div>
+            <div style="display:flex;height:4px;margin-top:6px;background:#2a2c33;border-radius:2px;overflow:hidden"><div style="width:34%;background:#ff5c7a"></div><div style="width:33%;background:#565962"></div><div style="width:33%;background:#5c7cfa"></div></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#7c8089;margin-top:3px">34 · 33 · 34 — muy parejo</div>
+          </div>
+        </div>
+        <div style="padding:10px 16px;border-top:1px solid #2a2c33;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7c8089;text-align:center">VER LOS 12 PARTIDOS ↓</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="dv-card" style="width:400px;height:680px;background:#15161a">
+      <div style="height:100%;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:16px 20px;border-bottom:1px solid #2a2c33;display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:#f2f1ec">MODELO/24</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#7c8089">NO OFICIAL · SIN VÍNCULO CON CLUBES</div>
+        </div>
+        <div style="display:flex;flex:1;overflow:hidden">
+          <div style="flex:1.5;padding:14px 18px;border-right:1px solid #2a2c33;overflow:hidden">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.5px;color:#7c8089;text-transform:uppercase;margin-bottom:10px">Próximos partidos</div>
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <div style="border-bottom:1px solid #2a2c33;padding-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:12px;color:#f2f1ec"><span>Racing Club</span><span>Gimnasia (LP)</span></div><div style="display:flex;height:4px;border-radius:2px;overflow:hidden;margin-top:5px;background:#2a2c33"><div style="width:56%;background:#5cc0f2"></div><div style="width:27%;background:#565962"></div><div style="width:18%;background:#f2f1ec"></div></div></div>
+              <div style="border-bottom:1px solid #2a2c33;padding-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:12px;color:#f2f1ec"><span>Newell's</span><span>Talleres (C)</span></div><div style="display:flex;height:4px;border-radius:2px;overflow:hidden;margin-top:5px;background:#2a2c33"><div style="width:34%;background:#ff5c7a"></div><div style="width:33%;background:#565962"></div><div style="width:33%;background:#5c7cfa"></div></div></div>
+              <div style="border-bottom:1px solid #2a2c33;padding-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:12px;color:#f2f1ec"><span>Vélez</span><span>Instituto</span></div><div style="display:flex;height:4px;border-radius:2px;overflow:hidden;margin-top:5px;background:#2a2c33"><div style="width:49%;background:#5c7cfa"></div><div style="width:30%;background:#565962"></div><div style="width:20%;background:#ff5c7a"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:12px;color:#f2f1ec"><span>Huracán</span><span>Banfield</span></div><div style="display:flex;height:4px;border-radius:2px;overflow:hidden;margin-top:5px;background:#2a2c33"><div style="width:45%;background:#ff5c7a"></div><div style="width:33%;background:#565962"></div><div style="width:22%;background:#5cc27e"></div></div></div>
+            </div>
+          </div>
+          <div style="flex:1;padding:14px 18px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.5px;color:#7c8089;text-transform:uppercase;margin-bottom:10px">Prob. de campeón</div>
+            <div style="display:flex;flex-direction:column;gap:7px;font-family:'IBM Plex Mono',monospace">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #2a2c33;padding-bottom:6px"><span style="font-size:11.5px;color:#f2f1ec">Boca</span><span style="font-size:17px;font-weight:600;color:#ffcf5c">18.7%</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #2a2c33;padding-bottom:6px"><span style="font-size:11.5px;color:#f2f1ec">River</span><span style="font-size:17px;font-weight:600;color:#ffcf5c">16.5%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#7c8089"><span>Racing</span><span>7.2%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#7c8089"><span>Estudiantes (LP)</span><span>6.1%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#7c8089"><span>Independiente</span><span>5.7%</span></div>
+              <div style="font-size:8.5px;color:#565962;margin-top:4px">Simulación Monte Carlo · playoff a partido único</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dv-row">
+    <div class="dv-card" style="width:340px;background:#15161a;padding:18px 20px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px;color:#f2f1ec;font-family:'Space Grotesk',sans-serif"><span class="tsplit" style="background:linear-gradient(135deg,#0a1e63 50%,#f7d117 50%)"></span>Boca Juniors</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#565962">vs</div>
+        <div style="display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px;color:#f2f1ec;font-family:'Space Grotesk',sans-serif">River Plate<span class="tsplit" style="background:linear-gradient(135deg,#d10a2e 50%,#ffffff 50%)"></span></div>
+      </div>
+      <div style="display:flex;justify-content:space-around;margin-top:14px;padding:12px 0;border-top:1px solid #2a2c33;border-bottom:1px solid #2a2c33">
+        <div style="text-align:center"><div style="font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:#f2f1ec">40%</div><div style="font-size:9px;color:#7c8089;letter-spacing:.4px;font-family:'IBM Plex Mono',monospace">LOCAL</div></div>
+        <div style="text-align:center"><div style="font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:#f2f1ec">31%</div><div style="font-size:9px;color:#7c8089;letter-spacing:.4px;font-family:'IBM Plex Mono',monospace">EMPATE</div></div>
+        <div style="text-align:center"><div style="font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:#f2f1ec">29%</div><div style="font-size:9px;color:#7c8089;letter-spacing:.4px;font-family:'IBM Plex Mono',monospace">VISITA</div></div>
+      </div>
+      <div style="margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.5px;color:#7c8089;text-transform:uppercase">Marcadores más probables</div>
+      <div style="display:flex;gap:6px;margin-top:8px">
+        <div style="flex:1;text-align:center;background:#1e2027;border-radius:2px;padding:8px 0"><div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:#f2f1ec">1-1</div><div style="font-size:9px;color:#7c8089">14.3%</div></div>
+        <div style="flex:1;text-align:center;background:#1e2027;border-radius:2px;padding:8px 0"><div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:#f2f1ec">1-0</div><div style="font-size:9px;color:#7c8089">11.5%</div></div>
+        <div style="flex:1;text-align:center;background:#1e2027;border-radius:2px;padding:8px 0"><div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:#f2f1ec">0-0</div><div style="font-size:9px;color:#7c8089">11.2%</div></div>
+        <div style="flex:1;text-align:center;background:#1e2027;border-radius:2px;padding:8px 0"><div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:#f2f1ec">0-1</div><div style="font-size:9px;color:#7c8089">9.2%</div></div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#565962;margin-top:10px">Goles esperados 1.27 — 1.04 · el modelo acierta 4 de cada 10</div>
+    </div>
+
+    <div class="dv-card" style="width:380px;background:#15161a;padding:18px 20px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.5px;color:#7c8089;text-transform:uppercase;margin-bottom:8px">Paleta y tipografía</div>
+      <div style="display:flex;gap:6px;margin-bottom:10px">
+        <div class="swatch" style="background:#15161a;border:1px solid #2a2c33"></div>
+        <div class="swatch" style="background:#f2f1ec"></div>
+        <div class="swatch" style="background:#ffcf5c"></div>
+        <div class="swatch" style="background:#5c7cfa"></div>
+      </div>
+      <div style="font-size:12px;color:#c9cbd1;line-height:1.6">
+        <b style="font-family:'Space Grotesk',sans-serif;color:#f2f1ec">Space Grotesk</b> para títulos técnicos · <b style="color:#f2f1ec">IBM Plex Mono</b> para toda cifra, como salida cruda del modelo.<br>
+        Fondo casi negro, texto hueso, un ámbar para el dato exclusivo (campeón).<br>
+        Identidad de equipo: cuadrado partido en diagonal con los dos colores del club, sin escudo.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ OPTION 1C: PLANILLA DE CANCHA ============ -->
+<div class="dv-opt" id="1c">
+  <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Planilla de cancha</div>
+  <p class="dv-oline">Comunica algo más cercano y humano sin perder seriedad: papel cuadriculado de planilla deportiva, tipografía condensada de scoreboard, fichas de dos colores en vez de escudos.</p>
+
+  <div class="dv-row">
+    <!-- MOBILE -->
+    <div class="dv-card" style="width:340px;height:680px;background:#f7f4ec;background-image:linear-gradient(#e6e1d2 1px,transparent 1px),linear-gradient(90deg,#e6e1d2 1px,transparent 1px);background-size:16px 16px">
+      <div style="height:100%;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:14px 16px 8px;border-bottom:2px solid #26251f">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;color:#26251f;letter-spacing:.3px;text-transform:uppercase">Planilla / Fecha 24</div>
+        </div>
+        <div style="background:#1d6e6a;color:#fff;font-size:10.5px;padding:6px 16px;font-family:'Barlow',sans-serif;font-weight:500">
+          Sitio independiente, sin escudos ni relación con clubes ni AFA.
+        </div>
+        <div style="padding:12px 16px 6px">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.3px;color:#5c5744;text-transform:uppercase">Candidatos al título</div>
+          <div style="display:flex;gap:8px;margin-top:8px;padding-bottom:10px;border-bottom:1px dashed #c7c0a9">
+            <div style="flex:1;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px">
+              <div style="display:flex;align-items:center;gap:6px"><span class="tsplit" style="background:linear-gradient(90deg,#0a1e63 50%,#f7d117 50%)"></span><span style="font-size:11px;font-weight:600;color:#26251f">Boca</span></div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:#26251f;line-height:1.05;margin-top:2px">18.7%</div>
+            </div>
+            <div style="flex:1;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px">
+              <div style="display:flex;align-items:center;gap:6px"><span class="tsplit" style="background:linear-gradient(90deg,#d10a2e 50%,#ffffff 50%);border:1px solid #26251f"></span><span style="font-size:11px;font-weight:600;color:#26251f">River</span></div>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:#26251f;line-height:1.05;margin-top:2px">16.5%</div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:10.5px;color:#5c5744;padding-top:8px">
+            <span>Racing 7.2%</span><span>Estud.LP 6.1%</span><span>Indep. 5.7%</span>
+          </div>
+        </div>
+        <div style="padding:8px 16px 4px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.3px;color:#5c5744;text-transform:uppercase">Partidos</div>
+        <div style="flex:1;overflow:hidden">
+          <div style="margin:0 16px 8px;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px 10px">
+            <div style="display:flex;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:12.5px;font-weight:600;color:#26251f"><span style="display:flex;align-items:center;gap:5px"><span class="tsplit" style="width:10px;height:10px;background:linear-gradient(90deg,#e2751a 50%,#1a1a1a 50%)"></span>Riestra</span><span>Boca<span class="tsplit" style="width:10px;height:10px;background:linear-gradient(90deg,#0a1e63 50%,#f7d117 50%);margin-left:5px"></span></span></div>
+            <div style="display:flex;height:6px;margin-top:6px;border-radius:3px;overflow:hidden;background:#e6e1d2"><div style="width:25%;background:#e2751a"></div><div style="width:37%;background:#c7c0a9"></div><div style="width:38%;background:#0a1e63"></div></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;color:#5c5744;margin-top:3px">25 / 37 / 38</div>
+          </div>
+          <div style="margin:0 16px 8px;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px 10px">
+            <div style="display:flex;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:12.5px;font-weight:600;color:#26251f"><span style="display:flex;align-items:center;gap:5px"><span class="tsplit" style="width:10px;height:10px;background:linear-gradient(90deg,#d10a2e 50%,#fff 50%);border:1px solid #26251f"></span>River</span><span>Barracas C.<span class="tsplit" style="width:10px;height:10px;background:linear-gradient(90deg,#2f6b3a 50%,#fff 50%);border:1px solid #26251f;margin-left:5px"></span></span></div>
+            <div style="display:flex;height:6px;margin-top:6px;border-radius:3px;overflow:hidden;background:#e6e1d2"><div style="width:68%;background:#d10a2e"></div><div style="width:21%;background:#c7c0a9"></div><div style="width:11%;background:#2f6b3a"></div></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;color:#5c5744;margin-top:3px">68 / 21 / 11</div>
+          </div>
+          <div style="margin:0 16px 8px;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px 10px">
+            <div style="display:flex;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:12.5px;font-weight:600;color:#26251f"><span>Newell's</span><span>Talleres (C)</span></div>
+            <div style="display:flex;height:6px;margin-top:6px;border-radius:3px;overflow:hidden;background:#e6e1d2"><div style="width:34%;background:#a12028"></div><div style="width:33%;background:#c7c0a9"></div><div style="width:33%;background:#0f2f6b"></div></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;color:#5c5744;margin-top:3px">34 / 33 / 34 — muy parejo</div>
+          </div>
+        </div>
+        <div style="padding:8px 16px;border-top:2px solid #26251f;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;color:#5c5744;text-align:center;text-transform:uppercase">Ver los 12 partidos ↓</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="dv-card" style="width:400px;height:680px;background:#f7f4ec;background-image:linear-gradient(#e6e1d2 1px,transparent 1px),linear-gradient(90deg,#e6e1d2 1px,transparent 1px);background-size:16px 16px">
+      <div style="height:100%;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:16px 20px;border-bottom:2px solid #26251f;display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;color:#26251f;text-transform:uppercase">Planilla / Fecha 24</div>
+          <div style="font-family:'Barlow',sans-serif;font-size:10px;color:#1d6e6a;font-weight:600">SIN AFILIACIÓN CON CLUBES NI AFA</div>
+        </div>
+        <div style="display:flex;flex:1;overflow:hidden">
+          <div style="flex:1.5;padding:14px 18px;border-right:1px dashed #c7c0a9;overflow:hidden">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:#5c5744;text-transform:uppercase;margin-bottom:10px">Próximos partidos</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="background:#fff;border:1px solid #26251f;border-radius:3px;padding:7px 10px"><div style="display:flex;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;color:#26251f"><span>Racing Club</span><span>Gimnasia (LP)</span></div><div style="display:flex;height:5px;border-radius:2px;overflow:hidden;margin-top:5px;background:#e6e1d2"><div style="width:56%;background:#7ec8e3"></div><div style="width:27%;background:#c7c0a9"></div><div style="width:18%;background:#26251f"></div></div></div>
+              <div style="background:#fff;border:1px solid #26251f;border-radius:3px;padding:7px 10px"><div style="display:flex;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;color:#26251f"><span>Vélez</span><span>Instituto</span></div><div style="display:flex;height:5px;border-radius:2px;overflow:hidden;margin-top:5px;background:#e6e1d2"><div style="width:49%;background:#123c7a"></div><div style="width:30%;background:#c7c0a9"></div><div style="width:20%;background:#8a1620"></div></div></div>
+              <div style="background:#fff;border:1px solid #26251f;border-radius:3px;padding:7px 10px"><div style="display:flex;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;color:#26251f"><span>Huracán</span><span>Banfield</span></div><div style="display:flex;height:5px;border-radius:2px;overflow:hidden;margin-top:5px;background:#e6e1d2"><div style="width:45%;background:#c8102e"></div><div style="width:33%;background:#c7c0a9"></div><div style="width:22%;background:#2f6b3a"></div></div></div>
+            </div>
+          </div>
+          <div style="flex:1;padding:14px 18px">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;color:#5c5744;text-transform:uppercase;margin-bottom:10px">Candidatos al título</div>
+            <div style="display:flex;flex-direction:column;gap:7px;font-family:'Barlow',sans-serif">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;background:#fff;border:1px solid #26251f;border-radius:3px;padding:6px 8px"><span style="font-size:11.5px;font-weight:600">Boca</span><span style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800">18.7%</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;background:#fff;border:1px solid #26251f;border-radius:3px;padding:6px 8px"><span style="font-size:11.5px;font-weight:600">River</span><span style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800">16.5%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#5c5744"><span>Racing</span><span>7.2%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#5c5744"><span>Estudiantes (LP)</span><span>6.1%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#5c5744"><span>Independiente</span><span>5.7%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dv-row">
+    <div class="dv-card" style="width:340px;background:#f7f4ec;background-image:linear-gradient(#e6e1d2 1px,transparent 1px),linear-gradient(90deg,#e6e1d2 1px,transparent 1px);background-size:16px 16px;padding:18px 20px;border:1px solid #26251f">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:#26251f;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase"><span class="tsplit" style="background:linear-gradient(90deg,#0a1e63 50%,#f7d117 50%)"></span>Boca Juniors</div>
+        <div style="font-family:'Barlow',sans-serif;font-size:11px;color:#1d6e6a;font-weight:600">vs</div>
+        <div style="display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:#26251f;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase">River Plate<span class="tsplit" style="background:linear-gradient(90deg,#d10a2e 50%,#ffffff 50%);border:1px solid #26251f"></span></div>
+      </div>
+      <div style="display:flex;justify-content:space-around;margin-top:14px;padding:12px 0;border-top:1px solid #26251f;border-bottom:1px solid #26251f">
+        <div style="text-align:center"><div style="font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:#26251f">41%</div><div style="font-size:9.5px;color:#5c5744;font-family:'Barlow',sans-serif;font-weight:600;letter-spacing:.3px">LOCAL</div></div>
+        <div style="text-align:center"><div style="font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:#26251f">30%</div><div style="font-size:9.5px;color:#5c5744;font-family:'Barlow',sans-serif;font-weight:600;letter-spacing:.3px">EMPATE</div></div>
+        <div style="text-align:center"><div style="font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;color:#26251f">29%</div><div style="font-size:9.5px;color:#5c5744;font-family:'Barlow',sans-serif;font-weight:600;letter-spacing:.3px">VISITA</div></div>
+      </div>
+      <div style="margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.3px;color:#5c5744;text-transform:uppercase">Marcadores más probables</div>
+      <div style="display:flex;gap:6px;margin-top:8px">
+        <div style="flex:1;text-align:center;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:#26251f">1-1</div><div style="font-size:9.5px;color:#5c5744;font-family:'Barlow',sans-serif">14.3%</div></div>
+        <div style="flex:1;text-align:center;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:#26251f">1-0</div><div style="font-size:9.5px;color:#5c5744;font-family:'Barlow',sans-serif">11.5%</div></div>
+        <div style="flex:1;text-align:center;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:#26251f">0-0</div><div style="font-size:9.5px;color:#5c5744;font-family:'Barlow',sans-serif">11.2%</div></div>
+        <div style="flex:1;text-align:center;background:#fff;border:1px solid #26251f;border-radius:3px;padding:8px 0"><div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;color:#26251f">0-1</div><div style="font-size:9.5px;color:#5c5744;font-family:'Barlow',sans-serif">9.2%</div></div>
+      </div>
+      <div style="font-family:'Barlow',sans-serif;font-size:10.5px;color:#7a7461;margin-top:10px">Goles esperados: 1.4 — 1.2 · falla ~4 de cada 10</div>
+    </div>
+
+    <div class="dv-card" style="width:380px;background:#f7f4ec;background-image:linear-gradient(#e6e1d2 1px,transparent 1px),linear-gradient(90deg,#e6e1d2 1px,transparent 1px);background-size:16px 16px;padding:18px 20px;border:1px solid #26251f">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.3px;color:#5c5744;text-transform:uppercase;margin-bottom:8px">Paleta y tipografía</div>
+      <div style="display:flex;gap:6px;margin-bottom:10px">
+        <div class="swatch" style="background:#f7f4ec;border:1px solid #26251f"></div>
+        <div class="swatch" style="background:#26251f"></div>
+        <div class="swatch" style="background:#1d6e6a"></div>
+        <div class="swatch" style="background:#c7c0a9"></div>
+      </div>
+      <div style="font-size:12px;color:#26251f;line-height:1.6;font-family:'Barlow',sans-serif">
+        <b style="font-family:'Barlow Condensed',sans-serif">Barlow Condensed</b> para cifras y encabezados de scoreboard · <b>Barlow</b> para texto de planilla.<br>
+        Fondo cuadriculado (papel de cancha), tinta carbón, un verde-azulado como único acento.<br>
+        Identidad de equipo: ficha rectangular partida al medio con los dos colores, como una hoja de asistencia.
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<p class="dv-next">Decime cuál seguir: "avanzá con <a class="dv-oid" href="#1a">1a</a>", "mezclá el fondo cuadriculado de <a class="dv-oid" href="#1c">1c</a> con la tipografía de <a class="dv-oid" href="#1a">1a</a>", o "mostrame la página de equipo y de partido completas para <a class="dv-oid" href="#1b">1b</a>".</p>
+</section>
+
+</x-dc>
+</body>
+</html>
