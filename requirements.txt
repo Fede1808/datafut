@@ -1,0 +1,3 @@
+# Unica dependencia externa del pipeline.
+# La descarga usa urllib, que ya viene con Python: no hace falta instalar nada mas.
+pandas>=2.0

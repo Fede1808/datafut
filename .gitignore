@@ -1,0 +1,17 @@
+# Datos generados por el pipeline: se rehacen con `python src/ingest.py`.
+# No se versionan para no guardar el mismo CSV una y otra vez en el historial.
+data/raw/
+data/clean/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
