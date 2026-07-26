@@ -1,7 +1,11 @@
-# Datos generados por el pipeline: se rehacen corriendo los scripts de src/.
+# Datos intermedios del pipeline: se rehacen corriendo los scripts de src/.
 # No se versionan para no guardar el mismo CSV una y otra vez en el historial.
 # Regla: se versiona lo que NO se puede regenerar (reference/), no lo que si.
-data/
+#
+# La barra del principio importa: sin ella, la regla tambien matchearia
+# web/data/, que SI tiene que ir a git — Vercel construye el sitio desde el
+# repositorio, asi que si los JSON no estan versionados, el build falla.
+/data/
 
 # Python
 __pycache__/

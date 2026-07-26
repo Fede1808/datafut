@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/*
+  Tokens del diseño "Laboratorio de datos".
+  Todo color y tipografía del sitio sale de acá: si mañana cambia la paleta,
+  se toca este bloque y nada más.
+*/
+@theme {
+  --color-fondo: #15161a;
+  --color-card: #1e2027;
+  --color-cardhover: #24262d;
+  --color-borde: #2a2c33;
+  --color-texto: #f2f1ec;
+  --color-texto2: #7c8089;
+  --color-texto3: #565962;
+  --color-aviso: #c9cbd1;
+
+  /* Ámbar: reservado para el dato exclusivo del sitio (prob. de campeón). */
+  --color-acento: #ffcf5c;
+
+  /* Colores fijos de la barra de probabilidad. NO son los del club: si lo
+     fueran, River vs Independiente daría rojo-gris-rojo, ilegible. */
+  --color-local: #5c7cfa;
+  --color-empate: #565962;
+  --color-visita: #ff5c7a;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: #15161a;
+  color-scheme: dark;
+}
+
+body {
+  background: #15161a;
+  color: #f2f1ec;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Etiquetas chiquitas en mayúscula que ordenan las secciones. */
+.etiqueta {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #7c8089;
+}

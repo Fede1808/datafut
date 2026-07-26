@@ -53,6 +53,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 MODELO = RAIZ / "data" / "outputs" / "modelo.json"
 ZONAS = RAIZ / "reference" / "zonas.csv"
 DESTINO = RAIZ / "data" / "outputs" / "simulacion.md"
+DESTINO_JSON = RAIZ / "data" / "outputs" / "simulacion.json"
 
 # El Clausura 2026 arranca el 23/07. Todo lo anterior de esa temporada es
 # Apertura, que ya termino.
@@ -313,6 +314,22 @@ def main():
     DESTINO.parent.mkdir(parents=True, exist_ok=True)
     DESTINO.write_text("\n".join(lineas) + "\n", encoding="utf-8")
     print(f"\nOK  -> {DESTINO}")
+
+    # Ademas del reporte para leer, guardamos los datos crudos. El .md es para
+    # una persona; el .json es para el sitio y para el generador de placas.
+    DESTINO_JSON.write_text(json.dumps({
+        "temporada": TEMPORADA,
+        "torneo": "Clausura",
+        "simulaciones": n,
+        "partidos_jugados": len(jugados),
+        "partidos_pendientes": len(pendientes),
+        "equipos": [
+            {"equipo": f.equipo, "zona": f.zona,
+             "campeon": round(f.campeon, 2), "playoffs": round(f.playoffs, 2)}
+            for f in tabla.itertuples()
+        ],
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"OK  -> {DESTINO_JSON}")
 
 
 if __name__ == "__main__":
