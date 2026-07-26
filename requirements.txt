@@ -1,3 +1,7 @@
-# Unica dependencia externa del pipeline.
-# La descarga usa urllib, que ya viene con Python: no hace falta instalar nada mas.
+# La descarga usa urllib, que ya viene con Python: para un solo GET no vale
+# la pena sumar una libreria externa.
 pandas>=2.0
+
+# scipy si se gana su lugar: trae optimizadores numericos con decadas de
+# trabajo matematico encima. Escribir eso a mano seria reinventar la rueda peor.
+scipy>=1.11

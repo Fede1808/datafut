@@ -1,7 +1,7 @@
-# Datos generados por el pipeline: se rehacen con `python src/ingest.py`.
+# Datos generados por el pipeline: se rehacen corriendo los scripts de src/.
 # No se versionan para no guardar el mismo CSV una y otra vez en el historial.
-data/raw/
-data/clean/
+# Regla: se versiona lo que NO se puede regenerar (reference/), no lo que si.
+data/
 
 # Python
 __pycache__/

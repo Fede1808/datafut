@@ -25,9 +25,12 @@ resultado con los mismos datos de entrada.
 python src/ingest.py    # 1. baja el CSV original a data/raw/
 python src/clean.py     # 2. lo normaliza y lo deja en data/clean/matches.csv
 python src/report.py    # 3. genera el diagnostico en data/clean/report.md
+python src/model.py     # 4. entrena el modelo -> data/outputs/modelo.json
+python src/evaluate.py  # 5. mide si sirve -> data/outputs/evaluacion.md
 ```
 
-Para actualizar todo despues de una fecha nueva, se corren los tres de nuevo.
+Para actualizar todo despues de una fecha nueva, se corren de nuevo.
+El paso 5 tarda alrededor de un minuto; los demas son casi instantaneos.
 
 ## Que hace cada etapa
 
@@ -40,6 +43,34 @@ forma de escribir cada temporada, y una columna que distingue liga de copa.
 
 **`report.py` — diagnosticar.** No modifica nada, solo cuenta y muestra. Contesta
 "que tenemos realmente?" antes de escribir una linea de modelo.
+
+**`model.py` — modelar.** Le pone dos numeros a cada equipo (ataque y defensa) mas
+la ventaja de local, y con eso calcula la probabilidad de cada marcador posible.
+Es un Poisson bivariado con correccion de Dixon-Coles y decaimiento temporal.
+
+**`evaluate.py` — medir.** Entrena con el pasado y predice el futuro, temporada por
+temporada, y compara contra cuatro referencias. **Un modelo sin evaluacion no es un
+modelo: es una opinion con decimales.**
+
+## Como anda el modelo hoy
+
+Validacion temporal 2022-2026, log loss (mas bajo es mejor):
+
+| Modelo | Log loss |
+|---|---:|
+| Mercado (cuotas de las casas) | 1.0531 |
+| **Dixon-Coles (este proyecto)** | **1.0664** |
+| Elo simple | 1.0694 |
+| Frecuencia historica | 1.0790 |
+| Azar | 1.0986 |
+
+El mercado sigue adelante por 0.0133, y esta bien que asi sea: es el consenso de
+mucha gente con mucha plata en juego. Lo importante es que el modelo le gana a
+todas las referencias simples, o sea que **aporta informacion real**.
+
+Dato medido, no supuesto: se probaron vidas medias de 90 a 3000 dias y anduvo
+mejor cuanto MAS larga. Olvidar rapido empeora el modelo en este dataset. El
+default quedo en 1800 dias.
 
 ## La regla mas importante
 
