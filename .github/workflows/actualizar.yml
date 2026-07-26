@@ -1,0 +1,78 @@
+# Actualiza el sitio despues de cada fecha, sin que nadie toque nada.
+#
+# Esto ES la definicion de terminado de la v1:
+#   "termina una fecha y, sin que yo toque nada, el sitio muestra las
+#    probabilidades actualizadas de todos los equipos de la liga"
+#
+# Como funciona:
+#   1. baja los resultados nuevos
+#   2. reentrena el modelo y vuelve a simular el torneo
+#   3. escribe los JSON del sitio
+#   4. si algo cambio, commitea y pushea
+#   5. Vercel ve el push y reconstruye el sitio solo
+#
+# El paso 4 tiene un efecto lateral valioso: como cada actualizacion queda en
+# el historial de git, con el tiempo vas a tener el registro completo de lo
+# que el modelo predijo en cada momento. Eso es lo que despues permite mostrar
+# que tan bien viene acertando, sin tener que guardar nada aparte.
+
+name: Actualizar probabilidades
+
+on:
+  schedule:
+    # Lunes 12:00 UTC (9:00 en Argentina). Para cuando se corre, la fecha del
+    # fin de semana ya termino y football-data.co.uk publico los resultados.
+    - cron: "0 12 * * 1"
+  # Permite dispararlo a mano desde la pestaña Actions de GitHub, que sirve
+  # para probar y para cuando se juega entre semana.
+  workflow_dispatch:
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Bajar resultados y fixture
+        run: python src/ingest.py
+
+      - name: Normalizar
+        run: python src/clean.py
+
+      - name: Diagnosticar
+        run: python src/report.py
+
+      - name: Reentrenar el modelo
+        run: python src/model.py
+
+      - name: Simular el torneo
+        run: python src/simulate.py --n 10000
+
+      - name: Escribir los JSON del sitio
+        run: python src/export.py
+
+      # Si el pipeline fallo en cualquier paso anterior, el workflow ya se
+      # corto y no se commitea nada. Es a proposito: mejor dejar el sitio con
+      # datos viejos que publicar datos rotos.
+      - name: Commitear si cambio algo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet web/data/; then
+            echo "Sin cambios en los datos, no hay nada que publicar."
+            exit 0
+          fi
+          git add web/data/
+          git commit -m "data: actualizacion automatica $(date -u +%d/%m/%Y)"
+          git push

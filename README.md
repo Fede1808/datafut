@@ -1,37 +1,72 @@
 # datafut
 
-Modelo estadistico propio sobre el futbol argentino. Este repo contiene, por ahora,
-el pipeline de datos: bajar el historico de resultados, dejarlo prolijo y entender
-que hay adentro.
+Sitio publico con probabilidades propias sobre el futbol argentino. Un modelo
+estadistico (Dixon-Coles + simulacion Monte Carlo) calcula que chances tiene cada
+equipo, y se reentrena solo despues de cada fecha.
 
 > El nombre `datafut` es provisorio.
 
+**No es** una app de resultados en vivo, **no es** una herramienta de apuestas, y
+**no es** una cuenta que regrafica datos ajenos: el modelo es propio y es el
+diferencial del proyecto.
+
 ## Que necesitas
 
-Python 3.10 o mas nuevo, y una sola libreria:
+Python 3.10 o mas nuevo y Node 20 o mas nuevo.
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt      # pandas y scipy
+cd web && npm install                # el sitio
 ```
 
-La descarga usa `urllib`, que ya viene con Python. No hace falta instalar nada mas.
+La descarga usa `urllib`, que ya viene con Python.
 
 ## Como correrlo
 
-Tres pasos, en orden. Cada uno se puede correr solo y siempre da el mismo
+Siete pasos, en orden. Cada uno se puede correr solo y siempre da el mismo
 resultado con los mismos datos de entrada.
 
 ```bash
-python src/ingest.py    # 1. baja el CSV original a data/raw/
-python src/clean.py     # 2. lo normaliza y lo deja en data/clean/matches.csv
-python src/report.py    # 3. genera el diagnostico en data/clean/report.md
+python src/ingest.py    # 1. baja el CSV original y el fixture -> data/raw/
+python src/clean.py     # 2. lo normaliza -> data/clean/matches.csv
+python src/report.py    # 3. diagnostica -> data/clean/report.md
 python src/model.py     # 4. entrena el modelo -> data/outputs/modelo.json
 python src/evaluate.py  # 5. mide si sirve -> data/outputs/evaluacion.md
-python src/simulate.py  # 6. simula el torneo -> data/outputs/simulacion.md
+python src/simulate.py  # 6. simula el torneo -> data/outputs/simulacion.*
+python src/export.py    # 7. arma los JSON del sitio -> web/data/
 ```
 
-Para actualizar todo despues de una fecha nueva, se corren de nuevo.
-El paso 5 tarda alrededor de un minuto; los demas son casi instantaneos.
+Y despues el sitio:
+
+```bash
+cd web
+npm run dev     # http://localhost:3000
+npm run build   # genera las 47 paginas estaticas
+```
+
+Tiempos: el paso 5 tarda un minuto y el 6 unos 30 segundos; el resto es
+casi instantaneo.
+
+## Se actualiza solo
+
+Esa es la definicion de terminado de la v1: *termina una fecha y, sin que nadie
+toque nada, el sitio muestra las probabilidades nuevas*.
+
+```
+GitHub Actions (lunes 9:00 ART)
+   -> corre los siete pasos del pipeline
+   -> escribe los JSON en web/data/
+   -> commitea y pushea si algo cambio
+   -> Vercel ve el push y reconstruye el sitio
+```
+
+Ver `.github/workflows/actualizar.yml`. Si cualquier paso falla, el workflow se
+corta y no commitea: **mejor dejar el sitio con datos viejos que publicar datos
+rotos**.
+
+Como cada actualizacion queda en el historial de git, con el tiempo se acumula el
+registro de lo que el modelo predijo en cada momento — que es lo que despues
+permite mostrar que tan bien viene acertando.
 
 ## Que hace cada etapa
 
@@ -57,6 +92,35 @@ modelo: es una opinion con decimales.**
 probabilidades del modelo, y cuenta quien salio campeon. Hace falta porque en
 Argentina el campeon no es el que mas puntos hace: hay que llegar a los playoffs y
 despues ganar cuatro partidos unicos.
+
+**`export.py` — exportar.** Junta todo y escribe los JSON que consume el sitio.
+La regla que ordena esto: **una fuente, dos consumidores**. Los mismos archivos van
+a alimentar despues el generador de placas para redes. Si cada uno calculara sus
+propios numeros, tarde o temprano publicarian dos verdades distintas el mismo dia.
+
+## El sitio
+
+Tres pantallas, en `web/`:
+
+| Ruta | Que muestra |
+|---|---|
+| `/` | los partidos de la fecha y, sin scrollear, quien puede salir campeon |
+| `/titulo` | los 30 equipos con su chance de campeon y de playoffs |
+| `/equipo/[slug]` | ataque, defensa y recorrido posible de un equipo |
+| `/partido/[slug]` | 1X2, marcadores mas probables y goles esperados |
+
+Next.js con generacion estatica: el build produce 47 paginas de HTML puro. Sin
+servidor, sin base de datos, sin libreria de graficos — los tres componentes
+visuales (barra de tres tramos, chip de color, celdas de marcadores) son CSS.
+
+Tres decisiones que estan en el codigo y conviene no deshacer sin pensarlo:
+
+- **La barra de probabilidad usa colores fijos, no los del club.** River vs
+  Independiente son los dos rojos: con colores de equipo quedaria rojo-gris-rojo.
+- **Los chips llevan borde.** Riestra y Central Cordoba son de negro y sobre el
+  fondo oscuro serian invisibles; a los de blanco puro les pasa al reves.
+- **Los partidos parejos se marcan.** Cinco de cada doce lo son, y de reojo un
+  34/33/34 se lee igual que un 68/21/11 si nadie lo aclara.
 
 ## Como anda el modelo hoy
 
@@ -102,21 +166,37 @@ Un error ruidoso hoy vale mas que un dato sucio que no ves durante seis meses.
 
 ```
 datafut/
-├── data/
-│   ├── raw/            CSV original descargado    (no se versiona)
-│   └── clean/          matches.csv + report.md    (no se versiona)
-├── reference/
-│   ├── team_names.csv        tabla de nombres     (SI se versiona)
-│   ├── zonas.csv             que equipo en que zona (SI se versiona)
-│   └── formato-torneos.md    como se juega        (SI se versiona)
-└── src/
-    ├── ingest.py
-    ├── clean.py
-    └── report.py
+├── .github/workflows/
+│   └── actualizar.yml     corre el pipeline solo, cada lunes
+├── data/                  intermedios del pipeline   (NO se versiona)
+│   ├── raw/               CSV original y fixture
+│   ├── clean/             matches.csv + report.md
+│   └── outputs/           modelo.json, simulacion.*
+├── docs/                  decisiones y handoff de diseno
+├── reference/                                        (SI se versiona)
+│   ├── team_names.csv     tabla de nombres
+│   ├── zonas.csv          que equipo en que zona
+│   ├── colores.csv        los dos colores de cada club
+│   └── formato-torneos.md como se juega el torneo
+├── src/
+│   ├── ingest.py · clean.py · report.py
+│   ├── model.py · evaluate.py · simulate.py
+│   └── export.py
+└── web/                   el sitio (Next.js)
+    ├── app/               las cuatro rutas
+    ├── components/        Chip · BarraProb · FilaPartido
+    ├── lib/datos.ts       lee los JSON
+    └── data/              JSON generados         (SI se versiona)
 ```
 
-`data/` no se versiona porque se regenera con un comando. `reference/` si, porque
-es trabajo manual que no se puede reconstruir solo.
+**Que se versiona y que no:** se versiona lo que **no se puede regenerar**
+(`reference/`, que es trabajo manual) y lo que **necesita el deploy**
+(`web/data/`, porque Vercel construye desde el repositorio). No se versiona
+`data/`, que se rehace con un comando.
+
+Ojo con un detalle que ya rompio una vez: la regla del `.gitignore` es `/data/`
+con barra al principio. Sin la barra tambien matchea `web/data/`, los JSON del
+sitio no llegan al repositorio y el build de Vercel falla.
 
 ## Salida
 
@@ -140,5 +220,20 @@ El baseline contra el que se va a medir el modelo es `avgc*`.
 
 ## Estado
 
-Hecho: ingesta, limpieza y reporte.
-Siguiente: modelo Dixon-Coles. Nada de eso empieza hasta entender el reporte.
+Hecho: pipeline de datos, modelo, evaluacion, simulacion, sitio y actualizacion
+automatica. La v1 esta completa salvo el deploy.
+
+Pendiente:
+
+- **Deploy en Vercel.** Conectar el repositorio y apuntar el proyecto a `web/`.
+- **Elegir el nombre definitivo** y verificar dominio y handles de redes libres.
+- **Generador de placas para redes** (v1.5). Lee los mismos JSON de `web/data/`.
+
+Problemas abiertos, documentados en `CLAUDE.md` y `reference/formato-torneos.md`:
+
+- Los cruces interzonales del Clausura no se conocen de antemano: la simulacion
+  usa los del Apertura con la localia invertida. Es un supuesto, esta marcado.
+- Falta al menos un partido en el Apertura 2026 (`Estudiantes (LP)` vs `Lanus`).
+  La fuente no es perfecta y conviene un chequeo automatico de completitud.
+- El reglamento de descensos cambio tres veces en tres anios: **reverificar cada
+  temporada** antes de calcular probabilidad de descenso.
