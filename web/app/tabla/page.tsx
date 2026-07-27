@@ -58,6 +58,16 @@ export default function Tabla() {
           Baja: chance de descender. Bajan dos, el último de la tabla de
           promedios (2024-2026) y el último de la anual.
         </p>
+        {/* La línea que explica el xG. Discreta, pero al lado de la columna que
+            lo usa: mucha gente ve "xGdif" por primera vez acá. */}
+        <p className="sm:col-span-2">
+          <strong className="font-semibold text-[#a09a90]">xGdif:</strong> goles
+          esperados a favor menos en contra. A cada remate se le pone la
+          probabilidad de terminar en gol según desde dónde se pateó, y se
+          suman. La DG dice qué pasó; el xGdif, cada cuánto tendría que pasar.
+          Cuando los dos no coinciden, el equipo viene desperdiciando o teniendo
+          suerte. Datos de FotMob; la ficha de cada equipo lo abre entero.
+        </p>
       </div>
     </div>
   );

@@ -5,8 +5,12 @@ import { FilaPartido } from "@/components/FilaPartido";
 import { Escenarios } from "@/components/Escenarios";
 import { Racha } from "@/components/Racha";
 import { DistribucionPuntos } from "@/components/DistribucionPuntos";
+import { StatsAvanzadas } from "@/components/StatsAvanzadas";
 import {
   fichas,
+  promedioLiga,
+  maximoLiga,
+  totalConStats,
   puntosDeRacha,
   torneo,
   temporada,
@@ -24,6 +28,19 @@ import {
   clasificanPorZona,
   metadatos,
 } from "@/lib/datos";
+
+/**
+ * Techo de cada barra comparativa: el mejor de la liga en esa métrica.
+ * Se calcula una sola vez para todas las páginas, no por equipo.
+ */
+const maximosBarras: Record<string, number> = {
+  posesion: maximoLiga("posesion"),
+  remates: maximoLiga("remates"),
+  chances_claras: maximoLiga("chances_claras"),
+  duelos_ganados: maximoLiga("duelos_ganados"),
+  toques_en_area_rival: maximoLiga("toques_en_area_rival"),
+  pases_campo_rival: maximoLiga("pases_campo_rival"),
+};
 
 /** Pre-genera una página por equipo en tiempo de build: no hay servidor. */
 export function generateStaticParams() {
@@ -77,7 +94,10 @@ export default async function PaginaEquipo({
             {pos && (
               <>
                 {" · "}
-                <Link href="/tabla" className="hover:text-[#ffbe3d]">
+                <Link
+                  href="/tabla"
+                  className="enlace-ficha transition-colors hover:text-[#ffbe3d]"
+                >
                   {pos.puesto}° · {pos.pts} pts
                 </Link>
                 {/* Con 0 partidos jugados, "0-0-0 · 0:0" es ruido. */}
@@ -152,7 +172,10 @@ export default async function PaginaEquipo({
               <p className="num mt-0.5 text-[9.5px] text-[#6d6862]">
                 {esc.fecha}
                 {esc.hora ? ` · ${esc.hora}` : ""} ·{" "}
-                <Link href={`/equipo/${esc.rival_slug}`} className="hover:text-[#ffbe3d]">
+                <Link
+                  href={`/equipo/${esc.rival_slug}`}
+                  className="enlace-ficha transition-colors hover:text-[#ffbe3d]"
+                >
                   ver a {esc.rival} →
                 </Link>
               </p>
@@ -226,7 +249,9 @@ export default async function PaginaEquipo({
                       <Escudo slug={f.slug} colores={f.colores} size={14} />
                       <span
                         className={`truncate text-[12.5px] ${
-                          yo ? "font-semibold text-[#ffbe3d]" : ""
+                          // El propio equipo no lleva subrayado de link: es la
+                          // página donde ya estás, no un lugar al que ir.
+                          yo ? "font-semibold text-[#ffbe3d]" : "enlace-ficha"
                         }`}
                       >
                         {f.equipo}
@@ -255,6 +280,33 @@ export default async function PaginaEquipo({
           </section>
         )}
       </div>
+
+      {/* --- Estadísticas avanzadas ---
+          Va a lo ancho y no adentro de una columna: son seis barras
+          comparativas y apretadas a media página se dejan de leer.
+
+          Si el equipo no tiene datos cargados NO se inventa nada: se dice que
+          no están y la página sigue funcionando igual. */}
+      <section className="mt-9 border-t border-[#2e2b27] pt-6">
+        {e.stats ? (
+          <StatsAvanzadas
+            stats={e.stats}
+            promedio={promedioLiga}
+            maximos={maximosBarras}
+            totalConStats={totalConStats}
+          />
+        ) : (
+          <>
+            <h2 className="etiqueta">Lo que genera y lo que concede</h2>
+            <p className="num mt-1.5 max-w-[64ch] text-[10px] leading-relaxed text-[#6d6862]">
+              Todavía no hay estadísticas avanzadas cargadas para {e.equipo}.
+              Cuando las haya van a aparecer acá: goles esperados a favor y en
+              contra, posesión y cómo genera situaciones. No se estiman ni se
+              rellenan con el promedio de la liga.
+            </p>
+          </>
+        )}
+      </section>
 
       {/* --- Cómo viene y cómo puede terminar --- */}
       <div className="mt-9 grid gap-8 lg:grid-cols-2 lg:gap-10">
@@ -287,10 +339,13 @@ export default async function PaginaEquipo({
                   {u.condicion === "local" ? "L" : "V"}
                 </span>
                 <span className="min-w-0 flex-1 truncate text-[12px] text-[#a09a90]">
-                  {u.rival}
+                  <span className="enlace-ficha">{u.rival}</span>
                 </span>
                 <span className="num shrink-0 text-[9px] text-[#6d6862]">
                   {u.fecha}
+                </span>
+                <span aria-hidden className="chevron shrink-0 text-[11px]">
+                  ›
                 </span>
               </Link>
             ))}

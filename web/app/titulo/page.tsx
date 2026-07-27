@@ -32,6 +32,12 @@ export default function Titulo() {
           Ataque y defensa: goles que hace y que evita respecto del promedio de
           la liga. Conv.: título dividido playoffs.
         </p>
+        <p className="sm:col-span-2">
+          <strong className="font-semibold text-[#a09a90]">xGdif:</strong> goles
+          esperados a favor menos en contra, en toda la temporada. Ataque y
+          defensa salen del modelo; el xGdif sale de lo que el equipo generó en
+          la cancha. Datos de FotMob.
+        </p>
       </div>
     </div>
   );

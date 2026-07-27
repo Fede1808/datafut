@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Escudo } from "./Escudo";
 import { BarraSimple } from "./BarraProb";
+import { BotonOrden } from "./BotonOrden";
 import type { FilaCompleta } from "@/lib/datos";
 
 /**
@@ -19,33 +20,48 @@ import type { FilaCompleta } from "@/lib/datos";
  * el reparto de sobrante del algoritmo de tablas desalinea las columnas.
  */
 
-type Fila = FilaCompleta & { atk: number; def: number; conv: number };
+type Fila = FilaCompleta & {
+  atk: number;
+  def: number;
+  conv: number;
+  xgdif: number;
+};
 
-type Clave = "pts" | "atk" | "def" | "playoffs" | "campeon" | "conv";
+type Clave = "pts" | "atk" | "def" | "xgdif" | "playoffs" | "campeon" | "conv";
 
 const COLS: { clave: Clave; label: string; titulo: string; ancho: string; opcional?: boolean }[] = [
-  { clave: "pts", label: "Pts", titulo: "Puntos en la tabla", ancho: "w-8" },
+  { clave: "pts", label: "Pts", titulo: "Puntos en la tabla", ancho: "w-10" },
   {
     clave: "atk",
     label: "Ataque",
     titulo: "Goles que hace respecto del promedio de la liga",
-    ancho: "w-12",
+    ancho: "w-[62px]",
     opcional: true,
   },
   {
     clave: "def",
     label: "Defensa",
     titulo: "Goles que evita respecto del promedio de la liga",
-    ancho: "w-12",
+    ancho: "w-[66px]",
     opcional: true,
   },
-  { clave: "playoffs", label: "Playoffs", titulo: "Probabilidad de clasificar", ancho: "w-12" },
-  { clave: "campeon", label: "Campeón", titulo: "Probabilidad de salir campeón", ancho: "w-14" },
+  {
+    // Contracara de ataque/defensa: esos dos salen del modelo, éste sale de lo
+    // que realmente generó el equipo en la cancha. Cuando no coinciden, ahí
+    // está la discusión.
+    clave: "xgdif",
+    label: "xGdif",
+    titulo: "Goles esperados a favor menos en contra, en toda la temporada",
+    ancho: "w-[58px]",
+    opcional: true,
+  },
+  { clave: "playoffs", label: "Playoffs", titulo: "Probabilidad de clasificar", ancho: "w-[62px]" },
+  { clave: "campeon", label: "Campeón", titulo: "Probabilidad de salir campeón", ancho: "w-[64px]" },
   {
     clave: "conv",
     label: "Conv.",
     titulo: "Campeón dividido playoffs: cuánto convierte una clasificación en título",
-    ancho: "w-12",
+    ancho: "w-[58px]",
     opcional: true,
   },
 ];
@@ -62,6 +78,7 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
         atk: (Math.exp(f.ataque) - 1) * 100,
         def: (Math.exp(f.defensa) - 1) * 100,
         conv: f.playoffs > 0 ? (f.campeon / f.playoffs) * 100 : 0,
+        xgdif: f.xg_dif,
       })),
     [filas],
   );
@@ -81,6 +98,10 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
 
   const maxCampeon = Math.max(...datos.map((f) => f.campeon), 0.01);
 
+  // Cambia con cada reordenamiento: remonta las filas y vuelve a correr la
+  // animación de entrada, que es lo que hace legible que la tabla se movió.
+  const firma = `${zona}-${orden}-${asc}`;
+
   function ordenar(c: Clave) {
     if (c === orden) setAsc(!asc);
     else {
@@ -93,36 +114,35 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
   }
 
   return (
-    <div className="max-w-[760px]">
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-2">
-        <div className="flex gap-1" role="group" aria-label="Filtrar por zona">
+    <div className="max-w-[900px]">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-2.5">
+        <div className="flex gap-1.5" role="group" aria-label="Filtrar por zona">
           {["todas", ...zonasDisponibles].map((z) => (
             <button
               key={z}
               type="button"
               onClick={() => setZona(z)}
               aria-pressed={zona === z}
-              className={`num border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition-colors ${
-                zona === z
-                  ? "border-[#ffbe3d] bg-[#ffbe3d] font-semibold text-[#12110f]"
-                  : "border-[#2e2b27] text-[#a09a90] hover:border-[#423e38] hover:text-[#f4f1ea]"
-              }`}
+              className="pestania pestania-chica"
             >
               {z === "todas" ? "Todas" : `Zona ${z}`}
             </button>
           ))}
         </div>
-        <p className="num text-[9.5px] text-[#6d6862]">{visibles.length} equipos</p>
+        <p className="num text-[9.5px] text-[#6d6862]">
+          {visibles.length} equipos · tocá un encabezado{" "}
+          <span aria-hidden>▲▼</span> para ordenar
+        </p>
       </div>
 
       <div role="table" aria-label="Probabilidad de campeón y de playoffs por equipo">
         <div
           role="row"
-          className="flex items-center gap-1.5 border-t-2 border-b border-[#f4f1ea] border-b-[#2e2b27] py-2"
+          className="flex items-center gap-1.5 border-t-2 border-b border-[#f4f1ea] border-b-[#2e2b27] py-1"
         >
           {/* # es la posición en el orden aplicado, no el puesto de la tabla:
               con las dos zonas juntas el puesto se repite. El puesto real va
-              pegado al nombre, como "A12". */}
+              pegado al nombre, como "A12". No es ordenable: ES el orden. */}
           <span role="columnheader" className="etiqueta w-6 shrink-0 text-right">
             #
           </span>
@@ -130,78 +150,92 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
             Equipo
           </span>
           {COLS.map((c) => (
-            <button
+            <BotonOrden
               key={c.clave}
-              type="button"
-              role="columnheader"
-              aria-sort={estado(c.clave)}
-              title={c.titulo}
+              label={c.label}
+              titulo={c.titulo}
+              estado={estado(c.clave)}
+              ancho={c.ancho}
               onClick={() => ordenar(c.clave)}
-              className={`th-orden ${c.ancho} shrink-0 text-right ${
-                c.opcional ? "hidden sm:block" : ""
-              }`}
-            >
-              {c.label}
-            </button>
+              className={c.opcional ? "hidden sm:flex" : ""}
+              respetarMayusculas={c.clave === "xgdif"}
+            />
           ))}
         </div>
 
-        {visibles.map((f, i) => (
-          <Link
-            key={f.slug}
-            href={`/equipo/${f.slug}`}
-            role="row"
-            className="fila flex items-center gap-1.5 border-b border-[#201e1b] py-2"
-          >
-            <span role="cell" className="num w-6 shrink-0 text-right text-[10px] text-[#6d6862]">
-              {i + 1}
-            </span>
-            <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
-              <Escudo slug={f.slug} colores={f.colores} size={16} />
-              <span className="truncate text-[13px]">{f.equipo}</span>
-              <span
-                className="num shrink-0 text-[9px] text-[#423e38]"
-                title={`${f.puesto}° de la zona ${f.zona}`}
-              >
-                {f.zona}
-                {f.puesto}
-              </span>
-            </span>
-
-            <span role="cell" className="num w-8 shrink-0 text-right text-[12px] text-[#a09a90]">
-              {f.pts}
-            </span>
-            <Delta valor={f.atk} />
-            <Delta valor={f.def} />
-            <span role="cell" className="num w-12 shrink-0 text-right text-[12.5px]">
-              {f.playoffs.toFixed(1)}
-            </span>
-            <span role="cell" className="w-14 shrink-0 text-right">
-              <span className="num block text-[13px] font-semibold text-[#ffbe3d]">
-                {f.campeon.toFixed(2)}
-              </span>
-              <span className="ml-auto block w-fit">
-                <BarraSimple valor={f.campeon} maximo={maxCampeon} ancho={50} />
-              </span>
-            </span>
-            <span
-              role="cell"
-              className="num hidden w-12 shrink-0 text-right text-[11.5px] text-[#6d6862] sm:block"
+        <div key={firma}>
+          {visibles.map((f, i) => (
+            <Link
+              key={f.slug}
+              href={`/equipo/${f.slug}`}
+              role="row"
+              style={{ animationDelay: `${Math.min(i, 14) * 14}ms` }}
+              className="fila fila-anim flex items-center gap-1.5 border-b border-[#201e1b] py-2"
             >
-              {f.conv.toFixed(1)}%
-            </span>
-          </Link>
-        ))}
+              <span role="cell" className="num w-6 shrink-0 text-right text-[10px] text-[#6d6862]">
+                {i + 1}
+              </span>
+              <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
+                <Escudo slug={f.slug} colores={f.colores} size={16} />
+                <span className="enlace-ficha truncate text-[13px]">{f.equipo}</span>
+                <span
+                  className="num shrink-0 text-[9px] text-[#423e38]"
+                  title={`${f.puesto}° de la zona ${f.zona}`}
+                >
+                  {f.zona}
+                  {f.puesto}
+                </span>
+              </span>
+
+              <span role="cell" className="num w-10 shrink-0 text-right text-[12px] text-[#a09a90]">
+                {f.pts}
+              </span>
+              <Delta valor={f.atk} ancho="w-[62px]" />
+              <Delta valor={f.def} ancho="w-[66px]" />
+              <span
+                role="cell"
+                className={`num hidden w-[58px] shrink-0 text-right text-[11.5px] sm:block ${
+                  !f.tieneStats
+                    ? "text-[#423e38]"
+                    : f.xgdif >= 0
+                      ? "text-[#5cc27e]"
+                      : "text-[#f2607d]"
+                }`}
+              >
+                {!f.tieneStats
+                  ? "—"
+                  : `${f.xgdif > 0 ? "+" : f.xgdif < 0 ? "−" : "±"}${Math.abs(f.xgdif).toFixed(1)}`}
+              </span>
+              <span role="cell" className="num w-[62px] shrink-0 text-right text-[12.5px]">
+                {f.playoffs.toFixed(1)}
+              </span>
+              <span role="cell" className="w-[64px] shrink-0 text-right">
+                <span className="num block text-[13px] font-semibold text-[#ffbe3d]">
+                  {f.campeon.toFixed(2)}
+                </span>
+                <span className="ml-auto block w-fit">
+                  <BarraSimple valor={f.campeon} maximo={maxCampeon} ancho={50} />
+                </span>
+              </span>
+              <span
+                role="cell"
+                className="num hidden w-[58px] shrink-0 text-right text-[11.5px] text-[#6d6862] sm:block"
+              >
+                {f.conv.toFixed(1)}%
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-function Delta({ valor }: { valor: number }) {
+function Delta({ valor, ancho }: { valor: number; ancho: string }) {
   return (
     <span
       role="cell"
-      className={`num hidden w-12 shrink-0 text-right text-[11.5px] sm:block ${
+      className={`num hidden ${ancho} shrink-0 text-right text-[11.5px] sm:block ${
         valor >= 0 ? "text-[#5cc27e]" : "text-[#f2607d]"
       }`}
     >

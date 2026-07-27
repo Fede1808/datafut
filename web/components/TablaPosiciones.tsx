@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Escudo } from "./Escudo";
 import { BarraSimple } from "./BarraProb";
 import { Racha } from "./Racha";
+import { BotonOrden } from "./BotonOrden";
 import type { FilaCompleta } from "@/lib/datos";
 
 /**
@@ -33,6 +34,7 @@ type Clave = keyof Pick<
   | "gc"
   | "dif"
   | "pts"
+  | "xg_dif"
   | "playoffs"
   | "campeon"
   | "descenso"
@@ -48,14 +50,26 @@ const COLUMNAS: {
   /** Se esconde en pantallas chicas. */
   opcional?: boolean;
 }[] = [
-  { clave: "pj", label: "PJ", titulo: "Partidos jugados", ancho: "w-7", desc: true },
-  { clave: "pg", label: "G", titulo: "Ganados", ancho: "w-6", desc: true, opcional: true },
-  { clave: "pe", label: "E", titulo: "Empatados", ancho: "w-6", desc: true, opcional: true },
-  { clave: "pp", label: "P", titulo: "Perdidos", ancho: "w-6", desc: true, opcional: true },
-  { clave: "gf", label: "GF", titulo: "Goles a favor", ancho: "w-7", desc: true, opcional: true },
-  { clave: "gc", label: "GC", titulo: "Goles en contra", ancho: "w-7", desc: false, opcional: true },
+  { clave: "pj", label: "PJ", titulo: "Partidos jugados", ancho: "w-8", desc: true },
+  { clave: "pg", label: "G", titulo: "Ganados", ancho: "w-8", desc: true, opcional: true },
+  { clave: "pe", label: "E", titulo: "Empatados", ancho: "w-8", desc: true, opcional: true },
+  { clave: "pp", label: "P", titulo: "Perdidos", ancho: "w-8", desc: true, opcional: true },
+  { clave: "gf", label: "GF", titulo: "Goles a favor", ancho: "w-9", desc: true, opcional: true },
+  { clave: "gc", label: "GC", titulo: "Goles en contra", ancho: "w-9", desc: false, opcional: true },
   { clave: "dif", label: "DG", titulo: "Diferencia de gol", ancho: "w-9", desc: true },
-  { clave: "pts", label: "PTS", titulo: "Puntos", ancho: "w-9", desc: true },
+  { clave: "pts", label: "PTS", titulo: "Puntos", ancho: "w-10", desc: true },
+  {
+    // La única columna de stats avanzadas que entra en la tabla sin saturarla.
+    // Se eligió xGdif y no xG a secas porque resume ataque y defensa en un
+    // número, igual que la DG de al lado — y la comparación entre las dos es
+    // justamente la lectura interesante: quién merece más de lo que le sale.
+    clave: "xg_dif",
+    label: "xGdif",
+    titulo: "Goles esperados a favor menos en contra, en toda la temporada",
+    ancho: "w-14",
+    desc: true,
+    opcional: true,
+  },
 ];
 
 export function TablaPosiciones({
@@ -89,6 +103,11 @@ export function TablaPosiciones({
   // La línea de corte sólo tiene sentido con el orden natural de una zona.
   const cortePosible = orden === "puesto" && asc && zona !== "todas";
 
+  // Cambia con cada reordenamiento y se usa como `key` del bloque de filas:
+  // React remonta las filas y la animación de entrada vuelve a correr. Es lo
+  // que hace visible que la tabla se acaba de reordenar en vez de saltar.
+  const firma = `${zona}-${orden}-${asc}`;
+
   function ordenar(c: Clave, desc: boolean) {
     if (c === orden) setAsc(!asc);
     else {
@@ -104,60 +123,60 @@ export function TablaPosiciones({
   return (
     // Ancho acotado: una grilla de números estirada a 1150px deja tanto aire
     // entre columnas que las filas dejan de leerse como filas.
-    <div className="max-w-[920px]">
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-2">
-        <div className="flex gap-1" role="group" aria-label="Filtrar por zona">
+    <div className="max-w-[1000px]">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-2.5">
+        <div className="flex gap-1.5" role="group" aria-label="Filtrar por zona">
           {[...zonas, "todas"].map((z) => (
             <button
               key={z}
               type="button"
               onClick={() => setZona(z)}
               aria-pressed={zona === z}
-              className={`num border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] transition-colors ${
-                zona === z
-                  ? "border-[#ffbe3d] bg-[#ffbe3d] font-semibold text-[#12110f]"
-                  : "border-[#2e2b27] text-[#a09a90] hover:border-[#423e38] hover:text-[#f4f1ea]"
-              }`}
+              className="pestania pestania-chica"
             >
               {z === "todas" ? "Todas" : `Zona ${z}`}
             </button>
           ))}
         </div>
-        <p className="num text-[9.5px] text-[#6d6862]">Tocá una columna para ordenar</p>
+        {/* La instrucción explícita queda igual, pero ahora es refuerzo y no la
+            única pista: los encabezados se anuncian solos. */}
+        <p className="num text-[9.5px] text-[#6d6862]">
+          Tocá un encabezado <span aria-hidden>▲▼</span> para ordenar
+        </p>
       </div>
 
-      <div role="table" aria-label="Posiciones y probabilidades por equipo">
+      {/* Red de seguridad para pantallas muy angostas: la grilla tiene un ancho
+          mínimo y, si no entra, el bloque scrollea en horizontal. Sin esto la
+          columna del nombre —la única flexible— se comprime hasta desaparecer y
+          quedan filas de números sin equipo, que es peor que scrollear. */}
+      <div className="overflow-x-auto">
+      <div role="table" aria-label="Posiciones y probabilidades por equipo" className="min-w-[458px]">
         {/* Cabecera */}
         <div
           role="row"
-          className="flex items-center gap-1.5 border-t-2 border-b border-[#f4f1ea] border-b-[#2e2b27] py-2"
+          className="flex items-center gap-1.5 border-t-2 border-b border-[#f4f1ea] border-b-[#2e2b27] py-1"
         >
-          <button
-            type="button"
-            role="columnheader"
-            aria-sort={estado("puesto")}
+          <BotonOrden
+            label="#"
+            titulo="Puesto en la zona"
+            estado={estado("puesto")}
+            ancho="w-8"
             onClick={() => ordenar("puesto", false)}
-            className="th-orden w-6 shrink-0 text-right"
-          >
-            #
-          </button>
+          />
           <span role="columnheader" className="etiqueta min-w-0 flex-1 text-left">
             Equipo
           </span>
           {COLUMNAS.map((c) => (
-            <button
+            <BotonOrden
               key={c.clave}
-              type="button"
-              role="columnheader"
-              aria-sort={estado(c.clave)}
-              title={c.titulo}
+              label={c.label}
+              titulo={c.titulo}
+              estado={estado(c.clave)}
+              ancho={c.ancho}
               onClick={() => ordenar(c.clave, c.desc)}
-              className={`th-orden ${c.ancho} shrink-0 text-right ${
-                c.opcional ? "hidden sm:block" : ""
-              }`}
-            >
-              {c.label}
-            </button>
+              className={c.opcional ? "hidden sm:flex" : ""}
+              respetarMayusculas={c.clave === "xg_dif"}
+            />
           ))}
           <span
             role="columnheader"
@@ -166,124 +185,139 @@ export function TablaPosiciones({
           >
             Forma
           </span>
-          <button
-            type="button"
-            role="columnheader"
-            aria-sort={estado("descenso")}
-            title="Probabilidad de descender: último de la tabla de promedios o de la anual"
+          <BotonOrden
+            label="Baja"
+            titulo="Probabilidad de descender: último de la tabla de promedios o de la anual"
+            estado={estado("descenso")}
+            ancho="w-11"
             onClick={() => ordenar("descenso", true)}
-            className="th-orden w-[44px] shrink-0 text-right"
-          >
-            Baja
-          </button>
-          <button
-            type="button"
-            role="columnheader"
-            aria-sort={estado("playoffs")}
-            title="Probabilidad de clasificar a playoffs"
+          />
+          <BotonOrden
+            label="Playoff"
+            titulo="Probabilidad de clasificar a playoffs"
+            estado={estado("playoffs")}
+            ancho="w-[56px]"
             onClick={() => ordenar("playoffs", true)}
-            className="th-orden w-[52px] shrink-0 text-right"
-          >
-            Playoff
-          </button>
-          <button
-            type="button"
-            role="columnheader"
-            aria-sort={estado("campeon")}
-            title="Probabilidad de salir campeón"
+          />
+          <BotonOrden
+            label="Campeón"
+            titulo="Probabilidad de salir campeón"
+            estado={estado("campeon")}
+            ancho="w-[58px]"
             onClick={() => ordenar("campeon", true)}
-            className="th-orden w-[52px] shrink-0 text-right"
-          >
-            Campeón
-          </button>
+          />
         </div>
 
         {/* Filas */}
-        {visibles.map((f, i) => {
-          const dentro = f.puesto <= clasifican;
-          const corte =
-            cortePosible && f.puesto === clasifican && i + 1 < visibles.length;
-          return (
-            <Link
-              key={f.slug}
-              href={`/equipo/${f.slug}`}
-              role="row"
-              className={`fila flex items-center gap-1.5 py-2 ${
-                corte ? "border-b-2 border-[#5cc27e]" : "border-b border-[#201e1b]"
-              }`}
-            >
-              <span
-                role="cell"
-                className={`num w-6 shrink-0 text-right text-[11px] ${
-                  dentro ? "text-[#f4f1ea]" : "text-[#6d6862]"
+        <div key={firma}>
+          {visibles.map((f, i) => {
+            const dentro = f.puesto <= clasifican;
+            const corte =
+              cortePosible && f.puesto === clasifican && i + 1 < visibles.length;
+            return (
+              <Link
+                key={f.slug}
+                href={`/equipo/${f.slug}`}
+                role="row"
+                // El escalonado se corta a los 14 elementos: con 30 filas a
+                // 14ms cada una, la última entraría casi medio segundo tarde y
+                // eso ya no es feedback, es esperar.
+                style={{ animationDelay: `${Math.min(i, 14) * 14}ms` }}
+                className={`fila fila-anim flex items-center gap-1.5 py-2 ${
+                  corte ? "border-b-2 border-[#5cc27e]" : "border-b border-[#201e1b]"
                 }`}
               >
-                {f.puesto}
-              </span>
-              <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
-                <Escudo slug={f.slug} colores={f.colores} size={16} />
-                <span className="truncate text-[13px]">{f.equipo}</span>
-                {zona === "todas" && (
-                  <span className="num shrink-0 text-[9px] text-[#423e38]">
-                    {f.zona}
-                  </span>
-                )}
-              </span>
-              {COLUMNAS.map((c) => (
                 <span
-                  key={c.clave}
                   role="cell"
-                  className={`num ${c.ancho} shrink-0 text-right text-[12px] ${
-                    c.clave === "pts"
-                      ? "font-semibold text-[#f4f1ea]"
-                      : "text-[#a09a90]"
-                  } ${c.opcional ? "hidden sm:block" : ""}`}
+                  className={`num w-8 shrink-0 text-right text-[11px] ${
+                    dentro ? "text-[#f4f1ea]" : "text-[#6d6862]"
+                  }`}
                 >
-                  {c.clave === "dif" && f.dif > 0 ? "+" : ""}
-                  {f[c.clave]}
+                  {f.puesto}
                 </span>
-              ))}
-              <span
-                role="cell"
-                className="hidden w-11 shrink-0 justify-end md:flex"
-              >
-                <Racha ultimos={f.ultimos} ancho={5} separacion={2} alto={11} />
-              </span>
-              {/* El descenso sólo se escribe cuando existe: una columna con
-                  veintiocho "0.0" convierte en ruido el único número que
-                  importa mirar acá. */}
-              <span
-                role="cell"
-                className={`num w-[44px] shrink-0 text-right text-[12px] ${
-                  f.descenso >= 10 ? "text-[#f2607d]" : "text-[#a09a90]"
-                }`}
-              >
-                {f.descenso >= 0.05 ? f.descenso.toFixed(1) : "—"}
-              </span>
-              <span role="cell" className="w-[52px] shrink-0 text-right">
-                <span className="num block text-[12px] text-[#f4f1ea]">
-                  {f.playoffs.toFixed(1)}
+                <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
+                  <Escudo slug={f.slug} colores={f.colores} size={16} />
+                  {/* Subrayado punteado permanente: sin él, el nombre parece
+                      texto y nadie descubre que hay una ficha atrás. */}
+                  <span className="enlace-ficha truncate text-[13px]">{f.equipo}</span>
+                  {zona === "todas" && (
+                    <span className="num shrink-0 text-[9px] text-[#423e38]">
+                      {f.zona}
+                    </span>
+                  )}
                 </span>
-                <span className="ml-auto block w-fit">
-                  <BarraSimple
-                    valor={f.playoffs}
-                    maximo={maxPlayoffs}
-                    color="#5cc27e"
-                    ancho={44}
-                  />
+                {COLUMNAS.map((c) => (
+                  <span
+                    key={c.clave}
+                    role="cell"
+                    className={`num ${c.ancho} shrink-0 text-right text-[12px] ${
+                      c.clave === "pts"
+                        ? "font-semibold text-[#f4f1ea]"
+                        : c.clave === "xg_dif"
+                          ? f.xg_dif >= 0
+                            ? "text-[#5cc27e]"
+                            : "text-[#f2607d]"
+                          : "text-[#a09a90]"
+                    } ${c.opcional ? "hidden sm:block" : ""}`}
+                  >
+                    {c.clave === "xg_dif" ? (
+                      // Sin stats no se inventa un cero: se dice que no hay.
+                      !f.tieneStats ? (
+                        <span className="text-[#423e38]">—</span>
+                      ) : (
+                        `${f.xg_dif > 0 ? "+" : f.xg_dif < 0 ? "−" : "±"}${Math.abs(f.xg_dif).toFixed(1)}`
+                      )
+                    ) : (
+                      <>
+                        {c.clave === "dif" && f.dif > 0 ? "+" : ""}
+                        {f[c.clave]}
+                      </>
+                    )}
+                  </span>
+                ))}
+                <span
+                  role="cell"
+                  className="hidden w-11 shrink-0 justify-end md:flex"
+                >
+                  <Racha ultimos={f.ultimos} ancho={5} separacion={2} alto={11} />
                 </span>
-              </span>
-              <span role="cell" className="w-[52px] shrink-0 text-right">
-                <span className="num block text-[12px] font-semibold text-[#ffbe3d]">
-                  {f.campeon.toFixed(1)}
+                {/* El descenso sólo se escribe cuando existe: una columna con
+                    veintiocho "0.0" convierte en ruido el único número que
+                    importa mirar acá. */}
+                <span
+                  role="cell"
+                  className={`num w-11 shrink-0 text-right text-[12px] ${
+                    f.descenso >= 10 ? "text-[#f2607d]" : "text-[#a09a90]"
+                  }`}
+                >
+                  {f.descenso >= 0.05 ? f.descenso.toFixed(1) : "—"}
                 </span>
-                <span className="ml-auto block w-fit">
-                  <BarraSimple valor={f.campeon} maximo={maxCampeon} ancho={44} />
+                <span role="cell" className="w-[56px] shrink-0 text-right">
+                  <span className="num block text-[12px] text-[#f4f1ea]">
+                    {f.playoffs.toFixed(1)}
+                  </span>
+                  <span className="ml-auto block w-fit">
+                    <BarraSimple
+                      valor={f.playoffs}
+                      maximo={maxPlayoffs}
+                      color="#5cc27e"
+                      ancho={44}
+                    />
+                  </span>
                 </span>
-              </span>
-            </Link>
-          );
-        })}
+                <span role="cell" className="w-[58px] shrink-0 text-right">
+                  <span className="num block text-[12px] font-semibold text-[#ffbe3d]">
+                    {f.campeon.toFixed(1)}
+                  </span>
+                  <span className="ml-auto block w-fit">
+                    <BarraSimple valor={f.campeon} maximo={maxCampeon} ancho={44} />
+                  </span>
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
       </div>
     </div>
   );

@@ -97,6 +97,51 @@ export type Rendimiento = {
  */
 export type PuntosDist = { desde: number; probs: number[] };
 
+/**
+ * Estadísticas avanzadas de la temporada, de FotMob.
+ *
+ * QUÉ ES EL xG. Cada remate tiene una probabilidad de terminar en gol según
+ * desde dónde y cómo se pateó. Sumadas, esas probabilidades dan los "goles
+ * esperados" del equipo. Dicho corto: los goles cuentan QUÉ PASÓ, el xG cuenta
+ * CADA CUÁNTO TENDRÍA QUE PASAR.
+ *
+ * `sobre_xg` = goles − xG. Positivo quiere decir que el equipo metió más de lo
+ * que la calidad de sus situaciones sugiere (le está saliendo todo, y eso suele
+ * corregirse); negativo, que desperdicia peligro generado.
+ *
+ * ATENCIÓN CON LOS NOMBRES: `pases_campo_rival` y `toques_en_area_rival` NO son
+ * "pases progresivos". Los pases progresivos eran una métrica definida por Opta
+ * y desaparecieron con su feed en enero de 2026. Son sustitutos, se parecen, y
+ * hay que llamarlos por su nombre real.
+ *
+ * Los totales (`xg`, `xg_contra`, `xg_dif`) son de toda la temporada y los
+ * equipos NO jugaron la misma cantidad de partidos, así que para comparar de a
+ * dos conviene el promedio por partido. Los `puesto_*` vienen del pipeline.
+ */
+export type Stats = {
+  pj: number;
+  goles: number;
+  goles_contra: number;
+  /** Goles esperados a favor, acumulados en la temporada. */
+  xg: number;
+  xg_contra: number;
+  xg_dif: number;
+  /** Goles − xG. Negativo = desperdicia peligro. */
+  sobre_xg: number;
+  posesion: number;
+  /** Promedios por partido. */
+  remates: number;
+  chances_claras: number;
+  duelos_ganados: number;
+  /** NO son pases progresivos. Ver el comentario de arriba. */
+  toques_en_area_rival: number;
+  pases_campo_rival: number;
+  puesto_xg: number;
+  puesto_xg_contra: number;
+  puesto_xg_dif: number;
+  puesto_posesion: number;
+};
+
 export type Equipo = {
   equipo: string;
   slug: string;
@@ -116,6 +161,8 @@ export type Equipo = {
   puntos_dist: PuntosDist;
   ultimos: PartidoRacha[];
   rendimiento: Rendimiento | null;
+  /** `null` cuando el equipo no tiene datos avanzados cargados. */
+  stats: Stats | null;
 };
 
 /**
@@ -235,6 +282,61 @@ export function puestoDefensa(slug: string): number {
 
 export const totalEquipos = fichas.length;
 
+/* --- Estadísticas avanzadas --- */
+
+/** Los equipos que sí tienen datos avanzados. Puede ser menos que los 30. */
+export const conStats: (Equipo & { stats: Stats })[] = fichas.filter(
+  (e): e is Equipo & { stats: Stats } => e.stats !== null,
+);
+
+/** Cuántos equipos entran en los rankings de xG. No es siempre `totalEquipos`. */
+export const totalConStats = conStats.length;
+
+type ClaveStat = Exclude<
+  keyof Stats,
+  "puesto_xg" | "puesto_xg_contra" | "puesto_xg_dif" | "puesto_posesion"
+>;
+
+/**
+ * Promedio de la liga de cada métrica.
+ *
+ * Es el contexto sin el cual ningún número de acá significa nada: "65.4% de
+ * posesión" sólo se entiende sabiendo que el promedio es 49.7%.
+ */
+export const promedioLiga: Record<ClaveStat, number> = (() => {
+  const claves: ClaveStat[] = [
+    "pj",
+    "goles",
+    "goles_contra",
+    "xg",
+    "xg_contra",
+    "xg_dif",
+    "sobre_xg",
+    "posesion",
+    "remates",
+    "chances_claras",
+    "duelos_ganados",
+    "toques_en_area_rival",
+    "pases_campo_rival",
+  ];
+  const salida = {} as Record<ClaveStat, number>;
+  for (const c of claves) {
+    salida[c] = conStats.length
+      ? conStats.reduce((a, e) => a + e.stats[c], 0) / conStats.length
+      : 0;
+  }
+  return salida;
+})();
+
+/**
+ * Máximo de la liga en una métrica. Se usa como tope de las barras: escalar
+ * contra el máximo real y no contra 100 evita que todas las barras se vean
+ * iguales de cortas.
+ */
+export function maximoLiga(c: ClaveStat): number {
+  return conStats.length ? Math.max(...conStats.map((e) => e.stats[c])) : 0;
+}
+
 /**
  * Cuántos puntos sacó el equipo en su racha, sobre cuántos había en juego.
  * "10 de 18" dice más que cinco letritas: pone la racha en escala.
@@ -258,6 +360,15 @@ export type FilaCompleta = FilaTabla & {
   ataque: number;
   defensa: number;
   ultimos: PartidoRacha[];
+  /**
+   * xG a favor menos xG en contra. Se copia plano en la fila para poder
+   * ordenar la tabla por esta columna.
+   *
+   * Vale 0 cuando el equipo no tiene stats: `tieneStats` distingue el 0 real
+   * (un equipo equilibrado) del 0 de relleno, que se muestra como "—".
+   */
+  xg_dif: number;
+  tieneStats: boolean;
 };
 
 const indiceFichas = new Map(fichas.map((e) => [e.slug, e]));
@@ -272,6 +383,8 @@ export const posicionesCompletas: FilaCompleta[] = posiciones.map((f) => {
     ataque: e?.ataque ?? 0,
     defensa: e?.defensa ?? 0,
     ultimos: e?.ultimos ?? [],
+    xg_dif: e?.stats?.xg_dif ?? 0,
+    tieneStats: e?.stats != null,
   };
 });
 
