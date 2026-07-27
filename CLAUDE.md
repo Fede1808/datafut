@@ -110,8 +110,31 @@ Sigue pendiente ⚠️
   equipos superan los 16 partidos cuando los clasificados son 16. La fuente no es perfecta:
   hace falta un chequeo automático de completitud por temporada
 
-**FBref (competición 21 = Liga Profesional Argentina):**
-Tiene datos avanzados provistos por Opta (xG, xA, pases progresivos, duelos) y la página de historial de temporadas existe. Útil para agregados por equipo. Verificar qué trae exactamente antes de depender de esto.
+**FBref (competición 21 = Liga Profesional Argentina):** ⚠️ **YA NO SIRVE PARA STATS AVANZADAS**
+Este archivo decía hasta el 27/07/2026 que FBref "tiene datos avanzados provistos por Opta
+(xG, xA, pases progresivos, duelos)". **Era cierto y dejó de serlo: Opta le cortó el feed a
+Sports Reference en enero de 2026.** Verificado corriendo código el 27/07/2026: se bajó el
+HTML real de la página (1.229.535 bytes) y hay **0 ocurrencias de xG**. No existen las
+secciones `passing`, `possession` ni `defense`. La tabla de passing todavía se renderiza
+pero viene **entera en NaN** — son cáscaras vacías.
+
+No es un problema de cobertura de Argentina: el mismo conteo sobre la **Premier League**
+2025/26 también da **0 xG**. Es un cambio del sitio completo.
+
+Lo que FBref SÍ conserva (comp 21, 2014→2026): goles, tiros, tiros al arco, tarjetas,
+faltas, córners, offsides, intercepciones, penales. Nada de eso justifica el costo:
+FBref está detrás de un challenge de Cloudflare y exige **Chrome headless**
+(`requests` da 403 hasta en `/robots.txt`).
+
+**Lo único valioso que queda de FBref:** publica la asignación de **Zona A / Zona B de
+2026** en tablas con id explícito (`results2026211Zone-A_overall`), 15 y 15. Sirve para
+copiar y validar `reference/zonas.csv`, que se sigue cargando a mano.
+
+**Pases progresivos: no existen en ninguna fuente gratuita hoy.** Era una métrica definida
+por Opta y se fue con Opta. Sustitutos honestos (que NO son lo mismo y hay que nombrar
+distinto): pases en campo rival, toques en el área rival.
+
+Informe completo con toda la evidencia: `docs/fuentes-stats-avanzadas.md`.
 
 **Fixtures de la fecha que viene:**
 El mismo football-data.co.uk publica próximos partidos con cuotas, o API-Football en su tier gratuito (unas 100 requests por día, suficiente cacheando).
