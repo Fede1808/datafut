@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Escudo } from "@/components/Escudo";
 import { FilaPartido } from "@/components/FilaPartido";
+import { Resultados } from "@/components/Resultados";
 import { BarraSimple } from "@/components/BarraProb";
 import {
   partidos,
+  ultimosResultados,
   ranking,
   totalEquipos,
   torneo,
@@ -33,17 +35,39 @@ export default function Portada() {
   return (
     <div className="pb-2 pt-5">
       <div className="grid gap-8 lg:grid-cols-[1fr_310px] lg:gap-10">
-        {/* --- Partidos de la fecha --- */}
+        {/*
+          Partidos de la fecha. Si la fuente todavia no publico el fixture de
+          la fecha siguiente —tarda dias— se muestran los resultados de la que
+          acaba de terminar, en vez de una lista vacia.
+        */}
         <section>
-          <Encabezado
-            titulo="La fecha"
-            detalle={`${partidos.length} partidos · ${partidos[0]?.fecha ?? ""}`}
-          />
-          <div className="border-t-2 border-[#f4f1ea]">
-            {partidos.map((p) => (
-              <FilaPartido key={`${p.local_slug}-${p.visita_slug}`} p={p} />
-            ))}
-          </div>
+          {partidos.length > 0 ? (
+            <>
+              <Encabezado
+                titulo="La fecha"
+                detalle={`${partidos.length} partidos · ${partidos[0]?.fecha ?? ""}`}
+              />
+              <div className="border-t-2 border-[#f4f1ea]">
+                {partidos.map((p) => (
+                  <FilaPartido key={`${p.local_slug}-${p.visita_slug}`} p={p} />
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <Encabezado
+                titulo="Resultados"
+                detalle={`${ultimosResultados.length} partidos · última fecha`}
+              />
+              <div className="border-t-2 border-[#f4f1ea]">
+                <Resultados resultados={ultimosResultados} />
+              </div>
+              <p className="num mt-2 text-[9px] leading-relaxed text-[#6d6862]">
+                Los partidos de la fecha que viene aparecen acá cuando se
+                publica el calendario.
+              </p>
+            </>
+          )}
         </section>
 
         {/* --- Candidatos --- */}

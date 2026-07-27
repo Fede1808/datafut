@@ -193,7 +193,27 @@ export type Escenario = {
   ramas: Rama[];
 };
 
+/**
+ * Un partido que ya se jugó, con el resultado.
+ *
+ * Existe porque entre fecha y fecha la fuente tarda días en publicar el
+ * fixture siguiente, y en esa ventana la portada quedaba vacía justo el día
+ * que más gente entra: el siguiente al que se jugó.
+ */
+export type Resultado = {
+  fecha: string;
+  local: string;
+  visita: string;
+  local_slug: string;
+  visita_slug: string;
+  goles_local: number;
+  goles_visita: number;
+  colores_local: [string, string];
+  colores_visita: [string, string];
+};
+
 export const partidos = fecha.partidos as Partido[];
+export const ultimosResultados = (fecha.ultimos ?? []) as Resultado[];
 export const candidatos = titulo.equipos as EquipoTitulo[];
 export const fichas = equipos.equipos as Equipo[];
 export const posiciones = tabla.equipos as FilaTabla[];

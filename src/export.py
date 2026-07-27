@@ -348,6 +348,10 @@ def main():
 
     SALIDA.mkdir(parents=True, exist_ok=True)
 
+    # Se carga aca arriba y no mas abajo porque la seccion 1 lo necesita para
+    # descartar del fixture los partidos que ya se jugaron.
+    partidos_hist = cargar_partidos()
+
     # --- 1. Los partidos que se vienen ---
     if not FIXTURES.exists():
         sys.exit(f"ERROR: no existe {FIXTURES}\n       Primero corre:  python src/ingest.py")
@@ -355,10 +359,25 @@ def main():
     fx = pd.read_csv(FIXTURES, encoding="utf-8-sig")
     fx = fx[fx.Country == "Argentina"]
 
-    partidos, sin_datos = [], []
+    # El fixture sigue anunciando partidos que YA se jugaron: football-data no
+    # los saca de ahi hasta que publica el resultado, y a veces tarda dias.
+    # Antes daba igual, porque si ellos no lo publicaban nosotros tampoco lo
+    # teniamos. Desde que clean.py completa los resultados con FotMob, el
+    # mismo partido puede estar jugado y "por jugarse" a la vez, y el sitio lo
+    # anunciaria como proximo con el resultado ya en la tabla.
+    jugados_recientes = {
+        (f.home_team, f.away_team)
+        for f in partidos_hist[partidos_hist["date"] >= pd.Timestamp.now() -
+                               pd.Timedelta(days=30)].itertuples()
+    }
+
+    partidos, sin_datos, ya_jugados = [], [], 0
     for f in fx.itertuples():
         local = canonico.get(f.Home, f.Home)
         visita = canonico.get(f.Away, f.Away)
+        if (local, visita) in jugados_recientes:
+            ya_jugados += 1
+            continue
         if local not in modelo["ataque"] or visita not in modelo["ataque"]:
             sin_datos.append(f"{local} vs {visita}")
             continue
@@ -381,6 +400,34 @@ def main():
         p["hora"] = f.Time
         partidos.append(p)
 
+    # Los resultados de la ultima fecha jugada.
+    #
+    # POR QUE: entre una fecha y la siguiente, football-data tarda dias en
+    # publicar el fixture nuevo. En esa ventana el sitio se quedaba con la
+    # portada vacia ("0 partidos"), justo cuando mas gente entra: el dia
+    # despues de que se jugo. Mostrar lo que acaba de pasar es mejor que
+    # mostrar un hueco, y es lo que hace cualquier diario deportivo.
+    ultimos = []
+    if len(partidos_hist):
+        ultima_fecha = partidos_hist["date"].max()
+        # La "fecha" del futbol argentino se juega en cuatro dias (viernes a
+        # lunes), asi que se toma esa ventana y no solo el ultimo dia.
+        ventana = partidos_hist[
+            partidos_hist["date"] >= ultima_fecha - pd.Timedelta(days=4)
+        ].sort_values("date")
+        for f in ventana.itertuples():
+            ultimos.append({
+                "fecha": str(pd.Timestamp(f.date).date()),
+                "local": f.home_team,
+                "visita": f.away_team,
+                "local_slug": slug(f.home_team),
+                "visita_slug": slug(f.away_team),
+                "goles_local": int(f.home_goals),
+                "goles_visita": int(f.away_goals),
+                "colores_local": mapa_color.get(f.home_team, ["#7c8089", "#f2f1ec"]),
+                "colores_visita": mapa_color.get(f.away_team, ["#7c8089", "#f2f1ec"]),
+            })
+
     if sin_datos:
         print("AVISO: estos partidos se omiten porque el modelo no conoce a algun equipo:")
         for p in sin_datos:
@@ -388,6 +435,7 @@ def main():
 
     (SALIDA / "fecha.json").write_text(json.dumps({
         "partidos": partidos,
+        "ultimos": ultimos,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # --- 2. Candidatos al titulo ---
@@ -412,7 +460,6 @@ def main():
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     zona = cargar_zonas(TEMPORADA)
-    partidos_hist = cargar_partidos()
 
     # --- 3. La tabla de posiciones ---
     # Sin esto el sitio muestra probabilidades flotando en el aire: no se puede
@@ -516,6 +563,9 @@ def main():
     con_cuotas = sum(1 for p in partidos if p["implicita"])
     print(f"    fecha.json    {len(partidos)} partidos "
           f"| {con_cuotas} con cuotas para comparar contra el mercado")
+    if ya_jugados:
+        print(f"                  ({ya_jugados} del fixture ya se jugaron y se "
+              f"descartaron)")
     print(f"    titulo.json   {len(equipos_sim)} equipos")
     print(f"    tabla.json    {len(filas_tabla)} equipos | {len(jugados)} partidos jugados")
     print(f"    equipos.json  {len(fichas)} equipos")
