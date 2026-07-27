@@ -207,7 +207,9 @@ export default async function PaginaPartido({
                   >
                     <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
                       <Escudo slug={e.slug} colores={e.colores} size={16} />
-                      <span className="truncate text-[12.5px]">{e.equipo}</span>
+                      <span className="enlace-ficha truncate text-[12.5px]">
+                        {e.equipo}
+                      </span>
                     </span>
                     <Pct valor={ataquePct(e)} />
                     <Pct valor={defensaPct(e)} />
@@ -309,11 +311,16 @@ function LadoEquipo({
   return (
     <Link
       href={`/equipo/${slug}`}
-      className={`flex min-w-0 items-center gap-2.5 ${derecha ? "flex-row-reverse text-right" : ""}`}
+      title={`Ver la ficha de ${nombre}`}
+      className={`group flex min-w-0 items-center gap-2.5 py-1 transition-colors hover:text-[#ffbe3d] ${
+        derecha ? "flex-row-reverse text-right" : ""
+      }`}
     >
       <Escudo slug={slug} colores={coloresDe(nombre)} size={34} />
       <span className="min-w-0">
-        <span className="titular-2 block truncate">{nombre}</span>
+        {/* Subrayado permanente: son los dos títulos más grandes de la página y
+            no había nada que dijera que llevan a algún lado. */}
+        <span className="titular-2 enlace-ficha block truncate">{nombre}</span>
         {pos && (
           <span className="num block text-[9.5px] text-[#6d6862]">
             {pos.puesto}° zona {pos.zona} · {pos.pts} pts · DG{" "}

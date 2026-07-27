@@ -64,7 +64,7 @@ export default function Portada() {
                     </span>
                     <Escudo slug={e.slug} colores={e.colores} size={16} />
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-[12.5px]">
+                      <span className="enlace-ficha block truncate text-[12.5px]">
                         {e.equipo}
                       </span>
                       <span className="num block text-[9px] text-[#6d6862]">
@@ -94,10 +94,9 @@ export default function Portada() {
             <span>Techo {maximo.toFixed(1)}% — el título sale de playoffs a partido único.</span>
           </div>
 
-          <Link
-            href="/titulo"
-            className="num mt-3 inline-block border-b border-[#423e38] pb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#a09a90] transition-colors hover:border-[#ffbe3d] hover:text-[#ffbe3d]"
-          >
+          {/* Caja, no texto subrayado: es la salida principal de este bloque y
+              antes se leía como una nota al pie. */}
+          <Link href="/titulo" className="pestania pestania-chica mt-3">
             Los {totalEquipos} equipos →
           </Link>
         </section>
@@ -191,10 +190,12 @@ function FilaEnJuego({ e }: { e: Escenario }) {
       <div className="flex items-baseline justify-between gap-2">
         <Link
           href={`/equipo/${e.slug}`}
-          className="flex min-w-0 items-center gap-2 hover:text-[#ffbe3d]"
+          className="flex min-w-0 items-center gap-2 py-1 transition-colors hover:text-[#ffbe3d]"
         >
           <Escudo slug={e.slug} colores={coloresDe(e.equipo)} size={14} />
-          <span className="truncate text-[12.5px] font-medium">{e.equipo}</span>
+          <span className="enlace-ficha truncate text-[12.5px] font-medium">
+            {e.equipo}
+          </span>
           <span className="num shrink-0 text-[9.5px] text-[#6d6862]">
             {e.condicion === "local" ? "v." : "@"} {e.rival}
           </span>

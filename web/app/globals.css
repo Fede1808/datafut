@@ -163,24 +163,239 @@ body::before {
   transform: scaleY(1);
 }
 
-/* Cabecera de columna ordenable. */
+/*
+  Cabecera de columna ordenable.
+
+  Antes esto era texto gris que sólo se pintaba al pasar el mouse: no había
+  forma de saber que se podía clickear sin descubrirlo de casualidad. Ahora la
+  cabecera se anuncia sola, apagada pero visible, con su par de flechitas
+  siempre en pantalla (ver `.caret`) y un subrayado punteado que dice "esto se
+  toca". El estado activo NO depende sólo del color: además del ámbar, se
+  prende la flecha del sentido y el subrayado pasa a sólido.
+*/
+/*
+  OJO: acá NO va `display`. Este archivo está fuera de todo `@layer`, así que
+  cualquier propiedad que declare le gana a las utilidades de Tailwind — un
+  `display:flex` de acá anulaba el `hidden` de las columnas opcionales y en el
+  celular la cabecera mostraba columnas que las filas no tenían, desbordando la
+  tabla. El `flex` va en las clases del componente, donde `hidden sm:flex` puede
+  ganarle.
+*/
 .th-orden {
   font-family: var(--font-mono);
   font-size: 9.5px;
   font-weight: 500;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--color-papel3);
+  color: var(--color-papel2);
   cursor: pointer;
-  transition: color 120ms ease;
+  transition:
+    color 120ms ease,
+    border-color 120ms ease;
   white-space: nowrap;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted var(--color-filete2);
+  /* Área de toque: la fila de cabecera mide poco y en el celular una franja de
+     10px de alto es imposible de acertar con el dedo. */
+  min-height: 26px;
 }
 .th-orden:hover {
   color: var(--color-papel);
+  border-bottom-color: var(--color-papel2);
 }
 .th-orden[aria-sort="descending"],
 .th-orden[aria-sort="ascending"] {
   color: var(--color-acento);
+  border-bottom: 1px solid var(--color-acento);
+}
+
+/* Las dos flechitas del indicador de orden. Siempre visibles: son la señal de
+   que la columna es ordenable. La activa se prende. */
+.caret {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transition:
+    border-color 120ms ease,
+    opacity 120ms ease;
+}
+.caret-arriba {
+  border-bottom: 4px solid currentColor;
+  margin-bottom: 1.5px;
+}
+.caret-abajo {
+  border-top: 4px solid currentColor;
+}
+.caret-apagado {
+  opacity: 0.28;
+}
+.caret-prendido {
+  opacity: 1;
+}
+
+/*
+  Pestañas de navegación y filtros. Un solo lenguaje para todo lo que se
+  clickea y cambia de estado: caja con filete, y cuando está activa se invierte
+  (ámbar lleno + tinta). La inversión se lee incluso sin distinguir colores,
+  porque cambia el contraste, no sólo el tono.
+*/
+.pestania {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid var(--color-filete);
+  color: var(--color-papel2);
+  background: transparent;
+  transition:
+    color 130ms ease,
+    background-color 130ms ease,
+    border-color 130ms ease,
+    transform 130ms ease;
+}
+.pestania:hover {
+  color: var(--color-papel);
+  border-color: var(--color-filete2);
+  background: var(--color-tinta2);
+}
+.pestania:active {
+  transform: translateY(1px);
+}
+.pestania[aria-current="page"],
+.pestania[aria-pressed="true"] {
+  background: var(--color-acento);
+  border-color: var(--color-acento);
+  color: var(--color-tinta);
+  font-weight: 700;
+}
+/* Punto de la pestaña activa: la segunda señal, la que no es color. */
+.pestania[aria-current="page"]::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  margin-right: 6px;
+  background: currentColor;
+  border-radius: 50%;
+}
+/* Variante chica para los filtros de zona, que van adentro de una tabla. */
+.pestania-chica {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 10px;
+}
+
+/*
+  Nombre de equipo que lleva a su ficha. Subrayado punteado siempre visible:
+  sin esto el nombre parece texto y nadie descubre que hay una página atrás.
+  Al pasar el mouse se vuelve sólido y ámbar.
+*/
+.enlace-ficha {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  /* Tiene que verse sin tener que buscarlo: con el gris de los filetes
+     (#423e38) el punteado desaparecía contra el fondo y volvíamos al problema
+     de partida. Este gris es el mismo del texto secundario. */
+  text-decoration-color: var(--color-papel3);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition:
+    text-decoration-color 130ms ease,
+    color 130ms ease;
+}
+.fila:hover .enlace-ficha,
+.fila:focus-visible .enlace-ficha,
+a:hover > .enlace-ficha {
+  text-decoration-style: solid;
+  text-decoration-color: var(--color-acento);
+}
+
+/* La flecha del final de una fila clickeable. Apagada de fondo, se acomoda al
+   pasar el cursor. Es la señal redundante al subrayado del nombre. */
+.chevron {
+  color: var(--color-filete2);
+  transition:
+    color 130ms ease,
+    transform 130ms ease;
+}
+.fila:hover .chevron,
+.fila:focus-visible .chevron {
+  color: var(--color-acento);
+  transform: translateX(2px);
+}
+
+/*
+  Área de toque en pantallas táctiles.
+
+  Los encabezados de tabla y los filtros de zona son compactos a propósito: con
+  mouse, 26px se aciertan sin pensar y una cabecera de 44px partiría la grilla
+  en dos. Con el dedo no alcanza. En vez de agrandar todo para todos, se
+  agranda sólo donde el puntero es grueso.
+*/
+@media (pointer: coarse) {
+  .th-orden {
+    min-height: 44px;
+  }
+  .pestania-chica {
+    min-height: 44px;
+    padding: 0 14px;
+  }
+}
+
+/* --- Animación --- */
+
+/*
+  Reordenamiento de tabla. No es adorno: cuando se toca una columna, las filas
+  se rehacen enteras y sin nada que lo marque el cambio se lee como un salto.
+  Un desplazamiento corto y escalonado dice "esto se acaba de reordenar".
+  Sólo `transform` y `opacity`: no dispara layout.
+*/
+@keyframes fila-entra {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fila-anim {
+  animation: fila-entra 260ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+/* Barra que crece desde la izquierda al entrar en pantalla. `scaleX` sobre un
+   ancho ya definido: animar `width` haría relayout en cada cuadro. */
+.barra-crece {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 620ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.barra-crece[data-visible="true"] {
+  transform: scaleX(1);
+}
+
+/* Entrada de bloque al aparecer en pantalla. Se usa en el panel de xG. */
+@keyframes bloque-entra {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.bloque-anim[data-visible="true"] {
+  animation: bloque-entra 380ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -191,5 +406,13 @@ body::before {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* Las barras arrancan en scaleX(0) y crecen con una transición. Sin esto,
+     con la transición anulada quedarían invisibles hasta que el observador las
+     marque: acá se muestran enteras desde el principio, que es lo que
+     "sin movimiento" tiene que significar. */
+  .barra-crece {
+    transform: none !important;
   }
 }

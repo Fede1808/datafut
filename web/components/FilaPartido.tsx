@@ -33,7 +33,9 @@ export function FilaPartido({ p }: { p: Partido }) {
         </span>
 
         <span className="flex min-w-0 flex-1 items-center justify-end gap-2">
-          <span className="truncate text-[13.5px] font-medium">{p.local}</span>
+          <span className="enlace-ficha truncate text-[13.5px] font-medium">
+            {p.local}
+          </span>
           <Escudo slug={p.local_slug} colores={coloresDe(p.local)} size={16} />
         </span>
 
@@ -43,11 +45,18 @@ export function FilaPartido({ p }: { p: Partido }) {
 
         <span className="flex min-w-0 flex-1 items-center gap-2">
           <Escudo slug={p.visita_slug} colores={coloresDe(p.visita)} size={16} />
-          <span className="truncate text-[13.5px] font-medium">{p.visita}</span>
+          <span className="enlace-ficha truncate text-[13.5px] font-medium">
+            {p.visita}
+          </span>
         </span>
 
         <span className="num w-5 shrink-0 text-right text-[9.5px] text-[#423e38]">
           {v ? `${v.puesto}°` : ""}
+        </span>
+        {/* Flecha permanente: la fila entera es un link a la ficha del partido
+            y sin esto la única pista era el hover. */}
+        <span aria-hidden className="chevron shrink-0 text-[13px] leading-none">
+          ›
         </span>
       </div>
 

@@ -52,8 +52,14 @@ export default function RootLayout({
           decoración.
         */}
         <header className="mx-auto w-full max-w-6xl px-4 pt-4">
-          <div className="flex items-end justify-between gap-4 border-b border-[#2e2b27] pb-2">
-            <Link href="/" className="block shrink-0">
+          {/* `flex-wrap`: en pantallas angostas la nav baja a su propio
+              renglón en vez de comerse el logo. */}
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 border-b border-[#2e2b27] pb-2.5">
+            <Link
+              href="/"
+              aria-label="Modelo/Fut — portada"
+              className="block shrink-0 transition-opacity hover:opacity-70"
+            >
               <span className="block font-[family-name:var(--font-display)] text-[27px] leading-none tracking-[-0.02em] sm:text-[34px]">
                 Modelo<span className="text-[#ffbe3d]">/</span>Fut
               </span>
