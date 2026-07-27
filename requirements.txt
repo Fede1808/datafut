@@ -23,3 +23,14 @@ scipy==1.18.0
 # numpy lo arrastran pandas y scipy igual, pero va explicito porque de el
 # dependen el generador aleatorio de la simulacion y las cuentas de matrices.
 numpy==2.5.1
+
+# requests lo usa SOLO ingest_stats.py, para bajar las estadisticas avanzadas
+# de FotMob. ingest.py sigue con urllib: para un solo GET no vale la pena.
+# Aca si se gana el lugar porque son cientos de pedidos con reintentos, timeouts
+# y manejo de sesion, y urllib para eso es incomodo.
+#
+# Y es la unica dependencia que hizo falta: FotMob responde con requests pelado.
+# Ese fue el argumento decisivo para elegirlo sobre Sofascore (que exige un
+# binario nativo para falsificar la huella TLS) y sobre FBref (que exige un
+# Chrome headless entero en el runner).
+requests==2.34.2

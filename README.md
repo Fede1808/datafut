@@ -15,20 +15,23 @@ diferencial del proyecto.
 Python 3.10 o mas nuevo y Node 20 o mas nuevo.
 
 ```bash
-pip install -r requirements.txt      # pandas y scipy
+pip install -r requirements.txt      # pandas, scipy y requests
 cd web && npm install                # el sitio
 ```
 
-La descarga usa `urllib`, que ya viene con Python.
+La descarga de resultados usa `urllib`, que ya viene con Python. La de
+estadisticas avanzadas usa `requests`, porque son cientos de pedidos.
 
 ## Como correrlo
 
-Siete pasos, en orden. Cada uno se puede correr solo y siempre da el mismo
+Nueve pasos, en orden. Cada uno se puede correr solo y siempre da el mismo
 resultado con los mismos datos de entrada.
 
 ```bash
-python src/ingest.py    # 1. baja el CSV original y el fixture -> data/raw/
-python src/clean.py     # 2. lo normaliza -> data/clean/matches.csv
+python src/ingest.py        # 1. baja el CSV original y el fixture -> data/raw/
+python src/ingest_stats.py  # 1b. baja las stats de FotMob -> data/raw/fotmob/
+python src/clean.py         # 2. lo normaliza -> data/clean/matches.csv
+python src/clean_stats.py   # 2b. -> data/clean/team_match_stats.csv
 python src/report.py    # 3. diagnostica -> data/clean/report.md
 python src/model.py     # 4. entrena el modelo -> data/outputs/modelo.json
 python src/evaluate.py  # 5. mide si sirve -> data/outputs/evaluacion.md
@@ -74,8 +77,22 @@ permite mostrar que tan bien viene acertando.
 cual, sin tocarlo. El dato crudo queda intacto: si manana descubrimos que limpiamos
 algo mal, se corrige `clean.py` y se vuelve a correr, sin bajar nada de nuevo.
 
+**`ingest_stats.py` — bajar las stats avanzadas.** Descarga de FotMob un JSON por
+partido con xG, duelos, posesion y pases, y lo guarda crudo en `data/raw/fotmob/`.
+Es incremental: un partido jugado no cambia nunca, asi que se baja una sola vez.
+La corrida post-fecha son ~15 pedidos. Acepta `--temporada 2023` para el historico.
+
 **`clean.py` — normalizar.** Deja todo parejo: un solo nombre por club, una sola
 forma de escribir cada temporada, y una columna que distingue liga de copa.
+
+**`clean_stats.py` — normalizar las stats avanzadas.** Convierte esos JSON en
+`data/clean/team_match_stats.csv`, dos filas por partido (una por equipo). Traduce
+los equipos por **id de FotMob**, nunca por nombre: hay cuatro homonimos
+(Estudiantes LP/RC, Gimnasia LP/M) que cualquier match por parecido confunde.
+
+Esta rama es una **capa adicional**: el modelo se sigue entrenando con los 6.238
+partidos de football-data.co.uk, que tienen 14 anios de historico contra los 3 de
+FotMob. Las dos ramas se juntan recien en `export.py`, por `(fecha, equipo)`.
 
 **`report.py` — diagnosticar.** No modifica nada, solo cuenta y muestra. Contesta
 "que tenemos realmente?" antes de escribir una linea de modelo.
@@ -216,18 +233,20 @@ datafut/
 ├── .github/workflows/
 │   └── actualizar.yml     corre el pipeline solo, cada lunes
 ├── data/                  intermedios del pipeline   (NO se versiona)
-│   ├── raw/               CSV original y fixture
-│   ├── clean/             matches.csv + report.md
+│   ├── raw/               CSV original, fixture y fotmob/ (un JSON por partido)
+│   ├── clean/             matches.csv + report.md + team_match_stats.csv
 │   └── outputs/           modelo.json, simulacion.*
 ├── docs/                  decisiones y handoff de diseno
 ├── reference/                                        (SI se versiona)
 │   ├── team_names.csv     tabla de nombres
+│   ├── fotmob_teams.csv   id de FotMob -> nombre canonico
 │   ├── zonas.csv          que equipo en que zona
 │   ├── colores.csv        los dos colores de cada club
 │   ├── escudos.csv        de donde salio el escudo de cada club
 │   └── formato-torneos.md como se juega el torneo
 ├── src/
 │   ├── ingest.py · clean.py · report.py
+│   ├── ingest_stats.py · clean_stats.py   la rama de stats avanzadas
 │   ├── model.py · evaluate.py · simulate.py
 │   ├── escudos.py         genera los escudos de fallback
 │   ├── escudos_reales.py  baja los escudos reales de TheSportsDB
@@ -268,6 +287,33 @@ sitio no llegan al repositorio y el build de Vercel falla.
 
 Las cuotas de Bet365 se descartan a proposito: vienen vacias en el 93% de las filas.
 El baseline contra el que se va a medir el modelo es `avgc*`.
+
+`data/clean/team_match_stats.csv`, **dos filas por partido** (una por equipo):
+
+| Columna | Que es |
+|---|---|
+| `match_id` | id del partido en FotMob |
+| `fecha` | fecha UTC del partido |
+| `temporada` · `torneo` · `ronda` | `2026` · `Liga Profesional Clausura` · `1` o `final` |
+| `equipo` / `rival` | nombres canonicos, los mismos que `matches.csv` |
+| `condicion` | `local` o `visitante` |
+| `goles` / `goles_rival` | goles |
+| `xg` · `xg_jugada` · `xg_pelota_parada` · `xg_sin_penales` · `xgot` | goles esperados |
+| `posesion` · `remates*` · `chances_claras*` | ataque |
+| `pases*` · `pelotazos_completados` · `centros_completados` · `toques_en_area_rival` | juego |
+| `quites` · `intercepciones` · `bloqueos` · `rechazos` · `atajadas` | defensa |
+| `duelos_ganados` · `duelos_suelo_ganados` · `duelos_aereos_ganados` · `gambetas_exitosas` | duelos |
+| `faltas` · `corners` · `offsides` · `amarillas` · `rojas` | resto |
+
+El contrato con el resto del pipeline es el join por **`(fecha, equipo)`**.
+
+Dos cosas que hay que decir y no maquillar:
+
+- **No hay pases progresivos.** Era una metrica de Opta y desaparecio de todas las
+  fuentes gratuitas en enero de 2026. `pases_campo_rival` y `toques_en_area_rival`
+  miden intencion ofensiva, no progresion, y no hay que llamarlos igual.
+- **El historico con xG arranca en 2023.** Antes FotMob tiene resultados pero no
+  estadisticas avanzadas.
 
 ## Estado
 

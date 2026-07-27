@@ -44,11 +44,57 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      # data/ esta en .gitignore, asi que el runner arranca SIN los JSON de
+      # FotMob que ya bajamos. Sin este cache, cada corrida semanal volveria a
+      # bajar la temporada entera (270+ pedidos, ~7 minutos) para conseguir los
+      # 15 partidos nuevos de la fecha. Con el cache son 15 pedidos y ~20s.
+      #
+      # No es solo velocidad: bajar 270 partidos por semana contra 15 es
+      # multiplicar por veinte la huella que dejamos en una fuente cuyos
+      # Terminos de Uso ya estamos estirando. El cache es lo que hace que el
+      # "incremental por diseño" de ingest_stats.py valga tambien en el CI.
+      #
+      # La clave lleva el run_id porque las entradas de cache son inmutables:
+      # con una clave fija nunca se guardarian los partidos nuevos. El patron
+      # es "restaurar la ultima que haya (restore-keys) y guardar una nueva".
+      #
+      # Limitacion conocida, y no la tapo: GitHub borra los caches que no se
+      # usan en 7 dias, y este workflow corre justo cada 7. Si alguna semana se
+      # cae el cache, la corrida siguiente vuelve a bajar todo. Es mas lenta,
+      # no esta rota: los datos son regenerables y el pipeline no depende de
+      # que el cache exista.
+      - name: Cachear los JSON crudos de FotMob
+        uses: actions/cache@v4
+        with:
+          path: data/raw/fotmob
+          key: fotmob-raw-${{ github.run_id }}
+          restore-keys: fotmob-raw-
+
       - name: Bajar resultados y fixture
         run: python src/ingest.py
 
+      # Los dos pasos de FotMob son continue-on-error A PROPOSITO.
+      #
+      # El criterio de terminado de la v1 es que el sitio muestre las
+      # probabilidades actualizadas, y esas salen del Dixon-Coles entrenado con
+      # football-data.co.uk. Las estadisticas avanzadas son una capa adicional.
+      # Si FotMob nos bloquea o cambia la API, lo correcto es que el sitio se
+      # actualice igual con datos de xG viejos, no que deje de actualizarse.
+      # El paso queda marcado en amarillo en la pestaña Actions, asi que el
+      # problema se ve; simplemente no arrastra al resto del pipeline.
+      - name: Bajar estadisticas avanzadas (FotMob)
+        continue-on-error: true
+        run: python src/ingest_stats.py
+
       - name: Normalizar
         run: python src/clean.py
+
+      # Corre aunque el paso anterior haya fallado: clean_stats.py trabaja
+      # sobre lo que haya en disco, asi que con el cache restaurado sigue
+      # produciendo el CSV con los partidos viejos.
+      - name: Normalizar estadisticas avanzadas
+        continue-on-error: true
+        run: python src/clean_stats.py
 
       - name: Diagnosticar
         run: python src/report.py
