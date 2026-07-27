@@ -182,7 +182,7 @@ def main():
 
     # --- 4. Metadatos: de donde salen los numeros ---
     partidos_hist = cargar_partidos()
-    (SALIDA / "meta.json").write_text(json.dumps({
+    meta = {
         "actualizado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "partidos_historicos": len(partidos_hist),
         "ultimo_partido": str(partidos_hist.date.max().date()),
@@ -193,7 +193,24 @@ def main():
         # No se redondea para arriba.
         "acierto_pct": ACIERTO,
         "modelo": "Dixon-Coles + Monte Carlo",
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    }
+
+    # "actualizado" es la hora en que corrio el script, asi que cambia siempre.
+    # Por si solo alcanza para que git vea un cambio y la Action commitee todos
+    # los lunes aunque no se haya jugado un solo partido. Si todo el resto del
+    # meta quedo igual, conservamos la marca de tiempo anterior: entonces no hay
+    # diff, no hay commit, y el historial de git guarda cuando cambiaron los
+    # numeros DE VERDAD. Eso es lo que despues permite medir que tan bien
+    # predijo el modelo en cada momento.
+    destino_meta = SALIDA / "meta.json"
+    if destino_meta.exists():
+        previo = json.loads(destino_meta.read_text(encoding="utf-8"))
+        sin_hora = lambda m: {k: v for k, v in m.items() if k != "actualizado"}
+        if sin_hora(previo) == sin_hora(meta):
+            meta["actualizado"] = previo["actualizado"]
+
+    destino_meta.write_text(json.dumps(meta, ensure_ascii=False, indent=2),
+                            encoding="utf-8")
 
     print(f"OK  -> {SALIDA}")
     print(f"    fecha.json    {len(partidos)} partidos")

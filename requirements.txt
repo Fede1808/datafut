@@ -1,7 +1,25 @@
+# Versiones EXACTAS, no ">=". Y la razon importa:
+#
+# El optimizador de scipy converge a parametros levemente distintos segun su
+# version, y eso mueve las probabilidades finales. Se comprobo: con los mismos
+# datos y la misma semilla, Windows (scipy 1.18.0) daba Boca 18.69% y el CI de
+# GitHub, que instalaba lo ultimo, daba 18.84%.
+#
+# Con ">=" el dia que salga una version nueva los numeros del sitio cambiarian
+# solos, sin que se haya jugado un partido. Eso ensucia el historial de git,
+# que es justamente el registro de lo que el modelo predijo en cada momento.
+#
+# Para subir una version: cambiala aca a mano, corre el pipeline y mira cuanto
+# se movieron los numeros. Es una decision, no algo que deba pasar solo.
+
 # La descarga usa urllib, que ya viene con Python: para un solo GET no vale
 # la pena sumar una libreria externa.
-pandas>=2.0
+pandas==2.3.2
 
 # scipy si se gana su lugar: trae optimizadores numericos con decadas de
 # trabajo matematico encima. Escribir eso a mano seria reinventar la rueda peor.
-scipy>=1.11
+scipy==1.18.0
+
+# numpy lo arrastran pandas y scipy igual, pero va explicito porque de el
+# dependen el generador aleatorio de la simulacion y las cuentas de matrices.
+numpy==2.5.1
