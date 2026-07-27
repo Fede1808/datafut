@@ -123,6 +123,42 @@ Tres decisiones que estan en el codigo y conviene no deshacer sin pensarlo:
 - **Los partidos parejos se marcan.** Cinco de cada doce lo son, y de reojo un
   34/33/34 se lee igual que un 68/21/11 si nadie lo aclara.
 
+### Escudos
+
+Cada club se muestra con su **escudo real**, en `web/public/escudos/reales/<slug>.png`.
+Los baja `python src/escudos_reales.py` desde **TheSportsDB**, que publica una API
+gratuita con key de test publica (sin cuenta ni registro). Se normalizan a 128x128
+y se guardan con paleta de 128 colores: los 30 juntos pesan **100 KB**, ninguno pasa
+de 6 KB, y a los tamanios de uso (16px en las filas, 44px en la cabecera de equipo)
+no se distingue del original.
+
+`reference/escudos.csv` lleva una fila por club con fuente, URL de origen, licencia
+y fecha de descarga. Si un escudo se reemplaza o se discute, ahi esta de donde salio.
+
+`src/escudos.py` **sigue existiendo** y genera monogramas propios con los colores de
+`reference/colores.csv` en `web/public/escudos/<slug>.svg`. No es lo que se ve: es el
+fallback para cuando ascienda un club que todavia no tiene el escudo real bajado.
+`Escudo.tsx` intenta real → generado → cuadradito de colores, bajando de nivel solo
+si el archivo no carga.
+
+Dos cosas que costaron y conviene no deshacer:
+
+- **El mapeo club → escudo es una tabla de IDs numericos, no una busqueda por
+  nombre.** `Estudiantes (LP)` / `Estudiantes (RC)` y `Gimnasia (LP)` / `Gimnasia (M)`
+  se confunden con cualquier match por similitud de texto, y el error es silencioso:
+  el sitio se ve perfecto con el escudo equivocado. Los cuatro estan verificados a
+  mano contra el nombre completo de la API.
+- **No hace falta fondo ni aro detras del escudo.** Se midio la luminancia de los 30
+  sobre el fondo del sitio (`#12110f`): los mas oscuros son San Lorenzo, Boca y
+  Newell's, y a 16px se leen bien igual gracias al contorno claro que ya traen. Los
+  claros no son el problema — blanco sobre fondo oscuro es contraste alto, no bajo.
+
+**Atribucion:** los escudos son marca registrada de cada club y se usan de forma
+editorial, para identificar al equipo del que se habla. Este es un proyecto no
+oficial, sin afiliacion ni aval de ningun club ni de la Liga Profesional. Los
+archivos vienen de [TheSportsDB](https://www.thesportsdb.com/), base de datos
+deportiva abierta y colaborativa.
+
 ## Como anda el modelo hoy
 
 Validacion temporal 2022-2026, log loss (mas bajo es mejor):
@@ -188,15 +224,19 @@ datafut/
 │   ├── team_names.csv     tabla de nombres
 │   ├── zonas.csv          que equipo en que zona
 │   ├── colores.csv        los dos colores de cada club
+│   ├── escudos.csv        de donde salio el escudo de cada club
 │   └── formato-torneos.md como se juega el torneo
 ├── src/
 │   ├── ingest.py · clean.py · report.py
 │   ├── model.py · evaluate.py · simulate.py
+│   ├── escudos.py         genera los escudos de fallback
+│   ├── escudos_reales.py  baja los escudos reales de TheSportsDB
 │   └── export.py
 └── web/                   el sitio (Next.js)
     ├── app/               las rutas del sitio
-    ├── components/        Chip · BarraProb · FilaPartido
+    ├── components/        Escudo · BarraProb · FilaPartido
     ├── lib/datos.ts       lee los JSON
+    ├── public/escudos/    generados (.svg) + reales/ (.png)  (SI se versiona)
     └── data/              JSON generados         (SI se versiona)
 ```
 

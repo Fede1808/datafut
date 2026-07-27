@@ -2,16 +2,27 @@
 Generador de escudos propios para los 30 clubes de la Liga Profesional.
 
 =============================================================================
-QUE HACE Y POR QUE EXISTE
+ESTE ES EL FALLBACK, NO LO QUE SE MUESTRA
 =============================================================================
 
-El sitio mostraba cada club como un cuadradito de dos colores (`Chip.tsx`).
-Se ve pobre. La alternativa NO es descargar escudos reales: son marca
-registrada de cada club y no van a terminar commiteados en un repo público.
-La alternativa es generar escudos propios — monogramas con forma de escudo
-de fútbol, usando los colores oficiales verificados (`reference/colores.csv`)
-y un patrón que evoca la camiseta real (bastones, banda, franja, la V de
-Vélez). Bien hechos, no se ven como "30 círculos iguales".
+Los escudos REALES tienen prioridad. Los baja `src/escudos_reales.py` desde
+TheSportsDB a `web/public/escudos/reales/<slug>.png`, y `Escudo.tsx` los
+intenta primero. Lo que genera este script se ve únicamente cuando el archivo
+real no existe.
+
+Entonces, ¿por qué sigue existiendo? Porque cuando ascienda un club nuevo, el
+sitio va a tener su slug en `equipos.json` antes de que nadie haya bajado su
+escudo. Sin este generador esa fila queda con un cuadradito de dos colores;
+con él, queda con algo presentable el mismo día. Es la red de seguridad.
+
+=============================================================================
+QUE GENERA
+=============================================================================
+
+Monogramas con forma de escudo de fútbol, usando los colores oficiales
+verificados (`reference/colores.csv`) y un patrón que evoca la camiseta real
+(bastones, banda, franja, la V de Vélez). Bien hechos, no se ven como "30
+círculos iguales".
 
 Un SVG por club en `web/public/escudos/<slug>.svg`. El slug tiene que
 coincidir con el que ya usa el sitio (mismo algoritmo que `src/export.py`,
