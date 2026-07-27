@@ -41,6 +41,7 @@ calibradas.
 Uso:
     python src/evaluate.py
     python src/evaluate.py --desde 2022 --vida-media 200
+    python src/evaluate.py --tunear-shrinkage    prueba una grilla de valores
 """
 
 from pathlib import Path
@@ -49,10 +50,15 @@ import argparse
 import numpy as np
 import pandas as pd
 
-from model import cargar_partidos, entrenar, probabilidades_1x2
+from model import cargar_partidos, entrenar, probabilidades_1x2, SHRINKAGE_DEFAULT
 
 RAIZ = Path(__file__).resolve().parent.parent
 DESTINO = RAIZ / "data" / "outputs" / "evaluacion.md"
+DESTINO_TUNING = RAIZ / "data" / "outputs" / "tuning-shrinkage.md"
+
+# Los valores de shrinkage que se prueban con --tunear-shrinkage. Van en escala
+# logaritmica porque lo que importa es el orden de magnitud, no el decimal.
+GRILLA_SHRINKAGE = [0, 1, 2, 5, 10, 15, 20, 25, 30, 40, 50, 100, 200, 500]
 
 RESULTADOS = ["H", "D", "A"]
 
@@ -150,12 +156,17 @@ def probs_elo(train, test, k=20, ventaja_local=65):
 # ---------------------------------------------------------------------------
 # Evaluacion temporal
 # ---------------------------------------------------------------------------
-def evaluar(partidos, temporadas_test, vida_media):
+def evaluar(partidos, temporadas_test, vida_media, shrinkage=None, solo_dc=False,
+            verbose=True):
     """
     Para cada temporada a evaluar: entrena SOLO con lo anterior y predice.
 
     Nunca se usa informacion del futuro. Es la unica forma honesta de saber
     como se habria comportado el modelo en su momento.
+
+    solo_dc: saltea los baselines. Sirve para el tuning de shrinkage, donde se
+             comparan configuraciones del modelo entre si y recalcular el
+             mercado y el Elo once veces seria tiempo tirado.
     """
     filas = []
 
@@ -169,22 +180,24 @@ def evaluar(partidos, temporadas_test, vida_media):
         conocidos = set(train.home_team) | set(train.away_team)
         test = test[test.home_team.isin(conocidos) & test.away_team.isin(conocidos)]
         if len(test) < 30:
-            print(f"  {temporada}: muy pocos partidos evaluables, se saltea")
+            if verbose:
+                print(f"  {temporada}: muy pocos partidos evaluables, se saltea")
             continue
 
-        print(f"  {temporada}: entrenando con {len(train):,} partidos previos, "
-              f"evaluando {len(test):,}...")
+        if verbose:
+            print(f"  {temporada}: entrenando con {len(train):,} partidos previos, "
+                  f"evaluando {len(test):,}...")
 
         # fecha_ref = el arranque de la temporada a predecir. Estamos parados
         # ahi, no en el presente.
-        modelo = entrenar(train, vida_media=vida_media,
+        modelo = entrenar(train, vida_media=vida_media, shrinkage=shrinkage,
                           fecha_ref=test.date.min(), verbose=False)
 
         dc = np.array([probabilidades_1x2(modelo, f.home_team, f.away_team)
                        for f in test.itertuples()])
         reales = test.result.to_numpy()
 
-        candidatos = {
+        candidatos = {"Dixon-Coles": dc} if solo_dc else {
             "Azar (33/33/33)": np.full((len(test), 3), 1 / 3),
             "Frecuencia historica": probs_frecuencia(train, len(test)),
             "Elo simple": probs_elo(train, test),
@@ -203,11 +216,98 @@ def evaluar(partidos, temporadas_test, vida_media):
     return pd.DataFrame(filas)
 
 
+# ---------------------------------------------------------------------------
+# Tuning del shrinkage
+# ---------------------------------------------------------------------------
+def tunear_shrinkage(partidos, temporadas, vida_media):
+    """
+    Prueba la grilla de shrinkage con la MISMA validacion temporal de arriba.
+
+    La regla es una sola: el valor no se elige mirando que parametros quedan
+    lindos, se elige por como predice partidos que el modelo no vio. Y de yapa
+    mostramos el parametro mas extremo de cada ajuste, para poder ver el
+    trade-off entre "predecir bien en promedio" y "no decir barbaridades de los
+    equipos con pocos partidos".
+    """
+    filas = []
+    for s in GRILLA_SHRINKAGE:
+        res = evaluar(partidos, temporadas, vida_media, shrinkage=s,
+                      solo_dc=True, verbose=False)
+        completo = entrenar(partidos, vida_media=vida_media, shrinkage=s,
+                            verbose=False)
+        ataques = completo["ataque"]
+        extremo = min(ataques, key=lambda e: ataques[e])
+        filas.append({
+            "shrinkage": s,
+            "log_loss": np.average(res.log_loss, weights=res.partidos),
+            "brier": np.average(res.brier, weights=res.partidos),
+            "ataque_erc": float(ataques["Estudiantes (RC)"]),
+            "peor_ataque": float(ataques[extremo]),
+            "equipo_peor": extremo,
+        })
+        f = filas[-1]
+        print(f"  shrinkage {s:>6} -> log loss {f['log_loss']:.4f} | "
+              f"brier {f['brier']:.4f} | Estudiantes (RC) {f['ataque_erc']:+.3f}")
+
+    return pd.DataFrame(filas)
+
+
+def informe_tuning(tabla, vida_media, desde):
+    mejor = tabla.loc[tabla.log_loss.idxmin()]
+    sin = tabla.loc[tabla.shrinkage == 0].iloc[0]
+
+    lineas = [
+        "# Tuning del shrinkage",
+        "",
+        f"Validacion temporal desde **{desde}** · vida media **{vida_media} dias**.",
+        "Se entrena solo con el pasado de cada temporada y se predice la siguiente.",
+        "Mas bajo es mejor en las dos metricas.",
+        "",
+        "La columna `Estudiantes (RC)` es su parametro de ataque entrenando con",
+        "TODO el historico: es el caso testigo del sobreajuste (16 partidos jugados).",
+        "",
+        "| Shrinkage | Log loss | Brier | Estudiantes (RC) | Ataque mas extremo |",
+        "|---:|---:|---:|---:|---|",
+    ]
+    for f in tabla.itertuples():
+        marca = "**" if f.shrinkage == mejor.shrinkage else ""
+        lineas.append(
+            f"| {marca}{f.shrinkage:g}{marca} | {marca}{f.log_loss:.4f}{marca} | "
+            f"{f.brier:.4f} | {f.ataque_erc:+.3f} | "
+            f"{f.equipo_peor} {f.peor_ataque:+.3f} |"
+        )
+    lineas += [
+        "",
+        "## Conclusion",
+        "",
+        f"Mejor log loss fuera de muestra: **shrinkage = {mejor.shrinkage:g}** "
+        f"({mejor.log_loss:.4f}).",
+        f"Sin shrinkage el log loss es {sin.log_loss:.4f}, o sea una diferencia de "
+        f"**{sin.log_loss - mejor.log_loss:+.4f}**.",
+        "",
+        f"Con ese valor el ataque de Estudiantes (RC) pasa de {sin.ataque_erc:+.3f} "
+        f"a {mejor.ataque_erc:+.3f}.",
+        "",
+        f"El default del modelo es **{SHRINKAGE_DEFAULT:g}**. Ojo con leer el minimo "
+        "exacto de esta tabla como si fuera preciso: el fondo de la U es una meseta "
+        "plana donde las diferencias son de 0.0001, o sea ruido. Cualquier valor de "
+        "esa zona sirve igual; se elige uno del medio y no el minimo exacto, "
+        "justamente para no sobreajustar la eleccion del parametro.",
+    ]
+    DESTINO_TUNING.parent.mkdir(parents=True, exist_ok=True)
+    DESTINO_TUNING.write_text("\n".join(lineas) + "\n", encoding="utf-8")
+    return mejor
+
+
 def main():
     ap = argparse.ArgumentParser(description="Evalua el modelo contra baselines")
     ap.add_argument("--desde", default="2022",
                     help="primera temporada a evaluar (default: 2022)")
     ap.add_argument("--vida-media", type=int, default=1800)
+    ap.add_argument("--shrinkage", type=float, default=None,
+                    help="fuerza de la regularizacion (default: la del modelo)")
+    ap.add_argument("--tunear-shrinkage", action="store_true",
+                    help="prueba la grilla de shrinkage y escribe la tabla")
     args = ap.parse_args()
 
     partidos = cargar_partidos()
@@ -218,9 +318,20 @@ def main():
     temporadas = (partidos[partidos.season_order >= orden_desde.iloc[0]]
                   .sort_values("season_order").season_id.unique())
 
-    print(f"Validacion temporal desde {args.desde} (vida media: {args.vida_media} dias)")
+    if args.tunear_shrinkage:
+        print(f"Tuning de shrinkage desde {args.desde} "
+              f"(vida media: {args.vida_media} dias)")
+        print(f"Probando {len(GRILLA_SHRINKAGE)} valores, tarda unos minutos.\n")
+        tabla = tunear_shrinkage(partidos, temporadas, args.vida_media)
+        mejor = informe_tuning(tabla, args.vida_media, args.desde)
+        print(f"\nMejor shrinkage fuera de muestra: {mejor.shrinkage:g}")
+        print(f"OK  -> {DESTINO_TUNING}")
+        return
+
+    print(f"Validacion temporal desde {args.desde} (vida media: {args.vida_media} dias, "
+          f"shrinkage: {SHRINKAGE_DEFAULT if args.shrinkage is None else args.shrinkage})")
     print("Se entrena solo con el pasado de cada temporada.\n")
-    res = evaluar(partidos, temporadas, args.vida_media)
+    res = evaluar(partidos, temporadas, args.vida_media, shrinkage=args.shrinkage)
 
     lineas = []
 

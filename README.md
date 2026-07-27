@@ -130,18 +130,28 @@ Validacion temporal 2022-2026, log loss (mas bajo es mejor):
 | Modelo | Log loss |
 |---|---:|
 | Mercado (cuotas de las casas) | 1.0531 |
-| **Dixon-Coles (este proyecto)** | **1.0664** |
+| **Dixon-Coles (este proyecto)** | **1.0644** |
 | Elo simple | 1.0694 |
 | Frecuencia historica | 1.0790 |
 | Azar | 1.0986 |
 
-El mercado sigue adelante por 0.0133, y esta bien que asi sea: es el consenso de
+El mercado sigue adelante por 0.0114, y esta bien que asi sea: es el consenso de
 mucha gente con mucha plata en juego. Lo importante es que el modelo le gana a
 todas las referencias simples, o sea que **aporta informacion real**.
 
 Dato medido, no supuesto: se probaron vidas medias de 90 a 3000 dias y anduvo
 mejor cuanto MAS larga. Olvidar rapido empeora el modelo en este dataset. El
 default quedo en 1800 dias.
+
+Tambien medido: la estimacion lleva **shrinkage** (penalizacion L2 hacia el
+promedio de la liga, default 25). Sin el, un equipo con 16 partidos como
+Estudiantes (RC) sacaba un ataque de -1.163 -- decia que hacia un tercio de los
+goles del promedio, cuando el segundo peor de 44 clubes estaba en -0.40. Era
+ruido publicado como certeza. Se probo una grilla de 0 a 500 con la misma
+validacion temporal: la curva es una U con meseta plana entre 20 y 40, y el
+valor quedo en el medio de esa meseta. Mejora el log loss y ademas arregla el
+parametro absurdo. Evidencia completa en `docs/tuning-shrinkage.md`; se
+regenera con `python src/evaluate.py --tunear-shrinkage`.
 
 ## La regla mas importante
 

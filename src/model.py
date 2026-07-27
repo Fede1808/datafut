@@ -60,9 +60,32 @@ Le agregamos dos cosas que hacen la diferencia:
    frecuentes (0-0, 1-0, 0-1, 1-1).
    Con 30% de empates en el futbol argentino, esto importa mucho.
 
+3) SHRINKAGE (regularizacion hacia la media de la liga)
+   Sin esto, el optimizador le cree DEMASIADO a los equipos con pocos
+   partidos. Caso testigo real: Estudiantes (RC), con 16 partidos jugados,
+   sacaba un ataque de -1.16 cuando el segundo peor de los 44 clubes estaba
+   en -0.40. Traducido: el modelo afirmaba que hacen un TERCIO de los goles
+   del promedio de la liga. Eso no es una medicion, es ruido de 16 partidos
+   tomado como certeza.
+
+   La solucion es agregarle al costo una multa por alejarse de 0 (que, como
+   los parametros estan centrados, es exactamente el promedio de la liga):
+
+       costo = -verosimilitud + shrinkage * suma(ataque^2 + defensa^2)
+
+   Como la multa crece con el CUADRADO, alejarse mucho sale carisimo y
+   alejarse poco sale casi gratis. Un equipo con 200 partidos tiene tanta
+   evidencia que se banca la multa y se queda donde estaba; uno con 16 no,
+   y lo empuja hacia el promedio. Es el comportamiento que queremos: la
+   duda se refleja en el numero.
+
+   En estadistica bayesiana esto es lo mismo que decir de entrada "creo que
+   los equipos se parecen entre si" (un prior gaussiano centrado en 0).
+
 Uso:
     python src/model.py                 entrena con todo el historico
     python src/model.py --vida-media 200
+    python src/model.py --shrinkage 0   entrena sin regularizacion
 """
 
 from pathlib import Path
@@ -84,6 +107,27 @@ DESTINO = RAIZ / "data" / "outputs" / "modelo.json"
 MAX_GOLES = 10
 
 VIDA_MEDIA_DEFAULT = 1800  # dias (elegido midiendo, ver nota arriba)
+
+# Cuanto empuja el shrinkage a los parametros hacia el promedio de la liga.
+#
+# DE DONDE SALE ESTE 25: no es un numero elegido a ojo. Se probo una grilla de
+# 14 valores (de 0 a 500) con validacion temporal desde 2022 -entrenar solo con
+# el pasado, predecir la temporada siguiente- y se midio el log loss FUERA DE
+# MUESTRA. La tabla completa esta en data/outputs/tuning-shrinkage.md y se
+# regenera con:  python src/evaluate.py --tunear-shrinkage
+#
+# La curva da en forma de U, como tiene que dar: sin shrinkage el modelo
+# sobreajusta, con demasiado se vuelve ciego y todos los equipos le parecen
+# iguales. El piso es una meseta plana entre 20 y 40 (las diferencias ahi son
+# de 0.0001, o sea ruido). Se eligio 25 por estar en el medio de esa meseta.
+#
+#     0 -> 1.0664        20 -> 1.0645        100 -> 1.0666
+#    10 -> 1.0650        25 -> 1.0644        500 -> 1.0741
+#
+# La mejora es chica en la metrica global (-0.0020 de log loss) pero real, y va
+# en la misma direccion que el arreglo del parametro absurdo. No hay trade-off
+# que declarar: el shrinkage predice mejor Y dice cosas menos ridiculas.
+SHRINKAGE_DEFAULT = 25.0
 
 
 # ---------------------------------------------------------------------------
@@ -117,7 +161,8 @@ def tau(goles_local, goles_visita, lam, mu, rho):
 # ---------------------------------------------------------------------------
 # Entrenamiento
 # ---------------------------------------------------------------------------
-def entrenar(partidos, vida_media=VIDA_MEDIA_DEFAULT, fecha_ref=None, verbose=True):
+def entrenar(partidos, vida_media=VIDA_MEDIA_DEFAULT, fecha_ref=None, verbose=True,
+             shrinkage=None):
     """
     Estima ataque y defensa de cada equipo a partir de los partidos dados.
 
@@ -126,7 +171,12 @@ def entrenar(partidos, vida_media=VIDA_MEDIA_DEFAULT, fecha_ref=None, verbose=Tr
     fecha_ref: desde que fecha se mide la antiguedad (por defecto, el ultimo
                partido). Importa al evaluar: hay que medir desde el momento en
                que uno "estaria parado", no desde hoy.
+    shrinkage: cuanto se penaliza alejarse del promedio de la liga. 0 = sin
+               regularizacion (el comportamiento viejo, que sobreajustaba a
+               los equipos con pocos partidos).
     """
+    if shrinkage is None:
+        shrinkage = SHRINKAGE_DEFAULT
     equipos = sorted(set(partidos.home_team) | set(partidos.away_team))
     indice = {e: i for i, e in enumerate(equipos)}
     n = len(equipos)
@@ -171,7 +221,14 @@ def entrenar(partidos, vida_media=VIDA_MEDIA_DEFAULT, fecha_ref=None, verbose=Tr
         )
         # Negativo porque el optimizador MINIMIZA, y nosotros queremos
         # MAXIMIZAR la probabilidad de lo que ya paso.
-        return -np.sum(pesos * log_prob)
+        error = -np.sum(pesos * log_prob)
+
+        # La multa por alejarse del promedio de la liga (shrinkage). Se aplica
+        # sobre los parametros YA CENTRADOS, asi que "0" es literalmente el
+        # promedio. Solo ataque y defensa: la base, la ventaja de local y rho
+        # son parametros globales estimados con los 6.238 partidos, no tienen
+        # el problema de muestra chica.
+        return error + shrinkage * np.sum(ataque ** 2 + defensa ** 2)
 
     inicial = np.concatenate([
         np.zeros(n),        # ataques
@@ -196,6 +253,7 @@ def entrenar(partidos, vida_media=VIDA_MEDIA_DEFAULT, fecha_ref=None, verbose=Tr
         "ventaja_local": round(float(ventaja_local), 4),
         "rho": round(float(rho), 4),
         "vida_media_dias": vida_media,
+        "shrinkage": shrinkage,
         "partidos_usados": len(partidos),
         "hasta": str(partidos.date.max().date()),
         "convergio": bool(resultado.success),
@@ -263,13 +321,15 @@ def main():
     ap = argparse.ArgumentParser(description="Entrena el modelo Dixon-Coles")
     ap.add_argument("--vida-media", type=int, default=VIDA_MEDIA_DEFAULT,
                     help="dias tras los cuales un partido pesa la mitad")
+    ap.add_argument("--shrinkage", type=float, default=SHRINKAGE_DEFAULT,
+                    help="cuanto se empuja a los equipos hacia el promedio de la liga")
     args = ap.parse_args()
 
     partidos = cargar_partidos()
     print(f"Entrenando con {len(partidos):,} partidos "
-          f"(vida media: {args.vida_media} dias)...")
+          f"(vida media: {args.vida_media} dias, shrinkage: {args.shrinkage})...")
 
-    modelo = entrenar(partidos, vida_media=args.vida_media)
+    modelo = entrenar(partidos, vida_media=args.vida_media, shrinkage=args.shrinkage)
     guardar(modelo)
 
     print(f"OK  -> {DESTINO}")
