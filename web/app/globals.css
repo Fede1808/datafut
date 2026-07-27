@@ -1,51 +1,195 @@
 @import "tailwindcss";
 
 /*
-  Tokens del diseño "Laboratorio de datos".
-  Todo color y tipografía del sitio sale de acá: si mañana cambia la paleta,
-  se toca este bloque y nada más.
+  Dirección visual: "boletín de datos".
+
+  Referencia: la página de estadísticas de un diario deportivo impreso. Filetes
+  finos en vez de tarjetas, titulares con serif editorial, y los números en mono
+  tabular porque son los protagonistas: si una columna de porcentajes no alinea
+  la coma, la tabla deja de leerse de un vistazo.
+
+  Tinta cálida, no el gris azulado de siempre. Todo sale de este bloque.
 */
 @theme {
-  --color-fondo: #15161a;
-  --color-card: #1e2027;
-  --color-cardhover: #24262d;
-  --color-borde: #2a2c33;
-  --color-texto: #f2f1ec;
-  --color-texto2: #7c8089;
-  --color-texto3: #565962;
-  --color-aviso: #c9cbd1;
+  /* Superficies */
+  --color-tinta: #12110f;
+  --color-tinta2: #191816;
+  --color-tinta3: #201e1b;
+  --color-filete: #2e2b27;
+  --color-filete2: #423e38;
 
-  /* Ámbar: reservado para el dato exclusivo del sitio (prob. de campeón). */
-  --color-acento: #ffcf5c;
+  /* Texto */
+  --color-papel: #f4f1ea;
+  --color-papel2: #a09a90;
+  --color-papel3: #6d6862;
 
-  /* Colores fijos de la barra de probabilidad. NO son los del club: si lo
-     fueran, River vs Independiente daría rojo-gris-rojo, ilegible. */
-  --color-local: #5c7cfa;
-  --color-empate: #565962;
-  --color-visita: #ff5c7a;
+  /* Ámbar: reservado al dato exclusivo del sitio (probabilidad de campeón). */
+  --color-acento: #ffbe3d;
 
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Barra de resultado. Fijos, nunca los del club: River vs Independiente
+     daría rojo-gris-rojo. */
+  --color-local: #4d8ce8;
+  --color-empate: #6d6862;
+  --color-visita: #f2607d;
+
+  /* Semánticos */
+  --color-sube: #5cc27e;
+  --color-baja: #f2607d;
+  --color-corte: #5cc27e;
+
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 }
 
 html {
-  background: #15161a;
+  background: #12110f;
   color-scheme: dark;
 }
 
 body {
-  background: #15161a;
-  color: #f2f1ec;
+  background: #12110f;
+  color: #f4f1ea;
   font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Etiquetas chiquitas en mayúscula que ordenan las secciones. */
+/* Trama fina de fondo. Da textura de papel técnico sin pesar un byte de imagen. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 20%, transparent 75%);
+}
+
+/* --- Tipografía --- */
+
+/* Titular editorial. Serif de alto contraste: separa el titular del dato sin
+   necesidad de subirle el cuerpo. */
+.titular {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.02;
+  font-size: clamp(30px, 7vw, 46px);
+}
+
+.titular-2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  font-size: clamp(22px, 5vw, 30px);
+}
+
+/* Etiqueta de sección: versalita mono sobre filete. */
 .etiqueta {
   font-family: var(--font-mono);
-  font-size: 9.5px;
-  letter-spacing: 0.6px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #7c8089;
+  color: var(--color-papel2);
+}
+
+/* Cualquier número que se compare con otro va con esto. Cifras tabulares y
+   cero rayado: sin eso, un 0.0 y un 8.8 no ocupan lo mismo y la columna baila. */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Cifra grande de titular de dato. */
+.cifra {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* --- Filetes --- */
+
+/* Filete doble de cabecera de sección, como el de un diario. */
+.filete-doble {
+  border-top: 3px solid var(--color-papel);
+  box-shadow: 0 2px 0 -1px var(--color-filete);
+}
+
+/* --- Interacción --- */
+
+/* Estado de foco propio: no el anillo azul del navegador ni el outline por
+   defecto de Tailwind. Ámbar, del mismo grosor que los filetes. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+/* Fila de tabla o de partido. El hover no tiñe la fila entera: corre una barra
+   ámbar por el borde izquierdo, que marca dónde está el cursor sin tapar los
+   números. */
+.fila {
+  position: relative;
+  transition: background-color 120ms ease;
+}
+.fila::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-acento);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 140ms ease;
+}
+.fila:hover,
+.fila:focus-visible {
+  background: var(--color-tinta2);
+}
+.fila:hover::before,
+.fila:focus-visible::before {
+  transform: scaleY(1);
+}
+
+/* Cabecera de columna ordenable. */
+.th-orden {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-papel3);
+  cursor: pointer;
+  transition: color 120ms ease;
+  white-space: nowrap;
+}
+.th-orden:hover {
+  color: var(--color-papel);
+}
+.th-orden[aria-sort="descending"],
+.th-orden[aria-sort="ascending"] {
+  color: var(--color-acento);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

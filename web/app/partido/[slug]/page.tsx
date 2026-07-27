@@ -1,8 +1,20 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Chip } from "@/components/Chip";
-import { BarraProb } from "@/components/BarraProb";
-import { partidos, coloresDe, metadatos } from "@/lib/datos";
+import { Escudo } from "@/components/Escudo";
+import { BarraProb, esParejo } from "@/components/BarraProb";
+import { Escenarios } from "@/components/Escenarios";
+import { ModeloVsMercado, mayorDiferencia } from "@/components/ModeloVsMercado";
+import {
+  partidos,
+  coloresDe,
+  metadatos,
+  equipoPorSlug,
+  posicionPorSlug,
+  ataquePct,
+  defensaPct,
+  escenariosDelPartido,
+  type Partido,
+} from "@/lib/datos";
 
 function slugDe(p: { local_slug: string; visita_slug: string }) {
   return `${p.local_slug}-vs-${p.visita_slug}`;
@@ -31,113 +43,308 @@ export default async function PaginaPartido({
   const p = partidos.find((x) => slugDe(x) === slug);
   if (!p) notFound();
 
-  return (
-    <div className="px-4 py-5">
-      <div className="flex items-center justify-between gap-2">
-        <Link
-          href={`/equipo/${p.local_slug}`}
-          className="flex min-w-0 items-center gap-2 font-[family-name:var(--font-display)] text-[15px] font-semibold"
-        >
-          <Chip colores={coloresDe(p.local)} size={14} />
-          <span className="truncate">{p.local}</span>
-        </Link>
-        <span className="font-[family-name:var(--font-mono)] text-[10px] text-[#565962]">
-          vs
-        </span>
-        <Link
-          href={`/equipo/${p.visita_slug}`}
-          className="flex min-w-0 items-center justify-end gap-2 font-[family-name:var(--font-display)] text-[15px] font-semibold"
-        >
-          <span className="truncate">{p.visita}</span>
-          <Chip colores={coloresDe(p.visita)} size={14} />
-        </Link>
-      </div>
+  const eL = equipoPorSlug(p.local_slug);
+  const eV = equipoPorSlug(p.visita_slug);
+  const esc = escenariosDelPartido(p);
+  const totalGoles = p.goles_esperados.local + p.goles_esperados.visita;
+  const maxMarcador = Math.max(...p.marcadores.map((m) => m.prob));
 
-      <div className="mt-1 font-[family-name:var(--font-mono)] text-[9.5px] text-[#565962]">
-        {p.fecha} · {p.hora}
+  return (
+    <div className="py-5">
+      {/* --- Cabecera --- */}
+      <div className="border-b border-[#2e2b27] pb-3">
+        <div className="num flex items-center gap-2 text-[9.5px] uppercase tracking-[0.08em] text-[#6d6862]">
+          <span>{p.fecha}</span>
+          <span aria-hidden>·</span>
+          <span>{p.hora}</span>
+          {esParejo(p.prob) && (
+            <>
+              <span aria-hidden>·</span>
+              <span className="text-[#ffbe3d]">Parejo</span>
+            </>
+          )}
+        </div>
+
+        <div className="mt-2 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+          <LadoEquipo slug={p.local_slug} nombre={p.local} />
+          <span className="num text-[10px] uppercase tracking-[0.1em] text-[#423e38]">
+            vs
+          </span>
+          <LadoEquipo slug={p.visita_slug} nombre={p.visita} derecha />
+        </div>
       </div>
 
       {/* --- 1X2 --- */}
-      <div className="mt-4 flex justify-around border-y border-[#2a2c33] py-3.5">
-        {[
-          { n: p.prob.local, l: "LOCAL" },
-          { n: p.prob.empate, l: "EMPATE" },
-          { n: p.prob.visita, l: "VISITA" },
-        ].map((x) => (
-          <div key={x.l} className="text-center">
-            <div className="font-[family-name:var(--font-mono)] text-[24px] font-semibold">
-              {Math.round(x.n)}%
-            </div>
-            <div className="font-[family-name:var(--font-mono)] text-[9px] tracking-wide text-[#7c8089]">
-              {x.l}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-3">
-        <BarraProb {...p.prob} alto={6} />
-      </div>
-
-      {/* --- Marcadores --- */}
-      <section className="mt-6">
-        <h2 className="etiqueta">Marcadores más probables</h2>
-        <div className="mt-2 flex gap-1.5">
-          {p.marcadores.map((m) => (
-            <div
-              key={m.marcador}
-              className="flex-1 rounded-[2px] bg-[#1e2027] py-2 text-center"
-            >
-              <div className="font-[family-name:var(--font-mono)] text-[14px] font-semibold">
-                {m.marcador}
+      <div className="mt-5">
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { n: p.prob.local, l: "Local", c: "#4d8ce8" },
+            { n: p.prob.empate, l: "Empate", c: "#a09a90" },
+            { n: p.prob.visita, l: "Visita", c: "#f2607d" },
+          ].map((x) => (
+            <div key={x.l}>
+              <div className="cifra text-[clamp(28px,9vw,42px)]" style={{ color: x.c }}>
+                {x.n.toFixed(1)}
+                <span className="text-[0.45em] align-super">%</span>
               </div>
-              <div className="font-[family-name:var(--font-mono)] text-[9px] text-[#7c8089]">
-                {m.prob.toFixed(1)}%
-              </div>
+              <div className="etiqueta mt-0.5">{x.l}</div>
             </div>
           ))}
         </div>
-        {/*
-          El marcador más probable rara vez pasa del 20%. Sin esta aclaración,
-          la gente lee "el modelo dice que sale 1-1", y no es eso.
-        */}
-        <p className="mt-2 font-[family-name:var(--font-mono)] text-[9px] leading-relaxed text-[#565962]">
-          El más probable es {p.marcadores[0].marcador} con{" "}
-          {p.marcadores[0].prob.toFixed(1)}%. O sea que el otro{" "}
-          {(100 - p.marcadores[0].prob).toFixed(0)}% de las veces termina
-          distinto.
-        </p>
+        <div className="mt-3">
+          <BarraProb {...p.prob} alto={8} />
+        </div>
+      </div>
+
+      {/* --- Modelo contra mercado ---
+          Va acá arriba, antes que los marcadores, y a propósito: es el único
+          número de la página que no está en ningún otro lado. */}
+      <section className="mt-8">
+        <h2 className="etiqueta">El modelo contra el mercado</h2>
+        {p.implicita && p.diferencial ? (
+          <>
+            <p className="mt-1 max-w-[62ch] text-[12.5px] leading-relaxed text-[#a09a90]">
+              {frase(p, mayorDiferencia(p.diferencial))}
+            </p>
+            <div className="mt-3 max-w-[520px]">
+              <ModeloVsMercado
+                prob={p.prob}
+                implicita={p.implicita}
+                diferencial={p.diferencial}
+              />
+              <p className="num mt-1.5 text-[9px] leading-relaxed text-[#6d6862]">
+                Mercado = promedio de las cuotas de todas las casas, sin el
+                margen de la casa. Es el consenso de mucha gente con plata en
+                juego y hoy le gana al modelo por poco, así que una diferencia
+                grande no quiere decir que el modelo tenga razón: quiere decir
+                que están mirando cosas distintas. No es una recomendación de
+                apuesta.
+              </p>
+            </div>
+          </>
+        ) : (
+          <p className="num mt-1.5 text-[10px] text-[#6d6862]">
+            Este partido todavía no tiene cuotas publicadas, así que no hay con
+            qué comparar.
+          </p>
+        )}
       </section>
 
-      {/* --- Derivados --- */}
-      <section className="mt-6 grid grid-cols-2 gap-3">
-        <Dato
-          titulo="Goles esperados"
-          valor={`${p.goles_esperados.local.toFixed(2)} — ${p.goles_esperados.visita.toFixed(2)}`}
-        />
-        <Dato titulo="Menos de 2.5 goles" valor={`${p.menos_de_2_5.toFixed(0)}%`} />
-        <Dato titulo="Ambos convierten" valor={`${p.ambos_convierten.toFixed(0)}%`} />
-        <Dato
-          titulo="Más de 2.5 goles"
-          valor={`${(100 - p.menos_de_2_5).toFixed(0)}%`}
-        />
-      </section>
+      <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
+        {/* --- Marcadores --- */}
+        <section>
+          <h2 className="etiqueta">Marcadores más probables</h2>
+          <div className="mt-1.5 border-t-2 border-[#f4f1ea]">
+            {p.marcadores.map((m) => (
+              <div
+                key={m.marcador}
+                className="flex items-center gap-3 border-b border-[#201e1b] py-2"
+              >
+                <span className="num w-9 text-[14px] font-semibold">
+                  {m.marcador}
+                </span>
+                <span className="h-[6px] flex-1 bg-[#201e1b]">
+                  <span
+                    className="block h-full bg-[#ffbe3d]"
+                    style={{ width: `${(m.prob / maxMarcador) * 100}%` }}
+                  />
+                </span>
+                <span className="num w-11 text-right text-[12px] text-[#a09a90]">
+                  {m.prob.toFixed(1)}%
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="num mt-1.5 text-[9.5px] text-[#6d6862]">
+            Los cinco juntos suman{" "}
+            {p.marcadores.reduce((a, m) => a + m.prob, 0).toFixed(0)}%.
+          </p>
 
-      <p className="mt-7 border-t border-[#2a2c33] pt-3 font-[family-name:var(--font-mono)] text-[9.5px] leading-relaxed text-[#565962]">
-        Son goles esperados por el modelo antes de jugarse el partido, no xG.
-        El modelo acierta {metadatos.acierto_pct} de cada 100 partidos.
+          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4">
+            <Dato
+              k="Goles esperados"
+              v={`${p.goles_esperados.local.toFixed(2)} — ${p.goles_esperados.visita.toFixed(2)}`}
+            />
+            <Dato k="Total esperado" v={totalGoles.toFixed(2)} />
+            <Dato k="Más de 2.5" v={`${(100 - p.menos_de_2_5).toFixed(0)}%`} />
+            <Dato k="Ambos convierten" v={`${p.ambos_convierten.toFixed(0)}%`} />
+          </div>
+        </section>
+
+        {/* --- Fuerzas enfrentadas --- */}
+        <section>
+          <h2 className="etiqueta">Fuerza estimada</h2>
+          <div role="table" aria-label="Fuerza estimada de los dos equipos">
+            <div
+              role="row"
+              className="mt-1.5 flex items-center gap-1.5 border-t-2 border-b border-[#f4f1ea] border-b-[#2e2b27] py-2"
+            >
+              <span role="columnheader" className="etiqueta min-w-0 flex-1">
+                Equipo
+              </span>
+              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
+                Ataque
+              </span>
+              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
+                Defensa
+              </span>
+              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
+                Playoffs
+              </span>
+              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
+                Campeón
+              </span>
+            </div>
+
+            {[eL, eV].map(
+              (e) =>
+                e && (
+                  <Link
+                    key={e.slug}
+                    href={`/equipo/${e.slug}`}
+                    role="row"
+                    className="fila flex items-center gap-1.5 border-b border-[#201e1b] py-2"
+                  >
+                    <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
+                      <Escudo slug={e.slug} colores={e.colores} size={16} />
+                      <span className="truncate text-[12.5px]">{e.equipo}</span>
+                    </span>
+                    <Pct valor={ataquePct(e)} />
+                    <Pct valor={defensaPct(e)} />
+                    <span role="cell" className="num w-14 shrink-0 text-right text-[12px]">
+                      {e.playoffs.toFixed(1)}
+                    </span>
+                    <span role="cell" className="num w-14 shrink-0 text-right text-[12px] text-[#ffbe3d]">
+                      {e.campeon.toFixed(1)}
+                    </span>
+                  </Link>
+                ),
+            )}
+          </div>
+          <p className="num mt-1.5 text-[9.5px] text-[#6d6862]">
+            Goles que hace y que evita cada uno respecto del promedio de la liga.
+          </p>
+
+          {/* --- Qué se juega cada uno --- */}
+          {(esc.local || esc.visita) && (
+            <div className="mt-7">
+              <h2 className="etiqueta">Qué se juega cada uno acá</h2>
+              <div className="mt-1.5 grid gap-5">
+                {esc.local && eL && (
+                  <div>
+                    <div className="num text-[10px] uppercase tracking-[0.08em] text-[#a09a90]">
+                      {eL.equipo}
+                    </div>
+                    <Escenarios
+                      esc={esc.local}
+                      campeonBase={eL.campeon}
+                      playoffsBase={eL.playoffs}
+                    />
+                  </div>
+                )}
+                {esc.visita && eV && (
+                  <div>
+                    <div className="num text-[10px] uppercase tracking-[0.08em] text-[#a09a90]">
+                      {eV.equipo}
+                    </div>
+                    <Escenarios
+                      esc={esc.visita}
+                      campeonBase={eV.campeon}
+                      playoffsBase={eV.playoffs}
+                    />
+                  </div>
+                )}
+              </div>
+              <p className="num mt-1.5 text-[9px] leading-relaxed text-[#6d6862]">
+                Probabilidad condicional al resultado de este partido, y su
+                diferencia en puntos porcentuales contra el número de hoy.
+              </p>
+            </div>
+          )}
+        </section>
+      </div>
+
+      <p className="num mt-9 border-t border-[#2e2b27] pt-3 text-[9.5px] leading-relaxed text-[#6d6862]">
+        Goles esperados por el modelo antes del partido, no xG de disparos ·{" "}
+        {metadatos.acierto_pct}% de aciertos 1X2 sobre{" "}
+        {metadatos.partidos_historicos.toLocaleString("es-AR")} partidos.
       </p>
     </div>
   );
 }
 
-function Dato({ titulo, valor }: { titulo: string; valor: string }) {
+/**
+ * La lectura en castellano de la mayor diferencia entre modelo y mercado.
+ * Un +8.1 en la columna "Local" no le dice nada a nadie sin esta frase.
+ */
+function frase(
+  p: Partido,
+  mayor: { clave: "local" | "empate" | "visita"; valor: number },
+): string {
+  const como = {
+    local: `que gane ${p.local}`,
+    empate: "el empate",
+    visita: `que gane ${p.visita}`,
+  }[mayor.clave];
+  const puntos = Math.abs(mayor.valor).toFixed(1);
+
+  if (Math.abs(mayor.valor) < 2) {
+    return `El modelo y el mercado ven este partido casi igual: la mayor diferencia es de ${puntos} puntos porcentuales.`;
+  }
+  return mayor.valor > 0
+    ? `El modelo le da ${puntos} puntos porcentuales MÁS de chance a ${como} que el mercado.`
+    : `El modelo le da ${puntos} puntos porcentuales MENOS de chance a ${como} que el mercado.`;
+}
+
+function LadoEquipo({
+  slug,
+  nombre,
+  derecha = false,
+}: {
+  slug: string;
+  nombre: string;
+  derecha?: boolean;
+}) {
+  const pos = posicionPorSlug(slug);
   return (
-    <div className="rounded-[2px] bg-[#1e2027] px-3 py-2.5">
-      <div className="etiqueta">{titulo}</div>
-      <div className="mt-0.5 font-[family-name:var(--font-mono)] text-[15px] font-semibold">
-        {valor}
-      </div>
+    <Link
+      href={`/equipo/${slug}`}
+      className={`flex min-w-0 items-center gap-2.5 ${derecha ? "flex-row-reverse text-right" : ""}`}
+    >
+      <Escudo slug={slug} colores={coloresDe(nombre)} size={34} />
+      <span className="min-w-0">
+        <span className="titular-2 block truncate">{nombre}</span>
+        {pos && (
+          <span className="num block text-[9.5px] text-[#6d6862]">
+            {pos.puesto}° zona {pos.zona} · {pos.pts} pts · DG{" "}
+            {pos.dif > 0 ? "+" : ""}
+            {pos.dif}
+          </span>
+        )}
+      </span>
+    </Link>
+  );
+}
+
+function Pct({ valor }: { valor: number }) {
+  return (
+    <span
+      role="cell"
+      className={`num w-14 shrink-0 text-right text-[12px] ${
+        valor >= 0 ? "text-[#5cc27e]" : "text-[#f2607d]"
+      }`}
+    >
+      {valor >= 0 ? "+" : "−"}
+      {Math.abs(valor).toFixed(0)}%
+    </span>
+  );
+}
+
+function Dato({ k, v }: { k: string; v: string }) {
+  return (
+    <div>
+      <div className="etiqueta">{k}</div>
+      <div className="num mt-0.5 text-[17px] font-semibold">{v}</div>
     </div>
   );
 }

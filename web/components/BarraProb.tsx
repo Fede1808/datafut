@@ -1,19 +1,15 @@
 /**
  * La barra de tres tramos: local, empate, visitante.
  *
- * Usa SIEMPRE los mismos tres colores, nunca los del club. Y hay una razón
- * concreta: River vs Independiente son los dos rojos, así que una barra con
- * los colores de cada equipo quedaría rojo-gris-rojo, ilegible. Con colores
- * fijos, el usuario aprende una sola vez qué significa cada tramo.
- *
- * La identidad del club vive en el chip, que nunca compite por el mismo
- * espacio con otro chip.
+ * Colores fijos, nunca los del club: River vs Independiente son los dos rojos
+ * y la barra quedaría rojo-gris-rojo. Con tres colores estables se aprende una
+ * vez y sirve para todo el sitio.
  */
 export function BarraProb({
   local,
   empate,
   visita,
-  alto = 4,
+  alto = 5,
 }: {
   local: number;
   empate: number;
@@ -22,25 +18,62 @@ export function BarraProb({
 }) {
   return (
     <div
-      className="flex overflow-hidden rounded-[2px] bg-[#2a2c33]"
+      className="flex overflow-hidden bg-[#201e1b]"
       style={{ height: alto }}
       role="img"
-      aria-label={`Local ${local}%, empate ${empate}%, visitante ${visita}%`}
+      aria-label={`Local ${Math.round(local)}%, empate ${Math.round(
+        empate,
+      )}%, visitante ${Math.round(visita)}%`}
     >
-      <div style={{ width: `${local}%`, background: "#5c7cfa" }} />
-      <div style={{ width: `${empate}%`, background: "#565962" }} />
-      <div style={{ width: `${visita}%`, background: "#ff5c7a" }} />
+      <div style={{ width: `${local}%`, background: "#4d8ce8" }} />
+      <div style={{ width: `${empate}%`, background: "#6d6862" }} />
+      <div style={{ width: `${visita}%`, background: "#f2607d" }} />
     </div>
   );
 }
 
 /**
  * Marca los partidos donde los tres resultados están muy cerca.
- *
- * No es un adorno: cinco de los doce partidos de una fecha típica son así, y
- * si no se avisa, un 34/33/34 se lee igual que un 68/21/11 de reojo. Decirlo
- * explícitamente es parte de ser honesto con la incertidumbre.
+ * Cinco de doce partidos de una fecha típica entran acá: de reojo un 34/33/34
+ * se lee igual que un 68/21/11.
  */
 export function esParejo(p: { local: number; empate: number; visita: number }) {
-  return Math.max(p.local, p.empate, p.visita) - Math.min(p.local, p.empate, p.visita) < 10;
+  return (
+    Math.max(p.local, p.empate, p.visita) -
+      Math.min(p.local, p.empate, p.visita) <
+    10
+  );
+}
+
+/**
+ * Barra de una sola magnitud, en SVG, escalada contra un máximo.
+ *
+ * Se usa en las columnas de probabilidad de las tablas: el número solo obliga
+ * a comparar de memoria fila contra fila; con la barra abajo el orden de
+ * magnitud se ve sin leer.
+ */
+export function BarraSimple({
+  valor,
+  maximo,
+  color = "#ffbe3d",
+  ancho = 46,
+}: {
+  valor: number;
+  maximo: number;
+  color?: string;
+  ancho?: number;
+}) {
+  const p = maximo > 0 ? Math.max(0, Math.min(valor / maximo, 1)) : 0;
+  return (
+    <span
+      aria-hidden
+      className="mt-[3px] block h-[2px] bg-[#2e2b27]"
+      style={{ width: ancho }}
+    >
+      <span
+        className="block h-full"
+        style={{ width: `${p * 100}%`, background: color }}
+      />
+    </span>
+  );
 }
