@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+  <defs>
+    <clipPath id="recorte">
+      <path d="M8 6 H92 V56 C92 92 68 110 50 118 C32 110 8 92 8 56 Z" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#recorte)">
+    <rect x="0" y="0" width="100" height="120" fill="#5CACEE" />
+    <polygon points="0,120 100,0 100,120" fill="#FFFFFF" />
+  </g>
+  <path d="M8 6 H92 V56 C92 92 68 110 50 118 C32 110 8 92 8 56 Z" fill="none" stroke="#3a3d45" stroke-width="3" />
+  <rect x="14" y="80" width="72" height="27" rx="3" fill="#0a0b0e" fill-opacity="0.62" />
+  <text x="50" y="99" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-weight="700" font-size="24" fill="#ffffff" letter-spacing="0.5">BEL</text>
+</svg>
