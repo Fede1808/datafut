@@ -233,8 +233,11 @@ Pendiente:
 Problemas abiertos, documentados en `CLAUDE.md` y `reference/formato-torneos.md`:
 
 - Los cruces interzonales del Clausura no se conocen de antemano: la simulacion
-  usa los del Apertura con la localia invertida. Es un supuesto, esta marcado.
-- Falta al menos un partido en el Apertura 2026 (`Estudiantes (LP)` vs `Lanus`).
-  La fuente no es perfecta y conviene un chequeo automatico de completitud.
+  usa los 30 de la **fase regular** del Apertura con la localia invertida. Es un
+  supuesto, esta marcado. Los playoffs del Apertura se descartan: son cruzados
+  por construccion y si entran se hacen pasar por interzonales.
+- Falta un partido de **fase regular** en el Apertura 2026 (`Estudiantes (LP)` vs
+  `Lanus`, los dos de la Zona A). Los playoffs si estan completos. La fuente no es
+  perfecta y conviene un chequeo automatico de completitud.
 - El reglamento de descensos cambio tres veces en tres anios: **reverificar cada
   temporada** antes de calcular probabilidad de descenso.

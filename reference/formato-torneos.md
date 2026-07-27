@@ -163,9 +163,29 @@ a playoffs son **16**.
                             ^^^^  ^^^^^
 ```
 
-Falta al menos un partido de octavos. **Conclusion importante: la fuente no es perfecta.**
-Hay que tener un chequeo automatico de completitud por temporada, y no asumir que si el
-archivo bajo bien entonces esta completo.
+**CORRECCION (27/07/2026): el partido que falta NO es de octavos, es de fase regular.**
+La version anterior de este documento leia el reparto de arriba y concluia que faltaba un
+octavos. Es al reves, y se comprueba separando las dos fases (contando partidos por equipo,
+como hace `fase_regular` en `src/simulate.py`):
+
+- **Los playoffs estan completos**: 15 partidos, y el cuadro cierra exacto — 8 octavos
+  (09 al 11/05), 4 cuartos (12 al 14/05), 2 semis (16 y 17/05) y la final (24/05).
+- **A la fase regular le falta uno**: 239 partidos y deberian ser 240.
+- Los dos equipos que llegan a 15 partidos de fase regular en vez de 16 son
+  **Estudiantes (LP) y Lanus**, los dos de la Zona A: falta ese partido de zona, no un
+  interzonal. Los interzonales cierran perfecto (30 en total, 2 por equipo).
+
+Por que el reparto enganiaba: Estudiantes (LP) y Lanus jugaron octavos, pero como les falta
+un partido de fase regular terminan con 16 en total y se confunden con los 14 que no
+clasificaron. De ahi el "solo 14 equipos superan los 16 partidos".
+
+**Conclusion importante: la fuente no es perfecta.** Hay que tener un chequeo automatico de
+completitud por temporada, y no asumir que si el archivo bajo bien entonces esta completo.
+
+Consecuencia practica para el codigo: cualquier criterio que separe fase regular de playoffs
+**no puede depender de que el total cierre en 255**. El que usa `src/simulate.py` (los
+primeros 16 partidos de cada equipo, exigiendo que lo sean para los DOS) aguanta este
+agujero; ver el comentario ahi, que explica que alternativas se descartaron y por que.
 
 ---
 

@@ -64,6 +64,11 @@ INICIO_CLAUSURA = "2026-07-23"
 
 CLASIFICAN_POR_ZONA = 8
 
+# El formato vigente (2025-2026): cada equipo juega 16 partidos de fase regular,
+# 14 contra su zona y 2 interzonales. Ver reference/formato-torneos.md.
+PARTIDOS_FASE_REGULAR = 16
+INTERZONALES_POR_EQUIPO = 2
+
 # Umbral de confianza de los escenarios condicionales.
 #
 # Un condicional del tipo "si gana, llega a playoffs con X%" se calcula mirando
@@ -93,18 +98,102 @@ def cargar_zonas(temporada):
     return dict(zip(z.equipo, z.zona))
 
 
+def fase_regular(partidos):
+    """
+    Se queda solo con la fase regular del torneo, tirando los playoffs.
+
+    POR QUE HACE FALTA. El Apertura que se usa de molde para el Clausura no es
+    solo la fase regular: adentro vienen tambien los 15 partidos de playoffs. Y
+    los playoffs son CRUZADOS por construccion (1ro de una zona contra 8vo de la
+    otra), asi que sin filtrarlos se cuelan como si fueran interzonales de fase
+    regular. Eso daba 39 interzonales en vez de 30, y catorce equipos jugando 17
+    partidos y dos jugando 18 en un torneo de 16: partidos de mas para sumar
+    puntos, o sea probabilidades infladas.
+
+    EL CRITERIO: los primeros 16 partidos de cada equipo son su fase regular,
+    y un partido es de fase regular solo si lo es PARA LOS DOS. Sale de contar
+    partidos por equipo, que es como este proyecto ya venia infiriendo la ronda
+    (16 = no clasifico, 17 = perdio octavos, 18 = cuartos, ... ver
+    reference/formato-torneos.md).
+
+    Por que este y no los otros que se evaluaron:
+
+    - **Por fecha de corte**: no hay corte que encontrar. Entre la ultima fecha
+      regular (05/05) y los octavos (09/05) hay 4 dias, los mismos que entre dos
+      fechas regulares (28/04 y 02/05). El hueco que separa Apertura de Clausura
+      existe (60 dias); este no.
+    - **Los ultimos 15 partidos son los playoffs**: depende de que el total
+      cierre en 255, y el Apertura 2026 tiene 254. Con un partido menos se comeria
+      un partido de fase regular. La consigna es justamente que el criterio no
+      puede depender de que el numero cierre.
+    - **Los primeros 30 cruces entre zonas**: es circular (usa el resultado para
+      decidir el criterio) y ademas el orden de las filas mandaria sobre el
+      resultado.
+
+    EL DETALLE QUE HACE QUE FUNCIONE, y que no es cosmetico: se pide que el
+    partido sea de los primeros 16 de AMBOS equipos, no de alguno. Al Apertura
+    2026 le falta un partido de fase regular (`Estudiantes (LP)` vs `Lanus`), asi
+    que esos dos llegan a sus octavos habiendo jugado 15 y no 16. Con "alguno"
+    esos dos octavos entrarian como fase regular; con "ambos" quedan afuera
+    porque el rival de cada uno si llegaba con 16.
+
+    LO QUE ESTE CRITERIO NO AGUANTA: que los DOS equipos de un mismo partido de
+    playoffs vengan con un agujero. Como la fuente ya demostro que pierde
+    partidos, el resultado no se da por bueno: se chequea contra el formato
+    (30 interzonales, 2 por equipo) y si no cierra, avisa fuerte.
+    """
+    orden = partidos.sort_values("date", kind="stable")
+    jugados = Counter()
+    de_fase_regular = []
+    for f in orden.itertuples():
+        de_fase_regular.append(jugados[f.home_team] < PARTIDOS_FASE_REGULAR and
+                               jugados[f.away_team] < PARTIDOS_FASE_REGULAR)
+        jugados[f.home_team] += 1
+        jugados[f.away_team] += 1
+    return orden[de_fase_regular]
+
+
+def revisar_interzonales(plantilla, zona):
+    """
+    Contrasta la plantilla de interzonales contra el formato del torneo.
+
+    No corrige nada: avisa. Existe porque el criterio de `fase_regular` se apoya
+    en una fuente que ya se sabe incompleta, y un interzonal de menos no rompe
+    nada visible — simplemente un equipo simula 15 partidos en vez de 16 y nadie
+    se entera. Un aviso ruidoso hoy vale mas que un dato sucio que no ves durante
+    seis meses.
+    """
+    esperados = len(zona) * INTERZONALES_POR_EQUIPO // 2
+    por_equipo = Counter()
+    for local, visita in plantilla:
+        por_equipo[local] += 1
+        por_equipo[visita] += 1
+    raros = {e: por_equipo[e] for e in sorted(zona)
+             if por_equipo[e] != INTERZONALES_POR_EQUIPO}
+    if len(plantilla) != esperados or raros:
+        print(f"AVISO: la plantilla de interzonales tiene {len(plantilla)} cruces "
+              f"y por formato deberian ser {esperados}.")
+        for e, n in raros.items():
+            print(f"       {e}: {n} interzonales en vez de {INTERZONALES_POR_EQUIPO}")
+        print("       Revisa si a la fuente le faltan partidos del torneo anterior.")
+
+
 def localia_del_torneo_anterior(partidos):
     """
     Quien fue local en cada cruce del torneo anterior: par de equipos -> local.
 
+    Recibe SOLO la fase regular (ver `fase_regular`), que es la que se invierte
+    para el torneo siguiente. Ahi cada par se cruzo una sola vez, asi que no hay
+    ambiguedad posible sobre quien puso la cancha.
+
     El par va sin orden (frozenset) porque la pregunta es "de estos dos, quien
     puso la cancha", no "quien figura primero".
 
-    Se ordena por fecha y se guarda la PRIMERA aparicion del par a proposito: si
-    dos equipos se cruzaron dos veces en el Apertura (fase regular y despues
-    playoffs), la que define la localia del Clausura es la de la fase regular.
-    Ordenar antes de recorrer tambien hace que el resultado no dependa del orden
-    de las filas del CSV, que es lo que mantiene reproducible al pipeline.
+    Se ordena por fecha antes de recorrer para que el resultado no dependa del
+    orden de las filas del CSV, que es lo que mantiene reproducible al pipeline.
+    Y se guarda la primera aparicion de cada par por si en el futuro entrara un
+    partido repetido: mejor quedarse con el mas viejo de forma determinista que
+    con el que casualmente venga ultimo.
     """
     orden = partidos.sort_values("date", kind="stable")
     localia = {}
@@ -146,7 +235,7 @@ def partidos_pendientes(zona, jugados, plantilla_interzonal, localia_anterior):
                 local_anterior = localia_anterior.get(par)
                 if local_anterior is None:
                     # Sin antecedente en el Apertura no hay nada que invertir.
-                    # Pasa en un solo partido de los 246 y es consecuencia de un
+                    # Pasa en un solo partido de los 237 y es consecuencia de un
                     # agujero conocido de la fuente: al Apertura 2026 le falta
                     # `Estudiantes (LP)` vs `Lanus` (254 partidos en vez de 255,
                     # ver README y reference/formato-torneos.md).
@@ -293,7 +382,12 @@ def calcular_escenarios(equipos, pendientes, gl, gv, campeon, clasifico, proximo
 
 
 def interzonales_del_torneo_anterior(partidos, zona):
-    """Saca los cruces entre zonas del Apertura, con la localia invertida."""
+    """
+    Saca los cruces entre zonas del Apertura, con la localia invertida.
+
+    `partidos` tiene que venir filtrado por `fase_regular`: los playoffs son
+    cruzados por construccion y si entran se hacen pasar por interzonales.
+    """
     pares = []
     for f in partidos.itertuples():
         if zona.get(f.home_team) != zona.get(f.away_team):
@@ -510,9 +604,17 @@ def main():
                  + "\n".join(f"  - {e}" for e in desconocidos)
                  + "\n       Reentrena con:  python src/model.py")
 
-    plantilla = interzonales_del_torneo_anterior(apertura, zona)
+    # El Apertura trae fase regular Y playoffs. Para armar el molde del Clausura
+    # sirve solo la fase regular: los playoffs son cruces de eliminacion directa,
+    # no fixture que se repita.
+    regular = fase_regular(apertura)
+    print(f"Apertura {TEMPORADA}: {len(regular)} partidos de fase regular "
+          f"de {len(apertura)} ({len(apertura) - len(regular)} de playoffs)")
+
+    plantilla = interzonales_del_torneo_anterior(regular, zona)
+    revisar_interzonales(plantilla, zona)
     pendientes = partidos_pendientes(zona, jugados, plantilla,
-                                     localia_del_torneo_anterior(apertura))
+                                     localia_del_torneo_anterior(regular))
 
     print(f"Clausura {TEMPORADA}: {len(jugados)} partidos jugados, "
           f"{len(pendientes)} por jugar\n")
@@ -557,7 +659,12 @@ def main():
     escribir()
     escribir("- QUIENES juegan contra quienes dentro de cada zona es exacto: todos")
     escribir("  juegan contra todos. Los cruces interzonales no, porque salen de un")
-    escribir("  sorteo: se usan los del Apertura.")
+    escribir("  sorteo: se usan los {} de la FASE REGULAR del Apertura. Los partidos"
+             .format(len(plantilla)))
+    escribir("  de playoffs del Apertura quedan afuera a proposito: son cruzados por")
+    escribir("  construccion (1ro de una zona contra 8vo de la otra) y si se colaran")
+    escribir("  pasarian por interzonales, dandole a algunos equipos mas de los 16")
+    escribir("  partidos que el formato les da.")
     escribir("- DONDE se juega cada partido es un supuesto: el fixture del Clausura no")
     escribir("  se conoce de antemano, asi que se toma la localia del Apertura y se")
     escribir("  invierte, que es como funciona el torneo argentino. Importa porque el")
