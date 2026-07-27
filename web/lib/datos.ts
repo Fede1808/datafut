@@ -12,6 +12,7 @@ import fecha from "@/data/fecha.json";
 import titulo from "@/data/titulo.json";
 import tabla from "@/data/tabla.json";
 import equipos from "@/data/equipos.json";
+import escenarios from "@/data/escenarios.json";
 import meta from "@/data/meta.json";
 
 export type Partido = {
@@ -65,10 +66,39 @@ export type Equipo = {
   playoffs: number;
 };
 
+/**
+ * Cómo queda el equipo según cómo le vaya en su próximo partido.
+ *
+ * Sale de agrupar las mismas simulaciones del Monte Carlo por el resultado de
+ * ese partido, así que `campeon` y `playoffs` son probabilidades condicionales.
+ * `confiable` es false cuando la rama se quedó con muy pocas simulaciones: en
+ * ese caso el número es ruido de muestreo y NO se muestra.
+ */
+export type Rama = {
+  resultado: "gana" | "empata" | "pierde";
+  simulaciones: number;
+  prob_resultado: number;
+  campeon: number | null;
+  playoffs: number | null;
+  confiable: boolean;
+};
+
+export type Escenario = {
+  equipo: string;
+  slug: string;
+  rival: string;
+  rival_slug: string;
+  condicion: "local" | "visita";
+  fecha: string;
+  hora: string;
+  ramas: Rama[];
+};
+
 export const partidos = fecha.partidos as Partido[];
 export const candidatos = titulo.equipos as EquipoTitulo[];
 export const fichas = equipos.equipos as Equipo[];
 export const posiciones = tabla.equipos as FilaTabla[];
+export const listaEscenarios = escenarios.equipos as Escenario[];
 export const torneo = titulo.torneo;
 export const temporada = titulo.temporada;
 export const metadatos = meta;
@@ -94,6 +124,16 @@ export function tablaDeZona(zona: string): FilaTabla[] {
 
 export function posicionPorSlug(slug: string): FilaTabla | undefined {
   return posiciones.find((f) => f.slug === slug);
+}
+
+/**
+ * Los escenarios de un equipo, o undefined si no tiene.
+ * No los tiene si no juega en la próxima fecha, o si su partido no está entre
+ * los que la simulación juega (los cruces interzonales del Clausura no se
+ * conocen y se suponen a partir del Apertura).
+ */
+export function escenariosPorSlug(slug: string): Escenario | undefined {
+  return listaEscenarios.find((e) => e.slug === slug);
 }
 
 /** Partidos que le tocan a un equipo en la fecha que viene. */

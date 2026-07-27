@@ -13,13 +13,14 @@ mismos JSON van a alimentar despues el generador de placas para redes. Si
 cada uno calculara sus propios numeros, tarde o temprano se contradirian y
 publicarias dos verdades distintas el mismo dia.
 
-Escribe cinco archivos en web/data/:
+Escribe seis archivos en web/data/:
 
-  fecha.json    los partidos que se vienen, con probabilidades
-  titulo.json   los 30 equipos con su chance de salir campeon
-  tabla.json    la tabla de posiciones de las dos zonas
-  equipos.json  ataque y defensa de cada equipo
-  meta.json     cuando se actualizo y que tan bien viene acertando el modelo
+  fecha.json       los partidos que se vienen, con probabilidades
+  titulo.json      los 30 equipos con su chance de salir campeon
+  tabla.json       la tabla de posiciones de las dos zonas
+  equipos.json     ataque y defensa de cada equipo
+  escenarios.json  cuanto cambia el futuro de cada equipo segun como le vaya
+  meta.json        cuando se actualizo y que tan bien viene acertando el modelo
 
 Uso:
     python src/export.py
@@ -204,7 +205,22 @@ def main():
         "equipos": fichas,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # --- 5. Metadatos: de donde salen los numeros ---
+    # --- 5. Que se juega cada equipo en su proximo partido ---
+    # El sitio ya dice "llega a playoffs: 41%", que es un numero quieto. Esto
+    # contesta la pregunta que se hace el hincha de verdad: y si ganamos el
+    # domingo? Sale de las MISMAS simulaciones, agrupadas segun como salio ese
+    # partido; no se vuelve a simular nada.
+    escenarios = [
+        {**e, "slug": slug(e["equipo"]), "rival_slug": slug(e["rival"])}
+        for e in simulacion.get("escenarios", [])
+    ]
+    (SALIDA / "escenarios.json").write_text(json.dumps({
+        "simulaciones": simulacion["simulaciones"],
+        "min_simulaciones_rama": simulacion.get("min_simulaciones_rama"),
+        "equipos": escenarios,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # --- 6. Metadatos: de donde salen los numeros ---
     meta = {
         "actualizado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "partidos_historicos": len(partidos_hist),
@@ -240,6 +256,7 @@ def main():
     print(f"    titulo.json   {len(equipos_sim)} equipos")
     print(f"    tabla.json    {len(filas_tabla)} equipos | {len(jugados)} partidos jugados")
     print(f"    equipos.json  {len(fichas)} equipos")
+    print(f"    escenarios.json  {len(escenarios)} de {len(fichas)} equipos")
     print(f"    meta.json     acierto {ACIERTO}% | {len(partidos_hist):,} partidos historicos")
 
 

@@ -52,6 +52,8 @@ from model import cargar_partidos, matriz_marcadores, MAX_GOLES
 RAIZ = Path(__file__).resolve().parent.parent
 MODELO = RAIZ / "data" / "outputs" / "modelo.json"
 ZONAS = RAIZ / "reference" / "zonas.csv"
+FIXTURES = RAIZ / "data" / "raw" / "fixtures.csv"
+TABLA_EQUIPOS = RAIZ / "reference" / "team_names.csv"
 DESTINO = RAIZ / "data" / "outputs" / "simulacion.md"
 DESTINO_JSON = RAIZ / "data" / "outputs" / "simulacion.json"
 
@@ -61,6 +63,20 @@ TEMPORADA = "2026"
 INICIO_CLAUSURA = "2026-07-23"
 
 CLASIFICAN_POR_ZONA = 8
+
+# Umbral de confianza de los escenarios condicionales.
+#
+# Un condicional del tipo "si gana, llega a playoffs con X%" se calcula mirando
+# SOLO las simulaciones en las que ese equipo gano ese partido. Si esa rama se
+# quedo con pocas simulaciones, el porcentaje es ruido: con 100 simulaciones el
+# error estandar de un 50% es 5 puntos porcentuales, y dos corridas del pipeline
+# publicarian numeros visiblemente distintos sin que haya cambiado nada.
+#
+# Con 500 el error estandar en el peor caso (50%) baja a ~2,2 pp, que es el
+# limite de lo que se puede mostrar con un decimal sin mentir. Debajo de eso la
+# rama se marca no confiable y el sitio no la muestra: mejor no decir nada que
+# decir un numero inventado por el azar del muestreo.
+MIN_SIMS_RAMA = 500
 
 
 # ---------------------------------------------------------------------------
@@ -103,6 +119,124 @@ def partidos_pendientes(zona, jugados, plantilla_interzonal):
             pendientes.append((local, visita))
 
     return pendientes
+
+
+def proximo_partido_por_equipo(equipos):
+    """
+    El proximo partido REAL de cada equipo, sacado del fixture.
+
+    Ojo con la diferencia: `pendientes` es lo que la simulacion juega, y los
+    cruces interzonales de ahi son inventados a partir del Apertura. El fixture,
+    en cambio, es el calendario de verdad. Para contar "que se juega el equipo
+    el domingo" hay que arrancar del fixture, no de `pendientes`.
+
+    Si un equipo aparece en varias filas se toma la primera cronologicamente.
+    Si no hay fixture, se devuelve vacio y el pipeline sigue: los escenarios son
+    un extra, no pueden voltear la simulacion.
+    """
+    if not FIXTURES.exists():
+        print(f"AVISO: no existe {FIXTURES}; no se calculan escenarios.")
+        return {}
+
+    nombres = pd.read_csv(TABLA_EQUIPOS, encoding="utf-8")
+    canonico = dict(zip(nombres.raw, nombres.canonical))
+
+    fx = pd.read_csv(FIXTURES, encoding="utf-8-sig")
+    fx = fx[fx.Country == "Argentina"].copy()
+    # El fixture trae la fecha como dd/mm/aaaa. Se parsea para ordenar de
+    # verdad: alfabeticamente "26/07" iria antes que "3/08".
+    fx["_cuando"] = pd.to_datetime(fx.Date + " " + fx.Time.fillna("00:00"),
+                                   format="%d/%m/%Y %H:%M", errors="coerce")
+    fx = fx.sort_values("_cuando", kind="stable")
+
+    proximo = {}
+    for f in fx.itertuples():
+        local = canonico.get(f.Home, f.Home)
+        visita = canonico.get(f.Away, f.Away)
+        if local not in equipos or visita not in equipos:
+            continue
+        for equipo, rival, condicion in ((local, visita, "local"),
+                                         (visita, local, "visita")):
+            if equipo not in proximo:
+                proximo[equipo] = {"rival": rival, "condicion": condicion,
+                                   "fecha": f.Date, "hora": f.Time}
+    return proximo
+
+
+def calcular_escenarios(equipos, pendientes, gl, gv, campeon, clasifico, proximos):
+    """
+    Que se juega cada equipo en su proximo partido.
+
+    LA IDEA, QUE ES LO IMPORTANTE: no hace falta volver a simular nada. Cada una
+    de las 10.000 simulaciones ya contiene el resultado sorteado de ese partido
+    Y el desenlace final del torneo. Entonces alcanza con AGRUPAR:
+
+        P(playoffs | gana) = (simulaciones donde gano Y clasifico)
+                             / (simulaciones donde gano)
+
+    Es gratis: son las mismas simulaciones miradas en tres montones.
+
+    Un detalle que hay que respetar: el partido del fixture puede no estar en
+    `pendientes` (los interzonales de la simulacion son inventados). En ese caso
+    el equipo NO tiene escenarios. No se aproxima con otro partido.
+
+    Y otro: en `pendientes` la localia de los partidos de zona es arbitraria
+    (sale del orden alfabetico), asi que el par se busca sin orden y despues se
+    mira de que lado quedo el equipo para saber cuando gano y cuando perdio.
+    """
+    n = gl.shape[1]
+    idx = {e: i for i, e in enumerate(equipos)}
+
+    # Indice de partidos pendientes por par de equipos, sin importar quien
+    # figura de local.
+    donde = {}
+    for i, (local, visita) in enumerate(pendientes):
+        donde.setdefault(frozenset((local, visita)), (i, local))
+
+    salida = []
+    for equipo in equipos:
+        p = proximos.get(equipo)
+        if p is None:
+            continue
+        ubicacion = donde.get(frozenset((equipo, p["rival"])))
+        if ubicacion is None:
+            continue
+        i, local_en_sim = ubicacion
+
+        # int16 para que la resta no desborde el int8 de los goles.
+        dif = gl[i].astype(np.int16) - gv[i].astype(np.int16)
+        if local_en_sim == equipo:
+            gana, pierde = dif > 0, dif < 0
+        else:
+            gana, pierde = dif < 0, dif > 0
+        empata = dif == 0
+
+        je = idx[equipo]
+        ramas = []
+        for resultado, mask in (("gana", gana), ("empata", empata),
+                                ("pierde", pierde)):
+            sims = int(mask.sum())
+            confiable = sims >= MIN_SIMS_RAMA
+            ramas.append({
+                "resultado": resultado,
+                "simulaciones": sims,
+                "prob_resultado": round(100 * sims / n, 2),
+                "campeon": round(100 * float((campeon[mask] == je).mean()), 2)
+                           if sims else None,
+                "playoffs": round(100 * float(clasifico[mask, je].mean()), 2)
+                            if sims else None,
+                "confiable": confiable,
+            })
+
+        salida.append({
+            "equipo": equipo,
+            "rival": p["rival"],
+            "condicion": p["condicion"],
+            "fecha": p["fecha"],
+            "hora": p["hora"],
+            "ramas": ramas,
+        })
+    return salida
 
 
 def interzonales_del_torneo_anterior(partidos, zona):
@@ -208,7 +342,7 @@ def jugados_del_clausura(partidos):
     return t[t.date >= INICIO_CLAUSURA]
 
 
-def simular(modelo, zona, jugados, pendientes, n, semilla=None):
+def simular(modelo, zona, jugados, pendientes, n, semilla=None, proximos=None):
     if semilla is not None:
         np.random.seed(semilla)
 
@@ -249,14 +383,16 @@ def simular(modelo, zona, jugados, pendientes, n, semilla=None):
 
     print(f"Jugando {n:,} veces los playoffs...")
     campeon = np.empty(n, dtype=np.int32)
-    clasifica = np.zeros(ne, dtype=np.int64)
+    # Se guarda QUIEN clasifico en CADA simulacion, no solo el total. Cuesta
+    # 30 bits por simulacion y es lo que despues permite cruzar el desenlace
+    # del torneo con el resultado de un partido puntual, sin volver a simular.
+    clasifico = np.zeros((n, ne), dtype=bool)
 
     for s in range(n):
         # Top 8 de cada zona, de mejor a peor.
         top_a = sorted(zona_a, key=lambda i: -ranking[s, i])[:CLASIFICAN_POR_ZONA]
         top_b = sorted(zona_b, key=lambda i: -ranking[s, i])[:CLASIFICAN_POR_ZONA]
-        for e in top_a + top_b:
-            clasifica[e] += 1
+        clasifico[s, top_a + top_b] = True
 
         # Octavos cruzados: 1ro de una zona contra 8vo de la otra.
         # El local siempre es el mejor ubicado (menos en la final, pero ahi la
@@ -272,11 +408,15 @@ def simular(modelo, zona, jugados, pendientes, n, semilla=None):
 
         campeon[s] = _ganador(modelo, equipos, *llave[0])
 
+    escenarios = calcular_escenarios(equipos, pendientes, gl, gv, campeon,
+                                     clasifico, proximos or {})
+
     return {
         "equipos": equipos,
         "campeon": Counter(campeon.tolist()),
-        "clasifica": clasifica,
+        "clasifica": clasifico.sum(axis=0),
         "n": n,
+        "escenarios": escenarios,
     }
 
 
@@ -323,7 +463,9 @@ def main():
     print(f"Clausura {TEMPORADA}: {len(jugados)} partidos jugados, "
           f"{len(pendientes)} por jugar\n")
 
-    res = simular(modelo, zona, jugados, pendientes, args.n, semilla=args.semilla)
+    proximos = proximo_partido_por_equipo(set(zona))
+    res = simular(modelo, zona, jugados, pendientes, args.n,
+                  semilla=args.semilla, proximos=proximos)
 
     equipos, n = res["equipos"], res["n"]
     filas = []
@@ -382,8 +524,11 @@ def main():
              "campeon": round(f.campeon, 2), "playoffs": round(f.playoffs, 2)}
             for f in tabla.itertuples()
         ],
+        "min_simulaciones_rama": MIN_SIMS_RAMA,
+        "escenarios": res["escenarios"],
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"OK  -> {DESTINO_JSON}")
+    print(f"    escenarios de {len(res['escenarios'])} de {len(equipos)} equipos")
 
 
 if __name__ == "__main__":

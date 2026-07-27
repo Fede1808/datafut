@@ -7,7 +7,9 @@ import {
   equipoPorSlug,
   posicionPorSlug,
   partidosDe,
+  escenariosPorSlug,
   metadatos,
+  type Rama,
 } from "@/lib/datos";
 
 /** Pre-genera una página por equipo en tiempo de build: no hay servidor. */
@@ -36,6 +38,12 @@ export default async function PaginaEquipo({
 
   const suyos = partidosDe(e.equipo);
   const pos = posicionPorSlug(slug);
+
+  // Puede no tener escenarios: si no juega en la próxima fecha, o si su partido
+  // no es uno de los que la simulación juega. En ese caso la sección no se
+  // renderiza. Tampoco se muestran las ramas marcadas como no confiables.
+  const esc = escenariosPorSlug(slug);
+  const ramas = esc?.ramas.filter((r) => r.confiable && r.playoffs !== null) ?? [];
 
   // El modelo guarda ataque y defensa en escala logarítmica, que no le dice
   // nada a nadie. Se convierte a "cuántos goles más o menos que el promedio",
@@ -118,11 +126,68 @@ export default async function PaginaEquipo({
         </section>
       )}
 
+      {/* --- Qué se juega --- */}
+      {/* "Llega a playoffs: 41%" es un número quieto. Lo que el hincha se
+          pregunta es "¿y si ganamos el domingo?". Estas son las mismas
+          simulaciones agrupadas según cómo salió ese partido. */}
+      {esc && ramas.length > 0 && (
+        <section className="mt-7">
+          <h2 className="etiqueta">Qué se juega contra {esc.rival}</h2>
+          <div className="mt-0.5 font-[family-name:var(--font-mono)] text-[9.5px] text-[#565962]">
+            De {esc.condicion === "local" ? "local" : "visitante"}
+            {esc.fecha ? ` · ${esc.fecha}` : ""}
+            {esc.hora ? ` ${esc.hora}` : ""}
+          </div>
+          <div className="mt-2 overflow-hidden rounded-[3px] border border-[#2a2c33]">
+            {ramas.map((r) => (
+              <FilaEscenario key={r.resultado} r={r} actual={e.playoffs} />
+            ))}
+          </div>
+          <p className="mt-1.5 font-[family-name:var(--font-mono)] text-[9px] leading-relaxed text-[#565962]">
+            Probabilidad de llegar a playoffs en cada caso, y cuánto cambia
+            respecto del {e.playoffs.toFixed(1)}% de hoy.
+          </p>
+        </section>
+      )}
+
       <p className="mt-7 border-t border-[#2a2c33] pt-3 font-[family-name:var(--font-mono)] text-[9.5px] leading-relaxed text-[#565962]">
         Calculado con {metadatos.simulaciones.toLocaleString("es-AR")}{" "}
         simulaciones del torneo. El modelo acierta {metadatos.acierto_pct} de
         cada 100 partidos.
       </p>
+    </div>
+  );
+}
+
+const TITULO_RAMA = {
+  gana: "Si gana",
+  empata: "Si empata",
+  pierde: "Si pierde",
+} as const;
+
+function FilaEscenario({ r, actual }: { r: Rama; actual: number }) {
+  const playoffs = r.playoffs as number;
+  // El delta es lo que hace que el dato se entienda: "68%" solo no dice nada,
+  // "+17 pp" sí. Va en puntos porcentuales, no en porcentaje de variación.
+  const delta = playoffs - actual;
+  // Redondeo antes de comparar: un -0.04 mostrado como "0 pp" no puede salir
+  // pintado de rojo.
+  const dr = Math.round(delta);
+
+  return (
+    <div className="flex items-baseline gap-3 border-b border-[#2a2c33] px-3 py-2 last:border-b-0">
+      <span className="flex-1 text-[12px]">{TITULO_RAMA[r.resultado]}</span>
+      <span className="font-[family-name:var(--font-mono)] text-[15px] font-semibold tabular-nums">
+        {playoffs.toFixed(1)}%
+      </span>
+      <span
+        className={`w-[62px] text-right font-[family-name:var(--font-mono)] text-[11px] tabular-nums ${
+          dr > 0 ? "text-[#5cc27e]" : dr < 0 ? "text-[#ff5c7a]" : "text-[#565962]"
+        }`}
+      >
+        {dr > 0 ? "+" : dr < 0 ? "−" : "±"}
+        {Math.abs(dr)} pp
+      </span>
     </div>
   );
 }

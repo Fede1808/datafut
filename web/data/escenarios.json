@@ -1,0 +1,846 @@
+{
+  "simulaciones": 10000,
+  "min_simulaciones_rama": 500,
+  "equipos": [
+    {
+      "equipo": "Atlético Tucumán",
+      "rival": "Independiente Rivadavia",
+      "condicion": "local",
+      "fecha": "26/07/2026",
+      "hora": "19:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3805,
+          "prob_resultado": 38.05,
+          "campeon": 2.29,
+          "playoffs": 72.25,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3084,
+          "prob_resultado": 30.84,
+          "campeon": 1.52,
+          "playoffs": 57.72,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3111,
+          "prob_resultado": 31.11,
+          "campeon": 1.48,
+          "playoffs": 47.96,
+          "confiable": true
+        }
+      ],
+      "slug": "atletico-tucuman",
+      "rival_slug": "independiente-rivadavia"
+    },
+    {
+      "equipo": "Banfield",
+      "rival": "Huracán",
+      "condicion": "visita",
+      "fecha": "25/07/2026",
+      "hora": "01:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3415,
+          "prob_resultado": 34.15,
+          "campeon": 2.17,
+          "playoffs": 69.05,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3488,
+          "prob_resultado": 34.88,
+          "campeon": 1.95,
+          "playoffs": 53.78,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3097,
+          "prob_resultado": 30.97,
+          "campeon": 1.23,
+          "playoffs": 45.69,
+          "confiable": true
+        }
+      ],
+      "slug": "banfield",
+      "rival_slug": "huracan"
+    },
+    {
+      "equipo": "Barracas Central",
+      "rival": "River Plate",
+      "condicion": "visita",
+      "fecha": "25/07/2026",
+      "hora": "23:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2152,
+          "prob_resultado": 21.52,
+          "campeon": 1.77,
+          "playoffs": 58.09,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 2691,
+          "prob_resultado": 26.91,
+          "campeon": 1.19,
+          "playoffs": 44.33,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 5157,
+          "prob_resultado": 51.57,
+          "campeon": 0.91,
+          "playoffs": 36.53,
+          "confiable": true
+        }
+      ],
+      "slug": "barracas-central",
+      "rival_slug": "river-plate"
+    },
+    {
+      "equipo": "Boca Juniors",
+      "rival": "Deportivo Riestra",
+      "condicion": "visita",
+      "fecha": "26/07/2026",
+      "hora": "23:30",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 5200,
+          "prob_resultado": 52.0,
+          "campeon": 19.5,
+          "playoffs": 98.9,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3245,
+          "prob_resultado": 32.45,
+          "campeon": 18.09,
+          "playoffs": 97.23,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 1555,
+          "prob_resultado": 15.55,
+          "campeon": 17.23,
+          "playoffs": 95.05,
+          "confiable": true
+        }
+      ],
+      "slug": "boca-juniors",
+      "rival_slug": "deportivo-riestra"
+    },
+    {
+      "equipo": "Central Córdoba (SdE)",
+      "rival": "Gimnasia (M)",
+      "condicion": "visita",
+      "fecha": "24/07/2026",
+      "hora": "20:45",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 4887,
+          "prob_resultado": 48.87,
+          "campeon": 1.27,
+          "playoffs": 55.19,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 2963,
+          "prob_resultado": 29.63,
+          "campeon": 0.64,
+          "playoffs": 39.15,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2150,
+          "prob_resultado": 21.5,
+          "campeon": 0.65,
+          "playoffs": 31.86,
+          "confiable": true
+        }
+      ],
+      "slug": "central-cordoba-sde",
+      "rival_slug": "gimnasia-m"
+    },
+    {
+      "equipo": "Deportivo Riestra",
+      "rival": "Boca Juniors",
+      "condicion": "local",
+      "fecha": "26/07/2026",
+      "hora": "23:30",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 1555,
+          "prob_resultado": 15.55,
+          "campeon": 3.09,
+          "playoffs": 68.81,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3245,
+          "prob_resultado": 32.45,
+          "campeon": 2.06,
+          "playoffs": 55.84,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 5200,
+          "prob_resultado": 52.0,
+          "campeon": 1.87,
+          "playoffs": 48.75,
+          "confiable": true
+        }
+      ],
+      "slug": "deportivo-riestra",
+      "rival_slug": "boca-juniors"
+    },
+    {
+      "equipo": "Estudiantes (LP)",
+      "rival": "Independiente",
+      "condicion": "local",
+      "fecha": "26/07/2026",
+      "hora": "21:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 4063,
+          "prob_resultado": 40.63,
+          "campeon": 7.11,
+          "playoffs": 89.81,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3203,
+          "prob_resultado": 32.03,
+          "campeon": 5.9,
+          "playoffs": 80.55,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2734,
+          "prob_resultado": 27.34,
+          "campeon": 4.68,
+          "playoffs": 75.68,
+          "confiable": true
+        }
+      ],
+      "slug": "estudiantes-lp",
+      "rival_slug": "independiente"
+    },
+    {
+      "equipo": "Estudiantes (RC)",
+      "rival": "Tigre",
+      "condicion": "local",
+      "fecha": "25/07/2026",
+      "hora": "18:45",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 913,
+          "prob_resultado": 9.13,
+          "campeon": 0.0,
+          "playoffs": 0.44,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3064,
+          "prob_resultado": 30.64,
+          "campeon": 0.0,
+          "playoffs": 0.03,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 6023,
+          "prob_resultado": 60.23,
+          "campeon": 0.0,
+          "playoffs": 0.02,
+          "confiable": true
+        }
+      ],
+      "slug": "estudiantes-rc",
+      "rival_slug": "tigre"
+    },
+    {
+      "equipo": "Gimnasia (LP)",
+      "rival": "Racing Club",
+      "condicion": "visita",
+      "fecha": "24/07/2026",
+      "hora": "23:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2922,
+          "prob_resultado": 29.22,
+          "campeon": 2.43,
+          "playoffs": 67.69,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3074,
+          "prob_resultado": 30.74,
+          "campeon": 1.76,
+          "playoffs": 53.51,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 4004,
+          "prob_resultado": 40.04,
+          "campeon": 1.6,
+          "playoffs": 45.88,
+          "confiable": true
+        }
+      ],
+      "slug": "gimnasia-lp",
+      "rival_slug": "racing-club"
+    },
+    {
+      "equipo": "Gimnasia (M)",
+      "rival": "Central Córdoba (SdE)",
+      "condicion": "local",
+      "fecha": "24/07/2026",
+      "hora": "20:45",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2150,
+          "prob_resultado": 21.5,
+          "campeon": 0.23,
+          "playoffs": 26.7,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 2963,
+          "prob_resultado": 29.63,
+          "campeon": 0.34,
+          "playoffs": 15.19,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 4887,
+          "prob_resultado": 48.87,
+          "campeon": 0.16,
+          "playoffs": 10.23,
+          "confiable": true
+        }
+      ],
+      "slug": "gimnasia-m",
+      "rival_slug": "central-cordoba-sde"
+    },
+    {
+      "equipo": "Huracán",
+      "rival": "Banfield",
+      "condicion": "local",
+      "fecha": "25/07/2026",
+      "hora": "01:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3097,
+          "prob_resultado": 30.97,
+          "campeon": 3.81,
+          "playoffs": 79.4,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3488,
+          "prob_resultado": 34.88,
+          "campeon": 3.12,
+          "playoffs": 65.77,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3415,
+          "prob_resultado": 34.15,
+          "campeon": 2.55,
+          "playoffs": 55.72,
+          "confiable": true
+        }
+      ],
+      "slug": "huracan",
+      "rival_slug": "banfield"
+    },
+    {
+      "equipo": "Independiente",
+      "rival": "Estudiantes (LP)",
+      "condicion": "visita",
+      "fecha": "26/07/2026",
+      "hora": "21:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2734,
+          "prob_resultado": 27.34,
+          "campeon": 7.39,
+          "playoffs": 87.93,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3203,
+          "prob_resultado": 32.03,
+          "campeon": 4.81,
+          "playoffs": 79.52,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 4063,
+          "prob_resultado": 40.63,
+          "campeon": 5.32,
+          "playoffs": 71.08,
+          "confiable": true
+        }
+      ],
+      "slug": "independiente",
+      "rival_slug": "estudiantes-lp"
+    },
+    {
+      "equipo": "Independiente Rivadavia",
+      "rival": "Atlético Tucumán",
+      "condicion": "visita",
+      "fecha": "26/07/2026",
+      "hora": "19:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3111,
+          "prob_resultado": 31.11,
+          "campeon": 2.99,
+          "playoffs": 71.07,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3084,
+          "prob_resultado": 30.84,
+          "campeon": 2.01,
+          "playoffs": 55.58,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3805,
+          "prob_resultado": 38.05,
+          "campeon": 1.89,
+          "playoffs": 44.49,
+          "confiable": true
+        }
+      ],
+      "slug": "independiente-rivadavia",
+      "rival_slug": "atletico-tucuman"
+    },
+    {
+      "equipo": "Instituto",
+      "rival": "Vélez Sarsfield",
+      "condicion": "visita",
+      "fecha": "24/07/2026",
+      "hora": "23:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3274,
+          "prob_resultado": 32.74,
+          "campeon": 1.53,
+          "playoffs": 54.31,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3322,
+          "prob_resultado": 33.22,
+          "campeon": 0.84,
+          "playoffs": 38.59,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3404,
+          "prob_resultado": 34.04,
+          "campeon": 0.79,
+          "playoffs": 30.29,
+          "confiable": true
+        }
+      ],
+      "slug": "instituto",
+      "rival_slug": "velez-sarsfield"
+    },
+    {
+      "equipo": "Lanús",
+      "rival": "San Lorenzo",
+      "condicion": "local",
+      "fecha": "26/07/2026",
+      "hora": "01:30",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3998,
+          "prob_resultado": 39.98,
+          "campeon": 3.43,
+          "playoffs": 71.56,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3277,
+          "prob_resultado": 32.77,
+          "campeon": 2.78,
+          "playoffs": 57.19,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2725,
+          "prob_resultado": 27.25,
+          "campeon": 1.94,
+          "playoffs": 47.67,
+          "confiable": true
+        }
+      ],
+      "slug": "lanus",
+      "rival_slug": "san-lorenzo"
+    },
+    {
+      "equipo": "Newell's Old Boys",
+      "rival": "Talleres (C)",
+      "condicion": "local",
+      "fecha": "25/07/2026",
+      "hora": "21:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3364,
+          "prob_resultado": 33.64,
+          "campeon": 1.1,
+          "playoffs": 40.73,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3208,
+          "prob_resultado": 32.08,
+          "campeon": 0.56,
+          "playoffs": 25.69,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3428,
+          "prob_resultado": 34.28,
+          "campeon": 0.5,
+          "playoffs": 19.52,
+          "confiable": true
+        }
+      ],
+      "slug": "newell-s-old-boys",
+      "rival_slug": "talleres-c"
+    },
+    {
+      "equipo": "Platense",
+      "rival": "Unión",
+      "condicion": "local",
+      "fecha": "25/07/2026",
+      "hora": "01:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3642,
+          "prob_resultado": 36.42,
+          "campeon": 0.82,
+          "playoffs": 32.24,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3445,
+          "prob_resultado": 34.45,
+          "campeon": 0.35,
+          "playoffs": 18.98,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2913,
+          "prob_resultado": 29.13,
+          "campeon": 0.38,
+          "playoffs": 12.91,
+          "confiable": true
+        }
+      ],
+      "slug": "platense",
+      "rival_slug": "union"
+    },
+    {
+      "equipo": "Racing Club",
+      "rival": "Gimnasia (LP)",
+      "condicion": "local",
+      "fecha": "24/07/2026",
+      "hora": "23:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 4004,
+          "prob_resultado": 40.04,
+          "campeon": 8.02,
+          "playoffs": 91.81,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3074,
+          "prob_resultado": 30.74,
+          "campeon": 6.96,
+          "playoffs": 84.45,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2922,
+          "prob_resultado": 29.22,
+          "campeon": 6.47,
+          "playoffs": 78.85,
+          "confiable": true
+        }
+      ],
+      "slug": "racing-club",
+      "rival_slug": "gimnasia-lp"
+    },
+    {
+      "equipo": "River Plate",
+      "rival": "Barracas Central",
+      "condicion": "local",
+      "fecha": "25/07/2026",
+      "hora": "23:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 5157,
+          "prob_resultado": 51.57,
+          "campeon": 17.14,
+          "playoffs": 97.23,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 2691,
+          "prob_resultado": 26.91,
+          "campeon": 16.09,
+          "playoffs": 93.98,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2152,
+          "prob_resultado": 21.52,
+          "campeon": 15.57,
+          "playoffs": 91.91,
+          "confiable": true
+        }
+      ],
+      "slug": "river-plate",
+      "rival_slug": "barracas-central"
+    },
+    {
+      "equipo": "San Lorenzo",
+      "rival": "Lanús",
+      "condicion": "visita",
+      "fecha": "26/07/2026",
+      "hora": "01:30",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2725,
+          "prob_resultado": 27.25,
+          "campeon": 3.45,
+          "playoffs": 70.2,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3277,
+          "prob_resultado": 32.77,
+          "campeon": 3.08,
+          "playoffs": 56.73,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3998,
+          "prob_resultado": 39.98,
+          "campeon": 2.18,
+          "playoffs": 45.97,
+          "confiable": true
+        }
+      ],
+      "slug": "san-lorenzo",
+      "rival_slug": "lanus"
+    },
+    {
+      "equipo": "Talleres (C)",
+      "rival": "Newell's Old Boys",
+      "condicion": "visita",
+      "fecha": "25/07/2026",
+      "hora": "21:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3428,
+          "prob_resultado": 34.28,
+          "campeon": 4.0,
+          "playoffs": 71.09,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3208,
+          "prob_resultado": 32.08,
+          "campeon": 3.15,
+          "playoffs": 56.23,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3364,
+          "prob_resultado": 33.64,
+          "campeon": 2.94,
+          "playoffs": 47.71,
+          "confiable": true
+        }
+      ],
+      "slug": "talleres-c",
+      "rival_slug": "newell-s-old-boys"
+    },
+    {
+      "equipo": "Tigre",
+      "rival": "Estudiantes (RC)",
+      "condicion": "visita",
+      "fecha": "25/07/2026",
+      "hora": "18:45",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 6023,
+          "prob_resultado": 60.23,
+          "campeon": 1.36,
+          "playoffs": 33.95,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3064,
+          "prob_resultado": 30.64,
+          "campeon": 0.62,
+          "playoffs": 21.31,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 913,
+          "prob_resultado": 9.13,
+          "campeon": 0.66,
+          "playoffs": 15.33,
+          "confiable": true
+        }
+      ],
+      "slug": "tigre",
+      "rival_slug": "estudiantes-rc"
+    },
+    {
+      "equipo": "Unión",
+      "rival": "Platense",
+      "condicion": "visita",
+      "fecha": "25/07/2026",
+      "hora": "01:15",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2913,
+          "prob_resultado": 29.13,
+          "campeon": 2.64,
+          "playoffs": 59.77,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3445,
+          "prob_resultado": 34.45,
+          "campeon": 1.36,
+          "playoffs": 46.65,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3642,
+          "prob_resultado": 36.42,
+          "campeon": 1.26,
+          "playoffs": 37.81,
+          "confiable": true
+        }
+      ],
+      "slug": "union",
+      "rival_slug": "platense"
+    },
+    {
+      "equipo": "Vélez Sarsfield",
+      "rival": "Instituto",
+      "condicion": "local",
+      "fecha": "24/07/2026",
+      "hora": "23:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3404,
+          "prob_resultado": 34.04,
+          "campeon": 3.47,
+          "playoffs": 59.2,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3322,
+          "prob_resultado": 33.22,
+          "campeon": 2.86,
+          "playoffs": 45.73,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3274,
+          "prob_resultado": 32.74,
+          "campeon": 1.68,
+          "playoffs": 36.96,
+          "confiable": true
+        }
+      ],
+      "slug": "velez-sarsfield",
+      "rival_slug": "instituto"
+    }
+  ]
+}
