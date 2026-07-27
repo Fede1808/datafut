@@ -2,13 +2,13 @@
  * Placa de la página de un equipo.
  *
  * Es la que más se va a compartir: el hincha manda el link de SU equipo al
- * grupo. Por eso el nombre y el número de campeón son lo único grande, y los
- * colores del club aparecen en la franja lateral para que se reconozca al
- * toque sin usar escudos.
+ * grupo. Por eso el escudo del club va grande y a la izquierda —es lo primero
+ * que el ojo reconoce en una miniatura— y el nombre y el número de campeón son
+ * lo único que compite con él en tamaño.
  */
 import { ImageResponse } from "next/og";
 import { fichas, equipoPorSlug, torneo, temporada } from "@/lib/datos";
-import { COLOR, Marco, TAMANO, pct } from "@/lib/placa";
+import { COLOR, Insignia, Marco, TAMANO, pct } from "@/lib/placa";
 
 export const size = TAMANO;
 export const contentType = "image/png";
@@ -46,24 +46,13 @@ export default async function Image({
     (
       <Marco pie={`${torneo} ${temporada} · Zona ${e.zona}`}>
         <div style={{ display: "flex", alignItems: "center" }}>
-          {/* Franja alta con los colores del club */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: 16,
-              height: 210,
-              borderRadius: 3,
-              overflow: "hidden",
-              marginRight: 34,
-            }}
-          >
-            <div
-              style={{ backgroundColor: e.colores[0], width: 16, height: 105 }}
-            />
-            <div
-              style={{ backgroundColor: e.colores[1], width: 16, height: 105 }}
-            />
+          {/*
+            El escudo ocupa 200px: es el ancla visual de la placa. Si falta el
+            PNG, `Insignia` cae sola a la franja de colores de siempre y la
+            composicion se sostiene igual.
+          */}
+          <div style={{ display: "flex", marginRight: 40 }}>
+            <Insignia slug={e.slug} colores={e.colores} tamano={200} />
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>

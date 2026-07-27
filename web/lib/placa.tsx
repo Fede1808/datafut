@@ -18,9 +18,17 @@
  *    repo y cargarlos aca. Se puede, pero suma peso y un paso mas; por ahora
  *    la jerarquia la dan el tamano y el color, que es lo que se lee de lejos.
  *
+ * 3. Los escudos NO se pueden referenciar por ruta (`/escudos/reales/x.png`).
+ *    Satori no corre en un navegador y, cuando la placa se genera en el build,
+ *    no hay servidor HTTP al que pedirle esa ruta: no existe un origen todavia.
+ *    Por eso el PNG se lee del disco y se embebe como data URI. Ver `Insignia`.
+ *
  * Los colores salen de los mismos tokens que globals.css. Si cambia la paleta
  * del sitio, hay que tocar los dos lados.
  */
+
+import fs from "node:fs";
+import path from "node:path";
 
 export const TAMANO = { width: 1200, height: 630 };
 
@@ -114,30 +122,116 @@ export function Marco({
 /**
  * Una barrita con los dos colores del club.
  *
- * Va al lado del nombre para que se reconozca al equipo de un vistazo, sin
- * usar escudos: el proyecto no usa logos ni imagenes de los clubes.
+ * Ya no es lo que se muestra normalmente: desde que el proyecto usa escudos
+ * reales, la franja es el plan B de `Insignia` para cuando falta el PNG de un
+ * club (por ejemplo un recien ascendido que todavia no se bajo).
  */
 export function Franja({
   colores,
   alto = 38,
+  ancho = 10,
 }: {
   colores: [string, string];
   alto?: number;
+  ancho?: number;
 }) {
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        width: 10,
+        width: ancho,
         height: alto,
         borderRadius: 2,
         overflow: "hidden",
       }}
     >
-      <div style={{ backgroundColor: colores[0], width: 10, height: alto / 2 }} />
-      <div style={{ backgroundColor: colores[1], width: 10, height: alto / 2 }} />
+      <div
+        style={{ backgroundColor: colores[0], width: ancho, height: alto / 2 }}
+      />
+      <div
+        style={{ backgroundColor: colores[1], width: ancho, height: alto / 2 }}
+      />
     </div>
+  );
+}
+
+/**
+ * El PNG del escudo, ya listo para meter en un `src`.
+ *
+ * Se lee del disco y se convierte a base64 en vez de apuntar a la URL publica
+ * porque estas placas se generan en el build, donde no hay servidor que sirva
+ * `/escudos/...`. `process.cwd()` es la carpeta `web/` tanto en `next dev`
+ * como en `next build`, asi que la ruta sirve en los dos casos.
+ *
+ * Devuelve `null` si el archivo no esta, y ese es el punto: una placa rota se
+ * ve peor que una placa fea, porque es lo que aparece cuando alguien comparte
+ * el link en WhatsApp.
+ *
+ * El `Map` evita releer 5 veces el mismo archivo en la placa de la portada.
+ * Son 3 KB por escudo, pero el disco se toca una sola vez por slug.
+ */
+const escudosCache = new Map<string, string | null>();
+
+function escudoDataUri(slug: string): string | null {
+  const cacheado = escudosCache.get(slug);
+  if (cacheado !== undefined) return cacheado;
+
+  let uri: string | null = null;
+  try {
+    const png = fs.readFileSync(
+      path.join(process.cwd(), "public", "escudos", "reales", `${slug}.png`),
+    );
+    uri = `data:image/png;base64,${png.toString("base64")}`;
+  } catch {
+    // Falta el escudo de ese club. No es un error que valga la pena propagar:
+    // abajo se cae a la franja de colores y la placa sale igual.
+    uri = null;
+  }
+
+  escudosCache.set(slug, uri);
+  return uri;
+}
+
+/**
+ * El escudo del club dentro de una placa, con la franja de colores de reserva.
+ *
+ * Los escudos de TheSportsDB vienen con contorno claro, asi que se leen bien
+ * sobre el fondo oscuro sin necesidad de ponerles una base atras.
+ *
+ * La franja de reserva copia el alto del escudo para que, cuando toque usarla,
+ * la fila mida lo mismo y no se descoloque el resto de la composicion.
+ */
+export function Insignia({
+  slug,
+  colores,
+  tamano,
+}: {
+  slug: string;
+  colores: [string, string];
+  tamano: number;
+}) {
+  const src = escudoDataUri(slug);
+
+  if (!src) {
+    return (
+      <Franja
+        colores={colores}
+        alto={tamano}
+        ancho={Math.max(10, Math.round(tamano / 13))}
+      />
+    );
+  }
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt=""
+      width={tamano}
+      height={tamano}
+      style={{ width: tamano, height: tamano }}
+    />
   );
 }
 

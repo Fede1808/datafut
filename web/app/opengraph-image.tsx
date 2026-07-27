@@ -7,7 +7,7 @@
  */
 import { ImageResponse } from "next/og";
 import { candidatos, torneo, temporada } from "@/lib/datos";
-import { COLOR, Franja, Marco, TAMANO, pct } from "@/lib/placa";
+import { COLOR, Insignia, Marco, TAMANO, pct } from "@/lib/placa";
 
 export const size = TAMANO;
 export const contentType = "image/png";
@@ -32,17 +32,22 @@ export default async function Image() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                marginBottom: 14,
+                marginBottom: 12,
               }}
             >
-              <Franja colores={e.colores} />
+              {/*
+                46px es el punto justo: entra cinco veces sin apretar el alto
+                de la placa y todavia se distingue de que club es cuando la
+                miniatura de WhatsApp achica todo a un tercio.
+              */}
+              <Insignia slug={e.slug} colores={e.colores} tamano={46} />
 
               <div
                 style={{
                   fontSize: 30,
                   color: COLOR.texto,
-                  marginLeft: 18,
-                  width: 370,
+                  marginLeft: 20,
+                  width: 350,
                 }}
               >
                 {e.equipo}
