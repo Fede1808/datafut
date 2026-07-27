@@ -25,15 +25,24 @@ const SECCIONES = [
   { href: "/", label: "Fecha", ayuda: "Los partidos que vienen" },
   { href: "/tabla", label: "Tabla", ayuda: "Posiciones y probabilidades" },
   { href: "/titulo", label: "Título", ayuda: "Quién puede salir campeón" },
+  {
+    href: "/estadisticas",
+    label: "Stats",
+    ayuda: "Los mejores en cada métrica",
+  },
 ];
 
 export function Nav() {
   const ruta = usePathname();
 
   return (
-    // En el celular la nav se va a su propio renglón y las tres cajas se
-    // reparten el ancho: tres blancos grandes son más fáciles de acertar con el
-    // dedo que tres palabras apretadas contra el logo.
+    // En el celular la nav se va a su propio renglón y las cuatro cajas se
+    // reparten el ancho: cuatro blancos grandes son más fáciles de acertar con
+    // el dedo que cuatro palabras apretadas contra el logo.
+    //
+    // La cuarta dice "Stats" y no "Estadísticas" por una razón de ancho: con
+    // la palabra entera, cuatro cajas de 11px en versalita no entran en un
+    // celular de 360px y la nav se parte en dos renglones.
     <nav aria-label="Secciones" className="w-full sm:w-auto">
       <ul className="flex gap-1.5">
         {SECCIONES.map((s) => {

@@ -65,11 +65,17 @@ const BARRAS: {
     sufijo: "",
   },
   {
+    // OJO, ACÁ HABÍA UN ERROR. Esto salía con un "%" y decía "porcentaje de
+    // duelos ganados", y NO es un porcentaje: la columna del CSV es un conteo.
+    // Los dos equipos de un partido suman ~106 entre los dos, no 100
+    // (verificado sobre los 270 partidos de 2026). Un "56.4%" ahí era un
+    // número inventado. El porcentaje de verdad existe y se calcula en
+    // `export.py` como `duelos_pct`; se muestra en /estadisticas.
     clave: "duelos_ganados",
     label: "Duelos ganados",
-    ayuda: "Porcentaje de duelos individuales ganados",
+    ayuda: "Cantidad de duelos individuales ganados por partido",
     decimales: 1,
-    sufijo: "%",
+    sufijo: "",
   },
   {
     clave: "toques_en_area_rival",

@@ -1655,7 +1655,7 @@
         "duelos_ganados": 52.4,
         "toques_en_area_rival": 17.4,
         "pases_campo_rival": 134.3,
-        "puesto_xg": 26,
+        "puesto_xg": 25,
         "puesto_xg_contra": 26,
         "puesto_xg_dif": 26,
         "puesto_posesion": 20
@@ -2215,7 +2215,7 @@
         "puesto_xg": 12,
         "puesto_xg_contra": 22,
         "puesto_xg_dif": 17,
-        "puesto_posesion": 11
+        "puesto_posesion": 10
       }
     },
     {
@@ -3320,7 +3320,7 @@
         "puesto_xg": 2,
         "puesto_xg_contra": 20,
         "puesto_xg_dif": 7,
-        "puesto_posesion": 5
+        "puesto_posesion": 4
       }
     },
     {
@@ -4008,7 +4008,7 @@
         "puesto_xg": 3,
         "puesto_xg_contra": 17,
         "puesto_xg_dif": 6,
-        "puesto_posesion": 17
+        "puesto_posesion": 16
       }
     },
     {
@@ -4144,7 +4144,7 @@
         "duelos_ganados": 55.2,
         "toques_en_area_rival": 20.0,
         "pases_campo_rival": 193.4,
-        "puesto_xg": 10,
+        "puesto_xg": 9,
         "puesto_xg_contra": 11,
         "puesto_xg_dif": 10,
         "puesto_posesion": 6

@@ -13,7 +13,7 @@ mismos JSON van a alimentar despues el generador de placas para redes. Si
 cada uno calculara sus propios numeros, tarde o temprano se contradirian y
 publicarias dos verdades distintas el mismo dia.
 
-Escribe seis archivos en web/data/:
+Escribe siete archivos en web/data/:
 
   fecha.json       los partidos que se vienen, con probabilidades, la
                    probabilidad implicita del mercado y la diferencia entre
@@ -23,6 +23,9 @@ Escribe seis archivos en web/data/:
   equipos.json     ataque, defensa, descenso, distribucion de puntos, racha,
                    rendimiento contra el mercado y estadisticas avanzadas
                    (xG, posesion, duelos, remates) de cada equipo
+  estadisticas.json  las 40 metricas de FotMob de cada equipo, con el puesto
+                   en cada una. Va aparte de equipos.json a proposito: ver el
+                   comentario de CLAVES_FICHA
   escenarios.json  cuanto cambia el futuro de cada equipo segun como le vaya
   meta.json        cuando se actualizo y que tan bien viene acertando el modelo
 
@@ -156,6 +159,111 @@ def forma_reciente(partidos, n=FORMA_N):
     return {e: v[-n:] for e, v in forma.items()}
 
 
+# ---------------------------------------------------------------------------
+# Que metricas se exportan, y en que orden se rankean
+# ---------------------------------------------------------------------------
+# Cada entrada es (clave, primero_el_mas_alto). El booleano decide UNICAMENTE
+# el orden del puesto, no si la metrica es buena o mala: eso lo dice la UI,
+# que es donde se lee. Recibir mucho xG en contra ordena al reves (el mejor es
+# el que menos concede) y por eso va en False.
+#
+# Las metricas ambiguas de verdad -- posesion, corners, palos, pases, centros,
+# pelotazos, quites, intercepciones, bloqueos, rechazos, atajadas, offsides --
+# van en True porque hay que ordenarlas de alguna manera, pero la pagina las
+# marca como "depende del contexto" y no como logro. Un equipo que hace 32
+# rechazos por partido no defiende mejor: defiende mas seguido, que es otra
+# cosa y muchas veces peor.
+#
+# La regla es: toda metrica que la pagina marque "depende" se ordena de mayor
+# a menor (True). Si aca dijera False y alla "depende", el ranking mostraria
+# primero al que MENOS tiene mientras el texto jura que no hay un mejor.
+METRICAS = [
+    # --- Ataque ---
+    ("xg", True),
+    ("xg_pp", True),
+    ("goles_pp", True),
+    ("chances_claras", True),
+    ("toques_en_area_rival", True),
+    ("remates", True),
+    ("remates_dentro_area", True),
+    ("corners", True),
+    ("xg_pelota_parada", True),
+    # --- Definicion ---
+    ("conversion", True),
+    ("sobre_xg", True),
+    ("punteria", True),
+    ("xg_por_remate", True),
+    ("xgot", True),
+    ("chances_claras_erradas", False),
+    ("palos", True),
+    # --- Posesion y pase ---
+    ("posesion", True),
+    ("precision_pase", True),
+    ("pases", True),
+    ("pases_campo_rival", True),
+    ("centros_completados", True),
+    ("pelotazos_completados", True),
+    # --- Defensa ---
+    ("xg_contra", False),
+    ("xg_contra_pp", False),
+    ("goles_contra_pp", False),
+    ("xg_dif", True),
+    ("quites", True),
+    ("intercepciones", True),
+    ("bloqueos", True),
+    ("rechazos", True),
+    ("atajadas", True),
+    # --- Duelos ---
+    ("duelos_pct", True),
+    ("duelos_aereos_pct", True),
+    ("duelos_suelo_pct", True),
+    ("gambetas_exitosas", True),
+    # --- Disciplina ---
+    ("faltas", False),
+    ("amarillas", False),
+    ("rojas", False),
+    ("offsides", True),
+]
+
+# Lo que se copia dentro de equipos.json.
+#
+# POR QUE NO VA TODO. equipos.json ya pesa 92 KB y lo lee TODO el sitio: la
+# portada, la tabla y las 30 fichas lo importan por lib/datos.ts. Meterle 40
+# metricas mas por equipo lo llevaria a ~150 KB para que las use una sola
+# pagina. El resto vive en estadisticas.json, que solo lee /estadisticas.
+#
+# Esta lista es exactamente lo que la ficha de equipo ya mostraba: no se le
+# saca nada a lo que ya funciona.
+CLAVES_FICHA = [
+    "pj", "goles", "goles_contra", "xg", "xg_contra", "xg_dif", "sobre_xg",
+    "posesion", "remates", "chances_claras", "duelos_ganados",
+    "toques_en_area_rival", "pases_campo_rival",
+    "puesto_xg", "puesto_xg_contra", "puesto_xg_dif", "puesto_posesion",
+]
+
+
+def _div(numerador, denominador, decimales):
+    """
+    Una division que devuelve None en vez de inventar un numero.
+
+    Si el denominador es cero o falta el dato, la respuesta honesta es "no se
+    puede calcular". Un 0 ahi seria peor que un hueco: se lee como "este
+    equipo tiene precision de pase cero", que es falso.
+    """
+    if denominador is None or numerador is None:
+        return None
+    if pd.isna(numerador) or pd.isna(denominador) or denominador == 0:
+        return None
+    return round(float(numerador) / float(denominador), decimales)
+
+
+def recorte_ficha(stats):
+    """Las claves de CLAVES_FICHA, o None si el equipo no tiene datos."""
+    if stats is None:
+        return None
+    return {k: stats[k] for k in CLAVES_FICHA if k in stats}
+
+
 def stats_avanzadas(temporada):
     """
     Lo que genero y lo que le generaron a cada equipo en la temporada.
@@ -169,9 +277,28 @@ def stats_avanzadas(temporada):
     esta teniendo suerte, esta desperdiciando; uno que hace 29 con 20 no va a
     seguir asi. Esa distancia es todo el valor de la metrica.
 
-    Volumen (remates, duelos, posesion) va como PROMEDIO por partido, porque
-    comparar totales entre equipos que jugaron distinta cantidad de partidos
-    no dice nada. El xG va como total, que es como se lee en cualquier lado.
+    LA REGLA QUE ORDENA TODO ESTO: lo que depende de cuantos partidos jugaste
+    va como PROMEDIO POR PARTIDO. Los equipos jugaron entre 17 y 21 partidos,
+    asi que comparar remates totales o faltas totales entre River (21) y
+    Aldosivi (17) no mide quien remata mas, mide quien jugo mas. Los unicos
+    totales que sobreviven son los de xG (xg, xg_contra, xg_dif, sobre_xg),
+    que se leen asi en todos lados y que la UI aclara explicitamente; para
+    comparar de a dos estan igual sus versiones _pp.
+
+    LAS DERIVADAS son mas interesantes que las crudas y por eso se calculan
+    aca y no en el navegador:
+      conversion      goles / xG        -- define mejor o peor de lo que genera
+      xg_por_remate   xG / remates      -- pocas chances buenas o muchas malas
+      punteria        al arco / remates -- cuanto de lo que patea va al arco
+      precision_pase  completados/pases -- cuanto de lo que intenta le sale
+      duelos_pct      ganados / totales -- el crudo es un conteo, no un %
+
+    OJO CON LOS DUELOS. La columna `duelos_ganados` del CSV es un CONTEO, no
+    un porcentaje: los dos equipos de un partido suman ~106 entre los dos, no
+    100 (verificado sobre los 270 partidos de 2026). Como el total de duelos
+    de un partido cambia mucho de partido a partido, el conteo crudo no
+    compara bien, y el porcentaje sobre los duelos disputados de ESE partido
+    si. Por eso se calcula la version _pct.
 
     Devuelve {} si el archivo no existe todavia: el sitio tiene que poder
     construirse sin esta capa. Las probabilidades, que son el criterio de
@@ -195,6 +322,13 @@ def stats_avanzadas(temporada):
     # es exactamente agrupar por la columna "rival".
     xg_en_contra = d[d["xg"].notna()].groupby("rival")["xg"].sum()
 
+    # Total de duelos disputados en cada partido = los que gano uno mas los
+    # que gano el otro. `transform` lo pega en las dos filas del partido, que
+    # es lo que hace falta para dividir fila por fila.
+    COLS_DUELO = ["duelos_ganados", "duelos_suelo_ganados", "duelos_aereos_ganados"]
+    for col in COLS_DUELO:
+        d[f"_total_{col}"] = d.groupby("match_id")[col].transform("sum")
+
     por_equipo = {}
     for equipo, g in d.groupby("equipo"):
         # Solo los partidos que tienen la medicion. FotMob tiene algun partido
@@ -204,44 +338,134 @@ def stats_avanzadas(temporada):
         if con_xg.empty:
             continue
 
-        def media(col):
+        pj = len(con_xg)
+
+        def media(col, decimales=1):
+            """Promedio por partido. None si la columna no tiene ningun dato."""
             v = con_xg[col].mean()
-            return None if pd.isna(v) else round(float(v), 1)
+            return None if pd.isna(v) else round(float(v), decimales)
+
+        def suma(col):
+            v = con_xg[col].sum(min_count=1)
+            return None if pd.isna(v) else float(v)
+
+        def ratio_de_duelos(col):
+            """
+            Porcentaje de los duelos disputados que gano el equipo.
+
+            Se suman los ganados de toda la temporada sobre los disputados de
+            toda la temporada, y no se promedian los porcentajes partido a
+            partido: asi un partido trabado de 150 duelos pesa lo que tiene
+            que pesar y no lo mismo que uno de 60.
+            """
+            return _div(100 * suma(col), suma(f"_total_{col}"), 1)
 
         goles = int(con_xg["goles"].sum())
+        goles_contra = int(con_xg["goles_rival"].sum())
         xg = round(float(con_xg["xg"].sum()), 1)
         xg_contra = round(float(xg_en_contra.get(equipo, 0.0)), 1)
+        remates_totales = suma("remates")
 
         por_equipo[equipo] = {
-            "pj": len(con_xg),
+            "pj": pj,
+            # --- Totales de xG. Se dejan totales a proposito (asi se leen en
+            #     todos lados) y la pagina avisa que los partidos no son los
+            #     mismos para todos. Al lado va siempre la version _pp.
             "goles": goles,
-            "goles_contra": int(con_xg["goles_rival"].sum()),
+            "goles_contra": goles_contra,
             "xg": xg,
             "xg_contra": xg_contra,
             "xg_dif": round(xg - xg_contra, 1),
             # Positivo = mete mas de lo que genera. Negativo = desperdicia.
             "sobre_xg": round(goles - xg, 1),
-            "posesion": media("posesion"),
-            "remates": media("remates"),
+
+            # --- Ataque, por partido ---
+            "xg_pp": _div(xg, pj, 2),
+            "goles_pp": _div(goles, pj, 2),
             "chances_claras": media("chances_claras"),
-            "duelos_ganados": media("duelos_ganados"),
             "toques_en_area_rival": media("toques_en_area_rival"),
+            "remates": media("remates"),
+            "remates_dentro_area": media("remates_dentro_area"),
+            "corners": media("corners"),
+            "xg_pelota_parada": media("xg_pelota_parada", 2),
+
+            # --- Definicion ---
+            # Arriba de 1.00 mete mas goles de los que la calidad de sus
+            # situaciones sugiere. Abajo, desperdicia.
+            "conversion": _div(goles, suma("xg"), 2),
+            "punteria": _div(100 * suma("remates_al_arco"), remates_totales, 1),
+            # Cuanto peligro tiene, en promedio, cada remate que patea. Alto =
+            # pocas situaciones pero buenas; bajo = patea de cualquier lado.
+            "xg_por_remate": _div(suma("xg"), remates_totales, 3),
+            # xGOT mide la calidad del remate DESPUES de pegarle, contando
+            # solo los que van al arco. Por partido, no total.
+            "xgot": media("xgot", 2),
+            "chances_claras_erradas": media("chances_claras_erradas"),
+            "palos": media("palos", 2),
+
+            # --- Posesion y pase ---
+            "posesion": media("posesion"),
+            "precision_pase": _div(100 * suma("pases_completados"),
+                                   suma("pases"), 1),
+            "pases": media("pases", 0),
             # Ojo: NO son "pases progresivos". Esa metrica era de Opta y no
             # existe en ninguna fuente gratuita desde enero de 2026. Llamarla
             # asi seria mentir; esto es otra cosa y se llama por su nombre.
+            # Un decimal y no cero: asi equipos.json queda byte a byte igual
+            # que antes de esta ampliacion. La UI lo muestra redondeado.
             "pases_campo_rival": media("pases_campo_rival"),
+            "centros_completados": media("centros_completados"),
+            "pelotazos_completados": media("pelotazos_completados"),
+
+            # --- Defensa ---
+            "xg_contra_pp": _div(xg_contra, pj, 2),
+            "goles_contra_pp": _div(goles_contra, pj, 2),
+            "quites": media("quites"),
+            "intercepciones": media("intercepciones"),
+            "bloqueos": media("bloqueos"),
+            "rechazos": media("rechazos"),
+            "atajadas": media("atajadas"),
+
+            # --- Duelos ---
+            # El conteo crudo se mantiene porque lo usa la ficha de equipo.
+            "duelos_ganados": media("duelos_ganados"),
+            "duelos_pct": ratio_de_duelos("duelos_ganados"),
+            "duelos_aereos_pct": ratio_de_duelos("duelos_aereos_ganados"),
+            "duelos_suelo_pct": ratio_de_duelos("duelos_suelo_ganados"),
+            "gambetas_exitosas": media("gambetas_exitosas"),
+
+            # --- Disciplina ---
+            "faltas": media("faltas"),
+            "amarillas": media("amarillas"),
+            "rojas": media("rojas", 2),
+            "offsides": media("offsides"),
         }
 
     # El puesto convierte un numero suelto en informacion: "36.4 de xG" no
     # dice nada solo, "el mas alto de los 30" si.
-    for clave, mayor_es_mejor in (("xg", True), ("xg_contra", False),
-                                  ("xg_dif", True), ("posesion", True)):
+    #
+    # Los equipos sin el dato quedan SIN puesto (la clave no existe) en vez de
+    # empujados al final: un puesto 30 inventado se leeria como "es el peor".
+    #
+    # LOS EMPATES COMPARTEN PUESTO. Hay metricas donde el empate es la norma y
+    # no la excepcion: doce equipos tienen 0.0 rojas por partido. Desempatarlos
+    # por orden alfabetico y publicar "1ro en fair play" al que salio sorteado
+    # seria inventar una diferencia que no existe. Con puestos compartidos, tres
+    # equipos mostrando "1ro" dicen solos que estan empatados. Es el mismo
+    # criterio de una tabla de posiciones: 1, 2, 2, 4.
+    for clave, primero_el_mas_alto in METRICAS:
         ordenados = sorted(
-            (e for e in por_equipo if por_equipo[e][clave] is not None),
+            (e for e in por_equipo if por_equipo[e].get(clave) is not None),
             key=lambda e: por_equipo[e][clave],
-            reverse=mayor_es_mejor,
+            reverse=primero_el_mas_alto,
         )
-        for puesto, equipo in enumerate(ordenados, start=1):
+        puesto = 0
+        anterior = object()  # nunca igual a un numero: fuerza el primer salto
+        for i, equipo in enumerate(ordenados, start=1):
+            valor = por_equipo[equipo][clave]
+            if valor != anterior:
+                puesto = i
+                anterior = valor
             por_equipo[equipo][f"puesto_{clave}"] = puesto
 
     return por_equipo
@@ -507,10 +731,35 @@ def main():
             # None si el equipo no tiene partidos medidos. El sitio tiene que
             # aguantarlo: no todos los equipos ni todas las temporadas estan
             # cubiertos, y poner 0 seria inventar que genero cero peligro.
-            "stats": avanzadas.get(equipo),
+            #
+            # Va recortado a CLAVES_FICHA: este archivo lo lee TODO el sitio y
+            # las 40 metricas las usa una sola pagina. Ver estadisticas.json.
+            "stats": recorte_ficha(avanzadas.get(equipo)),
         })
     (SALIDA / "equipos.json").write_text(json.dumps({
         "equipos": fichas,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # --- 4b. Las 40 metricas de FotMob, para la pagina de estadisticas ---
+    # Archivo propio y no una rama de equipos.json: ese ya pesa 92 KB y lo
+    # importa toda la nav. Este lo lee una pagina sola.
+    #
+    # Se guarda el nombre, el slug y los colores de cada equipo para que la
+    # pagina se arme sin tener que cruzar contra equipos.json.
+    equipos_stats = [{
+        "equipo": equipo,
+        "slug": slug(equipo),
+        "colores": mapa_color.get(equipo, ["#7c8089", "#f2f1ec"]),
+        **avanzadas[equipo],
+    } for equipo in sorted(avanzadas)]
+    (SALIDA / "estadisticas.json").write_text(json.dumps({
+        "temporada": simulacion["temporada"],
+        "fuente": "FotMob",
+        # Cuantos partidos jugo el que menos y el que mas. La pagina lo
+        # muestra: sin eso, comparar totales entre equipos engania.
+        "pj_min": min(e["pj"] for e in equipos_stats) if equipos_stats else 0,
+        "pj_max": max(e["pj"] for e in equipos_stats) if equipos_stats else 0,
+        "equipos": equipos_stats,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # --- 5. Que se juega cada equipo en su proximo partido ---
@@ -569,6 +818,10 @@ def main():
     print(f"    titulo.json   {len(equipos_sim)} equipos")
     print(f"    tabla.json    {len(filas_tabla)} equipos | {len(jugados)} partidos jugados")
     print(f"    equipos.json  {len(fichas)} equipos")
+    print(f"    estadisticas.json  {len(equipos_stats)} equipos | "
+          f"{len(METRICAS)} metricas rankeadas | "
+          f"partidos jugados: de {min((e['pj'] for e in equipos_stats), default=0)} "
+          f"a {max((e['pj'] for e in equipos_stats), default=0)}")
     print(f"    escenarios.json  {len(escenarios)} de {len(fichas)} equipos")
     print(f"    meta.json     acierto {ACIERTO}% | {len(partidos_hist):,} partidos historicos")
 
