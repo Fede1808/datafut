@@ -6,38 +6,48 @@
       "local_slug": "gimnasia-m",
       "visita_slug": "central-cordoba-sde",
       "prob": {
-        "local": 36.6,
-        "empate": 30.7,
-        "visita": 32.6
+        "local": 43.3,
+        "empate": 30.4,
+        "visita": 26.3
       },
       "goles_esperados": {
-        "local": 1.19,
-        "visita": 1.11
+        "local": 1.3,
+        "visita": 0.96
       },
       "marcadores": [
         {
           "marcador": "1-1",
-          "prob": 14.4
-        },
-        {
-          "marcador": "0-0",
-          "prob": 11.2
+          "prob": 14.2
         },
         {
           "marcador": "1-0",
-          "prob": 10.8
+          "prob": 12.4
+        },
+        {
+          "marcador": "0-0",
+          "prob": 11.5
         },
         {
           "marcador": "0-1",
-          "prob": 9.9
+          "prob": 8.9
         },
         {
-          "marcador": "2-1",
-          "prob": 7.9
+          "marcador": "2-0",
+          "prob": 8.8
         }
       ],
-      "menos_de_2_5": 59.6,
-      "ambos_convierten": 47.8,
+      "menos_de_2_5": 60.6,
+      "ambos_convierten": 46.1,
+      "implicita": {
+        "local": 51.4,
+        "empate": 29.5,
+        "visita": 19.1
+      },
+      "diferencial": {
+        "local": -8.1,
+        "empate": 0.9,
+        "visita": 7.2
+      },
       "fecha": "24/07/2026",
       "hora": "20:45"
     },
@@ -47,38 +57,48 @@
       "local_slug": "racing-club",
       "visita_slug": "gimnasia-lp",
       "prob": {
-        "local": 55.7,
-        "empate": 26.8,
-        "visita": 17.5
+        "local": 53.5,
+        "empate": 27.6,
+        "visita": 18.9
       },
       "goles_esperados": {
-        "local": 1.62,
-        "visita": 0.81
+        "local": 1.56,
+        "visita": 0.83
       },
       "marcadores": [
         {
           "marcador": "1-0",
-          "prob": 13.2
+          "prob": 13.3
         },
         {
           "marcador": "1-1",
-          "prob": 12.6
+          "prob": 12.9
         },
         {
           "marcador": "2-0",
-          "prob": 11.6
+          "prob": 11.1
         },
         {
           "marcador": "0-0",
-          "prob": 9.8
+          "prob": 10.2
         },
         {
           "marcador": "2-1",
-          "prob": 9.4
+          "prob": 9.2
         }
       ],
-      "menos_de_2_5": 56.2,
-      "ambos_convierten": 45.5,
+      "menos_de_2_5": 57.3,
+      "ambos_convierten": 45.6,
+      "implicita": {
+        "local": 52.2,
+        "empate": 28.7,
+        "visita": 19.1
+      },
+      "diferencial": {
+        "local": 1.3,
+        "empate": -1.1,
+        "visita": -0.2
+      },
       "fecha": "24/07/2026",
       "hora": "23:00"
     },
@@ -88,22 +108,22 @@
       "local_slug": "velez-sarsfield",
       "visita_slug": "instituto",
       "prob": {
-        "local": 49.4,
-        "empate": 30.4,
-        "visita": 20.2
+        "local": 47.8,
+        "empate": 30.7,
+        "visita": 21.5
       },
       "goles_esperados": {
-        "local": 1.35,
-        "visita": 0.77
+        "local": 1.32,
+        "visita": 0.8
       },
       "marcadores": [
         {
           "marcador": "1-0",
-          "prob": 15.2
+          "prob": 14.8
         },
         {
           "marcador": "1-1",
-          "prob": 13.6
+          "prob": 13.8
         },
         {
           "marcador": "0-0",
@@ -111,15 +131,25 @@
         },
         {
           "marcador": "2-0",
-          "prob": 11.0
+          "prob": 10.5
         },
         {
-          "marcador": "2-1",
-          "prob": 8.4
+          "marcador": "0-1",
+          "prob": 8.5
         }
       ],
       "menos_de_2_5": 64.6,
-      "ambos_convierten": 40.7,
+      "ambos_convierten": 41.3,
+      "implicita": {
+        "local": 44.1,
+        "empate": 31.0,
+        "visita": 24.9
+      },
+      "diferencial": {
+        "local": 3.7,
+        "empate": -0.3,
+        "visita": -3.4
+      },
       "fecha": "24/07/2026",
       "hora": "23:00"
     },
@@ -129,38 +159,48 @@
       "local_slug": "huracan",
       "visita_slug": "banfield",
       "prob": {
-        "local": 44.8,
-        "empate": 33.1,
-        "visita": 22.1
+        "local": 44.3,
+        "empate": 32.7,
+        "visita": 23.0
       },
       "goles_esperados": {
-        "local": 1.16,
-        "visita": 0.73
+        "local": 1.18,
+        "visita": 0.77
       },
       "marcadores": [
         {
           "marcador": "1-0",
-          "prob": 16.3
+          "prob": 15.6
         },
         {
           "marcador": "0-0",
-          "prob": 16.1
+          "prob": 15.4
         },
         {
           "marcador": "1-1",
-          "prob": 14.0
-        },
-        {
-          "marcador": "2-0",
-          "prob": 10.1
+          "prob": 14.1
         },
         {
           "marcador": "0-1",
           "prob": 9.9
+        },
+        {
+          "marcador": "2-0",
+          "prob": 9.9
         }
       ],
-      "menos_de_2_5": 70.4,
-      "ambos_convierten": 36.9,
+      "menos_de_2_5": 69.1,
+      "ambos_convierten": 38.3,
+      "implicita": {
+        "local": 48.9,
+        "empate": 31.3,
+        "visita": 19.8
+      },
+      "diferencial": {
+        "local": -4.6,
+        "empate": 1.4,
+        "visita": 3.2
+      },
       "fecha": "25/07/2026",
       "hora": "01:15"
     },
@@ -170,18 +210,18 @@
       "local_slug": "platense",
       "visita_slug": "union",
       "prob": {
-        "local": 37.2,
-        "empate": 34.1,
-        "visita": 28.6
+        "local": 38.3,
+        "empate": 33.4,
+        "visita": 28.4
       },
       "goles_esperados": {
-        "local": 1.03,
-        "visita": 0.87
+        "local": 1.07,
+        "visita": 0.89
       },
       "marcadores": [
         {
           "marcador": "0-0",
-          "prob": 16.3
+          "prob": 15.3
         },
         {
           "marcador": "1-1",
@@ -189,19 +229,29 @@
         },
         {
           "marcador": "1-0",
-          "prob": 14.3
+          "prob": 14.0
         },
         {
           "marcador": "0-1",
-          "prob": 11.9
+          "prob": 11.3
         },
         {
           "marcador": "2-0",
-          "prob": 7.9
+          "prob": 8.1
         }
       ],
-      "menos_de_2_5": 70.6,
-      "ambos_convierten": 38.4,
+      "menos_de_2_5": 68.8,
+      "ambos_convierten": 39.9,
+      "implicita": {
+        "local": 33.7,
+        "empate": 33.4,
+        "visita": 32.9
+      },
+      "diferencial": {
+        "local": 4.6,
+        "empate": 0.0,
+        "visita": -4.5
+      },
       "fecha": "25/07/2026",
       "hora": "01:15"
     },
@@ -211,38 +261,48 @@
       "local_slug": "estudiantes-rc",
       "visita_slug": "tigre",
       "prob": {
-        "local": 9.4,
-        "empate": 30.8,
-        "visita": 59.8
+        "local": 33.1,
+        "empate": 32.8,
+        "visita": 34.0
       },
       "goles_esperados": {
-        "local": 0.36,
-        "visita": 1.29
+        "local": 1.01,
+        "visita": 1.03
       },
       "marcadores": [
         {
-          "marcador": "0-1",
-          "prob": 24.1
+          "marcador": "1-1",
+          "prob": 14.7
         },
         {
           "marcador": "0-0",
-          "prob": 20.1
+          "prob": 14.1
         },
         {
-          "marcador": "0-2",
-          "prob": 16.0
+          "marcador": "0-1",
+          "prob": 12.2
         },
         {
-          "marcador": "1-1",
-          "prob": 9.6
+          "marcador": "1-0",
+          "prob": 11.9
         },
         {
-          "marcador": "0-3",
-          "prob": 6.9
+          "marcador": "1-2",
+          "prob": 7.0
         }
       ],
-      "menos_de_2_5": 77.2,
-      "ambos_convierten": 22.4,
+      "menos_de_2_5": 66.4,
+      "ambos_convierten": 42.2,
+      "implicita": {
+        "local": 24.8,
+        "empate": 32.7,
+        "visita": 42.5
+      },
+      "diferencial": {
+        "local": 8.3,
+        "empate": 0.1,
+        "visita": -8.5
+      },
       "fecha": "25/07/2026",
       "hora": "18:45"
     },
@@ -252,13 +312,13 @@
       "local_slug": "newell-s-old-boys",
       "visita_slug": "talleres-c",
       "prob": {
-        "local": 33.8,
-        "empate": 32.5,
-        "visita": 33.7
+        "local": 35.4,
+        "empate": 32.3,
+        "visita": 32.3
       },
       "goles_esperados": {
-        "local": 1.04,
-        "visita": 1.04
+        "local": 1.08,
+        "visita": 1.02
       },
       "marcadores": [
         {
@@ -267,23 +327,33 @@
         },
         {
           "marcador": "0-0",
-          "prob": 13.7
+          "prob": 13.5
         },
         {
           "marcador": "1-0",
-          "prob": 11.8
+          "prob": 12.1
         },
         {
           "marcador": "0-1",
-          "prob": 11.8
+          "prob": 11.3
         },
         {
           "marcador": "2-1",
-          "prob": 7.0
+          "prob": 7.3
         }
       ],
-      "menos_de_2_5": 65.4,
-      "ambos_convierten": 43.1,
+      "menos_de_2_5": 65.1,
+      "ambos_convierten": 43.3,
+      "implicita": {
+        "local": 33.9,
+        "empate": 32.5,
+        "visita": 33.6
+      },
+      "diferencial": {
+        "local": 1.5,
+        "empate": -0.2,
+        "visita": -1.3
+      },
       "fecha": "25/07/2026",
       "hora": "21:00"
     },
@@ -293,38 +363,48 @@
       "local_slug": "river-plate",
       "visita_slug": "barracas-central",
       "prob": {
-        "local": 68.1,
-        "empate": 21.2,
-        "visita": 10.7
+        "local": 63.9,
+        "empate": 23.2,
+        "visita": 12.9
       },
       "goles_esperados": {
-        "local": 2.04,
-        "visita": 0.69
+        "local": 1.88,
+        "visita": 0.73
       },
       "marcadores": [
         {
           "marcador": "2-0",
-          "prob": 13.6
+          "prob": 13.0
         },
         {
           "marcador": "1-0",
-          "prob": 12.5
+          "prob": 12.9
         },
         {
           "marcador": "1-1",
-          "prob": 10.0
+          "prob": 11.0
         },
         {
           "marcador": "2-1",
-          "prob": 9.4
+          "prob": 9.5
         },
         {
-          "marcador": "3-0",
-          "prob": 9.2
+          "marcador": "0-0",
+          "prob": 8.2
         }
       ],
-      "menos_de_2_5": 48.8,
-      "ambos_convierten": 44.1,
+      "menos_de_2_5": 51.4,
+      "ambos_convierten": 44.9,
+      "implicita": {
+        "local": 68.4,
+        "empate": 21.5,
+        "visita": 10.1
+      },
+      "diferencial": {
+        "local": -4.5,
+        "empate": 1.7,
+        "visita": 2.8
+      },
       "fecha": "25/07/2026",
       "hora": "23:15"
     },
@@ -334,13 +414,13 @@
       "local_slug": "lanus",
       "visita_slug": "san-lorenzo",
       "prob": {
-        "local": 39.7,
-        "empate": 32.6,
-        "visita": 27.7
+        "local": 40.1,
+        "empate": 32.3,
+        "visita": 27.6
       },
       "goles_esperados": {
-        "local": 1.13,
-        "visita": 0.9
+        "local": 1.15,
+        "visita": 0.91
       },
       "marcadores": [
         {
@@ -349,23 +429,33 @@
         },
         {
           "marcador": "0-0",
-          "prob": 14.2
+          "prob": 13.9
         },
         {
           "marcador": "1-0",
-          "prob": 13.6
+          "prob": 13.5
         },
         {
           "marcador": "0-1",
-          "prob": 10.6
+          "prob": 10.4
         },
         {
           "marcador": "2-0",
-          "prob": 8.4
+          "prob": 8.5
         }
       ],
-      "menos_de_2_5": 66.6,
-      "ambos_convierten": 41.5,
+      "menos_de_2_5": 66.0,
+      "ambos_convierten": 42.0,
+      "implicita": {
+        "local": 47.3,
+        "empate": 32.1,
+        "visita": 20.6
+      },
+      "diferencial": {
+        "local": -7.2,
+        "empate": 0.2,
+        "visita": 7.0
+      },
       "fecha": "26/07/2026",
       "hora": "01:30"
     },
@@ -375,38 +465,48 @@
       "local_slug": "atletico-tucuman",
       "visita_slug": "independiente-rivadavia",
       "prob": {
-        "local": 38.0,
-        "empate": 30.3,
-        "visita": 31.7
+        "local": 38.9,
+        "empate": 30.6,
+        "visita": 30.5
       },
       "goles_esperados": {
-        "local": 1.24,
-        "visita": 1.11
+        "local": 1.23,
+        "visita": 1.06
       },
       "marcadores": [
         {
           "marcador": "1-1",
-          "prob": 14.3
-        },
-        {
-          "marcador": "0-0",
-          "prob": 10.7
+          "prob": 14.4
         },
         {
           "marcador": "1-0",
-          "prob": 10.6
+          "prob": 11.3
+        },
+        {
+          "marcador": "0-0",
+          "prob": 11.3
         },
         {
           "marcador": "0-1",
-          "prob": 9.4
+          "prob": 9.6
         },
         {
           "marcador": "2-1",
           "prob": 8.1
         }
       ],
-      "menos_de_2_5": 58.2,
-      "ambos_convierten": 48.9,
+      "menos_de_2_5": 59.9,
+      "ambos_convierten": 47.4,
+      "implicita": {
+        "local": 36.0,
+        "empate": 30.1,
+        "visita": 33.9
+      },
+      "diferencial": {
+        "local": 2.9,
+        "empate": 0.5,
+        "visita": -3.4
+      },
       "fecha": "26/07/2026",
       "hora": "19:00"
     },
@@ -416,38 +516,48 @@
       "local_slug": "estudiantes-lp",
       "visita_slug": "independiente",
       "prob": {
-        "local": 40.5,
-        "empate": 32.3,
-        "visita": 27.2
+        "local": 41.0,
+        "empate": 32.0,
+        "visita": 27.0
       },
       "goles_esperados": {
-        "local": 1.16,
-        "visita": 0.9
+        "local": 1.18,
+        "visita": 0.91
       },
       "marcadores": [
         {
           "marcador": "1-1",
-          "prob": 14.5
+          "prob": 14.4
         },
         {
           "marcador": "0-0",
-          "prob": 13.8
-        },
-        {
-          "marcador": "1-0",
           "prob": 13.5
         },
         {
+          "marcador": "1-0",
+          "prob": 13.4
+        },
+        {
           "marcador": "0-1",
-          "prob": 10.3
+          "prob": 10.1
         },
         {
           "marcador": "2-0",
           "prob": 8.6
         }
       ],
-      "menos_de_2_5": 65.9,
-      "ambos_convierten": 42.1,
+      "menos_de_2_5": 65.2,
+      "ambos_convierten": 42.6,
+      "implicita": {
+        "local": 43.7,
+        "empate": 31.3,
+        "visita": 25.0
+      },
+      "diferencial": {
+        "local": -2.7,
+        "empate": 0.7,
+        "visita": 2.0
+      },
       "fecha": "26/07/2026",
       "hora": "21:15"
     },
@@ -457,38 +567,48 @@
       "local_slug": "deportivo-riestra",
       "visita_slug": "boca-juniors",
       "prob": {
-        "local": 24.5,
-        "empate": 37.1,
-        "visita": 38.4
+        "local": 27.5,
+        "empate": 34.6,
+        "visita": 37.9
       },
       "goles_esperados": {
-        "local": 0.68,
-        "visita": 0.92
+        "local": 0.82,
+        "visita": 1.01
       },
       "marcadores": [
         {
           "marcador": "0-0",
-          "prob": 21.2
+          "prob": 17.2
         },
         {
           "marcador": "0-1",
-          "prob": 17.4
+          "prob": 15.0
         },
         {
           "marcador": "1-1",
-          "prob": 13.8
+          "prob": 14.4
         },
         {
           "marcador": "1-0",
-          "prob": 12.5
+          "prob": 12.0
         },
         {
           "marcador": "0-2",
-          "prob": 8.6
+          "prob": 8.2
         }
       ],
-      "menos_de_2_5": 78.2,
-      "ambos_convierten": 30.9,
+      "menos_de_2_5": 72.2,
+      "ambos_convierten": 36.8,
+      "implicita": {
+        "local": 21.2,
+        "empate": 32.0,
+        "visita": 46.8
+      },
+      "diferencial": {
+        "local": 6.3,
+        "empate": 2.6,
+        "visita": -8.9
+      },
       "fecha": "26/07/2026",
       "hora": "23:30"
     }

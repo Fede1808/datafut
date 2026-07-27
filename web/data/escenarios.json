@@ -11,26 +11,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3804,
-          "prob_resultado": 38.04,
-          "campeon": 1.74,
-          "playoffs": 61.09,
+          "simulaciones": 3910,
+          "prob_resultado": 39.1,
+          "campeon": 1.97,
+          "playoffs": 60.15,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3083,
-          "prob_resultado": 30.83,
-          "campeon": 1.27,
-          "playoffs": 44.99,
+          "simulaciones": 3111,
+          "prob_resultado": 31.11,
+          "campeon": 1.29,
+          "playoffs": 43.36,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3113,
-          "prob_resultado": 31.13,
-          "campeon": 0.9,
-          "playoffs": 35.11,
+          "simulaciones": 2979,
+          "prob_resultado": 29.79,
+          "campeon": 1.17,
+          "playoffs": 32.76,
           "confiable": true
         }
       ],
@@ -46,26 +46,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2169,
-          "prob_resultado": 21.69,
-          "campeon": 1.89,
-          "playoffs": 63.95,
+          "simulaciones": 2228,
+          "prob_resultado": 22.28,
+          "campeon": 2.29,
+          "playoffs": 64.05,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3315,
-          "prob_resultado": 33.15,
-          "campeon": 1.57,
-          "playoffs": 48.87,
+          "simulaciones": 3288,
+          "prob_resultado": 32.88,
+          "campeon": 1.7,
+          "playoffs": 47.93,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 4516,
-          "prob_resultado": 45.16,
-          "campeon": 1.44,
-          "playoffs": 40.9,
+          "simulaciones": 4484,
+          "prob_resultado": 44.84,
+          "campeon": 1.2,
+          "playoffs": 39.63,
           "confiable": true
         }
       ],
@@ -81,26 +81,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 1081,
-          "prob_resultado": 10.81,
-          "campeon": 1.39,
-          "playoffs": 56.34,
+          "simulaciones": 1245,
+          "prob_resultado": 12.45,
+          "campeon": 1.37,
+          "playoffs": 57.27,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2133,
-          "prob_resultado": 21.33,
-          "campeon": 0.98,
-          "playoffs": 43.18,
+          "simulaciones": 2315,
+          "prob_resultado": 23.15,
+          "campeon": 1.47,
+          "playoffs": 43.28,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 6786,
-          "prob_resultado": 67.86,
-          "campeon": 0.68,
-          "playoffs": 34.53,
+          "simulaciones": 6440,
+          "prob_resultado": 64.4,
+          "campeon": 1.38,
+          "playoffs": 36.4,
           "confiable": true
         }
       ],
@@ -116,26 +116,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3898,
-          "prob_resultado": 38.98,
-          "campeon": 17.19,
-          "playoffs": 95.28,
+          "simulaciones": 3823,
+          "prob_resultado": 38.23,
+          "campeon": 14.91,
+          "playoffs": 92.81,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3667,
-          "prob_resultado": 36.67,
-          "campeon": 17.13,
-          "playoffs": 90.86,
+          "simulaciones": 3486,
+          "prob_resultado": 34.86,
+          "campeon": 13.2,
+          "playoffs": 86.57,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2435,
-          "prob_resultado": 24.35,
-          "campeon": 13.22,
-          "playoffs": 85.34,
+          "simulaciones": 2691,
+          "prob_resultado": 26.91,
+          "campeon": 12.04,
+          "playoffs": 79.49,
           "confiable": true
         }
       ],
@@ -151,26 +151,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3219,
-          "prob_resultado": 32.19,
-          "campeon": 0.96,
-          "playoffs": 40.79,
+          "simulaciones": 2555,
+          "prob_resultado": 25.55,
+          "campeon": 1.06,
+          "playoffs": 46.97,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3035,
-          "prob_resultado": 30.35,
-          "campeon": 0.56,
-          "playoffs": 28.24,
+          "simulaciones": 3041,
+          "prob_resultado": 30.41,
+          "campeon": 0.62,
+          "playoffs": 31.67,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3746,
-          "prob_resultado": 37.46,
-          "campeon": 0.32,
-          "playoffs": 20.9,
+          "simulaciones": 4404,
+          "prob_resultado": 44.04,
+          "campeon": 0.59,
+          "playoffs": 24.23,
           "confiable": true
         }
       ],
@@ -186,26 +186,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2435,
-          "prob_resultado": 24.35,
-          "campeon": 2.38,
-          "playoffs": 61.11,
+          "simulaciones": 2691,
+          "prob_resultado": 26.91,
+          "campeon": 2.75,
+          "playoffs": 61.09,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3667,
-          "prob_resultado": 36.67,
-          "campeon": 1.58,
-          "playoffs": 44.59,
+          "simulaciones": 3486,
+          "prob_resultado": 34.86,
+          "campeon": 2.01,
+          "playoffs": 46.07,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3898,
-          "prob_resultado": 38.98,
-          "campeon": 1.31,
-          "playoffs": 36.51,
+          "simulaciones": 3823,
+          "prob_resultado": 38.23,
+          "campeon": 1.7,
+          "playoffs": 36.49,
           "confiable": true
         }
       ],
@@ -221,26 +221,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 4061,
-          "prob_resultado": 40.61,
-          "campeon": 6.33,
-          "playoffs": 85.5,
+          "simulaciones": 4090,
+          "prob_resultado": 40.9,
+          "campeon": 6.8,
+          "playoffs": 82.44,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3205,
-          "prob_resultado": 32.05,
-          "campeon": 5.68,
-          "playoffs": 74.41,
+          "simulaciones": 3188,
+          "prob_resultado": 31.88,
+          "campeon": 4.58,
+          "playoffs": 70.55,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2734,
-          "prob_resultado": 27.34,
-          "campeon": 4.83,
-          "playoffs": 66.68,
+          "simulaciones": 2722,
+          "prob_resultado": 27.22,
+          "campeon": 4.56,
+          "playoffs": 61.98,
           "confiable": true
         }
       ],
@@ -256,26 +256,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 915,
-          "prob_resultado": 9.15,
-          "campeon": 0.0,
-          "playoffs": 0.0,
+          "simulaciones": 3244,
+          "prob_resultado": 32.44,
+          "campeon": 0.71,
+          "playoffs": 36.53,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3064,
-          "prob_resultado": 30.64,
-          "campeon": 0.0,
-          "playoffs": 0.1,
+          "simulaciones": 3365,
+          "prob_resultado": 33.65,
+          "campeon": 0.36,
+          "playoffs": 23.83,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 6021,
-          "prob_resultado": 60.21,
-          "campeon": 0.0,
-          "playoffs": 0.02,
+          "simulaciones": 3391,
+          "prob_resultado": 33.91,
+          "campeon": 0.41,
+          "playoffs": 15.87,
           "confiable": true
         }
       ],
@@ -291,26 +291,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 1785,
-          "prob_resultado": 17.85,
-          "campeon": 1.57,
-          "playoffs": 68.63,
+          "simulaciones": 1919,
+          "prob_resultado": 19.19,
+          "campeon": 2.45,
+          "playoffs": 63.78,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2666,
-          "prob_resultado": 26.66,
-          "campeon": 1.31,
-          "playoffs": 53.94,
+          "simulaciones": 2726,
+          "prob_resultado": 27.26,
+          "campeon": 1.5,
+          "playoffs": 47.4,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 5549,
-          "prob_resultado": 55.49,
-          "campeon": 1.57,
-          "playoffs": 44.91,
+          "simulaciones": 5355,
+          "prob_resultado": 53.55,
+          "campeon": 1.34,
+          "playoffs": 41.66,
           "confiable": true
         }
       ],
@@ -326,26 +326,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3746,
-          "prob_resultado": 37.46,
-          "campeon": 0.27,
-          "playoffs": 20.93,
+          "simulaciones": 4404,
+          "prob_resultado": 44.04,
+          "campeon": 1.63,
+          "playoffs": 45.39,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3035,
-          "prob_resultado": 30.35,
-          "campeon": 0.23,
-          "playoffs": 11.0,
+          "simulaciones": 3041,
+          "prob_resultado": 30.41,
+          "campeon": 1.09,
+          "playoffs": 31.54,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3219,
-          "prob_resultado": 32.19,
-          "campeon": 0.09,
-          "playoffs": 7.39,
+          "simulaciones": 2555,
+          "prob_resultado": 25.55,
+          "campeon": 0.78,
+          "playoffs": 23.8,
           "confiable": true
         }
       ],
@@ -361,26 +361,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 4516,
-          "prob_resultado": 45.16,
-          "campeon": 3.9,
-          "playoffs": 76.55,
+          "simulaciones": 4484,
+          "prob_resultado": 44.84,
+          "campeon": 4.28,
+          "playoffs": 73.77,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3315,
-          "prob_resultado": 33.15,
-          "campeon": 3.56,
-          "playoffs": 63.14,
+          "simulaciones": 3288,
+          "prob_resultado": 32.88,
+          "campeon": 3.22,
+          "playoffs": 59.73,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2169,
-          "prob_resultado": 21.69,
-          "campeon": 2.72,
-          "playoffs": 54.22,
+          "simulaciones": 2228,
+          "prob_resultado": 22.28,
+          "campeon": 2.42,
+          "playoffs": 50.4,
           "confiable": true
         }
       ],
@@ -396,26 +396,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2734,
-          "prob_resultado": 27.34,
-          "campeon": 5.85,
-          "playoffs": 80.1,
+          "simulaciones": 2722,
+          "prob_resultado": 27.22,
+          "campeon": 6.1,
+          "playoffs": 77.85,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3205,
-          "prob_resultado": 32.05,
-          "campeon": 5.02,
-          "playoffs": 67.64,
+          "simulaciones": 3188,
+          "prob_resultado": 31.88,
+          "campeon": 4.77,
+          "playoffs": 63.02,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 4061,
-          "prob_resultado": 40.61,
-          "campeon": 4.33,
-          "playoffs": 59.86,
+          "simulaciones": 4090,
+          "prob_resultado": 40.9,
+          "campeon": 3.79,
+          "playoffs": 56.63,
           "confiable": true
         }
       ],
@@ -431,26 +431,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3113,
-          "prob_resultado": 31.13,
-          "campeon": 3.47,
-          "playoffs": 75.46,
+          "simulaciones": 2979,
+          "prob_resultado": 29.79,
+          "campeon": 3.29,
+          "playoffs": 69.12,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3083,
-          "prob_resultado": 30.83,
-          "campeon": 2.24,
-          "playoffs": 58.38,
+          "simulaciones": 3111,
+          "prob_resultado": 31.11,
+          "campeon": 2.19,
+          "playoffs": 52.14,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3804,
-          "prob_resultado": 38.04,
-          "campeon": 1.84,
-          "playoffs": 50.87,
+          "simulaciones": 3910,
+          "prob_resultado": 39.1,
+          "campeon": 1.64,
+          "playoffs": 43.89,
           "confiable": true
         }
       ],
@@ -466,26 +466,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2066,
-          "prob_resultado": 20.66,
-          "campeon": 1.21,
-          "playoffs": 61.67,
+          "simulaciones": 2204,
+          "prob_resultado": 22.04,
+          "campeon": 2.4,
+          "playoffs": 60.71,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3014,
-          "prob_resultado": 30.14,
-          "campeon": 1.16,
-          "playoffs": 44.82,
+          "simulaciones": 3032,
+          "prob_resultado": 30.32,
+          "campeon": 1.81,
+          "playoffs": 42.94,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 4920,
-          "prob_resultado": 49.2,
-          "campeon": 0.98,
-          "playoffs": 37.03,
+          "simulaciones": 4764,
+          "prob_resultado": 47.64,
+          "campeon": 1.32,
+          "playoffs": 34.01,
           "confiable": true
         }
       ],
@@ -501,26 +501,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3999,
-          "prob_resultado": 39.99,
-          "campeon": 2.8,
-          "playoffs": 65.39,
+          "simulaciones": 4056,
+          "prob_resultado": 40.56,
+          "campeon": 3.45,
+          "playoffs": 64.87,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3276,
-          "prob_resultado": 32.76,
-          "campeon": 1.92,
-          "playoffs": 50.46,
+          "simulaciones": 3234,
+          "prob_resultado": 32.34,
+          "campeon": 2.26,
+          "playoffs": 49.72,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2725,
-          "prob_resultado": 27.25,
-          "campeon": 1.39,
-          "playoffs": 40.88,
+          "simulaciones": 2710,
+          "prob_resultado": 27.1,
+          "campeon": 1.92,
+          "playoffs": 40.48,
           "confiable": true
         }
       ],
@@ -536,26 +536,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3365,
-          "prob_resultado": 33.65,
-          "campeon": 1.69,
-          "playoffs": 51.29,
+          "simulaciones": 3524,
+          "prob_resultado": 35.24,
+          "campeon": 1.79,
+          "playoffs": 52.78,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3208,
-          "prob_resultado": 32.08,
-          "campeon": 1.18,
-          "playoffs": 37.41,
+          "simulaciones": 3192,
+          "prob_resultado": 31.92,
+          "campeon": 1.28,
+          "playoffs": 38.75,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3427,
-          "prob_resultado": 34.27,
-          "campeon": 0.82,
-          "playoffs": 28.16,
+          "simulaciones": 3284,
+          "prob_resultado": 32.84,
+          "campeon": 1.0,
+          "playoffs": 30.18,
           "confiable": true
         }
       ],
@@ -571,26 +571,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3640,
-          "prob_resultado": 36.4,
-          "campeon": 1.18,
-          "playoffs": 45.47,
+          "simulaciones": 3770,
+          "prob_resultado": 37.7,
+          "campeon": 1.56,
+          "playoffs": 48.22,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3446,
-          "prob_resultado": 34.46,
-          "campeon": 1.02,
-          "playoffs": 30.82,
+          "simulaciones": 3360,
+          "prob_resultado": 33.6,
+          "campeon": 1.01,
+          "playoffs": 34.4,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2914,
-          "prob_resultado": 29.14,
-          "campeon": 0.45,
-          "playoffs": 22.37,
+          "simulaciones": 2870,
+          "prob_resultado": 28.7,
+          "campeon": 0.87,
+          "playoffs": 26.27,
           "confiable": true
         }
       ],
@@ -606,26 +606,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 5549,
-          "prob_resultado": 55.49,
-          "campeon": 8.58,
-          "playoffs": 92.83,
+          "simulaciones": 5355,
+          "prob_resultado": 53.55,
+          "campeon": 8.1,
+          "playoffs": 89.82,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2666,
-          "prob_resultado": 26.66,
-          "campeon": 7.13,
-          "playoffs": 87.25,
+          "simulaciones": 2726,
+          "prob_resultado": 27.26,
+          "campeon": 7.45,
+          "playoffs": 81.99,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 1785,
-          "prob_resultado": 17.85,
-          "campeon": 6.95,
-          "playoffs": 80.0,
+          "simulaciones": 1919,
+          "prob_resultado": 19.19,
+          "campeon": 5.89,
+          "playoffs": 75.35,
           "confiable": true
         }
       ],
@@ -641,26 +641,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 6786,
-          "prob_resultado": 67.86,
-          "campeon": 18.07,
-          "playoffs": 98.36,
+          "simulaciones": 6440,
+          "prob_resultado": 64.4,
+          "campeon": 15.05,
+          "playoffs": 96.74,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2133,
-          "prob_resultado": 21.33,
-          "campeon": 15.85,
-          "playoffs": 96.25,
+          "simulaciones": 2315,
+          "prob_resultado": 23.15,
+          "campeon": 14.08,
+          "playoffs": 92.74,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 1081,
-          "prob_resultado": 10.81,
-          "campeon": 12.12,
-          "playoffs": 91.95,
+          "simulaciones": 1245,
+          "prob_resultado": 12.45,
+          "campeon": 13.33,
+          "playoffs": 88.84,
           "confiable": true
         }
       ],
@@ -676,26 +676,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2725,
-          "prob_resultado": 27.25,
-          "campeon": 4.51,
-          "playoffs": 77.91,
+          "simulaciones": 2710,
+          "prob_resultado": 27.1,
+          "campeon": 4.76,
+          "playoffs": 71.37,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3276,
-          "prob_resultado": 32.76,
-          "campeon": 3.48,
-          "playoffs": 66.48,
+          "simulaciones": 3234,
+          "prob_resultado": 32.34,
+          "campeon": 3.34,
+          "playoffs": 58.66,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3999,
-          "prob_resultado": 39.99,
-          "campeon": 2.53,
-          "playoffs": 56.19,
+          "simulaciones": 4056,
+          "prob_resultado": 40.56,
+          "campeon": 2.66,
+          "playoffs": 50.12,
           "confiable": true
         }
       ],
@@ -711,26 +711,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3427,
-          "prob_resultado": 34.27,
-          "campeon": 5.6,
-          "playoffs": 81.38,
+          "simulaciones": 3284,
+          "prob_resultado": 32.84,
+          "campeon": 6.73,
+          "playoffs": 79.48,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3208,
-          "prob_resultado": 32.08,
-          "campeon": 4.3,
-          "playoffs": 69.67,
+          "simulaciones": 3192,
+          "prob_resultado": 31.92,
+          "campeon": 3.85,
+          "playoffs": 64.25,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3365,
-          "prob_resultado": 33.65,
-          "campeon": 3.86,
-          "playoffs": 61.9,
+          "simulaciones": 3524,
+          "prob_resultado": 35.24,
+          "campeon": 3.77,
+          "playoffs": 56.47,
           "confiable": true
         }
       ],
@@ -746,26 +746,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 6021,
-          "prob_resultado": 60.21,
-          "campeon": 2.09,
-          "playoffs": 64.28,
+          "simulaciones": 3391,
+          "prob_resultado": 33.91,
+          "campeon": 2.83,
+          "playoffs": 66.18,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3064,
-          "prob_resultado": 30.64,
-          "campeon": 1.6,
-          "playoffs": 49.18,
+          "simulaciones": 3365,
+          "prob_resultado": 33.65,
+          "campeon": 2.17,
+          "playoffs": 53.19,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 915,
-          "prob_resultado": 9.15,
-          "campeon": 1.31,
-          "playoffs": 41.75,
+          "simulaciones": 3244,
+          "prob_resultado": 32.44,
+          "campeon": 2.22,
+          "playoffs": 43.19,
           "confiable": true
         }
       ],
@@ -781,26 +781,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2914,
-          "prob_resultado": 29.14,
-          "campeon": 2.3,
-          "playoffs": 65.13,
+          "simulaciones": 2870,
+          "prob_resultado": 28.7,
+          "campeon": 2.47,
+          "playoffs": 64.56,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3446,
-          "prob_resultado": 34.46,
-          "campeon": 1.57,
-          "playoffs": 49.07,
+          "simulaciones": 3360,
+          "prob_resultado": 33.6,
+          "campeon": 1.73,
+          "playoffs": 48.27,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3640,
-          "prob_resultado": 36.4,
-          "campeon": 1.32,
-          "playoffs": 41.59,
+          "simulaciones": 3770,
+          "prob_resultado": 37.7,
+          "campeon": 1.8,
+          "playoffs": 40.03,
           "confiable": true
         }
       ],
@@ -816,26 +816,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 4920,
-          "prob_resultado": 49.2,
-          "campeon": 4.96,
-          "playoffs": 73.74,
+          "simulaciones": 4764,
+          "prob_resultado": 47.64,
+          "campeon": 5.08,
+          "playoffs": 71.62,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3014,
-          "prob_resultado": 30.14,
-          "campeon": 3.62,
-          "playoffs": 61.78,
+          "simulaciones": 3032,
+          "prob_resultado": 30.32,
+          "campeon": 3.43,
+          "playoffs": 57.16,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2066,
-          "prob_resultado": 20.66,
-          "campeon": 2.71,
-          "playoffs": 51.45,
+          "simulaciones": 2204,
+          "prob_resultado": 22.04,
+          "campeon": 3.49,
+          "playoffs": 47.1,
           "confiable": true
         }
       ],

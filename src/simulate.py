@@ -64,6 +64,35 @@ INICIO_CLAUSURA = "2026-07-23"
 
 CLASIFICAN_POR_ZONA = 8
 
+# --- Descensos -------------------------------------------------------------
+#
+# Reglamento vigente 2026 (ver reference/formato-torneos.md, seccion
+# "Descensos"): bajan DOS equipos.
+#
+#   1. El ultimo de la tabla de PROMEDIOS: puntos divididos partidos jugados
+#      sobre las ultimas tres temporadas (2024, 2025 y 2026).
+#   2. El ultimo de la tabla ANUAL: solo la temporada en curso, sumando
+#      Apertura y Clausura.
+#
+# Si el mismo club queda ultimo en las dos, el cupo de la anual pasa al
+# siguiente de esa tabla.
+#
+# ATENCION, esto no es un detalle: el reglamento cambio TRES veces en tres
+# anios (3 descensos hasta 2022, 2 en 2023, CERO en 2024, 2 desde 2025). Hay
+# que reverificarlo cada temporada antes de publicar estos numeros.
+TEMPORADAS_PROMEDIO = ["2024", "2025", "2026"]
+
+# Que torneos suman para el promedio. Se incluye la Copa de la Liga porque en
+# 2024 fue uno de los dos torneos oficiales del anio, no una copa aparte.
+#
+# Es la decision mas discutible de todo este bloque, asi que se midio en vez de
+# suponerla: se calculo la tabla de promedios con las cuatro combinaciones
+# posibles (con y sin Copa de la Liga, con y sin partidos de playoffs) y los
+# DOS ultimos son los mismos en las cuatro -- Estudiantes (RC) ~0.31 y Aldosivi
+# ~0.72/0.86 -- con mas de 0.20 de distancia hasta el tercero. O sea que la
+# pelea por el descenso por promedio no depende de esta eleccion.
+COMPETENCIAS_PROMEDIO = ("liga", "copa_liga")
+
 # El formato vigente (2025-2026): cada equipo juega 16 partidos de fase regular,
 # 14 contra su zona y 2 interzonales. Ver reference/formato-torneos.md.
 PARTIDOS_FASE_REGULAR = 16
@@ -489,7 +518,155 @@ def jugados_del_clausura(partidos):
     return t[t.date >= INICIO_CLAUSURA]
 
 
-def simular(modelo, zona, jugados, pendientes, n, semilla=None, proximos=None):
+def bases_de_descenso(partidos, apertura_regular, jugados, pendientes, equipos):
+    """
+    Todo lo que hay que saber ANTES de simular para calcular los descensos.
+
+    Las dos tablas del descenso arrancan con puntos que ya estan hechos y solo
+    les falta sumarles el Clausura. Eso es lo que se prepara aca:
+
+      anual_*    lo que cada equipo hizo en la FASE REGULAR del Apertura 2026.
+                 Los playoffs quedan afuera a proposito: la tabla anual suma
+                 los dos torneos del anio, no la copa que se juega adentro de
+                 cada uno.
+      prom_pts   puntos de las ultimas tres temporadas SIN el Clausura, que la
+                 simulacion agrega despues.
+      prom_pj    partidos jugados que le corresponden a cada equipo al final
+                 del torneo. A un recien ascendido se le divide solo por lo
+                 que jugo en primera: Estudiantes (RC) y Gimnasia (M) tienen
+                 una temporada, Aldosivi dos, el resto tres.
+
+    Los devuelve como arrays alineados con `equipos` para poder hacer la cuenta
+    de las 10.000 simulaciones de una.
+    """
+    en_liga = set(equipos)
+    indice = {e: i for i, e in enumerate(equipos)}
+
+    anual = puntos_iniciales(apertura_regular, equipos)
+    anual_pts = np.array([anual[e]["pts"] for e in equipos], dtype=np.int32)
+    anual_dif = np.array([anual[e]["dif"] for e in equipos], dtype=np.int32)
+    anual_gf = np.array([anual[e]["gf"] for e in equipos], dtype=np.int32)
+
+    # Las tres temporadas del promedio, menos el Clausura: esos partidos entran
+    # despues por la simulacion (los jugados como base y los pendientes
+    # sorteados). Contarlos aca seria contarlos dos veces.
+    tres = partidos[partidos.season_id.isin(TEMPORADAS_PROMEDIO) &
+                    partidos.competition.isin(COMPETENCIAS_PROMEDIO)]
+    previo = tres[~((tres.season_id == TEMPORADA) &
+                    (tres.date >= INICIO_CLAUSURA))]
+
+    prom_pts = np.zeros(len(equipos), dtype=np.int32)
+    prom_pj = np.zeros(len(equipos), dtype=np.int32)
+    for f in previo.itertuples():
+        for equipo, gf, gc in ((f.home_team, f.home_goals, f.away_goals),
+                               (f.away_team, f.away_goals, f.home_goals)):
+            # Los equipos que ya se fueron de primera aparecen como rivales en
+            # 2024 y 2025: sus partidos cuentan para el que sigue en la liga,
+            # pero ellos no tienen fila en esta tabla.
+            if equipo not in en_liga:
+                continue
+            i = indice[equipo]
+            prom_pj[i] += 1
+            prom_pts[i] += 3 if gf > gc else (1 if gf == gc else 0)
+
+    # Cuantos partidos de Clausura va a haber jugado cada equipo al final.
+    pj_clausura = np.zeros(len(equipos), dtype=np.int32)
+    for f in jugados.itertuples():
+        pj_clausura[indice[f.home_team]] += 1
+        pj_clausura[indice[f.away_team]] += 1
+    for local, visita in pendientes:
+        pj_clausura[indice[local]] += 1
+        pj_clausura[indice[visita]] += 1
+
+    return {
+        "anual_pts": anual_pts,
+        "anual_dif": anual_dif,
+        "anual_gf": anual_gf,
+        "prom_pts": prom_pts,
+        "prom_pj": prom_pj + pj_clausura,
+    }
+
+
+def contar_descensos(pts, dif, gf, bases):
+    """
+    Quien se va a la B en cada una de las simulaciones.
+
+    Recibe las tablas finales del Clausura de las 10.000 simulaciones y les
+    suma lo que ya estaba hecho, para armar las dos tablas que definen el
+    descenso. Despues, en cada simulacion:
+
+      - el ULTIMO de la tabla de promedios se va;
+      - el ULTIMO de la tabla anual se va tambien, y si resulta ser el mismo
+        club, el cupo pasa al anteultimo de la anual (asi lo dice el
+        reglamento).
+
+    Devuelve, para cada equipo, en cuantas simulaciones descendio por cada via
+    y en cuantas descendio por alguna.
+
+    Detalle de reproducibilidad: los empates exactos se resuelven por orden
+    alfabetico (que es como viene `equipos`), no al azar. Es arbitrario y esta
+    bien que lo sea; lo que importa es que dos corridas del pipeline con los
+    mismos datos publiquen el mismo numero.
+    """
+    n, ne = pts.shape
+
+    # Tabla anual: Apertura (fase regular) + Clausura completo.
+    anual = bases["anual_pts"] + pts
+    anual_dif = bases["anual_dif"] + dif
+    anual_gf = bases["anual_gf"] + gf
+    orden_anual = anual * 1_000_000 + (anual_dif + 500) * 1_000 + anual_gf
+
+    # Tabla de promedios: puntos de tres temporadas sobre partidos jugados.
+    promedio = (bases["prom_pts"] + pts) / bases["prom_pj"]
+
+    peor_promedio = np.argmin(promedio, axis=1)
+
+    # Los dos peores de la anual. El segundo solo se usa si el peor ya se fue
+    # por promedio.
+    dos_peores = np.argsort(orden_anual, axis=1, kind="stable")[:, :2]
+    peor_anual = np.where(dos_peores[:, 0] == peor_promedio,
+                          dos_peores[:, 1], dos_peores[:, 0])
+
+    filas = np.arange(n)
+    baja = np.zeros((n, ne), dtype=bool)
+    baja[filas, peor_promedio] = True
+    baja[filas, peor_anual] = True
+
+    return {
+        "promedio": np.bincount(peor_promedio, minlength=ne),
+        "anual": np.bincount(peor_anual, minlength=ne),
+        "alguna": baja.sum(axis=0),
+    }
+
+
+def distribucion_de_puntos(columna):
+    """
+    El histograma de puntos finales de un equipo, comprimido para el JSON.
+
+    El promedio solo miente por omision: "termina con 30 puntos" suena a
+    certeza cuando en realidad el rango realista puede ir de 20 a 42. Esto
+    guarda la forma completa de la distribucion, que es lo que despues permite
+    dibujarla en el sitio.
+
+    Formato: `desde` es el puntaje del primer bin y `probs` son los porcentajes
+    de cada puntaje consecutivo a partir de ahi.
+
+    Las colas se recortan en 0.05% (5 simulaciones de 10.000). No es solo por
+    tamano del JSON: una cola de veinte barras invisibles estira el eje y
+    achica justo la parte del grafico donde esta todo lo que importa.
+    """
+    conteo = np.bincount(columna)
+    prob = 100 * conteo / len(columna)
+    llenos = np.nonzero(prob >= 0.05)[0]
+    desde, hasta = int(llenos[0]), int(llenos[-1])
+    return {
+        "desde": desde,
+        "probs": [round(float(p), 2) for p in prob[desde:hasta + 1]],
+    }
+
+
+def simular(modelo, zona, jugados, pendientes, n, semilla=None, proximos=None,
+            bases=None):
     if semilla is not None:
         np.random.seed(semilla)
 
@@ -558,12 +735,24 @@ def simular(modelo, zona, jugados, pendientes, n, semilla=None, proximos=None):
     escenarios = calcular_escenarios(equipos, pendientes, gl, gv, campeon,
                                      clasifico, proximos or {})
 
+    # La distribucion de puntos ya estaba adentro de `pts`: hasta ahora se
+    # tiraba y se publicaba solo el promedio.
+    puntos = {
+        "promedio": pts.mean(axis=0),
+        "p10": np.percentile(pts, 10, axis=0),
+        "p50": np.percentile(pts, 50, axis=0),
+        "p90": np.percentile(pts, 90, axis=0),
+        "dist": [distribucion_de_puntos(pts[:, i]) for i in range(ne)],
+    }
+
     return {
         "equipos": equipos,
         "campeon": Counter(campeon.tolist()),
         "clasifica": clasifico.sum(axis=0),
         "n": n,
         "escenarios": escenarios,
+        "puntos": puntos,
+        "descenso": contar_descensos(pts, dif, gf, bases) if bases else None,
     }
 
 
@@ -620,10 +809,13 @@ def main():
           f"{len(pendientes)} por jugar\n")
 
     proximos = proximo_partido_por_equipo(set(zona))
+    bases = bases_de_descenso(partidos, regular, jugados, pendientes,
+                              sorted(zona))
     res = simular(modelo, zona, jugados, pendientes, args.n,
-                  semilla=args.semilla, proximos=proximos)
+                  semilla=args.semilla, proximos=proximos, bases=bases)
 
     equipos, n = res["equipos"], res["n"]
+    desc, puntos = res["descenso"], res["puntos"]
     filas = []
     for i, e in enumerate(equipos):
         filas.append({
@@ -631,6 +823,14 @@ def main():
             "zona": zona[e],
             "campeon": 100 * res["campeon"].get(i, 0) / n,
             "playoffs": 100 * res["clasifica"][i] / n,
+            "descenso": 100 * desc["alguna"][i] / n,
+            "descenso_promedio": 100 * desc["promedio"][i] / n,
+            "descenso_anual": 100 * desc["anual"][i] / n,
+            "puntos": puntos["promedio"][i],
+            "puntos_p10": puntos["p10"][i],
+            "puntos_p50": puntos["p50"][i],
+            "puntos_p90": puntos["p90"][i],
+            "puntos_dist": puntos["dist"][i],
         })
     tabla = pd.DataFrame(filas).sort_values("campeon", ascending=False)
 
@@ -645,10 +845,12 @@ def main():
     escribir(f"**{n:,} simulaciones** · {len(jugados)} partidos jugados · "
              f"{len(pendientes)} por jugar")
     escribir()
-    escribir("| Equipo | Zona | Campeon | Llega a playoffs |")
-    escribir("|---|:--:|---:|---:|")
+    escribir("| Equipo | Zona | Campeon | Llega a playoffs | Puntos (p10-p90) | Desciende |")
+    escribir("|---|:--:|---:|---:|:--:|---:|")
     for f in tabla.itertuples():
-        escribir(f"| {f.equipo} | {f.zona} | {f.campeon:.1f}% | {f.playoffs:.1f}% |")
+        escribir(f"| {f.equipo} | {f.zona} | {f.campeon:.1f}% | {f.playoffs:.1f}% | "
+                 f"{f.puntos:.1f} ({f.puntos_p10:.0f}-{f.puntos_p90:.0f}) | "
+                 f"{f.descenso:.1f}% |")
     escribir()
     escribir("## Como leer esto")
     escribir()
@@ -675,6 +877,14 @@ def main():
     escribir("  se resuelve con un desempate arbitrario y fijo.")
     escribir("- Los penales se resuelven con una moneda al aire (50/50).")
     escribir("- El modelo no sabe de lesiones, refuerzos ni cambios de tecnico.")
+    escribir("- El descenso usa el reglamento 2026: bajan dos, el ultimo de la tabla")
+    escribir("  de promedios (2024-2026) y el ultimo de la tabla anual (Apertura +")
+    escribir("  Clausura, fase regular). Ese reglamento cambio tres veces en tres")
+    escribir("  anios: **hay que reverificarlo cada temporada**.")
+    escribir("- Para el promedio se suman los partidos de liga y de Copa de la Liga.")
+    escribir("  Se probaron las cuatro combinaciones posibles (con y sin copa, con y")
+    escribir("  sin playoffs) y los dos ultimos son los mismos en las cuatro, asi que")
+    escribir("  la pelea del descenso no depende de esa eleccion.")
 
     DESTINO.parent.mkdir(parents=True, exist_ok=True)
     DESTINO.write_text("\n".join(lineas) + "\n", encoding="utf-8")
@@ -690,7 +900,17 @@ def main():
         "partidos_pendientes": len(pendientes),
         "equipos": [
             {"equipo": f.equipo, "zona": f.zona,
-             "campeon": round(f.campeon, 2), "playoffs": round(f.playoffs, 2)}
+             "campeon": round(f.campeon, 2), "playoffs": round(f.playoffs, 2),
+             "descenso": round(f.descenso, 2),
+             "descenso_promedio": round(f.descenso_promedio, 2),
+             "descenso_anual": round(f.descenso_anual, 2),
+             "puntos": {
+                 "promedio": round(float(f.puntos), 1),
+                 "p10": int(f.puntos_p10),
+                 "p50": int(f.puntos_p50),
+                 "p90": int(f.puntos_p90),
+             },
+             "puntos_dist": f.puntos_dist}
             for f in tabla.itertuples()
         ],
         "min_simulaciones_rama": MIN_SIMS_RAMA,
