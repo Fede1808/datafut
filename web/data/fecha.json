@@ -6,7 +6,7 @@
       "local_slug": "gimnasia-m",
       "visita_slug": "central-cordoba-sde",
       "prob": {
-        "local": 36.7,
+        "local": 36.6,
         "empate": 30.7,
         "visita": 32.6
       },
@@ -148,7 +148,7 @@
         },
         {
           "marcador": "1-1",
-          "prob": 13.9
+          "prob": 14.0
         },
         {
           "marcador": "2-0",
@@ -431,7 +431,7 @@
         },
         {
           "marcador": "0-0",
-          "prob": 13.9
+          "prob": 13.8
         },
         {
           "marcador": "1-0",

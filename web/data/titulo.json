@@ -6,7 +6,7 @@
     {
       "equipo": "River Plate",
       "zona": "B",
-      "campeon": 16.45,
+      "campeon": 16.95,
       "playoffs": 97.22,
       "slug": "river-plate",
       "colores": [
@@ -17,8 +17,8 @@
     {
       "equipo": "Boca Juniors",
       "zona": "A",
-      "campeon": 16.21,
-      "playoffs": 91.22,
+      "campeon": 16.2,
+      "playoffs": 91.24,
       "slug": "boca-juniors",
       "colores": [
         "#0A2472",
@@ -28,8 +28,8 @@
     {
       "equipo": "Racing Club",
       "zona": "B",
-      "campeon": 8.01,
-      "playoffs": 89.07,
+      "campeon": 7.9,
+      "playoffs": 89.05,
       "slug": "racing-club",
       "colores": [
         "#5CC0F2",
@@ -39,8 +39,8 @@
     {
       "equipo": "Estudiantes (LP)",
       "zona": "A",
-      "campeon": 5.67,
-      "playoffs": 76.73,
+      "campeon": 5.71,
+      "playoffs": 76.8,
       "slug": "estudiantes-lp",
       "colores": [
         "#D6001C",
@@ -50,8 +50,8 @@
     {
       "equipo": "Independiente",
       "zona": "A",
-      "campeon": 4.8,
-      "playoffs": 67.96,
+      "campeon": 4.97,
+      "playoffs": 67.89,
       "slug": "independiente",
       "colores": [
         "#D31820",
@@ -61,8 +61,8 @@
     {
       "equipo": "Argentinos Juniors",
       "zona": "B",
-      "campeon": 4.69,
-      "playoffs": 81.62,
+      "campeon": 4.82,
+      "playoffs": 81.61,
       "slug": "argentinos-juniors",
       "colores": [
         "#D6001C",
@@ -72,8 +72,8 @@
     {
       "equipo": "Talleres (C)",
       "zona": "A",
-      "campeon": 4.55,
-      "playoffs": 71.04,
+      "campeon": 4.6,
+      "playoffs": 71.07,
       "slug": "talleres-c",
       "colores": [
         "#0B2C6F",
@@ -83,7 +83,7 @@
     {
       "equipo": "Vélez Sarsfield",
       "zona": "A",
-      "campeon": 3.89,
+      "campeon": 4.09,
       "playoffs": 65.53,
       "slug": "velez-sarsfield",
       "colores": [
@@ -92,21 +92,10 @@
       ]
     },
     {
-      "equipo": "San Lorenzo",
-      "zona": "A",
-      "campeon": 3.69,
-      "playoffs": 65.54,
-      "slug": "san-lorenzo",
-      "colores": [
-        "#0A2A6B",
-        "#C8102E"
-      ]
-    },
-    {
       "equipo": "Huracán",
       "zona": "B",
-      "campeon": 3.41,
-      "playoffs": 67.28,
+      "campeon": 3.53,
+      "playoffs": 67.26,
       "slug": "huracan",
       "colores": [
         "#FFFFFF",
@@ -114,10 +103,21 @@
       ]
     },
     {
+      "equipo": "San Lorenzo",
+      "zona": "A",
+      "campeon": 3.38,
+      "playoffs": 65.48,
+      "slug": "san-lorenzo",
+      "colores": [
+        "#0A2A6B",
+        "#C8102E"
+      ]
+    },
+    {
       "equipo": "Rosario Central",
       "zona": "B",
-      "campeon": 2.98,
-      "playoffs": 61.42,
+      "campeon": 3.17,
+      "playoffs": 61.43,
       "slug": "rosario-central",
       "colores": [
         "#1A56A8",
@@ -125,21 +125,10 @@
       ]
     },
     {
-      "equipo": "Lanús",
-      "zona": "A",
-      "campeon": 2.62,
-      "playoffs": 53.82,
-      "slug": "lanus",
-      "colores": [
-        "#6B1229",
-        "#FFFFFF"
-      ]
-    },
-    {
       "equipo": "Belgrano",
       "zona": "B",
-      "campeon": 2.59,
-      "playoffs": 68.6,
+      "campeon": 2.82,
+      "playoffs": 68.61,
       "slug": "belgrano",
       "colores": [
         "#5CACEE",
@@ -149,8 +138,8 @@
     {
       "equipo": "Independiente Rivadavia",
       "zona": "B",
-      "campeon": 2.58,
-      "playoffs": 60.85,
+      "campeon": 2.47,
+      "playoffs": 60.84,
       "slug": "independiente-rivadavia",
       "colores": [
         "#1B3D8F",
@@ -160,8 +149,8 @@
     {
       "equipo": "Defensa y Justicia",
       "zona": "A",
-      "campeon": 2.3,
-      "playoffs": 51.46,
+      "campeon": 2.33,
+      "playoffs": 51.52,
       "slug": "defensa-y-justicia",
       "colores": [
         "#1E7B3C",
@@ -169,20 +158,31 @@
       ]
     },
     {
-      "equipo": "Gimnasia (LP)",
-      "zona": "B",
-      "campeon": 1.95,
-      "playoffs": 51.48,
-      "slug": "gimnasia-lp",
+      "equipo": "Lanús",
+      "zona": "A",
+      "campeon": 2.13,
+      "playoffs": 53.82,
+      "slug": "lanus",
       "colores": [
-        "#123A7A",
+        "#6B1229",
         "#FFFFFF"
+      ]
+    },
+    {
+      "equipo": "Tigre",
+      "zona": "B",
+      "campeon": 1.87,
+      "playoffs": 57.59,
+      "slug": "tigre",
+      "colores": [
+        "#1B3D8F",
+        "#C8102E"
       ]
     },
     {
       "equipo": "Unión",
       "zona": "A",
-      "campeon": 1.93,
+      "campeon": 1.69,
       "playoffs": 51.03,
       "slug": "union",
       "colores": [
@@ -191,21 +191,10 @@
       ]
     },
     {
-      "equipo": "Tigre",
-      "zona": "B",
-      "campeon": 1.87,
-      "playoffs": 57.62,
-      "slug": "tigre",
-      "colores": [
-        "#1B3D8F",
-        "#C8102E"
-      ]
-    },
-    {
       "equipo": "Deportivo Riestra",
       "zona": "A",
-      "campeon": 1.83,
-      "playoffs": 45.5,
+      "campeon": 1.67,
+      "playoffs": 45.46,
       "slug": "deportivo-riestra",
       "colores": [
         "#111111",
@@ -215,8 +204,8 @@
     {
       "equipo": "Banfield",
       "zona": "B",
-      "campeon": 1.39,
-      "playoffs": 48.49,
+      "campeon": 1.58,
+      "playoffs": 48.54,
       "slug": "banfield",
       "colores": [
         "#0E6B3D",
@@ -224,20 +213,20 @@
       ]
     },
     {
-      "equipo": "Instituto",
-      "zona": "A",
-      "campeon": 1.23,
-      "playoffs": 44.46,
-      "slug": "instituto",
+      "equipo": "Gimnasia (LP)",
+      "zona": "B",
+      "campeon": 1.5,
+      "playoffs": 51.55,
+      "slug": "gimnasia-lp",
       "colores": [
-        "#C8102E",
+        "#123A7A",
         "#FFFFFF"
       ]
     },
     {
       "equipo": "Atlético Tucumán",
       "zona": "B",
-      "campeon": 1.23,
+      "campeon": 1.33,
       "playoffs": 48.04,
       "slug": "atletico-tucuman",
       "colores": [
@@ -248,8 +237,8 @@
     {
       "equipo": "Newell's Old Boys",
       "zona": "A",
-      "campeon": 1.19,
-      "playoffs": 38.93,
+      "campeon": 1.23,
+      "playoffs": 38.91,
       "slug": "newell-s-old-boys",
       "colores": [
         "#D6001C",
@@ -257,9 +246,20 @@
       ]
     },
     {
+      "equipo": "Instituto",
+      "zona": "A",
+      "campeon": 1.08,
+      "playoffs": 44.47,
+      "slug": "instituto",
+      "colores": [
+        "#C8102E",
+        "#FFFFFF"
+      ]
+    },
+    {
       "equipo": "Platense",
       "zona": "A",
-      "campeon": 0.96,
+      "campeon": 0.91,
       "playoffs": 33.69,
       "slug": "platense",
       "colores": [
@@ -270,8 +270,8 @@
     {
       "equipo": "Barracas Central",
       "zona": "B",
-      "campeon": 0.9,
-      "playoffs": 38.75,
+      "campeon": 0.82,
+      "playoffs": 38.73,
       "slug": "barracas-central",
       "colores": [
         "#C8102E",
@@ -281,8 +281,8 @@
     {
       "equipo": "Central Córdoba (SdE)",
       "zona": "A",
-      "campeon": 0.54,
-      "playoffs": 29.51,
+      "campeon": 0.6,
+      "playoffs": 29.53,
       "slug": "central-cordoba-sde",
       "colores": [
         "#111111",
@@ -292,8 +292,8 @@
     {
       "equipo": "Sarmiento (J)",
       "zona": "B",
-      "campeon": 0.26,
-      "playoffs": 14.9,
+      "campeon": 0.33,
+      "playoffs": 14.88,
       "slug": "sarmiento-j",
       "colores": [
         "#1E7B3C",
@@ -301,21 +301,10 @@
       ]
     },
     {
-      "equipo": "Aldosivi",
-      "zona": "B",
-      "campeon": 0.17,
-      "playoffs": 14.63,
-      "slug": "aldosivi",
-      "colores": [
-        "#1E7B3C",
-        "#F7D117"
-      ]
-    },
-    {
       "equipo": "Gimnasia (M)",
       "zona": "A",
-      "campeon": 0.11,
-      "playoffs": 13.58,
+      "campeon": 0.2,
+      "playoffs": 13.56,
       "slug": "gimnasia-m",
       "colores": [
         "#FFFFFF",
@@ -323,10 +312,21 @@
       ]
     },
     {
+      "equipo": "Aldosivi",
+      "zona": "B",
+      "campeon": 0.12,
+      "playoffs": 14.61,
+      "slug": "aldosivi",
+      "colores": [
+        "#1E7B3C",
+        "#F7D117"
+      ]
+    },
+    {
       "equipo": "Estudiantes (RC)",
       "zona": "B",
       "campeon": 0.0,
-      "playoffs": 0.03,
+      "playoffs": 0.04,
       "slug": "estudiantes-rc",
       "colores": [
         "#5CC0F2",
