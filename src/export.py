@@ -13,10 +13,11 @@ mismos JSON van a alimentar despues el generador de placas para redes. Si
 cada uno calculara sus propios numeros, tarde o temprano se contradirian y
 publicarias dos verdades distintas el mismo dia.
 
-Escribe cuatro archivos en web/data/:
+Escribe cinco archivos en web/data/:
 
   fecha.json    los partidos que se vienen, con probabilidades
   titulo.json   los 30 equipos con su chance de salir campeon
+  tabla.json    la tabla de posiciones de las dos zonas
   equipos.json  ataque y defensa de cada equipo
   meta.json     cuando se actualizo y que tan bien viene acertando el modelo
 
@@ -34,6 +35,11 @@ import numpy as np
 import pandas as pd
 
 from model import cargar_partidos, matriz_marcadores, probabilidades_1x2, MAX_GOLES
+# La tabla se calcula en simulate.py y se importa: es la misma cuenta con la que
+# arranca la simulacion. Duplicarla aca seria garantizar que en tres meses el
+# sitio y el modelo muestren dos tablas distintas.
+from simulate import (cargar_zonas, jugados_del_clausura, tabla_posiciones,
+                      CLASIFICAN_POR_ZONA, TEMPORADA)
 
 RAIZ = Path(__file__).resolve().parent.parent
 MODELO = RAIZ / "data" / "outputs" / "modelo.json"
@@ -41,7 +47,6 @@ SIMULACION = RAIZ / "data" / "outputs" / "simulacion.json"
 FIXTURES = RAIZ / "data" / "raw" / "fixtures.csv"
 TABLA_EQUIPOS = RAIZ / "reference" / "team_names.csv"
 COLORES = RAIZ / "reference" / "colores.csv"
-ZONAS = RAIZ / "reference" / "zonas.csv"
 SALIDA = RAIZ / "web" / "data"
 
 # Medido con validacion temporal sobre 1.236 partidos (2024-2026).
@@ -158,9 +163,28 @@ def main():
         "equipos": equipos_sim,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # --- 3. Fuerza de cada equipo ---
-    zonas = pd.read_csv(ZONAS, encoding="utf-8")
-    zona = dict(zip(zonas[zonas.season_id == 2026].equipo, zonas[zonas.season_id == 2026].zona))
+    zona = cargar_zonas(TEMPORADA)
+    partidos_hist = cargar_partidos()
+
+    # --- 3. La tabla de posiciones ---
+    # Sin esto el sitio muestra probabilidades flotando en el aire: no se puede
+    # saber si un 40% de playoffs es de un puntero o de un equipo que viene ultimo.
+    jugados = jugados_del_clausura(partidos_hist)
+    filas_tabla = [
+        {**f,
+         "slug": slug(f["equipo"]),
+         "colores": mapa_color.get(f["equipo"], ["#7c8089", "#f2f1ec"])}
+        for f in tabla_posiciones(jugados, zona)
+    ]
+    (SALIDA / "tabla.json").write_text(json.dumps({
+        "torneo": simulacion["torneo"],
+        "temporada": simulacion["temporada"],
+        "partidos_jugados": len(jugados),
+        "clasifican_por_zona": CLASIFICAN_POR_ZONA,
+        "equipos": filas_tabla,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # --- 4. Fuerza de cada equipo ---
     sim_por_equipo = {e["equipo"]: e for e in simulacion["equipos"]}
 
     fichas = []
@@ -180,8 +204,7 @@ def main():
         "equipos": fichas,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # --- 4. Metadatos: de donde salen los numeros ---
-    partidos_hist = cargar_partidos()
+    # --- 5. Metadatos: de donde salen los numeros ---
     meta = {
         "actualizado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "partidos_historicos": len(partidos_hist),
@@ -215,6 +238,7 @@ def main():
     print(f"OK  -> {SALIDA}")
     print(f"    fecha.json    {len(partidos)} partidos")
     print(f"    titulo.json   {len(equipos_sim)} equipos")
+    print(f"    tabla.json    {len(filas_tabla)} equipos | {len(jugados)} partidos jugados")
     print(f"    equipos.json  {len(fichas)} equipos")
     print(f"    meta.json     acierto {ACIERTO}% | {len(partidos_hist):,} partidos historicos")
 

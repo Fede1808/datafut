@@ -41,7 +41,7 @@ Y despues el sitio:
 ```bash
 cd web
 npm run dev     # http://localhost:3000
-npm run build   # genera las 47 paginas estaticas
+npm run build   # genera las 48 paginas estaticas
 ```
 
 Tiempos: el paso 5 tarda un minuto y el 6 unos 30 segundos; el resto es
@@ -100,16 +100,17 @@ propios numeros, tarde o temprano publicarian dos verdades distintas el mismo di
 
 ## El sitio
 
-Tres pantallas, en `web/`:
+Cinco pantallas, en `web/`:
 
 | Ruta | Que muestra |
 |---|---|
 | `/` | los partidos de la fecha y, sin scrollear, quien puede salir campeon |
 | `/titulo` | los 30 equipos con su chance de campeon y de playoffs |
+| `/tabla` | la tabla de posiciones de las dos zonas, con la linea de corte |
 | `/equipo/[slug]` | ataque, defensa y recorrido posible de un equipo |
 | `/partido/[slug]` | 1X2, marcadores mas probables y goles esperados |
 
-Next.js con generacion estatica: el build produce 47 paginas de HTML puro. Sin
+Next.js con generacion estatica: el build produce 48 paginas de HTML puro. Sin
 servidor, sin base de datos, sin libreria de graficos — los tres componentes
 visuales (barra de tres tramos, chip de color, celdas de marcadores) son CSS.
 
@@ -183,7 +184,7 @@ datafut/
 │   ├── model.py · evaluate.py · simulate.py
 │   └── export.py
 └── web/                   el sitio (Next.js)
-    ├── app/               las cuatro rutas
+    ├── app/               las rutas del sitio
     ├── components/        Chip · BarraProb · FilaPartido
     ├── lib/datos.ts       lee los JSON
     └── data/              JSON generados         (SI se versiona)

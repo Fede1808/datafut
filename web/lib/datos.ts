@@ -10,6 +10,7 @@
 
 import fecha from "@/data/fecha.json";
 import titulo from "@/data/titulo.json";
+import tabla from "@/data/tabla.json";
 import equipos from "@/data/equipos.json";
 import meta from "@/data/meta.json";
 
@@ -36,6 +37,23 @@ export type EquipoTitulo = {
   colores: [string, string];
 };
 
+/** Una fila de la tabla de posiciones. `puesto` es dentro de la zona, no general. */
+export type FilaTabla = {
+  equipo: string;
+  slug: string;
+  zona: string;
+  puesto: number;
+  colores: [string, string];
+  pj: number;
+  pg: number;
+  pe: number;
+  pp: number;
+  gf: number;
+  gc: number;
+  dif: number;
+  pts: number;
+};
+
 export type Equipo = {
   equipo: string;
   slug: string;
@@ -50,9 +68,14 @@ export type Equipo = {
 export const partidos = fecha.partidos as Partido[];
 export const candidatos = titulo.equipos as EquipoTitulo[];
 export const fichas = equipos.equipos as Equipo[];
+export const posiciones = tabla.equipos as FilaTabla[];
 export const torneo = titulo.torneo;
 export const temporada = titulo.temporada;
 export const metadatos = meta;
+
+/** Cuántos entran a playoffs por zona. Define dónde va la línea de corte. */
+export const clasificanPorZona = tabla.clasifican_por_zona;
+export const partidosJugados = tabla.partidos_jugados;
 
 /** Los colores de un equipo, con gris de reserva si todavía no está cargado. */
 export function coloresDe(nombre: string): [string, string] {
@@ -62,6 +85,15 @@ export function coloresDe(nombre: string): [string, string] {
 
 export function equipoPorSlug(slug: string): Equipo | undefined {
   return fichas.find((e) => e.slug === slug);
+}
+
+/** La tabla de una zona, ya ordenada por puesto desde el pipeline. */
+export function tablaDeZona(zona: string): FilaTabla[] {
+  return posiciones.filter((f) => f.zona === zona);
+}
+
+export function posicionPorSlug(slug: string): FilaTabla | undefined {
+  return posiciones.find((f) => f.slug === slug);
 }
 
 /** Partidos que le tocan a un equipo en la fecha que viene. */

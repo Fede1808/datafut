@@ -139,19 +139,73 @@ def sortear_marcadores(modelo, pendientes, n):
 
 
 def puntos_iniciales(jugados, equipos):
-    """Puntos, diferencia de gol y goles a favor de lo que ya se jugo."""
-    pts = {e: 0 for e in equipos}
-    dif = {e: 0 for e in equipos}
-    gf = {e: 0 for e in equipos}
+    """
+    El registro completo de lo que ya se jugo, equipo por equipo.
+
+    Devuelve mas que puntos (ganados, empatados, perdidos, goles en contra)
+    porque el sitio publica la tabla de posiciones y el simulador arranca de
+    esa misma base. Una sola cuenta para los dos consumidores: si cada uno
+    sumara los puntos por su lado, tarde o temprano dirian cosas distintas.
+    """
+    reg = {e: {"pj": 0, "pg": 0, "pe": 0, "pp": 0,
+               "gf": 0, "gc": 0, "dif": 0, "pts": 0} for e in equipos}
     for f in jugados.itertuples():
-        gl, gv = f.home_goals, f.away_goals
-        pts[f.home_team] += 3 if gl > gv else (1 if gl == gv else 0)
-        pts[f.away_team] += 3 if gv > gl else (1 if gl == gv else 0)
-        dif[f.home_team] += gl - gv
-        dif[f.away_team] += gv - gl
-        gf[f.home_team] += gl
-        gf[f.away_team] += gv
-    return pts, dif, gf
+        gl, gv = int(f.home_goals), int(f.away_goals)
+        local, visita = reg[f.home_team], reg[f.away_team]
+        local["pj"] += 1
+        visita["pj"] += 1
+        local["gf"] += gl
+        local["gc"] += gv
+        visita["gf"] += gv
+        visita["gc"] += gl
+        if gl > gv:
+            local["pg"] += 1
+            visita["pp"] += 1
+            local["pts"] += 3
+        elif gv > gl:
+            visita["pg"] += 1
+            local["pp"] += 1
+            visita["pts"] += 3
+        else:
+            local["pe"] += 1
+            visita["pe"] += 1
+            local["pts"] += 1
+            visita["pts"] += 1
+    for r in reg.values():
+        r["dif"] = r["gf"] - r["gc"]
+    return reg
+
+
+def tabla_posiciones(jugados, zona):
+    """
+    La tabla de posiciones de cada zona, ya ordenada y con el puesto puesto.
+
+    El orden usa los mismos criterios de desempate que la simulacion (puntos,
+    diferencia de gol, goles a favor). El nombre al final no es un criterio
+    real del reglamento: esta para que dos equipos empatados en todo salgan
+    siempre en el mismo orden y el pipeline sea reproducible.
+    """
+    reg = puntos_iniciales(jugados, sorted(zona))
+    filas = []
+    for z in ("A", "B"):
+        equipos = sorted(
+            (e for e in zona if zona[e] == z),
+            key=lambda e: (-reg[e]["pts"], -reg[e]["dif"], -reg[e]["gf"], e),
+        )
+        for puesto, e in enumerate(equipos, start=1):
+            filas.append({"equipo": e, "zona": z, "puesto": puesto, **reg[e]})
+    return filas
+
+
+def jugados_del_clausura(partidos):
+    """
+    Los partidos que cuentan para la tabla: liga (no copa), temporada actual,
+    desde que arranco el Clausura. Vive aca para que la simulacion y el
+    export miren exactamente el mismo universo de partidos.
+    """
+    t = partidos[(partidos.season_id == TEMPORADA) &
+                 (partidos.competition == "liga")]
+    return t[t.date >= INICIO_CLAUSURA]
 
 
 def simular(modelo, zona, jugados, pendientes, n, semilla=None):
@@ -162,10 +216,10 @@ def simular(modelo, zona, jugados, pendientes, n, semilla=None):
     idx = {e: i for i, e in enumerate(equipos)}
     ne = len(equipos)
 
-    pts0, dif0, gf0 = puntos_iniciales(jugados, equipos)
-    base_pts = np.array([pts0[e] for e in equipos], dtype=np.int32)
-    base_dif = np.array([dif0[e] for e in equipos], dtype=np.int32)
-    base_gf = np.array([gf0[e] for e in equipos], dtype=np.int32)
+    reg = puntos_iniciales(jugados, equipos)
+    base_pts = np.array([reg[e]["pts"] for e in equipos], dtype=np.int32)
+    base_dif = np.array([reg[e]["dif"] for e in equipos], dtype=np.int32)
+    base_gf = np.array([reg[e]["gf"] for e in equipos], dtype=np.int32)
 
     print(f"Sorteando {len(pendientes)} partidos x {n:,} simulaciones...")
     gl, gv = sortear_marcadores(modelo, pendientes, n)
@@ -255,7 +309,7 @@ def main():
     temporada = partidos[(partidos.season_id == TEMPORADA) &
                          (partidos.competition == "liga")]
     apertura = temporada[temporada.date < INICIO_CLAUSURA]
-    jugados = temporada[temporada.date >= INICIO_CLAUSURA]
+    jugados = jugados_del_clausura(partidos)
 
     desconocidos = [e for e in zona if e not in modelo["ataque"]]
     if desconocidos:

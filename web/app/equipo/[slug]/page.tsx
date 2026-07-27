@@ -1,7 +1,14 @@
 import { notFound } from "next/navigation";
 import { Chip } from "@/components/Chip";
 import { FilaPartido } from "@/components/FilaPartido";
-import { fichas, equipoPorSlug, partidosDe, metadatos } from "@/lib/datos";
+import Link from "next/link";
+import {
+  fichas,
+  equipoPorSlug,
+  posicionPorSlug,
+  partidosDe,
+  metadatos,
+} from "@/lib/datos";
 
 /** Pre-genera una página por equipo en tiempo de build: no hay servidor. */
 export function generateStaticParams() {
@@ -28,6 +35,7 @@ export default async function PaginaEquipo({
   if (!e) notFound();
 
   const suyos = partidosDe(e.equipo);
+  const pos = posicionPorSlug(slug);
 
   // El modelo guarda ataque y defensa en escala logarítmica, que no le dice
   // nada a nadie. Se convierte a "cuántos goles más o menos que el promedio",
@@ -42,10 +50,24 @@ export default async function PaginaEquipo({
         <h1 className="font-[family-name:var(--font-display)] text-[22px] font-bold">
           {e.equipo}
         </h1>
-        <span className="font-[family-name:var(--font-mono)] text-[10px] text-[#565962]">
-          ZONA {e.zona}
-        </span>
+        {!pos && (
+          <span className="font-[family-name:var(--font-mono)] text-[10px] text-[#565962]">
+            ZONA {e.zona}
+          </span>
+        )}
       </div>
+
+      {/* Dónde está parado hoy. Sin esto, los porcentajes de abajo no tienen
+          contra qué compararse. La zona va acá y no arriba para no repetirla. */}
+      {pos && (
+        <Link
+          href="/tabla"
+          className="mt-1 inline-block font-[family-name:var(--font-mono)] text-[10px] text-[#7c8089] hover:text-[#f2f1ec]"
+        >
+          {pos.puesto}° en Zona {pos.zona} · {pos.pts} pts · {pos.pj}{" "}
+          {pos.pj === 1 ? "partido" : "partidos"}
+        </Link>
+      )}
 
       {/* --- Las dos cifras que importan --- */}
       <div className="mt-5 flex gap-3 border-y border-[#2a2c33] py-3.5">

@@ -46,6 +46,15 @@ export default function RootLayout({
                 DIXON-COLES · MONTE CARLO
               </div>
             </Link>
+
+            <nav className="flex gap-4 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.6px] text-[#7c8089]">
+              <Link href="/tabla" className="hover:text-[#f2f1ec]">
+                Tabla
+              </Link>
+              <Link href="/titulo" className="hover:text-[#f2f1ec]">
+                Título
+              </Link>
+            </nav>
           </div>
         </header>
 
