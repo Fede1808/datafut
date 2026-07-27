@@ -80,10 +80,16 @@ export default function RootLayout({
 
         <footer className="mx-auto mt-12 w-full max-w-6xl px-4 pb-8">
           <div className="border-t border-[#2e2b27] pt-3 num text-[10px] leading-relaxed text-[#6d6862]">
+            {/*
+              El aviso nombra los escudos desde que se empezaron a usar: decir
+              solo "nombres de clubes" cuando en pantalla hay 30 escudos deja
+              corto justo lo que mas se ve.
+            */}
             <p className="max-w-2xl">
               Probabilidades de un modelo propio. No es una herramienta de
-              apuestas. Sin vínculo con los clubes ni con la AFA. Nombres de
-              clubes con fines informativos.
+              apuestas. Sin vínculo con los clubes ni con la AFA. Los nombres y
+              escudos son marcas de sus respectivos clubes y se usan solo para
+              identificarlos.
             </p>
           </div>
         </footer>

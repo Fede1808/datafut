@@ -165,7 +165,9 @@ Expectativa realista: igualar al mercado ya es un buen resultado. El objetivo no
 ## Restricciones legales (no negociables)
 
 - Nombres de clubes y jugadores: permitidos, es uso editorial
-- Escudos, logos, camisetas oficiales: prohibidos
+- **Escudos oficiales: permitidos desde el 27/07/2026** (decisión revertida, ver abajo).
+  Se usan para identificar al club, que es uso nominativo. Origen y licencia de cada
+  uno quedan registrados en `reference/escudos.csv`. Camisetas oficiales: siguen prohibidas
 - Fotos o retratos identificables de jugadores: prohibidos
 - Cobrar por el producto: no, en ninguna forma
 - Aviso visible de que es un proyecto no oficial, sin afiliación con ningún club
@@ -211,15 +213,28 @@ criterio de terminado de una sola frase. Implicación de diseño desde ahora: la
 `outputs` emite datos estructurados neutrales, de modo que el sitio y el generador de
 placas lean **la misma fuente**.
 
-Sobre los escudos: se evaluó levantar la prohibición ("otros sitios los usan y no les pasa
-nada") y **se decidió mantenerla**. El escenario de riesgo realista no es una demanda sino
-un reclamo de propiedad intelectual en Meta → strikes → **pérdida de la cuenta**, que es
-justamente el activo que el proyecto quiere construir. Y por producto: usar escudos hace
-que el sitio se vea igual que las cuentas que regrafican datos ajenos.
+Sobre los escudos: la prohibición **se levantó el 27/07/2026**, por decisión explícita del
+dueño. Quedan registrados acá los dos argumentos que la sostenían, porque siguen siendo
+ciertos y hay que convivir con ellos:
 
-**Alternativa adoptada: paleta de colores por club, sin escudos.** Los colores identitarios
-se leen igual de rápido y no se protegen como marca figurativa. Los **nombres** de los
-clubes sí se usan: es uso nominativo legítimo. Revisable con asesoramiento legal real.
+1. **Riesgo en redes.** El escenario realista no es una demanda sino un reclamo de propiedad
+   intelectual en Meta → strikes → pérdida de la cuenta, que es el activo que el proyecto
+   quiere construir. **Ese riesgo se asumió a conciencia**, no se resolvió. Si llega un
+   reclamo, el camino de vuelta es rápido: los escudos generados siguen en el repo
+   (`src/escudos.py`) y `Escudo.tsx` ya cae en ellos como fallback.
+2. **Riesgo de producto.** Con escudos el sitio se parece más a las cuentas que regrafican
+   datos ajenos. Se compensa con lo que ninguna de esas cuentas tiene: modelo propio y
+   comparación contra el mercado.
+
+Los escudos salen de TheSportsDB, una base colaborativa cuyo propósito declarado es
+distribuir estos assets para uso en aplicaciones. Trazabilidad completa (origen, licencia
+y fecha de descarga de los 30) en `reference/escudos.csv`.
+
+**La paleta de colores por club sigue en pie, pero ya no como alternativa a los escudos:
+ahora conviven.** Los colores identitarios (`reference/colores.csv`) se leen rápido, no se
+protegen como marca figurativa y son la base de los SVG generados que quedaron de fallback.
+Los **nombres** de los clubes se usan como uso nominativo legítimo, y desde el 27/07/2026
+los **escudos** también. Revisable con asesoramiento legal real.
 
 ## Cómo quiero trabajar
 
