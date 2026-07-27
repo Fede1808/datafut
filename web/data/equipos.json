@@ -116,6 +116,25 @@
         "pts": 9,
         "pts_esperados": 17.6,
         "dif": -8.6
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 7,
+        "goles_contra": 20,
+        "xg": 12.3,
+        "xg_contra": 23.4,
+        "xg_dif": -11.1,
+        "sobre_xg": -5.3,
+        "posesion": 42.5,
+        "remates": 10.7,
+        "chances_claras": 0.7,
+        "duelos_ganados": 56.4,
+        "toques_en_area_rival": 16.3,
+        "pases_campo_rival": 101.1,
+        "puesto_xg": 28,
+        "puesto_xg_contra": 23,
+        "puesto_xg_dif": 29,
+        "puesto_posesion": 26
       }
     },
     {
@@ -234,6 +253,25 @@
         "pts": 37,
         "pts_esperados": 34.9,
         "dif": 2.1
+      },
+      "stats": {
+        "pj": 20,
+        "goles": 24,
+        "goles_contra": 16,
+        "xg": 26.3,
+        "xg_contra": 15.7,
+        "xg_dif": 10.6,
+        "sobre_xg": -2.3,
+        "posesion": 61.5,
+        "remates": 14.1,
+        "chances_claras": 1.6,
+        "duelos_ganados": 55.8,
+        "toques_en_area_rival": 21.4,
+        "pases_campo_rival": 186.4,
+        "puesto_xg": 4,
+        "puesto_xg_contra": 5,
+        "puesto_xg_dif": 2,
+        "puesto_posesion": 2
       }
     },
     {
@@ -355,6 +393,25 @@
         "pts": 14,
         "pts_esperados": 20.0,
         "dif": -6.0
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 15,
+        "goles_contra": 20,
+        "xg": 20.5,
+        "xg_contra": 19.4,
+        "xg_dif": 1.1,
+        "sobre_xg": -5.5,
+        "posesion": 46.1,
+        "remates": 11.8,
+        "chances_claras": 2.0,
+        "duelos_ganados": 57.2,
+        "toques_en_area_rival": 16.7,
+        "pases_campo_rival": 122.6,
+        "puesto_xg": 15,
+        "puesto_xg_contra": 13,
+        "puesto_xg_dif": 13,
+        "puesto_posesion": 23
       }
     },
     {
@@ -475,6 +532,25 @@
         "pts": 18,
         "pts_esperados": 19.6,
         "dif": -1.6
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 17,
+        "goles_contra": 20,
+        "xg": 16.8,
+        "xg_contra": 24.6,
+        "xg_dif": -7.8,
+        "sobre_xg": 0.2,
+        "posesion": 40.6,
+        "remates": 11.5,
+        "chances_claras": 1.4,
+        "duelos_ganados": 57.7,
+        "toques_en_area_rival": 16.9,
+        "pases_campo_rival": 104.6,
+        "puesto_xg": 21,
+        "puesto_xg_contra": 27,
+        "puesto_xg_dif": 25,
+        "puesto_posesion": 28
       }
     },
     {
@@ -595,6 +671,25 @@
         "pts": 21,
         "pts_esperados": 16.3,
         "dif": 4.7
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 16,
+        "goles_contra": 15,
+        "xg": 11.6,
+        "xg_contra": 20.6,
+        "xg_dif": -9.0,
+        "sobre_xg": 4.4,
+        "posesion": 38.4,
+        "remates": 10.1,
+        "chances_claras": 1.0,
+        "duelos_ganados": 45.8,
+        "toques_en_area_rival": 12.5,
+        "pases_campo_rival": 116.5,
+        "puesto_xg": 30,
+        "puesto_xg_contra": 16,
+        "puesto_xg_dif": 27,
+        "puesto_posesion": 29
       }
     },
     {
@@ -714,6 +809,25 @@
         "pts": 39,
         "pts_esperados": 29.4,
         "dif": 9.6
+      },
+      "stats": {
+        "pj": 21,
+        "goles": 26,
+        "goles_contra": 17,
+        "xg": 23.6,
+        "xg_contra": 24.2,
+        "xg_dif": -0.6,
+        "sobre_xg": 2.4,
+        "posesion": 49.8,
+        "remates": 11.7,
+        "chances_claras": 1.7,
+        "duelos_ganados": 49.5,
+        "toques_en_area_rival": 19.8,
+        "pases_campo_rival": 160.0,
+        "puesto_xg": 8,
+        "puesto_xg_contra": 25,
+        "puesto_xg_dif": 15,
+        "puesto_posesion": 14
       }
     },
     {
@@ -835,6 +949,25 @@
         "pts": 31,
         "pts_esperados": 28.4,
         "dif": 2.6
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 24,
+        "goles_contra": 15,
+        "xg": 26.1,
+        "xg_contra": 16.7,
+        "xg_dif": 9.4,
+        "sobre_xg": -2.1,
+        "posesion": 61.0,
+        "remates": 13.1,
+        "chances_claras": 2.3,
+        "duelos_ganados": 57.1,
+        "toques_en_area_rival": 22.5,
+        "pases_campo_rival": 202.4,
+        "puesto_xg": 5,
+        "puesto_xg_contra": 7,
+        "puesto_xg_dif": 3,
+        "puesto_posesion": 3
       }
     },
     {
@@ -956,6 +1089,25 @@
         "pts": 16,
         "pts_esperados": 15.8,
         "dif": 0.2
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 11,
+        "goles_contra": 22,
+        "xg": 11.9,
+        "xg_contra": 27.9,
+        "xg_dif": -16.0,
+        "sobre_xg": -0.9,
+        "posesion": 42.0,
+        "remates": 8.7,
+        "chances_claras": 1.1,
+        "duelos_ganados": 54.7,
+        "toques_en_area_rival": 13.1,
+        "pases_campo_rival": 100.7,
+        "puesto_xg": 29,
+        "puesto_xg_contra": 30,
+        "puesto_xg_dif": 30,
+        "puesto_posesion": 27
       }
     },
     {
@@ -1075,6 +1227,25 @@
         "pts": 20,
         "pts_esperados": 20.8,
         "dif": -0.8
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 19,
+        "goles_contra": 22,
+        "xg": 18.0,
+        "xg_contra": 19.6,
+        "xg_dif": -1.6,
+        "sobre_xg": 1.0,
+        "posesion": 51.8,
+        "remates": 10.2,
+        "chances_claras": 1.7,
+        "duelos_ganados": 45.2,
+        "toques_en_area_rival": 15.9,
+        "pases_campo_rival": 157.2,
+        "puesto_xg": 18,
+        "puesto_xg_contra": 14,
+        "puesto_xg_dif": 19,
+        "puesto_posesion": 10
       }
     },
     {
@@ -1195,6 +1366,25 @@
         "pts": 11,
         "pts_esperados": 19.6,
         "dif": -8.6
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 8,
+        "goles_contra": 12,
+        "xg": 15.4,
+        "xg_contra": 15.4,
+        "xg_dif": 0.0,
+        "sobre_xg": -7.4,
+        "posesion": 37.4,
+        "remates": 9.5,
+        "chances_claras": 1.5,
+        "duelos_ganados": 51.2,
+        "toques_en_area_rival": 18.0,
+        "pases_campo_rival": 94.9,
+        "puesto_xg": 25,
+        "puesto_xg_contra": 4,
+        "puesto_xg_dif": 14,
+        "puesto_posesion": 30
       }
     },
     {
@@ -1315,6 +1505,25 @@
         "pts": 31,
         "pts_esperados": 24.9,
         "dif": 6.1
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 19,
+        "goles_contra": 10,
+        "xg": 23.8,
+        "xg_contra": 15.2,
+        "xg_dif": 8.6,
+        "sobre_xg": -4.8,
+        "posesion": 53.6,
+        "remates": 13.5,
+        "chances_claras": 2.3,
+        "duelos_ganados": 53.4,
+        "toques_en_area_rival": 19.5,
+        "pases_campo_rival": 152.3,
+        "puesto_xg": 7,
+        "puesto_xg_contra": 3,
+        "puesto_xg_dif": 5,
+        "puesto_posesion": 7
       }
     },
     {
@@ -1434,6 +1643,25 @@
         "pts": 5,
         "pts_esperados": 15.2,
         "dif": -10.2
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 6,
+        "goles_contra": 24,
+        "xg": 15.4,
+        "xg_contra": 24.3,
+        "xg_dif": -8.9,
+        "sobre_xg": -9.4,
+        "posesion": 47.5,
+        "remates": 11.0,
+        "chances_claras": 1.4,
+        "duelos_ganados": 52.4,
+        "toques_en_area_rival": 17.4,
+        "pases_campo_rival": 134.3,
+        "puesto_xg": 26,
+        "puesto_xg_contra": 26,
+        "puesto_xg_dif": 26,
+        "puesto_posesion": 20
       }
     },
     {
@@ -1554,6 +1782,25 @@
         "pts": 29,
         "pts_esperados": 21.2,
         "dif": 7.8
+      },
+      "stats": {
+        "pj": 19,
+        "goles": 21,
+        "goles_contra": 23,
+        "xg": 22.2,
+        "xg_contra": 25.5,
+        "xg_dif": -3.3,
+        "sobre_xg": -1.2,
+        "posesion": 46.3,
+        "remates": 11.0,
+        "chances_claras": 2.1,
+        "duelos_ganados": 53.4,
+        "toques_en_area_rival": 16.6,
+        "pases_campo_rival": 130.9,
+        "puesto_xg": 11,
+        "puesto_xg_contra": 29,
+        "puesto_xg_dif": 21,
+        "puesto_posesion": 22
       }
     },
     {
@@ -1672,6 +1919,25 @@
         "pts": 19,
         "pts_esperados": 17.1,
         "dif": 1.9
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 15,
+        "goles_contra": 22,
+        "xg": 14.4,
+        "xg_contra": 21.6,
+        "xg_dif": -7.2,
+        "sobre_xg": 0.6,
+        "posesion": 44.6,
+        "remates": 11.6,
+        "chances_claras": 1.3,
+        "duelos_ganados": 53.9,
+        "toques_en_area_rival": 13.9,
+        "pases_campo_rival": 112.5,
+        "puesto_xg": 27,
+        "puesto_xg_contra": 19,
+        "puesto_xg_dif": 24,
+        "puesto_posesion": 24
       }
     },
     {
@@ -1793,6 +2059,25 @@
         "pts": 24,
         "pts_esperados": 24.0,
         "dif": -0.0
+      },
+      "stats": {
+        "pj": 19,
+        "goles": 21,
+        "goles_contra": 16,
+        "xg": 20.4,
+        "xg_contra": 21.4,
+        "xg_dif": -1.0,
+        "sobre_xg": 0.6,
+        "posesion": 50.5,
+        "remates": 11.3,
+        "chances_claras": 1.5,
+        "duelos_ganados": 54.9,
+        "toques_en_area_rival": 17.5,
+        "pases_campo_rival": 131.7,
+        "puesto_xg": 16,
+        "puesto_xg_contra": 18,
+        "puesto_xg_dif": 16,
+        "puesto_posesion": 13
       }
     },
     {
@@ -1913,6 +2198,25 @@
         "pts": 24,
         "pts_esperados": 25.7,
         "dif": -1.7
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 27,
+        "goles_contra": 23,
+        "xg": 21.5,
+        "xg_contra": 22.8,
+        "xg_dif": -1.3,
+        "sobre_xg": 5.5,
+        "posesion": 51.8,
+        "remates": 12.7,
+        "chances_claras": 1.9,
+        "duelos_ganados": 51.6,
+        "toques_en_area_rival": 23.1,
+        "pases_campo_rival": 150.3,
+        "puesto_xg": 12,
+        "puesto_xg_contra": 22,
+        "puesto_xg_dif": 17,
+        "puesto_posesion": 11
       }
     },
     {
@@ -2032,6 +2336,25 @@
         "pts": 34,
         "pts_esperados": 24.7,
         "dif": 9.3
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 30,
+        "goles_contra": 17,
+        "xg": 21.3,
+        "xg_contra": 18.1,
+        "xg_dif": 3.2,
+        "sobre_xg": 8.7,
+        "posesion": 49.3,
+        "remates": 14.2,
+        "chances_claras": 2.3,
+        "duelos_ganados": 52.6,
+        "toques_en_area_rival": 20.7,
+        "pases_campo_rival": 134.7,
+        "puesto_xg": 13,
+        "puesto_xg_contra": 9,
+        "puesto_xg_dif": 11,
+        "puesto_posesion": 16
       }
     },
     {
@@ -2152,6 +2475,25 @@
         "pts": 21,
         "pts_esperados": 21.9,
         "dif": -0.9
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 17,
+        "goles_contra": 18,
+        "xg": 23.9,
+        "xg_contra": 14.9,
+        "xg_dif": 9.0,
+        "sobre_xg": -6.9,
+        "posesion": 49.5,
+        "remates": 13.4,
+        "chances_claras": 2.2,
+        "duelos_ganados": 48.9,
+        "toques_en_area_rival": 22.2,
+        "pases_campo_rival": 131.6,
+        "puesto_xg": 6,
+        "puesto_xg_contra": 2,
+        "puesto_xg_dif": 4,
+        "puesto_posesion": 15
       }
     },
     {
@@ -2274,6 +2616,25 @@
         "pts": 21,
         "pts_esperados": 23.1,
         "dif": -2.1
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 19,
+        "goles_contra": 17,
+        "xg": 20.6,
+        "xg_contra": 16.2,
+        "xg_dif": 4.4,
+        "sobre_xg": -1.6,
+        "posesion": 53.1,
+        "remates": 12.1,
+        "chances_claras": 1.9,
+        "duelos_ganados": 51.3,
+        "toques_en_area_rival": 19.5,
+        "pases_campo_rival": 185.7,
+        "puesto_xg": 14,
+        "puesto_xg_contra": 6,
+        "puesto_xg_dif": 9,
+        "puesto_posesion": 9
       }
     },
     {
@@ -2394,6 +2755,25 @@
         "pts": 15,
         "pts_esperados": 17.4,
         "dif": -2.4
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 16,
+        "goles_contra": 27,
+        "xg": 15.8,
+        "xg_contra": 25.3,
+        "xg_dif": -9.5,
+        "sobre_xg": 0.2,
+        "posesion": 43.4,
+        "remates": 10.5,
+        "chances_claras": 1.8,
+        "duelos_ganados": 56.8,
+        "toques_en_area_rival": 18.1,
+        "pases_campo_rival": 107.4,
+        "puesto_xg": 24,
+        "puesto_xg_contra": 28,
+        "puesto_xg_dif": 28,
+        "puesto_posesion": 25
       }
     },
     {
@@ -2514,6 +2894,25 @@
         "pts": 16,
         "pts_esperados": 20.7,
         "dif": -4.7
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 12,
+        "goles_contra": 17,
+        "xg": 16.2,
+        "xg_contra": 18.7,
+        "xg_dif": -2.5,
+        "sobre_xg": -4.2,
+        "posesion": 51.2,
+        "remates": 12.5,
+        "chances_claras": 1.4,
+        "duelos_ganados": 50.2,
+        "toques_en_area_rival": 18.0,
+        "pases_campo_rival": 155.9,
+        "puesto_xg": 23,
+        "puesto_xg_contra": 12,
+        "puesto_xg_dif": 20,
+        "puesto_posesion": 12
       }
     },
     {
@@ -2633,6 +3032,25 @@
         "pts": 25,
         "pts_esperados": 28.1,
         "dif": -3.1
+      },
+      "stats": {
+        "pj": 19,
+        "goles": 21,
+        "goles_contra": 18,
+        "xg": 22.3,
+        "xg_contra": 20.4,
+        "xg_dif": 1.9,
+        "sobre_xg": -1.3,
+        "posesion": 56.1,
+        "remates": 12.2,
+        "chances_claras": 1.9,
+        "duelos_ganados": 49.5,
+        "toques_en_area_rival": 19.2,
+        "pases_campo_rival": 148.4,
+        "puesto_xg": 9,
+        "puesto_xg_contra": 15,
+        "puesto_xg_dif": 12,
+        "puesto_posesion": 4
       }
     },
     {
@@ -2753,6 +3171,25 @@
         "pts": 36,
         "pts_esperados": 35.7,
         "dif": 0.3
+      },
+      "stats": {
+        "pj": 21,
+        "goles": 29,
+        "goles_contra": 18,
+        "xg": 36.4,
+        "xg_contra": 16.9,
+        "xg_dif": 19.5,
+        "sobre_xg": -7.4,
+        "posesion": 65.4,
+        "remates": 16.7,
+        "chances_claras": 2.9,
+        "duelos_ganados": 50.7,
+        "toques_en_area_rival": 22.3,
+        "pases_campo_rival": 229.2,
+        "puesto_xg": 1,
+        "puesto_xg_contra": 8,
+        "puesto_xg_dif": 1,
+        "puesto_posesion": 1
       }
     },
     {
@@ -2873,6 +3310,25 @@
         "pts": 32,
         "pts_esperados": 31.2,
         "dif": 0.8
+      },
+      "stats": {
+        "pj": 20,
+        "goles": 26,
+        "goles_contra": 21,
+        "xg": 30.2,
+        "xg_contra": 22.0,
+        "xg_dif": 8.2,
+        "sobre_xg": -4.2,
+        "posesion": 56.1,
+        "remates": 13.3,
+        "chances_claras": 2.7,
+        "duelos_ganados": 54.9,
+        "toques_en_area_rival": 22.1,
+        "pases_campo_rival": 161.6,
+        "puesto_xg": 2,
+        "puesto_xg_contra": 20,
+        "puesto_xg_dif": 7,
+        "puesto_posesion": 5
       }
     },
     {
@@ -2994,6 +3450,25 @@
         "pts": 23,
         "pts_esperados": 21.7,
         "dif": 1.3
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 16,
+        "goles_contra": 17,
+        "xg": 16.4,
+        "xg_contra": 22.6,
+        "xg_dif": -6.2,
+        "sobre_xg": -0.4,
+        "posesion": 48.9,
+        "remates": 10.3,
+        "chances_claras": 1.3,
+        "duelos_ganados": 55.4,
+        "toques_en_area_rival": 15.9,
+        "pases_campo_rival": 128.3,
+        "puesto_xg": 22,
+        "puesto_xg_contra": 21,
+        "puesto_xg_dif": 23,
+        "puesto_posesion": 18
       }
     },
     {
@@ -3112,6 +3587,25 @@
         "pts": 19,
         "pts_esperados": 17.7,
         "dif": 1.3
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 15,
+        "goles_contra": 23,
+        "xg": 17.7,
+        "xg_contra": 23.7,
+        "xg_dif": -6.0,
+        "sobre_xg": -2.7,
+        "posesion": 47.4,
+        "remates": 10.0,
+        "chances_claras": 1.7,
+        "duelos_ganados": 50.5,
+        "toques_en_area_rival": 15.8,
+        "pases_campo_rival": 117.5,
+        "puesto_xg": 19,
+        "puesto_xg_contra": 24,
+        "puesto_xg_dif": 22,
+        "puesto_posesion": 21
       }
     },
     {
@@ -3232,6 +3726,25 @@
         "pts": 26,
         "pts_esperados": 23.8,
         "dif": 2.2
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 17,
+        "goles_contra": 15,
+        "xg": 16.9,
+        "xg_contra": 18.4,
+        "xg_dif": -1.5,
+        "sobre_xg": 0.1,
+        "posesion": 53.4,
+        "remates": 12.3,
+        "chances_claras": 1.3,
+        "duelos_ganados": 53.7,
+        "toques_en_area_rival": 16.7,
+        "pases_campo_rival": 159.4,
+        "puesto_xg": 20,
+        "puesto_xg_contra": 10,
+        "puesto_xg_dif": 18,
+        "puesto_posesion": 8
       }
     },
     {
@@ -3352,6 +3865,25 @@
         "pts": 20,
         "pts_esperados": 22.5,
         "dif": -2.5
+      },
+      "stats": {
+        "pj": 17,
+        "goles": 18,
+        "goles_contra": 16,
+        "xg": 19.4,
+        "xg_contra": 14.2,
+        "xg_dif": 5.2,
+        "sobre_xg": -1.4,
+        "posesion": 47.9,
+        "remates": 14.1,
+        "chances_claras": 1.9,
+        "duelos_ganados": 53.0,
+        "toques_en_area_rival": 17.5,
+        "pases_campo_rival": 138.2,
+        "puesto_xg": 17,
+        "puesto_xg_contra": 1,
+        "puesto_xg_dif": 8,
+        "puesto_posesion": 19
       }
     },
     {
@@ -3471,6 +4003,25 @@
         "pts": 24,
         "pts_esperados": 26.5,
         "dif": -2.5
+      },
+      "stats": {
+        "pj": 19,
+        "goles": 28,
+        "goles_contra": 25,
+        "xg": 29.2,
+        "xg_contra": 20.8,
+        "xg_dif": 8.4,
+        "sobre_xg": -1.2,
+        "posesion": 49.3,
+        "remates": 16.4,
+        "chances_claras": 2.5,
+        "duelos_ganados": 54.2,
+        "toques_en_area_rival": 23.7,
+        "pases_campo_rival": 158.7,
+        "puesto_xg": 3,
+        "puesto_xg_contra": 17,
+        "puesto_xg_dif": 6,
+        "puesto_posesion": 17
       }
     },
     {
@@ -3592,6 +4143,25 @@
         "pts": 28,
         "pts_esperados": 25.3,
         "dif": 2.7
+      },
+      "stats": {
+        "pj": 18,
+        "goles": 19,
+        "goles_contra": 13,
+        "xg": 22.3,
+        "xg_contra": 18.5,
+        "xg_dif": 3.8,
+        "sobre_xg": -3.3,
+        "posesion": 55.2,
+        "remates": 12.4,
+        "chances_claras": 2.0,
+        "duelos_ganados": 55.2,
+        "toques_en_area_rival": 20.0,
+        "pases_campo_rival": 193.4,
+        "puesto_xg": 10,
+        "puesto_xg_contra": 11,
+        "puesto_xg_dif": 10,
+        "puesto_posesion": 6
       }
     }
   ]

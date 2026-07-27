@@ -20,8 +20,9 @@ Escribe seis archivos en web/data/:
                    las dos
   titulo.json      los 30 equipos con su chance de salir campeon
   tabla.json       la tabla de posiciones de las dos zonas
-  equipos.json     ataque, defensa, descenso, distribucion de puntos, racha y
-                   rendimiento contra el mercado de cada equipo
+  equipos.json     ataque, defensa, descenso, distribucion de puntos, racha,
+                   rendimiento contra el mercado y estadisticas avanzadas
+                   (xG, posesion, duelos, remates) de cada equipo
   escenarios.json  cuanto cambia el futuro de cada equipo segun como le vaya
   meta.json        cuando se actualizo y que tan bien viene acertando el modelo
 
@@ -55,6 +56,7 @@ SIMULACION = RAIZ / "data" / "outputs" / "simulacion.json"
 FIXTURES = RAIZ / "data" / "raw" / "fixtures.csv"
 TABLA_EQUIPOS = RAIZ / "reference" / "team_names.csv"
 COLORES = RAIZ / "reference" / "colores.csv"
+STATS = RAIZ / "data" / "clean" / "team_match_stats.csv"
 SALIDA = RAIZ / "web" / "data"
 
 # Medido con validacion temporal sobre 1.236 partidos (2024-2026).
@@ -152,6 +154,97 @@ def forma_reciente(partidos, n=FORMA_N):
                 "fecha": str(pd.Timestamp(f.date).date()),
             })
     return {e: v[-n:] for e, v in forma.items()}
+
+
+def stats_avanzadas(temporada):
+    """
+    Lo que genero y lo que le generaron a cada equipo en la temporada.
+
+    Sale de team_match_stats.csv, que arma clean_stats.py con los datos de
+    FotMob. Es la unica parte del sitio que NO se puede calcular desde los
+    goles: xG, posesion, duelos y remates vienen medidos partido a partido.
+
+    Por que el xG importa aca: los goles dicen que paso, el xG dice que tan
+    seguido tendria que pasar. Un equipo que hace 29 goles con 36 de xG no
+    esta teniendo suerte, esta desperdiciando; uno que hace 29 con 20 no va a
+    seguir asi. Esa distancia es todo el valor de la metrica.
+
+    Volumen (remates, duelos, posesion) va como PROMEDIO por partido, porque
+    comparar totales entre equipos que jugaron distinta cantidad de partidos
+    no dice nada. El xG va como total, que es como se lee en cualquier lado.
+
+    Devuelve {} si el archivo no existe todavia: el sitio tiene que poder
+    construirse sin esta capa. Las probabilidades, que son el criterio de
+    terminado del proyecto, salen del Dixon-Coles y no de aca.
+    """
+    if not STATS.exists():
+        print("    (sin team_match_stats.csv: se exporta sin stats avanzadas)")
+        return {}
+
+    d = pd.read_csv(STATS)
+    # TEMPORADA viaja como texto ('2026') y la columna del CSV es entera. Sin
+    # este int() la comparacion no matchea nunca, y lo peor es que no falla:
+    # devuelve vacio y el sitio sale a produccion sin stats diciendo "OK".
+    d = d[d["temporada"] == int(temporada)]
+    if d.empty:
+        print(f"    (sin stats para la temporada {temporada})")
+        return {}
+
+    # El xG EN CONTRA de un equipo es el xG que generaron sus rivales cuando
+    # jugaron contra el. Como cada partido son dos filas (una por equipo), eso
+    # es exactamente agrupar por la columna "rival".
+    xg_en_contra = d[d["xg"].notna()].groupby("rival")["xg"].sum()
+
+    por_equipo = {}
+    for equipo, g in d.groupby("equipo"):
+        # Solo los partidos que tienen la medicion. FotMob tiene algun partido
+        # suelto sin estadisticas y promediar sobre partidos vacios ensuciaria
+        # el numero sin avisar.
+        con_xg = g[g["xg"].notna()]
+        if con_xg.empty:
+            continue
+
+        def media(col):
+            v = con_xg[col].mean()
+            return None if pd.isna(v) else round(float(v), 1)
+
+        goles = int(con_xg["goles"].sum())
+        xg = round(float(con_xg["xg"].sum()), 1)
+        xg_contra = round(float(xg_en_contra.get(equipo, 0.0)), 1)
+
+        por_equipo[equipo] = {
+            "pj": len(con_xg),
+            "goles": goles,
+            "goles_contra": int(con_xg["goles_rival"].sum()),
+            "xg": xg,
+            "xg_contra": xg_contra,
+            "xg_dif": round(xg - xg_contra, 1),
+            # Positivo = mete mas de lo que genera. Negativo = desperdicia.
+            "sobre_xg": round(goles - xg, 1),
+            "posesion": media("posesion"),
+            "remates": media("remates"),
+            "chances_claras": media("chances_claras"),
+            "duelos_ganados": media("duelos_ganados"),
+            "toques_en_area_rival": media("toques_en_area_rival"),
+            # Ojo: NO son "pases progresivos". Esa metrica era de Opta y no
+            # existe en ninguna fuente gratuita desde enero de 2026. Llamarla
+            # asi seria mentir; esto es otra cosa y se llama por su nombre.
+            "pases_campo_rival": media("pases_campo_rival"),
+        }
+
+    # El puesto convierte un numero suelto en informacion: "36.4 de xG" no
+    # dice nada solo, "el mas alto de los 30" si.
+    for clave, mayor_es_mejor in (("xg", True), ("xg_contra", False),
+                                  ("xg_dif", True), ("posesion", True)):
+        ordenados = sorted(
+            (e for e in por_equipo if por_equipo[e][clave] is not None),
+            key=lambda e: por_equipo[e][clave],
+            reverse=mayor_es_mejor,
+        )
+        for puesto, equipo in enumerate(ordenados, start=1):
+            por_equipo[equipo][f"puesto_{clave}"] = puesto
+
+    return por_equipo
 
 
 def rendimiento_vs_mercado(partidos, temporada):
@@ -343,6 +436,7 @@ def main():
     sim_por_equipo = {e["equipo"]: e for e in simulacion["equipos"]}
     forma = forma_reciente(partidos_hist)
     rendimiento = rendimiento_vs_mercado(partidos_hist, TEMPORADA)
+    avanzadas = stats_avanzadas(TEMPORADA)
 
     fichas = []
     for equipo in sorted(zona):
@@ -363,6 +457,10 @@ def main():
             "puntos_dist": s.get("puntos_dist"),
             "ultimos": forma.get(equipo, []),
             "rendimiento": rendimiento.get(equipo),
+            # None si el equipo no tiene partidos medidos. El sitio tiene que
+            # aguantarlo: no todos los equipos ni todas las temporadas estan
+            # cubiertos, y poner 0 seria inventar que genero cero peligro.
+            "stats": avanzadas.get(equipo),
         })
     (SALIDA / "equipos.json").write_text(json.dumps({
         "equipos": fichas,
