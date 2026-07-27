@@ -105,10 +105,28 @@ Resuelto ✅
 
 Sigue pendiente ⚠️
 - **La zona (A o B) de cada equipo no está en los datos y no se puede inferir.** Hay que
-  cargarla a mano por temporada. Sin eso no se puede simular la fase regular
-- **Falta al menos un partido en el Apertura 2026**: hay 254 y deberían ser 255. Solo 14
-  equipos superan los 16 partidos cuando los clasificados son 16. La fuente no es perfecta:
-  hace falta un chequeo automático de completitud por temporada
+  cargarla a mano por temporada. Sin eso no se puede simular la fase regular.
+  **Dónde copiarla**: FBref publica las tablas de Zona A / Zona B de 2026 con id explícito
+  (`results2026211Zone-A_overall`), y ESPN la trae estructurada. Las dos coinciden. Sigue
+  cargándose a mano en `reference/zonas.csv`, pero ahora hay contra qué validarla
+- **Filtrar las estadísticas por torneo (Apertura / Clausura) — esperar a que haya fechas.**
+  El dato ya está: `data/clean/team_match_stats.csv` tiene la columna `torneo`, que FotMob
+  etiqueta explícita (`Apertura` / `Clausura` / `Playoff`), y `stats_avanzadas()` en
+  `export.py` hoy agrega por TEMPORADA completa (Apertura + playoffs + Clausura).
+  **Por qué no se hizo el 27/07/2026**: el Clausura llevaba UNA fecha jugada. Filtrar por
+  torneo habría mostrado un xG calculado sobre 1 partido, que es ruido — el mismo problema
+  que tenía el modelo con Estudiantes (RC) y sus 16 partidos, y que se arregló con
+  shrinkage. **Retomar cuando el torneo lleve ~8 fechas.** Si se implementa antes, poner un
+  mínimo de partidos por debajo del cual no se muestra el número
+
+Resuelto ✅
+- ~~**Falta al menos un partido en el Apertura 2026**: hay 254 y deberían ser 255~~
+  **Resuelto el 27/07/2026.** Era `Estudiantes (LP) 0-1 Lanús` del 13/03/2026, que
+  football-data.co.uk nunca publicó. Apareció al incorporar FotMob: `clean.py` ahora
+  completa los partidos jugados que la fuente principal todavía no publicó. El Apertura
+  cierra en **255** y los **16** clasificados tienen 17+ partidos, como corresponde.
+  Queda pendiente igual el **chequeo automático de completitud por temporada**: esta vez se
+  encontró de casualidad
 
 **FBref (competición 21 = Liga Profesional Argentina):** ⚠️ **YA NO SIRVE PARA STATS AVANZADAS**
 Este archivo decía hasta el 27/07/2026 que FBref "tiene datos avanzados provistos por Opta
