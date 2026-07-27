@@ -93,15 +93,44 @@ def cargar_zonas(temporada):
     return dict(zip(z.equipo, z.zona))
 
 
-def partidos_pendientes(zona, jugados, plantilla_interzonal):
+def localia_del_torneo_anterior(partidos):
     """
-    Que partidos faltan jugar.
+    Quien fue local en cada cruce del torneo anterior: par de equipos -> local.
 
-    Los de cada zona son faciles: todos contra todos, asi que sabemos
-    exactamente quien le debe partido a quien. Restamos los ya jugados.
+    El par va sin orden (frozenset) porque la pregunta es "de estos dos, quien
+    puso la cancha", no "quien figura primero".
 
-    Los interzonales NO se pueden deducir (salen de un sorteo), asi que
-    usamos como plantilla los del torneo anterior, invirtiendo la localia.
+    Se ordena por fecha y se guarda la PRIMERA aparicion del par a proposito: si
+    dos equipos se cruzaron dos veces en el Apertura (fase regular y despues
+    playoffs), la que define la localia del Clausura es la de la fase regular.
+    Ordenar antes de recorrer tambien hace que el resultado no dependa del orden
+    de las filas del CSV, que es lo que mantiene reproducible al pipeline.
+    """
+    orden = partidos.sort_values("date", kind="stable")
+    localia = {}
+    for f in orden.itertuples():
+        localia.setdefault(frozenset((f.home_team, f.away_team)), f.home_team)
+    return localia
+
+
+def partidos_pendientes(zona, jugados, plantilla_interzonal, localia_anterior):
+    """
+    Que partidos faltan jugar, y quien los juega de local.
+
+    QUIENES juegan contra quienes, dentro de una zona, es facil: todos contra
+    todos, asi que sabemos exactamente quien le debe partido a quien. Restamos
+    los ya jugados.
+
+    DONDE se juega es otra historia, y no es un detalle: el modelo le suma al
+    local una ventaja de alrededor de 30% en goles esperados (el valor exacto
+    lo estima `model.py`). Repartir mal la localia inclina todas las
+    probabilidades del sitio.
+
+    El fixture del Clausura no se conoce de antemano, pero el futbol argentino
+    invierte la localia entre Apertura y Clausura: si en el Apertura A recibio a
+    B, en el Clausura recibe B. Asi que la sacamos de ahi, exactamente igual que
+    ya se hacia con los interzonales.
+
     Es un supuesto, y esta marcado como tal en el reporte.
     """
     ya = {frozenset((f.home_team, f.away_team)) for f in jugados.itertuples()}
@@ -109,10 +138,28 @@ def partidos_pendientes(zona, jugados, plantilla_interzonal):
 
     for z in ("A", "B"):
         equipos = sorted([e for e in zona if zona[e] == z])
-        for i, local in enumerate(equipos):
-            for visita in equipos[i + 1:]:
-                if frozenset((local, visita)) not in ya:
-                    pendientes.append((local, visita))
+        for i, a in enumerate(equipos):
+            for b in equipos[i + 1:]:
+                par = frozenset((a, b))
+                if par in ya:
+                    continue
+                local_anterior = localia_anterior.get(par)
+                if local_anterior is None:
+                    # Sin antecedente en el Apertura no hay nada que invertir.
+                    # Pasa en un solo partido de los 246 y es consecuencia de un
+                    # agujero conocido de la fuente: al Apertura 2026 le falta
+                    # `Estudiantes (LP)` vs `Lanus` (254 partidos en vez de 255,
+                    # ver README y reference/formato-torneos.md).
+                    #
+                    # Criterio: local el primero alfabeticamente. No pretende ser
+                    # el verdadero: es un desempate ARBITRARIO y DETERMINISTA,
+                    # para que dos corridas del pipeline no publiquen numeros
+                    # distintos sin que haya cambiado ningun dato.
+                    local, visita = a, b
+                else:
+                    local = b if local_anterior == a else a
+                    visita = a if local == b else b
+                pendientes.append((local, visita))
 
     for local, visita in plantilla_interzonal:
         if frozenset((local, visita)) not in ya:
@@ -180,9 +227,15 @@ def calcular_escenarios(equipos, pendientes, gl, gv, campeon, clasifico, proximo
     `pendientes` (los interzonales de la simulacion son inventados). En ese caso
     el equipo NO tiene escenarios. No se aproxima con otro partido.
 
-    Y otro: en `pendientes` la localia de los partidos de zona es arbitraria
-    (sale del orden alfabetico), asi que el par se busca sin orden y despues se
-    mira de que lado quedo el equipo para saber cuando gano y cuando perdio.
+    Y otro: el par se busca SIN ORDEN, y despues se mira de que lado quedo el
+    equipo para saber cuando gano y cuando perdio. No es por las dudas: la
+    localia que la simulacion le asigna a un partido sale de invertir la del
+    Apertura, y la del fixture es la real. Cuando las dos coinciden, buscar por
+    tupla ordenada daria lo mismo; cuando no coinciden (fixture real distinto
+    del supuesto, o el partido sin antecedente en el Apertura), buscar por tupla
+    ordenada no encontraria el partido y el equipo se quedaria sin escenarios
+    por un detalle de orden. Buscando sin orden, el escenario se muestra igual y
+    la unica diferencia es de que lado estimo el modelo la ventaja de local.
     """
     n = gl.shape[1]
     idx = {e: i for i, e in enumerate(equipos)}
@@ -458,7 +511,8 @@ def main():
                  + "\n       Reentrena con:  python src/model.py")
 
     plantilla = interzonales_del_torneo_anterior(apertura, zona)
-    pendientes = partidos_pendientes(zona, jugados, plantilla)
+    pendientes = partidos_pendientes(zona, jugados, plantilla,
+                                     localia_del_torneo_anterior(apertura))
 
     print(f"Clausura {TEMPORADA}: {len(jugados)} partidos jugados, "
           f"{len(pendientes)} por jugar\n")
@@ -501,9 +555,17 @@ def main():
     escribir()
     escribir("**Supuestos** (importan para saber cuanto confiar):")
     escribir()
-    escribir("- Los cruces interzonales del Clausura no se conocen: se usan los del")
-    escribir("  Apertura con la localia invertida. Los 28 partidos de cada zona si son")
-    escribir("  exactos, porque todos juegan contra todos.")
+    escribir("- QUIENES juegan contra quienes dentro de cada zona es exacto: todos")
+    escribir("  juegan contra todos. Los cruces interzonales no, porque salen de un")
+    escribir("  sorteo: se usan los del Apertura.")
+    escribir("- DONDE se juega cada partido es un supuesto: el fixture del Clausura no")
+    escribir("  se conoce de antemano, asi que se toma la localia del Apertura y se")
+    escribir("  invierte, que es como funciona el torneo argentino. Importa porque el")
+    escribir("  modelo le da al local un +{:.4f} en goles esperados.".format(
+        modelo["ventaja_local"]))
+    escribir("- Un solo partido del Clausura no tiene antecedente en el Apertura")
+    escribir("  (`Estudiantes (LP)` vs `Lanus`, que falta en la fuente): ahi la localia")
+    escribir("  se resuelve con un desempate arbitrario y fijo.")
     escribir("- Los penales se resuelven con una moneda al aire (50/50).")
     escribir("- El modelo no sabe de lesiones, refuerzos ni cambios de tecnico.")
 

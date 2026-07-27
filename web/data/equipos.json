@@ -10,8 +10,8 @@
       ],
       "ataque": -0.1307,
       "defensa": -0.2129,
-      "campeon": 0.32,
-      "playoffs": 28.04
+      "campeon": 0.1,
+      "playoffs": 11.94
     },
     {
       "equipo": "Argentinos Juniors",
@@ -23,8 +23,8 @@
       ],
       "ataque": 0.1281,
       "defensa": 0.1708,
-      "campeon": 5.01,
-      "playoffs": 91.07
+      "campeon": 4.14,
+      "playoffs": 83.18
     },
     {
       "equipo": "Atlético Tucumán",
@@ -36,8 +36,8 @@
       ],
       "ataque": 0.0731,
       "defensa": -0.0596,
-      "campeon": 1.8,
-      "playoffs": 60.21
+      "campeon": 1.11,
+      "playoffs": 42.63
     },
     {
       "equipo": "Banfield",
@@ -49,8 +49,8 @@
       ],
       "ataque": -0.0132,
       "defensa": 0.0582,
-      "campeon": 1.8,
-      "playoffs": 56.49
+      "campeon": 1.39,
+      "playoffs": 43.6
     },
     {
       "equipo": "Barracas Central",
@@ -62,8 +62,8 @@
       ],
       "ataque": -0.0001,
       "defensa": -0.0515,
-      "campeon": 1.17,
-      "playoffs": 43.27
+      "campeon": 0.78,
+      "playoffs": 33.9
     },
     {
       "equipo": "Belgrano",
@@ -75,8 +75,8 @@
       ],
       "ataque": 0.054,
       "defensa": 0.0872,
-      "campeon": 3.33,
-      "playoffs": 82.84
+      "campeon": 3.09,
+      "playoffs": 79.02
     },
     {
       "equipo": "Boca Juniors",
@@ -88,8 +88,8 @@
       ],
       "ataque": 0.3433,
       "defensa": 0.3577,
-      "campeon": 18.69,
-      "playoffs": 97.76
+      "campeon": 15.89,
+      "playoffs": 92.43
     },
     {
       "equipo": "Central Córdoba (SdE)",
@@ -101,8 +101,8 @@
       ],
       "ataque": 0.0261,
       "defensa": -0.0849,
-      "campeon": 0.95,
-      "playoffs": 45.42
+      "campeon": 0.42,
+      "playoffs": 24.81
     },
     {
       "equipo": "Defensa y Justicia",
@@ -114,8 +114,8 @@
       ],
       "ataque": 0.1848,
       "defensa": 0.0189,
-      "campeon": 2.78,
-      "playoffs": 64.87
+      "campeon": 1.78,
+      "playoffs": 45.72
     },
     {
       "equipo": "Deportivo Riestra",
@@ -127,8 +127,8 @@
       ],
       "ataque": -0.2048,
       "defensa": 0.3346,
-      "campeon": 2.12,
-      "playoffs": 54.17
+      "campeon": 1.72,
+      "playoffs": 39.7
     },
     {
       "equipo": "Estudiantes (LP)",
@@ -140,8 +140,8 @@
       ],
       "ataque": 0.1919,
       "defensa": 0.1587,
-      "campeon": 6.06,
-      "playoffs": 82.98
+      "campeon": 5.77,
+      "playoffs": 77.42
     },
     {
       "equipo": "Estudiantes (RC)",
@@ -154,7 +154,7 @@
       "ataque": -1.1634,
       "defensa": -0.2744,
       "campeon": 0.0,
-      "playoffs": 0.06
+      "playoffs": 0.02
     },
     {
       "equipo": "Gimnasia (LP)",
@@ -166,8 +166,8 @@
       ],
       "ataque": 0.0212,
       "defensa": 0.0305,
-      "campeon": 1.89,
-      "playoffs": 54.6
+      "campeon": 1.55,
+      "playoffs": 55.96
     },
     {
       "equipo": "Gimnasia (M)",
@@ -179,8 +179,8 @@
       ],
       "ataque": -0.088,
       "defensa": -0.1651,
-      "campeon": 0.23,
-      "playoffs": 15.24
+      "campeon": 0.15,
+      "playoffs": 11.06
     },
     {
       "equipo": "Huracán",
@@ -192,8 +192,8 @@
       ],
       "ataque": 0.0317,
       "defensa": 0.2082,
-      "campeon": 3.14,
-      "playoffs": 66.56
+      "campeon": 3.59,
+      "playoffs": 69.61
     },
     {
       "equipo": "Independiente",
@@ -205,8 +205,8 @@
       ],
       "ataque": 0.1451,
       "defensa": 0.2193,
-      "campeon": 5.72,
-      "playoffs": 78.39
+      "campeon": 5.1,
+      "playoffs": 73.48
     },
     {
       "equipo": "Independiente Rivadavia",
@@ -218,8 +218,8 @@
       ],
       "ataque": 0.1344,
       "defensa": 0.0355,
-      "campeon": 2.27,
-      "playoffs": 56.18
+      "campeon": 2.33,
+      "playoffs": 63.69
     },
     {
       "equipo": "Instituto",
@@ -231,8 +231,8 @@
       ],
       "ataque": 0.0113,
       "defensa": 0.0191,
-      "campeon": 1.05,
-      "playoffs": 40.91
+      "campeon": 1.06,
+      "playoffs": 38.64
     },
     {
       "equipo": "Lanús",
@@ -245,7 +245,7 @@
       "ataque": 0.1713,
       "defensa": 0.0395,
       "campeon": 2.81,
-      "playoffs": 60.34
+      "playoffs": 58.83
     },
     {
       "equipo": "Newell's Old Boys",
@@ -257,8 +257,8 @@
       ],
       "ataque": 0.0157,
       "defensa": 0.0381,
-      "campeon": 0.72,
-      "playoffs": 28.63
+      "campeon": 0.9,
+      "playoffs": 33.7
     },
     {
       "equipo": "Platense",
@@ -270,8 +270,8 @@
       ],
       "ataque": -0.1161,
       "defensa": 0.114,
-      "campeon": 0.53,
-      "playoffs": 22.04
+      "campeon": 0.82,
+      "playoffs": 28.71
     },
     {
       "equipo": "Racing Club",
@@ -283,8 +283,8 @@
       ],
       "ataque": 0.3366,
       "defensa": 0.1461,
-      "campeon": 7.24,
-      "playoffs": 85.76
+      "campeon": 7.91,
+      "playoffs": 90.98
     },
     {
       "equipo": "River Plate",
@@ -296,8 +296,8 @@
       ],
       "ataque": 0.4815,
       "defensa": 0.2862,
-      "campeon": 16.52,
-      "playoffs": 95.21
+      "campeon": 16.66,
+      "playoffs": 97.75
     },
     {
       "equipo": "Rosario Central",
@@ -309,8 +309,8 @@
       ],
       "ataque": 0.1704,
       "defensa": 0.0717,
-      "campeon": 1.97,
-      "playoffs": 45.34
+      "campeon": 2.93,
+      "playoffs": 63.44
     },
     {
       "equipo": "San Lorenzo",
@@ -322,8 +322,8 @@
       ],
       "ataque": 0.025,
       "defensa": 0.2231,
-      "campeon": 2.82,
-      "playoffs": 56.1
+      "campeon": 3.41,
+      "playoffs": 67.18
     },
     {
       "equipo": "Sarmiento (J)",
@@ -336,7 +336,7 @@
       "ataque": -0.1927,
       "defensa": -0.0241,
       "campeon": 0.24,
-      "playoffs": 5.99
+      "playoffs": 11.72
     },
     {
       "equipo": "Talleres (C)",
@@ -348,8 +348,8 @@
       ],
       "ataque": 0.1642,
       "defensa": 0.1519,
-      "campeon": 3.37,
-      "playoffs": 58.46
+      "campeon": 4.92,
+      "playoffs": 73.19
     },
     {
       "equipo": "Tigre",
@@ -361,8 +361,8 @@
       ],
       "ataque": 0.0654,
       "defensa": 0.0488,
-      "campeon": 1.07,
-      "playoffs": 28.38
+      "campeon": 1.93,
+      "playoffs": 52.56
     },
     {
       "equipo": "Unión",
@@ -374,8 +374,8 @@
       ],
       "ataque": 0.0577,
       "defensa": 0.0357,
-      "campeon": 1.7,
-      "playoffs": 47.25
+      "campeon": 2.78,
+      "playoffs": 66.61
     },
     {
       "equipo": "Vélez Sarsfield",
@@ -387,8 +387,8 @@
       ],
       "ataque": 0.1397,
       "defensa": 0.1896,
-      "campeon": 2.68,
-      "playoffs": 47.44
+      "campeon": 4.72,
+      "playoffs": 68.52
     }
   ]
 }
