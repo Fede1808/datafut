@@ -24,14 +24,16 @@ estadisticas avanzadas usa `requests`, porque son cientos de pedidos.
 
 ## Como correrlo
 
-Nueve pasos, en orden. Cada uno se puede correr solo y siempre da el mismo
+Once pasos, en orden. Cada uno se puede correr solo y siempre da el mismo
 resultado con los mismos datos de entrada.
 
 ```bash
-python src/ingest.py        # 1. baja el CSV original y el fixture -> data/raw/
-python src/ingest_stats.py  # 1b. baja las stats de FotMob -> data/raw/fotmob/
+python src/ingest.py          # 1. baja el CSV original y las cuotas -> data/raw/
+python src/ingest_stats.py    # 1b. baja las stats de FotMob -> data/raw/fotmob/
+python src/ingest_fixture.py  # 1c. baja el calendario que falta jugar (sin cache)
 python src/clean.py         # 2. lo normaliza -> data/clean/matches.csv
 python src/clean_stats.py   # 2b. -> data/clean/team_match_stats.csv
+python src/clean_fixture.py # 2c. -> data/clean/fixture.csv
 python src/report.py    # 3. diagnostica -> data/clean/report.md
 python src/model.py     # 4. entrena el modelo -> data/outputs/modelo.json
 python src/evaluate.py  # 5. mide si sirve -> data/outputs/evaluacion.md
@@ -328,12 +330,11 @@ Pendiente:
 
 Problemas abiertos, documentados en `CLAUDE.md` y `reference/formato-torneos.md`:
 
-- Los cruces interzonales del Clausura no se conocen de antemano: la simulacion
-  usa los 30 de la **fase regular** del Apertura con la localia invertida. Es un
-  supuesto, esta marcado. Los playoffs del Apertura se descartan: son cruzados
-  por construccion y si entran se hacen pasar por interzonales.
-- Falta un partido de **fase regular** en el Apertura 2026 (`Estudiantes (LP)` vs
-  `Lanus`, los dos de la Zona A). Los playoffs si estan completos. La fuente no es
-  perfecta y conviene un chequeo automatico de completitud.
+- La fuente pierde partidos. Al Apertura 2026 le falto un partido de **fase
+  regular** (`Estudiantes (LP)` vs `Lanus`) hasta que `clean.py` empezo a
+  completar los resultados con FotMob; hoy cierra en 255. El problema de fondo
+  sigue: conviene un chequeo automatico de completitud por temporada y no asumir
+  que si el archivo bajo bien entonces esta completo. El fixture ya lo tiene
+  (`revisar_fixture` en `src/simulate.py` avisa si algun equipo no llega a 16).
 - El reglamento de descensos cambio tres veces en tres anios: **reverificar cada
   temporada** antes de calcular probabilidad de descenso.

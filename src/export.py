@@ -13,11 +13,14 @@ mismos JSON van a alimentar despues el generador de placas para redes. Si
 cada uno calculara sus propios numeros, tarde o temprano se contradirian y
 publicarias dos verdades distintas el mismo dia.
 
-Escribe siete archivos en web/data/:
+Escribe ocho archivos en web/data/:
 
-  fecha.json       los partidos que se vienen, con probabilidades, la
+  fecha.json       los partidos de la PROXIMA FECHA, con probabilidades, la
                    probabilidad implicita del mercado y la diferencia entre
                    las dos
+  calendario.json  las fechas que faltan del torneo entero: quien juega contra
+                   quien, en que fecha y cuando. Va aparte de fecha.json a
+                   proposito: ver el comentario de la seccion 1b
   titulo.json      los 30 equipos con su chance de salir campeon
   tabla.json       la tabla de posiciones de las dos zonas
   equipos.json     ataque, defensa, descenso, distribucion de puntos, racha,
@@ -46,8 +49,8 @@ from model import cargar_partidos, matriz_marcadores, probabilidades_1x2, MAX_GO
 # La tabla se calcula en simulate.py y se importa: es la misma cuenta con la que
 # arranca la simulacion. Duplicarla aca seria garantizar que en tres meses el
 # sitio y el modelo muestren dos tablas distintas.
-from simulate import (cargar_zonas, jugados_del_clausura, tabla_posiciones,
-                      CLASIFICAN_POR_ZONA, TEMPORADA)
+from simulate import (cargar_zonas, cargar_fixture, jugados_del_clausura,
+                      tabla_posiciones, CLASIFICAN_POR_ZONA, TEMPORADA, TORNEO)
 # La desmarginalizacion de cuotas ya vive en evaluate.py: es la misma cuenta con
 # la que se mide al modelo contra el mercado. Si el sitio usara otra, el
 # "diferencial modelo vs mercado" no coincidiria con la evaluacion publicada.
@@ -576,29 +579,54 @@ def main():
     # descartar del fixture los partidos que ya se jugaron.
     partidos_hist = cargar_partidos()
 
+    zona = cargar_zonas(TEMPORADA)
+
     # --- 1. Los partidos que se vienen ---
-    if not FIXTURES.exists():
-        sys.exit(f"ERROR: no existe {FIXTURES}\n       Primero corre:  python src/ingest.py")
+    #
+    # QUE CAMBIO Y POR QUE. Esta lista salia del fixture de football-data.co.uk,
+    # que publica una jornada por vez y tarda dias en publicar la siguiente. En
+    # esa ventana el sitio se quedaba sin partidos proximos: al 28/07/2026 el
+    # archivo solo tenia la fecha 1 del Clausura, ya jugada, y fecha.json salia
+    # con CERO partidos.
+    #
+    # Ahora salen del calendario real (data/clean/fixture.csv, de FotMob), que
+    # trae el torneo entero. De football-data se sigue usando lo unico que
+    # FotMob no da: las CUOTAS, que son las que permiten comparar el modelo
+    # contra el mercado. Cuando el partido todavia no tiene cuotas, `implicita`
+    # queda en null, que es un caso que el sitio ya contempla.
+    fixture = cargar_fixture(zona)
 
-    fx = pd.read_csv(FIXTURES, encoding="utf-8-sig")
-    fx = fx[fx.Country == "Argentina"]
-
-    # El fixture sigue anunciando partidos que YA se jugaron: football-data no
-    # los saca de ahi hasta que publica el resultado, y a veces tarda dias.
-    # Antes daba igual, porque si ellos no lo publicaban nosotros tampoco lo
-    # teniamos. Desde que clean.py completa los resultados con FotMob, el
-    # mismo partido puede estar jugado y "por jugarse" a la vez, y el sitio lo
-    # anunciaria como proximo con el resultado ya en la tabla.
+    # El fixture sigue anunciando partidos que YA se jugaron: la fuente no los
+    # saca de ahi hasta que registra el resultado, y las dos fuentes no se
+    # enteran al mismo tiempo. Sin este filtro el mismo partido aparece jugado
+    # en la tabla y anunciado como proximo en la portada.
     jugados_recientes = {
         (f.home_team, f.away_team)
         for f in partidos_hist[partidos_hist["date"] >= pd.Timestamp.now() -
                                pd.Timedelta(days=30)].itertuples()
     }
 
-    partidos, sin_datos, ya_jugados = [], [], 0
-    for f in fx.itertuples():
-        local = canonico.get(f.Home, f.Home)
-        visita = canonico.get(f.Away, f.Away)
+    # Las cuotas, indexadas por par de equipos ya canonizado. Se busca SIN orden
+    # porque las dos fuentes pueden diferir en quien figura de local, y el que
+    # manda para la localia es el fixture de FotMob. Si difieren, la cuota se
+    # da vuelta junto con el partido.
+    cuotas = {}
+    if FIXTURES.exists():
+        fx = pd.read_csv(FIXTURES, encoding="utf-8-sig")
+        for f in fx[fx.Country == "Argentina"].itertuples():
+            local = canonico.get(f.Home, f.Home)
+            visita = canonico.get(f.Away, f.Away)
+            cuotas[frozenset((local, visita))] = (
+                local,
+                getattr(f, "AvgH", None), getattr(f, "AvgD", None),
+                getattr(f, "AvgA", None),
+            )
+    else:
+        print(f"AVISO: no existe {FIXTURES}; los partidos salen sin cuotas.")
+
+    pendientes, sin_datos, ya_jugados = [], [], 0
+    for f in fixture.itertuples():
+        local, visita = f.local, f.visitante
         if (local, visita) in jugados_recientes:
             ya_jugados += 1
             continue
@@ -612,17 +640,33 @@ def main():
         # ningun lado: "el modelo ve algo distinto que las casas, y esto".
         # Se usa `Avg*` (promedio de todas las casas) por la misma razon que
         # el resto del proyecto: Bet365 y Pinnacle vienen con huecos.
-        imp = implicitas(getattr(f, "AvgH", None), getattr(f, "AvgD", None),
-                         getattr(f, "AvgA", None))
+        c = cuotas.get(frozenset((local, visita)))
+        if c is None:
+            imp = None
+        else:
+            local_en_cuotas, ch, cd, ca = c
+            if local_en_cuotas != local:
+                ch, ca = ca, ch  # la otra fuente lo tenia al reves
+            imp = implicitas(ch, cd, ca)
         p["implicita"] = imp
         p["diferencial"] = None if imp is None else {
             k: round(p["prob"][k] - imp[k], 1)
             for k in ("local", "empate", "visita")
         }
 
-        p["fecha"] = f.Date
-        p["hora"] = f.Time
-        partidos.append(p)
+        p["ronda"] = int(f.ronda)
+        p["fecha"] = f.fecha
+        p["hora"] = f.hora
+        p["utc"] = f.utc
+        # Postergado: se juega, pero la fecha de arriba es provisoria.
+        p["aplazado"] = bool(f.aplazado)
+        pendientes.append(p)
+
+    # fecha.json lleva SOLO la proxima jornada, no el torneo entero: lo importa
+    # web/lib/datos.ts, o sea toda la navegacion del sitio. El calendario
+    # completo va en su propio archivo (seccion 1b).
+    proxima_ronda = min((p["ronda"] for p in pendientes), default=None)
+    partidos = [p for p in pendientes if p["ronda"] == proxima_ronda]
 
     # Los resultados de la ultima fecha jugada.
     #
@@ -658,8 +702,39 @@ def main():
             print(f"   - {p}")
 
     (SALIDA / "fecha.json").write_text(json.dumps({
+        "torneo": TORNEO,
+        "ronda": proxima_ronda,
         "partidos": partidos,
         "ultimos": ultimos,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # --- 1b. El calendario completo de lo que falta ---
+    #
+    # ARCHIVO PROPIO, Y NO UNA RAMA DE fecha.json. Es el mismo criterio que
+    # separo estadisticas.json de equipos.json: `fecha.json` lo importa
+    # web/lib/datos.ts y eso lo arrastra a TODA la navegacion del sitio. Meterle
+    # las 15 fechas que faltan lo multiplicaria por quince para que las use, como
+    # mucho, una pagina.
+    #
+    # Va sin probabilidades a proposito: son 225 partidos y calcular la matriz de
+    # marcadores de cada uno solo tiene sentido para el que se juega ahora. Esto
+    # es el calendario — quien, cuando, y de que fecha del torneo.
+    calendario = [{
+        "ronda": int(f.ronda),
+        "fecha": f.fecha,
+        "hora": f.hora,
+        "utc": f.utc,
+        "aplazado": bool(f.aplazado),
+        "local": f.local,
+        "visita": f.visitante,
+        "local_slug": slug(f.local),
+        "visita_slug": slug(f.visitante),
+    } for f in fixture.itertuples()]
+    (SALIDA / "calendario.json").write_text(json.dumps({
+        "torneo": TORNEO,
+        "temporada": TEMPORADA,
+        "proxima_ronda": proxima_ronda,
+        "partidos": calendario,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # --- 2. Candidatos al titulo ---
@@ -682,8 +757,6 @@ def main():
         "simulaciones": simulacion["simulaciones"],
         "equipos": equipos_sim,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    zona = cargar_zonas(TEMPORADA)
 
     # --- 3. La tabla de posiciones ---
     # Sin esto el sitio muestra probabilidades flotando en el aire: no se puede
@@ -810,11 +883,14 @@ def main():
 
     print(f"OK  -> {SALIDA}")
     con_cuotas = sum(1 for p in partidos if p["implicita"])
-    print(f"    fecha.json    {len(partidos)} partidos "
+    print(f"    fecha.json    fecha {proxima_ronda}: {len(partidos)} partidos "
           f"| {con_cuotas} con cuotas para comparar contra el mercado")
     if ya_jugados:
         print(f"                  ({ya_jugados} del fixture ya se jugaron y se "
               f"descartaron)")
+    print(f"    calendario.json  {len(calendario)} partidos por jugar | "
+          f"fechas {min(c['ronda'] for c in calendario)} a "
+          f"{max(c['ronda'] for c in calendario)}")
     print(f"    titulo.json   {len(equipos_sim)} equipos")
     print(f"    tabla.json    {len(filas_tabla)} equipos | {len(jugados)} partidos jugados")
     print(f"    equipos.json  {len(fichas)} equipos")

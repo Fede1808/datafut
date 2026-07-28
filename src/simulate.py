@@ -33,6 +33,24 @@ COMO SE JUEGA EL TORNEO (verificado contra el Apertura 2026)
 - Octavos CRUZADOS: 1ro de una zona contra 8vo de la otra
 - Todo a partido unico. Si empatan, penales (aca: moneda al aire)
 
+
+DE DONDE SALEN LOS PARTIDOS QUE FALTAN
+---------------------------------------
+Del calendario REAL (data/clean/fixture.csv), que baja ingest_fixture.py de
+FotMob y normaliza clean_fixture.py. Este script no arma ningun partido.
+
+Hasta julio de 2026 los fabricaba: todos contra todos dentro de la zona menos
+los jugados, con la localia invertida respecto del Apertura y los interzonales
+copiados del torneo anterior. Eran los mismos 225 partidos que la fuente ya
+publicaba de una — con la diferencia de que la localia era un supuesto, y la
+localia vale ~30% mas goles esperados para el que la tiene.
+
+Asi que antes de correr esto:
+
+    python src/ingest_fixture.py
+    python src/clean_fixture.py
+
+
 Uso:
     python src/simulate.py
     python src/simulate.py --n 50000
@@ -52,8 +70,10 @@ from model import cargar_partidos, matriz_marcadores, MAX_GOLES
 RAIZ = Path(__file__).resolve().parent.parent
 MODELO = RAIZ / "data" / "outputs" / "modelo.json"
 ZONAS = RAIZ / "reference" / "zonas.csv"
-FIXTURES = RAIZ / "data" / "raw" / "fixtures.csv"
-TABLA_EQUIPOS = RAIZ / "reference" / "team_names.csv"
+# El calendario REAL de lo que falta jugar, que arma clean_fixture.py con los
+# datos de FotMob. Antes esto se fabricaba a mano aca adentro; ver
+# `partidos_pendientes`.
+FIXTURE = RAIZ / "data" / "clean" / "fixture.csv"
 DESTINO = RAIZ / "data" / "outputs" / "simulacion.md"
 DESTINO_JSON = RAIZ / "data" / "outputs" / "simulacion.json"
 
@@ -61,6 +81,10 @@ DESTINO_JSON = RAIZ / "data" / "outputs" / "simulacion.json"
 # Apertura, que ya termino.
 TEMPORADA = "2026"
 INICIO_CLAUSURA = "2026-07-23"
+
+# Como se llama el torneo en curso. Es la etiqueta con la que clean_fixture.py
+# marca cada partido del calendario, y con la que se filtra el fixture.
+TORNEO = "Clausura"
 
 CLASIFICAN_POR_ZONA = 8
 
@@ -160,11 +184,14 @@ def fase_regular(partidos):
       resultado.
 
     EL DETALLE QUE HACE QUE FUNCIONE, y que no es cosmetico: se pide que el
-    partido sea de los primeros 16 de AMBOS equipos, no de alguno. Al Apertura
-    2026 le falta un partido de fase regular (`Estudiantes (LP)` vs `Lanus`), asi
-    que esos dos llegan a sus octavos habiendo jugado 15 y no 16. Con "alguno"
-    esos dos octavos entrarian como fase regular; con "ambos" quedan afuera
-    porque el rival de cada uno si llegaba con 16.
+    partido sea de los primeros 16 de AMBOS equipos, no de alguno. Cuando se
+    escribio esto, al Apertura 2026 le faltaba un partido de fase regular
+    (`Estudiantes (LP)` vs `Lanus`), asi que esos dos llegaban a sus octavos
+    habiendo jugado 15 y no 16. Con "alguno" esos dos octavos entraban como fase
+    regular; con "ambos" quedaban afuera porque el rival de cada uno si llegaba
+    con 16. El agujero despues se tapo (clean.py completa los resultados con
+    FotMob y el Apertura cierra en 255), pero el criterio se mantiene: la fuente
+    ya demostro que pierde partidos y va a volver a pasar.
 
     LO QUE ESTE CRITERIO NO AGUANTA: que los DOS equipos de un mismo partido de
     playoffs vengan con un agujero. Como la fuente ya demostro que pierde
@@ -182,149 +209,143 @@ def fase_regular(partidos):
     return orden[de_fase_regular]
 
 
-def revisar_interzonales(plantilla, zona):
+def cargar_fixture(zona):
     """
-    Contrasta la plantilla de interzonales contra el formato del torneo.
+    El calendario REAL de lo que falta jugar del torneo en curso.
 
-    No corrige nada: avisa. Existe porque el criterio de `fase_regular` se apoya
-    en una fuente que ya se sabe incompleta, y un interzonal de menos no rompe
-    nada visible — simplemente un equipo simula 15 partidos en vez de 16 y nadie
-    se entera. Un aviso ruidoso hoy vale mas que un dato sucio que no ves durante
-    seis meses.
+    Sale de data/clean/fixture.csv (ingest_fixture.py + clean_fixture.py), que
+    baja el calendario de FotMob. Viene ordenado cronologicamente y con los
+    nombres ya canonicos.
+
+    Falla ruidosamente por lo mismo que falla clean_fixture.py: un fixture
+    incompleto NO se ve roto. La simulacion simplemente juega un torneo con
+    menos partidos, reparte menos puntos, y publica probabilidades de titulo y
+    de descenso equivocadas para los 30 equipos sin que nada avise. Si aparece
+    un equipo que no esta en las zonas cargadas, se corta.
     """
-    esperados = len(zona) * INTERZONALES_POR_EQUIPO // 2
-    por_equipo = Counter()
-    for local, visita in plantilla:
-        por_equipo[local] += 1
-        por_equipo[visita] += 1
-    raros = {e: por_equipo[e] for e in sorted(zona)
-             if por_equipo[e] != INTERZONALES_POR_EQUIPO}
-    if len(plantilla) != esperados or raros:
-        print(f"AVISO: la plantilla de interzonales tiene {len(plantilla)} cruces "
-              f"y por formato deberian ser {esperados}.")
-        for e, n in raros.items():
-            print(f"       {e}: {n} interzonales en vez de {INTERZONALES_POR_EQUIPO}")
-        print("       Revisa si a la fuente le faltan partidos del torneo anterior.")
+    if not FIXTURE.exists():
+        sys.exit(
+            f"ERROR: no existe {FIXTURE}\n"
+            f"       Primero corre:  python src/ingest_fixture.py\n"
+            f"                       python src/clean_fixture.py"
+        )
+
+    fx = pd.read_csv(FIXTURE, encoding="utf-8")
+    fx = fx[fx.torneo == TORNEO].sort_values(["utc", "match_id"], kind="stable")
+    if fx.empty:
+        sys.exit(
+            f"ERROR: {FIXTURE} no tiene ningun partido del {TORNEO}.\n"
+            f"       Si el torneo no termino, volve a bajar el fixture:\n"
+            f"       python src/ingest_fixture.py"
+        )
+
+    afuera = sorted((set(fx.local) | set(fx.visitante)) - set(zona))
+    if afuera:
+        sys.exit(
+            "ERROR: el fixture trae equipos que no estan en reference/zonas.csv:\n"
+            + "\n".join(f"  - {e}" for e in afuera)
+            + f"\n       Cargalos en la zona que les corresponde para la temporada "
+              f"{TEMPORADA}."
+        )
+    return fx
 
 
-def localia_del_torneo_anterior(partidos):
-    """
-    Quien fue local en cada cruce del torneo anterior: par de equipos -> local.
-
-    Recibe SOLO la fase regular (ver `fase_regular`), que es la que se invierte
-    para el torneo siguiente. Ahi cada par se cruzo una sola vez, asi que no hay
-    ambiguedad posible sobre quien puso la cancha.
-
-    El par va sin orden (frozenset) porque la pregunta es "de estos dos, quien
-    puso la cancha", no "quien figura primero".
-
-    Se ordena por fecha antes de recorrer para que el resultado no dependa del
-    orden de las filas del CSV, que es lo que mantiene reproducible al pipeline.
-    Y se guarda la primera aparicion de cada par por si en el futuro entrara un
-    partido repetido: mejor quedarse con el mas viejo de forma determinista que
-    con el que casualmente venga ultimo.
-    """
-    orden = partidos.sort_values("date", kind="stable")
-    localia = {}
-    for f in orden.itertuples():
-        localia.setdefault(frozenset((f.home_team, f.away_team)), f.home_team)
-    return localia
-
-
-def partidos_pendientes(zona, jugados, plantilla_interzonal, localia_anterior):
+def partidos_pendientes(fixture, jugados):
     """
     Que partidos faltan jugar, y quien los juega de local.
 
-    QUIENES juegan contra quienes, dentro de una zona, es facil: todos contra
-    todos, asi que sabemos exactamente quien le debe partido a quien. Restamos
-    los ya jugados.
+    Es una lectura del calendario de verdad, y nada mas. Antes esto FABRICABA
+    los partidos: armaba el todos contra todos de cada zona, restaba los
+    jugados, y para decidir quien era local invertia la localia del Apertura
+    (que es como suele funcionar el torneo argentino, pero era un supuesto);
+    los cruces interzonales se copiaban tal cual del torneo anterior.
 
-    DONDE se juega es otra historia, y no es un detalle: el modelo le suma al
-    local una ventaja de alrededor de 30% en goles esperados (el valor exacto
-    lo estima `model.py`). Repartir mal la localia inclina todas las
-    probabilidades del sitio.
+    Eran los MISMOS 225 partidos que FotMob publica de una, en el mismo JSON
+    del que ya se bajaban los partidos jugados. Ahora se leen.
 
-    El fixture del Clausura no se conoce de antemano, pero el futbol argentino
-    invierte la localia entre Apertura y Clausura: si en el Apertura A recibio a
-    B, en el Clausura recibe B. Asi que la sacamos de ahi, exactamente igual que
-    ya se hacia con los interzonales.
+    Que se gano, concretamente: la localia. No es cosmetico. El modelo le da al
+    local una ventaja de ~0.27 en goles esperados (~30% mas goles), asi que cada
+    partido en el que el supuesto se equivocaba de lado inclinaba las
+    probabilidades del sitio para los dos equipos.
 
-    Es un supuesto, y esta marcado como tal en el reporte.
+    LO UNICO QUE SE DESCARTA son los partidos que el historico ya da por
+    jugados. No es "por las dudas": el fixture lo publica FotMob y los
+    resultados salen de football-data.co.uk, y las dos fuentes no se enteran de
+    un partido al mismo tiempo. En la ventana entre una y otra, el mismo partido
+    puede estar en las dos listas, y simularlo ademas de contarlo le regalaria
+    puntos a los dos equipos. Es el mismo cuidado que ya tiene export.py con los
+    partidos del fixture que ya se jugaron.
     """
     ya = {frozenset((f.home_team, f.away_team)) for f in jugados.itertuples()}
-    pendientes = []
-
-    for z in ("A", "B"):
-        equipos = sorted([e for e in zona if zona[e] == z])
-        for i, a in enumerate(equipos):
-            for b in equipos[i + 1:]:
-                par = frozenset((a, b))
-                if par in ya:
-                    continue
-                local_anterior = localia_anterior.get(par)
-                if local_anterior is None:
-                    # Sin antecedente en el Apertura no hay nada que invertir.
-                    # Pasa en un solo partido de los 237 y es consecuencia de un
-                    # agujero conocido de la fuente: al Apertura 2026 le falta
-                    # `Estudiantes (LP)` vs `Lanus` (254 partidos en vez de 255,
-                    # ver README y reference/formato-torneos.md).
-                    #
-                    # Criterio: local el primero alfabeticamente. No pretende ser
-                    # el verdadero: es un desempate ARBITRARIO y DETERMINISTA,
-                    # para que dos corridas del pipeline no publiquen numeros
-                    # distintos sin que haya cambiado ningun dato.
-                    local, visita = a, b
-                else:
-                    local = b if local_anterior == a else a
-                    visita = a if local == b else b
-                pendientes.append((local, visita))
-
-    for local, visita in plantilla_interzonal:
-        if frozenset((local, visita)) not in ya:
-            pendientes.append((local, visita))
-
-    return pendientes
+    return [(f.local, f.visitante) for f in fixture.itertuples()
+            if frozenset((f.local, f.visitante)) not in ya]
 
 
-def proximo_partido_por_equipo(equipos):
+def revisar_fixture(zona, jugados, pendientes):
     """
-    El proximo partido REAL de cada equipo, sacado del fixture.
+    Contrasta jugados + pendientes contra el formato del torneo.
 
-    Ojo con la diferencia: `pendientes` es lo que la simulacion juega, y los
-    cruces interzonales de ahi son inventados a partir del Apertura. El fixture,
-    en cambio, es el calendario de verdad. Para contar "que se juega el equipo
-    el domingo" hay que arrancar del fixture, no de `pendientes`.
+    No corrige nada: avisa. Cada equipo tiene que terminar el torneo con
+    PARTIDOS_FASE_REGULAR partidos; si a alguno le faltan, es que la fuente
+    perdio un partido, y eso no se ve roto en ningun lado — el equipo
+    simplemente juega menos, suma menos puntos y aparece con menos chances.
 
-    Si un equipo aparece en varias filas se toma la primera cronologicamente.
-    Si no hay fixture, se devuelve vacio y el pipeline sigue: los escenarios son
-    un extra, no pueden voltear la simulacion.
+    Tambien se cuentan los interzonales, que por formato son
+    INTERZONALES_POR_EQUIPO por equipo. Es la comprobacion mas barata de que el
+    calendario que bajamos es el de este torneo y no una mezcla.
     """
-    if not FIXTURES.exists():
-        print(f"AVISO: no existe {FIXTURES}; no se calculan escenarios.")
-        return {}
+    total = Counter()
+    inter = Counter()
+    for f in jugados.itertuples():
+        for e, otro in ((f.home_team, f.away_team), (f.away_team, f.home_team)):
+            total[e] += 1
+            if zona.get(e) != zona.get(otro):
+                inter[e] += 1
+    for local, visita in pendientes:
+        for e, otro in ((local, visita), (visita, local)):
+            total[e] += 1
+            if zona.get(e) != zona.get(otro):
+                inter[e] += 1
 
-    nombres = pd.read_csv(TABLA_EQUIPOS, encoding="utf-8")
-    canonico = dict(zip(nombres.raw, nombres.canonical))
+    raros = {e: (total[e], inter[e]) for e in sorted(zona)
+             if total[e] != PARTIDOS_FASE_REGULAR
+             or inter[e] != INTERZONALES_POR_EQUIPO}
+    if raros:
+        print(f"AVISO: por formato cada equipo juega {PARTIDOS_FASE_REGULAR} "
+              f"partidos ({INTERZONALES_POR_EQUIPO} interzonales). No cierra en:")
+        for e, (t, i) in raros.items():
+            print(f"       {e}: {t} partidos, {i} interzonales")
+        print("       Volve a bajar el fixture:  python src/ingest_fixture.py")
 
-    fx = pd.read_csv(FIXTURES, encoding="utf-8-sig")
-    fx = fx[fx.Country == "Argentina"].copy()
-    # El fixture trae la fecha como dd/mm/aaaa. Se parsea para ordenar de
-    # verdad: alfabeticamente "26/07" iria antes que "3/08".
-    fx["_cuando"] = pd.to_datetime(fx.Date + " " + fx.Time.fillna("00:00"),
-                                   format="%d/%m/%Y %H:%M", errors="coerce")
-    fx = fx.sort_values("_cuando", kind="stable")
 
+def proximo_partido_por_equipo(fixture, equipos):
+    """
+    El proximo partido de cada equipo, sacado del mismo fixture que se simula.
+
+    Antes esto leia el fixture de football-data.co.uk, que es otra fuente y
+    llegaba tarde: publica una fecha por vez y tarda dias despues de cada
+    jornada. En esa ventana no habia proximo partido para nadie y el sitio se
+    quedaba sin escenarios (medido: 0 de 30 equipos). Leyendo el calendario
+    completo de FotMob eso no puede volver a pasar.
+
+    Y hay un segundo beneficio, que era el bug de fondo: como la simulacion
+    inventaba la localia, el partido del fixture podia no coincidir con el
+    partido simulado y el equipo se quedaba sin escenarios. Ahora las dos cosas
+    salen de la misma fila del mismo archivo.
+
+    `fixture` viene ordenado cronologicamente, asi que la primera aparicion de
+    cada equipo es su proximo partido.
+    """
     proximo = {}
-    for f in fx.itertuples():
-        local = canonico.get(f.Home, f.Home)
-        visita = canonico.get(f.Away, f.Away)
-        if local not in equipos or visita not in equipos:
+    for f in fixture.itertuples():
+        if f.local not in equipos or f.visitante not in equipos:
             continue
-        for equipo, rival, condicion in ((local, visita, "local"),
-                                         (visita, local, "visita")):
+        for equipo, rival, condicion in ((f.local, f.visitante, "local"),
+                                         (f.visitante, f.local, "visita")):
             if equipo not in proximo:
                 proximo[equipo] = {"rival": rival, "condicion": condicion,
-                                   "fecha": f.Date, "hora": f.Time}
+                                   "fecha": f.fecha, "hora": f.hora,
+                                   "ronda": int(f.ronda)}
     return proximo
 
 
@@ -341,19 +362,17 @@ def calcular_escenarios(equipos, pendientes, gl, gv, campeon, clasifico, proximo
 
     Es gratis: son las mismas simulaciones miradas en tres montones.
 
-    Un detalle que hay que respetar: el partido del fixture puede no estar en
-    `pendientes` (los interzonales de la simulacion son inventados). En ese caso
-    el equipo NO tiene escenarios. No se aproxima con otro partido.
+    El proximo partido y los partidos que se simulan salen ahora del MISMO
+    fixture, asi que el partido siempre esta en `pendientes` y la localia es la
+    misma en los dos lados. Antes no: la simulacion inventaba la localia y el
+    proximo partido venia de otra fuente, y cuando no coincidian el equipo se
+    quedaba sin escenarios.
 
-    Y otro: el par se busca SIN ORDEN, y despues se mira de que lado quedo el
-    equipo para saber cuando gano y cuando perdio. No es por las dudas: la
-    localia que la simulacion le asigna a un partido sale de invertir la del
-    Apertura, y la del fixture es la real. Cuando las dos coinciden, buscar por
-    tupla ordenada daria lo mismo; cuando no coinciden (fixture real distinto
-    del supuesto, o el partido sin antecedente en el Apertura), buscar por tupla
-    ordenada no encontraria el partido y el equipo se quedaria sin escenarios
-    por un detalle de orden. Buscando sin orden, el escenario se muestra igual y
-    la unica diferencia es de que lado estimo el modelo la ventaja de local.
+    Aun asi el par se sigue buscando SIN ORDEN (frozenset). Es barato y cubre el
+    unico caso que queda: que football-data ya haya publicado el resultado de un
+    partido que FotMob todavia da por pendiente. Ahi el partido no esta en
+    `pendientes` y el equipo se queda sin escenarios, que es lo correcto — no se
+    aproxima con otro partido.
     """
     n = gl.shape[1]
     idx = {e: i for i, e in enumerate(equipos)}
@@ -403,25 +422,12 @@ def calcular_escenarios(equipos, pendientes, gl, gv, campeon, clasifico, proximo
             "equipo": equipo,
             "rival": p["rival"],
             "condicion": p["condicion"],
+            "ronda": p["ronda"],
             "fecha": p["fecha"],
             "hora": p["hora"],
             "ramas": ramas,
         })
     return salida
-
-
-def interzonales_del_torneo_anterior(partidos, zona):
-    """
-    Saca los cruces entre zonas del Apertura, con la localia invertida.
-
-    `partidos` tiene que venir filtrado por `fase_regular`: los playoffs son
-    cruzados por construccion y si entran se hacen pasar por interzonales.
-    """
-    pares = []
-    for f in partidos.itertuples():
-        if zona.get(f.home_team) != zona.get(f.away_team):
-            pares.append((f.away_team, f.home_team))  # invertida
-    return pares
 
 
 # ---------------------------------------------------------------------------
@@ -793,22 +799,21 @@ def main():
                  + "\n".join(f"  - {e}" for e in desconocidos)
                  + "\n       Reentrena con:  python src/model.py")
 
-    # El Apertura trae fase regular Y playoffs. Para armar el molde del Clausura
-    # sirve solo la fase regular: los playoffs son cruces de eliminacion directa,
-    # no fixture que se repita.
+    # El Apertura trae fase regular Y playoffs. Para la tabla ANUAL (que define
+    # uno de los dos descensos) sirve solo la fase regular: los playoffs son la
+    # copa que se juega adentro del torneo, no puntos de la tabla del anio.
     regular = fase_regular(apertura)
     print(f"Apertura {TEMPORADA}: {len(regular)} partidos de fase regular "
           f"de {len(apertura)} ({len(apertura) - len(regular)} de playoffs)")
 
-    plantilla = interzonales_del_torneo_anterior(regular, zona)
-    revisar_interzonales(plantilla, zona)
-    pendientes = partidos_pendientes(zona, jugados, plantilla,
-                                     localia_del_torneo_anterior(regular))
+    fixture = cargar_fixture(zona)
+    pendientes = partidos_pendientes(fixture, jugados)
+    revisar_fixture(zona, jugados, pendientes)
 
-    print(f"Clausura {TEMPORADA}: {len(jugados)} partidos jugados, "
-          f"{len(pendientes)} por jugar\n")
+    print(f"{TORNEO} {TEMPORADA}: {len(jugados)} partidos jugados, "
+          f"{len(pendientes)} por jugar (fixture real de FotMob)\n")
 
-    proximos = proximo_partido_por_equipo(set(zona))
+    proximos = proximo_partido_por_equipo(fixture, set(zona))
     bases = bases_de_descenso(partidos, regular, jugados, pendientes,
                               sorted(zona))
     res = simular(modelo, zona, jugados, pendientes, args.n,
@@ -857,24 +862,21 @@ def main():
     escribir("Se jugo el torneo que falta " + f"{n:,} veces" + ", con las probabilidades del")
     escribir("modelo. Si un equipo salio campeon en 1.500 de esas veces, tiene 15%.")
     escribir()
-    escribir("**Supuestos** (importan para saber cuanto confiar):")
+    escribir("**Que es dato y que es supuesto** (importa para saber cuanto confiar):")
     escribir()
-    escribir("- QUIENES juegan contra quienes dentro de cada zona es exacto: todos")
-    escribir("  juegan contra todos. Los cruces interzonales no, porque salen de un")
-    escribir("  sorteo: se usan los {} de la FASE REGULAR del Apertura. Los partidos"
-             .format(len(plantilla)))
-    escribir("  de playoffs del Apertura quedan afuera a proposito: son cruzados por")
-    escribir("  construccion (1ro de una zona contra 8vo de la otra) y si se colaran")
-    escribir("  pasarian por interzonales, dandole a algunos equipos mas de los 16")
-    escribir("  partidos que el formato les da.")
-    escribir("- DONDE se juega cada partido es un supuesto: el fixture del Clausura no")
-    escribir("  se conoce de antemano, asi que se toma la localia del Apertura y se")
-    escribir("  invierte, que es como funciona el torneo argentino. Importa porque el")
-    escribir("  modelo le da al local un +{:.4f} en goles esperados.".format(
+    escribir("- El FIXTURE ES REAL, no se supone nada. Los {} partidos que faltan salen"
+             .format(len(pendientes)))
+    escribir("  del calendario que publica FotMob: quienes juegan, en que fecha del")
+    escribir("  torneo, que dia y —lo que mas pesa— QUIEN JUEGA DE LOCAL. Eso ultimo")
+    escribir("  no es un detalle: el modelo le da al local un +{:.4f} en goles".format(
         modelo["ventaja_local"]))
-    escribir("- Un solo partido del Clausura no tiene antecedente en el Apertura")
-    escribir("  (`Estudiantes (LP)` vs `Lanus`, que falta en la fuente): ahi la localia")
-    escribir("  se resuelve con un desempate arbitrario y fijo.")
+    escribir("  esperados, asi que equivocarse de lado inclina las probabilidades de")
+    escribir("  los dos equipos. Hasta julio de 2026 la localia se suponia invirtiendo")
+    escribir("  la del Apertura y los interzonales se copiaban de ahi; ya no.")
+    escribir("- {} de esos partidos figuran POSTERGADOS en la fuente: se van a jugar,"
+             .format(int(fixture.aplazado.sum())))
+    escribir("  pero con fecha a confirmar. Entran a la simulacion igual, porque los")
+    escribir("  puntos se reparten lo mismo se jueguen el sabado o dos meses despues.")
     escribir("- Los penales se resuelven con una moneda al aire (50/50).")
     escribir("- El modelo no sabe de lesiones, refuerzos ni cambios de tecnico.")
     escribir("- El descenso usa el reglamento 2026: bajan dos, el ultimo de la tabla")

@@ -37,8 +37,15 @@ export type Partido = {
   marcadores: { marcador: string; prob: number }[];
   menos_de_2_5: number;
   ambos_convierten: number;
+  /** Qué fecha del torneo es. Sale del calendario real, no de una suposición. */
+  ronda: number;
+  /** Día y hora en horario argentino, tal como se muestran. */
   fecha: string;
   hora: string;
+  /** El mismo instante en UTC, ISO. Es el que sirve para ordenar. */
+  utc: string;
+  /** Postergado: se juega igual, pero la fecha de arriba es provisoria. */
+  aplazado: boolean;
 };
 
 export type EquipoTitulo = {
@@ -188,6 +195,8 @@ export type Escenario = {
   rival: string;
   rival_slug: string;
   condicion: "local" | "visita";
+  /** Qué fecha del torneo es. */
+  ronda: number;
   fecha: string;
   hora: string;
   ramas: Rama[];
@@ -247,9 +256,10 @@ export function posicionPorSlug(slug: string): FilaTabla | undefined {
 
 /**
  * Los escenarios de un equipo, o undefined si no tiene.
- * No los tiene si no juega en la próxima fecha, o si su partido no está entre
- * los que la simulación juega (los cruces interzonales del Clausura no se
- * conocen y se suponen a partir del Apertura).
+ * No los tiene si no juega en la próxima fecha. Desde que el pipeline usa el
+ * fixture real, el próximo partido y el partido simulado son la misma fila del
+ * mismo archivo, así que ya no hay equipos sin escenarios por desajuste entre
+ * el calendario de verdad y uno supuesto.
  */
 export function escenariosPorSlug(slug: string): Escenario | undefined {
   return listaEscenarios.find((e) => e.slug === slug);

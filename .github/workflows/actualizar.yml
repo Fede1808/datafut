@@ -86,6 +86,21 @@ jobs:
         continue-on-error: true
         run: python src/ingest_stats.py
 
+      # El calendario de lo que falta jugar. A diferencia de las estadisticas,
+      # esto NO se cachea por diseño: un partido pendiente se reprograma, le
+      # cambian el horario o se suspende, asi que se baja fresco siempre (ver
+      # el docstring de ingest_fixture.py).
+      #
+      # Aun asi el paso es continue-on-error, y no se contradice con lo de
+      # arriba: el archivo cae adentro de data/raw/fotmob, que este workflow ya
+      # cachea por los partidos jugados. Si FotMob no contesta, queda el
+      # calendario de la semana pasada — viejo, pero es el mismo torneo y los
+      # equipos que se enfrentan no cambian. Mejor eso que no actualizar el
+      # sitio. Si tampoco hay cache, el paso siguiente corta el pipeline.
+      - name: Bajar el fixture (FotMob)
+        continue-on-error: true
+        run: python src/ingest_fixture.py
+
       - name: Normalizar
         run: python src/clean.py
 
@@ -95,6 +110,15 @@ jobs:
       - name: Normalizar estadisticas avanzadas
         continue-on-error: true
         run: python src/clean_stats.py
+
+      # Este SI corta el pipeline si falla, al reves que los dos de arriba. La
+      # simulacion no puede correr sin el fixture: sin el no hay partidos que
+      # jugar. Y un fixture a medias es peor que ninguno — la simulacion
+      # repartiria menos puntos y publicaria probabilidades equivocadas sin que
+      # nada se vea roto. Mejor dejar el sitio con los numeros de la semana
+      # pasada.
+      - name: Normalizar el fixture
+        run: python src/clean_fixture.py
 
       - name: Diagnosticar
         run: python src/report.py
