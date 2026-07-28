@@ -4,14 +4,19 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Escudo } from "./Escudo";
 import {
+  BLOQUES_STATS,
   CATEGORIAS,
   LEYENDA_DIRECCION,
+  TORNEOS_STATS,
+  UMBRAL_MUESTRA_CHICA,
   formatear,
   puedeSerNegativa,
   ranking,
   type Categoria,
+  type EquipoStats,
   type FilaRanking,
   type Metrica,
+  type TorneoStats,
 } from "@/lib/estadisticas";
 
 /**
@@ -45,8 +50,20 @@ import {
 const TODAS = "todas";
 
 export function PanelEstadisticas() {
+  // Qué torneo se está mirando. Arranca en "temporada" porque es el
+  // comportamiento de siempre: nadie que ya conocía la página debería ver
+  // los números cambiados sin haber tocado nada.
+  const [torneo, setTorneo] = useState<TorneoStats>("temporada");
   const [categoria, setCategoria] = useState<string>(TODAS);
   const [abiertas, setAbiertas] = useState<Set<string>>(new Set());
+
+  const bloque = BLOQUES_STATS[torneo];
+  const equipos = bloque.equipos;
+  // Menos que el umbral = la muestra es tan chica que rankear es casi
+  // sortear. Se avisa con el rango real (pj_min a pj_max) y no con un solo
+  // número: dos equipos pueden llevar cantidades distintas de partidos
+  // incluso dentro del mismo torneo (fixture reprogramado, por ejemplo).
+  const muestraChica = torneo !== "temporada" && bloque.pj_max < UMBRAL_MUESTRA_CHICA;
 
   // Las barras crecen una vez, al montar. No hace falta observador de scroll:
   // el movimiento acá es confirmación de que la página cargó, no un premio por
@@ -81,8 +98,62 @@ export function PanelEstadisticas() {
 
   return (
     <div>
-      {/* --- El selector --- */}
+      {/* --- El selector de torneo. Mismo patrón que el filtro de zona de
+          /tabla (mismas clases .pestania, mismo role="group"): si todo lo
+          clickeable del sitio se ve igual, se aprende una vez. --- */}
       <div className="border-b border-[#d3d6d1] pb-3">
+        <div className="etiqueta mb-2">Torneo</div>
+        <div
+          className="flex flex-wrap gap-1.5"
+          role="group"
+          aria-label="Filtrar por torneo"
+        >
+          {TORNEOS_STATS.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setTorneo(t.id)}
+              aria-pressed={torneo === t.id}
+              className="pestania pestania-chica"
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <p className="num mt-2 text-[9.5px] leading-relaxed text-[#6d7280]">
+          {torneo === "temporada"
+            ? `Apertura, playoffs y lo que va del Clausura juntos, entre ${bloque.pj_min} y ${bloque.pj_max} partidos por equipo.`
+            : bloque.pj_min === bloque.pj_max
+              ? `Sólo ${bloque.pj_max} ${bloque.pj_max === 1 ? "partido" : "partidos"} por equipo.`
+              : `Entre ${bloque.pj_min} y ${bloque.pj_max} partidos por equipo.`}
+        </p>
+
+        {/* LA MUESTRA CHICA SE DICE CON PALABRAS, NO SÓLO CON UN NÚMERO. Un
+            "PJ: 1" al lado de un ranking se puede leer de pasada y ya está;
+            esto no se puede leer de pasada. El dueño lo pidió así de
+            explícito: mostrar el filtro sin avisar sería mentir. */}
+        {muestraChica && (
+          <p className="mt-2 flex max-w-[74ch] items-start gap-2.5 rounded-[4px] border-l-[3px] border-[#c8102e] bg-[#e2e4e0] px-3 py-2.5 text-[12px] leading-relaxed text-[#4c5058]">
+            <span aria-hidden className="cifra pt-px text-[15px] text-[#c8102e]">
+              !
+            </span>
+            <span>
+              <strong className="font-semibold text-[#1a1c1f]">
+                Esto es ruido, no una tendencia.
+              </strong>{" "}
+              {bloque.pj_max === 1
+                ? "Una sola fecha jugada no alcanza para decir quién ataca mejor: un gol de córner o un blooper del arquero mueven el ranking entero."
+                : `${bloque.pj_max} partidos siguen siendo pocos: cualquier racha corta —buena o mala— todavía pesa más de lo que debería.`}{" "}
+              Lo mostramos porque el filtro está para eso, pero no saques
+              conclusiones de esto todavía. Para algo confiable, mirá
+              «Temporada completa».
+            </span>
+          </p>
+        )}
+      </div>
+
+      {/* --- El selector de categoría --- */}
+      <div className="mt-4 border-b border-[#d3d6d1] pb-3">
         <div className="etiqueta mb-2">Elegí qué mirar</div>
         <div
           className="flex flex-wrap gap-1.5"
@@ -133,6 +204,7 @@ export function PanelEstadisticas() {
               <BloqueMetrica
                 key={m.clave}
                 metrica={m}
+                equipos={equipos}
                 abierta={abiertas.has(m.clave)}
                 onAlternar={() => alternar(m.clave)}
                 crecidas={crecidas}
@@ -155,16 +227,18 @@ export function PanelEstadisticas() {
  */
 function BloqueMetrica({
   metrica,
+  equipos,
   abierta,
   onAlternar,
   crecidas,
 }: {
   metrica: Metrica;
+  equipos: EquipoStats[];
   abierta: boolean;
   onAlternar: () => void;
   crecidas: boolean;
 }) {
-  const filas = useMemo(() => ranking(metrica), [metrica]);
+  const filas = useMemo(() => ranking(metrica, equipos), [metrica, equipos]);
   const visibles = abierta ? filas : filas.slice(0, 3);
   const leyenda = LEYENDA_DIRECCION[metrica.direccion];
   const idLista = `ranking-${metrica.clave}`;

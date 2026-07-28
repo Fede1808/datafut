@@ -400,6 +400,50 @@ export const fuenteStats = estadisticas.fuente;
 export const pjMin = estadisticas.pj_min;
 export const pjMax = estadisticas.pj_max;
 
+/**
+ * El filtro de torneo, copiado del mismo patrón que el filtro de zona de
+ * /tabla: "temporada" es lo de siempre (Apertura + playoffs + lo que va del
+ * Clausura), y los otros dos son un torneo solo.
+ *
+ * DE DÓNDE SALE LA SEPARACIÓN. `export.py` la arma con la columna `torneo` de
+ * team_match_stats.csv, que FotMob ya publica separada ("Liga Profesional
+ * Apertura", "Liga Profesional Clausura", ...). No es una fecha de corte
+ * inventada acá: es el mismo dato con el que el pipeline ya arma el
+ * calendario fecha a fecha.
+ */
+export type TorneoStats = "temporada" | "apertura" | "clausura";
+
+// Orden pedido por el dueño: Apertura / Clausura / Temporada completa. El
+// default que arranca seleccionado sigue siendo "temporada" (ver
+// PanelEstadisticas): el orden de los botones no cambia qué se ve al entrar.
+export const TORNEOS_STATS: { id: TorneoStats; label: string }[] = [
+  { id: "apertura", label: "Apertura" },
+  { id: "clausura", label: "Clausura" },
+  { id: "temporada", label: "Temporada completa" },
+];
+
+type BloqueTorneo = { equipos: EquipoStats[]; pj_min: number; pj_max: number };
+
+const torneosJson =
+  (estadisticas as unknown as { torneos?: Record<string, BloqueTorneo> })
+    .torneos ?? {};
+
+/** Los tres bloques, en un solo lugar. "temporada" es el que ya existía. */
+export const BLOQUES_STATS: Record<TorneoStats, BloqueTorneo> = {
+  temporada: { equipos: equiposStats, pj_min: pjMin, pj_max: pjMax },
+  apertura: torneosJson.apertura ?? { equipos: [], pj_min: 0, pj_max: 0 },
+  clausura: torneosJson.clausura ?? { equipos: [], pj_min: 0, pj_max: 0 },
+};
+
+/**
+ * Debajo de esta cantidad de partidos por equipo, la muestra es tan chica que
+ * cualquier ranking es más azar que dato. Un partido (el Clausura recién
+ * arrancado) es el caso que motivó el número, pero se puso en 5 y no en 1
+ * para que seguir avisando en la fecha 2, 3 y 4 también: ahí el ranking sigue
+ * siendo casi todo ruido.
+ */
+export const UMBRAL_MUESTRA_CHICA = 5;
+
 /** Una fila de un ranking, ya resuelta. */
 export type FilaRanking = {
   equipo: string;
@@ -417,9 +461,9 @@ export type FilaRanking = {
  * de relleno en "precisión de pase" se leería como un equipo malísimo, cuando
  * lo que pasa es que no hay medición.
  */
-export function ranking(m: Metrica): FilaRanking[] {
+export function ranking(m: Metrica, equipos: EquipoStats[] = equiposStats): FilaRanking[] {
   const filas: FilaRanking[] = [];
-  for (const e of equiposStats) {
+  for (const e of equipos) {
     const valor = e[m.clave];
     const puesto = e[`puesto_${m.clave}`];
     if (typeof valor !== "number" || typeof puesto !== "number") continue;

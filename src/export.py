@@ -269,9 +269,11 @@ def recorte_ficha(stats):
     return {k: stats[k] for k in CLAVES_FICHA if k in stats}
 
 
-def stats_avanzadas(temporada):
+def _stats_avanzadas_bloque(d):
     """
-    Lo que genero y lo que le generaron a cada equipo en la temporada.
+    Lo que genero y lo que le generaron a cada equipo, sobre el recorte de
+    partidos que le pasen (temporada completa, o solo Apertura, o solo
+    Clausura -- ver `stats_avanzadas`, que es quien arma ese recorte).
 
     Sale de team_match_stats.csv, que arma clean_stats.py con los datos de
     FotMob. Es la unica parte del sitio que NO se puede calcular desde los
@@ -283,9 +285,10 @@ def stats_avanzadas(temporada):
     seguir asi. Esa distancia es todo el valor de la metrica.
 
     LA REGLA QUE ORDENA TODO ESTO: lo que depende de cuantos partidos jugaste
-    va como PROMEDIO POR PARTIDO. Los equipos jugaron entre 17 y 21 partidos,
-    asi que comparar remates totales o faltas totales entre River (21) y
-    Aldosivi (17) no mide quien remata mas, mide quien jugo mas. Los unicos
+    va como PROMEDIO POR PARTIDO. Los equipos de un mismo recorte pueden traer
+    cantidades de partidos distintas (mas claro todavia separado por torneo:
+    el Clausura recien arranco), asi que comparar remates totales o faltas
+    totales no mide quien remata mas, mide quien jugo mas. Los unicos
     totales que sobreviven son los de xG (xg, xg_contra, xg_dif, sobre_xg),
     que se leen asi en todos lados y que la UI aclara explicitamente; para
     comparar de a dos estan igual sus versiones _pp.
@@ -305,21 +308,12 @@ def stats_avanzadas(temporada):
     compara bien, y el porcentaje sobre los duelos disputados de ESE partido
     si. Por eso se calcula la version _pct.
 
-    Devuelve {} si el archivo no existe todavia: el sitio tiene que poder
-    construirse sin esta capa. Las probabilidades, que son el criterio de
-    terminado del proyecto, salen del Dixon-Coles y no de aca.
+    Devuelve {} si el recorte vino vacio (por ejemplo, un torneo que todavia
+    no tiene partidos jugados). El sitio tiene que poder construirse sin esta
+    capa. Las probabilidades, que son el criterio de terminado del proyecto,
+    salen del Dixon-Coles y no de aca.
     """
-    if not STATS.exists():
-        print("    (sin team_match_stats.csv: se exporta sin stats avanzadas)")
-        return {}
-
-    d = pd.read_csv(STATS)
-    # TEMPORADA viaja como texto ('2026') y la columna del CSV es entera. Sin
-    # este int() la comparacion no matchea nunca, y lo peor es que no falla:
-    # devuelve vacio y el sitio sale a produccion sin stats diciendo "OK".
-    d = d[d["temporada"] == int(temporada)]
     if d.empty:
-        print(f"    (sin stats para la temporada {temporada})")
         return {}
 
     # El xG EN CONTRA de un equipo es el xG que generaron sus rivales cuando
@@ -474,6 +468,63 @@ def stats_avanzadas(temporada):
             por_equipo[equipo][f"puesto_{clave}"] = puesto
 
     return por_equipo
+
+
+# Como se reconoce cada torneo dentro de la columna `torneo` de
+# team_match_stats.csv. FotMob ya viene separado ("Liga Profesional Apertura",
+# "Liga Profesional Apertura Playoff", "Liga Profesional Clausura", ...): no
+# hace falta inventar un corte por fecha como el que describe
+# reference/formato-torneos.md para separar Apertura de Clausura sobre
+# matches.csv (ahi si hace falta, porque esa fuente no trae el torneo). Aca la
+# fuente ya lo dice, asi que se usa esa columna y no una regla propia. Entra
+# el Playoff de cada torneo (startswith y no una igualdad exacta) porque un
+# ranking de "mejor ataque del Apertura" que dejara afuera los octavos, cuartos
+# y semis estaria mostrando un torneo incompleto.
+PREFIJOS_TORNEO = {
+    "apertura": "Liga Profesional Apertura",
+    "clausura": "Liga Profesional Clausura",
+}
+
+
+def stats_avanzadas(temporada):
+    """
+    Las 39 metricas de cada equipo, en tres recortes: la temporada completa
+    (como siempre se calculo) y cada torneo por separado (Apertura, Clausura).
+
+    POR QUE SE PUEDE SEPARAR SIN INVENTAR NADA: team_match_stats.csv ya trae
+    la columna `torneo` con el nombre completo de cada partido ("Liga
+    Profesional Apertura", "Liga Profesional Clausura", ...). Es la MISMA
+    columna con la que `jugados_con_ronda` (mas arriba en este archivo) ya
+    separa el Clausura para el calendario. No hay que adivinar un corte de
+    fechas: la fuente lo dice.
+
+    Devuelve {"temporada": {...}, "apertura": {...}, "clausura": {...}}, cada
+    uno con la forma que ya devolvia esta funcion (equipo -> metricas +
+    puestos). El bloque "temporada" es EXACTAMENTE el mismo calculo de antes
+    de este cambio -- mismo filtro, mismo orden -- para no romper equipos.json
+    ni la vista por defecto de /estadisticas.
+    """
+    if not STATS.exists():
+        print("    (sin team_match_stats.csv: se exporta sin stats avanzadas)")
+        return {"temporada": {}, "apertura": {}, "clausura": {}}
+
+    d = pd.read_csv(STATS)
+    # TEMPORADA viaja como texto ('2026') y la columna del CSV es entera. Sin
+    # este int() la comparacion no matchea nunca, y lo peor es que no falla:
+    # devuelve vacio y el sitio sale a produccion sin stats diciendo "OK".
+    d = d[d["temporada"] == int(temporada)]
+    if d.empty:
+        print(f"    (sin stats para la temporada {temporada})")
+        return {"temporada": {}, "apertura": {}, "clausura": {}}
+
+    torneo_col = d["torneo"].astype(str)
+    return {
+        "temporada": _stats_avanzadas_bloque(d),
+        "apertura": _stats_avanzadas_bloque(
+            d[torneo_col.str.startswith(PREFIJOS_TORNEO["apertura"])]),
+        "clausura": _stats_avanzadas_bloque(
+            d[torneo_col.str.startswith(PREFIJOS_TORNEO["clausura"])]),
+    }
 
 
 def rendimiento_vs_mercado(partidos, temporada):
@@ -1046,7 +1097,10 @@ def main():
             #
             # Va recortado a CLAVES_FICHA: este archivo lo lee TODO el sitio y
             # las 40 metricas las usa una sola pagina. Ver estadisticas.json.
-            "stats": recorte_ficha(avanzadas.get(equipo)),
+            # Siempre el bloque "temporada" (la temporada completa): la ficha
+            # de equipo no separa por torneo, es la misma cuenta que se hacia
+            # antes de este cambio.
+            "stats": recorte_ficha(avanzadas["temporada"].get(equipo)),
         })
     (SALIDA / "equipos.json").write_text(json.dumps({
         "equipos": fichas,
@@ -1058,20 +1112,53 @@ def main():
     #
     # Se guarda el nombre, el slug y los colores de cada equipo para que la
     # pagina se arme sin tener que cruzar contra equipos.json.
-    equipos_stats = [{
-        "equipo": equipo,
-        "slug": slug(equipo),
-        "colores": mapa_color.get(equipo, ["#7c8089", "#f2f1ec"]),
-        **avanzadas[equipo],
-    } for equipo in sorted(avanzadas)]
+    def _armar_equipos_stats(bloque):
+        return [{
+            "equipo": equipo,
+            "slug": slug(equipo),
+            "colores": mapa_color.get(equipo, ["#7c8089", "#f2f1ec"]),
+            **bloque[equipo],
+        } for equipo in sorted(bloque)]
+
+    def _bloque_json(bloque):
+        """
+        Un bloque de estadisticas.json: la lista de equipos mas el rango de
+        partidos jugados (pj_min/pj_max), que es el dato de muestra que el
+        sitio tiene que mostrar al lado de cada numero. Sin esto, un ranking
+        del Clausura con un partido jugado se lee igual que uno de la
+        temporada entera, y ESO es lo que el dueno pidio explicitamente que no
+        pasara.
+        """
+        equipos_stats = _armar_equipos_stats(bloque)
+        return {
+            "pj_min": min(e["pj"] for e in equipos_stats) if equipos_stats else 0,
+            "pj_max": max(e["pj"] for e in equipos_stats) if equipos_stats else 0,
+            "equipos": equipos_stats,
+        }
+
+    # El bloque "temporada" va tambien al nivel de arriba, con las mismas
+    # claves que tenia este archivo antes de separar por torneo (equipos,
+    # pj_min, pj_max). Es lo que evita romper nada: cualquier lectura vieja de
+    # estadisticas.json sigue viendo exactamente lo mismo. Los otros dos
+    # torneos van aparte, en "torneos", porque son la parte nueva.
+    bloque_temporada = _bloque_json(avanzadas["temporada"])
     (SALIDA / "estadisticas.json").write_text(json.dumps({
         "temporada": simulacion["temporada"],
         "fuente": "FotMob",
-        # Cuantos partidos jugo el que menos y el que mas. La pagina lo
-        # muestra: sin eso, comparar totales entre equipos engania.
-        "pj_min": min(e["pj"] for e in equipos_stats) if equipos_stats else 0,
-        "pj_max": max(e["pj"] for e in equipos_stats) if equipos_stats else 0,
-        "equipos": equipos_stats,
+        # Cuantos partidos jugo el que menos y el que mas, EN LA TEMPORADA
+        # COMPLETA (Apertura + Clausura). La pagina lo muestra: sin eso,
+        # comparar totales entre equipos engania.
+        "pj_min": bloque_temporada["pj_min"],
+        "pj_max": bloque_temporada["pj_max"],
+        "equipos": bloque_temporada["equipos"],
+        # Los mismos 39 rankings, pero recortados a un solo torneo. Cada uno
+        # trae su propio pj_min/pj_max porque la muestra cambia por completo:
+        # el Clausura recien arranco y sus partidos por equipo no tienen nada
+        # que ver con los de la temporada completa.
+        "torneos": {
+            "apertura": _bloque_json(avanzadas["apertura"]),
+            "clausura": _bloque_json(avanzadas["clausura"]),
+        },
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # --- 5. Que se juega cada equipo en su proximo partido ---
@@ -1137,10 +1224,20 @@ def main():
     print(f"    titulo.json   {len(equipos_sim)} equipos")
     print(f"    tabla.json    {len(filas_tabla)} equipos | {len(jugados)} partidos jugados")
     print(f"    equipos.json  {len(fichas)} equipos")
-    print(f"    estadisticas.json  {len(equipos_stats)} equipos | "
+    print(f"    estadisticas.json  {len(bloque_temporada['equipos'])} equipos | "
           f"{len(METRICAS)} metricas rankeadas | "
-          f"partidos jugados: de {min((e['pj'] for e in equipos_stats), default=0)} "
-          f"a {max((e['pj'] for e in equipos_stats), default=0)}")
+          f"temporada completa: de {bloque_temporada['pj_min']} "
+          f"a {bloque_temporada['pj_max']} partidos por equipo")
+    bloque_apertura = avanzadas["apertura"]
+    bloque_clausura = avanzadas["clausura"]
+    pj_apertura = [v["pj"] for v in bloque_apertura.values()]
+    pj_clausura = [v["pj"] for v in bloque_clausura.values()]
+    print(f"                       Apertura: de {min(pj_apertura, default=0)} "
+          f"a {max(pj_apertura, default=0)} partidos por equipo "
+          f"({len(bloque_apertura)} equipos)")
+    print(f"                       Clausura: de {min(pj_clausura, default=0)} "
+          f"a {max(pj_clausura, default=0)} partidos por equipo "
+          f"({len(bloque_clausura)} equipos)")
     print(f"    escenarios.json  {len(escenarios)} de {len(fichas)} equipos")
     print(f"    meta.json     acierto {ACIERTO}% | {len(partidos_hist):,} partidos historicos")
     print(f"    historial.json  {total} partidos registrados "

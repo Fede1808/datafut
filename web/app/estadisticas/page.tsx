@@ -53,22 +53,24 @@ export default function Estadisticas() {
       </p>
 
       {/*
-        El período iba explicado en el párrafo de arriba, y ahí se lo salteaba
-        todo el mundo. Un equipo que arrancó bien el Clausura aparece hundido
-        porque arrastra el Apertura entero, y quien no leyó la línea lo lee como
-        un error del sitio. Va como aviso, no como prosa.
+        Antes esto avisaba "todavía no se puede separar por torneo". Ya se
+        puede: el selector vive adentro de PanelEstadisticas, junto con el
+        aviso de tamaño de muestra, porque ahí es donde cambia según lo que
+        el usuario elija. Acá arriba sólo queda la explicación de qué es
+        "temporada completa" para el que entra sin tocar nada.
       */}
       <p className="mt-3 flex max-w-[74ch] items-start gap-2.5 rounded-[4px] border-l-[3px] border-[#1a1c1f] bg-[#e2e4e0] px-3 py-2.5 text-[12px] leading-relaxed text-[#4c5058]">
         <span aria-hidden className="cifra pt-px text-[15px]">
           !
         </span>
         <span>
-          Estás viendo la{" "}
+          Por defecto ves la{" "}
           <strong className="font-semibold text-[#1a1c1f]">
             temporada {temporadaStats} completa
           </strong>{" "}
           — Apertura, playoffs y lo que va del Clausura juntos, entre {pjMin} y{" "}
-          {pjMax} partidos por equipo. Todavía no se puede separar por torneo.
+          {pjMax} partidos por equipo. Para ver un solo torneo (Apertura o
+          Clausura), usá el selector de abajo.
         </span>
       </p>
 
