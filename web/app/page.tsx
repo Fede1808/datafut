@@ -28,7 +28,8 @@ import {
  * página de equipo.
  */
 export default function Portada() {
-  const top = ranking.slice(0, 8);
+  const lider = ranking[0];
+  const resto = ranking.slice(1, 8);
   const maximo = ranking[0]?.campeon ?? 0;
   const enJuego = escenariosPorAmplitud().slice(0, 8);
 
@@ -74,8 +75,41 @@ export default function Portada() {
         <section className="tarjeta p-4 lg:sticky lg:top-4 lg:self-start">
           <Encabezado titulo="Campeón" detalle={`${torneo} ${temporada}`} />
 
-          <ol className="border-t-2 border-[#1a1c1f]">
-            {top.map((e, i) => {
+          {/*
+            El líder va aparte y a escala de scoreboard. Es el dato que la
+            página vino a contar: si mide lo mismo que el octavo, el ranking se
+            lee como una lista de precios y no como una carrera.
+          */}
+          {lider && (
+            <>
+              <div className="banda-club" aria-hidden>
+                <span style={{ background: lider.colores[0] }} />
+                <span style={{ background: lider.colores[1] }} />
+                <span style={{ background: lider.colores[0] }} />
+              </div>
+              <Link
+                href={`/equipo/${lider.slug}`}
+                className="fila lider border-b-2 border-[#1a1c1f] px-1 py-3"
+              >
+                <span className="lider-cifra">
+                  {lider.campeon.toFixed(1)}
+                  <sup>%</sup>
+                </span>
+                <span className="min-w-0">
+                  <span className="titular-2 enlace-ficha block truncate">
+                    {lider.equipo}
+                  </span>
+                  <span className="num mt-1 block text-[10.5px] text-[#6d7280]">
+                    Zona {lider.zona} · playoffs {lider.playoffs.toFixed(1)}% ·
+                    techo de la liga
+                  </span>
+                </span>
+              </Link>
+            </>
+          )}
+
+          <ol>
+            {resto.map((e, i) => {
               const pos = posicionPorSlug(e.slug);
               return (
                 <li key={e.slug} className="border-b border-[#e2e4e0]">
@@ -83,8 +117,8 @@ export default function Portada() {
                     href={`/equipo/${e.slug}`}
                     className="fila flex items-center gap-2 py-2 pl-1"
                   >
-                    <span className="num w-4 shrink-0 text-right text-[10px] text-[#8d9299]">
-                      {i + 1}
+                    <span className="cifra w-4 shrink-0 text-right text-[15px] text-[#8d9299]">
+                      {i + 2}
                     </span>
                     <Escudo slug={e.slug} colores={e.colores} size={16} />
                     <span className="min-w-0 flex-1">
@@ -97,11 +131,7 @@ export default function Portada() {
                       </span>
                     </span>
                     <span className="shrink-0 text-right">
-                      <span
-                        className={`cifra block text-[17px] ${
-                          i === 0 ? "text-[#1a1c1f]" : "text-[#1a1c1f]"
-                        }`}
-                      >
+                      <span className="cifra block text-[22px] text-[#1a1c1f]">
                         {e.campeon.toFixed(1)}
                       </span>
                       <span className="ml-auto block w-fit">

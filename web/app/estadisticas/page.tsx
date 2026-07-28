@@ -49,9 +49,27 @@ export default function Estadisticas() {
 
       <p className="mt-3 max-w-[74ch] text-[13px] leading-relaxed text-[#4c5058]">
         Quién es el mejor de la liga en cada cosa. Los datos son de{" "}
-        <strong className="font-semibold text-[#1a1c1f]">{fuenteStats}</strong> y
-        cubren la <strong className="font-semibold text-[#1a1c1f]">temporada {temporadaStats} completa</strong>:
-        Apertura, playoffs y lo que va del Clausura.
+        <strong className="font-semibold text-[#1a1c1f]">{fuenteStats}</strong>.
+      </p>
+
+      {/*
+        El período iba explicado en el párrafo de arriba, y ahí se lo salteaba
+        todo el mundo. Un equipo que arrancó bien el Clausura aparece hundido
+        porque arrastra el Apertura entero, y quien no leyó la línea lo lee como
+        un error del sitio. Va como aviso, no como prosa.
+      */}
+      <p className="mt-3 flex max-w-[74ch] items-start gap-2.5 rounded-[4px] border-l-[3px] border-[#1a1c1f] bg-[#e2e4e0] px-3 py-2.5 text-[12px] leading-relaxed text-[#4c5058]">
+        <span aria-hidden className="cifra pt-px text-[15px]">
+          !
+        </span>
+        <span>
+          Estás viendo la{" "}
+          <strong className="font-semibold text-[#1a1c1f]">
+            temporada {temporadaStats} completa
+          </strong>{" "}
+          — Apertura, playoffs y lo que va del Clausura juntos, entre {pjMin} y{" "}
+          {pjMax} partidos por equipo. Todavía no se puede separar por torneo.
+        </span>
       </p>
 
       <div className="tarjeta mt-5 p-4">

@@ -57,14 +57,12 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
                   </span>
                 </Link>
 
-                <span className="num shrink-0 px-1 text-[13px] tracking-[0.05em]">
-                  <span className={ganaLocal ? "text-[#1a1c1f]" : "text-[#8d9299]"}>
-                    {r.goles_local}
-                  </span>
-                  <span className="text-[#8d9299]">–</span>
-                  <span className={ganaVisita ? "text-[#1a1c1f]" : "text-[#8d9299]"}>
-                    {r.goles_visita}
-                  </span>
+                <span
+                  className="marcador shrink-0 px-1"
+                  aria-label={`${r.goles_local} a ${r.goles_visita}`}
+                >
+                  <span data-gana={ganaLocal}>{r.goles_local}</span>
+                  <span data-gana={ganaVisita}>{r.goles_visita}</span>
                 </span>
 
                 <Link

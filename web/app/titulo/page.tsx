@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TablaTitulo } from "@/components/TablaTitulo";
 import { posicionesCompletas, ranking, torneo, temporada, metadatos } from "@/lib/datos";
 
@@ -8,6 +9,7 @@ export const metadata = {
 /** Los 30 equipos con su chance de título, de playoffs y su fuerza estimada. */
 export default function Titulo() {
   const maximo = ranking[0]?.campeon ?? 0;
+  const lider = ranking[0];
 
   return (
     <div className="py-5">
@@ -19,7 +21,37 @@ export default function Titulo() {
         </p>
       </div>
 
-      <div className="tarjeta mt-5 p-4">
+      {/*
+        El favorito, a escala de scoreboard y FUERA de la tabla: adentro se
+        movería al reordenar por otra columna, y lo que este bloque afirma es
+        quién puntea por título, no quién está primero en la lista de abajo.
+      */}
+      {lider && (
+        <div className="tarjeta mt-5 overflow-hidden">
+          <div className="banda-club" aria-hidden>
+            <span style={{ background: lider.colores[0] }} />
+            <span style={{ background: lider.colores[1] }} />
+            <span style={{ background: lider.colores[0] }} />
+          </div>
+          <Link href={`/equipo/${lider.slug}`} className="fila lider p-4">
+            <span className="lider-cifra">
+              {lider.campeon.toFixed(1)}
+              <sup>%</sup>
+            </span>
+            <span className="min-w-0">
+              <span className="titular-2 enlace-ficha block truncate">
+                {lider.equipo}
+              </span>
+              <span className="num mt-1 block text-[11px] text-[#6d7280]">
+                Zona {lider.zona} · playoffs {lider.playoffs.toFixed(1)}% ·
+                descenso {lider.descenso.toFixed(1)}%
+              </span>
+            </span>
+          </Link>
+        </div>
+      )}
+
+      <div className="tarjeta mt-4 p-4">
         <TablaTitulo filas={posicionesCompletas} />
       </div>
 

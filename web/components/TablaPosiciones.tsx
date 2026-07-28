@@ -227,13 +227,31 @@ export function TablaPosiciones({
                   corte ? "border-b-2 border-[#2f8f4e]" : "border-b border-[#e2e4e0]"
                 }`}
               >
+                {/*
+                  Los dos colores del club, como filete. Es la identidad del
+                  2b sin escudo gigante. Va de gradiente y no de color plano
+                  porque hay clubes de primario blanco (River, Vélez, Gimnasia)
+                  que sobre la tarjeta blanca desaparecerían; el filete de
+                  contorno los sostiene igual.
+                */}
                 <span
                   role="cell"
-                  className={`num w-8 shrink-0 text-right text-[11px] ${
-                    dentro ? "text-[#1a1c1f]" : "text-[#6d7280]"
-                  }`}
+                  className="flex w-8 shrink-0 items-center justify-end gap-1.5"
                 >
-                  {f.puesto}
+                  <span
+                    aria-hidden
+                    className="h-[22px] w-[3px] shrink-0 rounded-[1px] ring-1 ring-inset ring-black/10"
+                    style={{
+                      background: `linear-gradient(${f.colores[0]} 50%, ${f.colores[1]} 50%)`,
+                    }}
+                  />
+                  <span
+                    className={`cifra text-[16px] ${
+                      dentro ? "text-[#1a1c1f]" : "text-[#8d9299]"
+                    }`}
+                  >
+                    {f.puesto}
+                  </span>
                 </span>
                 <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
                   <Escudo slug={f.slug} colores={f.colores} size={16} />

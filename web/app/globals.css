@@ -108,6 +108,99 @@ body {
   line-height: 0.95;
 }
 
+/*
+  Marcador tipo tablero de estadio.
+
+  Un resultado escrito "2-1" en texto corrido se lee como una nota al pie. En
+  una cancha el marcador es lo primero que mirás, y para eso necesita ser un
+  objeto, no una frase: dígito claro sobre caja de tinta. El ganador se prende
+  en verde — y como además va en la caja de su lado, se entiende quién ganó sin
+  distinguir el color.
+*/
+.marcador {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+.marcador > span {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1;
+  min-width: 27px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: var(--color-tinta);
+  color: #ffffff;
+  border-radius: 3px;
+}
+.marcador > span[data-gana="true"] {
+  background: var(--color-sube);
+}
+
+/*
+  El líder de un ranking, a escala de scoreboard.
+
+  El resto de la lista puede ir en cifras de 20px, pero el primero tiene que
+  ocupar la pantalla: es el dato que la página vino a contar. Sin este salto de
+  escala, un ranking de probabilidades se lee como una lista de precios.
+*/
+.lider {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.lider-cifra {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  font-weight: 800;
+  font-size: clamp(52px, 11vw, 74px);
+  line-height: 0.78;
+  letter-spacing: -0.02em;
+}
+.lider-cifra sup {
+  font-size: 0.3em;
+  font-weight: 700;
+  vertical-align: top;
+  margin-left: 2px;
+  color: var(--color-tinta3);
+}
+
+/*
+  Banda con los colores del club, a lo ancho de la tarjeta.
+
+  Es la identidad del 2b ("la página se tiñe con los colores del club") sin
+  depender de un escudo gigante, que el diseño descarta a propósito.
+*/
+.banda-club {
+  display: flex;
+  height: 5px;
+}
+.banda-club > span {
+  flex: 1;
+}
+
+/*
+  Cifra dominante de una métrica.
+
+  Cada tarjeta de estadística tiene UN número que importa y dos líneas de
+  contexto. Si el número mide lo mismo que su etiqueta, la grilla entera se
+  vuelve un muro gris de dígitos donde no se puede mirar nada en particular.
+*/
+.met-cifra {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 0.85;
+}
+
 /* --- Tarjetas --- */
 
 /* Tarjeta blanca sobre gris: la unidad básica del sistema. */
