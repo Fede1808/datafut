@@ -4,2479 +4,6184 @@
   "proxima_ronda": 2,
   "partidos": [
     {
+      "ronda": 1,
+      "dia": "2026-07-23",
+      "hora": null,
+      "aplazado": false,
+      "local": "Belgrano",
+      "visita": "Rosario Central",
+      "local_slug": "belgrano",
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-23",
+      "hora": null,
+      "aplazado": false,
+      "local": "Sarmiento (J)",
+      "visita": "Argentinos Juniors",
+      "local_slug": "sarmiento-j",
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 3
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-24",
+      "hora": null,
+      "aplazado": false,
+      "local": "Defensa y Justicia",
+      "visita": "Aldosivi",
+      "local_slug": "defensa-y-justicia",
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-24",
+      "hora": null,
+      "aplazado": false,
+      "local": "Gimnasia (M)",
+      "visita": "Central Córdoba (SdE)",
+      "local_slug": "gimnasia-m",
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-24",
+      "hora": null,
+      "aplazado": false,
+      "local": "Racing Club",
+      "visita": "Gimnasia (LP)",
+      "local_slug": "racing-club",
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-24",
+      "hora": null,
+      "aplazado": false,
+      "local": "Vélez Sarsfield",
+      "visita": "Instituto",
+      "local_slug": "velez-sarsfield",
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-25",
+      "hora": null,
+      "aplazado": false,
+      "local": "Estudiantes (RC)",
+      "visita": "Tigre",
+      "local_slug": "estudiantes-rc",
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-25",
+      "hora": null,
+      "aplazado": false,
+      "local": "Huracán",
+      "visita": "Banfield",
+      "local_slug": "huracan",
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-25",
+      "hora": null,
+      "aplazado": false,
+      "local": "Newell's Old Boys",
+      "visita": "Talleres (C)",
+      "local_slug": "newell-s-old-boys",
+      "visita_slug": "talleres-c",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-25",
+      "hora": null,
+      "aplazado": false,
+      "local": "Platense",
+      "visita": "Unión",
+      "local_slug": "platense",
+      "visita_slug": "union",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 2
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-25",
+      "hora": null,
+      "aplazado": false,
+      "local": "River Plate",
+      "visita": "Barracas Central",
+      "local_slug": "river-plate",
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-26",
+      "hora": null,
+      "aplazado": false,
+      "local": "Atlético Tucumán",
+      "visita": "Independiente Rivadavia",
+      "local_slug": "atletico-tucuman",
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-26",
+      "hora": null,
+      "aplazado": false,
+      "local": "Deportivo Riestra",
+      "visita": "Boca Juniors",
+      "local_slug": "deportivo-riestra",
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 3,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-26",
+      "hora": null,
+      "aplazado": false,
+      "local": "Estudiantes (LP)",
+      "visita": "Independiente",
+      "local_slug": "estudiantes-lp",
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 2
+    },
+    {
+      "ronda": 1,
+      "dia": "2026-07-26",
+      "hora": null,
+      "aplazado": false,
+      "local": "Lanús",
+      "visita": "San Lorenzo",
+      "local_slug": "lanus",
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
+    },
+    {
       "ronda": 2,
-      "fecha": "28/07/2026",
+      "dia": "2026-07-28",
       "hora": "19:00",
-      "utc": "2026-07-28T22:00:00.000Z",
       "aplazado": false,
       "local": "Banfield",
       "visita": "Sarmiento (J)",
       "local_slug": "banfield",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 45.5,
+        "empate": 32.1,
+        "visita": 22.4
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "28/07/2026",
+      "dia": "2026-07-28",
       "hora": "19:00",
-      "utc": "2026-07-28T22:00:00.000Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Gimnasia (M)",
       "local_slug": "san-lorenzo",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 46.0,
+        "empate": 31.8,
+        "visita": 22.2
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "28/07/2026",
+      "dia": "2026-07-28",
       "hora": "21:15",
-      "utc": "2026-07-29T00:15:00Z",
       "aplazado": false,
       "local": "Argentinos Juniors",
       "visita": "Estudiantes (RC)",
       "local_slug": "argentinos-juniors",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 52.5,
+        "empate": 29.6,
+        "visita": 17.9
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "28/07/2026",
+      "dia": "2026-07-28",
       "hora": "21:15",
-      "utc": "2026-07-29T00:15:00Z",
       "aplazado": false,
       "local": "Rosario Central",
       "visita": "Racing Club",
       "local_slug": "rosario-central",
-      "visita_slug": "racing-club"
+      "visita_slug": "racing-club",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 36.8,
+        "empate": 29.9,
+        "visita": 33.3
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "29/07/2026",
+      "dia": "2026-07-29",
       "hora": "14:30",
-      "utc": "2026-07-29T17:30:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Aldosivi",
       "local_slug": "barracas-central",
-      "visita_slug": "aldosivi"
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 48.9,
+        "empate": 29.1,
+        "visita": 22.0
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "29/07/2026",
+      "dia": "2026-07-29",
       "hora": "17:00",
-      "utc": "2026-07-29T20:00:00Z",
       "aplazado": false,
       "local": "Defensa y Justicia",
       "visita": "Deportivo Riestra",
       "local_slug": "defensa-y-justicia",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 41.6,
+        "empate": 32.8,
+        "visita": 25.6
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "29/07/2026",
+      "dia": "2026-07-29",
       "hora": "19:15",
-      "utc": "2026-07-29T22:15:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "River Plate",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 25.8,
+        "empate": 29.6,
+        "visita": 44.5
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "29/07/2026",
+      "dia": "2026-07-29",
       "hora": "21:30",
-      "utc": "2026-07-30T00:30:00Z",
       "aplazado": false,
       "local": "Instituto",
       "visita": "Platense",
       "local_slug": "instituto",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.9,
+        "empate": 33.1,
+        "visita": 25.9
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "30/07/2026",
+      "dia": "2026-07-30",
       "hora": "19:00",
-      "utc": "2026-07-30T22:00:00Z",
       "aplazado": false,
       "local": "Independiente Rivadavia",
       "visita": "Huracán",
       "local_slug": "independiente-rivadavia",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 38.9,
+        "empate": 32.8,
+        "visita": 28.4
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "30/07/2026",
+      "dia": "2026-07-30",
       "hora": "19:00",
-      "utc": "2026-07-30T22:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Vélez Sarsfield",
       "local_slug": "talleres-c",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 40.5,
+        "empate": 32.0,
+        "visita": 27.5
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "30/07/2026",
+      "dia": "2026-07-30",
       "hora": "21:15",
-      "utc": "2026-07-31T00:15:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Atlético Tucumán",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.6,
+        "empate": 30.2,
+        "visita": 29.2
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "30/07/2026",
+      "dia": "2026-07-30",
       "hora": "21:15",
-      "utc": "2026-07-31T00:15:00Z",
       "aplazado": false,
       "local": "Independiente",
       "visita": "Newell's Old Boys",
       "local_slug": "independiente",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 48.2,
+        "empate": 30.7,
+        "visita": 21.1
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "01/08/2026",
+      "dia": "2026-08-01",
       "hora": "15:30",
-      "utc": "2026-08-01T18:30:00Z",
       "aplazado": false,
       "local": "Estudiantes (RC)",
       "visita": "Banfield",
       "local_slug": "estudiantes-rc",
-      "visita_slug": "banfield"
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 34.8,
+        "empate": 33.5,
+        "visita": 31.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "01/08/2026",
+      "dia": "2026-08-01",
       "hora": "15:30",
-      "utc": "2026-08-01T18:30:00Z",
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Unión",
       "local_slug": "gimnasia-m",
-      "visita_slug": "union"
+      "visita_slug": "union",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.4,
+        "empate": 31.5,
+        "visita": 29.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "01/08/2026",
+      "dia": "2026-08-01",
       "hora": "18:00",
-      "utc": "2026-08-01T21:00:00Z",
       "aplazado": false,
       "local": "Belgrano",
       "visita": "Argentinos Juniors",
       "local_slug": "belgrano",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 37.4,
+        "empate": 32.5,
+        "visita": 30.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "01/08/2026",
+      "dia": "2026-08-01",
       "hora": "18:00",
-      "utc": "2026-08-01T21:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (LP)",
       "visita": "Defensa y Justicia",
       "local_slug": "estudiantes-lp",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 45.7,
+        "empate": 29.5,
+        "visita": 24.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "01/08/2026",
+      "dia": "2026-08-01",
       "hora": "20:30",
-      "utc": "2026-08-01T23:30:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Tigre",
       "local_slug": "racing-club",
-      "visita_slug": "tigre"
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 52.3,
+        "empate": 27.7,
+        "visita": 20.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "02/08/2026",
+      "dia": "2026-08-02",
       "hora": "14:30",
-      "utc": "2026-08-02T17:30:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Gimnasia (LP)",
       "local_slug": "aldosivi",
-      "visita_slug": "gimnasia-lp"
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 33.7,
+        "empate": 31.4,
+        "visita": 34.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "02/08/2026",
+      "dia": "2026-08-02",
       "hora": "14:30",
-      "utc": "2026-08-02T17:30:00Z",
       "aplazado": false,
       "local": "Deportivo Riestra",
       "visita": "Barracas Central",
       "local_slug": "deportivo-riestra",
-      "visita_slug": "barracas-central"
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 43.6,
+        "empate": 33.3,
+        "visita": 23.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "02/08/2026",
+      "dia": "2026-08-02",
       "hora": "17:00",
-      "utc": "2026-08-02T20:00:00Z",
       "aplazado": false,
       "local": "Newell's Old Boys",
       "visita": "Boca Juniors",
       "local_slug": "newell-s-old-boys",
-      "visita_slug": "boca-juniors"
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 27.5,
+        "empate": 31.6,
+        "visita": 40.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "02/08/2026",
+      "dia": "2026-08-02",
       "hora": "19:15",
-      "utc": "2026-08-02T22:15:00Z",
       "aplazado": false,
       "local": "River Plate",
       "visita": "Rosario Central",
       "local_slug": "river-plate",
-      "visita_slug": "rosario-central"
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": {
+        "local": 57.0,
+        "empate": 25.6,
+        "visita": 17.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "02/08/2026",
+      "dia": "2026-08-02",
       "hora": "21:30",
-      "utc": "2026-08-03T00:30:00Z",
       "aplazado": false,
       "local": "Lanús",
       "visita": "Instituto",
       "local_slug": "lanus",
-      "visita_slug": "instituto"
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.4,
+        "empate": 30.0,
+        "visita": 23.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "03/08/2026",
+      "dia": "2026-08-03",
       "hora": "16:45",
-      "utc": "2026-08-03T19:45:00Z",
       "aplazado": false,
       "local": "Sarmiento (J)",
       "visita": "Independiente Rivadavia",
       "local_slug": "sarmiento-j",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 33.1,
+        "empate": 32.8,
+        "visita": 34.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "03/08/2026",
+      "dia": "2026-08-03",
       "hora": "19:00",
-      "utc": "2026-08-03T22:00:00Z",
       "aplazado": false,
       "local": "Platense",
       "visita": "Talleres (C)",
       "local_slug": "platense",
-      "visita_slug": "talleres-c"
+      "visita_slug": "talleres-c",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 33.8,
+        "empate": 33.6,
+        "visita": 32.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "03/08/2026",
+      "dia": "2026-08-03",
       "hora": "19:00",
-      "utc": "2026-08-03T22:00:00Z",
       "aplazado": false,
       "local": "Vélez Sarsfield",
       "visita": "Independiente",
       "local_slug": "velez-sarsfield",
-      "visita_slug": "independiente"
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.8,
+        "empate": 32.6,
+        "visita": 27.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "03/08/2026",
+      "dia": "2026-08-03",
       "hora": "21:15",
-      "utc": "2026-08-04T00:15:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "San Lorenzo",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "san-lorenzo"
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 33.9,
+        "empate": 32.9,
+        "visita": 33.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 3,
-      "fecha": "03/08/2026",
+      "dia": "2026-08-03",
       "hora": "21:15",
-      "utc": "2026-08-04T00:15:00Z",
       "aplazado": false,
       "local": "Huracán",
       "visita": "Atlético Tucumán",
       "local_slug": "huracan",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.4,
+        "empate": 30.9,
+        "visita": 22.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "05/08/2026",
+      "dia": "2026-08-05",
       "hora": "19:00",
-      "utc": "2026-08-05T22:00:00Z",
       "aplazado": false,
       "local": "Boca Juniors",
       "visita": "Estudiantes (LP)",
       "local_slug": "boca-juniors",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 50.2,
+        "empate": 29.2,
+        "visita": 20.6
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "05/08/2026",
+      "dia": "2026-08-05",
       "hora": "21:15",
-      "utc": "2026-08-06T00:15:00Z",
       "aplazado": false,
       "local": "Tigre",
       "visita": "Belgrano",
       "local_slug": "tigre",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.5,
+        "empate": 31.8,
+        "visita": 27.7
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 2,
-      "fecha": "06/08/2026",
+      "dia": "2026-08-06",
       "hora": "19:00",
-      "utc": "2026-08-06T22:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Lanús",
       "local_slug": "union",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.1,
+        "empate": 30.8,
+        "visita": 30.1
+      },
+      "estimado": false,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Argentinos Juniors",
       "visita": "Racing Club",
       "local_slug": "argentinos-juniors",
-      "visita_slug": "racing-club"
+      "visita_slug": "racing-club",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 37.5,
+        "empate": 30.8,
+        "visita": 31.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Atlético Tucumán",
       "visita": "Sarmiento (J)",
       "local_slug": "atletico-tucuman",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.0,
+        "empate": 30.8,
+        "visita": 23.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Banfield",
       "visita": "Belgrano",
       "local_slug": "banfield",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.6,
+        "empate": 32.6,
+        "visita": 28.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Boca Juniors",
       "visita": "Vélez Sarsfield",
       "local_slug": "boca-juniors",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 49.7,
+        "empate": 29.9,
+        "visita": 20.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Defensa y Justicia",
       "visita": "Newell's Old Boys",
       "local_slug": "defensa-y-justicia",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 45.8,
+        "empate": 29.8,
+        "visita": 24.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Deportivo Riestra",
       "visita": "Estudiantes (LP)",
       "local_slug": "deportivo-riestra",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.6,
+        "empate": 34.5,
+        "visita": 29.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Barracas Central",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "barracas-central"
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 43.4,
+        "empate": 31.0,
+        "visita": 25.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Independiente",
       "visita": "Platense",
       "local_slug": "independiente",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 48.3,
+        "empate": 31.7,
+        "visita": 20.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Independiente Rivadavia",
       "visita": "Estudiantes (RC)",
       "local_slug": "independiente-rivadavia",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 49.9,
+        "empate": 29.9,
+        "visita": 20.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Instituto",
       "visita": "Gimnasia (M)",
       "local_slug": "instituto",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 42.3,
+        "empate": 31.4,
+        "visita": 26.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Rosario Central",
       "visita": "Aldosivi",
       "local_slug": "rosario-central",
-      "visita_slug": "aldosivi"
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 56.2,
+        "empate": 26.5,
+        "visita": 17.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Huracán",
       "local_slug": "san-lorenzo",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 39.4,
+        "empate": 34.5,
+        "visita": 26.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Lanús",
       "local_slug": "talleres-c",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.0,
+        "empate": 30.3,
+        "visita": 25.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Tigre",
       "visita": "River Plate",
       "local_slug": "tigre",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 27.1,
+        "empate": 29.8,
+        "visita": 43.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 4,
-      "fecha": "09/08/2026",
+      "dia": "2026-08-09",
       "hora": "17:00",
-      "utc": "2026-08-09T20:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Central Córdoba (SdE)",
       "local_slug": "union",
-      "visita_slug": "central-cordoba-sde"
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.1,
+        "empate": 29.8,
+        "visita": 24.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Tigre",
       "local_slug": "aldosivi",
-      "visita_slug": "tigre"
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 32.5,
+        "empate": 31.3,
+        "visita": 36.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Rosario Central",
       "local_slug": "barracas-central",
-      "visita_slug": "rosario-central"
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": {
+        "local": 35.7,
+        "empate": 31.2,
+        "visita": 33.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Belgrano",
       "visita": "Independiente Rivadavia",
       "local_slug": "belgrano",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 41.2,
+        "empate": 31.4,
+        "visita": 27.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Instituto",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "instituto"
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.3,
+        "empate": 31.3,
+        "visita": 29.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (LP)",
       "visita": "Gimnasia (LP)",
       "local_slug": "estudiantes-lp",
-      "visita_slug": "gimnasia-lp"
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 48.4,
+        "empate": 29.9,
+        "visita": 21.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (RC)",
       "visita": "Atlético Tucumán",
       "local_slug": "estudiantes-rc",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 36.3,
+        "empate": 32.0,
+        "visita": 31.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Talleres (C)",
       "local_slug": "gimnasia-m",
-      "visita_slug": "talleres-c"
+      "visita_slug": "talleres-c",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 34.5,
+        "empate": 32.0,
+        "visita": 33.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Lanús",
       "visita": "Independiente",
       "local_slug": "lanus",
-      "visita_slug": "independiente"
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.2,
+        "empate": 31.6,
+        "visita": 30.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Newell's Old Boys",
       "visita": "Deportivo Riestra",
       "local_slug": "newell-s-old-boys",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 37.2,
+        "empate": 34.8,
+        "visita": 28.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Platense",
       "visita": "Boca Juniors",
       "local_slug": "platense",
-      "visita_slug": "boca-juniors"
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 26.1,
+        "empate": 32.8,
+        "visita": 41.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Banfield",
       "local_slug": "racing-club",
-      "visita_slug": "banfield"
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 53.4,
+        "empate": 27.8,
+        "visita": 18.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "River Plate",
       "visita": "Argentinos Juniors",
       "local_slug": "river-plate",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 54.5,
+        "empate": 27.2,
+        "visita": 18.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Unión",
       "local_slug": "san-lorenzo",
-      "visita_slug": "union"
+      "visita_slug": "union",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 43.9,
+        "empate": 32.2,
+        "visita": 23.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Sarmiento (J)",
       "visita": "Huracán",
       "local_slug": "sarmiento-j",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 30.7,
+        "empate": 34.6,
+        "visita": 34.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 5,
-      "fecha": "16/08/2026",
+      "dia": "2026-08-16",
       "hora": "17:00",
-      "utc": "2026-08-16T20:00:00Z",
       "aplazado": false,
       "local": "Vélez Sarsfield",
       "visita": "Defensa y Justicia",
       "local_slug": "velez-sarsfield",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 45.0,
+        "empate": 30.2,
+        "visita": 24.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Unión",
       "local_slug": "aldosivi",
-      "visita_slug": "union"
+      "visita_slug": "union",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 32.9,
+        "empate": 31.1,
+        "visita": 36.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Atlético Tucumán",
       "visita": "Instituto",
       "local_slug": "atletico-tucuman",
-      "visita_slug": "instituto"
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 41.3,
+        "empate": 30.9,
+        "visita": 27.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Platense",
       "local_slug": "barracas-central",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.8,
+        "empate": 32.9,
+        "visita": 27.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Belgrano",
       "visita": "Defensa y Justicia",
       "local_slug": "belgrano",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 40.6,
+        "empate": 30.8,
+        "visita": 28.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (RC)",
       "visita": "San Lorenzo",
       "local_slug": "estudiantes-rc",
-      "visita_slug": "san-lorenzo"
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 30.2,
+        "empate": 34.4,
+        "visita": 35.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Gimnasia (M)",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 42.7,
+        "empate": 31.2,
+        "visita": 26.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Huracán",
       "visita": "Deportivo Riestra",
       "local_slug": "huracan",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.3,
+        "empate": 35.4,
+        "visita": 24.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Independiente",
       "visita": "Independiente Rivadavia",
       "local_slug": "independiente",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.3,
+        "empate": 30.7,
+        "visita": 23.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Lanús",
       "visita": "Argentinos Juniors",
       "local_slug": "lanus",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.0,
+        "empate": 31.2,
+        "visita": 28.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Newell's Old Boys",
       "visita": "Banfield",
       "local_slug": "newell-s-old-boys",
-      "visita_slug": "banfield"
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 41.2,
+        "empate": 32.2,
+        "visita": 26.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Boca Juniors",
       "local_slug": "racing-club",
-      "visita_slug": "boca-juniors"
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 38.0,
+        "empate": 30.4,
+        "visita": 31.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "River Plate",
       "visita": "Vélez Sarsfield",
       "local_slug": "river-plate",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 53.6,
+        "empate": 27.6,
+        "visita": 18.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Sarmiento (J)",
       "visita": "Estudiantes (LP)",
       "local_slug": "sarmiento-j",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 29.3,
+        "empate": 32.8,
+        "visita": 37.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Rosario Central",
       "local_slug": "talleres-c",
-      "visita_slug": "rosario-central"
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": {
+        "local": 43.4,
+        "empate": 30.6,
+        "visita": 26.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 6,
-      "fecha": "23/08/2026",
+      "dia": "2026-08-23",
       "hora": "17:00",
-      "utc": "2026-08-23T20:00:00Z",
       "aplazado": false,
       "local": "Tigre",
       "visita": "Central Córdoba (SdE)",
       "local_slug": "tigre",
-      "visita_slug": "central-cordoba-sde"
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.3,
+        "empate": 29.9,
+        "visita": 23.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Argentinos Juniors",
       "visita": "Aldosivi",
       "local_slug": "argentinos-juniors",
-      "visita_slug": "aldosivi"
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 56.4,
+        "empate": 27.1,
+        "visita": 16.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Atlético Tucumán",
       "visita": "Belgrano",
       "local_slug": "atletico-tucuman",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.7,
+        "empate": 31.3,
+        "visita": 30.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Banfield",
       "visita": "River Plate",
       "local_slug": "banfield",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 25.6,
+        "empate": 30.1,
+        "visita": 44.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Boca Juniors",
       "visita": "Lanús",
       "local_slug": "boca-juniors",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 53.7,
+        "empate": 27.7,
+        "visita": 18.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Defensa y Justicia",
       "visita": "Platense",
       "local_slug": "defensa-y-justicia",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.0,
+        "empate": 30.8,
+        "visita": 23.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Deportivo Riestra",
       "visita": "Vélez Sarsfield",
       "local_slug": "deportivo-riestra",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 35.3,
+        "empate": 35.2,
+        "visita": 29.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Estudiantes (LP)",
       "visita": "Newell's Old Boys",
       "local_slug": "estudiantes-lp",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 48.2,
+        "empate": 30.0,
+        "visita": 21.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
+      "dia": "2026-08-30",
       "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
       "aplazado": false,
       "local": "Huracán",
       "visita": "Estudiantes (RC)",
       "local_slug": "huracan",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 50.0,
+        "empate": 31.2,
+        "visita": 18.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Independiente",
       "visita": "Gimnasia (M)",
       "local_slug": "independiente",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 50.0,
+        "empate": 29.9,
+        "visita": 20.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Independiente Rivadavia",
       "visita": "Racing Club",
       "local_slug": "independiente-rivadavia",
-      "visita_slug": "racing-club"
+      "visita_slug": "racing-club",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 34.6,
+        "empate": 30.3,
+        "visita": 35.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Instituto",
       "visita": "San Lorenzo",
       "local_slug": "instituto",
-      "visita_slug": "san-lorenzo"
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 35.6,
+        "empate": 33.8,
+        "visita": 30.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Rosario Central",
       "visita": "Gimnasia (LP)",
       "local_slug": "rosario-central",
-      "visita_slug": "gimnasia-lp"
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.6,
+        "empate": 30.0,
+        "visita": 23.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
+      "dia": "2026-08-30",
       "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Central Córdoba (SdE)",
       "local_slug": "talleres-c",
-      "visita_slug": "central-cordoba-sde"
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 51.1,
+        "empate": 28.7,
+        "visita": 20.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
-      "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
+      "dia": "2026-08-30",
+      "hora": null,
       "aplazado": true,
       "local": "Tigre",
       "visita": "Barracas Central",
       "local_slug": "tigre",
-      "visita_slug": "barracas-central"
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.9,
+        "empate": 30.6,
+        "visita": 24.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 7,
-      "fecha": "30/08/2026",
+      "dia": "2026-08-30",
       "hora": "17:00",
-      "utc": "2026-08-30T20:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Sarmiento (J)",
       "local_slug": "union",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 47.4,
+        "empate": 31.0,
+        "visita": 21.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Banfield",
       "local_slug": "aldosivi",
-      "visita_slug": "banfield"
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 33.7,
+        "empate": 31.9,
+        "visita": 34.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Argentinos Juniors",
       "local_slug": "barracas-central",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 33.9,
+        "empate": 32.2,
+        "visita": 33.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Belgrano",
       "visita": "Huracán",
       "local_slug": "belgrano",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 38.1,
+        "empate": 33.4,
+        "visita": 28.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Independiente",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "independiente"
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 31.6,
+        "empate": 31.9,
+        "visita": 36.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (RC)",
       "visita": "Sarmiento (J)",
       "local_slug": "estudiantes-rc",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.5,
+        "empate": 33.6,
+        "visita": 26.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Tigre",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "tigre"
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 40.0,
+        "empate": 31.7,
+        "visita": 28.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Boca Juniors",
       "local_slug": "gimnasia-m",
-      "visita_slug": "boca-juniors"
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 26.4,
+        "empate": 31.1,
+        "visita": 42.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Lanús",
       "visita": "Defensa y Justicia",
       "local_slug": "lanus",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 43.3,
+        "empate": 29.4,
+        "visita": 27.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Platense",
       "visita": "Deportivo Riestra",
       "local_slug": "platense",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.3,
+        "empate": 36.3,
+        "visita": 28.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Atlético Tucumán",
       "local_slug": "racing-club",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 55.7,
+        "empate": 26.1,
+        "visita": 18.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "River Plate",
       "visita": "Independiente Rivadavia",
       "local_slug": "river-plate",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 58.8,
+        "empate": 25.2,
+        "visita": 16.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Rosario Central",
       "visita": "Newell's Old Boys",
       "local_slug": "rosario-central",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 46.4,
+        "empate": 30.1,
+        "visita": 23.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Talleres (C)",
       "local_slug": "san-lorenzo",
-      "visita_slug": "talleres-c"
+      "visita_slug": "talleres-c",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.0,
+        "empate": 33.2,
+        "visita": 27.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Instituto",
       "local_slug": "union",
-      "visita_slug": "instituto"
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 42.8,
+        "empate": 31.3,
+        "visita": 25.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 8,
-      "fecha": "06/09/2026",
+      "dia": "2026-09-06",
       "hora": "17:00",
-      "utc": "2026-09-06T20:00:00Z",
       "aplazado": false,
       "local": "Vélez Sarsfield",
       "visita": "Estudiantes (LP)",
       "local_slug": "velez-sarsfield",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 41.1,
+        "empate": 31.7,
+        "visita": 27.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Argentinos Juniors",
       "visita": "Gimnasia (LP)",
       "local_slug": "argentinos-juniors",
-      "visita_slug": "gimnasia-lp"
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 47.0,
+        "empate": 30.7,
+        "visita": 22.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Atlético Tucumán",
       "visita": "River Plate",
       "local_slug": "atletico-tucuman",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 25.2,
+        "empate": 28.5,
+        "visita": 46.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Banfield",
       "visita": "Barracas Central",
       "local_slug": "banfield",
-      "visita_slug": "barracas-central"
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 42.8,
+        "empate": 31.6,
+        "visita": 25.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Boca Juniors",
       "visita": "Central Córdoba (SdE)",
       "local_slug": "boca-juniors",
-      "visita_slug": "central-cordoba-sde"
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 60.7,
+        "empate": 25.1,
+        "visita": 14.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Defensa y Justicia",
       "visita": "Gimnasia (M)",
       "local_slug": "defensa-y-justicia",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 47.5,
+        "empate": 29.2,
+        "visita": 23.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Deportivo Riestra",
       "visita": "Lanús",
       "local_slug": "deportivo-riestra",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.5,
+        "empate": 33.6,
+        "visita": 27.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (LP)",
       "visita": "Platense",
       "local_slug": "estudiantes-lp",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 48.3,
+        "empate": 31.0,
+        "visita": 20.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Huracán",
       "visita": "Racing Club",
       "local_slug": "huracan",
-      "visita_slug": "racing-club"
+      "visita_slug": "racing-club",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.5,
+        "empate": 31.9,
+        "visita": 32.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Independiente",
       "visita": "San Lorenzo",
       "local_slug": "independiente",
-      "visita_slug": "san-lorenzo"
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 42.7,
+        "empate": 33.1,
+        "visita": 24.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Independiente Rivadavia",
       "visita": "Aldosivi",
       "local_slug": "independiente-rivadavia",
-      "visita_slug": "aldosivi"
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 53.6,
+        "empate": 27.6,
+        "visita": 18.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Instituto",
       "visita": "Estudiantes (RC)",
       "local_slug": "instituto",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.4,
+        "empate": 31.4,
+        "visita": 22.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Newell's Old Boys",
       "visita": "Vélez Sarsfield",
       "local_slug": "newell-s-old-boys",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 34.7,
+        "empate": 32.7,
+        "visita": 32.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Sarmiento (J)",
       "visita": "Belgrano",
       "local_slug": "sarmiento-j",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 33.2,
+        "empate": 33.5,
+        "visita": 33.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Unión",
       "local_slug": "talleres-c",
-      "visita_slug": "union"
+      "visita_slug": "union",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.6,
+        "empate": 30.3,
+        "visita": 23.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 9,
-      "fecha": "13/09/2026",
+      "dia": "2026-09-13",
       "hora": "17:00",
-      "utc": "2026-09-13T20:00:00Z",
       "aplazado": false,
       "local": "Tigre",
       "visita": "Rosario Central",
       "local_slug": "tigre",
-      "visita_slug": "rosario-central"
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": {
+        "local": 38.8,
+        "empate": 31.1,
+        "visita": 30.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Atlético Tucumán",
       "local_slug": "aldosivi",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.1,
+        "empate": 30.5,
+        "visita": 34.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Independiente Rivadavia",
       "local_slug": "barracas-central",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 37.5,
+        "empate": 31.4,
+        "visita": 31.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Belgrano",
       "visita": "Estudiantes (RC)",
       "local_slug": "belgrano",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 48.9,
+        "empate": 30.7,
+        "visita": 20.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Defensa y Justicia",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 36.1,
+        "empate": 30.2,
+        "visita": 33.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Banfield",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "banfield"
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 41.2,
+        "empate": 32.1,
+        "visita": 26.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Deportivo Riestra",
       "local_slug": "gimnasia-m",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 36.2,
+        "empate": 34.6,
+        "visita": 29.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Instituto",
       "visita": "Talleres (C)",
       "local_slug": "instituto",
-      "visita_slug": "talleres-c"
+      "visita_slug": "talleres-c",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.2,
+        "empate": 32.3,
+        "visita": 32.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Lanús",
       "visita": "Estudiantes (LP)",
       "local_slug": "lanus",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.4,
+        "empate": 30.8,
+        "visita": 29.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Platense",
       "visita": "Newell's Old Boys",
       "local_slug": "platense",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 39.0,
+        "empate": 33.4,
+        "visita": 27.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Sarmiento (J)",
       "local_slug": "racing-club",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 58.5,
+        "empate": 26.3,
+        "visita": 15.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "River Plate",
       "visita": "Huracán",
       "local_slug": "river-plate",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 54.9,
+        "empate": 27.7,
+        "visita": 17.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Rosario Central",
       "visita": "Argentinos Juniors",
       "local_slug": "rosario-central",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.4,
+        "empate": 31.3,
+        "visita": 28.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Boca Juniors",
       "local_slug": "san-lorenzo",
-      "visita_slug": "boca-juniors"
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 30.8,
+        "empate": 33.4,
+        "visita": 35.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Independiente",
       "local_slug": "union",
-      "visita_slug": "independiente"
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 34.9,
+        "empate": 32.4,
+        "visita": 32.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 10,
-      "fecha": "20/09/2026",
+      "dia": "2026-09-20",
       "hora": "17:00",
-      "utc": "2026-09-20T20:00:00Z",
       "aplazado": false,
       "local": "Vélez Sarsfield",
       "visita": "Tigre",
       "local_slug": "velez-sarsfield",
-      "visita_slug": "tigre"
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 46.4,
+        "empate": 30.8,
+        "visita": 22.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Argentinos Juniors",
       "visita": "Tigre",
       "local_slug": "argentinos-juniors",
-      "visita_slug": "tigre"
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 45.7,
+        "empate": 30.9,
+        "visita": 23.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Atlético Tucumán",
       "visita": "Barracas Central",
       "local_slug": "atletico-tucuman",
-      "visita_slug": "barracas-central"
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 43.1,
+        "empate": 30.3,
+        "visita": 26.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Banfield",
       "visita": "Rosario Central",
       "local_slug": "banfield",
-      "visita_slug": "rosario-central"
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": {
+        "local": 36.8,
+        "empate": 31.9,
+        "visita": 31.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Boca Juniors",
       "visita": "Unión",
       "local_slug": "boca-juniors",
-      "visita_slug": "union"
+      "visita_slug": "union",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 56.2,
+        "empate": 27.2,
+        "visita": 16.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Defensa y Justicia",
       "visita": "San Lorenzo",
       "local_slug": "defensa-y-justicia",
-      "visita_slug": "san-lorenzo"
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 40.3,
+        "empate": 32.0,
+        "visita": 27.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Deportivo Riestra",
       "visita": "Central Córdoba (SdE)",
       "local_slug": "deportivo-riestra",
-      "visita_slug": "central-cordoba-sde"
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.9,
+        "empate": 32.5,
+        "visita": 22.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (LP)",
       "visita": "Gimnasia (M)",
       "local_slug": "estudiantes-lp",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 50.0,
+        "empate": 29.3,
+        "visita": 20.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (RC)",
       "visita": "Racing Club",
       "local_slug": "estudiantes-rc",
-      "visita_slug": "racing-club"
+      "visita_slug": "racing-club",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 26.2,
+        "empate": 30.6,
+        "visita": 43.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Huracán",
       "visita": "Aldosivi",
       "local_slug": "huracan",
-      "visita_slug": "aldosivi"
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 53.8,
+        "empate": 28.8,
+        "visita": 17.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Independiente",
       "visita": "Instituto",
       "local_slug": "independiente",
-      "visita_slug": "instituto"
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 48.7,
+        "empate": 30.5,
+        "visita": 20.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Independiente Rivadavia",
       "visita": "Gimnasia (LP)",
       "local_slug": "independiente-rivadavia",
-      "visita_slug": "gimnasia-lp"
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.2,
+        "empate": 30.8,
+        "visita": 25.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Newell's Old Boys",
       "visita": "Lanús",
       "local_slug": "newell-s-old-boys",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.0,
+        "empate": 31.3,
+        "visita": 30.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Sarmiento (J)",
       "visita": "River Plate",
       "local_slug": "sarmiento-j",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 21.1,
+        "empate": 29.3,
+        "visita": 49.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Belgrano",
       "local_slug": "talleres-c",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 45.0,
+        "empate": 31.0,
+        "visita": 23.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 11,
-      "fecha": "04/10/2026",
+      "dia": "2026-10-04",
       "hora": "17:00",
-      "utc": "2026-10-04T20:00:00Z",
       "aplazado": false,
       "local": "Vélez Sarsfield",
       "visita": "Platense",
       "local_slug": "velez-sarsfield",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 47.5,
+        "empate": 31.8,
+        "visita": 20.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Sarmiento (J)",
       "local_slug": "aldosivi",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.6,
+        "empate": 32.2,
+        "visita": 29.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Huracán",
       "local_slug": "barracas-central",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 34.7,
+        "empate": 33.2,
+        "visita": 32.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Estudiantes (LP)",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 32.6,
+        "empate": 31.2,
+        "visita": 36.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Atlético Tucumán",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 43.0,
+        "empate": 30.6,
+        "visita": 26.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Newell's Old Boys",
       "local_slug": "gimnasia-m",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 40.0,
+        "empate": 31.8,
+        "visita": 28.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Instituto",
       "visita": "Boca Juniors",
       "local_slug": "instituto",
-      "visita_slug": "boca-juniors"
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 27.1,
+        "empate": 31.6,
+        "visita": 41.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Lanús",
       "visita": "Vélez Sarsfield",
       "local_slug": "lanus",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 39.2,
+        "empate": 31.4,
+        "visita": 29.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Platense",
       "visita": "Argentinos Juniors",
       "local_slug": "platense",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 33.7,
+        "empate": 33.9,
+        "visita": 32.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Belgrano",
       "local_slug": "racing-club",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 51.2,
+        "empate": 28.3,
+        "visita": 20.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "River Plate",
       "visita": "Estudiantes (RC)",
       "local_slug": "river-plate",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 66.4,
+        "empate": 22.5,
+        "visita": 11.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Rosario Central",
       "visita": "Independiente Rivadavia",
       "local_slug": "rosario-central",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.3,
+        "empate": 30.1,
+        "visita": 25.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Deportivo Riestra",
       "local_slug": "san-lorenzo",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.2,
+        "empate": 35.6,
+        "visita": 24.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Independiente",
       "local_slug": "talleres-c",
-      "visita_slug": "independiente"
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.5,
+        "empate": 32.3,
+        "visita": 28.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Tigre",
       "visita": "Banfield",
       "local_slug": "tigre",
-      "visita_slug": "banfield"
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 42.6,
+        "empate": 31.7,
+        "visita": 25.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 12,
-      "fecha": "11/10/2026",
+      "dia": "2026-10-11",
       "hora": "17:00",
-      "utc": "2026-10-11T20:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Defensa y Justicia",
       "local_slug": "union",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 39.7,
+        "empate": 30.5,
+        "visita": 29.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Atlético Tucumán",
       "visita": "Rosario Central",
       "local_slug": "atletico-tucuman",
-      "visita_slug": "rosario-central"
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": {
+        "local": 36.9,
+        "empate": 30.5,
+        "visita": 32.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Banfield",
       "visita": "Argentinos Juniors",
       "local_slug": "banfield",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.0,
+        "empate": 33.0,
+        "visita": 32.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Belgrano",
       "visita": "River Plate",
       "local_slug": "belgrano",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 27.7,
+        "empate": 30.2,
+        "visita": 42.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Boca Juniors",
       "visita": "Talleres (C)",
       "local_slug": "boca-juniors",
-      "visita_slug": "talleres-c"
+      "visita_slug": "talleres-c",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 50.8,
+        "empate": 29.2,
+        "visita": 20.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Defensa y Justicia",
       "visita": "Instituto",
       "local_slug": "defensa-y-justicia",
-      "visita_slug": "instituto"
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.3,
+        "empate": 29.7,
+        "visita": 24.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Deportivo Riestra",
       "visita": "Unión",
       "local_slug": "deportivo-riestra",
-      "visita_slug": "union"
+      "visita_slug": "union",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.9,
+        "empate": 33.8,
+        "visita": 25.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (LP)",
       "visita": "San Lorenzo",
       "local_slug": "estudiantes-lp",
-      "visita_slug": "san-lorenzo"
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 42.6,
+        "empate": 32.5,
+        "visita": 24.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (RC)",
       "visita": "Aldosivi",
       "local_slug": "estudiantes-rc",
-      "visita_slug": "aldosivi"
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 43.5,
+        "empate": 31.2,
+        "visita": 25.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Huracán",
       "visita": "Gimnasia (LP)",
       "local_slug": "huracan",
-      "visita_slug": "gimnasia-lp"
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.7,
+        "empate": 32.1,
+        "visita": 23.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Independiente Rivadavia",
       "visita": "Tigre",
       "local_slug": "independiente-rivadavia",
-      "visita_slug": "tigre"
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 42.9,
+        "empate": 30.9,
+        "visita": 26.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Newell's Old Boys",
       "visita": "Central Córdoba (SdE)",
       "local_slug": "newell-s-old-boys",
-      "visita_slug": "central-cordoba-sde"
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.8,
+        "empate": 30.5,
+        "visita": 24.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Platense",
       "visita": "Lanús",
       "local_slug": "platense",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 36.0,
+        "empate": 32.7,
+        "visita": 31.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Independiente",
       "local_slug": "racing-club",
-      "visita_slug": "independiente"
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 45.3,
+        "empate": 30.0,
+        "visita": 24.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Sarmiento (J)",
       "visita": "Barracas Central",
       "local_slug": "sarmiento-j",
-      "visita_slug": "barracas-central"
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 37.1,
+        "empate": 32.8,
+        "visita": 30.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 13,
-      "fecha": "18/10/2026",
+      "dia": "2026-10-18",
       "hora": "17:00",
-      "utc": "2026-10-18T20:00:00Z",
       "aplazado": false,
       "local": "Vélez Sarsfield",
       "visita": "Gimnasia (M)",
       "local_slug": "velez-sarsfield",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 49.2,
+        "empate": 30.0,
+        "visita": 20.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Belgrano",
       "local_slug": "aldosivi",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 31.6,
+        "empate": 31.5,
+        "visita": 36.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Argentinos Juniors",
       "visita": "Independiente Rivadavia",
       "local_slug": "argentinos-juniors",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.8,
+        "empate": 30.8,
+        "visita": 24.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Banfield",
       "visita": "Lanús",
       "local_slug": "banfield",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 37.4,
+        "empate": 31.7,
+        "visita": 30.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Estudiantes (RC)",
       "local_slug": "barracas-central",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 45.3,
+        "empate": 31.3,
+        "visita": 23.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Vélez Sarsfield",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 32.5,
+        "empate": 31.8,
+        "visita": 35.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Sarmiento (J)",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 46.1,
+        "empate": 31.6,
+        "visita": 22.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Platense",
       "local_slug": "gimnasia-m",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.3,
+        "empate": 32.9,
+        "visita": 26.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Independiente",
       "visita": "Boca Juniors",
       "local_slug": "independiente",
-      "visita_slug": "boca-juniors"
+      "visita_slug": "boca-juniors",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 33.9,
+        "empate": 32.5,
+        "visita": 33.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Instituto",
       "visita": "Deportivo Riestra",
       "local_slug": "instituto",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 36.8,
+        "empate": 34.8,
+        "visita": 28.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "River Plate",
       "visita": "Racing Club",
       "local_slug": "river-plate",
-      "visita_slug": "racing-club"
+      "visita_slug": "racing-club",
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 51.2,
+        "empate": 26.9,
+        "visita": 21.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Rosario Central",
       "visita": "Huracán",
       "local_slug": "rosario-central",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 41.1,
+        "empate": 32.1,
+        "visita": 26.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Newell's Old Boys",
       "local_slug": "san-lorenzo",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 44.4,
+        "empate": 32.5,
+        "visita": 23.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Defensa y Justicia",
       "local_slug": "talleres-c",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 44.7,
+        "empate": 29.9,
+        "visita": 25.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Tigre",
       "visita": "Atlético Tucumán",
       "local_slug": "tigre",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.5,
+        "empate": 30.2,
+        "visita": 25.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 14,
-      "fecha": "25/10/2026",
+      "dia": "2026-10-25",
       "hora": "18:00",
-      "utc": "2026-10-25T21:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Estudiantes (LP)",
       "local_slug": "union",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 36.0,
+        "empate": 31.6,
+        "visita": 32.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Atlético Tucumán",
       "visita": "Argentinos Juniors",
       "local_slug": "atletico-tucuman",
-      "visita_slug": "argentinos-juniors"
+      "visita_slug": "argentinos-juniors",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.1,
+        "empate": 31.6,
+        "visita": 33.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Belgrano",
       "visita": "Barracas Central",
       "local_slug": "belgrano",
-      "visita_slug": "barracas-central"
+      "visita_slug": "barracas-central",
+      "colores_local": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 45.5,
+        "empate": 30.8,
+        "visita": 23.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Boca Juniors",
       "visita": "River Plate",
       "local_slug": "boca-juniors",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 40.3,
+        "empate": 30.1,
+        "visita": 29.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Defensa y Justicia",
       "visita": "Independiente",
       "local_slug": "defensa-y-justicia",
-      "visita_slug": "independiente"
+      "visita_slug": "independiente",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.0,
+        "empate": 31.3,
+        "visita": 30.7
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Deportivo Riestra",
       "visita": "Talleres (C)",
       "local_slug": "deportivo-riestra",
-      "visita_slug": "talleres-c"
+      "visita_slug": "talleres-c",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 36.2,
+        "empate": 34.7,
+        "visita": 29.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (LP)",
       "visita": "Instituto",
       "local_slug": "estudiantes-lp",
-      "visita_slug": "instituto"
+      "visita_slug": "instituto",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 48.7,
+        "empate": 29.9,
+        "visita": 21.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Estudiantes (RC)",
       "visita": "Gimnasia (LP)",
       "local_slug": "estudiantes-rc",
-      "visita_slug": "gimnasia-lp"
+      "visita_slug": "gimnasia-lp",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 34.9,
+        "empate": 33.0,
+        "visita": 32.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Huracán",
       "visita": "Tigre",
       "local_slug": "huracan",
-      "visita_slug": "tigre"
+      "visita_slug": "tigre",
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 43.4,
+        "empate": 32.3,
+        "visita": 24.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Independiente Rivadavia",
       "visita": "Banfield",
       "local_slug": "independiente-rivadavia",
-      "visita_slug": "banfield"
+      "visita_slug": "banfield",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.0,
+        "empate": 31.2,
+        "visita": 24.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Lanús",
       "visita": "Gimnasia (M)",
       "local_slug": "lanus",
-      "visita_slug": "gimnasia-m"
+      "visita_slug": "gimnasia-m",
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "prob": {
+        "local": 47.7,
+        "empate": 29.4,
+        "visita": 22.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Newell's Old Boys",
       "visita": "Unión",
       "local_slug": "newell-s-old-boys",
-      "visita_slug": "union"
+      "visita_slug": "union",
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.5,
+        "empate": 31.6,
+        "visita": 27.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Platense",
       "visita": "Central Córdoba (SdE)",
       "local_slug": "platense",
-      "visita_slug": "central-cordoba-sde"
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 42.5,
+        "empate": 32.0,
+        "visita": 25.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Racing Club",
       "visita": "Aldosivi",
       "local_slug": "racing-club",
-      "visita_slug": "aldosivi"
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 63.4,
+        "empate": 23.2,
+        "visita": 13.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Sarmiento (J)",
       "visita": "Rosario Central",
       "local_slug": "sarmiento-j",
-      "visita_slug": "rosario-central"
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": {
+        "local": 31.5,
+        "empate": 32.5,
+        "visita": 36.1
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 15,
-      "fecha": "01/11/2026",
+      "dia": "2026-11-01",
       "hora": "18:00",
-      "utc": "2026-11-01T21:00:00Z",
       "aplazado": false,
       "local": "Vélez Sarsfield",
       "visita": "San Lorenzo",
       "local_slug": "velez-sarsfield",
-      "visita_slug": "san-lorenzo"
+      "visita_slug": "san-lorenzo",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "prob": {
+        "local": 41.9,
+        "empate": 33.2,
+        "visita": 24.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "River Plate",
       "local_slug": "aldosivi",
-      "visita_slug": "river-plate"
+      "visita_slug": "river-plate",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "prob": {
+        "local": 19.2,
+        "empate": 26.6,
+        "visita": 54.2
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Argentinos Juniors",
       "visita": "Huracán",
       "local_slug": "argentinos-juniors",
-      "visita_slug": "huracan"
+      "visita_slug": "huracan",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#E01A2B"
+      ],
+      "prob": {
+        "local": 41.5,
+        "empate": 33.0,
+        "visita": 25.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Banfield",
       "visita": "Atlético Tucumán",
       "local_slug": "banfield",
-      "visita_slug": "atletico-tucuman"
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 42.4,
+        "empate": 31.1,
+        "visita": 26.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Racing Club",
       "local_slug": "barracas-central",
-      "visita_slug": "racing-club"
+      "visita_slug": "racing-club",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 30.3,
+        "empate": 30.2,
+        "visita": 39.5
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Boca Juniors",
       "visita": "Defensa y Justicia",
       "local_slug": "boca-juniors",
-      "visita_slug": "defensa-y-justicia"
+      "visita_slug": "defensa-y-justicia",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": {
+        "local": 54.4,
+        "empate": 27.2,
+        "visita": 18.4
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Lanús",
       "local_slug": "central-cordoba-sde",
-      "visita_slug": "lanus"
+      "visita_slug": "lanus",
+      "colores_local": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 35.6,
+        "empate": 30.6,
+        "visita": 33.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Belgrano",
       "local_slug": "gimnasia-lp",
-      "visita_slug": "belgrano"
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#123A7A",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 39.1,
+        "empate": 32.1,
+        "visita": 28.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Independiente Rivadavia",
       "local_slug": "gimnasia-m",
-      "visita_slug": "independiente-rivadavia"
+      "visita_slug": "independiente-rivadavia",
+      "colores_local": [
+        "#FFFFFF",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 38.0,
+        "empate": 31.5,
+        "visita": 30.6
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Independiente",
       "visita": "Deportivo Riestra",
       "local_slug": "independiente",
-      "visita_slug": "deportivo-riestra"
+      "visita_slug": "deportivo-riestra",
+      "colores_local": [
+        "#D31820",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 43.8,
+        "empate": 33.9,
+        "visita": 22.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Instituto",
       "visita": "Newell's Old Boys",
       "local_slug": "instituto",
-      "visita_slug": "newell-s-old-boys"
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": {
+        "local": 40.7,
+        "empate": 32.0,
+        "visita": 27.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Rosario Central",
       "visita": "Estudiantes (RC)",
       "local_slug": "rosario-central",
-      "visita_slug": "estudiantes-rc"
+      "visita_slug": "estudiantes-rc",
+      "colores_local": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 52.3,
+        "empate": 28.9,
+        "visita": 18.8
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Platense",
       "local_slug": "san-lorenzo",
-      "visita_slug": "platense"
+      "visita_slug": "platense",
+      "colores_local": [
+        "#0A2A6B",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 44.5,
+        "empate": 33.5,
+        "visita": 22.0
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Estudiantes (LP)",
       "local_slug": "talleres-c",
-      "visita_slug": "estudiantes-lp"
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 40.8,
+        "empate": 31.4,
+        "visita": 27.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Tigre",
       "visita": "Sarmiento (J)",
       "local_slug": "tigre",
-      "visita_slug": "sarmiento-j"
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": {
+        "local": 47.6,
+        "empate": 31.1,
+        "visita": 21.3
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     },
     {
       "ronda": 16,
-      "fecha": "08/11/2026",
+      "dia": "2026-11-08",
       "hora": "18:00",
-      "utc": "2026-11-08T21:00:00Z",
       "aplazado": false,
       "local": "Unión",
       "visita": "Vélez Sarsfield",
       "local_slug": "union",
-      "visita_slug": "velez-sarsfield"
+      "visita_slug": "velez-sarsfield",
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "prob": {
+        "local": 35.8,
+        "empate": 32.3,
+        "visita": 31.9
+      },
+      "estimado": true,
+      "goles_local": null,
+      "goles_visita": null
     }
   ]
 }

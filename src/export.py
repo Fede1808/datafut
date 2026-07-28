@@ -18,9 +18,10 @@ Escribe ocho archivos en web/data/:
   fecha.json       los partidos de la PROXIMA FECHA, con probabilidades, la
                    probabilidad implicita del mercado y la diferencia entre
                    las dos
-  calendario.json  las fechas que faltan del torneo entero: quien juega contra
-                   quien, en que fecha y cuando. Va aparte de fecha.json a
-                   proposito: ver el comentario de la seccion 1b
+  calendario.json  el torneo entero fecha por fecha: quien juega contra quien,
+                   cuando, con que probabilidades y —en lo ya jugado— con el
+                   resultado. Va aparte de fecha.json a proposito: ver el
+                   comentario de la seccion 1b
   titulo.json      los 30 equipos con su chance de salir campeon
   tabla.json       la tabla de posiciones de las dos zonas
   equipos.json     ataque, defensa, descenso, distribucion de puntos, racha,
@@ -523,6 +524,49 @@ def rendimiento_vs_mercado(partidos, temporada):
             for e, r in acum.items()}
 
 
+def jugados_con_ronda(temporada):
+    """
+    Los partidos del torneo que YA SE JUGARON, con la fecha del torneo a la que
+    pertenecen y el resultado.
+
+    DE DONDE SALE LA RONDA, que es lo unico dificil de esto. `fixture.csv` trae
+    SOLO lo que falta jugar: ingest_fixture.py descarta todo lo `finished`, asi
+    que la fecha 1 del Clausura no esta en el calendario y a medida que el
+    torneo avanza van desapareciendo mas fechas. La ronda de lo jugado si esta
+    en `team_match_stats.csv`, porque FotMob la publica en cada partido y
+    clean_stats.py la guarda. Es la MISMA fuente que el fixture y la misma
+    numeracion de fechas: no hay que adivinar nada.
+
+    Cada partido son dos filas en ese CSV (una por equipo), asi que se filtra
+    por `condicion == "local"` para quedarse con una sola y que el local sea el
+    que de verdad jugo de local.
+
+    Devuelve [] si todavia no hay stats: el sitio tiene que poder construirse
+    sin esta capa, igual que en `stats_avanzadas`.
+    """
+    if not STATS.exists():
+        return []
+
+    d = pd.read_csv(STATS)
+    d = d[(d["temporada"] == int(temporada)) &
+          (d["torneo"].astype(str).str.endswith(TORNEO)) &
+          (d["condicion"] == "local")]
+    # La columna `ronda` es texto porque en los playoffs trae "final",
+    # "semifinal" y compania. La fase regular es la que numera fechas; el resto
+    # no entra en una vista fecha a fecha.
+    d = d[d["ronda"].astype(str).str.fullmatch(r"\d+")]
+    if d.empty:
+        return []
+
+    return sorted(
+        ({"ronda": int(f.ronda), "dia": str(f.fecha), "local": f.equipo,
+          "visita": f.rival, "goles_local": int(f.goles),
+          "goles_visita": int(f.goles_rival)}
+         for f in d.itertuples()),
+        key=lambda p: (p["ronda"], p["dia"], p["local"]),
+    )
+
+
 def resumen_partido(modelo, local, visita):
     """Todo lo que el sitio necesita saber de un partido, en un solo lugar."""
     pl, pe, pv = probabilidades_1x2(modelo, local, visita)
@@ -625,15 +669,24 @@ def main():
         print(f"AVISO: no existe {FIXTURES}; los partidos salen sin cuotas.")
 
     pendientes, sin_datos, ya_jugados = [], [], 0
+
+    # El 1X2 de CADA partido del fixture, calculado UNA sola vez. De este mismo
+    # diccionario salen fecha.json y calendario.json: es literalmente el mismo
+    # objeto en los dos archivos, no dos cuentas que dan parecido. Si cada uno
+    # lo calculara por su lado, el dia que alguien toque el redondeo el sitio
+    # publicaria dos numeros distintos para el mismo partido.
+    prob_fixture = {}
+
     for f in fixture.itertuples():
         local, visita = f.local, f.visitante
-        if (local, visita) in jugados_recientes:
-            ya_jugados += 1
-            continue
         if local not in modelo["ataque"] or visita not in modelo["ataque"]:
             sin_datos.append(f"{local} vs {visita}")
             continue
         p = resumen_partido(modelo, local, visita)
+        prob_fixture[f.match_id] = p["prob"]
+        if (local, visita) in jugados_recientes:
+            ya_jugados += 1
+            continue
 
         # Lo que dice el mercado del mismo partido, y en cuanto difiere del
         # modelo. Es el unico numero del sitio que no se puede copiar de
@@ -708,28 +761,81 @@ def main():
         "ultimos": ultimos,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # --- 1b. El calendario completo de lo que falta ---
+    # --- 1b. El torneo entero, fecha por fecha ---
     #
     # ARCHIVO PROPIO, Y NO UNA RAMA DE fecha.json. Es el mismo criterio que
     # separo estadisticas.json de equipos.json: `fecha.json` lo importa
-    # web/lib/datos.ts y eso lo arrastra a TODA la navegacion del sitio. Meterle
-    # las 15 fechas que faltan lo multiplicaria por quince para que las use, como
-    # mucho, una pagina.
+    # web/lib/datos.ts y eso lo arrastra a TODA la navegacion del sitio. Este
+    # pesa ~200 KB y lo lee UNA sola pagina, /calendario, que lo importa
+    # directo. Meterlo en datos.ts seria cobrarle esos 200 KB a la portada, a la
+    # tabla y a las 30 fichas para que no lo usen.
     #
-    # Va sin probabilidades a proposito: son 225 partidos y calcular la matriz de
-    # marcadores de cada uno solo tiene sentido para el que se juega ahora. Esto
-    # es el calendario — quien, cuando, y de que fecha del torneo.
-    calendario = [{
-        "ronda": int(f.ronda),
-        "fecha": f.fecha,
-        "hora": f.hora,
-        "utc": f.utc,
-        "aplazado": bool(f.aplazado),
-        "local": f.local,
-        "visita": f.visitante,
-        "local_slug": slug(f.local),
-        "visita_slug": slug(f.visitante),
-    } for f in fixture.itertuples()]
+    # AHORA VA CON PROBABILIDADES, y antes no. El motivo del cambio: el 1X2 de
+    # una fecha lejana no es basura, es una estimacion peor, y el sitio ya sabe
+    # decir cuanto vale cada numero. Cada partido viene marcado con `estimado`
+    # para que la pagina lo aclare en vez de esconderlo.
+    #
+    # LAS PROBABILIDADES NO SE RECALCULAN: salen de `prob_fixture`, el mismo
+    # diccionario con el que se armo fecha.json. Una fuente, dos consumidores.
+    #
+    # Y ARRANCA EN LA FECHA 1, no en la 2. El fixture solo trae lo que falta
+    # jugar, asi que las fechas ya jugadas no estan ahi; se recuperan de
+    # `jugados_con_ronda` con su resultado. Sin eso la vista fecha a fecha
+    # empezaria en la fecha 2 y el torneo se veria arrancando por la mitad.
+    def _dia_iso(ddmmaaaa):
+        """'28/07/2026' -> '2026-07-28'. El ISO es el que ordena y agrupa."""
+        d, m, a = ddmmaaaa.split("/")
+        return f"{a}-{m}-{d}"
+
+    def _entrada(ronda, dia, hora, aplazado, local, visita, prob,
+                 goles_local=None, goles_visita=None):
+        return {
+            "ronda": ronda,
+            # El dia va en ISO porque es lo que se agrupa y se ordena. El
+            # `dd/mm/aaaa` que muestra el resto del sitio se arma en la UI.
+            "dia": dia,
+            # None en los jugados (no hace falta la hora de un partido que ya
+            # pasó) y en los postergados sin dia confirmado.
+            "hora": hora,
+            "aplazado": aplazado,
+            "local": local,
+            "visita": visita,
+            "local_slug": slug(local),
+            "visita_slug": slug(visita),
+            "colores_local": mapa_color.get(local, ["#7c8089", "#f2f1ec"]),
+            "colores_visita": mapa_color.get(visita, ["#7c8089", "#f2f1ec"]),
+            # None en los jugados: un 1X2 de un partido que ya termino no es
+            # una probabilidad, es ruido. Ahi lo que se muestra es el marcador.
+            "prob": prob,
+            # True = el 1X2 es de una fecha lejana. El modelo estima fuerza a
+            # partir de goles, asi que no se entera de una lesion o de un
+            # refuerzo hasta varias fechas despues. La pagina lo dice.
+            "estimado": prob is not None and ronda != proxima_ronda,
+            "goles_local": goles_local,
+            "goles_visita": goles_visita,
+        }
+
+    jugados_calendario = jugados_con_ronda(TEMPORADA)
+    # Un partido jugado no puede volver a aparecer como pendiente. Pasa de
+    # verdad: las dos fuentes no se enteran del resultado al mismo tiempo.
+    ya_estan = {(p["local"], p["visita"]) for p in jugados_calendario}
+
+    calendario = [
+        _entrada(p["ronda"], p["dia"], None, False, p["local"], p["visita"],
+                 None, p["goles_local"], p["goles_visita"])
+        for p in jugados_calendario
+    ] + [
+        _entrada(int(f.ronda), _dia_iso(f.fecha),
+                 # Un postergado sin dia confirmado arrastra una hora
+                 # provisoria que no significa nada. Mejor un hueco que un
+                 # numero que no se puede cumplir.
+                 None if bool(f.aplazado) else f.hora,
+                 bool(f.aplazado), f.local, f.visitante,
+                 prob_fixture.get(f.match_id))
+        for f in fixture.itertuples()
+        if (f.local, f.visitante) not in ya_estan
+    ]
+
     (SALIDA / "calendario.json").write_text(json.dumps({
         "torneo": TORNEO,
         "temporada": TEMPORADA,
@@ -888,9 +994,13 @@ def main():
     if ya_jugados:
         print(f"                  ({ya_jugados} del fixture ya se jugaron y se "
               f"descartaron)")
-    print(f"    calendario.json  {len(calendario)} partidos por jugar | "
+    con_prob = sum(1 for c in calendario if c["prob"])
+    print(f"    calendario.json  {len(calendario)} partidos | "
           f"fechas {min(c['ronda'] for c in calendario)} a "
-          f"{max(c['ronda'] for c in calendario)}")
+          f"{max(c['ronda'] for c in calendario)} | "
+          f"{len(calendario) - con_prob} jugados con marcador | "
+          f"{con_prob} con 1X2 "
+          f"({sum(1 for c in calendario if c['estimado'])} estimados)")
     print(f"    titulo.json   {len(equipos_sim)} equipos")
     print(f"    tabla.json    {len(filas_tabla)} equipos | {len(jugados)} partidos jugados")
     print(f"    equipos.json  {len(fichas)} equipos")

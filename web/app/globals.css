@@ -330,6 +330,11 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  /* Con cinco secciones en vez de cuatro cada caja tiene menos ancho de
+     sobra, y sin esto una etiqueta ajustada se envolvía en dos líneas adentro
+     de una caja de 44px de alto pensada para una sola. Mejor que se achique
+     el padding lateral a que el texto se parta. */
+  white-space: nowrap;
   cursor: pointer;
   border: 1px solid var(--color-borde);
   border-radius: 4px;
@@ -426,6 +431,156 @@ a:hover > .enlace-ficha {
   }
 }
 
+/*
+  ══ El almanaque: la tira de las 16 fechas ══
+
+  POR QUÉ NO ES UN `<select>` NI SON `.pestania`. Un desplegable escondería lo
+  único que esta página vino a contar: que el torneo son 16 escalones y cuántos
+  ya se subieron. Y `.pestania` es una caja horizontal con la palabra adentro:
+  dieciséis no entran en ningún ancho. Esto es lo mismo en otra forma —caja con
+  filete, e invertida cuando está activa, igual que el resto de lo clickeable
+  del sitio— pero en columna: número grande arriba, estado abajo.
+
+  El alto mínimo es 48px y el ancho 44px: el área de toque del celular se
+  cumple sin `@media (pointer: coarse)`, porque acá no hay una versión compacta
+  para mouse que valga la pena.
+*/
+.almanaque {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-fondo);
+  border-bottom: 2px solid var(--color-tinta);
+  padding-top: 10px;
+}
+.tira {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+}
+.tira::-webkit-scrollbar {
+  height: 4px;
+}
+.tira::-webkit-scrollbar-thumb {
+  background: var(--color-borde2);
+}
+.fecha-btn {
+  flex: none;
+  position: relative;
+  width: 44px;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: 1px solid var(--color-borde);
+  background: var(--color-tarjeta);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-display);
+  color: var(--color-tinta2);
+  transition:
+    background-color 130ms ease,
+    border-color 130ms ease,
+    color 130ms ease;
+}
+.fecha-btn:hover {
+  border-color: var(--color-tinta4);
+  background: var(--color-fondo2);
+}
+.fecha-btn b {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+.fecha-btn i {
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-tinta4);
+}
+/* El punto de estado: la señal que no depende de leer la etiqueta. Va ANTES de
+   la regla de `aria-pressed` a propósito — las dos tienen la misma
+   especificidad, así que la última gana, y si el color apagado de "jugada"
+   fuera después dejaría gris sobre tinta cuando esa fecha está seleccionada. */
+.fecha-btn[data-estado="jugada"] {
+  color: var(--color-tinta3);
+}
+.fecha-btn[data-estado]::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+.fecha-btn[data-estado="jugada"]::after {
+  background: var(--color-sube);
+}
+.fecha-btn[data-estado="aplazada"]::after {
+  background: #e0a020;
+}
+.fecha-btn[aria-pressed="true"] {
+  background: var(--color-tinta);
+  border-color: var(--color-tinta);
+  color: #ffffff;
+}
+.fecha-btn[aria-pressed="true"] i {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* Separador de día adentro de una fecha. Una fecha del fútbol argentino se
+   juega en hasta cinco días y verla como una lista plana pierde esa estructura:
+   es el mismo recurso que ya usa `Resultados`. */
+.dia-sep {
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-tinta3);
+  background: var(--color-fondo2);
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+/* La hora de un partido que todavía no se jugó: caja HUECA, contra la caja
+   LLENA del marcador. Sin mirar el número se sabe si el partido ya pasó. */
+.hora-caja {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums slashed-zero;
+  color: var(--color-tinta3);
+  border: 1px solid var(--color-borde);
+  border-radius: 3px;
+  padding: 5px 8px;
+  white-space: nowrap;
+}
+
+/* Chip de partido postergado. Ámbar propio y no `--color-baja`: no es un error
+   ni algo malo, es un dato incompleto, y el rojo del sitio significa otra cosa
+   (visitante, y caída). */
+.chip-postergado {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8a6412;
+  background: #f7edd4;
+  border: 1px solid #e7d5a8;
+  border-radius: 3px;
+  padding: 3px 7px;
+}
+
 /* --- Animación --- */
 
 /*
@@ -487,6 +642,23 @@ a:hover > .enlace-ficha {
 }
 .panel-anim {
   animation: panel-entra 220ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+/* Cambio de fecha en el almanaque. Sin nada que lo marque, tocar un número de
+   arriba reemplaza quince filas de golpe y se lee como un salto, no como una
+   navegación. Sólo `transform` y `opacity`. */
+@keyframes fecha-entra {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fecha-anim {
+  animation: fecha-entra 280ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

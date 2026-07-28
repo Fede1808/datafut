@@ -20,9 +20,21 @@ import { usePathname } from "next/navigation";
  *
  * Se reusa el lenguaje de los filtros de zona de la tabla a propósito: si todo
  * lo clickeable del sitio se ve igual, se aprende una vez.
+ *
+ * LA PORTADA DEJÓ DE LLAMARSE "FECHA". Tenía sentido cuando era la única
+ * pantalla que mostraba partidos, pero ahora existe `/calendario` con las 16
+ * fechas del torneo y dos secciones casi homónimas ("Fecha" y "Fechas")
+ * confunden más de lo que ordenan. La portada pasa a "Hoy" —sigue siendo la
+ * puerta de entrada y su primer bloque sigue siendo la fecha que se juega
+ * ahora— y el href no se toca: nada la deja de encontrar.
  */
 const SECCIONES = [
-  { href: "/", label: "Fecha", ayuda: "Los partidos que vienen" },
+  { href: "/", label: "Hoy", ayuda: "Los partidos que vienen" },
+  {
+    href: "/calendario",
+    label: "Fechas",
+    ayuda: "Las 16 fechas del torneo, partido por partido",
+  },
   { href: "/tabla", label: "Tabla", ayuda: "Posiciones y probabilidades" },
   { href: "/titulo", label: "Título", ayuda: "Quién puede salir campeón" },
   {
@@ -36,13 +48,18 @@ export function Nav() {
   const ruta = usePathname();
 
   return (
-    // En el celular la nav se va a su propio renglón y las cuatro cajas se
-    // reparten el ancho: cuatro blancos grandes son más fáciles de acertar con
-    // el dedo que cuatro palabras apretadas contra el logo.
+    // En el celular la nav se va a su propio renglón y las cinco cajas se
+    // reparten el ancho: cinco blancos grandes son más fáciles de acertar con
+    // el dedo que cinco palabras apretadas contra el logo.
     //
-    // La cuarta dice "Stats" y no "Estadísticas" por una razón de ancho: con
-    // la palabra entera, cuatro cajas de 11px en versalita no entran en un
-    // celular de 360px y la nav se parte en dos renglones.
+    // La última dice "Stats" y no "Estadísticas" por una razón de ancho: con
+    // la palabra entera, cinco cajas en versalita no entran en un celular de
+    // 360px y la nav se parte en dos renglones. Por lo mismo "Fechas" y no
+    // "Calendario": la etiqueta larga es la que rompía el layout al agregar
+    // esta sección, no el ancho de la caja en sí — ver `.pestania` en
+    // globals.css, que ahora fija `white-space: nowrap` para que una etiqueta
+    // que no entra se note recortando la caja, en vez de partirse en dos
+    // líneas y romper el alto parejo de las cinco.
     <nav aria-label="Secciones" className="w-full sm:w-auto">
       <ul className="flex gap-1.5">
         {SECCIONES.map((s) => {
