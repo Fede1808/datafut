@@ -52,58 +52,58 @@ export default async function PaginaPartido({
   return (
     <div className="py-5">
       {/* --- Cabecera --- */}
-      <div className="border-b border-[#2e2b27] pb-3">
-        <div className="num flex items-center gap-2 text-[9.5px] uppercase tracking-[0.08em] text-[#6d6862]">
+      <div className="tarjeta p-4">
+        <div className="num flex items-center gap-2 text-[9.5px] uppercase tracking-[0.08em] text-[#6d7280]">
           <span>{p.fecha}</span>
           <span aria-hidden>·</span>
           <span>{p.hora}</span>
           {esParejo(p.prob) && (
             <>
               <span aria-hidden>·</span>
-              <span className="text-[#ffbe3d]">Parejo</span>
+              <span className="text-[#1a1c1f]">Parejo</span>
             </>
           )}
         </div>
 
         <div className="mt-2 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
           <LadoEquipo slug={p.local_slug} nombre={p.local} />
-          <span className="num text-[10px] uppercase tracking-[0.1em] text-[#423e38]">
+          <span className="num text-[10px] uppercase tracking-[0.1em] text-[#8d9299]">
             vs
           </span>
           <LadoEquipo slug={p.visita_slug} nombre={p.visita} derecha />
         </div>
-      </div>
 
-      {/* --- 1X2 --- */}
-      <div className="mt-5">
-        <div className="grid grid-cols-3 gap-3">
-          {[
-            { n: p.prob.local, l: "Local", c: "#4d8ce8" },
-            { n: p.prob.empate, l: "Empate", c: "#a09a90" },
-            { n: p.prob.visita, l: "Visita", c: "#f2607d" },
-          ].map((x) => (
-            <div key={x.l}>
-              <div className="cifra text-[clamp(28px,9vw,42px)]" style={{ color: x.c }}>
-                {x.n.toFixed(1)}
-                <span className="text-[0.45em] align-super">%</span>
+        {/* --- 1X2 --- */}
+        <div className="mt-5 border-t border-[#e2e4e0] pt-4">
+          <div className="grid grid-cols-3 gap-3">
+            {[
+              { n: p.prob.local, l: "Local", c: "#2f5fa8" },
+              { n: p.prob.empate, l: "Empate", c: "#4c5058" },
+              { n: p.prob.visita, l: "Visita", c: "#c8102e" },
+            ].map((x) => (
+              <div key={x.l}>
+                <div className="cifra text-[clamp(28px,9vw,42px)]" style={{ color: x.c }}>
+                  {x.n.toFixed(1)}
+                  <span className="text-[0.45em] align-super">%</span>
+                </div>
+                <div className="etiqueta mt-0.5">{x.l}</div>
               </div>
-              <div className="etiqueta mt-0.5">{x.l}</div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-3">
-          <BarraProb {...p.prob} alto={8} />
+            ))}
+          </div>
+          <div className="mt-3">
+            <BarraProb {...p.prob} alto={8} />
+          </div>
         </div>
       </div>
 
       {/* --- Modelo contra mercado ---
           Va acá arriba, antes que los marcadores, y a propósito: es el único
           número de la página que no está en ningún otro lado. */}
-      <section className="mt-8">
+      <section className="tarjeta mt-4 p-4">
         <h2 className="etiqueta">El modelo contra el mercado</h2>
         {p.implicita && p.diferencial ? (
           <>
-            <p className="mt-1 max-w-[62ch] text-[12.5px] leading-relaxed text-[#a09a90]">
+            <p className="mt-1 max-w-[62ch] text-[12.5px] leading-relaxed text-[#4c5058]">
               {frase(p, mayorDiferencia(p.diferencial))}
             </p>
             <div className="mt-3 max-w-[520px]">
@@ -112,7 +112,7 @@ export default async function PaginaPartido({
                 implicita={p.implicita}
                 diferencial={p.diferencial}
               />
-              <p className="num mt-1.5 text-[9px] leading-relaxed text-[#6d6862]">
+              <p className="num mt-1.5 text-[9px] leading-relaxed text-[#6d7280]">
                 Mercado = promedio de las cuotas de todas las casas, sin el
                 margen de la casa. Es el consenso de mucha gente con plata en
                 juego y hoy le gana al modelo por poco, así que una diferencia
@@ -123,39 +123,39 @@ export default async function PaginaPartido({
             </div>
           </>
         ) : (
-          <p className="num mt-1.5 text-[10px] text-[#6d6862]">
+          <p className="num mt-1.5 text-[10px] text-[#6d7280]">
             Este partido todavía no tiene cuotas publicadas, así que no hay con
             qué comparar.
           </p>
         )}
       </section>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
+      <div className="mt-4 grid gap-4 lg:grid-cols-2">
         {/* --- Marcadores --- */}
-        <section>
+        <section className="tarjeta p-4">
           <h2 className="etiqueta">Marcadores más probables</h2>
-          <div className="mt-1.5 border-t-2 border-[#f4f1ea]">
+          <div className="mt-1.5 border-t-2 border-[#1a1c1f]">
             {p.marcadores.map((m) => (
               <div
                 key={m.marcador}
-                className="flex items-center gap-3 border-b border-[#201e1b] py-2"
+                className="flex items-center gap-3 border-b border-[#e2e4e0] py-2"
               >
                 <span className="num w-9 text-[14px] font-semibold">
                   {m.marcador}
                 </span>
-                <span className="h-[6px] flex-1 bg-[#201e1b]">
+                <span className="h-[6px] flex-1 bg-[#e2e4e0]">
                   <span
-                    className="block h-full bg-[#ffbe3d]"
+                    className="block h-full bg-[#1a1c1f]"
                     style={{ width: `${(m.prob / maxMarcador) * 100}%` }}
                   />
                 </span>
-                <span className="num w-11 text-right text-[12px] text-[#a09a90]">
+                <span className="num w-11 text-right text-[12px] text-[#4c5058]">
                   {m.prob.toFixed(1)}%
                 </span>
               </div>
             ))}
           </div>
-          <p className="num mt-1.5 text-[9.5px] text-[#6d6862]">
+          <p className="num mt-1.5 text-[9.5px] text-[#6d7280]">
             Los cinco juntos suman{" "}
             {p.marcadores.reduce((a, m) => a + m.prob, 0).toFixed(0)}%.
           </p>
@@ -172,12 +172,12 @@ export default async function PaginaPartido({
         </section>
 
         {/* --- Fuerzas enfrentadas --- */}
-        <section>
+        <section className="tarjeta p-4">
           <h2 className="etiqueta">Fuerza estimada</h2>
           <div role="table" aria-label="Fuerza estimada de los dos equipos">
             <div
               role="row"
-              className="mt-1.5 flex items-center gap-1.5 border-t-2 border-b border-[#f4f1ea] border-b-[#2e2b27] py-2"
+              className="mt-1.5 flex items-center gap-1.5 border-t-2 border-b border-[#1a1c1f] border-b-[#d3d6d1] py-2"
             >
               <span role="columnheader" className="etiqueta min-w-0 flex-1">
                 Equipo
@@ -203,7 +203,7 @@ export default async function PaginaPartido({
                     key={e.slug}
                     href={`/equipo/${e.slug}`}
                     role="row"
-                    className="fila flex items-center gap-1.5 border-b border-[#201e1b] py-2"
+                    className="fila flex items-center gap-1.5 border-b border-[#e2e4e0] py-2"
                   >
                     <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
                       <Escudo slug={e.slug} colores={e.colores} size={16} />
@@ -216,14 +216,14 @@ export default async function PaginaPartido({
                     <span role="cell" className="num w-14 shrink-0 text-right text-[12px]">
                       {e.playoffs.toFixed(1)}
                     </span>
-                    <span role="cell" className="num w-14 shrink-0 text-right text-[12px] text-[#ffbe3d]">
+                    <span role="cell" className="num w-14 shrink-0 text-right text-[12px] text-[#1a1c1f]">
                       {e.campeon.toFixed(1)}
                     </span>
                   </Link>
                 ),
             )}
           </div>
-          <p className="num mt-1.5 text-[9.5px] text-[#6d6862]">
+          <p className="num mt-1.5 text-[9.5px] text-[#6d7280]">
             Goles que hace y que evita cada uno respecto del promedio de la liga.
           </p>
 
@@ -234,7 +234,7 @@ export default async function PaginaPartido({
               <div className="mt-1.5 grid gap-5">
                 {esc.local && eL && (
                   <div>
-                    <div className="num text-[10px] uppercase tracking-[0.08em] text-[#a09a90]">
+                    <div className="num text-[10px] uppercase tracking-[0.08em] text-[#4c5058]">
                       {eL.equipo}
                     </div>
                     <Escenarios
@@ -246,7 +246,7 @@ export default async function PaginaPartido({
                 )}
                 {esc.visita && eV && (
                   <div>
-                    <div className="num text-[10px] uppercase tracking-[0.08em] text-[#a09a90]">
+                    <div className="num text-[10px] uppercase tracking-[0.08em] text-[#4c5058]">
                       {eV.equipo}
                     </div>
                     <Escenarios
@@ -257,7 +257,7 @@ export default async function PaginaPartido({
                   </div>
                 )}
               </div>
-              <p className="num mt-1.5 text-[9px] leading-relaxed text-[#6d6862]">
+              <p className="num mt-1.5 text-[9px] leading-relaxed text-[#6d7280]">
                 Probabilidad condicional al resultado de este partido, y su
                 diferencia en puntos porcentuales contra el número de hoy.
               </p>
@@ -266,7 +266,7 @@ export default async function PaginaPartido({
         </section>
       </div>
 
-      <p className="num mt-9 border-t border-[#2e2b27] pt-3 text-[9.5px] leading-relaxed text-[#6d6862]">
+      <p className="num mt-9 border-t border-[#d3d6d1] pt-3 text-[9.5px] leading-relaxed text-[#6d7280]">
         Goles esperados por el modelo antes del partido, no xG de disparos ·{" "}
         {metadatos.acierto_pct}% de aciertos 1X2 sobre{" "}
         {metadatos.partidos_historicos.toLocaleString("es-AR")} partidos.
@@ -312,7 +312,7 @@ function LadoEquipo({
     <Link
       href={`/equipo/${slug}`}
       title={`Ver la ficha de ${nombre}`}
-      className={`group flex min-w-0 items-center gap-2.5 py-1 transition-colors hover:text-[#ffbe3d] ${
+      className={`group flex min-w-0 items-center gap-2.5 py-1 transition-colors hover:text-[#1a1c1f] ${
         derecha ? "flex-row-reverse text-right" : ""
       }`}
     >
@@ -322,7 +322,7 @@ function LadoEquipo({
             no había nada que dijera que llevan a algún lado. */}
         <span className="titular-2 enlace-ficha block truncate">{nombre}</span>
         {pos && (
-          <span className="num block text-[9.5px] text-[#6d6862]">
+          <span className="num block text-[9.5px] text-[#6d7280]">
             {pos.puesto}° zona {pos.zona} · {pos.pts} pts · DG{" "}
             {pos.dif > 0 ? "+" : ""}
             {pos.dif}
@@ -338,7 +338,7 @@ function Pct({ valor }: { valor: number }) {
     <span
       role="cell"
       className={`num w-14 shrink-0 text-right text-[12px] ${
-        valor >= 0 ? "text-[#5cc27e]" : "text-[#f2607d]"
+        valor >= 0 ? "text-[#2f8f4e]" : "text-[#c8102e]"
       }`}
     >
       {valor >= 0 ? "+" : "−"}

@@ -19,7 +19,7 @@ export function FilaPartido({ p }: { p: Partido }) {
   return (
     <Link
       href={`/partido/${p.local_slug}-vs-${p.visita_slug}`}
-      className="fila block border-b border-[#2e2b27] px-3 py-2.5 last:border-b-0"
+      className="fila block border-b border-[#d3d6d1] px-3 py-2.5 last:border-b-0"
     >
       <div className="flex items-center justify-between gap-2">
         {/* El puesto va antes del nombre, como en la planilla de un diario. No
@@ -28,7 +28,7 @@ export function FilaPartido({ p }: { p: Partido }) {
         {/* Los dos nombres se acercan al centro, como en la planilla de
             fixture de un diario: el ojo compara los dos equipos, no las dos
             puntas de la fila. El puesto queda afuera, en los márgenes. */}
-        <span className="num w-5 shrink-0 text-[9.5px] text-[#423e38]">
+        <span className="num w-5 shrink-0 text-[9.5px] text-[#8d9299]">
           {l ? `${l.puesto}°` : ""}
         </span>
 
@@ -39,7 +39,7 @@ export function FilaPartido({ p }: { p: Partido }) {
           <Escudo slug={p.local_slug} colores={coloresDe(p.local)} size={16} />
         </span>
 
-        <span className="num shrink-0 text-[9px] uppercase tracking-[0.1em] text-[#423e38]">
+        <span className="num shrink-0 text-[9px] uppercase tracking-[0.1em] text-[#8d9299]">
           vs
         </span>
 
@@ -50,7 +50,7 @@ export function FilaPartido({ p }: { p: Partido }) {
           </span>
         </span>
 
-        <span className="num w-5 shrink-0 text-right text-[9.5px] text-[#423e38]">
+        <span className="num w-5 shrink-0 text-right text-[9.5px] text-[#8d9299]">
           {v ? `${v.puesto}°` : ""}
         </span>
         {/* Flecha permanente: la fila entera es un link a la ficha del partido
@@ -64,27 +64,27 @@ export function FilaPartido({ p }: { p: Partido }) {
         <BarraProb {...p.prob} />
       </div>
 
-      <div className="num mt-1.5 flex items-baseline justify-between gap-2 text-[10px] text-[#a09a90]">
+      <div className="num mt-1.5 flex items-baseline justify-between gap-2 text-[10px] text-[#4c5058]">
         <span className="shrink-0">
-          <span className="text-[#4d8ce8]">{Math.round(p.prob.local)}</span>
-          <span className="text-[#423e38]"> · </span>
-          <span className="text-[#a09a90]">{Math.round(p.prob.empate)}</span>
-          <span className="text-[#423e38]"> · </span>
-          <span className="text-[#f2607d]">{Math.round(p.prob.visita)}</span>
+          <span className="text-[#2f5fa8]">{Math.round(p.prob.local)}</span>
+          <span className="text-[#8d9299]"> · </span>
+          <span className="text-[#4c5058]">{Math.round(p.prob.empate)}</span>
+          <span className="text-[#8d9299]"> · </span>
+          <span className="text-[#c8102e]">{Math.round(p.prob.visita)}</span>
           {esParejo(p.prob) && (
-            <span className="ml-2 text-[9px] uppercase tracking-[0.08em] text-[#6d6862]">
+            <span className="ml-2 text-[9px] uppercase tracking-[0.08em] text-[#6d7280]">
               parejo
             </span>
           )}
         </span>
-        <span className="truncate text-right text-[9.5px] text-[#6d6862]">
+        <span className="truncate text-right text-[9.5px] text-[#6d7280]">
           xG {p.goles_esperados.local.toFixed(2)}–
           {p.goles_esperados.visita.toFixed(2)}
-          <span className="hidden text-[#423e38] sm:inline"> | </span>
+          <span className="hidden text-[#8d9299] sm:inline"> | </span>
           <span className="hidden sm:inline">
             {top.marcador} {top.prob.toFixed(0)}%
           </span>
-          <span className="hidden text-[#423e38] md:inline"> | </span>
+          <span className="hidden text-[#8d9299] md:inline"> | </span>
           <span className="hidden md:inline">
             {p.fecha} {p.hora}
           </span>

@@ -24,10 +24,10 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
   }, {});
 
   return (
-    <div className="md:overflow-hidden md:rounded-[3px] md:border md:border-[#2e2b27]">
+    <div className="md:overflow-hidden md:rounded-[3px] md:border md:border-[#d3d6d1]">
       {Object.entries(porDia).map(([dia, partidos]) => (
         <div key={dia}>
-          <div className="num border-b border-[#2e2b27] bg-[#191714] px-3 py-1 text-[9px] uppercase tracking-[0.08em] text-[#6d6862]">
+          <div className="num border-b border-[#d3d6d1] bg-[#e9ebe7] px-3 py-1 text-[9px] uppercase tracking-[0.08em] text-[#6d7280]">
             {new Date(dia + "T12:00:00").toLocaleDateString("es-AR", {
               weekday: "long",
               day: "numeric",
@@ -50,7 +50,7 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
                   <Escudo slug={r.local_slug} colores={r.colores_local} size={16} />
                   <span
                     className={`enlace-ficha truncate text-[12.5px] ${
-                      ganaLocal ? "text-[#f4f1ea]" : "text-[#8a847c]"
+                      ganaLocal ? "text-[#1a1c1f]" : "text-[#8d9299]"
                     }`}
                   >
                     {r.local}
@@ -58,11 +58,11 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
                 </Link>
 
                 <span className="num shrink-0 px-1 text-[13px] tracking-[0.05em]">
-                  <span className={ganaLocal ? "text-[#ffbe3d]" : "text-[#8a847c]"}>
+                  <span className={ganaLocal ? "text-[#1a1c1f]" : "text-[#8d9299]"}>
                     {r.goles_local}
                   </span>
-                  <span className="text-[#423e38]">–</span>
-                  <span className={ganaVisita ? "text-[#ffbe3d]" : "text-[#8a847c]"}>
+                  <span className="text-[#8d9299]">–</span>
+                  <span className={ganaVisita ? "text-[#1a1c1f]" : "text-[#8d9299]"}>
                     {r.goles_visita}
                   </span>
                 </span>
@@ -73,7 +73,7 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
                 >
                   <span
                     className={`enlace-ficha truncate text-right text-[12.5px] ${
-                      ganaVisita ? "text-[#f4f1ea]" : "text-[#8a847c]"
+                      ganaVisita ? "text-[#1a1c1f]" : "text-[#8d9299]"
                     }`}
                   >
                     {r.visita}

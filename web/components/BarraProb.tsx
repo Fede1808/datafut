@@ -18,16 +18,16 @@ export function BarraProb({
 }) {
   return (
     <div
-      className="flex overflow-hidden bg-[#201e1b]"
+      className="flex overflow-hidden bg-[#e2e4e0]"
       style={{ height: alto }}
       role="img"
       aria-label={`Local ${Math.round(local)}%, empate ${Math.round(
         empate,
       )}%, visitante ${Math.round(visita)}%`}
     >
-      <div style={{ width: `${local}%`, background: "#4d8ce8" }} />
-      <div style={{ width: `${empate}%`, background: "#6d6862" }} />
-      <div style={{ width: `${visita}%`, background: "#f2607d" }} />
+      <div style={{ width: `${local}%`, background: "#2f5fa8" }} />
+      <div style={{ width: `${empate}%`, background: "#6d7280" }} />
+      <div style={{ width: `${visita}%`, background: "#c8102e" }} />
     </div>
   );
 }
@@ -55,7 +55,7 @@ export function esParejo(p: { local: number; empate: number; visita: number }) {
 export function BarraSimple({
   valor,
   maximo,
-  color = "#ffbe3d",
+  color = "#1a1c1f",
   ancho = 46,
 }: {
   valor: number;
@@ -67,7 +67,7 @@ export function BarraSimple({
   return (
     <span
       aria-hidden
-      className="mt-[3px] block h-[2px] bg-[#2e2b27]"
+      className="mt-[3px] block h-[2px] bg-[#d3d6d1]"
       style={{ width: ancho }}
     >
       <span

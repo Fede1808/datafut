@@ -55,7 +55,7 @@ export function DistribucionPuntos({
           y={0}
           width={Math.max(pos(p90) + paso - pos(p10), paso)}
           height={alto}
-          fill="#ffbe3d"
+          fill="#1a1c1f"
           opacity={0.07}
         />
 
@@ -70,7 +70,7 @@ export function DistribucionPuntos({
               y={alto - h}
               width={paso * 0.72}
               height={h}
-              fill={dentro ? "#ffbe3d" : "#423e38"}
+              fill={dentro ? "#1a1c1f" : "#8d9299"}
             />
           );
         })}
@@ -80,14 +80,14 @@ export function DistribucionPuntos({
           y={0}
           width={paso * 0.72}
           height={alto}
-          fill="#f4f1ea"
+          fill="#1a1c1f"
           opacity={0.35}
         />
       </svg>
 
-      <div className="num mt-1 flex justify-between border-t border-[#2e2b27] pt-1 text-[9px] text-[#6d6862]">
+      <div className="num mt-1 flex justify-between border-t border-[#d3d6d1] pt-1 text-[9px] text-[#6d7280]">
         <span>{dist.desde}</span>
-        <span className="text-[#a09a90]">mediana {p50}</span>
+        <span className="text-[#4c5058]">mediana {p50}</span>
         <span>{hasta}</span>
       </div>
     </div>

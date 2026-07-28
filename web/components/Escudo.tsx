@@ -40,7 +40,7 @@ export function Escudo({
     return (
       <span
         aria-hidden
-        className="inline-block shrink-0 rounded-[2px] border border-[#3a3d45]"
+        className="inline-block shrink-0 rounded-[2px] border border-[#d3d6d1]"
         style={{
           width: size,
           height: size,

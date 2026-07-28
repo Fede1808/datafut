@@ -40,14 +40,14 @@ export default function Portada() {
           la fecha siguiente —tarda dias— se muestran los resultados de la que
           acaba de terminar, en vez de una lista vacia.
         */}
-        <section>
+        <section className="tarjeta p-4">
           {partidos.length > 0 ? (
             <>
               <Encabezado
                 titulo="La fecha"
                 detalle={`${partidos.length} partidos · ${partidos[0]?.fecha ?? ""}`}
               />
-              <div className="border-t-2 border-[#f4f1ea]">
+              <div className="border-t-2 border-[#1a1c1f]">
                 {partidos.map((p) => (
                   <FilaPartido key={`${p.local_slug}-${p.visita_slug}`} p={p} />
                 ))}
@@ -59,10 +59,10 @@ export default function Portada() {
                 titulo="Resultados"
                 detalle={`${ultimosResultados.length} partidos · última fecha`}
               />
-              <div className="border-t-2 border-[#f4f1ea]">
+              <div className="border-t-2 border-[#1a1c1f]">
                 <Resultados resultados={ultimosResultados} />
               </div>
-              <p className="num mt-2 text-[9px] leading-relaxed text-[#6d6862]">
+              <p className="num mt-2 text-[9px] leading-relaxed text-[#6d7280]">
                 Los partidos de la fecha que viene aparecen acá cuando se
                 publica el calendario.
               </p>
@@ -71,19 +71,19 @@ export default function Portada() {
         </section>
 
         {/* --- Candidatos --- */}
-        <section className="lg:sticky lg:top-4 lg:self-start">
+        <section className="tarjeta p-4 lg:sticky lg:top-4 lg:self-start">
           <Encabezado titulo="Campeón" detalle={`${torneo} ${temporada}`} />
 
-          <ol className="border-t-2 border-[#f4f1ea]">
+          <ol className="border-t-2 border-[#1a1c1f]">
             {top.map((e, i) => {
               const pos = posicionPorSlug(e.slug);
               return (
-                <li key={e.slug} className="border-b border-[#201e1b]">
+                <li key={e.slug} className="border-b border-[#e2e4e0]">
                   <Link
                     href={`/equipo/${e.slug}`}
                     className="fila flex items-center gap-2 py-2 pl-1"
                   >
-                    <span className="num w-4 shrink-0 text-right text-[10px] text-[#423e38]">
+                    <span className="num w-4 shrink-0 text-right text-[10px] text-[#8d9299]">
                       {i + 1}
                     </span>
                     <Escudo slug={e.slug} colores={e.colores} size={16} />
@@ -91,7 +91,7 @@ export default function Portada() {
                       <span className="enlace-ficha block truncate text-[12.5px]">
                         {e.equipo}
                       </span>
-                      <span className="num block text-[9px] text-[#6d6862]">
+                      <span className="num block text-[9px] text-[#6d7280]">
                         {pos ? `${pos.puesto}° zona ${e.zona} · ` : `zona ${e.zona} · `}
                         playoffs {e.playoffs.toFixed(0)}%
                       </span>
@@ -99,7 +99,7 @@ export default function Portada() {
                     <span className="shrink-0 text-right">
                       <span
                         className={`cifra block text-[17px] ${
-                          i === 0 ? "text-[#ffbe3d]" : "text-[#f4f1ea]"
+                          i === 0 ? "text-[#1a1c1f]" : "text-[#1a1c1f]"
                         }`}
                       >
                         {e.campeon.toFixed(1)}
@@ -114,7 +114,7 @@ export default function Portada() {
             })}
           </ol>
 
-          <div className="num mt-2 flex items-baseline justify-between text-[9.5px] text-[#6d6862]">
+          <div className="num mt-2 flex items-baseline justify-between text-[9.5px] text-[#6d7280]">
             <span>Techo {maximo.toFixed(1)}% — el título sale de playoffs a partido único.</span>
           </div>
 
@@ -127,20 +127,20 @@ export default function Portada() {
       </div>
 
       {/* --- Qué se juega cada uno --- */}
-      <section className="mt-10">
+      <section className="tarjeta mt-6 p-4">
         <Encabezado
           titulo="Lo que está en juego"
           detalle="Chance de playoffs según cómo salga el partido"
         />
-        <div className="grid border-t-2 border-[#f4f1ea] sm:grid-cols-2 sm:gap-x-8">
+        <div className="grid border-t-2 border-[#1a1c1f] sm:grid-cols-2 sm:gap-x-8">
           {enJuego.map((e) => (
             <FilaEnJuego key={e.slug} e={e} />
           ))}
         </div>
-        <p className="num mt-2 text-[9.5px] text-[#6d6862]">
+        <p className="num mt-2 text-[9.5px] text-[#6d7280]">
           Las mismas {metadatos.simulaciones.toLocaleString("es-AR")}{" "}
           simulaciones, agrupadas por el resultado de ese partido.{" "}
-          <Link href="/tabla" className="border-b border-[#423e38] hover:border-[#ffbe3d] hover:text-[#ffbe3d]">
+          <Link href="/tabla" className="border-b border-[#8d9299] hover:border-[#1a1c1f] hover:text-[#1a1c1f]">
             Clasifican {clasificanPorZona} por zona
           </Link>
           .
@@ -148,7 +148,7 @@ export default function Portada() {
       </section>
 
       {/* --- Ficha técnica --- */}
-      <section className="mt-10 border-t border-[#2e2b27] pt-3">
+      <section className="mt-10 border-t border-[#d3d6d1] pt-3">
         <dl className="num grid grid-cols-2 gap-x-6 gap-y-2 text-[10px] sm:grid-cols-4">
           <Ficha
             k="Simulaciones"
@@ -175,7 +175,7 @@ function Encabezado({ titulo, detalle }: { titulo: string; detalle: string }) {
   return (
     <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 pb-1.5">
       <h2 className="titular-2">{titulo}</h2>
-      <span className="num text-[9.5px] uppercase tracking-[0.08em] text-[#6d6862]">
+      <span className="num text-[9.5px] uppercase tracking-[0.08em] text-[#6d7280]">
         {detalle}
       </span>
     </div>
@@ -185,8 +185,8 @@ function Encabezado({ titulo, detalle }: { titulo: string; detalle: string }) {
 function Ficha({ k, v }: { k: string; v: string }) {
   return (
     <div>
-      <dt className="text-[9px] uppercase tracking-[0.08em] text-[#6d6862]">{k}</dt>
-      <dd className="mt-0.5 text-[12px] text-[#f4f1ea]">{v}</dd>
+      <dt className="text-[9px] uppercase tracking-[0.08em] text-[#6d7280]">{k}</dt>
+      <dd className="mt-0.5 text-[12px] text-[#1a1c1f]">{v}</dd>
     </div>
   );
 }
@@ -210,51 +210,51 @@ function FilaEnJuego({ e }: { e: Escenario }) {
   const amp = max - min;
 
   return (
-    <div className="fila border-b border-[#201e1b] py-2.5 pl-1">
+    <div className="fila border-b border-[#e2e4e0] py-2.5 pl-1">
       <div className="flex items-baseline justify-between gap-2">
         <Link
           href={`/equipo/${e.slug}`}
-          className="flex min-w-0 items-center gap-2 py-1 transition-colors hover:text-[#ffbe3d]"
+          className="flex min-w-0 items-center gap-2 py-1 transition-colors hover:text-[#1a1c1f]"
         >
           <Escudo slug={e.slug} colores={coloresDe(e.equipo)} size={14} />
           <span className="enlace-ficha truncate text-[12.5px] font-medium">
             {e.equipo}
           </span>
-          <span className="num shrink-0 text-[9.5px] text-[#6d6862]">
+          <span className="num shrink-0 text-[9.5px] text-[#6d7280]">
             {e.condicion === "local" ? "v." : "@"} {e.rival}
           </span>
         </Link>
-        <span className="num shrink-0 text-[11px] text-[#a09a90]">
+        <span className="num shrink-0 text-[11px] text-[#4c5058]">
           {amp.toFixed(0)} pp
         </span>
       </div>
 
       {/* Rango: la barra ocupa de la rama peor a la mejor, sobre el eje 0–100. */}
-      <div className="relative mt-1.5 h-[6px] bg-[#201e1b]">
+      <div className="relative mt-1.5 h-[6px] bg-[#e2e4e0]">
         <div
-          className="absolute top-0 h-full bg-[#423e38]"
+          className="absolute top-0 h-full bg-[#8d9299]"
           style={{ left: `${min}%`, width: `${amp}%` }}
         />
         <div
-          className="absolute top-0 h-full w-[2px] bg-[#f2607d]"
+          className="absolute top-0 h-full w-[2px] bg-[#c8102e]"
           style={{ left: `calc(${pierde}% - 1px)` }}
           title={`Si pierde: ${pierde.toFixed(1)}%`}
         />
         <div
-          className="absolute top-0 h-full w-[2px] bg-[#5cc27e]"
+          className="absolute top-0 h-full w-[2px] bg-[#2f8f4e]"
           style={{ left: `calc(${gana}% - 1px)` }}
           title={`Si gana: ${gana.toFixed(1)}%`}
         />
       </div>
 
-      <div className="num mt-1 flex justify-between text-[9.5px] text-[#6d6862]">
-        <span className="text-[#f2607d]">pierde {pierde.toFixed(1)}%</span>
+      <div className="num mt-1 flex justify-between text-[9.5px] text-[#6d7280]">
+        <span className="text-[#c8102e]">pierde {pierde.toFixed(1)}%</span>
         <span
           aria-hidden
-          className="h-px flex-1 self-center bg-[#201e1b]"
+          className="h-px flex-1 self-center bg-[#e2e4e0]"
           style={{ marginInline: 8 }}
         />
-        <span className="text-[#5cc27e]">gana {gana.toFixed(1)}%</span>
+        <span className="text-[#2f8f4e]">gana {gana.toFixed(1)}%</span>
       </div>
     </div>
   );

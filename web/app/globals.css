@@ -1,55 +1,57 @@
 @import "tailwindcss";
 
 /*
-  Dirección visual: "boletín de datos".
+  Dirección visual: "cancha" (opción 2b del rediseño).
 
-  Referencia: la página de estadísticas de un diario deportivo impreso. Filetes
-  finos en vez de tarjetas, titulares con serif editorial, y los números en mono
-  tabular porque son los protagonistas: si una columna de porcentajes no alinea
-  la coma, la tabla deja de leerse de un vistazo.
+  Referencia: un scoreboard de cancha y una planilla de club — tarjetas
+  blancas sobre gris, agrupadas por pestañas, y la cabecera de la ficha de
+  equipo se tiñe con los colores reales del club. Nada de negro de fondo ni
+  papel de diario: identidad por color de club, legibilidad por tarjeta.
 
-  Tinta cálida, no el gris azulado de siempre. Todo sale de este bloque.
+  Tipografía: Barlow (texto/UI) + Barlow Condensed (titulares y cifras, estilo
+  scoreboard). Los números siguen en tabular-nums via `.num` — eso no se toca.
 */
 @theme {
   /* Superficies */
-  --color-tinta: #12110f;
-  --color-tinta2: #191816;
-  --color-tinta3: #201e1b;
-  --color-filete: #2e2b27;
-  --color-filete2: #423e38;
+  --color-fondo: #eceeeb;
+  --color-fondo2: #e2e4e0;
+  --color-tarjeta: #ffffff;
+  --color-borde: #d3d6d1;
+  --color-borde2: #c3c8c1;
 
   /* Texto */
-  --color-papel: #f4f1ea;
-  --color-papel2: #a09a90;
-  --color-papel3: #6d6862;
+  --color-tinta: #1a1c1f;
+  --color-tinta2: #4c5058;
+  --color-tinta3: #6d7280;
+  --color-tinta4: #8d9299;
 
-  /* Ámbar: reservado al dato exclusivo del sitio (probabilidad de campeón). */
-  --color-acento: #ffbe3d;
+  /* Semánticos: signos de más/menos, nunca los del club. */
+  --color-sube: #2f8f4e;
+  --color-baja: #c8102e;
 
-  /* Barra de resultado. Fijos, nunca los del club: River vs Independiente
+  /* Barra de resultado 1X2. Fijos, nunca los del club: River vs Independiente
      daría rojo-gris-rojo. */
-  --color-local: #4d8ce8;
-  --color-empate: #6d6862;
-  --color-visita: #f2607d;
+  --color-local: #2f5fa8;
+  --color-empate: #8d9299;
+  --color-visita: #c8102e;
 
-  /* Semánticos */
-  --color-sube: #5cc27e;
-  --color-baja: #f2607d;
-  --color-corte: #5cc27e;
+  /* Acento por defecto de la UI (pestañas activas, foco, subrayados). En la
+     ficha de equipo se sobreescribe con el color del club vía `--acento`
+     inline en el contenedor: ver `FichaEquipo`. */
+  --color-acento: #1a1c1f;
 
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
-  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
-  background: #12110f;
-  color-scheme: dark;
+  background: #eceeeb;
+  color-scheme: light;
 }
 
 body {
-  background: #12110f;
-  color: #f4f1ea;
+  background: #eceeeb;
+  color: #1a1c1f;
   font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.45;
@@ -57,87 +59,76 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Trama fina de fondo. Da textura de papel técnico sin pesar un byte de imagen. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 20%, transparent 75%);
-}
-
 /* --- Tipografía --- */
 
-/* Titular editorial. Serif de alto contraste: separa el titular del dato sin
-   necesidad de subirle el cuerpo. */
+/* Titular tipo scoreboard: condensada, ancha, mayúsculas. */
 .titular {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.02;
-  font-size: clamp(30px, 7vw, 46px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+  font-size: clamp(28px, 6.5vw, 42px);
 }
 
 .titular-2 {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.05;
-  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  font-size: clamp(19px, 4vw, 24px);
 }
 
-/* Etiqueta de sección: versalita mono sobre filete. */
+/* Etiqueta de sección: versalita Barlow Condensed sobre filete. */
 .etiqueta {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.09em;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-papel2);
+  color: var(--color-tinta3);
 }
 
 /* Cualquier número que se compare con otro va con esto. Cifras tabulares y
-   cero rayado: sin eso, un 0.0 y un 8.8 no ocupan lo mismo y la columna baila. */
+   cero rayado: sin eso, un 0.0 y un 8.8 no ocupan lo mismo y la columna baila.
+   Se mantiene tal cual pide el rediseño: no es negociable. */
 .num {
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums slashed-zero;
   font-feature-settings: "tnum" 1, "zero" 1;
 }
 
-/* Cifra grande de titular de dato. */
+/* Cifra grande de titular de dato, estilo scoreboard. */
 .cifra {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-variant-numeric: tabular-nums slashed-zero;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.95;
 }
 
-/* --- Filetes --- */
+/* --- Tarjetas --- */
 
-/* Filete doble de cabecera de sección, como el de un diario. */
-.filete-doble {
-  border-top: 3px solid var(--color-papel);
-  box-shadow: 0 2px 0 -1px var(--color-filete);
+/* Tarjeta blanca sobre gris: la unidad básica del sistema. */
+.tarjeta {
+  background: var(--color-tarjeta);
+  border-radius: 6px;
 }
 
 /* --- Interacción --- */
 
 /* Estado de foco propio: no el anillo azul del navegador ni el outline por
-   defecto de Tailwind. Ámbar, del mismo grosor que los filetes. */
+   defecto de Tailwind. Tinta oscura, funciona sobre blanco, gris y cualquier
+   color de club porque nunca se apoya en el acento. */
 :where(a, button, [tabindex]):focus-visible {
-  outline: 2px solid var(--color-acento);
+  outline: 2px solid #1a1c1f;
   outline-offset: 2px;
   border-radius: 1px;
 }
 
-/* Fila de tabla o de partido. El hover no tiñe la fila entera: corre una barra
-   ámbar por el borde izquierdo, que marca dónde está el cursor sin tapar los
-   números. */
+/* Fila de tabla o de partido. El hover no tiñe la fila entera: corre una
+   barra del color de acento por el borde izquierdo. */
 .fila {
   position: relative;
   transition: background-color 120ms ease;
@@ -149,14 +140,14 @@ body::before {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: var(--color-acento);
+  background: var(--acento, var(--color-acento));
   transform: scaleY(0);
   transform-origin: center;
   transition: transform 140ms ease;
 }
 .fila:hover,
 .fila:focus-visible {
-  background: var(--color-tinta2);
+  background: var(--color-fondo2);
 }
 .fila:hover::before,
 .fila:focus-visible::before {
@@ -166,47 +157,41 @@ body::before {
 /*
   Cabecera de columna ordenable.
 
-  Antes esto era texto gris que sólo se pintaba al pasar el mouse: no había
-  forma de saber que se podía clickear sin descubrirlo de casualidad. Ahora la
-  cabecera se anuncia sola, apagada pero visible, con su par de flechitas
-  siempre en pantalla (ver `.caret`) y un subrayado punteado que dice "esto se
-  toca". El estado activo NO depende sólo del color: además del ámbar, se
-  prende la flecha del sentido y el subrayado pasa a sólido.
-*/
-/*
+  Se anuncia sola, apagada pero visible, con su par de flechitas siempre en
+  pantalla (ver `.caret`) y un subrayado punteado que dice "esto se toca". El
+  estado activo no depende sólo del color: además del acento, se prende la
+  flecha del sentido y el subrayado pasa a sólido.
+
   OJO: acá NO va `display`. Este archivo está fuera de todo `@layer`, así que
-  cualquier propiedad que declare le gana a las utilidades de Tailwind — un
-  `display:flex` de acá anulaba el `hidden` de las columnas opcionales y en el
-  celular la cabecera mostraba columnas que las filas no tenían, desbordando la
-  tabla. El `flex` va en las clases del componente, donde `hidden sm:flex` puede
-  ganarle.
+  cualquier propiedad que declare le gana a las utilidades de Tailwind — el
+  `flex` va en las clases del componente, donde `hidden sm:flex` puede ganarle.
 */
 .th-orden {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  font-weight: 500;
-  letter-spacing: 0.07em;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-papel2);
+  color: var(--color-tinta3);
   cursor: pointer;
   transition:
     color 120ms ease,
     border-color 120ms ease;
   white-space: nowrap;
   padding-bottom: 2px;
-  border-bottom: 1px dotted var(--color-filete2);
-  /* Área de toque: la fila de cabecera mide poco y en el celular una franja de
-     10px de alto es imposible de acertar con el dedo. */
+  border-bottom: 1px dotted var(--color-borde2);
+  /* Área de toque: la fila de cabecera mide poco y en el celular una franja
+     de 10px de alto es imposible de acertar con el dedo. */
   min-height: 26px;
 }
 .th-orden:hover {
-  color: var(--color-papel);
-  border-bottom-color: var(--color-papel2);
+  color: var(--color-tinta);
+  border-bottom-color: var(--color-tinta3);
 }
 .th-orden[aria-sort="descending"],
 .th-orden[aria-sort="ascending"] {
-  color: var(--color-acento);
-  border-bottom: 1px solid var(--color-acento);
+  color: var(--acento, var(--color-acento));
+  border-bottom: 1px solid var(--acento, var(--color-acento));
 }
 
 /* Las dos flechitas del indicador de orden. Siempre visibles: son la señal de
@@ -229,7 +214,7 @@ body::before {
   border-top: 4px solid currentColor;
 }
 .caret-apagado {
-  opacity: 0.28;
+  opacity: 0.32;
 }
 .caret-prendido {
   opacity: 1;
@@ -238,8 +223,8 @@ body::before {
 /*
   Pestañas de navegación y filtros. Un solo lenguaje para todo lo que se
   clickea y cambia de estado: caja con filete, y cuando está activa se invierte
-  (ámbar lleno + tinta). La inversión se lee incluso sin distinguir colores,
-  porque cambia el contraste, no sólo el tono.
+  (acento lleno + texto claro/oscuro según contraste). La inversión se lee
+  incluso sin distinguir colores, porque cambia el contraste, no sólo el tono.
 */
 .pestania {
   display: inline-flex;
@@ -247,15 +232,16 @@ body::before {
   justify-content: center;
   min-height: 44px;
   padding: 0 14px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   cursor: pointer;
-  border: 1px solid var(--color-filete);
-  color: var(--color-papel2);
-  background: transparent;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  color: var(--color-tinta2);
+  background: var(--color-tarjeta);
   transition:
     color 130ms ease,
     background-color 130ms ease,
@@ -263,18 +249,18 @@ body::before {
     transform 130ms ease;
 }
 .pestania:hover {
-  color: var(--color-papel);
-  border-color: var(--color-filete2);
-  background: var(--color-tinta2);
+  color: var(--color-tinta);
+  border-color: var(--color-tinta3);
+  background: var(--color-fondo2);
 }
 .pestania:active {
   transform: translateY(1px);
 }
 .pestania[aria-current="page"],
 .pestania[aria-pressed="true"] {
-  background: var(--color-acento);
-  border-color: var(--color-acento);
-  color: var(--color-tinta);
+  background: var(--acento, var(--color-acento));
+  border-color: var(--acento, var(--color-acento));
+  color: var(--acento-texto, #ffffff);
   font-weight: 700;
 }
 /* Punto de la pestaña activa: la segunda señal, la que no es color. */
@@ -290,21 +276,18 @@ body::before {
 .pestania-chica {
   min-height: 32px;
   padding: 0 10px;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 /*
   Nombre de equipo que lleva a su ficha. Subrayado punteado siempre visible:
   sin esto el nombre parece texto y nadie descubre que hay una página atrás.
-  Al pasar el mouse se vuelve sólido y ámbar.
+  Al pasar el mouse se vuelve sólido y del color de acento.
 */
 .enlace-ficha {
   text-decoration: underline;
   text-decoration-style: dotted;
-  /* Tiene que verse sin tener que buscarlo: con el gris de los filetes
-     (#423e38) el punteado desaparecía contra el fondo y volvíamos al problema
-     de partida. Este gris es el mismo del texto secundario. */
-  text-decoration-color: var(--color-papel3);
+  text-decoration-color: var(--color-tinta4);
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   transition:
@@ -315,30 +298,30 @@ body::before {
 .fila:focus-visible .enlace-ficha,
 a:hover > .enlace-ficha {
   text-decoration-style: solid;
-  text-decoration-color: var(--color-acento);
+  text-decoration-color: var(--acento, var(--color-acento));
 }
 
 /* La flecha del final de una fila clickeable. Apagada de fondo, se acomoda al
    pasar el cursor. Es la señal redundante al subrayado del nombre. */
 .chevron {
-  color: var(--color-filete2);
+  color: var(--color-borde2);
   transition:
     color 130ms ease,
     transform 130ms ease;
 }
 .fila:hover .chevron,
 .fila:focus-visible .chevron {
-  color: var(--color-acento);
+  color: var(--acento, var(--color-acento));
   transform: translateX(2px);
 }
 
 /*
   Área de toque en pantallas táctiles.
 
-  Los encabezados de tabla y los filtros de zona son compactos a propósito: con
-  mouse, 26px se aciertan sin pensar y una cabecera de 44px partiría la grilla
-  en dos. Con el dedo no alcanza. En vez de agrandar todo para todos, se
-  agranda sólo donde el puntero es grueso.
+  Los encabezados de tabla y los filtros de zona son compactos a propósito:
+  con mouse, 26px se aciertan sin pensar y una cabecera de 44px partiría la
+  grilla en dos. Con el dedo no alcanza. En vez de agrandar todo para todos,
+  se agranda sólo donde el puntero es grueso.
 */
 @media (pointer: coarse) {
   .th-orden {
@@ -396,6 +379,21 @@ a:hover > .enlace-ficha {
 }
 .bloque-anim[data-visible="true"] {
   animation: bloque-entra 380ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+/* Entrada de una pestaña de contenido al cambiar de tab. */
+@keyframes panel-entra {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.panel-anim {
+  animation: panel-entra 220ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

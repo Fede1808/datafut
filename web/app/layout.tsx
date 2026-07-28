@@ -1,25 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Instrument_Serif, Archivo, JetBrains_Mono } from "next/font/google";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { torneo, temporada, actualizadoTexto } from "@/lib/datos";
 
-const display = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-});
-const sans = Archivo({
+const sans = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
 });
-const mono = JetBrains_Mono({
+const display = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-mono",
+  weight: ["600", "700", "800"],
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -36,39 +30,39 @@ export default function RootLayout({
   return (
     <html
       lang="es-AR"
-      className={`${display.variable} ${mono.variable} ${sans.variable} h-full antialiased`}
+      className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col bg-[#eceeeb] text-[#1a1c1f]">
         <a
           href="#contenido"
-          className="num sr-only rounded-[2px] bg-[#ffbe3d] px-3 py-2 text-[11px] font-semibold text-[#12110f] focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50"
+          className="num sr-only rounded-[2px] bg-[#1a1c1f] px-3 py-2 text-[11px] font-semibold text-white focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50"
         >
           Ir al contenido
         </a>
 
         {/*
-          Cabecera de diario: título, línea de edición y filete doble. La línea
-          de edición dice torneo, fecha de actualización y motor — es dato, no
+          Cabecera: título tipo scoreboard y línea de edición. La línea de
+          edición dice torneo, fecha de actualización y motor — es dato, no
           decoración.
         */}
         <header className="mx-auto w-full max-w-6xl px-4 pt-4">
           {/* `flex-wrap`: en pantallas angostas la nav baja a su propio
               renglón en vez de comerse el logo. */}
-          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 border-b border-[#2e2b27] pb-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 border-b border-[#d3d6d1] pb-2.5">
             <Link
               href="/"
               aria-label="Modelo/Fut — portada"
               className="block shrink-0 transition-opacity hover:opacity-70"
             >
-              <span className="block font-[family-name:var(--font-display)] text-[27px] leading-none tracking-[-0.02em] sm:text-[34px]">
-                Modelo<span className="text-[#ffbe3d]">/</span>Fut
+              <span className="titular block !text-[26px] leading-none sm:!text-[32px]">
+                Modelo<span className="text-[#c8102e]">/</span>Fut
               </span>
             </Link>
             <Nav />
           </div>
 
-          <div className="num flex flex-wrap items-center gap-x-3 gap-y-0.5 border-b-2 border-[#2e2b27] py-1.5 text-[9.5px] uppercase tracking-[0.08em] text-[#6d6862]">
-            <span className="text-[#a09a90]">
+          <div className="num flex flex-wrap items-center gap-x-3 gap-y-0.5 border-b-2 border-[#1a1c1f] py-1.5 text-[9.5px] uppercase tracking-[0.08em] text-[#6d7280]">
+            <span className="text-[#8d9299]">
               {torneo} {temporada}
             </span>
             <span aria-hidden>·</span>
@@ -85,7 +79,7 @@ export default function RootLayout({
         </main>
 
         <footer className="mx-auto mt-12 w-full max-w-6xl px-4 pb-8">
-          <div className="border-t border-[#2e2b27] pt-3 num text-[10px] leading-relaxed text-[#6d6862]">
+          <div className="border-t border-[#d3d6d1] pt-3 num text-[10px] leading-relaxed text-[#6d7280]">
             {/*
               El aviso nombra los escudos desde que se empezaron a usar: decir
               solo "nombres de clubes" cuando en pantalla hay 30 escudos deja

@@ -11,19 +11,19 @@ export default function Titulo() {
 
   return (
     <div className="py-5">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-[#2e2b27] pb-2">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-[#d3d6d1] pb-2">
         <h1 className="titular">Campeón</h1>
-        <p className="num text-[10px] uppercase tracking-[0.08em] text-[#6d6862]">
+        <p className="num text-[10px] uppercase tracking-[0.08em] text-[#6d7280]">
           {torneo} {temporada} ·{" "}
           {metadatos.simulaciones.toLocaleString("es-AR")} simulaciones
         </p>
       </div>
 
-      <div className="mt-5">
+      <div className="tarjeta mt-5 p-4">
         <TablaTitulo filas={posicionesCompletas} />
       </div>
 
-      <div className="num mt-5 grid gap-2 border-t border-[#2e2b27] pt-3 text-[9.5px] leading-relaxed text-[#6d6862] sm:grid-cols-2">
+      <div className="num mt-5 grid gap-2 border-t border-[#d3d6d1] pt-3 text-[9.5px] leading-relaxed text-[#6d7280] sm:grid-cols-2">
         <p>
           Techo {maximo.toFixed(1)}%: el título son cuatro partidos únicos
           seguidos.
@@ -33,7 +33,7 @@ export default function Titulo() {
           la liga. Conv.: título dividido playoffs.
         </p>
         <p className="sm:col-span-2">
-          <strong className="font-semibold text-[#a09a90]">xGdif:</strong> goles
+          <strong className="font-semibold text-[#4c5058]">xGdif:</strong> goles
           esperados a favor menos en contra, en toda la temporada. Ataque y
           defensa salen del modelo; el xGdif sale de lo que el equipo generó en
           la cancha. Datos de FotMob.
