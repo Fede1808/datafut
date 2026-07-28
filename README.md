@@ -37,6 +37,7 @@ python src/clean_fixture.py # 2c. -> data/clean/fixture.csv
 python src/report.py    # 3. diagnostica -> data/clean/report.md
 python src/model.py     # 4. entrena el modelo -> data/outputs/modelo.json
 python src/evaluate.py  # 5. mide si sirve -> data/outputs/evaluacion.md
+python src/backtest.py  # 5b. backtest walk-forward, reentrena por fecha (~31 min)
 python src/simulate.py  # 6. simula el torneo -> data/outputs/simulacion.*
 python src/export.py    # 7. arma los JSON del sitio -> web/data/
 ```
@@ -106,6 +107,10 @@ Es un Poisson bivariado con correccion de Dixon-Coles y decaimiento temporal.
 **`evaluate.py` — medir.** Entrena con el pasado y predice el futuro, temporada por
 temporada, y compara contra cuatro referencias. **Un modelo sin evaluacion no es un
 modelo: es una opinion con decimales.**
+
+**`backtest.py` — medir en serio.** Lo mismo que `evaluate.py` pero reentrenando de
+cero en CADA fecha, con corte estricto (`date < fecha`), que es como el modelo va a
+vivir en produccion. Tarda 31 minutos y ese es el precio de un numero honesto.
 
 **`simulate.py` — simular.** Juega diez mil veces el torneo que falta, con las
 probabilidades del modelo, y cuenta quien salio campeon. Hace falta porque en
