@@ -1,0 +1,4277 @@
+[
+  {
+    "clave": "2026-Clausura-Boca Juniors|Estudiantes (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "Estudiantes (LP)",
+    "ronda": 2,
+    "fecha": "05/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 50.2,
+        "empate": 29.2,
+        "visita": 20.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "Belgrano",
+    "ronda": 2,
+    "fecha": "05/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.5,
+        "empate": 31.8,
+        "visita": 27.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Lanús|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Lanús",
+    "ronda": 2,
+    "fecha": "06/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.1,
+        "empate": 30.8,
+        "visita": 30.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Estudiantes (RC)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Argentinos Juniors",
+    "visita": "Estudiantes (RC)",
+    "ronda": 2,
+    "fecha": "28/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 52.5,
+        "empate": 29.6,
+        "visita": 17.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "Sarmiento (J)",
+    "ronda": 2,
+    "fecha": "28/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.5,
+        "empate": 32.1,
+        "visita": 22.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Racing Club|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Racing Club",
+    "ronda": 2,
+    "fecha": "28/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.8,
+        "empate": 29.9,
+        "visita": 33.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Gimnasia (M)",
+    "ronda": 2,
+    "fecha": "28/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.0,
+        "empate": 31.8,
+        "visita": 22.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Barracas Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Aldosivi",
+    "ronda": 2,
+    "fecha": "29/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.9,
+        "empate": 29.1,
+        "visita": 22.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Deportivo Riestra",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Defensa y Justicia",
+    "visita": "Deportivo Riestra",
+    "ronda": 2,
+    "fecha": "29/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.6,
+        "empate": 32.8,
+        "visita": 25.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (LP)|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "River Plate",
+    "ronda": 2,
+    "fecha": "29/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 25.8,
+        "empate": 29.6,
+        "visita": 44.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Instituto|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "Platense",
+    "ronda": 2,
+    "fecha": "29/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.9,
+        "empate": 33.1,
+        "visita": 25.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Central Córdoba (SdE)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "Atlético Tucumán",
+    "ronda": 2,
+    "fecha": "30/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.6,
+        "empate": 30.2,
+        "visita": 29.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "Newell's Old Boys",
+    "ronda": 2,
+    "fecha": "30/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.2,
+        "empate": 30.7,
+        "visita": 21.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Huracán|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente Rivadavia",
+    "visita": "Huracán",
+    "ronda": 2,
+    "fecha": "30/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.9,
+        "empate": 32.8,
+        "visita": 28.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Talleres (C)|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Vélez Sarsfield",
+    "ronda": 2,
+    "fecha": "30/07/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.5,
+        "empate": 32.0,
+        "visita": 27.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Belgrano",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Belgrano",
+    "visita": "Argentinos Juniors",
+    "ronda": 3,
+    "fecha": "01/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 37.4,
+        "empate": 32.5,
+        "visita": 30.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Estudiantes (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (LP)",
+    "visita": "Defensa y Justicia",
+    "ronda": 3,
+    "fecha": "01/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.7,
+        "empate": 29.5,
+        "visita": 24.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Estudiantes (RC)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (RC)",
+    "visita": "Banfield",
+    "ronda": 3,
+    "fecha": "01/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 34.8,
+        "empate": 33.5,
+        "visita": 31.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (M)",
+    "visita": "Unión",
+    "ronda": 3,
+    "fecha": "01/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.4,
+        "empate": 31.5,
+        "visita": 29.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Racing Club|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Tigre",
+    "ronda": 3,
+    "fecha": "01/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 52.3,
+        "empate": 27.7,
+        "visita": 20.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "Gimnasia (LP)",
+    "ronda": 3,
+    "fecha": "02/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.7,
+        "empate": 31.4,
+        "visita": 34.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Deportivo Riestra",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Deportivo Riestra",
+    "visita": "Barracas Central",
+    "ronda": 3,
+    "fecha": "02/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.6,
+        "empate": 33.3,
+        "visita": 23.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Instituto|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Lanús",
+    "visita": "Instituto",
+    "ronda": 3,
+    "fecha": "02/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.4,
+        "empate": 30.0,
+        "visita": 23.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Newell's Old Boys",
+    "visita": "Boca Juniors",
+    "ronda": 3,
+    "fecha": "02/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 27.5,
+        "empate": 31.6,
+        "visita": 40.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-River Plate|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "River Plate",
+    "visita": "Rosario Central",
+    "ronda": 3,
+    "fecha": "02/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 57.0,
+        "empate": 25.6,
+        "visita": 17.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "San Lorenzo",
+    "ronda": 3,
+    "fecha": "03/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.9,
+        "empate": 32.9,
+        "visita": 33.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Huracán",
+    "visita": "Atlético Tucumán",
+    "ronda": 3,
+    "fecha": "03/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.4,
+        "empate": 30.9,
+        "visita": 22.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Platense|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Platense",
+    "visita": "Talleres (C)",
+    "ronda": 3,
+    "fecha": "03/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.8,
+        "empate": 33.6,
+        "visita": 32.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente Rivadavia|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Sarmiento (J)",
+    "visita": "Independiente Rivadavia",
+    "ronda": 3,
+    "fecha": "03/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.1,
+        "empate": 32.8,
+        "visita": 34.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Vélez Sarsfield",
+    "visita": "Independiente",
+    "ronda": 3,
+    "fecha": "03/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.8,
+        "empate": 32.6,
+        "visita": 27.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Argentinos Juniors",
+    "visita": "Racing Club",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 37.5,
+        "empate": 30.8,
+        "visita": 31.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Atlético Tucumán",
+    "visita": "Sarmiento (J)",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.0,
+        "empate": 30.8,
+        "visita": 23.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Belgrano",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "Belgrano",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.6,
+        "empate": 32.6,
+        "visita": 28.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "Vélez Sarsfield",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 49.7,
+        "empate": 29.9,
+        "visita": 20.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Defensa y Justicia",
+    "visita": "Newell's Old Boys",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.8,
+        "empate": 29.8,
+        "visita": 24.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Estudiantes (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Deportivo Riestra",
+    "visita": "Estudiantes (LP)",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.6,
+        "empate": 34.5,
+        "visita": 29.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "Barracas Central",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.4,
+        "empate": 31.0,
+        "visita": 25.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "Platense",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.3,
+        "empate": 31.7,
+        "visita": 20.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente Rivadavia",
+    "visita": "Estudiantes (RC)",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 49.9,
+        "empate": 29.9,
+        "visita": 20.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "Gimnasia (M)",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.3,
+        "empate": 31.4,
+        "visita": 26.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Aldosivi",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 56.2,
+        "empate": 26.5,
+        "visita": 17.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Huracán|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Huracán",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.4,
+        "empate": 34.5,
+        "visita": 26.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Lanús|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Lanús",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.0,
+        "empate": 30.3,
+        "visita": 25.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-River Plate|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "River Plate",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 27.1,
+        "empate": 29.8,
+        "visita": 43.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Central Córdoba (SdE)",
+    "ronda": 4,
+    "fecha": "09/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.1,
+        "empate": 29.8,
+        "visita": 24.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "Tigre",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 32.5,
+        "empate": 31.3,
+        "visita": 36.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Rosario Central",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.7,
+        "empate": 31.2,
+        "visita": 33.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Belgrano",
+    "visita": "Independiente Rivadavia",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.2,
+        "empate": 31.4,
+        "visita": 27.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "Instituto",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.3,
+        "empate": 31.3,
+        "visita": 29.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (LP)",
+    "visita": "Gimnasia (LP)",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.4,
+        "empate": 29.9,
+        "visita": 21.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Estudiantes (RC)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (RC)",
+    "visita": "Atlético Tucumán",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.3,
+        "empate": 32.0,
+        "visita": 31.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (M)",
+    "visita": "Talleres (C)",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 34.5,
+        "empate": 32.0,
+        "visita": 33.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Lanús",
+    "visita": "Independiente",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.2,
+        "empate": 31.6,
+        "visita": 30.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Newell's Old Boys",
+    "visita": "Deportivo Riestra",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 37.2,
+        "empate": 34.8,
+        "visita": 28.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Platense",
+    "visita": "Boca Juniors",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 26.1,
+        "empate": 32.8,
+        "visita": 41.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Banfield",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 53.4,
+        "empate": 27.8,
+        "visita": 18.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "River Plate",
+    "visita": "Argentinos Juniors",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 54.5,
+        "empate": 27.2,
+        "visita": 18.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-San Lorenzo|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Unión",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.9,
+        "empate": 32.2,
+        "visita": 23.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Huracán|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Sarmiento (J)",
+    "visita": "Huracán",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 30.7,
+        "empate": 34.6,
+        "visita": 34.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Vélez Sarsfield",
+    "visita": "Defensa y Justicia",
+    "ronda": 5,
+    "fecha": "16/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.0,
+        "empate": 30.2,
+        "visita": 24.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "Unión",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 32.9,
+        "empate": 31.1,
+        "visita": 36.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Atlético Tucumán",
+    "visita": "Instituto",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.3,
+        "empate": 30.9,
+        "visita": 27.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Platense",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.8,
+        "empate": 32.9,
+        "visita": 27.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Defensa y Justicia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Belgrano",
+    "visita": "Defensa y Justicia",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.6,
+        "empate": 30.8,
+        "visita": 28.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (RC)",
+    "visita": "San Lorenzo",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 30.2,
+        "empate": 34.4,
+        "visita": 35.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (LP)|Gimnasia (M)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "Gimnasia (M)",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.7,
+        "empate": 31.2,
+        "visita": 26.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Huracán",
+    "visita": "Deportivo Riestra",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.3,
+        "empate": 35.4,
+        "visita": 24.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "Independiente Rivadavia",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.3,
+        "empate": 30.7,
+        "visita": 23.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Lanús",
+    "visita": "Argentinos Juniors",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.0,
+        "empate": 31.2,
+        "visita": 28.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Newell's Old Boys",
+    "visita": "Banfield",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.2,
+        "empate": 32.2,
+        "visita": 26.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Boca Juniors",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.0,
+        "empate": 30.4,
+        "visita": 31.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-River Plate|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "River Plate",
+    "visita": "Vélez Sarsfield",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 53.6,
+        "empate": 27.6,
+        "visita": 18.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Sarmiento (J)",
+    "visita": "Estudiantes (LP)",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 29.3,
+        "empate": 32.8,
+        "visita": 37.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Rosario Central|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Rosario Central",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.4,
+        "empate": 30.6,
+        "visita": 26.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "Central Córdoba (SdE)",
+    "ronda": 6,
+    "fecha": "23/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.3,
+        "empate": 29.9,
+        "visita": 23.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Argentinos Juniors",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Argentinos Juniors",
+    "visita": "Aldosivi",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 56.4,
+        "empate": 27.1,
+        "visita": 16.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Belgrano",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Atlético Tucumán",
+    "visita": "Belgrano",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.7,
+        "empate": 31.3,
+        "visita": 30.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "River Plate",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 25.6,
+        "empate": 30.1,
+        "visita": 44.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "Lanús",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 53.7,
+        "empate": 27.7,
+        "visita": 18.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Defensa y Justicia",
+    "visita": "Platense",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.0,
+        "empate": 30.8,
+        "visita": 23.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Deportivo Riestra",
+    "visita": "Vélez Sarsfield",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.3,
+        "empate": 35.2,
+        "visita": 29.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (LP)",
+    "visita": "Newell's Old Boys",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.2,
+        "empate": 30.0,
+        "visita": 21.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Huracán",
+    "visita": "Estudiantes (RC)",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 50.0,
+        "empate": 31.2,
+        "visita": 18.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Independiente",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "Gimnasia (M)",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 50.0,
+        "empate": 29.9,
+        "visita": 20.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente Rivadavia|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente Rivadavia",
+    "visita": "Racing Club",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 34.6,
+        "empate": 30.3,
+        "visita": 35.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Instituto|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "San Lorenzo",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.6,
+        "empate": 33.8,
+        "visita": 30.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (LP)|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Gimnasia (LP)",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.6,
+        "empate": 30.0,
+        "visita": 23.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Central Córdoba (SdE)",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 51.1,
+        "empate": 28.7,
+        "visita": 20.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "Barracas Central",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.9,
+        "empate": 30.6,
+        "visita": 24.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Sarmiento (J)|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Sarmiento (J)",
+    "ronda": 7,
+    "fecha": "30/08/2026",
+    "prediccion": {
+      "prob": {
+        "local": 47.4,
+        "empate": 31.0,
+        "visita": 21.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Banfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "Banfield",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.7,
+        "empate": 31.9,
+        "visita": 34.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Barracas Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Argentinos Juniors",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.9,
+        "empate": 32.2,
+        "visita": 33.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Belgrano",
+    "visita": "Huracán",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.1,
+        "empate": 33.4,
+        "visita": 28.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Independiente",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "Independiente",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 31.6,
+        "empate": 31.9,
+        "visita": 36.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (RC)",
+    "visita": "Sarmiento (J)",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.5,
+        "empate": 33.6,
+        "visita": 26.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (LP)|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "Tigre",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.0,
+        "empate": 31.7,
+        "visita": 28.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Gimnasia (M)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (M)",
+    "visita": "Boca Juniors",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 26.4,
+        "empate": 31.1,
+        "visita": 42.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Lanús",
+    "visita": "Defensa y Justicia",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.3,
+        "empate": 29.4,
+        "visita": 27.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Platense",
+    "visita": "Deportivo Riestra",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.3,
+        "empate": 36.3,
+        "visita": 28.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Atlético Tucumán",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 55.7,
+        "empate": 26.1,
+        "visita": 18.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente Rivadavia|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "River Plate",
+    "visita": "Independiente Rivadavia",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 58.8,
+        "empate": 25.2,
+        "visita": 16.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Newell's Old Boys|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Newell's Old Boys",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.4,
+        "empate": 30.1,
+        "visita": 23.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-San Lorenzo|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Talleres (C)",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.0,
+        "empate": 33.2,
+        "visita": 27.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Instituto|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Instituto",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.8,
+        "empate": 31.3,
+        "visita": 25.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Vélez Sarsfield",
+    "visita": "Estudiantes (LP)",
+    "ronda": 8,
+    "fecha": "06/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.1,
+        "empate": 31.7,
+        "visita": 27.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Argentinos Juniors",
+    "visita": "Gimnasia (LP)",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 47.0,
+        "empate": 30.7,
+        "visita": 22.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Atlético Tucumán",
+    "visita": "River Plate",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 25.2,
+        "empate": 28.5,
+        "visita": 46.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Barracas Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "Barracas Central",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.8,
+        "empate": 31.6,
+        "visita": 25.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Central Córdoba (SdE)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "Central Córdoba (SdE)",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 60.7,
+        "empate": 25.1,
+        "visita": 14.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Gimnasia (M)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Defensa y Justicia",
+    "visita": "Gimnasia (M)",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 47.5,
+        "empate": 29.2,
+        "visita": 23.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Deportivo Riestra",
+    "visita": "Lanús",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.5,
+        "empate": 33.6,
+        "visita": 27.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (LP)",
+    "visita": "Platense",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.3,
+        "empate": 31.0,
+        "visita": 20.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Huracán|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Huracán",
+    "visita": "Racing Club",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.5,
+        "empate": 31.9,
+        "visita": 32.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "San Lorenzo",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.7,
+        "empate": 33.1,
+        "visita": 24.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente Rivadavia",
+    "visita": "Aldosivi",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 53.6,
+        "empate": 27.6,
+        "visita": 18.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "Estudiantes (RC)",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.4,
+        "empate": 31.4,
+        "visita": 22.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Newell's Old Boys|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Newell's Old Boys",
+    "visita": "Vélez Sarsfield",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 34.7,
+        "empate": 32.7,
+        "visita": 32.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Sarmiento (J)",
+    "visita": "Belgrano",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.2,
+        "empate": 33.5,
+        "visita": 33.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Talleres (C)|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Unión",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.6,
+        "empate": 30.3,
+        "visita": 23.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Rosario Central|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "Rosario Central",
+    "ronda": 9,
+    "fecha": "13/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.8,
+        "empate": 31.1,
+        "visita": 30.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Atlético Tucumán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "Atlético Tucumán",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.1,
+        "empate": 30.5,
+        "visita": 34.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Independiente Rivadavia",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 37.5,
+        "empate": 31.4,
+        "visita": 31.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Estudiantes (RC)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Belgrano",
+    "visita": "Estudiantes (RC)",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.9,
+        "empate": 30.7,
+        "visita": 20.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Defensa y Justicia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "Defensa y Justicia",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.1,
+        "empate": 30.2,
+        "visita": 33.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "Banfield",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.2,
+        "empate": 32.1,
+        "visita": 26.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Gimnasia (M)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (M)",
+    "visita": "Deportivo Riestra",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.2,
+        "empate": 34.6,
+        "visita": 29.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Instituto|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "Talleres (C)",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.2,
+        "empate": 32.3,
+        "visita": 32.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Lanús",
+    "visita": "Estudiantes (LP)",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.4,
+        "empate": 30.8,
+        "visita": 29.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Newell's Old Boys|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Platense",
+    "visita": "Newell's Old Boys",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.0,
+        "empate": 33.4,
+        "visita": 27.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Racing Club|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Sarmiento (J)",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 58.5,
+        "empate": 26.3,
+        "visita": 15.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Huracán|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "River Plate",
+    "visita": "Huracán",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 54.9,
+        "empate": 27.7,
+        "visita": 17.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Argentinos Juniors",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.4,
+        "empate": 31.3,
+        "visita": 28.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Boca Juniors",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 30.8,
+        "empate": 33.4,
+        "visita": 35.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Independiente",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 34.9,
+        "empate": 32.4,
+        "visita": 32.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Tigre|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Vélez Sarsfield",
+    "visita": "Tigre",
+    "ronda": 10,
+    "fecha": "20/09/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.4,
+        "empate": 30.8,
+        "visita": 22.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Argentinos Juniors",
+    "visita": "Tigre",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.7,
+        "empate": 30.9,
+        "visita": 23.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Barracas Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Atlético Tucumán",
+    "visita": "Barracas Central",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.1,
+        "empate": 30.3,
+        "visita": 26.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "Rosario Central",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.8,
+        "empate": 31.9,
+        "visita": 31.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "Unión",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 56.2,
+        "empate": 27.2,
+        "visita": 16.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Defensa y Justicia",
+    "visita": "San Lorenzo",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.3,
+        "empate": 32.0,
+        "visita": 27.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Deportivo Riestra",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Deportivo Riestra",
+    "visita": "Central Córdoba (SdE)",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.9,
+        "empate": 32.5,
+        "visita": 22.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Gimnasia (M)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (LP)",
+    "visita": "Gimnasia (M)",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 50.0,
+        "empate": 29.3,
+        "visita": 20.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (RC)",
+    "visita": "Racing Club",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 26.2,
+        "empate": 30.6,
+        "visita": 43.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Huracán",
+    "visita": "Aldosivi",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 53.8,
+        "empate": 28.8,
+        "visita": 17.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "Instituto",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.7,
+        "empate": 30.5,
+        "visita": 20.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (LP)|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente Rivadavia",
+    "visita": "Gimnasia (LP)",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.2,
+        "empate": 30.8,
+        "visita": 25.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Lanús|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Newell's Old Boys",
+    "visita": "Lanús",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.0,
+        "empate": 31.3,
+        "visita": 30.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-River Plate|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Sarmiento (J)",
+    "visita": "River Plate",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 21.1,
+        "empate": 29.3,
+        "visita": 49.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Belgrano",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.0,
+        "empate": 31.0,
+        "visita": 23.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Platense|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Vélez Sarsfield",
+    "visita": "Platense",
+    "ronda": 11,
+    "fecha": "04/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 47.5,
+        "empate": 31.8,
+        "visita": 20.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "Sarmiento (J)",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.6,
+        "empate": 32.2,
+        "visita": 29.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Huracán",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 34.7,
+        "empate": 33.2,
+        "visita": 32.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Estudiantes (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "Estudiantes (LP)",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 32.6,
+        "empate": 31.2,
+        "visita": 36.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "Atlético Tucumán",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.0,
+        "empate": 30.6,
+        "visita": 26.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (M)",
+    "visita": "Newell's Old Boys",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.0,
+        "empate": 31.8,
+        "visita": 28.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "Boca Juniors",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 27.1,
+        "empate": 31.6,
+        "visita": 41.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Lanús|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Lanús",
+    "visita": "Vélez Sarsfield",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.2,
+        "empate": 31.4,
+        "visita": 29.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Platense",
+    "visita": "Argentinos Juniors",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.7,
+        "empate": 33.9,
+        "visita": 32.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Belgrano",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 51.2,
+        "empate": 28.3,
+        "visita": 20.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "River Plate",
+    "visita": "Estudiantes (RC)",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 66.4,
+        "empate": 22.5,
+        "visita": 11.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente Rivadavia|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Independiente Rivadavia",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.3,
+        "empate": 30.1,
+        "visita": 25.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Deportivo Riestra",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.2,
+        "empate": 35.6,
+        "visita": 24.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Independiente",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.5,
+        "empate": 32.3,
+        "visita": 28.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "Banfield",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.6,
+        "empate": 31.7,
+        "visita": 25.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Defensa y Justicia",
+    "ronda": 12,
+    "fecha": "11/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.7,
+        "empate": 30.5,
+        "visita": 29.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Atlético Tucumán",
+    "visita": "Rosario Central",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.9,
+        "empate": 30.5,
+        "visita": 32.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Banfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "Argentinos Juniors",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.0,
+        "empate": 33.0,
+        "visita": 32.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Belgrano",
+    "visita": "River Plate",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 27.7,
+        "empate": 30.2,
+        "visita": 42.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "Talleres (C)",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 50.8,
+        "empate": 29.2,
+        "visita": 20.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Defensa y Justicia",
+    "visita": "Instituto",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.3,
+        "empate": 29.7,
+        "visita": 24.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Deportivo Riestra",
+    "visita": "Unión",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.9,
+        "empate": 33.8,
+        "visita": 25.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (LP)",
+    "visita": "San Lorenzo",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.6,
+        "empate": 32.5,
+        "visita": 24.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Estudiantes (RC)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (RC)",
+    "visita": "Aldosivi",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.5,
+        "empate": 31.2,
+        "visita": 25.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (LP)|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Huracán",
+    "visita": "Gimnasia (LP)",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.7,
+        "empate": 32.1,
+        "visita": 23.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente Rivadavia|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente Rivadavia",
+    "visita": "Tigre",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.9,
+        "empate": 30.9,
+        "visita": 26.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Newell's Old Boys",
+    "visita": "Central Córdoba (SdE)",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.8,
+        "empate": 30.5,
+        "visita": 24.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Lanús|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Platense",
+    "visita": "Lanús",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.0,
+        "empate": 32.7,
+        "visita": 31.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Independiente|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Independiente",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.3,
+        "empate": 30.0,
+        "visita": 24.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Sarmiento (J)",
+    "visita": "Barracas Central",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 37.1,
+        "empate": 32.8,
+        "visita": 30.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Vélez Sarsfield",
+    "visita": "Gimnasia (M)",
+    "ronda": 13,
+    "fecha": "18/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 49.2,
+        "empate": 30.0,
+        "visita": 20.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Belgrano",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "Belgrano",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 31.6,
+        "empate": 31.5,
+        "visita": 36.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Argentinos Juniors",
+    "visita": "Independiente Rivadavia",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.8,
+        "empate": 30.8,
+        "visita": 24.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "Lanús",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 37.4,
+        "empate": 31.7,
+        "visita": 30.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Estudiantes (RC)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Estudiantes (RC)",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.3,
+        "empate": 31.3,
+        "visita": 23.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "Vélez Sarsfield",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 32.5,
+        "empate": 31.8,
+        "visita": 35.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (LP)|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "Sarmiento (J)",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 46.1,
+        "empate": 31.6,
+        "visita": 22.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (M)",
+    "visita": "Platense",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.3,
+        "empate": 32.9,
+        "visita": 26.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Independiente",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "Boca Juniors",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 33.9,
+        "empate": 32.5,
+        "visita": 33.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "Deportivo Riestra",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.8,
+        "empate": 34.8,
+        "visita": 28.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Racing Club|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "River Plate",
+    "visita": "Racing Club",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 51.2,
+        "empate": 26.9,
+        "visita": 21.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Huracán|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Huracán",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.1,
+        "empate": 32.1,
+        "visita": 26.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Newell's Old Boys|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Newell's Old Boys",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.4,
+        "empate": 32.5,
+        "visita": 23.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Defensa y Justicia",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.7,
+        "empate": 29.9,
+        "visita": 25.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "Atlético Tucumán",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.5,
+        "empate": 30.2,
+        "visita": 25.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Estudiantes (LP)",
+    "ronda": 14,
+    "fecha": "25/10/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.0,
+        "empate": 31.6,
+        "visita": 32.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Atlético Tucumán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Atlético Tucumán",
+    "visita": "Argentinos Juniors",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.1,
+        "empate": 31.6,
+        "visita": 33.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Belgrano",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Belgrano",
+    "visita": "Barracas Central",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 45.5,
+        "empate": 30.8,
+        "visita": 23.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "River Plate",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.3,
+        "empate": 30.1,
+        "visita": 29.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Defensa y Justicia|Independiente",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Defensa y Justicia",
+    "visita": "Independiente",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.0,
+        "empate": 31.3,
+        "visita": 30.7
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Deportivo Riestra",
+    "visita": "Talleres (C)",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 36.2,
+        "empate": 34.7,
+        "visita": 29.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Instituto",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (LP)",
+    "visita": "Instituto",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 48.7,
+        "empate": 29.9,
+        "visita": 21.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Estudiantes (RC)",
+    "visita": "Gimnasia (LP)",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 34.9,
+        "empate": 33.0,
+        "visita": 32.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Huracán|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Huracán",
+    "visita": "Tigre",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.4,
+        "empate": 32.3,
+        "visita": 24.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Banfield|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente Rivadavia",
+    "visita": "Banfield",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.0,
+        "empate": 31.2,
+        "visita": 24.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Lanús",
+    "visita": "Gimnasia (M)",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 47.7,
+        "empate": 29.4,
+        "visita": 22.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Newell's Old Boys|Unión",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Newell's Old Boys",
+    "visita": "Unión",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.5,
+        "empate": 31.6,
+        "visita": 27.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Platense",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Platense",
+    "visita": "Central Córdoba (SdE)",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.5,
+        "empate": 32.0,
+        "visita": 25.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Racing Club",
+    "visita": "Aldosivi",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 63.4,
+        "empate": 23.2,
+        "visita": 13.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Rosario Central|Sarmiento (J)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Sarmiento (J)",
+    "visita": "Rosario Central",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 31.5,
+        "empate": 32.5,
+        "visita": 36.1
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-San Lorenzo|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Vélez Sarsfield",
+    "visita": "San Lorenzo",
+    "ronda": 15,
+    "fecha": "01/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.9,
+        "empate": 33.2,
+        "visita": 24.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Aldosivi|River Plate",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Aldosivi",
+    "visita": "River Plate",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 19.2,
+        "empate": 26.6,
+        "visita": 54.2
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Argentinos Juniors|Huracán",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Argentinos Juniors",
+    "visita": "Huracán",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 41.5,
+        "empate": 33.0,
+        "visita": 25.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Atlético Tucumán|Banfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Banfield",
+    "visita": "Atlético Tucumán",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 42.4,
+        "empate": 31.1,
+        "visita": 26.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Barracas Central|Racing Club",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Barracas Central",
+    "visita": "Racing Club",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 30.3,
+        "empate": 30.2,
+        "visita": 39.5
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Boca Juniors|Defensa y Justicia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Boca Juniors",
+    "visita": "Defensa y Justicia",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 54.4,
+        "empate": 27.2,
+        "visita": 18.4
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Central Córdoba (SdE)|Lanús",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Central Córdoba (SdE)",
+    "visita": "Lanús",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.6,
+        "empate": 30.6,
+        "visita": 33.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Belgrano|Gimnasia (LP)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (LP)",
+    "visita": "Belgrano",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 39.1,
+        "empate": 32.1,
+        "visita": 28.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Gimnasia (M)|Independiente Rivadavia",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Gimnasia (M)",
+    "visita": "Independiente Rivadavia",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 38.0,
+        "empate": 31.5,
+        "visita": 30.6
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Deportivo Riestra|Independiente",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Independiente",
+    "visita": "Deportivo Riestra",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 43.8,
+        "empate": 33.9,
+        "visita": 22.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Instituto|Newell's Old Boys",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Instituto",
+    "visita": "Newell's Old Boys",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.7,
+        "empate": 32.0,
+        "visita": 27.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (RC)|Rosario Central",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Rosario Central",
+    "visita": "Estudiantes (RC)",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 52.3,
+        "empate": 28.9,
+        "visita": 18.8
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Platense|San Lorenzo",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "San Lorenzo",
+    "visita": "Platense",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 44.5,
+        "empate": 33.5,
+        "visita": 22.0
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Estudiantes (LP)|Talleres (C)",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Talleres (C)",
+    "visita": "Estudiantes (LP)",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 40.8,
+        "empate": 31.4,
+        "visita": 27.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Sarmiento (J)|Tigre",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Tigre",
+    "visita": "Sarmiento (J)",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 47.6,
+        "empate": 31.1,
+        "visita": 21.3
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  },
+  {
+    "clave": "2026-Clausura-Unión|Vélez Sarsfield",
+    "temporada": "2026",
+    "torneo": "Clausura",
+    "local": "Unión",
+    "visita": "Vélez Sarsfield",
+    "ronda": 16,
+    "fecha": "08/11/2026",
+    "prediccion": {
+      "prob": {
+        "local": 35.8,
+        "empate": 32.3,
+        "visita": 31.9
+      },
+      "registrado": "2026-07-28T12:39:04+00:00"
+    },
+    "cuotas": null,
+    "resultado": null
+  }
+]

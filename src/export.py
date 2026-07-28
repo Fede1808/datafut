@@ -65,6 +65,7 @@ TABLA_EQUIPOS = RAIZ / "reference" / "team_names.csv"
 COLORES = RAIZ / "reference" / "colores.csv"
 STATS = RAIZ / "data" / "clean" / "team_match_stats.csv"
 SALIDA = RAIZ / "web" / "data"
+HISTORIAL = SALIDA / "historial.json"
 
 # Medido con validacion temporal sobre 1.236 partidos (2024-2026).
 # Se recalcula con `python src/evaluate.py`; si cambia, actualizar aca.
@@ -607,6 +608,119 @@ def resumen_partido(modelo, local, visita):
     }
 
 
+def clave_historial(temporada, torneo, local, visita):
+    """
+    La clave que decide si un partido ya esta registrado en el historial.
+
+    NO PUEDE LLEVAR LA FECHA NI LA RONDA. El torneo reprograma partidos todo
+    el tiempo -esta documentado que la fecha 2 del Clausura 2026 se juega el
+    28-30/07 para unos equipos y el 5-6/08 para otros- y si la fecha fuera
+    parte de la clave, un partido postergado se registraria dos veces (una
+    prediccion "antes" de saber que se pospuso y otra "despues"), o directo no
+    se encontraria nunca el resultado porque la fecha real de cuando se jugo
+    no coincide con la fecha que tenia el partido cuando se predijo.
+
+    Lo unico que de verdad no cambia es QUIENES JUEGAN. Y alcanza con eso: el
+    formato es de una rueda simple (cada equipo juega una vez contra cada
+    rival de su zona, mas dos interzonales), asi que un mismo par de equipos
+    aparece UNA sola vez por torneo y temporada. Se usa frozenset y no una
+    tupla ordenada porque de local puede figurar cualquiera de los dos segun
+    la fuente (fixture.csv vs matches.csv no siempre coinciden en eso).
+    """
+    return f"{temporada}-{torneo}-{'|'.join(sorted((local, visita)))}"
+
+
+def actualizar_historial(fixture, prob_fixture, cuotas, jugados, temporada, torneo):
+    """
+    El registro de lo que el modelo predijo, para poder medirlo despues.
+
+    LA REGLA QUE ORDENA TODO ESTO Y QUE NO SE NEGOCIA: una prediccion, una vez
+    guardada, NUNCA se recalcula ni se pisa. Aunque se reentrene el modelo,
+    aunque cambie una feature, aunque se arregle un bug -la entrada vieja
+    queda tal cual. El valor entero de este archivo es ser una foto congelada
+    de lo que el modelo creia ANTES de que se jugara el partido; si se
+    recalculara con datos de despues, dejaria de ser una prueba y pasaria a
+    ser una opinion circular sobre si mismo.
+
+    Por eso el flujo es "leer lo que ya existe, agregar solo lo nuevo":
+
+      1. Cada partido del fixture que el modelo sabe predecir (esta en
+         `prob_fixture`) y que TODAVIA no tiene una clave en el historial se
+         agrega con su prediccion, sus cuotas si las hay, y el resultado en
+         None.
+      2. Cada partido que YA se jugo (viene de `jugados`, la misma tabla con
+         la que export.py arma tabla.json) completa el resultado de la
+         entrada que ya estaba, sin tocarle la prediccion ni las cuotas.
+
+    Un partido que se jugo ANTES de que este archivo existiera se pierde para
+    siempre -nunca estuvo pendiente mientras el historial corria, asi que no
+    hay prediccion que registrar-. No es un bug: es la razon por la que cada
+    corrida sin esto es evidencia que no se recupera.
+    """
+    existentes = {}
+    if HISTORIAL.exists():
+        existentes = {e["clave"]: e
+                     for e in json.loads(HISTORIAL.read_text(encoding="utf-8"))}
+
+    ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    nuevos = 0
+    for f in fixture.itertuples():
+        prob = prob_fixture.get(f.match_id)
+        if prob is None:
+            continue  # el modelo no conoce a algun equipo; ver "sin_datos" arriba
+        clave = clave_historial(temporada, torneo, f.local, f.visitante)
+        if clave in existentes:
+            continue
+
+        c = cuotas.get(frozenset((f.local, f.visitante)))
+        if c is None:
+            cuotas_partido = None
+        else:
+            local_en_cuotas, ch, cd, ca = c
+            if local_en_cuotas != f.local:
+                ch, ca = ca, ch  # la otra fuente lo tenia al reves
+            valores = [ch, cd, ca]
+            cuotas_partido = (
+                {"local": ch, "empate": cd, "visita": ca}
+                if all(v is not None and np.isfinite(v) for v in valores)
+                else None
+            )
+
+        existentes[clave] = {
+            "clave": clave,
+            "temporada": temporada,
+            "torneo": torneo,
+            "local": f.local,
+            "visita": f.visitante,
+            "ronda": int(f.ronda),
+            "fecha": f.fecha,
+            "prediccion": {"prob": prob, "registrado": ahora},
+            "cuotas": cuotas_partido,
+            "resultado": None,
+        }
+        nuevos += 1
+
+    completados = 0
+    for j in jugados.itertuples():
+        clave = clave_historial(temporada, torneo, j.home_team, j.away_team)
+        entrada = existentes.get(clave)
+        if entrada is None or entrada["resultado"] is not None:
+            continue  # no estaba pendiente, o ya tiene resultado: no se toca
+        gl, gv = int(j.home_goals), int(j.away_goals)
+        entrada["resultado"] = {
+            "goles_local": gl,
+            "goles_visita": gv,
+            "ganador": "local" if gl > gv else ("visita" if gv > gl else "empate"),
+        }
+        completados += 1
+
+    salida = sorted(existentes.values(),
+                    key=lambda e: (e["ronda"], e["fecha"], e["local"]))
+    HISTORIAL.write_text(json.dumps(salida, ensure_ascii=False, indent=2),
+                         encoding="utf-8")
+    return nuevos, completados, len(salida)
+
+
 def main():
     modelo = leer_json(MODELO, "python src/model.py")
     simulacion = leer_json(SIMULACION, "python src/simulate.py")
@@ -843,6 +957,25 @@ def main():
         "partidos": calendario,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
+    # --- 1c. Historial de predicciones: la unica fuente que no se recalcula ---
+    #
+    # Todo lo demas en este script se recalcula de cero cada corrida a proposito
+    # (es "una fuente, dos consumidores"). Este archivo es la excepcion adrede:
+    # una prediccion ya guardada no se toca nunca mas, porque el dia que se
+    # reentrene el modelo o se arregle un bug, este es el unico lugar que sigue
+    # diciendo que creia el modelo ANTES de saber el resultado. Sin esto no hay
+    # forma de medir calibracion ni log loss real, ni de mostrarle a nadie que
+    # el modelo funciona: solo quedaria la version recalculada de hoy, que no
+    # prueba nada.
+    #
+    # `jugados_del_clausura` es la misma tabla con la que se arma tabla.json
+    # (seccion 3, mas abajo): un partido jugado es el mismo partido jugado para
+    # los dos consumidores.
+    jugados_clausura = jugados_del_clausura(partidos_hist)
+    nuevos, completados, total = actualizar_historial(
+        fixture, prob_fixture, cuotas, jugados_clausura, TEMPORADA, TORNEO,
+    )
+
     # --- 2. Candidatos al titulo ---
     # Solo los campos que necesita la tabla de candidatos y la placa de redes.
     # La distribucion de puntos y el detalle del descenso no van aca: viven en
@@ -1010,6 +1143,8 @@ def main():
           f"a {max((e['pj'] for e in equipos_stats), default=0)}")
     print(f"    escenarios.json  {len(escenarios)} de {len(fichas)} equipos")
     print(f"    meta.json     acierto {ACIERTO}% | {len(partidos_hist):,} partidos historicos")
+    print(f"    historial.json  {total} partidos registrados "
+          f"({nuevos} nuevos, {completados} resultados completados esta corrida)")
 
 
 if __name__ == "__main__":
