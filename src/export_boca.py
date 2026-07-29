@@ -28,6 +28,7 @@ import pandas as pd
 RAIZ = Path(__file__).resolve().parent.parent
 JUGADORES = RAIZ / "data" / "clean" / "player_match_stats.csv"
 REMATES = RAIZ / "data" / "clean" / "shots.csv"
+EQUIPO = RAIZ / "data" / "clean" / "team_match_stats.csv"
 EQUIPOS = RAIZ / "web" / "data" / "equipos.json"
 DESTINO = RAIZ / "web" / "data" / "club.json"
 
@@ -179,9 +180,78 @@ def main():
     a_favor = remates[(remates["equipo"] == CLUB) & del_anio]
     en_contra = remates[(remates["rival"] == CLUB) & del_anio]
 
+    # --- Goles por franja del partido ---
+    # Se cuentan sobre los REMATES que terminaron en gol, no sobre los goles
+    # del marcador: el shotmap trae el minuto y el marcador no. Los goles en
+    # contra y la tanda quedan afuera (`es_gol` ya los excluye).
+    #
+    # La ultima franja es 76-90+ y se lleva el tiempo agregado: FotMob reporta
+    # el minuto 90+3 como 90, asi que un gol al final del partido cae ahi de
+    # todos modos. Decir "76-90" seria mentir por omision.
+    FRANJAS = [(1, 15), (16, 30), (31, 45), (46, 60), (61, 75), (76, 200)]
+    goles_del_anio = a_favor[a_favor["es_gol"]]
+    contra_del_anio = en_contra[en_contra["es_gol"]]
+    franjas = []
+    for desde, hasta in FRANJAS:
+        en_franja = goles_del_anio["minuto"].between(desde, hasta)
+        en_contra_franja = contra_del_anio["minuto"].between(desde, hasta)
+        franjas.append({
+            "etiqueta": f"{desde}-{'90+' if hasta > 90 else hasta}",
+            "favor": int(en_franja.sum()),
+            "contra": int(en_contra_franja.sum()),
+        })
+
+    # --- De local y de visitante ---
+    equipo = leer_csv(EQUIPO, "python src/clean_stats.py")
+    del_club_eq = equipo[equipo["equipo"] == CLUB]
+    del_anio_eq = del_club_eq[del_club_eq["temporada"] == temporada]
+
+    def bloque_condicion(d, etiqueta):
+        if d.empty:
+            return None
+        ganados = int((d["goles"] > d["goles_rival"]).sum())
+        empatados = int((d["goles"] == d["goles_rival"]).sum())
+        perdidos = int((d["goles"] < d["goles_rival"]).sum())
+        pj = int(len(d))
+        return {
+            "condicion": etiqueta,
+            "pj": pj,
+            "g": ganados, "e": empatados, "p": perdidos,
+            "gf": int(d["goles"].sum()),
+            "gc": int(d["goles_rival"].sum()),
+            "pts": ganados * 3 + empatados,
+            # Puntos por partido, que es lo unico comparable cuando de local
+            # jugaste 9 y de visitante 9 pero en otra temporada 21 y 16.
+            "pts_pp": redondear((ganados * 3 + empatados) / pj) if pj else None,
+            "xg": redondear(d["xg"].sum(), 1) if d["xg"].notna().any() else None,
+        }
+
+    local_visita = [
+        b for b in (
+            bloque_condicion(del_anio_eq[del_anio_eq["condicion"] == "local"], "Local"),
+            bloque_condicion(
+                del_anio_eq[del_anio_eq["condicion"] == "visitante"], "Visitante"
+            ),
+        ) if b is not None
+    ]
+
+    # --- Temporada a temporada ---
+    # Son las que HAY, no las que quedarian lindas: FotMob arranca en 2023.
+    # Mas nueva primero, porque el torneo en curso es el que se mira.
+    temporadas = []
+    for anio, g in sorted(del_club_eq.groupby("temporada"), key=lambda x: -x[0]):
+        bloque = bloque_condicion(g, str(int(anio)))
+        if bloque:
+            bloque["temporada"] = int(anio)
+            bloque.pop("condicion")
+            temporadas.append(bloque)
+
     salida = {
         "club": CLUB,
         "temporada": temporada,
+        "franjas": franjas,
+        "local_visita": local_visita,
+        "temporadas": temporadas,
         "slug": ficha["slug"],
         "colores": ficha.get("colores"),
         "min_partidos": MIN_PARTIDOS,

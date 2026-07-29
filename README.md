@@ -31,6 +31,7 @@ resultado con los mismos datos de entrada.
 python src/ingest.py          # 1. baja el CSV original y las cuotas -> data/raw/
 python src/ingest_stats.py    # 1b. baja las stats de FotMob -> data/raw/fotmob/
 python src/ingest_fixture.py  # 1c. baja el calendario que falta jugar (sin cache)
+python src/ingest_fotos.py    # 1d. baja retratos y portada -> web/public/
 python src/clean.py         # 2. lo normaliza -> data/clean/matches.csv
 python src/clean_stats.py   # 2b. -> data/clean/team_match_stats.csv
 python src/clean_fixture.py # 2c. -> data/clean/fixture.csv
@@ -42,10 +43,22 @@ python src/backtest.py  # 5b. backtest walk-forward, reentrena por fecha (~31 mi
 python src/simulate.py  # 6. simula el torneo -> data/outputs/simulacion.*
 python src/export.py      # 7. arma los JSON de la liga -> web/data/
 python src/export_boca.py # 7b. arma el JSON del club -> web/data/club.json
+python src/export_modelo.py # 7c. auditoria del modelo -> web/data/modelo.json
 ```
 
 `export_boca.py` va **despues** de `export.py`: lee `web/data/equipos.json` para
 sacar de ahi las probabilidades y la racha del club.
+
+`ingest_fotos.py` va **despues** de `export_boca.py`: saca del `club.json` la
+lista de jugadores a los que hay que bajarles el retrato.
+
+`export_modelo.py` necesita `data/outputs/backtest-walkforward.csv`, o sea que
+hay que haber corrido `backtest.py` alguna vez (tarda ~31 min). No hace falta
+correrlo en cada fecha: el backtest mide el modelo, no el partido que viene.
+
+Todo lo que se descarga como imagen queda registrado con origen, licencia y
+autor en `reference/fotos.csv`. **La portada es CC BY-SA 4.0: exige atribuir al
+autor en la pagina.**
 
 Y despues el sitio:
 

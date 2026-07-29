@@ -654,6 +654,20 @@ def resumen_partido(modelo, local, visita):
             {"marcador": f"{i}-{j}", "prob": round(100 * float(p), 1)}
             for p, i, j in marcadores
         ],
+        # La matriz recortada a 0-6 goles por lado: 49 celdas.
+        #
+        # Es la MISMA matriz de la que salen `marcadores`, `menos_de_2_5` y
+        # `ambos_convierten` -- no un calculo nuevo. Se expone porque el top 5
+        # esconde justo lo que el modelo tiene de distinto: que no elige un
+        # resultado, reparte probabilidad sobre todos. Un 1-0 al 15% se lee muy
+        # distinto cuando se ve que el 2-1 esta al 9% y el 0-0 al 14%.
+        #
+        # Se corta en 6 y no en MAX_GOLES porque de 7 goles para arriba la
+        # probabilidad es indistinguible de cero en pantalla, y una grilla de
+        # 11x11 con 72 celdas vacias no informa: decora.
+        "matriz": [
+            [round(100 * float(m[i, j]), 2) for j in range(7)] for i in range(7)
+        ],
         "menos_de_2_5": round(100 * menos_25, 1),
         "ambos_convierten": round(100 * ambos, 1),
     }
