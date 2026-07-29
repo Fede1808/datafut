@@ -34,13 +34,18 @@ python src/ingest_fixture.py  # 1c. baja el calendario que falta jugar (sin cach
 python src/clean.py         # 2. lo normaliza -> data/clean/matches.csv
 python src/clean_stats.py   # 2b. -> data/clean/team_match_stats.csv
 python src/clean_fixture.py # 2c. -> data/clean/fixture.csv
+python src/clean_players.py # 2d. -> data/clean/player_match_stats.csv + shots.csv
 python src/report.py    # 3. diagnostica -> data/clean/report.md
 python src/model.py     # 4. entrena el modelo -> data/outputs/modelo.json
 python src/evaluate.py  # 5. mide si sirve -> data/outputs/evaluacion.md
 python src/backtest.py  # 5b. backtest walk-forward, reentrena por fecha (~31 min)
 python src/simulate.py  # 6. simula el torneo -> data/outputs/simulacion.*
-python src/export.py    # 7. arma los JSON del sitio -> web/data/
+python src/export.py      # 7. arma los JSON de la liga -> web/data/
+python src/export_boca.py # 7b. arma el JSON del club -> web/data/club.json
 ```
+
+`export_boca.py` va **despues** de `export.py`: lee `web/data/equipos.json` para
+sacar de ahi las probabilidades y la racha del club.
 
 Y despues el sitio:
 

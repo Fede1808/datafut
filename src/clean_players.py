@@ -1,5 +1,5 @@
 """
-Etapa 2c del pipeline: NORMALIZAR ESTADISTICAS DE JUGADOR Y REMATES.
+Etapa 2d del pipeline: NORMALIZAR ESTADISTICAS DE JUGADOR Y REMATES.
 
 Hermano de clean_stats.py. Lee exactamente los mismos JSON de FotMob que ya
 bajo ingest_stats.py -- no descarga nada nuevo -- y rescata las dos cosas que
