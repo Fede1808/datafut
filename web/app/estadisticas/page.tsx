@@ -1,4 +1,5 @@
 import { PanelEstadisticas } from "@/components/PanelEstadisticas";
+import { Visualizaciones } from "@/components/Visualizaciones";
 import {
   equiposStats,
   fuenteStats,
@@ -76,6 +77,21 @@ export default function Estadisticas() {
 
       <div className="tarjeta mt-5 p-4">
         <PanelEstadisticas />
+      </div>
+
+      {/*
+        Las dos visualizaciones. Van DESPUÉS de los rankings y no antes: el que
+        entra buscando "quién es el mejor en xG" lo tiene que encontrar sin
+        scrollear, y el mapa de calor no contesta esa pregunta —contesta la
+        siguiente, que es "¿y este equipo, cómo es en todo lo demás?".
+
+        Usan 27 de las 39 métricas: las que declaran dirección. Las que dicen
+        "depende del contexto" quedan afuera porque ni el color ni la geometría
+        de un radar saben decir "depende". El detalle está en
+        `lib/visualizaciones.ts`.
+      */}
+      <div className="tarjeta mt-5 p-4">
+        <Visualizaciones />
       </div>
 
       {/* --- La letra chica. No es trámite: sin esto varios de los rankings de
