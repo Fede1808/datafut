@@ -1,19 +1,36 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Barlow, Barlow_Condensed } from "next/font/google";
+import { Archivo, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { torneo, temporada, actualizadoTexto } from "@/lib/datos";
 
-const sans = Barlow({
+/*
+  Las tres familias del rediseño "Ribera".
+
+  Se cargan con next/font, que las descarga en tiempo de build y las
+  autohospeda: no hay request a Google en runtime, no hay salto de fuente y no
+  hay dependencia de un tercero para que el sitio se vea bien.
+
+  Los pesos son exactamente los que usa el diseño, no un rango cómodo: Archivo
+  en 800 y 900 (titulares y cifras), Plex Mono en 400/500/600 (todo lo que es
+  dato) y Plex Sans en 400/500 (texto corrido, que es lo que menos hay).
+  Cada peso extra son ~15 KB que alguien descarga sin usar.
+*/
+const display = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans",
-});
-const display = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["800", "900"],
   variable: "--font-display",
+});
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+});
+const sans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -30,12 +47,12 @@ export default function RootLayout({
   return (
     <html
       lang="es-AR"
-      className={`${display.variable} ${sans.variable} h-full antialiased`}
+      className={`${display.variable} ${mono.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-[#eceeeb] text-[#1a1c1f]">
+      <body className="flex min-h-full flex-col bg-fondo text-tinta">
         <a
           href="#contenido"
-          className="num sr-only rounded-[2px] bg-[#1a1c1f] px-3 py-2 text-[11px] font-semibold text-white focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50"
+          className="dato sr-only rounded-[4px] bg-acento px-3 py-2 text-[11px] font-semibold text-[oklch(0.18_0.03_262)] focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50"
         >
           Ir al contenido
         </a>
@@ -48,27 +65,27 @@ export default function RootLayout({
         <header className="mx-auto w-full max-w-6xl px-4 pt-4">
           {/* `flex-wrap`: en pantallas angostas la nav baja a su propio
               renglón en vez de comerse el logo. */}
-          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 border-b border-[#d3d6d1] pb-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 border-b border-borde pb-2.5">
             {/*
-              El sitio dejó de llamarse Modelo/Fut. Aquel nombre describía la
-              herramienta; este describe de qué se trata, que es lo único que
-              le importa a alguien que entra por primera vez y no sabe nada del
-              proyecto.
+              El sitio se llama RIBERA. Es el barrio de Boca, y por eso funciona
+              como nombre: dice de qué se trata sin usar la marca del club, que
+              no es nuestra. "Boca en números" describía el contenido; esto
+              nombra al producto.
             */}
             <Link
               href="/"
-              aria-label="Boca en números — portada"
+              aria-label="Ribera — portada"
               className="block shrink-0 transition-opacity hover:opacity-70"
             >
               <span className="titular block !text-[26px] leading-none sm:!text-[32px]">
-                Boca<span className="text-[#F7D117]"> en números</span>
+                Ribera<span className="text-acento">.</span>
               </span>
             </Link>
             <Nav />
           </div>
 
-          <div className="num flex flex-wrap items-center gap-x-3 gap-y-0.5 border-b-2 border-[#1a1c1f] py-1.5 text-[9.5px] uppercase tracking-[0.08em] text-[#6d7280]">
-            <span className="text-[#8d9299]">
+          <div className="dato flex flex-wrap items-center gap-x-3 gap-y-0.5 border-b border-borde2 py-2 text-[10px] uppercase tracking-[0.2em] text-tinta4">
+            <span className="text-acento">
               {torneo} {temporada}
             </span>
             <span aria-hidden>·</span>
@@ -76,7 +93,7 @@ export default function RootLayout({
             <span aria-hidden>·</span>
             <span>Act. {actualizadoTexto()}</span>
             <span aria-hidden>·</span>
-            <span>Proyecto no oficial</span>
+            <span>No oficial</span>
           </div>
         </header>
 
@@ -85,17 +102,35 @@ export default function RootLayout({
         </main>
 
         <footer className="mx-auto mt-12 w-full max-w-6xl px-4 pb-8">
-          <div className="border-t border-[#d3d6d1] pt-3 num text-[10px] leading-relaxed text-[#6d7280]">
-            {/*
-              El aviso nombra los escudos desde que se empezaron a usar: decir
-              solo "nombres de clubes" cuando en pantalla hay 30 escudos deja
-              corto justo lo que mas se ve.
-            */}
+          <div className="dato border-t border-borde pt-3 text-[10px] leading-relaxed text-tinta4">
             <p className="max-w-2xl">
               Probabilidades de un modelo propio. No es una herramienta de
               apuestas. Sin vínculo con los clubes ni con la AFA. Los nombres y
               escudos son marcas de sus respectivos clubes y se usan solo para
               identificarlos.
+            </p>
+            {/*
+              ATRIBUCIÓN OBLIGATORIA, no un crédito de cortesía. La foto de
+              portada es CC BY-SA 4.0 y esa licencia EXIGE nombrar al autor y
+              enlazar la licencia. Es la condición por la que podemos usarla: si
+              esto se borra, la foto pasa a estar usada sin permiso.
+              Origen completo en `reference/fotos.csv`.
+            */}
+            <p className="mt-2 max-w-2xl">
+              Foto de portada:{" "}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_del_Estadio_Alberto_J._Armando_%22La_Bombonera%22_01.jpg"
+                className="text-tinta3 underline hover:text-acento"
+              >
+                Vista aérea del Estadio Alberto J. Armando
+              </a>{" "}
+              por ProtoplasmaKid ·{" "}
+              <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+                className="text-tinta3 underline hover:text-acento"
+              >
+                CC BY-SA 4.0
+              </a>
             </p>
           </div>
         </footer>
