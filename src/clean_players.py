@@ -120,6 +120,45 @@ COLUMNAS_REMATE = [
 ]
 
 
+def mapa_de_nombres(*tabla):
+    """Un jugador_id, un solo nombre.
+
+    FotMob escribe al MISMO jugador con y sin acentos segun el partido:
+    'Tomas Aranda' y 'Tomas Aranda' con tilde comparten el id 1899032. Medido
+    sobre Boca 2026: 33 jugadores reales aparecian como 40, con las
+    estadisticas de siete de ellos partidas en dos.
+
+    Es el mismo principio que ya rige para los equipos en clean_stats.py --
+    unir por id, NUNCA por nombre -- aplicado a las personas. El id manda; el
+    nombre es una etiqueta que hay que elegir.
+
+    Criterio, en orden: gana la variante con mas caracteres acentuados (en
+    castellano 'Tomas' sin tilde es la degradada, no la correcta); si empatan,
+    la que aparezca en mas partidos; si vuelven a empatar, la primera
+    alfabeticamente, para que dos corridas den siempre el mismo resultado.
+
+    Devuelve el mapa {jugador_id: nombre}. Se construye una sola vez sobre
+    las dos tablas juntas, para que un jugador no se llame distinto en
+    player_match_stats.csv que en shots.csv.
+    """
+    juntas = pd.concat(tabla, ignore_index=True)
+    juntas = juntas.dropna(subset=["jugador_id", "jugador"])
+    if juntas.empty:
+        return {}
+
+    def acentos(nombre):
+        return sum(1 for c in str(nombre) if ord(c) > 127)
+
+    canonico = {}
+    for jugador_id, grupo in juntas.groupby("jugador_id")["jugador"]:
+        conteo = grupo.value_counts()
+        canonico[jugador_id] = sorted(
+            conteo.items(),
+            key=lambda par: (-acentos(par[0]), -par[1], str(par[0])),
+        )[0][0]
+    return canonico
+
+
 def cargar_tabla_equipos():
     if not TABLA_EQUIPOS.exists():
         sys.exit(f"ERROR: falta la tabla de equipos en {TABLA_EQUIPOS}")
@@ -356,6 +395,17 @@ def main():
     ).reset_index(drop=True)
 
     remates = pd.DataFrame(filas_remates, columns=COLUMNAS_REMATE)
+
+    # Un jugador_id, un solo nombre, igual en los dos archivos.
+    nombres = mapa_de_nombres(
+        jugadores[["jugador_id", "jugador"]], remates[["jugador_id", "jugador"]]
+    )
+    antes = jugadores["jugador"].nunique()
+    for tabla in (jugadores, remates):
+        tabla["jugador"] = (tabla["jugador_id"].map(nombres)
+                            .fillna(tabla["jugador"]))
+    unificados = antes - jugadores["jugador"].nunique()
+
     remates = remates.sort_values(
         ["fecha", "match_id", "minuto"]
     ).reset_index(drop=True)
@@ -372,6 +422,9 @@ def main():
     con_rating = jugadores["rating"].notna().sum()
     print(f"    con rating: {con_rating:,} filas "
           f"({con_rating / max(len(jugadores), 1):.0%})")
+    if unificados:
+        print(f"    {unificados} nombres unificados por id "
+              f"(FotMob escribe al mismo jugador con y sin acentos)")
 
     print(f"OK  -> {DESTINO_REMATES}")
     print(f"    {len(remates):,} remates | "
