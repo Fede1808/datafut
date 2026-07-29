@@ -1,291 +1,172 @@
 import Link from "next/link";
-import { Escudo } from "@/components/Escudo";
-import { FilaPartido } from "@/components/FilaPartido";
-import { Resultados } from "@/components/Resultados";
-import { BarraSimple } from "@/components/BarraProb";
-import {
-  partidos,
-  ultimosResultados,
-  ranking,
-  totalEquipos,
-  torneo,
-  temporada,
-  metadatos,
-  escenariosPorAmplitud,
-  coloresDe,
-  posicionPorSlug,
-  clasificanPorZona,
-  type Escenario,
-} from "@/lib/datos";
+import { Cifra } from "@/components/Cifra";
+import { CLUB } from "@/lib/club";
+import { partidosDe } from "@/lib/datos";
 
 /**
- * La portada.
+ * HOY — el próximo partido.
  *
- * Tres bloques: los partidos de la fecha (lo que trae a la gente cada semana),
- * los candidatos al título (el dato que no tiene nadie más) y qué se juega cada
- * equipo el fin de semana — que sale de agrupar las mismas simulaciones por el
- * resultado de cada partido y hasta ahora estaba escondido adentro de cada
- * página de equipo.
+ * Es la portada porque es la pregunta que alguien se hace al entrar: qué
+ * viene. Todo lo de esta pantalla es de UN partido; lo de la temporada vive en
+ * `/temporada` y cómo juega el equipo en `/juego`.
+ *
+ * La portada anterior — la de la liga entera — sigue existiendo en `/liga`.
+ * No se borró: el modelo igual calcula los 30 equipos y esas pantallas
+ * funcionan. Sólo salieron de la navegación.
  */
-export default function Portada() {
-  const lider = ranking[0];
-  const resto = ranking.slice(1, 8);
-  const maximo = ranking[0]?.campeon ?? 0;
-  const enJuego = escenariosPorAmplitud().slice(0, 8);
 
-  return (
-    <div className="pb-2 pt-5">
-      <div className="grid gap-8 lg:grid-cols-[1fr_310px] lg:gap-10">
-        {/*
-          Partidos de la fecha. Si la fuente todavia no publico el fixture de
-          la fecha siguiente —tarda dias— se muestran los resultados de la que
-          acaba de terminar, en vez de una lista vacia.
-        */}
-        <section className="tarjeta p-4">
-          {partidos.length > 0 ? (
-            <>
-              <Encabezado
-                titulo="La fecha"
-                detalle={`${partidos.length} partidos · ${partidos[0]?.fecha ?? ""}`}
-              />
-              <div className="border-t-2 border-[#1a1c1f]">
-                {partidos.map((p) => (
-                  <FilaPartido key={`${p.local_slug}-${p.visita_slug}`} p={p} />
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <Encabezado
-                titulo="Resultados"
-                detalle={`${ultimosResultados.length} partidos · última fecha`}
-              />
-              <div className="border-t-2 border-[#1a1c1f]">
-                <Resultados resultados={ultimosResultados} />
-              </div>
-              <p className="num mt-2 text-[9px] leading-relaxed text-[#6d7280]">
-                Los partidos de la fecha que viene aparecen acá cuando se
-                publica el calendario.
-              </p>
-            </>
-          )}
-        </section>
+const unDecimal = (v: number) =>
+  v.toLocaleString("es-AR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const dosDecimales = (v: number) =>
+  v.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const conSigno = (v: number) => (v > 0 ? "+" : "") + unDecimal(v);
 
-        {/* --- Candidatos --- */}
-        <section className="tarjeta p-4 lg:sticky lg:top-4 lg:self-start">
-          <Encabezado titulo="Campeón" detalle={`${torneo} ${temporada}`} />
+export default function Hoy() {
+  const p = partidosDe(CLUB)[0];
 
-          {/*
-            El líder va aparte y a escala de scoreboard. Es el dato que la
-            página vino a contar: si mide lo mismo que el octavo, el ranking se
-            lee como una lista de precios y no como una carrera.
-          */}
-          {lider && (
-            <>
-              <div className="banda-club" aria-hidden>
-                <span style={{ background: lider.colores[0] }} />
-                <span style={{ background: lider.colores[1] }} />
-                <span style={{ background: lider.colores[0] }} />
-              </div>
-              <Link
-                href={`/equipo/${lider.slug}`}
-                className="fila lider border-b-2 border-[#1a1c1f] px-1 py-3"
-              >
-                <span className="lider-cifra">
-                  {lider.campeon.toFixed(1)}
-                  <sup>%</sup>
-                </span>
-                <span className="min-w-0">
-                  <span className="titular-2 enlace-ficha block truncate">
-                    {lider.equipo}
-                  </span>
-                  <span className="num mt-1 block text-[10.5px] text-[#6d7280]">
-                    Zona {lider.zona} · playoffs {lider.playoffs.toFixed(1)}% ·
-                    techo de la liga
-                  </span>
-                </span>
-              </Link>
-            </>
-          )}
-
-          <ol>
-            {resto.map((e, i) => {
-              const pos = posicionPorSlug(e.slug);
-              return (
-                <li key={e.slug} className="border-b border-[#e2e4e0]">
-                  <Link
-                    href={`/equipo/${e.slug}`}
-                    className="fila flex items-center gap-2 py-2 pl-1"
-                  >
-                    <span className="cifra w-4 shrink-0 text-right text-[15px] text-[#8d9299]">
-                      {i + 2}
-                    </span>
-                    <Escudo slug={e.slug} colores={e.colores} size={16} />
-                    <span className="min-w-0 flex-1">
-                      <span className="enlace-ficha block truncate text-[12.5px]">
-                        {e.equipo}
-                      </span>
-                      <span className="num block text-[9px] text-[#6d7280]">
-                        {pos ? `${pos.puesto}° zona ${e.zona} · ` : `zona ${e.zona} · `}
-                        playoffs {e.playoffs.toFixed(0)}%
-                      </span>
-                    </span>
-                    <span className="shrink-0 text-right">
-                      <span className="cifra block text-[22px] text-[#1a1c1f]">
-                        {e.campeon.toFixed(1)}
-                      </span>
-                      <span className="ml-auto block w-fit">
-                        <BarraSimple valor={e.campeon} maximo={maximo} ancho={54} />
-                      </span>
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ol>
-
-          <div className="num mt-2 flex items-baseline justify-between text-[9.5px] text-[#6d7280]">
-            <span>Techo {maximo.toFixed(1)}% — el título sale de playoffs a partido único.</span>
-          </div>
-
-          {/* Caja, no texto subrayado: es la salida principal de este bloque y
-              antes se leía como una nota al pie. */}
-          <Link href="/titulo" className="pestania pestania-chica mt-3">
-            Los {totalEquipos} equipos →
-          </Link>
-        </section>
-      </div>
-
-      {/* --- Qué se juega cada uno --- */}
-      <section className="tarjeta mt-6 p-4">
-        <Encabezado
-          titulo="Lo que está en juego"
-          detalle="Chance de playoffs según cómo salga el partido"
-        />
-        <div className="grid border-t-2 border-[#1a1c1f] sm:grid-cols-2 sm:gap-x-8">
-          {enJuego.map((e) => (
-            <FilaEnJuego key={e.slug} e={e} />
-          ))}
-        </div>
-        <p className="num mt-2 text-[9.5px] text-[#6d7280]">
-          Las mismas {metadatos.simulaciones.toLocaleString("es-AR")}{" "}
-          simulaciones, agrupadas por el resultado de ese partido.{" "}
-          <Link href="/tabla" className="border-b border-[#8d9299] hover:border-[#1a1c1f] hover:text-[#1a1c1f]">
-            Clasifican {clasificanPorZona} por zona
+  if (!p) {
+    return (
+      <div className="py-10">
+        <h1 className="titular mb-3">No hay partido anunciado</h1>
+        <p className="max-w-[60ch] text-[#4c5058]">
+          El calendario todavía no publicó el próximo partido. Mientras tanto,{" "}
+          <Link href="/temporada" className="underline hover:text-[#0A2472]">
+            mirá cómo viene la temporada
           </Link>
           .
         </p>
-      </section>
+      </div>
+    );
+  }
 
-      {/* --- Ficha técnica --- */}
-      <section className="mt-10 border-t border-[#d3d6d1] pt-3">
-        <dl className="num grid grid-cols-2 gap-x-6 gap-y-2 text-[10px] sm:grid-cols-4">
-          <Ficha
-            k="Simulaciones"
-            v={metadatos.simulaciones.toLocaleString("es-AR")}
-          />
-          <Ficha
-            k="Partidos de entrenamiento"
-            v={`${metadatos.partidos_historicos.toLocaleString("es-AR")} desde 2012`}
-          />
-          <Ficha k="Aciertos 1X2" v={`${metadatos.acierto_pct}%`} />
-          {/* El coeficiente viene en escala logarítmica: exp(x)−1 lo pasa a
-              "cuántos goles más hace el local", que es lo que se puede leer. */}
-          <Ficha
-            k="Ventaja de local"
-            v={`+${((Math.exp(metadatos.ventaja_local) - 1) * 100).toFixed(0)}% de gol`}
-          />
-        </dl>
-      </section>
-    </div>
-  );
-}
-
-function Encabezado({ titulo, detalle }: { titulo: string; detalle: string }) {
-  return (
-    <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 pb-1.5">
-      <h2 className="titular-2">{titulo}</h2>
-      <span className="num text-[9.5px] uppercase tracking-[0.08em] text-[#6d7280]">
-        {detalle}
-      </span>
-    </div>
-  );
-}
-
-function Ficha({ k, v }: { k: string; v: string }) {
-  return (
-    <div>
-      <dt className="text-[9px] uppercase tracking-[0.08em] text-[#6d7280]">{k}</dt>
-      <dd className="mt-0.5 text-[12px] text-[#1a1c1f]">{v}</dd>
-    </div>
-  );
-}
-
-/**
- * Una línea del ranking de lo que está en juego.
- *
- * La barra va de la peor a la mejor rama: es el rango completo de la chance de
- * playoffs de ese equipo después del domingo. Cuanto más largo, más se juega.
- */
-function FilaEnJuego({ e }: { e: Escenario }) {
-  const vals = e.ramas
-    .filter((r) => r.confiable && r.playoffs !== null)
-    .map((r) => ({ r: r.resultado, v: r.playoffs as number }));
-  if (vals.length === 0) return null;
-
-  const gana = vals.find((x) => x.r === "gana")?.v ?? 0;
-  const pierde = vals.find((x) => x.r === "pierde")?.v ?? 0;
-  const min = Math.min(...vals.map((x) => x.v));
-  const max = Math.max(...vals.map((x) => x.v));
-  const amp = max - min;
+  const esLocal = p.local === CLUB;
+  const rival = esLocal ? p.visita : p.local;
+  const golesClub = esLocal ? p.goles_esperados.local : p.goles_esperados.visita;
+  const golesRival = esLocal ? p.goles_esperados.visita : p.goles_esperados.local;
+  const tope = Math.max(...p.marcadores.map((m) => m.prob));
 
   return (
-    <div className="fila border-b border-[#e2e4e0] py-2.5 pl-1">
-      <div className="flex items-baseline justify-between gap-2">
-        <Link
-          href={`/equipo/${e.slug}`}
-          className="flex min-w-0 items-center gap-2 py-1 transition-colors hover:text-[#1a1c1f]"
+    <div className="py-6">
+      <h1 className="titular mb-3.5">El próximo partido</h1>
+
+      <div className="overflow-hidden rounded-[4px] border border-[#d3d6d1] bg-white">
+        <div className="flex flex-wrap items-center justify-between gap-3.5 px-4 pb-4 pt-5">
+          <div className="flex min-w-0 items-center gap-3">
+            <span
+              className="h-9 w-2.5 shrink-0 rounded-[2px]"
+              style={{ background: esLocal ? "#0A2472" : "#8d9299" }}
+            />
+            <span className="titular-2">{p.local}</span>
+          </div>
+          <span
+            className="text-[15px] font-bold tracking-[0.14em] text-[#8d9299]"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            VS
+          </span>
+          <div className="flex min-w-0 items-center gap-3">
+            <span className="titular-2">{p.visita}</span>
+            <span
+              className="h-9 w-2.5 shrink-0 rounded-[2px]"
+              style={{ background: esLocal ? "#8d9299" : "#0A2472" }}
+            />
+          </div>
+        </div>
+
+        <div
+          className="flex h-[42px] border-t border-[#d3d6d1]"
+          role="img"
+          aria-label={`Gana ${p.local} ${unDecimal(p.prob.local)}%, empate ${unDecimal(
+            p.prob.empate,
+          )}%, gana ${p.visita} ${unDecimal(p.prob.visita)}%`}
         >
-          <Escudo slug={e.slug} colores={coloresDe(e.equipo)} size={14} />
-          <span className="enlace-ficha truncate text-[12.5px] font-medium">
-            {e.equipo}
-          </span>
-          <span className="num shrink-0 text-[9.5px] text-[#6d7280]">
-            {e.condicion === "local" ? "v." : "@"} {e.rival}
-          </span>
-        </Link>
-        <span className="num shrink-0 text-[11px] text-[#4c5058]">
-          {amp.toFixed(0)} pp
-        </span>
+          {[
+            { v: p.prob.local, c: "#2f5fa8" },
+            { v: p.prob.empate, c: "#8d9299" },
+            { v: p.prob.visita, c: "#c8102e" },
+          ].map((s, i) => (
+            <div
+              key={i}
+              className="num flex items-center justify-center text-[16px] font-bold text-white"
+              style={{
+                width: `${s.v}%`,
+                background: s.c,
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              {unDecimal(s.v)}%
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between px-4 pb-4 pt-2.5 text-[12.5px] text-[#6d7280]">
+          <span>Gana {p.local}</span>
+          <span>Empate</span>
+          <span>Gana {p.visita}</span>
+        </div>
       </div>
 
-      {/* Rango: la barra ocupa de la rama peor a la mejor, sobre el eje 0–100. */}
-      <div className="relative mt-1.5 h-[6px] bg-[#e2e4e0]">
-        <div
-          className="absolute top-0 h-full bg-[#8d9299]"
-          style={{ left: `${min}%`, width: `${amp}%` }}
+      <div className="mt-3.5 grid gap-3.5 sm:grid-cols-3">
+        <Cifra
+          rotulo="Goles esperados de Boca"
+          valor={dosDecimales(golesClub)}
+          pie={`${rival}: ${dosDecimales(golesRival)}`}
         />
-        <div
-          className="absolute top-0 h-full w-[2px] bg-[#c8102e]"
-          style={{ left: `calc(${pierde}% - 1px)` }}
-          title={`Si pierde: ${pierde.toFixed(1)}%`}
-        />
-        <div
-          className="absolute top-0 h-full w-[2px] bg-[#2f8f4e]"
-          style={{ left: `calc(${gana}% - 1px)` }}
-          title={`Si gana: ${gana.toFixed(1)}%`}
-        />
+        <Cifra rotulo="Menos de 2,5 goles" valor={`${unDecimal(p.menos_de_2_5)}%`} />
+        <Cifra rotulo="Convierten los dos" valor={`${unDecimal(p.ambos_convierten)}%`} />
       </div>
 
-      <div className="num mt-1 flex justify-between text-[9.5px] text-[#6d7280]">
-        <span className="text-[#c8102e]">pierde {pierde.toFixed(1)}%</span>
-        <span
-          aria-hidden
-          className="h-px flex-1 self-center bg-[#e2e4e0]"
-          style={{ marginInline: 8 }}
-        />
-        <span className="text-[#2f8f4e]">gana {gana.toFixed(1)}%</span>
+      <h2 className="titular-2 mb-2.5 mt-7">Marcadores más probables</h2>
+      <div className="tarjeta">
+        {p.marcadores.map((m) => (
+          <div
+            key={m.marcador}
+            className="grid grid-cols-[58px_1fr_54px] items-center gap-3 py-1.5"
+          >
+            <span
+              className="num text-[20px] font-bold"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {m.marcador}
+            </span>
+            <span className="relative h-3 rounded-full bg-[#e2e4e0]">
+              <span
+                className="absolute inset-y-0 left-0 rounded-full bg-[#0A2472]"
+                style={{ width: `${(m.prob / tope) * 100}%` }}
+              />
+            </span>
+            <span className="num text-right text-[#4c5058]">{unDecimal(m.prob)}%</span>
+          </div>
+        ))}
       </div>
+
+      {/*
+        La comparación contra el mercado es el diferencial del proyecto, pero
+        sólo aparece cuando hay cuotas. Cuando el partido todavía no abrió
+        mercado, `implicita` viene en null y no se muestra nada: inventar una
+        comparación sería peor que no tenerla.
+      */}
+      {p.implicita && p.diferencial && (
+        <>
+          <h2 className="titular-2 mb-2.5 mt-7">Contra el mercado</h2>
+          <div className="grid gap-3.5 sm:grid-cols-3">
+            <Cifra
+              rotulo={`Gana ${p.local}`}
+              valor={conSigno(p.diferencial.local)}
+              pie={`El mercado dice ${unDecimal(p.implicita.local)}%`}
+            />
+            <Cifra
+              rotulo="Empate"
+              valor={conSigno(p.diferencial.empate)}
+              pie={`El mercado dice ${unDecimal(p.implicita.empate)}%`}
+            />
+            <Cifra
+              rotulo={`Gana ${p.visita}`}
+              valor={conSigno(p.diferencial.visita)}
+              pie={`El mercado dice ${unDecimal(p.implicita.visita)}%`}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }

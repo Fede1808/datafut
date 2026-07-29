@@ -17,9 +17,9 @@ const display = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Probabilidades — Liga Profesional",
+  title: "Boca en números",
   description:
-    "Probabilidades propias sobre la Liga Profesional argentina, calculadas con un modelo estadístico que se reentrena después de cada fecha.",
+    "Boca partido a partido: probabilidades de un modelo estadístico propio, cómo juega comparado con el resto de la liga, y las estadísticas de cada jugador del plantel.",
 };
 
 export default function RootLayout({
@@ -49,13 +49,19 @@ export default function RootLayout({
           {/* `flex-wrap`: en pantallas angostas la nav baja a su propio
               renglón en vez de comerse el logo. */}
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 border-b border-[#d3d6d1] pb-2.5">
+            {/*
+              El sitio dejó de llamarse Modelo/Fut. Aquel nombre describía la
+              herramienta; este describe de qué se trata, que es lo único que
+              le importa a alguien que entra por primera vez y no sabe nada del
+              proyecto.
+            */}
             <Link
               href="/"
-              aria-label="Modelo/Fut — portada"
+              aria-label="Boca en números — portada"
               className="block shrink-0 transition-opacity hover:opacity-70"
             >
               <span className="titular block !text-[26px] leading-none sm:!text-[32px]">
-                Modelo<span className="text-[#c8102e]">/</span>Fut
+                Boca<span className="text-[#F7D117]"> en números</span>
               </span>
             </Link>
             <Nav />

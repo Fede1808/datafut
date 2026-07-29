@@ -2,9 +2,37 @@
 
 ## Qué estamos construyendo
 
-Un sitio público en español sobre el fútbol argentino, con un modelo estadístico propio adentro, que se actualiza solo después de cada fecha de la Liga Profesional.
+**Un sitio público en español sobre Boca Juniors**, con un modelo estadístico propio
+adentro, que se actualiza solo después de cada fecha de la Liga Profesional.
 
 No es un juego. No es una app de resultados en vivo tipo Promiedos. No es una herramienta de apuestas. No es una cuenta que regrafica datos ajenos: el modelo es propio y es lo que distingue al proyecto.
+
+### El giro de producto (29/07/2026)
+
+Hasta esa fecha el sitio era sobre la liga entera, con una página por equipo. Se
+reencuadró para hablar de un solo club. **Lo que cambió es la capa de presentación,
+no el pipeline** — y esta distinción es la más importante de todo el archivo:
+
+> **El modelo sigue estimando los 30 equipos y no se toca.** Dixon-Coles estima la
+> fuerza de Boca **en relación al resto**: sus parámetros de ataque y defensa sólo
+> significan algo comparados con los de los demás. Si alguien recorta el pipeline a
+> Boca, el modelo se muere — no hay con qué comparar, no hay simulación de torneo, no
+> hay probabilidad de campeón ni de rival. Se convierte en una planilla.
+
+Las cuatro secciones del sitio, ordenadas por la pregunta que contesta cada una y no
+por el orden en que se construyeron:
+
+| Sección | Contesta | Ruta |
+|---|---|---|
+| Hoy | ¿qué viene? | `/` |
+| Temporada | ¿cómo venimos? | `/temporada` |
+| Juego | ¿cómo juega el equipo? | `/juego` |
+| Plantel | ¿quiénes juegan? | `/plantel`, `/plantel/[id]` |
+
+**Las pantallas de liga siguen existiendo y funcionando**: `/liga` (la portada vieja),
+`/tabla`, `/titulo`, `/calendario`, `/estadisticas`, `/equipo/[slug]` y
+`/partido/[slug]`. No se borraron: salieron de la navegación. Se llega desde los
+enlaces del contenido.
 
 ## Definición de terminado para la v1
 
@@ -24,11 +52,18 @@ Adentro:
 
 Afuera (backlog explícito, no discutir en la v1):
 
-- Mapas de tiros y visualizaciones espaciales
-- Páginas de jugador
-- Datos de evento (xG por disparo, coordenadas)
 - Autenticación, pagos, cuentas de usuario
 - Resultados en vivo
+
+**Tres cosas salieron del backlog el 29/07/2026, porque están hechas** — y la razón por
+la que se pudieron hacer no fue conseguir una fuente nueva, sino **dejar de tirar la que
+ya teníamos**. Los JSON que `ingest_stats.py` venía bajando desde el 27/07 traen
+`content.playerStats` y `content.shotmap`, y `clean_stats.py` los descartaba en cada
+corrida por quedarse sólo con el agregado por equipo:
+
+- ~~Páginas de jugador~~ → `/plantel/[id]`, con métricas por 90 minutos
+- ~~Datos de evento (xG por disparo, coordenadas)~~ → `data/clean/shots.csv`
+- ~~Mapas de tiros y visualizaciones espaciales~~ → `MapaRemates.tsx`
 
 ## Fuentes de datos ya verificadas
 
@@ -65,8 +100,38 @@ Varias de las suposiciones originales resultaron falsas; quedan corregidas acá:
 - **CORRECCIÓN: las cuotas de Bet365 son inutilizables.** `B365CH` viene vacía en **5.786 de
   6.238 filas (93%)**. Pinnacle (`PSC*`) tiene 310 huecos. La única con cobertura 100% es
   `AvgC*` (promedio del mercado) → **ese es el baseline**, no Bet365
-- Sigue siendo cierto: solo primera división, sin ascenso ni Libertadores, y sin jugadores,
-  formaciones ni goleadores
+- Sigue siendo cierto **de este archivo**: solo primera división, sin ascenso ni
+  Libertadores, y sin jugadores, formaciones ni goleadores. Los jugadores salen de
+  FotMob, no de acá — ver `src/clean_players.py`
+
+**Jugadores y remates: de FotMob, sin descargar nada nuevo.** `src/clean_players.py`
+(etapa 2c) lee los mismos JSON que `clean_stats.py` y escribe
+`data/clean/player_match_stats.csv` (70.305 filas, 2.135 jugadores) y
+`data/clean/shots.csv` (36.882 remates, xG en el 100%). Cuatro gotchas, los cuatro
+medidos y todos resueltos en ese archivo:
+
+- **FotMob mueve la misma clave de bloque según el jugador.** Un arquero trae `tackles`
+  en `top_stats`, un defensor en `defense`. Hay que buscar por clave en TODOS los
+  bloques, nunca por posición de bloque
+- **Las métricas ausentes NO son ceros.** FotMob omite la stat cuando el jugador no
+  registró el evento: `expected_goals` viene en 5.638 de 12.235 filas, sólo los que
+  remataron. Se guardan vacías a propósito; leerlas como cero es decisión de la etapa
+  que agrega, y sólo vale para las de conteo
+- **Los goles en contra van con el `teamId` del equipo perjudicado** (99 en el dataset).
+  Contarlos como gol suyo rompía el marcador
+- **Las tandas de penales están en el shotmap** (67 goles en 8 partidos de playoff) y no
+  forman parte del marcador ni del xG. Se conservan con la columna `es_tanda`
+
+**El chequeo que hay que repetir si se toca este script**: los goles reconstruidos desde
+el shotmap tienen que coincidir con el marcador real en **3.070 de 3.070** pares
+equipo-partido. Antes de arreglar los dos últimos puntos daba 91,7%.
+
+**Y uno más, que es el peor porque no rompe nada visible: un jugador, un id.** FotMob
+escribe al mismo jugador con y sin acentos según el partido — `Tomas Aranda` y
+`Tomás Aranda` comparten el id 1899032. Sin unificar, aparece dos veces con las
+estadísticas partidas al medio. Son **498 nombres** en el dataset completo. Lo resuelve
+`mapa_de_nombres()`, con el mismo principio que ya regía para los equipos: **unir por
+id, NUNCA por nombre**. `export_boca.py` corta la corrida si detecta que volvió a pasar.
 
 Lo que sí salió mejor de lo esperado: **cero** valores faltantes en `HG`/`AG`/`Res`, **cero**
 inconsistencias entre resultado y goles, **cero** duplicados. Y media ≈ varianza de goles

@@ -10,56 +10,46 @@ import { usePathname } from "next/navigation";
  * sección estás, y una nav donde nada indica dónde estás parado es media nav.
  * El resto del sitio sigue siendo estático.
  *
- * POR QUÉ SE REHIZO. Antes eran tres palabras de 11px al lado del logo, con la
- * activa subrayada en ámbar y las otras dos en gris oscuro. El dueño reportó
- * que costaba encontrarlas — y tenía razón: parecían la bajada del título, no
- * controles. Ahora cada sección es una caja con filete, del alto mínimo de
- * toque (44px), con la activa invertida en ámbar y un punto adelante. La caja
- * dice "esto se toca" antes de que nadie lo toque, que es lo único que le
- * pedimos a una nav.
+ * POR QUÉ SON ESTAS CUATRO. Antes eran cinco secciones que reproducían el
+ * orden en que se fueron construyendo las pantallas: Hoy, Fechas, Tabla,
+ * Título, Stats. Eso es el diario de a bordo del que lo hizo, no una
+ * navegación: a nadie le importa en qué orden se programó un sitio.
  *
- * Se reusa el lenguaje de los filtros de zona de la tabla a propósito: si todo
- * lo clickeable del sitio se ve igual, se aprende una vez.
+ * Ahora cada sección responde una pregunta que un hincha se hace solo:
  *
- * LA PORTADA DEJÓ DE LLAMARSE "FECHA". Tenía sentido cuando era la única
- * pantalla que mostraba partidos, pero ahora existe `/calendario` con las 16
- * fechas del torneo y dos secciones casi homónimas ("Fecha" y "Fechas")
- * confunden más de lo que ordenan. La portada pasa a "Hoy" —sigue siendo la
- * puerta de entrada y su primer bloque sigue siendo la fecha que se juega
- * ahora— y el href no se toca: nada la deja de encontrar.
+ *   Hoy        -> ¿qué viene?
+ *   Temporada  -> ¿cómo venimos?
+ *   Juego      -> ¿cómo juega el equipo?
+ *   Plantel    -> ¿quiénes juegan?
+ *
+ * Dos consecuencias de ese criterio, las dos a propósito. "Rivales" no es una
+ * sección: nunca fue una categoría, era una comparación, y vive adentro de
+ * Juego. Y el mapa de remates tampoco tiene sección propia, por el mismo
+ * motivo — es la mejor evidencia de cómo juega el equipo, no un tema aparte.
+ *
+ * LAS PANTALLAS DE LIGA SIGUEN EXISTIENDO. `/liga`, `/tabla`, `/titulo`,
+ * `/calendario`, `/estadisticas`, `/equipo/[slug]` y `/partido/[slug]` no se
+ * borraron ni se rompieron: salieron de la navegación. El modelo igual calcula
+ * los 30 equipos, así que esas páginas siguen teniendo con qué llenarse.
  */
 const SECCIONES = [
-  { href: "/", label: "Hoy", ayuda: "Los partidos que vienen" },
+  { href: "/", label: "Hoy", ayuda: "El próximo partido" },
   {
-    href: "/calendario",
-    label: "Fechas",
-    ayuda: "Las 16 fechas del torneo, partido por partido",
+    href: "/temporada",
+    label: "Temporada",
+    ayuda: "Posición y probabilidades del año",
   },
-  { href: "/tabla", label: "Tabla", ayuda: "Posiciones y probabilidades" },
-  { href: "/titulo", label: "Título", ayuda: "Quién puede salir campeón" },
-  {
-    href: "/estadisticas",
-    label: "Stats",
-    ayuda: "Los mejores en cada métrica",
-  },
+  { href: "/juego", label: "Juego", ayuda: "Cómo juega el equipo" },
+  { href: "/plantel", label: "Plantel", ayuda: "Los jugadores, uno por uno" },
 ];
 
 export function Nav() {
   const ruta = usePathname();
 
   return (
-    // En el celular la nav se va a su propio renglón y las cinco cajas se
-    // reparten el ancho: cinco blancos grandes son más fáciles de acertar con
-    // el dedo que cinco palabras apretadas contra el logo.
-    //
-    // La última dice "Stats" y no "Estadísticas" por una razón de ancho: con
-    // la palabra entera, cinco cajas en versalita no entran en un celular de
-    // 360px y la nav se parte en dos renglones. Por lo mismo "Fechas" y no
-    // "Calendario": la etiqueta larga es la que rompía el layout al agregar
-    // esta sección, no el ancho de la caja en sí — ver `.pestania` en
-    // globals.css, que ahora fija `white-space: nowrap` para que una etiqueta
-    // que no entra se note recortando la caja, en vez de partirse en dos
-    // líneas y romper el alto parejo de las cinco.
+    // En el celular la nav se va a su propio renglón y las cuatro cajas se
+    // reparten el ancho: cuatro blancos grandes son más fáciles de acertar con
+    // el dedo que cuatro palabras apretadas contra el logo.
     <nav aria-label="Secciones" className="w-full sm:w-auto">
       <ul className="flex gap-1.5">
         {SECCIONES.map((s) => {

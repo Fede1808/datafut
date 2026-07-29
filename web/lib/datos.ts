@@ -322,7 +322,7 @@ export const conStats: (Equipo & { stats: Stats })[] = fichas.filter(
 /** Cuántos equipos entran en los rankings de xG. No es siempre `totalEquipos`. */
 export const totalConStats = conStats.length;
 
-type ClaveStat = Exclude<
+export type ClaveStat = Exclude<
   keyof Stats,
   "puesto_xg" | "puesto_xg_contra" | "puesto_xg_dif" | "puesto_posesion"
 >;
