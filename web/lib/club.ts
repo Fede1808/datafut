@@ -69,6 +69,36 @@ export const coloresClub = (club.colores ?? ["#0A2472", "#F7D117"]) as [string, 
 export const minPartidos = club.min_partidos;
 export const gruposPor90 = club.grupos_por90 as { titulo: string; metricas: string[] }[];
 
+/** Goles a favor y en contra por franja del partido. La última incluye el
+ *  tiempo agregado: un gol al 90+3 cae ahí. */
+export const franjas = club.franjas as {
+  etiqueta: string;
+  favor: number;
+  contra: number;
+}[];
+
+export type BloqueCondicion = {
+  condicion?: string;
+  temporada?: number;
+  pj: number;
+  g: number;
+  e: number;
+  p: number;
+  gf: number;
+  gc: number;
+  pts: number;
+  pts_pp: number | null;
+  xg: number | null;
+};
+
+export const localVisita = club.local_visita as BloqueCondicion[];
+
+/** Las temporadas que HAY: las stats avanzadas arrancan en 2023. Más nueva
+ *  primero, porque el torneo en curso es el que se mira. */
+export const temporadas = club.temporadas as (BloqueCondicion & {
+  temporada: number;
+})[];
+
 export const plantel = club.plantel as JugadorPlantel[];
 export const fichasJugador = club.fichas as Record<string, FichaJugador>;
 export const remates = club.remates as Remate[];

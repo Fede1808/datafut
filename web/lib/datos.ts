@@ -35,6 +35,16 @@ export type Partido = {
   diferencial: Tercia | null;
   goles_esperados: { local: number; visita: number };
   marcadores: { marcador: string; prob: number }[];
+  /**
+   * La probabilidad de CADA marcador de 0-0 a 6-6: 7 filas × 7 columnas.
+   * Fila = goles del local, columna = goles del visitante.
+   *
+   * Es la misma matriz de la que salen `marcadores`, `menos_de_2_5` y
+   * `ambos_convierten` — no un cálculo aparte. Se expone entera porque el top 5
+   * esconde justo lo que distingue al modelo: que no elige un resultado,
+   * reparte probabilidad sobre todos.
+   */
+  matriz: number[][];
   menos_de_2_5: number;
   ambos_convierten: number;
   /** Qué fecha del torneo es. Sale del calendario real, no de una suposición. */

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Retrato } from "@/components/Retrato";
 import type { JugadorPlantel } from "@/lib/club";
 
 /**
@@ -99,9 +100,9 @@ export function TablaPlantel({ plantel }: { plantel: JugadorPlantel[] }) {
                       : "descending"
                     : undefined
                 }
-                className={`sticky top-0 cursor-pointer whitespace-nowrap border-b border-[#c3c8c1] bg-white px-2 py-2 text-[11.5px] font-bold uppercase tracking-[0.05em] hover:text-[#0A2472] ${
+                className={`sticky top-0 cursor-pointer whitespace-nowrap border-b border-borde bg-tarjeta px-2 py-2 text-[11.5px] font-bold uppercase tracking-[0.05em] hover:text-acento ${
                   c.clave === "jugador" ? "text-left" : "text-right"
-                } ${c.clave === columna ? "text-[#0A2472]" : "text-[#6d7280]"}`}
+                } ${c.clave === columna ? "text-acento" : "text-tinta4"}`}
                 style={{ fontFamily: "var(--font-display)" }}
                 onClick={() => ordenarPor(c.clave)}
               >
@@ -113,15 +114,20 @@ export function TablaPlantel({ plantel }: { plantel: JugadorPlantel[] }) {
         </thead>
         <tbody>
           {filas.map((p) => (
-            <tr key={p.id} className="border-b border-[#e2e4e0] hover:bg-[#f2f5fb]">
+            <tr key={p.id} className="border-b border-borde2 hover:bg-tarjeta2">
               <td className="px-2 py-2 font-semibold">
                 <Link
                   href={`/plantel/${p.id}`}
-                  className="block hover:text-[#0A2472] hover:underline"
+                  className="flex items-center gap-2.5 hover:text-acento"
                 >
-                  {p.jugador}
-                  <span className="block text-[11.5px] font-normal text-[#6d7280]">
-                    {p.arquero ? "Arquero" : "De campo"}
+                  {/* Chico y cuadrado: acá el retrato identifica de un vistazo,
+                      no es el protagonista. En la ficha va a 88px. */}
+                  <Retrato id={p.id} nombre={p.jugador} tamano={28} radio={4} />
+                  <span className="min-w-0">
+                    <span className="block truncate">{p.jugador}</span>
+                    <span className="block text-[11.5px] font-normal text-tinta4">
+                      {p.arquero ? "Arquero" : "De campo"}
+                    </span>
                   </span>
                 </Link>
               </td>
@@ -133,7 +139,7 @@ export function TablaPlantel({ plantel }: { plantel: JugadorPlantel[] }) {
                     <td
                       key={c.clave}
                       className={`whitespace-nowrap px-2 py-2 text-right text-[15px] font-bold ${
-                        d > 0.5 ? "text-[#2f8f4e]" : d < -0.5 ? "text-[#c8102e]" : ""
+                        d > 0.5 ? "text-[oklch(0.72 0.14 155)]" : d < -0.5 ? "text-[oklch(0.62 0.19 20)]" : ""
                       }`}
                       style={{ fontFamily: "var(--font-display)" }}
                     >

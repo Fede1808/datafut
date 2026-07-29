@@ -34,7 +34,7 @@ const sans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Boca en números",
+  title: "Ribera — Boca en números",
   description:
     "Boca partido a partido: probabilidades de un modelo estadístico propio, cómo juega comparado con el resto de la liga, y las estadísticas de cada jugador del plantel.",
 };
@@ -62,7 +62,7 @@ export default function RootLayout({
           edición dice torneo, fecha de actualización y motor — es dato, no
           decoración.
         */}
-        <header className="mx-auto w-full max-w-6xl px-4 pt-4">
+        <header className="mx-auto w-full max-w-[1400px] px-5 pt-4 sm:px-10">
           {/* `flex-wrap`: en pantallas angostas la nav baja a su propio
               renglón en vez de comerse el logo. */}
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5 border-b border-borde pb-2.5">
@@ -97,11 +97,11 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main id="contenido" className="mx-auto w-full max-w-6xl flex-1 px-4">
+        <main id="contenido" className="mx-auto w-full max-w-[1400px] flex-1 px-5 sm:px-10">
           {children}
         </main>
 
-        <footer className="mx-auto mt-12 w-full max-w-6xl px-4 pb-8">
+        <footer className="mx-auto mt-12 w-full max-w-[1400px] px-5 pb-8 sm:px-10">
           <div className="dato border-t border-borde pt-3 text-[10px] leading-relaxed text-tinta4">
             <p className="max-w-2xl">
               Probabilidades de un modelo propio. No es una herramienta de

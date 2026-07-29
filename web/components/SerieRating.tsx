@@ -30,12 +30,12 @@ export function SerieRating({ serie }: { serie: PartidoDeJugador[] }) {
     const W = cv.width;
     const H = cv.height;
     cx.clearRect(0, 0, W, H);
-    cx.fillStyle = "#fff";
+    cx.fillStyle = "oklch(0.19 0.03 262)";
     cx.fillRect(0, 0, W, H);
 
     if (!puntos.length) {
-      cx.fillStyle = "#6d7280";
-      cx.font = "400 19px 'Barlow', sans-serif";
+      cx.fillStyle = "oklch(0.62 0.015 262)";
+      cx.font = "400 19px 'IBM Plex Mono', monospace";
       cx.textAlign = "center";
       cx.fillText("Sin rating registrado en estos partidos", W / 2, H / 2);
       return;
@@ -52,10 +52,10 @@ export function SerieRating({ serie }: { serie: PartidoDeJugador[] }) {
       L + (puntos.length === 1 ? (W - L - R) / 2 : (i / (puntos.length - 1)) * (W - L - R));
     const py = (v: number) => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
 
-    cx.strokeStyle = "#e2e4e0";
+    cx.strokeStyle = "oklch(0.26 0.02 262)";
     cx.lineWidth = 1;
-    cx.fillStyle = "#8d9299";
-    cx.font = "400 15px 'Barlow', sans-serif";
+    cx.fillStyle = "oklch(0.55 0.015 262)";
+    cx.font = "400 15px 'IBM Plex Mono', monospace";
     cx.textAlign = "right";
     for (let v = Math.ceil(lo); v <= hi; v++) {
       cx.beginPath();
@@ -66,7 +66,7 @@ export function SerieRating({ serie }: { serie: PartidoDeJugador[] }) {
     }
 
     const media = valores.reduce((a, b) => a + b, 0) / valores.length;
-    cx.strokeStyle = "#c3c8c1";
+    cx.strokeStyle = "oklch(0.34 0.02 262)";
     cx.setLineDash([5, 4]);
     cx.beginPath();
     cx.moveTo(L, py(media));
@@ -74,7 +74,7 @@ export function SerieRating({ serie }: { serie: PartidoDeJugador[] }) {
     cx.stroke();
     cx.setLineDash([]);
 
-    cx.strokeStyle = "#0A2472";
+    cx.strokeStyle = "#e4b750";
     cx.lineWidth = 2.5;
     cx.lineJoin = "round";
     cx.beginPath();
@@ -90,17 +90,17 @@ export function SerieRating({ serie }: { serie: PartidoDeJugador[] }) {
     puntos.forEach((p, i) => {
       cx.beginPath();
       cx.arc(px(i), py(p.rating as number), p.goles > 0 ? 6.5 : 4.5, 0, Math.PI * 2);
-      cx.fillStyle = p.goles > 0 ? "#F7D117" : "#0A2472";
+      cx.fillStyle = p.goles > 0 ? "oklch(0.94 0.012 262)" : "#e4b750";
       cx.fill();
       if (p.goles > 0) {
         cx.lineWidth = 2;
-        cx.strokeStyle = "#0A2472";
+        cx.strokeStyle = "#e4b750";
         cx.stroke();
       }
     });
 
-    cx.fillStyle = "#6d7280";
-    cx.font = "400 14px 'Barlow', sans-serif";
+    cx.fillStyle = "oklch(0.62 0.015 262)";
+    cx.font = "400 14px 'IBM Plex Mono', monospace";
     cx.textAlign = "center";
     cx.fillText(`media ${media.toFixed(2)}`, L + 52, py(media) - 8);
     cx.textAlign = "left";

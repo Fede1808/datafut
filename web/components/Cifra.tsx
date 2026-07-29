@@ -16,7 +16,7 @@ export function Cifra({
   return (
     <div className="tarjeta">
       <p
-        className="mb-1.5 text-[11.5px] font-bold uppercase tracking-[0.09em] text-[#6d7280]"
+        className="mb-1.5 text-[11.5px] font-bold uppercase tracking-[0.09em] text-tinta4"
         style={{ fontFamily: "var(--font-display)" }}
       >
         {rotulo}
@@ -27,7 +27,7 @@ export function Cifra({
       >
         {valor}
       </div>
-      {pie && <p className="mt-1 text-[12.5px] text-[#6d7280]">{pie}</p>}
+      {pie && <p className="mt-1 text-[12.5px] text-tinta4">{pie}</p>}
     </div>
   );
 }

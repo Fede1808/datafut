@@ -47,21 +47,21 @@ export function ComparacionLiga() {
         return (
           <div
             key={clave}
-            className="grid grid-cols-[1fr_64px] items-center gap-x-3 gap-y-1 border-b border-[#e2e4e0] py-2.5 last:border-b-0 sm:grid-cols-[200px_1fr_78px]"
+            className="grid grid-cols-[1fr_64px] items-center gap-x-3 gap-y-1 border-b border-borde2 py-2.5 last:border-b-0 sm:grid-cols-[200px_1fr_78px]"
           >
             <span className="text-[13px] font-semibold">{label}</span>
             <span
-              className="relative col-span-2 h-3 rounded-full bg-[#e2e4e0] sm:col-span-1"
+              className="relative col-span-2 h-3 rounded-full bg-tarjeta2 sm:col-span-1"
               role="img"
               aria-label={`${label}: ${unDecimal(d.valor)}, puesto ${d.puesto} de ${d.total}`}
             >
               <span
-                className="absolute -top-[3px] -bottom-[3px] w-0.5 bg-[#8d9299]"
+                className="absolute -top-[3px] -bottom-[3px] w-0.5 bg-tinta4"
                 style={{ left: `${prom}%` }}
               />
               <span
-                className="absolute top-1/2 -ml-[7px] -mt-[7px] h-3.5 w-3.5 rounded-full border-2 border-white bg-[#0A2472]"
-                style={{ left: `${ancho}%`, boxShadow: "0 0 0 1px #c3c8c1" }}
+                className="absolute top-1/2 -ml-[7px] -mt-[7px] h-3.5 w-3.5 rounded-full border-2 border-fondo bg-acento"
+                style={{ left: `${ancho}%`, boxShadow: "0 0 0 1px oklch(0.34 0.02 262)" }}
               />
             </span>
             <span
@@ -70,7 +70,7 @@ export function ComparacionLiga() {
             >
               {unDecimal(d.valor)}
               <span
-                className="block text-[11.5px] font-normal text-[#6d7280]"
+                className="block text-[11.5px] font-normal text-tinta4"
                 style={{ fontFamily: "var(--font-sans)" }}
               >
                 {d.puesto}º
@@ -79,7 +79,7 @@ export function ComparacionLiga() {
           </div>
         );
       })}
-      <p className="mt-3 text-[12.5px] text-[#6d7280]">
+      <p className="mt-3 text-[12.5px] text-tinta4">
         El punto es Boca. La línea gris, el promedio de la liga.
       </p>
     </div>

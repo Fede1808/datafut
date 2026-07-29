@@ -60,10 +60,10 @@ export function MapaRemates({
     const py = (y: number) => (y / 68) * (H - 70) + 35;
 
     cx.clearRect(0, 0, W, H);
-    cx.fillStyle = "#e7eae6";
+    cx.fillStyle = "oklch(0.22 0.02 262)";
     cx.fillRect(0, 0, W, H);
 
-    cx.strokeStyle = "#fff";
+    cx.strokeStyle = "oklch(0.44 0.02 262)";
     cx.lineWidth = 3;
     cx.lineJoin = "round";
     cx.strokeRect(px(X0), py(0.6), px(105) - px(X0), py(67.4) - py(0.6));
@@ -71,7 +71,7 @@ export function MapaRemates({
     cx.strokeRect(px(99.5), py(24.84), px(105) - px(99.5), py(43.16) - py(24.84));
     cx.beginPath();
     cx.arc(px(94), py(34), 4, 0, Math.PI * 2);
-    cx.fillStyle = "#fff";
+    cx.fillStyle = "oklch(0.44 0.02 262)";
     cx.fill();
     cx.beginPath();
     cx.arc(px(94), py(34), px(103.15) - px(94), 2.42, 3.86);
@@ -94,26 +94,26 @@ export function MapaRemates({
         cx.beginPath();
         cx.arc(px(r.x), py(r.y), radio, 0, Math.PI * 2);
         if (r.gol) {
-          cx.fillStyle = "#0A2472";
+          cx.fillStyle = "#e4b750";
           cx.fill();
           cx.lineWidth = 3;
-          cx.strokeStyle = "#F7D117";
+          cx.strokeStyle = "oklch(0.94 0.012 262)";
           cx.stroke();
         } else if (r.al_arco) {
-          cx.fillStyle = "rgba(125,133,144,.72)";
+          cx.fillStyle = "oklch(0.66 0.015 262 / 0.85)";
           cx.fill();
         } else {
-          cx.fillStyle = "rgba(255,255,255,.5)";
+          cx.fillStyle = "oklch(0.32 0.02 262 / 0.8)";
           cx.fill();
           cx.lineWidth = 1.6;
-          cx.strokeStyle = "#b6bcb6";
+          cx.strokeStyle = "oklch(0.42 0.02 262)";
           cx.stroke();
         }
       }
     }
 
-    cx.fillStyle = "#6d7280";
-    cx.font = "600 20px 'Barlow', sans-serif";
+    cx.fillStyle = "oklch(0.62 0.015 262)";
+    cx.font = "600 20px 'IBM Plex Mono', monospace";
     cx.textAlign = "left";
     cx.fillText(
       `${visibles.length} ${visibles.length === 1 ? "remate" : "remates"} · ${goles} ${
@@ -151,23 +151,23 @@ export function MapaRemates({
           role="img"
           aria-label={`Mapa de ${visibles.length} remates, ${goles} goles`}
         />
-        <div className="mt-2.5 flex flex-wrap gap-4 text-[12.5px] text-[#4c5058]">
+        <div className="mt-2.5 flex flex-wrap gap-4 text-[12.5px] text-tinta2">
           <span className="flex items-center gap-2">
             <i
-              className="h-3 w-3 shrink-0 rounded-full bg-[#0A2472]"
-              style={{ boxShadow: "0 0 0 2px #F7D117" }}
+              className="h-3 w-3 shrink-0 rounded-full bg-acento"
+              style={{ boxShadow: "0 0 0 2px oklch(0.94 0.012 262)" }}
             />
             Gol
           </span>
           <span className="flex items-center gap-2">
-            <i className="h-3 w-3 shrink-0 rounded-full bg-[#7d8590]" />
+            <i className="h-3 w-3 shrink-0 rounded-full bg-tinta4" />
             Al arco
           </span>
           <span className="flex items-center gap-2">
-            <i className="h-3 w-3 shrink-0 rounded-full border-[1.5px] border-[#c3c8c1]" />
+            <i className="h-3 w-3 shrink-0 rounded-full border-[1.5px] border-borde" />
             Afuera o bloqueado
           </span>
-          <span className="text-[#6d7280]">El tamaño es el xG del remate</span>
+          <span className="text-tinta4">El tamaño es el xG del remate</span>
         </div>
       </div>
     </div>

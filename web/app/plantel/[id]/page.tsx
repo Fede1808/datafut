@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Cifra } from "@/components/Cifra";
+import { Retrato } from "@/components/Retrato";
 import { MapaRemates } from "@/components/MapaRemates";
 import { SerieRating } from "@/components/SerieRating";
 import {
@@ -72,9 +73,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const j = jugadorPorId(id);
-  if (!j) return { title: "Jugador — Boca en números" };
+  if (!j) return { title: "Jugador — Ribera" };
   return {
-    title: `${j.jugador} — Boca en números`,
+    title: `${j.jugador} — Ribera`,
     description: `${j.jugador} en ${temporadaClub}: ${j.pj} partidos, ${j.minutos} minutos, ${j.goles} goles y ${j.asistencias} asistencias.`,
   };
 }
@@ -95,23 +96,26 @@ export default async function Jugador({
     <div className="py-6">
       <Link
         href="/plantel"
-        className="mb-3.5 inline-block rounded-full border border-[#c3c8c1] px-3.5 py-1.5 text-[12.5px] text-[#4c5058] hover:border-[#0A2472] hover:text-[#0A2472]"
+        className="mb-3.5 inline-block rounded-full border border-borde px-3.5 py-1.5 text-[12.5px] text-tinta2 hover:border-acento hover:text-acento"
       >
         ← Todo el plantel
       </Link>
 
-      <div className="flex flex-wrap items-end justify-between gap-4 rounded-[4px] bg-[#0A2472] px-5 pb-4 pt-5 text-white">
-        <div>
-          <h1
-            className="text-[clamp(28px,6vw,44px)] font-bold uppercase leading-[0.95]"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            {j.jugador}
-          </h1>
-          <p className="mt-1 text-[13px] text-[#aebcea]">
-            {j.arquero ? "Arquero" : "Jugador de campo"} · {j.pj} partidos ·{" "}
-            {j.titular} como titular
-          </p>
+      <div className="tarjeta flex flex-wrap items-end justify-between gap-5 px-5 pb-5 pt-5">
+        <div className="flex items-center gap-4">
+          <Retrato id={j.id} nombre={j.jugador} tamano={88} radio={9} />
+          <div className="min-w-0">
+            <h1
+              className="text-[clamp(26px,5.4vw,44px)] font-black leading-[0.95] tracking-[-0.03em]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {j.jugador}
+            </h1>
+            <p className="dato mt-1.5 text-[11px] uppercase tracking-[0.14em] text-tinta4">
+              {j.arquero ? "Arquero" : "Jugador de campo"} · {j.pj} partidos ·{" "}
+              {j.titular} como titular
+            </p>
+          </div>
         </div>
         <div className="flex flex-wrap gap-6">
           {[
@@ -122,12 +126,12 @@ export default async function Jugador({
           ].map((t) => (
             <span key={t.s} className="text-right">
               <b
-                className="num block text-[30px] font-bold leading-none"
+                className="cifra block text-[30px] leading-none"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {t.b}
               </b>
-              <span className="text-[11.5px] uppercase tracking-[0.08em] text-[#aebcea]">
+              <span className="dato text-[10px] uppercase tracking-[0.14em] text-tinta4">
                 {t.s}
               </span>
             </span>
@@ -178,22 +182,22 @@ export default async function Jugador({
           <div key={g.titulo}>
             <h2 className="titular-2 mb-2.5 mt-7">
               {g.titulo}{" "}
-              <span className="text-[13px] font-normal normal-case tracking-normal text-[#6d7280]">
+              <span className="text-[13px] font-normal normal-case tracking-normal text-tinta4">
                 · por 90 minutos
               </span>
             </h2>
-            <div className="tarjeta">
+            <div className="tarjeta p-4 sm:p-5">
               {usa.map((m) => (
                 <div
                   key={m}
                   className="grid grid-cols-[1fr_52px] items-center gap-x-3 gap-y-1 py-1.5 sm:grid-cols-[172px_1fr_52px]"
                 >
-                  <span className="text-[12.5px] text-[#4c5058]">
+                  <span className="text-[12.5px] text-tinta2">
                     {NOMBRES[m] ?? m}
                   </span>
-                  <span className="relative col-span-2 h-2.5 rounded-full bg-[#e2e4e0] sm:col-span-1">
+                  <span className="relative col-span-2 h-2.5 rounded-full bg-tarjeta2 sm:col-span-1">
                     <span
-                      className="absolute inset-y-0 left-0 rounded-full bg-[#0A2472]"
+                      className="absolute inset-y-0 left-0 rounded-full bg-acento"
                       style={{ width: `${((ficha.por90[m] ?? 0) / tope) * 100}%` }}
                     />
                   </span>

@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Cifra } from "@/components/Cifra";
 import { ComparacionLiga } from "@/components/ComparacionLiga";
+import { Kpis } from "@/components/Kpis";
 import { MapaRemates } from "@/components/MapaRemates";
 import { remates, resumenRemates } from "@/lib/club";
 
 export const metadata: Metadata = {
-  title: "El juego — Boca en números",
+  title: "Stats — Ribera",
   description:
     "Cómo juega Boca: goles esperados, comparación contra los otros 29 equipos de la liga y el mapa de todos sus remates con el xG de cada uno.",
 };
 
 /**
- * EL JUEGO — cómo juega Boca.
+ * STATS — ¿cómo jugamos?
  *
- * Junta dos cosas que antes estaban separadas y nunca debieron estarlo: la
- * comparación contra la liga y el mapa de remates. Las dos responden la misma
- * pregunta, una desde el promedio y la otra desde el detalle.
+ * Junta dos cosas que estaban separadas y nunca debieron estarlo: la
+ * comparación contra la liga y el mapa de remates. Las dos contestan lo mismo,
+ * una desde el promedio y la otra desde el detalle.
  */
 
 const unDecimal = (v: number) =>
@@ -24,38 +24,52 @@ const dosDecimales = (v: number) =>
   v.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const entero = (v: number) => v.toLocaleString("es-AR");
 
-export default function Juego() {
+export default function Stats() {
   const xgPorRemate = resumenRemates.remates
     ? resumenRemates.xg / resumenRemates.remates
     : 0;
+  const diferencia = resumenRemates.xg - resumenRemates.xg_en_contra;
 
   return (
-    <div className="py-6">
-      <h1 className="titular mb-3.5">Cómo juega Boca</h1>
+    <div className="py-8 pb-16">
+      <p className="etiqueta mb-2">Stats</p>
+      <h1 className="titular mb-6">Cómo jugamos</h1>
 
-      <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
-        <Cifra
-          rotulo="Remates"
-          valor={entero(resumenRemates.remates)}
-          pie={`${entero(resumenRemates.al_arco)} al arco`}
-        />
-        <Cifra
-          rotulo="Goles esperados"
-          valor={unDecimal(resumenRemates.xg)}
-          pie={`Convirtió ${resumenRemates.goles}`}
-        />
-        <Cifra rotulo="xG por remate" valor={dosDecimales(xgPorRemate)} />
-        <Cifra
-          rotulo="xG recibido"
-          valor={unDecimal(resumenRemates.xg_en_contra)}
-          pie={`${entero(resumenRemates.remates_en_contra)} remates en contra`}
-        />
-      </div>
+      <Kpis
+        items={[
+          {
+            valor: unDecimal(resumenRemates.xg),
+            etiqueta: `Goles esperados a favor · convirtió ${resumenRemates.goles}`,
+            acento: true,
+          },
+          {
+            valor: unDecimal(resumenRemates.xg_en_contra),
+            etiqueta: `Goles esperados en contra · recibió ${resumenRemates.goles_en_contra}`,
+          },
+          {
+            valor: (diferencia > 0 ? "+" : "") + unDecimal(diferencia),
+            etiqueta: "Diferencia de goles esperados",
+          },
+          {
+            valor: dosDecimales(xgPorRemate),
+            etiqueta: `xG por remate · ${entero(resumenRemates.remates)} remates`,
+          },
+        ]}
+      />
 
-      <h2 className="titular-2 mb-2.5 mt-7">Contra los otros 29 de la liga</h2>
+      <h2 className="titular-2 mb-1.5 mt-10">Contra los otros 29</h2>
+      <p className="mb-3 max-w-[62ch] text-[13px] text-tinta2">
+        Cada métrica ubicada dentro del rango de toda la liga. Lo que importa no es
+        el número suelto sino dónde cae comparado con los demás.
+      </p>
       <ComparacionLiga />
 
-      <h2 className="titular-2 mb-2.5 mt-7">Dónde remata</h2>
+      <h2 className="titular-2 mb-1.5 mt-10">Dónde remata</h2>
+      <p className="mb-3 max-w-[62ch] text-[13px] text-tinta2">
+        Los {entero(resumenRemates.remates)} remates de la temporada, cada uno con su
+        coordenada real y su propio xG. El tamaño del punto es esa probabilidad de
+        gol: un punto grande cerca del arco es una ocasión clara.
+      </p>
       <MapaRemates remates={remates} conFiltros />
     </div>
   );
