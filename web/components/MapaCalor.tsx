@@ -43,7 +43,7 @@ type Props = {
 export function MapaCalor({ filas, ordenPor, onOrdenar }: Props) {
   if (filas.length === 0) {
     return (
-      <p className="py-6 text-center text-[13px] text-[#6d7280]">
+      <p className="py-6 text-center text-[13px] text-tinta3">
         No quedó ningún equipo con los filtros de arriba.
       </p>
     );
@@ -63,7 +63,7 @@ export function MapaCalor({ filas, ordenPor, onOrdenar }: Props) {
             <tr>
               {/* La columna del equipo queda fija: con 27 columnas, para cuando
                   llegás a "duelos ganados" ya no sabés de quién es la fila. */}
-              <th className="sticky left-0 z-10 bg-[#ffffff] px-2 pb-1 text-left" />
+              <th className="sticky left-0 z-10 bg-tarjeta px-2 pb-1 text-left" />
               {METRICAS_VIZ.map((m) => (
                 <th key={m.clave} className="px-0 pb-1 align-bottom">
                   <button
@@ -72,7 +72,7 @@ export function MapaCalor({ filas, ordenPor, onOrdenar }: Props) {
                     aria-pressed={m.clave === ordenPor}
                     title={`Ordenar por ${m.label} · ${LEYENDA_DIRECCION[m.direccion].texto}`}
                     className={`h-[112px] w-[22px] cursor-pointer whitespace-nowrap text-left text-[10px] leading-none ${
-                      m.clave === ordenPor ? "font-bold text-[#1a1c1f]" : "text-[#6d7280]"
+                      m.clave === ordenPor ? "font-bold text-tinta" : "text-tinta3"
                     }`}
                     style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
                   >
@@ -87,15 +87,15 @@ export function MapaCalor({ filas, ordenPor, onOrdenar }: Props) {
               <tr key={e.slug}>
                 <th
                   scope="row"
-                  className="sticky left-0 z-10 whitespace-nowrap border-r border-[#d3d6d1] bg-[#ffffff] py-0.5 pr-2 text-left text-[11px] font-normal text-[#1a1c1f]"
+                  className="sticky left-0 z-10 whitespace-nowrap border-r border-borde bg-tarjeta py-0.5 pr-2 text-left text-[11px] font-normal text-tinta"
                 >
                   <span
                     aria-hidden
                     className="mr-1.5 inline-block h-[10px] w-[3px] align-middle"
-                    style={{ background: e.colores?.[0] ?? "#8d9299" }}
+                    style={{ background: e.colores?.[0] ?? "var(--color-tinta4)" }}
                   />
                   {e.equipo}
-                  <small className="ml-1 text-[9px] text-[#8d9299]">
+                  <small className="ml-1 text-[9px] text-tinta4">
                     {ZONA_POR_SLUG[e.slug] ?? ""}
                   </small>
                 </th>
@@ -106,7 +106,7 @@ export function MapaCalor({ filas, ordenPor, onOrdenar }: Props) {
                     return (
                       <td
                         key={m.clave}
-                        className="border border-[#eceeeb] bg-[#f2f1ec] text-center text-[#8d9299]"
+                        className="border border-borde2 bg-tarjeta2 text-center text-tinta4"
                       >
                         —
                       </td>
@@ -115,7 +115,7 @@ export function MapaCalor({ filas, ordenPor, onOrdenar }: Props) {
                   return (
                     <td
                       key={m.clave}
-                      className="w-[22px] border border-[#ffffff] text-center tabular-nums"
+                      className="w-[22px] border border-borde text-center tabular-nums"
                       style={{ background: colorDeCalor(pct) ?? undefined, color: tintaDeCalor(pct) }}
                       title={`${e.equipo} · ${m.label}: ${formatear(valor, m)} · percentil ${pct} · puesto ${
                         PUESTOS[m.clave][e.slug] ?? "—"
@@ -142,8 +142,8 @@ export function MapaCalor({ filas, ordenPor, onOrdenar }: Props) {
         </span>
         <span className="etiqueta">Mejor</span>
       </div>
-      <p className="num mt-2 max-w-[74ch] text-[9.5px] leading-relaxed text-[#6d7280]">
-        Cada celda es el <strong className="font-semibold text-[#4c5058]">percentil</strong> del
+      <p className="num mt-2 max-w-[74ch] text-[9.5px] leading-relaxed text-tinta3">
+        Cada celda es el <strong className="font-semibold text-tinta2">percentil</strong> del
         equipo en esa métrica sobre los 30 de la liga, no el valor: 100 es el mejor, 50 el
         promedio. En las métricas de «menos es mejor» el 100 ya está del lado correcto. El valor
         real, el puesto y la dirección aparecen al apoyar el puntero sobre la celda. Tocá el

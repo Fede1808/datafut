@@ -129,7 +129,7 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
             </button>
           ))}
         </div>
-        <p className="num text-[9.5px] text-[#6d7280]">
+        <p className="num text-[9.5px] text-tinta3">
           {visibles.length} equipos · tocá un encabezado{" "}
           <span aria-hidden>▲▼</span> para ordenar
         </p>
@@ -138,7 +138,7 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
       <div role="table" aria-label="Probabilidad de campeón y de playoffs por equipo">
         <div
           role="row"
-          className="flex items-center gap-1.5 border-t-2 border-b border-[#1a1c1f] border-b-[#d3d6d1] py-1"
+          className="flex items-center gap-1.5 border-t-2 border-b border-tinta4 border-b-borde py-1"
         >
           {/* # es la posición en el orden aplicado, no el puesto de la tabla:
               con las dos zonas juntas el puesto se repite. El puesto real va
@@ -170,16 +170,16 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
               href={`/equipo/${f.slug}`}
               role="row"
               style={{ animationDelay: `${Math.min(i, 14) * 14}ms` }}
-              className="fila fila-anim flex items-center gap-1.5 border-b border-[#e2e4e0] py-2"
+              className="fila fila-anim flex items-center gap-1.5 border-b border-borde2 py-2"
             >
-              <span role="cell" className="num w-6 shrink-0 text-right text-[10px] text-[#6d7280]">
+              <span role="cell" className="num w-6 shrink-0 text-right text-[10px] text-tinta3">
                 {i + 1}
               </span>
               <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
                 <Escudo slug={f.slug} colores={f.colores} size={16} />
                 <span className="enlace-ficha truncate text-[13px]">{f.equipo}</span>
                 <span
-                  className="num shrink-0 text-[9px] text-[#8d9299]"
+                  className="num shrink-0 text-[9px] text-tinta4"
                   title={`${f.puesto}° de la zona ${f.zona}`}
                 >
                   {f.zona}
@@ -187,7 +187,7 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
                 </span>
               </span>
 
-              <span role="cell" className="num w-10 shrink-0 text-right text-[12px] text-[#4c5058]">
+              <span role="cell" className="num w-10 shrink-0 text-right text-[12px] text-tinta2">
                 {f.pts}
               </span>
               <Delta valor={f.atk} ancho="w-[62px]" />
@@ -196,10 +196,10 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
                 role="cell"
                 className={`num hidden w-[58px] shrink-0 text-right text-[11.5px] sm:block ${
                   !f.tieneStats
-                    ? "text-[#8d9299]"
+                    ? "text-tinta4"
                     : f.xgdif >= 0
-                      ? "text-[#2f8f4e]"
-                      : "text-[#c8102e]"
+                      ? "text-sube"
+                      : "text-baja"
                 }`}
               >
                 {!f.tieneStats
@@ -210,7 +210,7 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
                 {f.playoffs.toFixed(1)}
               </span>
               <span role="cell" className="w-[64px] shrink-0 text-right">
-                <span className="num block text-[13px] font-semibold text-[#1a1c1f]">
+                <span className="num block text-[13px] font-semibold text-tinta">
                   {f.campeon.toFixed(2)}
                 </span>
                 <span className="ml-auto block w-fit">
@@ -219,7 +219,7 @@ export function TablaTitulo({ filas }: { filas: FilaCompleta[] }) {
               </span>
               <span
                 role="cell"
-                className="num hidden w-[58px] shrink-0 text-right text-[11.5px] text-[#6d7280] sm:block"
+                className="num hidden w-[58px] shrink-0 text-right text-[11.5px] text-tinta3 sm:block"
               >
                 {f.conv.toFixed(1)}%
               </span>
@@ -236,7 +236,7 @@ function Delta({ valor, ancho }: { valor: number; ancho: string }) {
     <span
       role="cell"
       className={`num hidden ${ancho} shrink-0 text-right text-[11.5px] sm:block ${
-        valor >= 0 ? "text-[#2f8f4e]" : "text-[#c8102e]"
+        valor >= 0 ? "text-sube" : "text-baja"
       }`}
     >
       {valor >= 0 ? "+" : "−"}

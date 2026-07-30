@@ -66,8 +66,8 @@ export function Almanaque() {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-x-3.5 gap-y-1 pb-2.5 text-[9.5px] text-[#6d7280]">
-          <Leyenda color="#2f8f4e">jugada</Leyenda>
+        <div className="flex flex-wrap gap-x-3.5 gap-y-1 pb-2.5 text-[9.5px] text-tinta3">
+          <Leyenda color="var(--color-sube)">jugada</Leyenda>
           <Leyenda color="#e0a020">con partidos postergados</Leyenda>
         </div>
       </div>
@@ -103,10 +103,10 @@ function detalleDe(f: Fecha): string {
 
 function TarjetaFecha({ f }: { f: Fecha }) {
   return (
-    <section className="fecha-anim tarjeta mt-4 overflow-hidden border border-[#d3d6d1]">
-      <header className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 border-b-2 border-[#1a1c1f] px-3.5 pb-2.5 pt-3">
+    <section className="fecha-anim tarjeta mt-4 overflow-hidden border border-borde">
+      <header className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 border-b-2 border-tinta4 px-3.5 pb-2.5 pt-3">
         <h2 className="titular-2">Fecha {f.ronda}</h2>
-        <span className="num text-[9.5px] uppercase tracking-[0.1em] text-[#6d7280]">
+        <span className="num text-[9.5px] uppercase tracking-[0.1em] text-tinta3">
           {detalleDe(f)}
         </span>
       </header>
@@ -121,9 +121,9 @@ function TarjetaFecha({ f }: { f: Fecha }) {
       ))}
 
       {f.postergados > 0 && (
-        <p className="border-t border-[#e2e4e0] px-3.5 py-4 text-[12.5px] leading-relaxed text-[#6d7280]">
+        <p className="border-t border-borde2 px-3.5 py-4 text-[12.5px] leading-relaxed text-tinta3">
           Los{" "}
-          <strong className="font-semibold text-[#1a1c1f]">
+          <strong className="font-semibold text-tinta">
             {f.postergados} partidos postergados
           </strong>{" "}
           de esta fecha siguen contando para la simulación: el modelo los juega
@@ -141,8 +141,8 @@ function TarjetaFecha({ f }: { f: Fecha }) {
         decidir solo cuánto confiar en el número de noviembre.
       */}
       {f.partidos.some((p) => p.estimado) && (
-        <p className="border-t border-[#e2e4e0] px-3.5 py-4 text-[12.5px] leading-relaxed text-[#6d7280]">
-          <strong className="font-semibold text-[#1a1c1f]">
+        <p className="border-t border-borde2 px-3.5 py-4 text-[12.5px] leading-relaxed text-tinta3">
+          <strong className="font-semibold text-tinta">
             Estos porcentajes son una estimación.
           </strong>{" "}
           El modelo mide la fuerza de ataque y de defensa de cada equipo a partir
@@ -181,7 +181,7 @@ function Lado({
       {visitante && <Escudo slug={slug} colores={colores} size={16} />}
       <span
         className={`enlace-ficha truncate text-[13.5px] font-medium ${
-          apagado ? "text-[#8d9299]" : ""
+          apagado ? "text-tinta4" : ""
         }`}
       >
         {nombre}
@@ -255,22 +255,22 @@ function FilaFecha({ p }: { p: PartidoFecha }) {
           <div className="mt-2.5">
             <BarraProb {...p.prob} alto={7} />
           </div>
-          <div className="num mt-1.5 flex justify-between gap-2 text-[9.5px] text-[#6d7280]">
+          <div className="num mt-1.5 flex justify-between gap-2 text-[9.5px] text-tinta3">
             <span>
               local{" "}
-              <strong className="font-semibold text-[#1a1c1f]">
+              <strong className="font-semibold text-tinta">
                 {p.prob.local.toFixed(1)}%
               </strong>
             </span>
             <span>
               empate{" "}
-              <strong className="font-semibold text-[#1a1c1f]">
+              <strong className="font-semibold text-tinta">
                 {p.prob.empate.toFixed(1)}%
               </strong>
             </span>
             <span>
               visita{" "}
-              <strong className="font-semibold text-[#1a1c1f]">
+              <strong className="font-semibold text-tinta">
                 {p.prob.visita.toFixed(1)}%
               </strong>
             </span>
@@ -286,7 +286,7 @@ function FilaFecha({ p }: { p: PartidoFecha }) {
     </>
   );
 
-  const clases = "fila border-b border-[#e2e4e0] px-3.5 py-2.5 last:border-b-0";
+  const clases = "fila border-b border-borde2 px-3.5 py-2.5 last:border-b-0";
 
   return conFicha ? (
     <Link

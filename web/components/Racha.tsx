@@ -51,7 +51,7 @@ export function Racha({
               opacity={ultimo ? 1 : 0.55 + (0.45 * i) / ultimos.length}
             />
             {ultimo && (
-              <rect x={i * paso} y={-3} width={ancho} height={2} fill="#1a1c1f" />
+              <rect x={i * paso} y={-3} width={ancho} height={2} fill="var(--color-tinta)" />
             )}
           </g>
         );
@@ -61,9 +61,9 @@ export function Racha({
 }
 
 const COLOR: Record<PartidoRacha["r"], string> = {
-  G: "#2f8f4e",
-  E: "#6d7280",
-  P: "#c8102e",
+  G: "var(--color-sube)",
+  E: "var(--color-tinta3)",
+  P: "var(--color-baja)",
 };
 
 function texto(r: PartidoRacha["r"]): string {

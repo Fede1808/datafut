@@ -30,9 +30,26 @@ export function contraste(hexA: string, hexB: string): number {
   return (claro + 0.05) / (oscuro + 0.05);
 }
 
-/** El color del club, o tinta oscura si el propio color no lee sobre blanco. */
-export function clubSobreBlanco(hex: string, minimo = 3): string {
-  return contraste(hex, "#ffffff") >= minimo ? hex : "#1a1c1f";
+/**
+ * `--color-tarjeta` en sRGB. Está acá como constante porque `contraste()`
+ * trabaja con hex y no puede resolver una variable CSS: si el token cambia,
+ * este valor hay que actualizarlo con él.
+ */
+const TARJETA = "#0c1421";
+
+/**
+ * El color del club para escribir SOBRE UNA TARJETA, o la tinta del sistema si
+ * el color propio del club no llega a contrastar.
+ *
+ * Antes se llamaba `clubSobreBlanco` y medía contra `#ffffff`, que era la
+ * tarjeta del tema claro. Con el tema oscuro esa cuenta quedó al revés y hacía
+ * exactamente el daño que venía a evitar: los clubes de color claro —River,
+ * Gimnasia, Huracán, Vélez, justo los que mejor se leen sobre una tarjeta
+ * oscura— fallaban el test contra blanco y caían a una tinta casi negra. En la
+ * ficha de River el "13,2%" de "sale campeón" quedaba negro sobre negro.
+ */
+export function clubSobreTarjeta(hex: string, minimo = 3): string {
+  return contraste(hex, TARJETA) >= minimo ? hex : "var(--color-tinta)";
 }
 
 function luminancia(hex: string): number {

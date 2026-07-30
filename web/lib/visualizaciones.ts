@@ -24,6 +24,7 @@
  */
 
 import { posiciones } from "@/lib/datos";
+import { contraste } from "@/lib/color";
 import {
   CATEGORIAS,
   equiposStats,
@@ -137,12 +138,29 @@ export function colorDeCalor(pct: number | null): string | null {
 }
 
 /**
- * Tinta blanca sólo sobre los extremos oscuros. Los cortes (22 y 82) están
- * puestos sobre el color real de la rampa, no a ojo: en los cuatro escalones
- * del medio el texto negro contrasta mejor que el blanco.
+ * La tinta de cada celda del mapa de calor.
+ *
+ * Antes eran dos cortes fijos en el percentil (22 y 82). El problema es que el
+ * corte estaba puesto sobre el PERCENTIL y lo que importa es el COLOR: en los
+ * dos escalones de transición —`#d4566a` y `#5b83bd`— el corte elegía blanco
+ * donde la tinta oscura contrastaba más, y quedaban en 3,87:1 y 3,93:1.
+ *
+ * Ahora se prueban las dos y gana la que mide mejor contra el color real de la
+ * celda. La rampa no se toca: está validada para daltonismo con el validador
+ * del skill `dataviz` y moverla a ojo para ganar unas décimas de contraste
+ * sería cambiar una cosa medida por otra estimada.
+ *
+ * QUEDA UN HUECO CONOCIDO: sobre esos dos escalones la mejor de las dos tintas
+ * llega a 4,34:1 y 4,41:1, apenas por debajo del 4,5:1 que pide AA para 11px.
+ * El número de la celda es una etiqueta redundante —el dato ya está dicho por
+ * el color— así que se prefiere eso a deformar la rampa.
  */
 export function tintaDeCalor(pct: number): string {
-  return pct <= 22 || pct >= 82 ? "#ffffff" : "#1a1c1f";
+  const fondo = colorDeCalor(pct);
+  if (!fondo) return "var(--color-tinta)";
+  return contraste("#ffffff", fondo) >= contraste("#1a1c1f", fondo)
+    ? "#ffffff"
+    : "#1a1c1f";
 }
 
 /**

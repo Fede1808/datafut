@@ -41,7 +41,7 @@ export function ModeloVsMercado({
     <div role="table" aria-label="Probabilidad del modelo contra la del mercado">
       <div
         role="row"
-        className="mt-1.5 flex items-center gap-1.5 border-t-2 border-b border-[#1a1c1f] border-b-[#d3d6d1] py-2"
+        className="mt-1.5 flex items-center gap-1.5 border-t-2 border-b border-tinta4 border-b-borde py-2"
       >
         <span role="columnheader" className="etiqueta min-w-0 flex-1">
           Resultado
@@ -67,7 +67,7 @@ export function ModeloVsMercado({
           <div
             key={f.clave}
             role="row"
-            className="flex items-center gap-1.5 border-b border-[#e2e4e0] py-2"
+            className="flex items-center gap-1.5 border-b border-borde2 py-2"
           >
             <span role="cell" className="min-w-0 flex-1 text-[12.5px]">
               {f.label}
@@ -80,7 +80,7 @@ export function ModeloVsMercado({
             </span>
             <span
               role="cell"
-              className="num w-12 shrink-0 text-right text-[12px] text-[#4c5058]"
+              className="num w-12 shrink-0 text-right text-[12px] text-tinta2"
             >
               {implicita[f.clave].toFixed(1)}
             </span>
@@ -91,7 +91,7 @@ export function ModeloVsMercado({
               <BarraDiferencia valor={d} />
               <span
                 className={`num w-[38px] text-right text-[11.5px] ${
-                  Math.abs(d) >= 5 ? "text-[#1a1c1f]" : "text-[#6d7280]"
+                  Math.abs(d) >= 5 ? "text-tinta" : "text-tinta3"
                 }`}
               >
                 {d > 0 ? "+" : d < 0 ? "−" : "±"}
@@ -114,16 +114,16 @@ function BarraDiferencia({ valor }: { valor: number }) {
 
   return (
     <svg width={ancho} height={alto} viewBox={`0 0 ${ancho} ${alto}`} aria-hidden>
-      <rect x={0} y={alto / 2 - 0.5} width={ancho} height={1} fill="#e2e4e0" />
+      <rect x={0} y={alto / 2 - 0.5} width={ancho} height={1} fill="var(--color-borde2)" />
       <rect
         x={valor >= 0 ? medio : medio - largo}
         y={1}
         width={largo}
         height={alto - 2}
-        fill="#1a1c1f"
+        fill="var(--color-tinta)"
         opacity={Math.abs(valor) >= 5 ? 1 : 0.5}
       />
-      <rect x={medio - 0.5} y={0} width={1} height={alto} fill="#8d9299" />
+      <rect x={medio - 0.5} y={0} width={1} height={alto} fill="var(--color-tinta4)" />
     </svg>
   );
 }

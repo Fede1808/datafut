@@ -239,9 +239,16 @@ export default function Hoy() {
               <div className="flex items-center gap-4">
                 <Retrato id={figura.id} nombre={figura.jugador} tamano={88} />
                 <div className="min-w-0">
+                  {/*
+                    Sin `truncate`: el nombre de la figura es el dato de la
+                    tarjeta, y "Leandro Paredes" no entra en los 250px que
+                    quedan al lado del retrato — se leía "Leandro Pare…".
+                    `text-balance` reparte las dos líneas en vez de dejar una
+                    llena y un apellido colgando solo abajo.
+                  */}
                   <Link
                     href={`/plantel/${figura.id}`}
-                    className="titular-2 block truncate hover:text-acento"
+                    className="titular-2 block text-balance hover:text-acento"
                   >
                     {figura.jugador}
                   </Link>

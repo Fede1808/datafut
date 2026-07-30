@@ -101,7 +101,7 @@ export function PanelEstadisticas() {
       {/* --- El selector de torneo. Mismo patrón que el filtro de zona de
           /tabla (mismas clases .pestania, mismo role="group"): si todo lo
           clickeable del sitio se ve igual, se aprende una vez. --- */}
-      <div className="border-b border-[#d3d6d1] pb-3">
+      <div className="border-b border-borde pb-3">
         <div className="etiqueta mb-2">Torneo</div>
         <div
           className="flex flex-wrap gap-1.5"
@@ -120,7 +120,7 @@ export function PanelEstadisticas() {
             </button>
           ))}
         </div>
-        <p className="num mt-2 text-[9.5px] leading-relaxed text-[#6d7280]">
+        <p className="num mt-2 text-[9.5px] leading-relaxed text-tinta3">
           {torneo === "temporada"
             ? `Apertura, playoffs y lo que va del Clausura juntos, entre ${bloque.pj_min} y ${bloque.pj_max} partidos por equipo.`
             : bloque.pj_min === bloque.pj_max
@@ -133,12 +133,12 @@ export function PanelEstadisticas() {
             esto no se puede leer de pasada. El dueño lo pidió así de
             explícito: mostrar el filtro sin avisar sería mentir. */}
         {muestraChica && (
-          <p className="mt-2 flex max-w-[74ch] items-start gap-2.5 rounded-[4px] border-l-[3px] border-[#c8102e] bg-[#e2e4e0] px-3 py-2.5 text-[12px] leading-relaxed text-[#4c5058]">
-            <span aria-hidden className="cifra pt-px text-[15px] text-[#c8102e]">
+          <p className="mt-2 flex max-w-[74ch] items-start gap-2.5 rounded-[4px] border-l-[3px] border-baja bg-tarjeta2 px-3 py-2.5 text-[12px] leading-relaxed text-tinta2">
+            <span aria-hidden className="cifra pt-px text-[15px] text-baja">
               !
             </span>
             <span>
-              <strong className="font-semibold text-[#1a1c1f]">
+              <strong className="font-semibold text-tinta">
                 Esto es ruido, no una tendencia.
               </strong>{" "}
               {bloque.pj_max === 1
@@ -153,7 +153,7 @@ export function PanelEstadisticas() {
       </div>
 
       {/* --- El selector de categoría --- */}
-      <div className="mt-4 border-b border-[#d3d6d1] pb-3">
+      <div className="mt-4 border-b border-borde pb-3">
         <div className="etiqueta mb-2">Elegí qué mirar</div>
         <div
           className="flex flex-wrap gap-1.5"
@@ -182,7 +182,7 @@ export function PanelEstadisticas() {
             </button>
           ))}
         </div>
-        <p className="num mt-2 text-[9.5px] leading-relaxed text-[#6d7280]">
+        <p className="num mt-2 text-[9.5px] leading-relaxed text-tinta3">
           {categoria === TODAS
             ? "Estás viendo lo principal de cada categoría. Elegí una para abrir todas sus métricas."
             : "Todas las métricas de la categoría. Volvé a «Panorama» para ver el resumen de las seis."}
@@ -192,9 +192,9 @@ export function PanelEstadisticas() {
       {/* --- Los podios --- */}
       {secciones.map(({ cat, metricas }) => (
         <section key={cat.id} className="mt-7">
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 border-b border-[#8d9299] pb-1.5">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 border-b border-tinta4 pb-1.5">
             <h2 className="titular-2">{cat.nombre}</h2>
-            <p className="num text-[9.5px] uppercase tracking-[0.08em] text-[#6d7280]">
+            <p className="num text-[9.5px] uppercase tracking-[0.08em] text-tinta3">
               {cat.bajada}
             </p>
           </div>
@@ -266,9 +266,9 @@ function BloqueMetrica({
 
   if (filas.length === 0) {
     return (
-      <div className="border-b border-[#e2e4e0] py-3">
+      <div className="border-b border-borde2 py-3">
         <Titulo metrica={metrica} leyenda={leyenda} />
-        <p className="num mt-1 text-[10px] text-[#6d7280]">
+        <p className="num mt-1 text-[10px] text-tinta3">
           Sin datos para esta métrica.
         </p>
       </div>
@@ -276,11 +276,11 @@ function BloqueMetrica({
   }
 
   return (
-    <div className="border-b border-[#e2e4e0] py-3.5 last:border-b-0">
+    <div className="border-b border-borde2 py-3.5 last:border-b-0">
       <Titulo metrica={metrica} leyenda={leyenda} />
 
       {metrica.def && (
-        <p className="mt-1 max-w-[74ch] text-[12px] leading-relaxed text-[#4c5058]">
+        <p className="mt-1 max-w-[74ch] text-[12px] leading-relaxed text-tinta2">
           {metrica.def}
         </p>
       )}
@@ -333,7 +333,7 @@ function Titulo({
 }) {
   return (
     <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-      <h3 className="text-[15px] leading-snug font-semibold text-[#1a1c1f]">
+      <h3 className="text-[15px] leading-snug font-semibold text-tinta">
         {metrica.label}
       </h3>
       {/* La dirección del ranking. Va con símbolo Y con palabras: el símbolo
@@ -341,16 +341,16 @@ function Titulo({
       <span
         className={`num text-[9px] uppercase tracking-[0.06em] ${
           metrica.direccion === "mas"
-            ? "text-[#2f8f4e]"
+            ? "text-sube"
             : metrica.direccion === "menos"
-              ? "text-[#c8102e]"
-              : "text-[#6d7280]"
+              ? "text-baja"
+              : "text-tinta3"
         }`}
       >
         <span aria-hidden>{leyenda.signo} </span>
         {leyenda.texto}
       </span>
-      <span className="num text-[9px] uppercase tracking-[0.06em] text-[#6d7280]">
+      <span className="num text-[9px] uppercase tracking-[0.06em] text-tinta3">
         {metrica.total ? "total de la temporada" : "por partido"}
       </span>
     </div>
@@ -382,24 +382,24 @@ function Fila({
   // en esas la barra más larga NO es la mejor, y pintarla de ámbar mentiría.
   const color = negativa
     ? positivo
-      ? "#2f8f4e"
-      : "#c8102e"
+      ? "var(--color-sube)"
+      : "var(--color-baja)"
     : metrica.direccion === "mas"
-      ? "#1a1c1f"
+      ? "var(--color-tinta)"
       : metrica.direccion === "menos"
-        ? "#4c5058"
-        : "#6d7280";
+        ? "var(--color-tinta2)"
+        : "var(--color-tinta3)";
 
   return (
     <li
       // El escalonado se corta a los 14: con 30 filas, la última entraría casi
       // medio segundo tarde y eso ya no es respuesta, es espera.
       style={{ animationDelay: `${Math.min(indice, 14) * 14}ms` }}
-      className="fila-anim flex items-center gap-2 border-b border-[#e2e4e0] py-1.5 last:border-b-0"
+      className="fila-anim flex items-center gap-2 border-b border-borde2 py-1.5 last:border-b-0"
     >
       <span
         className={`num w-6 shrink-0 text-right text-[11px] ${
-          fila.puesto === 1 ? "text-[#1a1c1f]" : "text-[#6d7280]"
+          fila.puesto === 1 ? "text-tinta" : "text-tinta3"
         }`}
       >
         {fila.puesto}
@@ -407,7 +407,7 @@ function Fila({
       <Escudo slug={fila.slug} colores={fila.colores} size={15} />
       <Link
         href={`/equipo/${fila.slug}`}
-        className="enlace-ficha min-w-0 flex-1 truncate text-[12.5px] text-[#1a1c1f] hover:text-[#1a1c1f]"
+        className="enlace-ficha min-w-0 flex-1 truncate text-[12.5px] text-tinta hover:text-tinta"
       >
         {fila.equipo}
       </Link>
@@ -415,14 +415,14 @@ function Fila({
       {/* La barra se achica en el celular pero NO se esconde: es lo que deja
           comparar de un vistazo sin tener que leer treinta números. Con 56px
           todavía entran el nombre completo y el valor. */}
-      <span className="relative block h-[9px] w-[56px] shrink-0 bg-[#e2e4e0] sm:w-[120px]">
+      <span className="relative block h-[9px] w-[56px] shrink-0 bg-tarjeta2 sm:w-[120px]">
         {negativa ? (
           <>
             {/* Eje del cero. Sin esta línea no se sabe desde dónde sale la
                 barra y un −2 se lee igual que un +2. */}
             <span
               aria-hidden
-              className="absolute top-[-2px] bottom-[-2px] left-1/2 w-px bg-[#8d9299]"
+              className="absolute top-[-2px] bottom-[-2px] left-1/2 w-px bg-tinta4"
             />
             <span
               className="barra-crece absolute top-0 block h-full"
@@ -447,14 +447,14 @@ function Fila({
                 que se lee la barra, no un adorno. */}
             <span
               aria-hidden
-              className="absolute top-[-2px] bottom-[-2px] w-px bg-[#1a1c1f] opacity-60"
+              className="absolute top-[-2px] bottom-[-2px] w-px bg-tinta opacity-60"
               style={{ left: `${Math.min((promedio / escala) * 100, 100)}%` }}
             />
           </>
         )}
       </span>
 
-      <span className="num w-[62px] shrink-0 text-right text-[12px] text-[#1a1c1f]">
+      <span className="num w-[62px] shrink-0 text-right text-[12px] text-tinta">
         {formatear(fila.valor, metrica)}
       </span>
     </li>

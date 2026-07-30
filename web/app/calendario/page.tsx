@@ -19,9 +19,9 @@ export const metadata = {
 export default function Calendario() {
   return (
     <div className="py-5">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-[#d3d6d1] pb-2">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-borde pb-2">
         <h1 className="titular">Calendario</h1>
-        <p className="num text-[10px] uppercase tracking-[0.08em] text-[#6d7280]">
+        <p className="num text-[10px] uppercase tracking-[0.08em] text-tinta3">
           {torneoCalendario} {temporadaCalendario} · {totalPartidos} partidos
         </p>
       </div>

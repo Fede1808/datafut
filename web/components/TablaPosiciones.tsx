@@ -140,7 +140,7 @@ export function TablaPosiciones({
         </div>
         {/* La instrucción explícita queda igual, pero ahora es refuerzo y no la
             única pista: los encabezados se anuncian solos. */}
-        <p className="num text-[9.5px] text-[#6d7280]">
+        <p className="num text-[9.5px] text-tinta3">
           Tocá un encabezado <span aria-hidden>▲▼</span> para ordenar
         </p>
       </div>
@@ -154,7 +154,7 @@ export function TablaPosiciones({
         {/* Cabecera */}
         <div
           role="row"
-          className="flex items-center gap-1.5 border-t-2 border-b border-[#1a1c1f] border-b-[#d3d6d1] py-1"
+          className="flex items-center gap-1.5 border-t-2 border-b border-tinta4 border-b-borde py-1"
         >
           <BotonOrden
             label="#"
@@ -224,7 +224,7 @@ export function TablaPosiciones({
                 // eso ya no es feedback, es esperar.
                 style={{ animationDelay: `${Math.min(i, 14) * 14}ms` }}
                 className={`fila fila-anim flex items-center gap-1.5 py-2 ${
-                  corte ? "border-b-2 border-[#2f8f4e]" : "border-b border-[#e2e4e0]"
+                  corte ? "border-b-2 border-sube" : "border-b border-borde2"
                 }`}
               >
                 {/*
@@ -247,7 +247,7 @@ export function TablaPosiciones({
                   />
                   <span
                     className={`cifra text-[16px] ${
-                      dentro ? "text-[#1a1c1f]" : "text-[#8d9299]"
+                      dentro ? "text-tinta" : "text-tinta4"
                     }`}
                   >
                     {f.puesto}
@@ -259,7 +259,7 @@ export function TablaPosiciones({
                       texto y nadie descubre que hay una ficha atrás. */}
                   <span className="enlace-ficha truncate text-[13px]">{f.equipo}</span>
                   {zona === "todas" && (
-                    <span className="num shrink-0 text-[9px] text-[#8d9299]">
+                    <span className="num shrink-0 text-[9px] text-tinta4">
                       {f.zona}
                     </span>
                   )}
@@ -270,18 +270,18 @@ export function TablaPosiciones({
                     role="cell"
                     className={`num ${c.ancho} shrink-0 text-right text-[12px] ${
                       c.clave === "pts"
-                        ? "font-semibold text-[#1a1c1f]"
+                        ? "font-semibold text-tinta"
                         : c.clave === "xg_dif"
                           ? f.xg_dif >= 0
-                            ? "text-[#2f8f4e]"
-                            : "text-[#c8102e]"
-                          : "text-[#4c5058]"
+                            ? "text-sube"
+                            : "text-baja"
+                          : "text-tinta2"
                     } ${c.opcional ? "hidden sm:block" : ""}`}
                   >
                     {c.clave === "xg_dif" ? (
                       // Sin stats no se inventa un cero: se dice que no hay.
                       !f.tieneStats ? (
-                        <span className="text-[#8d9299]">—</span>
+                        <span className="text-tinta4">—</span>
                       ) : (
                         `${f.xg_dif > 0 ? "+" : f.xg_dif < 0 ? "−" : "±"}${Math.abs(f.xg_dif).toFixed(1)}`
                       )
@@ -305,26 +305,26 @@ export function TablaPosiciones({
                 <span
                   role="cell"
                   className={`num w-11 shrink-0 text-right text-[12px] ${
-                    f.descenso >= 10 ? "text-[#c8102e]" : "text-[#4c5058]"
+                    f.descenso >= 10 ? "text-baja" : "text-tinta2"
                   }`}
                 >
                   {f.descenso >= 0.05 ? f.descenso.toFixed(1) : "—"}
                 </span>
                 <span role="cell" className="w-[56px] shrink-0 text-right">
-                  <span className="num block text-[12px] text-[#1a1c1f]">
+                  <span className="num block text-[12px] text-tinta">
                     {f.playoffs.toFixed(1)}
                   </span>
                   <span className="ml-auto block w-fit">
                     <BarraSimple
                       valor={f.playoffs}
                       maximo={maxPlayoffs}
-                      color="#2f8f4e"
+                      color="var(--color-sube)"
                       ancho={44}
                     />
                   </span>
                 </span>
                 <span role="cell" className="w-[58px] shrink-0 text-right">
-                  <span className="num block text-[12px] font-semibold text-[#1a1c1f]">
+                  <span className="num block text-[12px] font-semibold text-tinta">
                     {f.campeon.toFixed(1)}
                   </span>
                   <span className="ml-auto block w-fit">

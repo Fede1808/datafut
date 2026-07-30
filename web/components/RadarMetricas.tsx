@@ -94,7 +94,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
       </div>
 
       {enRadar.length === 0 ? (
-        <p className="mt-4 text-[13px] text-[#6d7280]">
+        <p className="mt-4 text-[13px] text-tinta3">
           Elegí de uno a tres equipos para dibujar su perfil.
         </p>
       ) : (
@@ -112,7 +112,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                 key={p}
                 points={poligono(EJES_RADAR.map(() => (R * p) / 100))}
                 fill="none"
-                stroke={p === 50 ? "#8d9299" : "#d3d6d1"}
+                stroke={p === 50 ? "var(--color-tinta4)" : "var(--color-borde)"}
                 strokeWidth="1"
                 strokeDasharray={p === 50 ? "3 3" : undefined}
               />
@@ -126,7 +126,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                   y1={CY}
                   x2={x.toFixed(1)}
                   y2={y.toFixed(1)}
-                  stroke="#d3d6d1"
+                  stroke="var(--color-borde)"
                   strokeWidth="1"
                 />
               );
@@ -177,7 +177,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                     y={ly.toFixed(1)}
                     textAnchor={anclaje}
                     fontSize="11"
-                    fill="#4c5058"
+                    fill="var(--color-tinta2)"
                   >
                     {m.label.split(" ").slice(0, 2).join(" ")}
                   </text>
@@ -188,7 +188,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                       textAnchor={anclaje}
                       fontSize="12"
                       fontWeight="700"
-                      fill="#1a1c1f"
+                      fill="var(--color-tinta)"
                     >
                       {PERCENTILES[m.clave][enRadar[0].slug] ?? "—"}
                     </text>
@@ -198,7 +198,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
             })}
             {/* El centro es el peor de la liga, no el cero de la métrica. Sin
                 esta marca el radar se lee como si el centro fuera "nada". */}
-            <text x={CX} y={CY + 4} textAnchor="middle" fontSize="10" fill="#8d9299">
+            <text x={CX} y={CY + 4} textAnchor="middle" fontSize="10" fill="var(--color-tinta4)">
               peor
             </text>
           </svg>
@@ -208,7 +208,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
             <table className="num w-full border-collapse text-[12px]">
               <thead>
                 <tr>
-                  <th className="border-b border-[#d3d6d1] py-1.5 pr-2 text-left font-semibold text-[#6d7280]">
+                  <th className="border-b border-borde py-1.5 pr-2 text-left font-semibold text-tinta3">
                     Métrica
                   </th>
                   {enRadar.map((e) => {
@@ -216,7 +216,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                     return (
                       <th
                         key={e.slug}
-                        className="border-b border-[#d3d6d1] px-2 py-1.5 text-right font-semibold"
+                        className="border-b border-borde px-2 py-1.5 text-right font-semibold"
                         style={{ color: SERIES[i] }}
                       >
                         {e.equipo}
@@ -231,7 +231,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                   const top = Math.max(...pcts);
                   return (
                     <tr key={m.clave}>
-                      <td className="border-b border-[#e2e4e0] py-1.5 pr-2 text-[#4c5058]">
+                      <td className="border-b border-borde2 py-1.5 pr-2 text-tinta2">
                         {m.label}
                       </td>
                       {enRadar.map((e, j) => (
@@ -240,10 +240,10 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                           // La negrita marca al mejor DE LOS ELEGIDOS en ese eje,
                           // no al mejor de la liga. Con un solo equipo no se
                           // marca nada: sería el mejor de sí mismo.
-                          className={`border-b border-[#e2e4e0] px-2 py-1.5 text-right ${
+                          className={`border-b border-borde2 px-2 py-1.5 text-right ${
                             pcts[j] === top && enRadar.length > 1
-                              ? "font-bold text-[#1a1c1f]"
-                              : "text-[#4c5058]"
+                              ? "font-bold text-tinta"
+                              : "text-tinta2"
                           }`}
                           title={`${m.label}: ${formatear(
                             typeof e[m.clave] === "number" ? (e[m.clave] as number) : null,
@@ -258,7 +258,7 @@ export function RadarMetricas({ slots, elegibles, onAlternar }: Props) {
                 })}
               </tbody>
             </table>
-            <p className="num mt-2 text-[9.5px] leading-relaxed text-[#6d7280]">
+            <p className="num mt-2 text-[9.5px] leading-relaxed text-tinta3">
               Los números son percentiles sobre los 30 equipos: 100 es el mejor de
               la liga en esa métrica, 50 el promedio. El valor real de cada
               métrica aparece al apoyar el puntero sobre la celda.

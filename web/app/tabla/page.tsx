@@ -21,9 +21,9 @@ export const metadata = {
 export default function Tabla() {
   return (
     <div className="py-5">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-[#d3d6d1] pb-2">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-borde pb-2">
         <h1 className="titular">Posiciones</h1>
-        <p className="num text-[10px] uppercase tracking-[0.08em] text-[#6d7280]">
+        <p className="num text-[10px] uppercase tracking-[0.08em] text-tinta3">
           {torneo} {temporada} · {partidosJugados} partidos jugados
         </p>
       </div>
@@ -36,9 +36,9 @@ export default function Tabla() {
         />
       </div>
 
-      <div className="num mt-5 grid gap-2 border-t border-[#d3d6d1] pt-3 text-[9.5px] leading-relaxed text-[#6d7280] sm:grid-cols-2">
+      <div className="num mt-5 grid gap-2 border-t border-borde pt-3 text-[9.5px] leading-relaxed text-tinta3 sm:grid-cols-2">
         <p className="flex items-center gap-2">
-          <span aria-hidden className="inline-block h-[2px] w-6 shrink-0 bg-[#2f8f4e]" />
+          <span aria-hidden className="inline-block h-[2px] w-6 shrink-0 bg-sube" />
           Corte de playoffs: los {clasificanPorZona} primeros de cada zona.
         </p>
         <p>
@@ -47,9 +47,9 @@ export default function Tabla() {
         </p>
         <p className="flex items-center gap-2">
           <span aria-hidden className="inline-flex shrink-0 gap-[2px]">
-            <span className="inline-block h-[10px] w-[5px] bg-[#2f8f4e]" />
-            <span className="inline-block h-[10px] w-[5px] bg-[#6d7280]" />
-            <span className="inline-block h-[10px] w-[5px] bg-[#c8102e]" />
+            <span className="inline-block h-[10px] w-[5px] bg-sube" />
+            <span className="inline-block h-[10px] w-[5px] bg-tinta3" />
+            <span className="inline-block h-[10px] w-[5px] bg-baja" />
           </span>
           Forma: ganó, empató, perdió. Los últimos seis, del más viejo al más
           nuevo.
@@ -61,7 +61,7 @@ export default function Tabla() {
         {/* La línea que explica el xG. Discreta, pero al lado de la columna que
             lo usa: mucha gente ve "xGdif" por primera vez acá. */}
         <p className="sm:col-span-2">
-          <strong className="font-semibold text-[#4c5058]">xGdif:</strong> goles
+          <strong className="font-semibold text-tinta2">xGdif:</strong> goles
           esperados a favor menos en contra. A cada remate se le pone la
           probabilidad de terminar en gol según desde dónde se pateó, y se
           suman. La DG dice qué pasó; el xGdif, cada cuánto tendría que pasar.

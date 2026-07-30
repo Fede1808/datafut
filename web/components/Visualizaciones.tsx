@@ -78,7 +78,7 @@ export function Visualizaciones() {
   return (
     <div>
       {/* --- Filtros, comunes a las dos vistas. --- */}
-      <div className="border-b border-[#d3d6d1] pb-3">
+      <div className="border-b border-borde pb-3">
         <div className="etiqueta mb-2">Zona</div>
         <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filtrar por zona">
           <button
@@ -120,7 +120,7 @@ export function Visualizaciones() {
           >
             Ninguno
           </button>
-          <span className="num text-[9.5px] text-[#6d7280]">
+          <span className="num text-[9.5px] text-tinta3">
             {visibles.length} de {enZona.length} a la vista
           </span>
         </div>
@@ -140,9 +140,9 @@ export function Visualizaciones() {
       </div>
 
       {/* --- 1. El mapa de calor: todos contra todas las métricas. --- */}
-      <section className="mt-6 border-t border-[#d3d6d1] pt-4">
+      <section className="mt-6 border-t border-borde pt-4">
         <h2 className="titular-2">Mapa de calor</h2>
-        <p className="mt-1 max-w-[74ch] text-[13px] leading-relaxed text-[#4c5058]">
+        <p className="mt-1 max-w-[74ch] text-[13px] leading-relaxed text-tinta2">
           Los {METRICAS_VIZ.length} rankings de una sola mirada. Sirve para ver si un
           equipo es parejo o si es bueno en una sola cosa.
         </p>
@@ -152,9 +152,9 @@ export function Visualizaciones() {
       </section>
 
       {/* --- 2. El radar: el perfil de hasta tres. --- */}
-      <section className="mt-8 border-t border-[#d3d6d1] pt-4">
+      <section className="mt-8 border-t border-borde pt-4">
         <h2 className="titular-2">Perfil comparado</h2>
-        <p className="mt-1 max-w-[74ch] text-[13px] leading-relaxed text-[#4c5058]">
+        <p className="mt-1 max-w-[74ch] text-[13px] leading-relaxed text-tinta2">
           La forma de hasta {MAX_RADAR} equipos en ocho métricas. Sirve para ver la
           silueta —dónde es fuerte y dónde no—, no para medir diferencias finas:
           para eso está la tabla de al lado.

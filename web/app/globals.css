@@ -32,11 +32,23 @@
   --color-borde: oklch(0.28 0.026 262);
   --color-borde2: oklch(0.24 0.02 262);
 
-  /* Texto: de más a menos presencia. */
+  /*
+    Texto: de más a menos presencia.
+
+    LOS DOS ÚLTIMOS ESCALONES SUBIERON, y no por gusto. Medido sobre el sitio
+    andando: `tinta4` en 0.55 daba 3,82:1 sobre una tarjeta y 4,05:1 sobre el
+    fondo, contra los 4,5:1 que pide WCAG AA para texto chico. Y `tinta4` es el
+    color de `.etiqueta`, el recurso más repetido del diseño — eran 117
+    combinaciones por debajo del mínimo en trece pantallas, casi todas la misma.
+
+    `tinta4` pasa a 0.62, que mide 4,6:1 sobre tarjeta. `tinta3` sube a 0.70
+    para que el escalón entre los dos siga existiendo: si se quedaba en 0.62 se
+    fundía con el de abajo y la escala perdía un nivel.
+  */
   --color-tinta: oklch(0.94 0.012 262);
   --color-tinta2: oklch(0.78 0.015 262);
-  --color-tinta3: oklch(0.62 0.015 262);
-  --color-tinta4: oklch(0.55 0.015 262);
+  --color-tinta3: oklch(0.70 0.015 262);
+  --color-tinta4: oklch(0.62 0.015 262);
 
   /*
     El acento. Es el color más usado del diseño después de los grises, y es
@@ -196,8 +208,13 @@ body {
   height: 34px;
   display: grid;
   place-items: center;
+  /* La caja es de tinta y el dígito del color del fondo. En el tema claro la
+     tinta era casi negra y el dígito blanco; al invertirse el tema la tinta
+     pasó a ser casi blanca y el `#ffffff` quedó blanco sobre blanco: el
+     marcador desaparecía. El dígito tiene que ser SIEMPRE el negativo de su
+     caja, y por eso ahora sale del token de fondo y no de un blanco fijo. */
   background: var(--color-tinta);
-  color: #ffffff;
+  color: var(--color-fondo);
   border-radius: 3px;
 }
 .marcador > span[data-gana="true"] {
@@ -296,10 +313,12 @@ body {
 /* --- Interacción --- */
 
 /* Estado de foco propio: no el anillo azul del navegador ni el outline por
-   defecto de Tailwind. Tinta oscura, funciona sobre blanco, gris y cualquier
-   color de club porque nunca se apoya en el acento. */
+   defecto de Tailwind. Va con la tinta —no con el acento— para que funcione
+   igual sobre el fondo, sobre una tarjeta y sobre cualquier color de club.
+   Estaba en `#1a1c1f`, la tinta del tema CLARO: sobre el fondo oscuro el
+   anillo de foco era invisible y no había forma de navegar con el teclado. */
 :where(a, button, [tabindex]):focus-visible {
-  outline: 2px solid #1a1c1f;
+  outline: 2px solid var(--color-tinta);
   outline-offset: 2px;
   border-radius: 1px;
 }
@@ -504,9 +523,14 @@ a:hover > .enlace-ficha {
 }
 
 /* La flecha del final de una fila clickeable. Apagada de fondo, se acomoda al
-   pasar el cursor. Es la señal redundante al subrayado del nombre. */
+   pasar el cursor. Es la señal redundante al subrayado del nombre.
+
+   Estaba en `--color-borde2`, que es un token de SUPERFICIE: sobre el fondo
+   oscuro medía 1,12:1, o sea que no se veía. Una señal redundante puede ser
+   discreta, invisible no — para eso no estaría. Va con la tinta más apagada,
+   que es lo más callado que igual se lee. */
 .chevron {
-  color: var(--color-borde2);
+  color: var(--color-tinta4);
   transition:
     color 130ms ease,
     transform 130ms ease;
@@ -631,13 +655,16 @@ a:hover > .enlace-ficha {
 .fecha-btn[data-estado="aplazada"]::after {
   background: #e0a020;
 }
+/* Mismo caso que `.marcador`: la caja se llena de tinta, así que el número
+   tiene que ser del color del fondo. Con `#ffffff` quedaba blanco sobre
+   blanco y la fecha activa del almanaque se borraba. */
 .fecha-btn[aria-pressed="true"] {
   background: var(--color-tinta);
   border-color: var(--color-tinta);
-  color: #ffffff;
+  color: var(--color-fondo);
 }
 .fecha-btn[aria-pressed="true"] i {
-  color: rgba(255, 255, 255, 0.62);
+  color: color-mix(in oklab, var(--color-fondo) 72%, var(--color-tinta));
 }
 
 /* Separador de día adentro de una fecha. Una fecha del fútbol argentino se
@@ -678,9 +705,11 @@ a:hover > .enlace-ficha {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
-  color: #8a6412;
-  background: #f7edd4;
-  border: 1px solid #e7d5a8;
+  /* El dorado del sistema en su versión de relleno: era un chip claro del
+     tema anterior y sobre el fondo oscuro gritaba más que el dato. */
+  color: var(--color-acento);
+  background: var(--color-acento-fondo);
+  border: 1px solid color-mix(in oklab, var(--color-acento) 34%, transparent);
   border-radius: 3px;
   padding: 3px 7px;
 }

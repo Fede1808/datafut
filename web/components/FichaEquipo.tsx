@@ -8,7 +8,7 @@ import { Escenarios } from "./Escenarios";
 import { Racha } from "./Racha";
 import { DistribucionPuntos } from "./DistribucionPuntos";
 import { StatsAvanzadas } from "./StatsAvanzadas";
-import { textoSobre, clubSobreBlanco } from "@/lib/color";
+import { textoSobre, clubSobreTarjeta } from "@/lib/color";
 import {
   fichas,
   promedioLiga,
@@ -78,7 +78,7 @@ export function FichaEquipo({ slug }: { slug: string }) {
   // El color del club tal cual, salvo que sea tan claro (blanco, casi blanco)
   // que no se lea como texto/acento sobre una tarjeta blanca: ahí cae a la
   // tinta oscura. River, Gimnasia, Huracán y Vélez tienen blanco de primario.
-  const club1Legible = clubSobreBlanco(club1);
+  const club1Legible = clubSobreTarjeta(club1);
 
   const campeonRank = rankPor("campeon", slug);
   const playoffsRank = rankPor("playoffs", slug);
@@ -197,8 +197,8 @@ export function FichaEquipo({ slug }: { slug: string }) {
           className="panel-anim mt-4 grid gap-4 lg:grid-cols-2"
         >
           <div className="tarjeta p-4 lg:col-span-2">
-            <h2 className="titular-2 text-[#1a1c1f]">Cómo puede terminar</h2>
-            <p className="num mt-0.5 text-[11px] text-[#6d7280]">
+            <h2 className="titular-2 text-tinta">Cómo puede terminar</h2>
+            <p className="num mt-0.5 text-[11px] text-tinta3">
               Puntos al final del {torneo.toLowerCase()} en las{" "}
               {metadatos.simulaciones.toLocaleString("es-AR")} simulaciones.
             </p>
@@ -210,7 +210,7 @@ export function FichaEquipo({ slug }: { slug: string }) {
                 p90={e.puntos.p90}
               />
             </div>
-            <div className="mt-3 grid grid-cols-3 gap-x-4 border-t border-[#e2e4e0] pt-3">
+            <div className="mt-3 grid grid-cols-3 gap-x-4 border-t border-borde2 pt-3">
               <Dato k="Peor escenario" v={`${e.puntos.p10}`} sub="1 de cada 10 termina abajo" />
               <Dato k="Lo más probable" v={`${e.puntos.p50}`} sub="la mitad queda de cada lado" />
               <Dato k="Mejor escenario" v={`${e.puntos.p90}`} sub="1 de cada 10 termina arriba" />
@@ -219,15 +219,15 @@ export function FichaEquipo({ slug }: { slug: string }) {
 
           {e.stats && (
             <div className="tarjeta p-4">
-              <h2 className="titular-2 text-[#1a1c1f]">Goles vs. xG</h2>
+              <h2 className="titular-2 text-tinta">Goles vs. xG</h2>
               <div
                 className="cifra mt-2 text-[36px]"
-                style={{ color: e.stats.sobre_xg >= 0 ? "#2f8f4e" : "#c8102e" }}
+                style={{ color: e.stats.sobre_xg >= 0 ? "var(--color-sube)" : "var(--color-baja)" }}
               >
                 {e.stats.sobre_xg > 0 ? "+" : e.stats.sobre_xg < 0 ? "−" : "±"}
                 {Math.abs(e.stats.sobre_xg).toFixed(1)}
               </div>
-              <p className="mt-1 text-[13px] leading-snug text-[#4c5058]">
+              <p className="mt-1 text-[13px] leading-snug text-tinta2">
                 {e.stats.sobre_xg < 0 ? (
                   <>
                     Metió <b>{Math.abs(e.stats.sobre_xg).toFixed(1)} goles menos</b> de
@@ -240,17 +240,17 @@ export function FichaEquipo({ slug }: { slug: string }) {
                   </>
                 )}
               </p>
-              <BarraDoble label="Goles" valor={e.stats.goles} tope={Math.max(e.stats.goles, e.stats.xg)} color="#1a1c1f" />
+              <BarraDoble label="Goles" valor={e.stats.goles} tope={Math.max(e.stats.goles, e.stats.xg)} color="var(--color-tinta)" />
               <BarraDoble label="xG" valor={e.stats.xg} tope={Math.max(e.stats.goles, e.stats.xg)} color={club1Legible} decimales={1} />
             </div>
           )}
 
           <div className={`tarjeta p-4 ${e.stats ? "" : "lg:col-span-2"}`}>
             <div className="flex items-center justify-between">
-              <h2 className="titular-2 text-[#1a1c1f]">Cómo viene</h2>
+              <h2 className="titular-2 text-tinta">Cómo viene</h2>
               <div className="flex items-center gap-2">
                 <Racha ultimos={e.ultimos} alto={16} ancho={9} separacion={3} />
-                <span className="num text-[11px] text-[#6d7280]">
+                <span className="num text-[11px] text-tinta3">
                   {racha.pts}/{racha.max} pts
                 </span>
               </div>
@@ -260,7 +260,7 @@ export function FichaEquipo({ slug }: { slug: string }) {
                 <Link
                   key={`${u.fecha}-${u.rival_slug}`}
                   href={`/equipo/${u.rival_slug}`}
-                  className="fila flex items-center gap-2.5 border-t border-[#eceeeb] py-2"
+                  className="fila flex items-center gap-2.5 border-t border-borde2 py-2"
                 >
                   <span
                     className="num w-4 shrink-0 text-center text-[13px] font-extrabold"
@@ -271,11 +271,11 @@ export function FichaEquipo({ slug }: { slug: string }) {
                   <span className="num w-11 shrink-0 text-[14px] font-bold">
                     {u.gf}–{u.gc}
                   </span>
-                  <span className="min-w-0 flex-1 truncate text-[13px] text-[#4c5058]">
+                  <span className="min-w-0 flex-1 truncate text-[13px] text-tinta2">
                     {u.condicion === "local" ? "local con" : "visita a"}{" "}
                     <span className="enlace-ficha">{u.rival}</span>
                   </span>
-                  <span className="num shrink-0 text-[10.5px] text-[#8d9299]">
+                  <span className="num shrink-0 text-[10.5px] text-tinta4">
                     {u.fecha}
                   </span>
                 </Link>
@@ -283,17 +283,17 @@ export function FichaEquipo({ slug }: { slug: string }) {
             </div>
 
             {e.rendimiento && (
-              <div className="mt-3 border-t border-[#e2e4e0] pt-3">
+              <div className="mt-3 border-t border-borde2 pt-3">
                 <h3 className="etiqueta">Contra lo que se esperaba</h3>
                 <div className="mt-1 flex items-baseline gap-2">
                   <span
                     className="cifra text-[24px]"
-                    style={{ color: e.rendimiento.dif >= 0 ? "#2f8f4e" : "#c8102e" }}
+                    style={{ color: e.rendimiento.dif >= 0 ? "var(--color-sube)" : "var(--color-baja)" }}
                   >
                     {e.rendimiento.dif >= 0 ? "+" : "−"}
                     {Math.abs(e.rendimiento.dif).toFixed(1)}
                   </span>
-                  <span className="num text-[11px] text-[#6d7280]">
+                  <span className="num text-[11px] text-tinta3">
                     puntos sobre lo esperado en {e.rendimiento.pj} partidos
                   </span>
                 </div>
@@ -316,19 +316,19 @@ export function FichaEquipo({ slug }: { slug: string }) {
               label="Ataque"
               valor={`${atk >= 0 ? "+" : "−"}${Math.abs(atk).toFixed(0)}%`}
               detalle={`${ordinal(puestoAtaque(slug))} de ${totalEquipos}`}
-              color={atk >= 0 ? "#2f8f4e" : "#c8102e"}
+              color={atk >= 0 ? "var(--color-sube)" : "var(--color-baja)"}
             />
             <TarjetaMini
               label="Defensa"
               valor={`${def >= 0 ? "+" : "−"}${Math.abs(def).toFixed(0)}%`}
               detalle={`${ordinal(puestoDefensa(slug))} de ${totalEquipos}`}
-              color={def >= 0 ? "#2f8f4e" : "#c8102e"}
+              color={def >= 0 ? "var(--color-sube)" : "var(--color-baja)"}
             />
             <TarjetaMini
               label="Desciende"
               valor={`${e.descenso.toFixed(1)}%`}
               detalle={`${e.descenso_promedio.toFixed(1)}% promedios · ${e.descenso_anual.toFixed(1)}% anual`}
-              color={e.descenso >= 10 ? "#c8102e" : undefined}
+              color={e.descenso >= 10 ? "var(--color-baja)" : undefined}
             />
           </div>
 
@@ -343,7 +343,7 @@ export function FichaEquipo({ slug }: { slug: string }) {
             ) : (
               <>
                 <h2 className="etiqueta">Lo que genera y lo que concede</h2>
-                <p className="num mt-1.5 max-w-[64ch] text-[10px] leading-relaxed text-[#6d7280]">
+                <p className="num mt-1.5 max-w-[64ch] text-[10px] leading-relaxed text-tinta3">
                   Todavía no hay estadísticas avanzadas cargadas para {e.equipo}.
                   Cuando las haya van a aparecer acá: goles esperados a favor y
                   en contra, posesión y cómo genera situaciones.
@@ -375,11 +375,11 @@ export function FichaEquipo({ slug }: { slug: string }) {
 
           {esc && (
             <div className="tarjeta p-4">
-              <h2 className="titular-2 text-[#1a1c1f]">
+              <h2 className="titular-2 text-tinta">
                 Qué se juega {esc.condicion === "local" ? "contra" : "en la cancha de"}{" "}
                 {esc.rival}
               </h2>
-              <p className="num mt-0.5 text-[10.5px] text-[#6d7280]">
+              <p className="num mt-0.5 text-[10.5px] text-tinta3">
                 {esc.fecha}
                 {esc.hora ? ` · ${esc.hora}` : ""} ·{" "}
                 <Link href={`/equipo/${esc.rival_slug}`} className="enlace-ficha">
@@ -389,7 +389,7 @@ export function FichaEquipo({ slug }: { slug: string }) {
               <div className="mt-2">
                 <Escenarios esc={esc} campeonBase={e.campeon} playoffsBase={e.playoffs} />
               </div>
-              <p className="num mt-2 text-[10px] leading-relaxed text-[#6d7280]">
+              <p className="num mt-2 text-[10px] leading-relaxed text-tinta3">
                 Diferencia en puntos porcentuales contra el{" "}
                 {e.playoffs.toFixed(1)}% y el {e.campeon.toFixed(1)}% de hoy.
               </p>
@@ -407,11 +407,11 @@ export function FichaEquipo({ slug }: { slug: string }) {
           className="panel-anim mt-4"
         >
           <div className="tarjeta p-4">
-            <h2 className="titular-2 text-[#1a1c1f]">Con quién se pelea el lugar</h2>
+            <h2 className="titular-2 text-tinta">Con quién se pelea el lugar</h2>
             <div role="table" aria-label={`Entorno de ${e.equipo} en la zona ${e.zona}`}>
               <div
                 role="row"
-                className="mt-2 flex items-center gap-1.5 border-t-2 border-b border-[#1a1c1f] border-b-[#d3d6d1] py-1.5"
+                className="mt-2 flex items-center gap-1.5 border-t-2 border-b border-tinta4 border-b-borde py-1.5"
               >
                 <span role="columnheader" className="etiqueta w-6 shrink-0 text-right">#</span>
                 <span role="columnheader" className="etiqueta min-w-0 flex-1">Equipo</span>
@@ -430,10 +430,10 @@ export function FichaEquipo({ slug }: { slug: string }) {
                     href={`/equipo/${f.slug}`}
                     role="row"
                     className={`fila flex items-center gap-1.5 py-2.5 ${
-                      corte ? "border-b-2 border-[#2f8f4e]" : "border-b border-[#eceeeb]"
-                    } ${yo ? "bg-[#eceeeb]" : ""}`}
+                      corte ? "border-b-2 border-sube" : "border-b border-borde2"
+                    } ${yo ? "bg-tarjeta2" : ""}`}
                   >
-                    <span role="cell" className="num w-6 shrink-0 text-right text-[11px] text-[#6d7280]">
+                    <span role="cell" className="num w-6 shrink-0 text-right text-[11px] text-tinta3">
                       {f.puesto}
                     </span>
                     <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
@@ -450,7 +450,7 @@ export function FichaEquipo({ slug }: { slug: string }) {
                     <span role="cell" className="num w-8 shrink-0 text-right text-[12px] font-bold">
                       {f.pts}
                     </span>
-                    <span role="cell" className="num w-8 shrink-0 text-right text-[11.5px] text-[#4c5058]">
+                    <span role="cell" className="num w-8 shrink-0 text-right text-[11.5px] text-tinta2">
                       {f.dif > 0 ? "+" : ""}
                       {f.dif}
                     </span>
@@ -464,14 +464,14 @@ export function FichaEquipo({ slug }: { slug: string }) {
                 );
               })}
             </div>
-            <p className="num mt-2 text-[9.5px] text-[#6d7280]">
+            <p className="num mt-2 text-[9.5px] text-tinta3">
               Zona {e.zona}. La línea verde es el corte de playoffs.
             </p>
           </div>
         </div>
       )}
 
-      <p className="num mt-8 border-t border-[#d3d6d1] pt-3 text-[10px] leading-relaxed text-[#6d7280]">
+      <p className="num mt-8 border-t border-borde pt-3 text-[10px] leading-relaxed text-tinta3">
         {metadatos.simulaciones.toLocaleString("es-AR")} simulaciones ·{" "}
         {metadatos.acierto_pct}% de aciertos 1X2 · modelo{" "}
         {metadatos.modelo.toLowerCase()}.
@@ -493,7 +493,7 @@ function ordinal(n: number): string {
 }
 
 function colorResultado(r: PartidoRacha["r"]): string {
-  return r === "G" ? "#2f8f4e" : r === "E" ? "#8d9299" : "#c8102e";
+  return r === "G" ? "var(--color-sube)" : r === "E" ? "var(--color-tinta4)" : "var(--color-baja)";
 }
 
 function TarjetaCifra({
@@ -510,13 +510,13 @@ function TarjetaCifra({
   return (
     <div className="tarjeta p-3.5 shadow-[0_2px_8px_rgba(0,0,0,.1)] sm:p-4">
       <div className="etiqueta">{label}</div>
-      <div className="cifra mt-1 text-[clamp(30px,8vw,48px)]" style={{ color: color ?? "#1a1c1f" }}>
+      <div className="cifra mt-1 text-[clamp(30px,8vw,48px)]" style={{ color: color ?? "var(--color-tinta)" }}>
         {valor}
       </div>
       {/* `mt-2`: `.cifra` va con `line-height: 0.9`, así que a 48px los glifos
           sobresalen del renglón y con 2px de separación el detalle quedaba
           tocando la cifra. */}
-      <div className="num mt-2 text-[10.5px] leading-snug text-[#6d7280]">{detalle}</div>
+      <div className="num mt-2 text-[10.5px] leading-snug text-tinta3">{detalle}</div>
     </div>
   );
 }
@@ -535,10 +535,10 @@ function TarjetaMini({
   return (
     <div>
       <div className="etiqueta">{label}</div>
-      <div className="cifra mt-1 text-[26px]" style={{ color: color ?? "#1a1c1f" }}>
+      <div className="cifra mt-1 text-[26px]" style={{ color: color ?? "var(--color-tinta)" }}>
         {valor}
       </div>
-      <div className="num mt-0.5 text-[9.5px] leading-snug text-[#6d7280]">{detalle}</div>
+      <div className="num mt-0.5 text-[9.5px] leading-snug text-tinta3">{detalle}</div>
     </div>
   );
 }
@@ -547,8 +547,8 @@ function Dato({ k, v, sub }: { k: string; v: string; sub: string }) {
   return (
     <div>
       <div className="etiqueta text-[9.5px]">{k}</div>
-      <div className="num mt-0.5 text-[18px] font-bold text-[#1a1c1f]">{v}</div>
-      <div className="num mt-0.5 text-[8.5px] leading-snug text-[#6d7280]">{sub}</div>
+      <div className="num mt-0.5 text-[18px] font-bold text-tinta">{v}</div>
+      <div className="num mt-0.5 text-[8.5px] leading-snug text-tinta3">{sub}</div>
     </div>
   );
 }
@@ -569,11 +569,11 @@ function BarraDoble({
   const p = tope > 0 ? Math.min(valor / tope, 1) : 0;
   return (
     <div className="mt-2.5">
-      <div className="flex items-center justify-between text-[11px] font-semibold text-[#6d7280]">
+      <div className="flex items-center justify-between text-[11px] font-semibold text-tinta3">
         <span className="etiqueta">{label}</span>
         <span className="num">{valor.toFixed(decimales)}</span>
       </div>
-      <div className="mt-1 h-[9px] overflow-hidden rounded-[5px] bg-[#e2e4e0]">
+      <div className="mt-1 h-[9px] overflow-hidden rounded-[5px] bg-tarjeta2">
         <div className="h-full rounded-[5px]" style={{ width: `${p * 100}%`, background: color }} />
       </div>
     </div>

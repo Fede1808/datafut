@@ -67,9 +67,30 @@ export function MatrizMarcadores({
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}%`}
+                    /*
+                      LA TINTA DE LA CELDA, y por qué el corte está en 0,655.
+
+                      El fondo es `color-mix` en oklab entre el acento (L 0.80)
+                      y la tarjeta (L 0.22), así que su claridad es lineal en
+                      la intensidad: L = 0.22 + 0.58 · intensidad. El punto
+                      donde a la tinta oscura le empieza a convenir está en
+                      L ≈ 0.60, o sea intensidad 0.655 — no en 0.72, que era el
+                      valor anterior y dejaba texto claro sobre celdas ya
+                      doradas: la peor medía 1,74:1.
+
+                      La tinta clara pasó de `tinta2` a `tinta`. Sobre esos
+                      dorados medios, tinta2 daba 2,3:1 y tinta da 3,8:1, y en
+                      las celdas apagadas —que son la mayoría— las dos leen.
+
+                      QUEDA UNA BANDA CORTA, entre intensidad 0.5 y 0.65, donde
+                      la mejor de las dos tintas llega a 3,8:1 y AA pide 4,5:1
+                      para 11px: es el punto medio del dorado, donde ni el
+                      claro ni el oscuro alcanzan. Achicarlo pide tocar la
+                      rampa, y la rampa es el dato.
+                    */
                     className={`flex h-9 items-center justify-center rounded-[3px] text-[11px] ${
                       esMax ? "ring-1 ring-acento" : ""
-                    } ${intensidad > 0.72 ? "text-[oklch(0.18_0.03_262)]" : "text-tinta2"}`}
+                    } ${intensidad > 0.655 ? "text-[oklch(0.18_0.03_262)]" : "text-tinta"}`}
                     style={{
                       background: `color-mix(in oklab, var(--color-acento) ${Math.round(
                         intensidad * 100,

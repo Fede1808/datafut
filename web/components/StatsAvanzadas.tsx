@@ -115,21 +115,21 @@ export function StatsAvanzadas({
     <div ref={visible.ref}>
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
         <h2 className="etiqueta">Lo que genera y lo que concede</h2>
-        <span className="num text-[9px] uppercase tracking-[0.08em] text-[#8d9299]">
+        <span className="num text-[9px] uppercase tracking-[0.08em] text-tinta4">
           {stats.pj} partidos · FotMob
         </span>
       </div>
 
       {/* La definición, corta y arriba de todo: mucha gente no sabe qué es xG y
           sin eso las tres cifras de abajo son ruido. */}
-      <p className="mt-1.5 max-w-[68ch] text-[12.5px] leading-relaxed text-[#4c5058]">
-        <strong className="font-semibold text-[#1a1c1f]">Goles esperados (xG):</strong>{" "}
+      <p className="mt-1.5 max-w-[68ch] text-[12.5px] leading-relaxed text-tinta2">
+        <strong className="font-semibold text-tinta">Goles esperados (xG):</strong>{" "}
         a cada remate se le asigna la probabilidad de terminar en gol según desde
         dónde y cómo se pateó, y se suman. Los goles dicen qué pasó; el xG dice
         cada cuánto tendría que pasar.
       </p>
 
-      <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-4 border-y border-[#d3d6d1] py-4 sm:grid-cols-4">
+      <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-4 border-y border-borde py-4 sm:grid-cols-4">
         <Cifra
           label="xG a favor"
           valor={stats.xg.toFixed(1)}
@@ -145,7 +145,7 @@ export function StatsAvanzadas({
           valor={`${stats.xg_dif > 0 ? "+" : stats.xg_dif < 0 ? "−" : "±"}${Math.abs(stats.xg_dif).toFixed(1)}`}
           // `+ 0` mata el "−0.0" que sale de redondear un promedio de −0.02.
           detalle={`${stats.puesto_xg_dif}° de ${totalConStats} · promedio liga ${(Number(promedio.xg_dif.toFixed(1)) + 0).toFixed(1)}`}
-          color={stats.xg_dif >= 0 ? "#2f8f4e" : "#c8102e"}
+          color={stats.xg_dif >= 0 ? "var(--color-sube)" : "var(--color-baja)"}
         />
         <Cifra
           label="Posesión"
@@ -160,20 +160,20 @@ export function StatsAvanzadas({
         <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span
             className="cifra text-[28px]"
-            style={{ color: desperdicia ? "#c8102e" : "#2f8f4e" }}
+            style={{ color: desperdicia ? "var(--color-baja)" : "var(--color-sube)" }}
           >
             {sobre > 0 ? "+" : sobre < 0 ? "−" : "±"}
             {Math.abs(sobre).toFixed(1)}
           </span>
-          <span className="text-[12.5px] text-[#4c5058]">
+          <span className="text-[12.5px] text-tinta2">
             {desperdicia ? (
               <>
-                metió <strong className="text-[#1a1c1f]">{Math.abs(sobre).toFixed(1)} goles menos</strong>{" "}
+                metió <strong className="text-tinta">{Math.abs(sobre).toFixed(1)} goles menos</strong>{" "}
                 de los que generó
               </>
             ) : (
               <>
-                metió <strong className="text-[#1a1c1f]">{sobre.toFixed(1)} goles más</strong>{" "}
+                metió <strong className="text-tinta">{sobre.toFixed(1)} goles más</strong>{" "}
                 de los que generó
               </>
             )}
@@ -187,7 +187,7 @@ export function StatsAvanzadas({
             label="Goles"
             valor={stats.goles}
             maximo={Math.max(stats.goles, stats.xg)}
-            color="#1a1c1f"
+            color="var(--color-tinta)"
             visible={visible.activo}
             decimales={0}
             retraso={0}
@@ -196,14 +196,14 @@ export function StatsAvanzadas({
             label="xG"
             valor={stats.xg}
             maximo={Math.max(stats.goles, stats.xg)}
-            color="#1a1c1f"
+            color="var(--color-tinta)"
             visible={visible.activo}
             decimales={1}
             retraso={90}
           />
         </div>
 
-        <p className="num mt-2 max-w-[70ch] text-[9.5px] leading-relaxed text-[#6d7280]">
+        <p className="num mt-2 max-w-[70ch] text-[9.5px] leading-relaxed text-tinta3">
           {desperdicia
             ? "Generar más de lo que se convierte suele corregirse solo: si las situaciones siguen siendo las mismas, los goles tienden a aparecer."
             : "Convertir más de lo que se genera casi nunca dura. No es un defecto del equipo, es que la definición vuelve con el tiempo a lo que dicen las situaciones."}{" "}
@@ -232,23 +232,23 @@ export function StatsAvanzadas({
             />
           ))}
         </div>
-        <p className="num mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[9.5px] leading-relaxed text-[#6d7280]">
+        <p className="num mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[9.5px] leading-relaxed text-tinta3">
           <span className="inline-flex items-center gap-1.5">
-            <span aria-hidden className="inline-block h-[10px] w-[2px] bg-[#1a1c1f]" />
+            <span aria-hidden className="inline-block h-[10px] w-[2px] bg-tinta" />
             promedio de la liga
           </span>
-          <span aria-hidden className="text-[#d3d6d1]">|</span>
+          <span aria-hidden className="text-tinta4">|</span>
           <span>Escala: el máximo de cada fila es el mejor de la liga.</span>
         </p>
       </div>
 
       {/* La aclaración de nombres. No es una nota al pie de cortesía: llamar
           "pases progresivos" a esto sería mentir. */}
-      <p className="num mt-4 max-w-[76ch] text-[9px] leading-relaxed text-[#6d7280]">
+      <p className="num mt-4 max-w-[76ch] text-[9px] leading-relaxed text-tinta3">
         Estadísticas avanzadas de FotMob. Remates, chances claras, toques en el
         área rival y pases en campo rival son promedios por partido. Los pases en
         campo rival y los toques en el área rival{" "}
-        <strong className="font-semibold text-[#4c5058]">
+        <strong className="font-semibold text-tinta2">
           no son pases progresivos
         </strong>
         : esa métrica la definía Opta y dejó de publicarse en enero de 2026. Se
@@ -309,10 +309,10 @@ function Cifra({
   return (
     <div>
       <div className="etiqueta">{label}</div>
-      <div className="cifra mt-1 text-[26px]" style={{ color: color ?? "#1a1c1f" }}>
+      <div className="cifra mt-1 text-[26px]" style={{ color: color ?? "var(--color-tinta)" }}>
         {valor}
       </div>
-      <div className="num mt-1 text-[9px] leading-snug text-[#6d7280]">{detalle}</div>
+      <div className="num mt-1 text-[9px] leading-snug text-tinta3">{detalle}</div>
     </div>
   );
 }
@@ -338,10 +338,10 @@ function BarraComparada({
   const p = maximo > 0 ? Math.min(valor / maximo, 1) : 0;
   return (
     <div className="flex items-center gap-2 py-[3px]">
-      <span className="num w-9 shrink-0 text-[10px] uppercase tracking-[0.06em] text-[#6d7280]">
+      <span className="num w-9 shrink-0 text-[10px] uppercase tracking-[0.06em] text-tinta3">
         {label}
       </span>
-      <span className="h-[9px] min-w-0 flex-1 bg-[#e2e4e0]">
+      <span className="h-[9px] min-w-0 flex-1 bg-tarjeta2">
         <span
           className="barra-crece block h-full"
           data-visible={visible ? "true" : "false"}
@@ -352,7 +352,7 @@ function BarraComparada({
           }}
         />
       </span>
-      <span className="num w-10 shrink-0 text-right text-[11.5px] text-[#1a1c1f]">
+      <span className="num w-10 shrink-0 text-right text-[11.5px] text-tinta">
         {valor.toFixed(decimales)}
       </span>
     </div>
@@ -392,19 +392,19 @@ function BarraLiga({
 
   return (
     <div
-      className="flex items-center gap-2.5 border-b border-[#e2e4e0] py-2 last:border-b-0"
+      className="flex items-center gap-2.5 border-b border-borde2 py-2 last:border-b-0"
       title={ayuda}
     >
-      <span className="w-[128px] shrink-0 text-[11.5px] text-[#4c5058] sm:w-[150px]">
+      <span className="w-[128px] shrink-0 text-[11.5px] text-tinta2 sm:w-[150px]">
         {label}
       </span>
-      <span className="relative block h-[10px] min-w-0 flex-1 bg-[#e2e4e0]">
+      <span className="relative block h-[10px] min-w-0 flex-1 bg-tarjeta2">
         <span
           className="barra-crece block h-full"
           data-visible={visible ? "true" : "false"}
           style={{
             width: `${p * 100}%`,
-            background: arriba ? "#1a1c1f" : "#6d7280",
+            background: arriba ? "var(--color-tinta)" : "var(--color-tinta3)",
             transitionDelay: `${retraso}ms`,
           }}
         />
@@ -412,19 +412,19 @@ function BarraLiga({
             visible: es la referencia, no un adorno. */}
         <span
           aria-hidden
-          className="absolute top-[-2px] block w-[2px] bg-[#1a1c1f]"
+          className="absolute top-[-2px] block w-[2px] bg-tinta"
           style={{ left: `calc(${pProm * 100}% - 1px)`, height: 14 }}
         />
       </span>
       <span
         className={`num w-12 shrink-0 text-right text-[11.5px] ${
-          arriba ? "text-[#1a1c1f]" : "text-[#4c5058]"
+          arriba ? "text-tinta" : "text-tinta2"
         }`}
       >
         {valor.toFixed(decimales)}
         {sufijo}
       </span>
-      <span className="num hidden w-[74px] shrink-0 whitespace-nowrap text-right text-[9.5px] text-[#6d7280] sm:block">
+      <span className="num hidden w-[74px] shrink-0 whitespace-nowrap text-right text-[9.5px] text-tinta3 sm:block">
         liga {promedio.toFixed(decimales)}
         {sufijo}
       </span>

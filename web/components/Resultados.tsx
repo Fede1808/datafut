@@ -24,10 +24,10 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
   }, {});
 
   return (
-    <div className="md:overflow-hidden md:rounded-[3px] md:border md:border-[#d3d6d1]">
+    <div className="md:overflow-hidden md:rounded-[3px] md:border md:border-borde">
       {Object.entries(porDia).map(([dia, partidos]) => (
         <div key={dia}>
-          <div className="num border-b border-[#d3d6d1] bg-[#e9ebe7] px-3 py-1 text-[9px] uppercase tracking-[0.08em] text-[#6d7280]">
+          <div className="num border-b border-borde bg-tarjeta2 px-3 py-1 text-[9px] uppercase tracking-[0.08em] text-tinta3">
             {new Date(dia + "T12:00:00").toLocaleDateString("es-AR", {
               weekday: "long",
               day: "numeric",
@@ -50,7 +50,7 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
                   <Escudo slug={r.local_slug} colores={r.colores_local} size={16} />
                   <span
                     className={`enlace-ficha truncate text-[12.5px] ${
-                      ganaLocal ? "text-[#1a1c1f]" : "text-[#8d9299]"
+                      ganaLocal ? "text-tinta" : "text-tinta4"
                     }`}
                   >
                     {r.local}
@@ -71,7 +71,7 @@ export function Resultados({ resultados }: { resultados: Resultado[] }) {
                 >
                   <span
                     className={`enlace-ficha truncate text-right text-[12.5px] ${
-                      ganaVisita ? "text-[#1a1c1f]" : "text-[#8d9299]"
+                      ganaVisita ? "text-tinta" : "text-tinta4"
                     }`}
                   >
                     {r.visita}
