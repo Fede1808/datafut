@@ -190,7 +190,11 @@ export default async function Jugador({
               {usa.map((m) => (
                 <div
                   key={m}
-                  className="grid grid-cols-[1fr_52px] items-center gap-x-3 gap-y-1 py-1.5 sm:grid-cols-[172px_1fr_52px]"
+                  // 60px y no 52: "Toques" llega a 104,28 por 90 minutos, y
+                  // seis caracteres en Archivo 900 a 16px piden 55px. Con 52
+                  // el número se salía de su columna por la izquierda y tocaba
+                  // la barra.
+                  className="grid grid-cols-[1fr_60px] items-center gap-x-3 gap-y-1 py-1.5 sm:grid-cols-[172px_1fr_60px]"
                 >
                   <span className="text-[12.5px] text-tinta2">
                     {NOMBRES[m] ?? m}

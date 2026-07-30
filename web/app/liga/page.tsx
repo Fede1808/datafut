@@ -35,7 +35,10 @@ export default function Portada() {
 
   return (
     <div className="pb-2 pt-5">
-      <div className="grid gap-8 lg:grid-cols-[1fr_310px] lg:gap-10">
+      {/* `[&>*]:min-w-0`: ver la nota de `app/page.tsx`. Sin esto el ancho
+          mínimo del contenido interno empuja el documento y aparece scroll
+          horizontal en el celular. */}
+      <div className="grid gap-8 lg:grid-cols-[1fr_310px] lg:gap-10 [&>*]:min-w-0">
         {/*
           Partidos de la fecha. Si la fuente todavia no publico el fixture de
           la fecha siguiente —tarda dias— se muestran los resultados de la que

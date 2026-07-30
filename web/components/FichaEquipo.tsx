@@ -513,7 +513,10 @@ function TarjetaCifra({
       <div className="cifra mt-1 text-[clamp(30px,8vw,48px)]" style={{ color: color ?? "#1a1c1f" }}>
         {valor}
       </div>
-      <div className="num mt-0.5 text-[10.5px] leading-snug text-[#6d7280]">{detalle}</div>
+      {/* `mt-2`: `.cifra` va con `line-height: 0.9`, así que a 48px los glifos
+          sobresalen del renglón y con 2px de separación el detalle quedaba
+          tocando la cifra. */}
+      <div className="num mt-2 text-[10.5px] leading-snug text-[#6d7280]">{detalle}</div>
     </div>
   );
 }

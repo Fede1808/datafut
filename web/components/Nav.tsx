@@ -52,11 +52,11 @@ export function Nav() {
   const ruta = usePathname();
 
   return (
-    // En el celular la nav se va a su propio renglón y las cuatro cajas se
-    // reparten el ancho: cuatro blancos grandes son más fáciles de acertar con
-    // el dedo que cuatro palabras apretadas contra el logo.
+    // En el celular la nav se va a su propio renglón y las cinco cajas se
+    // reparten el ancho: cinco blancos grandes son más fáciles de acertar con
+    // el dedo que cinco palabras apretadas contra el logo.
     <nav aria-label="Secciones" className="w-full sm:w-auto">
-      <ul className="flex gap-1.5">
+      <ul className="flex gap-1 sm:gap-1.5">
         {SECCIONES.map((s) => {
           const activa = s.href === "/" ? ruta === "/" : ruta.startsWith(s.href);
           return (

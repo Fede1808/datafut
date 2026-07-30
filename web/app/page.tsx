@@ -122,7 +122,15 @@ export default function Hoy() {
         />
       </div>
 
-      <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_396px]">
+      {/*
+        `[&>*]:min-w-0` no es decorativo. Los items de grid arrancan con
+        `min-width: auto`, que equivale a su contenido mínimo: la matriz de
+        marcadores declara `min-w-[380px]` adentro de su propio scroll
+        horizontal, y sin esto ese mínimo se propagaba hacia afuera y estiraba
+        la página entera a 434px en un celular de 390. El `overflow-x-auto` de
+        la matriz no alcanza solo — necesita que el padre le permita achicarse.
+      */}
+      <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_396px] [&>*]:min-w-0">
         <div className="flex flex-col gap-4">
           <div className="tarjeta p-4 sm:p-5">
             <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">

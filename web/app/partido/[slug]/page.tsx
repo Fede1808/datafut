@@ -130,7 +130,8 @@ export default async function PaginaPartido({
         )}
       </section>
 
-      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+      {/* `[&>*]:min-w-0`: ver la nota de `app/page.tsx`. */}
+      <div className="mt-4 grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
         {/* --- Marcadores --- */}
         <section className="tarjeta p-4">
           <h2 className="etiqueta">Marcadores más probables</h2>
@@ -174,54 +175,70 @@ export default async function PaginaPartido({
         {/* --- Fuerzas enfrentadas --- */}
         <section className="tarjeta p-4">
           <h2 className="etiqueta">Fuerza estimada</h2>
-          <div role="table" aria-label="Fuerza estimada de los dos equipos">
-            <div
-              role="row"
-              className="mt-1.5 flex items-center gap-1.5 border-t-2 border-b border-[#1a1c1f] border-b-[#d3d6d1] py-2"
-            >
-              <span role="columnheader" className="etiqueta min-w-0 flex-1">
-                Equipo
-              </span>
-              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
-                Ataque
-              </span>
-              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
-                Defensa
-              </span>
-              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
-                Playoffs
-              </span>
-              <span role="columnheader" className="etiqueta w-14 shrink-0 text-right">
-                Campeón
-              </span>
-            </div>
+          {/*
+            Las columnas pasaron de `w-14` a `w-[66px]`: "PLAYOFFS" en
+            `.etiqueta` mide 64px por el tracking de 0.2em y se salía de la
+            celda, encimándose con "DEFENSA".
 
-            {[eL, eV].map(
-              (e) =>
-                e && (
-                  <Link
-                    key={e.slug}
-                    href={`/equipo/${e.slug}`}
-                    role="row"
-                    className="fila flex items-center gap-1.5 border-b border-[#e2e4e0] py-2"
-                  >
-                    <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
-                      <Escudo slug={e.slug} colores={e.colores} size={16} />
-                      <span className="enlace-ficha truncate text-[12.5px]">
-                        {e.equipo}
+            Y como cuatro columnas de 66px más el nombre no entran en un
+            celular, la tabla scrollea adentro de su tarjeta —el mismo recurso
+            que usa la matriz de marcadores— en vez de apretar el nombre del
+            equipo hasta dejarlo en tres letras.
+          */}
+          <div className="overflow-x-auto">
+            <div
+              role="table"
+              aria-label="Fuerza estimada de los dos equipos"
+              className="min-w-[400px]"
+            >
+              <div
+                role="row"
+                className="mt-1.5 flex items-center gap-1.5 border-t-2 border-b border-[#1a1c1f] border-b-[#d3d6d1] py-2"
+              >
+                <span role="columnheader" className="etiqueta min-w-0 flex-1">
+                  Equipo
+                </span>
+                <span role="columnheader" className="etiqueta w-[66px] shrink-0 text-right">
+                  Ataque
+                </span>
+                <span role="columnheader" className="etiqueta w-[66px] shrink-0 text-right">
+                  Defensa
+                </span>
+                <span role="columnheader" className="etiqueta w-[66px] shrink-0 text-right">
+                  Playoffs
+                </span>
+                <span role="columnheader" className="etiqueta w-[66px] shrink-0 text-right">
+                  Campeón
+                </span>
+              </div>
+
+              {[eL, eV].map(
+                (e) =>
+                  e && (
+                    <Link
+                      key={e.slug}
+                      href={`/equipo/${e.slug}`}
+                      role="row"
+                      className="fila flex items-center gap-1.5 border-b border-[#e2e4e0] py-2"
+                    >
+                      <span role="cell" className="flex min-w-0 flex-1 items-center gap-2">
+                        <Escudo slug={e.slug} colores={e.colores} size={16} />
+                        <span className="enlace-ficha truncate text-[12.5px]">
+                          {e.equipo}
+                        </span>
                       </span>
-                    </span>
-                    <Pct valor={ataquePct(e)} />
-                    <Pct valor={defensaPct(e)} />
-                    <span role="cell" className="num w-14 shrink-0 text-right text-[12px]">
-                      {e.playoffs.toFixed(1)}
-                    </span>
-                    <span role="cell" className="num w-14 shrink-0 text-right text-[12px] text-[#1a1c1f]">
-                      {e.campeon.toFixed(1)}
-                    </span>
-                  </Link>
-                ),
-            )}
+                      <Pct valor={ataquePct(e)} />
+                      <Pct valor={defensaPct(e)} />
+                      <span role="cell" className="num w-[66px] shrink-0 text-right text-[12px]">
+                        {e.playoffs.toFixed(1)}
+                      </span>
+                      <span role="cell" className="num w-[66px] shrink-0 text-right text-[12px] text-[#1a1c1f]">
+                        {e.campeon.toFixed(1)}
+                      </span>
+                    </Link>
+                  ),
+              )}
+            </div>
           </div>
           <p className="num mt-1.5 text-[9.5px] text-[#6d7280]">
             Goles que hace y que evita cada uno respecto del promedio de la liga.
@@ -337,7 +354,7 @@ function Pct({ valor }: { valor: number }) {
   return (
     <span
       role="cell"
-      className={`num w-14 shrink-0 text-right text-[12px] ${
+      className={`num w-[66px] shrink-0 text-right text-[12px] ${
         valor >= 0 ? "text-[#2f8f4e]" : "text-[#c8102e]"
       }`}
     >

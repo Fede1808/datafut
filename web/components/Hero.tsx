@@ -90,7 +90,15 @@ export function Hero({
             </div>
           </div>
 
-          <div className="shrink-0 sm:text-right">
+          {/*
+            `shrink-0` sólo a partir de `sm`. En escritorio protege al bloque
+            de la probabilidad de que el nombre de los equipos lo apriete; en
+            el celular los dos bloques ya van uno debajo del otro, y ahí
+            `shrink-0` lo único que hacía era clavarle 358px de ancho a una
+            columna de 350 —el ancho máximo de la tira de "BOCA JUNIORS 50,2 ·
+            EMPATE 29,2 · ESTUDIANTES 20,6"— y sacar la foto de la pantalla.
+          */}
+          <div className="min-w-0 sm:shrink-0 sm:text-right">
             <div
               className="font-black leading-[0.82] tracking-[-0.04em] text-acento"
               style={{ fontFamily: "var(--font-display)" }}
@@ -100,7 +108,15 @@ export function Hero({
               </span>
               <span className="text-[clamp(22px,5vw,46px)]">%</span>
             </div>
-            <p className="etiqueta mt-1 !text-tinta2">{leyenda}</p>
+            {/*
+              `mt-3` y no `mt-1`. El número va con `leading-[0.82]`, así que su
+              caja de línea es más baja que los glifos: a 132px las cifras
+              sobresalen ~12px por debajo del renglón. Con 4px de separación la
+              leyenda quedaba literalmente adentro del número (85% de solape
+              medido). El interlineado apretado se mantiene —es lo que hace que
+              el número pese— y lo que se corrige es la distancia de abajo.
+            */}
+            <p className="etiqueta mt-5 !text-tinta2">{leyenda}</p>
 
             {/*
               La barra usa gap real entre segmentos, no bordes: tres tramos

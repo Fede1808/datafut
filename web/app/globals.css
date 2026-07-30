@@ -457,6 +457,23 @@ body {
   background: currentColor;
   border-radius: 50%;
 }
+/*
+  En el celular las cinco pestañas se reparten el ancho de la pantalla, y con
+  el padding y el interletrado de escritorio no entran: medían 398px contra
+  350px disponibles. Como `white-space: nowrap` les impide partirse, el
+  sobrante no se acomodaba — empujaba el ancho del documento y le metía scroll
+  horizontal a TODO el sitio, porque la nav está en el layout.
+
+  Se achica el padding lateral y el interletrado en vez de dejar que envuelva:
+  el alto de 44px se mantiene, así que el área de toque no se pierde.
+*/
+@media (max-width: 639px) {
+  .pestania {
+    padding: 0 8px;
+    letter-spacing: 0.06em;
+  }
+}
+
 /* Variante chica para los filtros de zona, que van adentro de una tabla. */
 .pestania-chica {
   min-height: 32px;
