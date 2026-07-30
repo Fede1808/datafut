@@ -14,6 +14,9 @@ __pycache__/
 venv/
 env/
 
+# Capturas de `npm run auditoria -- --shots`. Se regeneran corriendo el script.
+web/scripts/capturas/
+
 # Editores / SO
 .vscode/
 .idea/

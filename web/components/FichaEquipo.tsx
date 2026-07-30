@@ -73,11 +73,17 @@ export function FichaEquipo({ slug }: { slug: string }) {
 
   const [club1, club2] = e.colores;
   const textoClub = textoSobre(club1);
+  // El texto secundario de la cabecera: el mismo blanco o la misma tinta que
+  // el titular, apenas bajados para que se lea como segundo nivel.
+  //
+  // Estaba en .82 y .72, y sobre los clubes de rojo saturado —Independiente,
+  // River, Huracán— eso caía a 3,95:1 contra los 4,5:1 que pide AA. La jerarquía
+  // acá no la hace la opacidad: la hacen el cuerpo y el peso de la tipografía,
+  // que ya son distintos. Bajar tanto el color sólo restaba legibilidad.
   const textoClubSuave =
-    textoClub === "#ffffff" ? "rgba(255,255,255,.82)" : "rgba(26,28,31,.72)";
-  // El color del club tal cual, salvo que sea tan claro (blanco, casi blanco)
-  // que no se lea como texto/acento sobre una tarjeta blanca: ahí cae a la
-  // tinta oscura. River, Gimnasia, Huracán y Vélez tienen blanco de primario.
+    textoClub === "#ffffff" ? "rgba(255,255,255,.94)" : "rgba(26,28,31,.86)";
+  // El color del club tal cual, salvo que no llegue a contrastar contra la
+  // tarjeta: ahí cae a la tinta del sistema.
   const club1Legible = clubSobreTarjeta(club1);
 
   const campeonRank = rankPor("campeon", slug);

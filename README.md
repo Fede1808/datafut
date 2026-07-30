@@ -71,6 +71,30 @@ npm run build   # genera las 48 paginas estaticas
 Tiempos: el paso 5 tarda un minuto y el 6 unos 30 segundos; el resto es
 casi instantaneo.
 
+### Auditoria visual
+
+Con el `npm run dev` levantado, en otra terminal:
+
+```bash
+cd web
+npm run auditoria             # recorre todo el sitio y revisa
+npm run auditoria -- --shots  # ademas guarda capturas
+```
+
+Recorre las pantallas en escritorio (1440px) y en celular (390px) y busca dos
+cosas que NO se ven leyendo el codigo: **textos encimados o desbordados** —con
+scroll horizontal del documento incluido— y **contraste por debajo de WCAG AA**,
+midiendo cada texto contra el fondo que realmente tiene detras.
+
+Sale con codigo 1 si encuentra algo nuevo. Lo que se sabe que aparece y no es un
+defecto esta en la lista `CONOCIDOS` de `web/scripts/auditoria.mjs`, cada entrada
+con su motivo escrito. Si una deja de tener sentido, se borra y se arregla el
+problema — la lista no esta para tapar, esta para que el script sirva.
+
+Vale la pena correrlo despues de tocar CSS, tokens de color o cualquier grilla:
+lo que encontro la primera vez fue una tabla de posiciones con la columna de
+puntos invisible y scroll horizontal en las dieciseis pantallas.
+
 ## Se actualiza solo
 
 Esa es la definicion de terminado de la v1: *termina una fecha y, sin que nadie
