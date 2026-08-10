@@ -1,10 +1,10 @@
 {
-  "actualizado": "2026-08-03T14:47:21+00:00",
-  "partidos_historicos": 6262,
-  "ultimo_partido": "2026-07-31",
+  "actualizado": "2026-08-10T13:14:18+00:00",
+  "partidos_historicos": 6280,
+  "ultimo_partido": "2026-08-06",
   "simulaciones": 10000,
   "vida_media_dias": 1800,
-  "ventaja_local": 0.2684,
+  "ventaja_local": 0.2667,
   "acierto_pct": 41.7,
   "modelo": "Dixon-Coles + Monte Carlo"
 }

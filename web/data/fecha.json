@@ -1,523 +1,547 @@
 {
   "torneo": "Clausura",
-  "ronda": 2,
+  "ronda": 4,
   "partidos": [
     {
-      "local": "Boca Juniors",
-      "visita": "Estudiantes (LP)",
-      "local_slug": "boca-juniors",
-      "visita_slug": "estudiantes-lp",
-      "prob": {
-        "local": 50.1,
-        "empate": 29.2,
-        "visita": 20.7
-      },
-      "goles_esperados": {
-        "local": 1.42,
-        "visita": 0.82
-      },
-      "marcadores": [
-        {
-          "marcador": "1-0",
-          "prob": 14.1
-        },
-        {
-          "marcador": "1-1",
-          "prob": 13.4
-        },
-        {
-          "marcador": "0-0",
-          "prob": 11.7
-        },
-        {
-          "marcador": "2-0",
-          "prob": 10.7
-        },
-        {
-          "marcador": "2-1",
-          "prob": 8.8
-        }
-      ],
-      "matriz": [
-        [
-          11.68,
-          7.73,
-          3.58,
-          0.98,
-          0.2,
-          0.03,
-          0.0
-        ],
-        [
-          14.11,
-          13.42,
-          5.08,
-          1.39,
-          0.28,
-          0.05,
-          0.01
-        ],
-        [
-          10.73,
-          8.79,
-          3.61,
-          0.99,
-          0.2,
-          0.03,
-          0.0
-        ],
-        [
-          5.07,
-          4.16,
-          1.7,
-          0.47,
-          0.1,
-          0.02,
-          0.0
-        ],
-        [
-          1.8,
-          1.47,
-          0.6,
-          0.17,
-          0.03,
-          0.01,
-          0.0
-        ],
-        [
-          0.51,
-          0.42,
-          0.17,
-          0.05,
-          0.01,
-          0.0,
-          0.0
-        ],
-        [
-          0.12,
-          0.1,
-          0.04,
-          0.01,
-          0.0,
-          0.0,
-          0.0
-        ]
-      ],
-      "menos_de_2_5": 61.3,
-      "ambos_convierten": 43.4,
-      "implicita": null,
-      "diferencial": null,
-      "ronda": 2,
-      "fecha": "05/08/2026",
-      "hora": "19:00",
-      "utc": "2026-08-05T22:00:00Z",
-      "aplazado": false
-    },
-    {
-      "local": "Tigre",
+      "local": "Banfield",
       "visita": "Belgrano",
-      "local_slug": "tigre",
+      "local_slug": "banfield",
       "visita_slug": "belgrano",
       "prob": {
-        "local": 40.6,
-        "empate": 31.8,
-        "visita": 27.6
+        "local": 38.7,
+        "empate": 32.6,
+        "visita": 28.7
       },
       "goles_esperados": {
-        "local": 1.18,
-        "visita": 0.92
+        "local": 1.11,
+        "visita": 0.91
       },
       "marcadores": [
         {
           "marcador": "1-1",
-          "prob": 14.4
+          "prob": 14.5
         },
         {
           "marcador": "0-0",
-          "prob": 13.3
-        },
-        {
-          "marcador": "1-0",
-          "prob": 13.3
-        },
-        {
-          "marcador": "0-1",
-          "prob": 10.2
-        },
-        {
-          "marcador": "2-0",
-          "prob": 8.5
-        }
-      ],
-      "matriz": [
-        [
-          13.3,
-          10.21,
-          5.22,
-          1.61,
-          0.37,
-          0.07,
-          0.01
-        ],
-        [
-          13.3,
-          14.39,
-          6.15,
-          1.9,
-          0.44,
-          0.08,
-          0.01
-        ],
-        [
-          8.47,
-          7.83,
-          3.62,
-          1.12,
-          0.26,
-          0.05,
-          0.01
-        ],
-        [
-          3.33,
-          3.08,
-          1.42,
-          0.44,
-          0.1,
-          0.02,
-          0.0
-        ],
-        [
-          0.98,
-          0.91,
-          0.42,
-          0.13,
-          0.03,
-          0.01,
-          0.0
-        ],
-        [
-          0.23,
-          0.21,
-          0.1,
-          0.03,
-          0.01,
-          0.0,
-          0.0
-        ],
-        [
-          0.05,
-          0.04,
-          0.02,
-          0.01,
-          0.0,
-          0.0,
-          0.0
-        ]
-      ],
-      "menos_de_2_5": 64.9,
-      "ambos_convierten": 42.8,
-      "implicita": null,
-      "diferencial": null,
-      "ronda": 2,
-      "fecha": "05/08/2026",
-      "hora": "21:15",
-      "utc": "2026-08-06T00:15:00Z",
-      "aplazado": false
-    },
-    {
-      "local": "Unión",
-      "visita": "Lanús",
-      "local_slug": "union",
-      "visita_slug": "lanus",
-      "prob": {
-        "local": 39.3,
-        "empate": 30.7,
-        "visita": 29.9
-      },
-      "goles_esperados": {
-        "local": 1.22,
-        "visita": 1.03
-      },
-      "marcadores": [
-        {
-          "marcador": "1-1",
           "prob": 14.3
         },
         {
           "marcador": "1-0",
-          "prob": 11.8
-        },
-        {
-          "marcador": "0-0",
-          "prob": 11.6
+          "prob": 13.6
         },
         {
           "marcador": "0-1",
-          "prob": 9.8
+          "prob": 11.1
         },
         {
-          "marcador": "2-1",
+          "marcador": "2-0",
           "prob": 8.1
         }
       ],
       "matriz": [
         [
-          11.62,
-          9.77,
-          5.59,
-          1.92,
-          0.5,
-          0.1,
-          0.02
+          14.34,
+          11.08,
+          5.53,
+          1.68,
+          0.38,
+          0.07,
+          0.01
         ],
         [
-          11.77,
-          14.33,
-          6.83,
-          2.34,
-          0.6,
-          0.12,
-          0.02
-        ],
-        [
-          7.84,
-          8.08,
-          4.16,
-          1.43,
-          0.37,
+          13.65,
+          14.45,
+          6.12,
+          1.86,
+          0.42,
           0.08,
           0.01
         ],
         [
-          3.19,
-          3.29,
-          1.69,
-          0.58,
-          0.15,
-          0.03,
+          8.12,
+          7.41,
+          3.38,
+          1.03,
+          0.23,
+          0.04,
           0.01
         ],
         [
-          0.97,
-          1.0,
-          0.52,
-          0.18,
-          0.05,
-          0.01,
+          2.99,
+          2.73,
+          1.25,
+          0.38,
+          0.09,
+          0.02,
           0.0
         ],
         [
-          0.24,
-          0.24,
-          0.13,
-          0.04,
+          0.83,
+          0.75,
+          0.34,
+          0.1,
+          0.02,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.17,
+          0.08,
+          0.02,
           0.01,
           0.0,
           0.0
         ],
         [
-          0.05,
-          0.05,
           0.03,
+          0.03,
+          0.01,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "menos_de_2_5": 67.2,
+      "ambos_convierten": 41.1,
+      "implicita": {
+        "local": 30.3,
+        "empate": 32.2,
+        "visita": 37.5
+      },
+      "diferencial": {
+        "local": 8.4,
+        "empate": 0.4,
+        "visita": -8.8
+      },
+      "ronda": 4,
+      "fecha": "10/08/2026",
+      "hora": "19:00",
+      "utc": "2026-08-10T22:00:00Z",
+      "aplazado": false
+    },
+    {
+      "local": "Unión",
+      "visita": "Central Córdoba (SdE)",
+      "local_slug": "union",
+      "visita_slug": "central-cordoba-sde",
+      "prob": {
+        "local": 46.1,
+        "empate": 29.8,
+        "visita": 24.1
+      },
+      "goles_esperados": {
+        "local": 1.35,
+        "visita": 0.91
+      },
+      "marcadores": [
+        {
+          "marcador": "1-1",
+          "prob": 13.8
+        },
+        {
+          "marcador": "1-0",
+          "prob": 13.1
+        },
+        {
+          "marcador": "0-0",
+          "prob": 11.4
+        },
+        {
+          "marcador": "2-0",
+          "prob": 9.6
+        },
+        {
+          "marcador": "2-1",
+          "prob": 8.7
+        }
+      ],
+      "matriz": [
+        [
+          11.45,
+          8.47,
+          4.29,
+          1.3,
+          0.29,
+          0.05,
+          0.01
+        ],
+        [
+          13.13,
+          13.81,
+          5.8,
+          1.75,
+          0.4,
+          0.07,
+          0.01
+        ],
+        [
+          9.55,
+          8.66,
+          3.92,
+          1.19,
+          0.27,
+          0.05,
+          0.01
+        ],
+        [
+          4.31,
+          3.9,
+          1.77,
+          0.53,
+          0.12,
+          0.02,
+          0.0
+        ],
+        [
+          1.46,
+          1.32,
+          0.6,
+          0.18,
+          0.04,
+          0.01,
+          0.0
+        ],
+        [
+          0.39,
+          0.36,
+          0.16,
+          0.05,
+          0.01,
+          0.0,
+          0.0
+        ],
+        [
+          0.09,
+          0.08,
+          0.04,
           0.01,
           0.0,
           0.0,
           0.0
         ]
       ],
-      "menos_de_2_5": 60.9,
-      "ambos_convierten": 46.4,
-      "implicita": null,
-      "diferencial": null,
-      "ronda": 2,
-      "fecha": "06/08/2026",
-      "hora": "19:00",
-      "utc": "2026-08-06T22:00:00Z",
+      "menos_de_2_5": 60.7,
+      "ambos_convierten": 45.2,
+      "implicita": {
+        "local": 62.7,
+        "empate": 23.6,
+        "visita": 13.7
+      },
+      "diferencial": {
+        "local": -16.6,
+        "empate": 6.2,
+        "visita": 10.4
+      },
+      "ronda": 4,
+      "fecha": "10/08/2026",
+      "hora": "21:15",
+      "utc": "2026-08-11T00:15:00Z",
+      "aplazado": false
+    },
+    {
+      "local": "Talleres (C)",
+      "visita": "Lanús",
+      "local_slug": "talleres-c",
+      "visita_slug": "lanus",
+      "prob": {
+        "local": 44.8,
+        "empate": 29.9,
+        "visita": 25.3
+      },
+      "goles_esperados": {
+        "local": 1.33,
+        "visita": 0.94
+      },
+      "marcadores": [
+        {
+          "marcador": "1-1",
+          "prob": 13.9
+        },
+        {
+          "marcador": "1-0",
+          "prob": 12.8
+        },
+        {
+          "marcador": "0-0",
+          "prob": 11.3
+        },
+        {
+          "marcador": "2-0",
+          "prob": 9.2
+        },
+        {
+          "marcador": "0-1",
+          "prob": 8.7
+        }
+      ],
+      "matriz": [
+        [
+          11.35,
+          8.68,
+          4.54,
+          1.42,
+          0.33,
+          0.06,
+          0.01
+        ],
+        [
+          12.77,
+          13.91,
+          6.05,
+          1.89,
+          0.44,
+          0.08,
+          0.01
+        ],
+        [
+          9.18,
+          8.6,
+          4.03,
+          1.26,
+          0.29,
+          0.06,
+          0.01
+        ],
+        [
+          4.07,
+          3.82,
+          1.79,
+          0.56,
+          0.13,
+          0.02,
+          0.0
+        ],
+        [
+          1.36,
+          1.27,
+          0.6,
+          0.19,
+          0.04,
+          0.01,
+          0.0
+        ],
+        [
+          0.36,
+          0.34,
+          0.16,
+          0.05,
+          0.01,
+          0.0,
+          0.0
+        ],
+        [
+          0.08,
+          0.08,
+          0.04,
+          0.01,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "menos_de_2_5": 60.4,
+      "ambos_convierten": 45.8,
+      "implicita": {
+        "local": 39.6,
+        "empate": 32.5,
+        "visita": 27.9
+      },
+      "diferencial": {
+        "local": 5.2,
+        "empate": -2.6,
+        "visita": -2.6
+      },
+      "ronda": 4,
+      "fecha": "11/08/2026",
+      "hora": "21:00",
+      "utc": "2026-08-12T00:00:00Z",
       "aplazado": false
     }
   ],
   "ultimos": [
     {
-      "fecha": "2026-07-28",
-      "local": "Banfield",
-      "visita": "Sarmiento (J)",
-      "local_slug": "banfield",
-      "visita_slug": "sarmiento-j",
-      "goles_local": 3,
+      "fecha": "2026-08-02",
+      "local": "Aldosivi",
+      "visita": "Gimnasia (LP)",
+      "local_slug": "aldosivi",
+      "visita_slug": "gimnasia-lp",
+      "goles_local": 1,
       "goles_visita": 2,
       "colores_local": [
-        "#0E6B3D",
-        "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#1E7B3C",
-        "#FFFFFF"
-      ]
-    },
-    {
-      "fecha": "2026-07-28",
-      "local": "San Lorenzo",
-      "visita": "Gimnasia (M)",
-      "local_slug": "san-lorenzo",
-      "visita_slug": "gimnasia-m",
-      "goles_local": 1,
-      "goles_visita": 0,
-      "colores_local": [
-        "#0A2A6B",
-        "#C8102E"
-      ],
-      "colores_visita": [
-        "#FFFFFF",
-        "#111111"
-      ]
-    },
-    {
-      "fecha": "2026-07-29",
-      "local": "Argentinos Juniors",
-      "visita": "Estudiantes (RC)",
-      "local_slug": "argentinos-juniors",
-      "visita_slug": "estudiantes-rc",
-      "goles_local": 3,
-      "goles_visita": 0,
-      "colores_local": [
-        "#D6001C",
-        "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#5CC0F2",
-        "#FFFFFF"
-      ]
-    },
-    {
-      "fecha": "2026-07-29",
-      "local": "Barracas Central",
-      "visita": "Aldosivi",
-      "local_slug": "barracas-central",
-      "visita_slug": "aldosivi",
-      "goles_local": 1,
-      "goles_visita": 0,
-      "colores_local": [
-        "#C8102E",
-        "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#1E7B3C",
-        "#F7D117"
-      ]
-    },
-    {
-      "fecha": "2026-07-29",
-      "local": "Defensa y Justicia",
-      "visita": "Deportivo Riestra",
-      "local_slug": "defensa-y-justicia",
-      "visita_slug": "deportivo-riestra",
-      "goles_local": 2,
-      "goles_visita": 1,
-      "colores_local": [
         "#1E7B3C",
         "#F7D117"
       ],
       "colores_visita": [
-        "#111111",
-        "#FFFFFF"
-      ]
-    },
-    {
-      "fecha": "2026-07-29",
-      "local": "Gimnasia (LP)",
-      "visita": "River Plate",
-      "local_slug": "gimnasia-lp",
-      "visita_slug": "river-plate",
-      "goles_local": 1,
-      "goles_visita": 0,
-      "colores_local": [
         "#123A7A",
         "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#FFFFFF",
-        "#D10A2E"
       ]
     },
     {
-      "fecha": "2026-07-29",
-      "local": "Rosario Central",
-      "visita": "Racing Club",
-      "local_slug": "rosario-central",
-      "visita_slug": "racing-club",
+      "fecha": "2026-08-02",
+      "local": "Deportivo Riestra",
+      "visita": "Barracas Central",
+      "local_slug": "deportivo-riestra",
+      "visita_slug": "barracas-central",
       "goles_local": 0,
-      "goles_visita": 0,
-      "colores_local": [
-        "#1A56A8",
-        "#FFD100"
-      ],
-      "colores_visita": [
-        "#5CC0F2",
-        "#FFFFFF"
-      ]
-    },
-    {
-      "fecha": "2026-07-30",
-      "local": "Independiente Rivadavia",
-      "visita": "Huracán",
-      "local_slug": "independiente-rivadavia",
-      "visita_slug": "huracan",
-      "goles_local": 2,
       "goles_visita": 1,
       "colores_local": [
-        "#1B3D8F",
+        "#111111",
         "#FFFFFF"
       ],
       "colores_visita": [
-        "#FFFFFF",
-        "#E01A2B"
-      ]
-    },
-    {
-      "fecha": "2026-07-30",
-      "local": "Instituto",
-      "visita": "Platense",
-      "local_slug": "instituto",
-      "visita_slug": "platense",
-      "goles_local": 2,
-      "goles_visita": 1,
-      "colores_local": [
         "#C8102E",
         "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#6B4A2F",
-        "#FFFFFF"
       ]
     },
     {
-      "fecha": "2026-07-30",
-      "local": "Talleres (C)",
-      "visita": "Vélez Sarsfield",
-      "local_slug": "talleres-c",
-      "visita_slug": "velez-sarsfield",
+      "fecha": "2026-08-02",
+      "local": "Newell's Old Boys",
+      "visita": "Boca Juniors",
+      "local_slug": "newell-s-old-boys",
+      "visita_slug": "boca-juniors",
+      "goles_local": 2,
+      "goles_visita": 2,
+      "colores_local": [
+        "#D6001C",
+        "#111111"
+      ],
+      "colores_visita": [
+        "#0A2472",
+        "#F7D117"
+      ]
+    },
+    {
+      "fecha": "2026-08-02",
+      "local": "Racing Club",
+      "visita": "Tigre",
+      "local_slug": "racing-club",
+      "visita_slug": "tigre",
       "goles_local": 1,
       "goles_visita": 3,
       "colores_local": [
-        "#0B2C6F",
+        "#5CC0F2",
         "#FFFFFF"
       ],
       "colores_visita": [
-        "#FFFFFF",
-        "#1A3A8F"
+        "#1B3D8F",
+        "#C8102E"
       ]
     },
     {
-      "fecha": "2026-07-31",
-      "local": "Central Córdoba (SdE)",
-      "visita": "Atlético Tucumán",
-      "local_slug": "central-cordoba-sde",
-      "visita_slug": "atletico-tucuman",
+      "fecha": "2026-08-02",
+      "local": "River Plate",
+      "visita": "Rosario Central",
+      "local_slug": "river-plate",
+      "visita_slug": "rosario-central",
       "goles_local": 0,
-      "goles_visita": 2,
+      "goles_visita": 1,
+      "colores_local": [
+        "#FFFFFF",
+        "#D10A2E"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ]
+    },
+    {
+      "fecha": "2026-08-03",
+      "local": "Lanús",
+      "visita": "Instituto",
+      "local_slug": "lanus",
+      "visita_slug": "instituto",
+      "goles_local": 0,
+      "goles_visita": 1,
+      "colores_local": [
+        "#6B1229",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#C8102E",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "fecha": "2026-08-03",
+      "local": "Platense",
+      "visita": "Talleres (C)",
+      "local_slug": "platense",
+      "visita_slug": "talleres-c",
+      "goles_local": 0,
+      "goles_visita": 4,
+      "colores_local": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0B2C6F",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "fecha": "2026-08-03",
+      "local": "Sarmiento (J)",
+      "visita": "Independiente Rivadavia",
+      "local_slug": "sarmiento-j",
+      "visita_slug": "independiente-rivadavia",
+      "goles_local": 2,
+      "goles_visita": 1,
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "fecha": "2026-08-03",
+      "local": "Vélez Sarsfield",
+      "visita": "Independiente",
+      "local_slug": "velez-sarsfield",
+      "visita_slug": "independiente",
+      "goles_local": 1,
+      "goles_visita": 0,
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#D31820",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "fecha": "2026-08-04",
+      "local": "Central Córdoba (SdE)",
+      "visita": "San Lorenzo",
+      "local_slug": "central-cordoba-sde",
+      "visita_slug": "san-lorenzo",
+      "goles_local": 1,
+      "goles_visita": 0,
       "colores_local": [
         "#111111",
         "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#0A2A6B",
+        "#C8102E"
+      ]
+    },
+    {
+      "fecha": "2026-08-04",
+      "local": "Huracán",
+      "visita": "Atlético Tucumán",
+      "local_slug": "huracan",
+      "visita_slug": "atletico-tucuman",
+      "goles_local": 0,
+      "goles_visita": 0,
+      "colores_local": [
+        "#FFFFFF",
+        "#E01A2B"
       ],
       "colores_visita": [
         "#5CC0F2",
@@ -525,20 +549,54 @@
       ]
     },
     {
-      "fecha": "2026-07-31",
-      "local": "Independiente",
-      "visita": "Newell's Old Boys",
-      "local_slug": "independiente",
-      "visita_slug": "newell-s-old-boys",
+      "fecha": "2026-08-05",
+      "local": "Boca Juniors",
+      "visita": "Estudiantes (LP)",
+      "local_slug": "boca-juniors",
+      "visita_slug": "estudiantes-lp",
       "goles_local": 1,
       "goles_visita": 0,
       "colores_local": [
-        "#D31820",
-        "#FFFFFF"
+        "#0A2472",
+        "#F7D117"
       ],
       "colores_visita": [
         "#D6001C",
-        "#111111"
+        "#FFFFFF"
+      ]
+    },
+    {
+      "fecha": "2026-08-06",
+      "local": "Tigre",
+      "visita": "Belgrano",
+      "local_slug": "tigre",
+      "visita_slug": "belgrano",
+      "goles_local": 0,
+      "goles_visita": 0,
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "fecha": "2026-08-06",
+      "local": "Unión",
+      "visita": "Lanús",
+      "local_slug": "union",
+      "visita_slug": "lanus",
+      "goles_local": 2,
+      "goles_visita": 1,
+      "colores_local": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B1229",
+        "#FFFFFF"
       ]
     }
   ]
