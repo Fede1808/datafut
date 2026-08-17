@@ -4,75 +4,75 @@
   "equipos": [
     {
       "equipo": "Aldosivi",
-      "rival": "Tigre",
+      "rival": "Unión",
       "condicion": "local",
-      "ronda": 5,
-      "fecha": "15/08/2026",
+      "ronda": 6,
+      "fecha": "21/08/2026",
       "hora": "14:30",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3172,
-          "prob_resultado": 31.72,
-          "campeon": 0.32,
-          "playoffs": 14.25,
+          "simulaciones": 3258,
+          "prob_resultado": 32.58,
+          "campeon": 0.06,
+          "playoffs": 6.45,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3091,
-          "prob_resultado": 30.91,
+          "simulaciones": 3056,
+          "prob_resultado": 30.56,
           "campeon": 0.03,
-          "playoffs": 5.66,
+          "playoffs": 2.85,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3737,
-          "prob_resultado": 37.37,
-          "campeon": 0.03,
-          "playoffs": 4.2,
+          "simulaciones": 3686,
+          "prob_resultado": 36.86,
+          "campeon": 0.0,
+          "playoffs": 1.25,
           "confiable": true
         }
       ],
       "slug": "aldosivi",
-      "rival_slug": "tigre"
+      "rival_slug": "union"
     },
     {
       "equipo": "Argentinos Juniors",
-      "rival": "River Plate",
+      "rival": "Lanús",
       "condicion": "visita",
-      "ronda": 5,
-      "fecha": "16/08/2026",
-      "hora": "18:00",
+      "ronda": 6,
+      "fecha": "24/08/2026",
+      "hora": "21:15",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 1876,
-          "prob_resultado": 18.76,
-          "campeon": 8.42,
-          "playoffs": 97.33,
+          "simulaciones": 2909,
+          "prob_resultado": 29.09,
+          "campeon": 8.28,
+          "playoffs": 99.04,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2781,
-          "prob_resultado": 27.81,
-          "campeon": 6.33,
-          "playoffs": 92.99,
+          "simulaciones": 3080,
+          "prob_resultado": 30.8,
+          "campeon": 7.99,
+          "playoffs": 96.72,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 5343,
-          "prob_resultado": 53.43,
-          "campeon": 5.86,
-          "playoffs": 87.5,
+          "simulaciones": 4011,
+          "prob_resultado": 40.11,
+          "campeon": 7.83,
+          "playoffs": 94.42,
           "confiable": true
         }
       ],
       "slug": "argentinos-juniors",
-      "rival_slug": "river-plate"
+      "rival_slug": "lanus"
     },
     {
       "equipo": "Atlético Tucumán",
@@ -84,26 +84,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3222,
-          "prob_resultado": 32.22,
-          "campeon": 2.39,
-          "playoffs": 65.15,
+          "simulaciones": 3268,
+          "prob_resultado": 32.68,
+          "campeon": 1.99,
+          "playoffs": 60.53,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3185,
-          "prob_resultado": 31.85,
-          "campeon": 1.98,
-          "playoffs": 47.44,
+          "simulaciones": 3244,
+          "prob_resultado": 32.44,
+          "campeon": 1.7,
+          "playoffs": 42.69,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3593,
-          "prob_resultado": 35.93,
-          "campeon": 1.25,
-          "playoffs": 38.58,
+          "simulaciones": 3488,
+          "prob_resultado": 34.88,
+          "campeon": 1.66,
+          "playoffs": 34.92,
           "confiable": true
         }
       ],
@@ -112,183 +112,183 @@
     },
     {
       "equipo": "Banfield",
-      "rival": "Belgrano",
-      "condicion": "local",
-      "ronda": 4,
-      "fecha": "10/08/2026",
-      "hora": "19:00",
+      "rival": "Newell's Old Boys",
+      "condicion": "visita",
+      "ronda": 6,
+      "fecha": "22/08/2026",
+      "hora": "21:00",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3803,
-          "prob_resultado": 38.03,
-          "campeon": 2.58,
-          "playoffs": 64.66,
+          "simulaciones": 2682,
+          "prob_resultado": 26.82,
+          "campeon": 1.45,
+          "playoffs": 42.06,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3319,
-          "prob_resultado": 33.19,
-          "campeon": 1.66,
-          "playoffs": 48.51,
+          "simulaciones": 3276,
+          "prob_resultado": 32.76,
+          "campeon": 0.95,
+          "playoffs": 26.8,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2878,
-          "prob_resultado": 28.78,
-          "campeon": 1.7,
-          "playoffs": 38.57,
+          "simulaciones": 4042,
+          "prob_resultado": 40.42,
+          "campeon": 1.04,
+          "playoffs": 19.89,
           "confiable": true
         }
       ],
       "slug": "banfield",
-      "rival_slug": "belgrano"
+      "rival_slug": "newell-s-old-boys"
     },
     {
       "equipo": "Barracas Central",
-      "rival": "Rosario Central",
+      "rival": "Platense",
       "condicion": "local",
-      "ronda": 5,
-      "fecha": "16/08/2026",
-      "hora": "20:15",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "14:45",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3545,
-          "prob_resultado": 35.45,
-          "campeon": 3.24,
-          "playoffs": 91.14,
+          "simulaciones": 4059,
+          "prob_resultado": 40.59,
+          "campeon": 2.69,
+          "playoffs": 81.84,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3158,
-          "prob_resultado": 31.58,
-          "campeon": 2.98,
-          "playoffs": 80.62,
+          "simulaciones": 3285,
+          "prob_resultado": 32.85,
+          "campeon": 2.25,
+          "playoffs": 66.21,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3297,
-          "prob_resultado": 32.97,
-          "campeon": 2.4,
-          "playoffs": 72.58,
+          "simulaciones": 2656,
+          "prob_resultado": 26.56,
+          "campeon": 1.69,
+          "playoffs": 56.89,
           "confiable": true
         }
       ],
       "slug": "barracas-central",
-      "rival_slug": "rosario-central"
+      "rival_slug": "platense"
     },
     {
       "equipo": "Belgrano",
-      "rival": "Banfield",
-      "condicion": "visita",
-      "ronda": 4,
-      "fecha": "10/08/2026",
-      "hora": "19:00",
+      "rival": "Defensa y Justicia",
+      "condicion": "local",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "17:00",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2878,
-          "prob_resultado": 28.78,
-          "campeon": 3.02,
-          "playoffs": 73.8,
+          "simulaciones": 4052,
+          "prob_resultado": 40.52,
+          "campeon": 3.63,
+          "playoffs": 75.07,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3319,
-          "prob_resultado": 33.19,
-          "campeon": 2.47,
-          "playoffs": 57.79,
+          "simulaciones": 3107,
+          "prob_resultado": 31.07,
+          "campeon": 2.57,
+          "playoffs": 57.39,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3803,
-          "prob_resultado": 38.03,
-          "campeon": 2.37,
-          "playoffs": 48.23,
+          "simulaciones": 2841,
+          "prob_resultado": 28.41,
+          "campeon": 2.32,
+          "playoffs": 47.48,
           "confiable": true
         }
       ],
       "slug": "belgrano",
-      "rival_slug": "banfield"
+      "rival_slug": "defensa-y-justicia"
     },
     {
       "equipo": "Boca Juniors",
-      "rival": "Platense",
+      "rival": "Racing Club",
       "condicion": "visita",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "21:15",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "21:30",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 4170,
-          "prob_resultado": 41.7,
-          "campeon": 12.61,
-          "playoffs": 88.59,
+          "simulaciones": 3200,
+          "prob_resultado": 32.0,
+          "campeon": 12.12,
+          "playoffs": 87.66,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3269,
-          "prob_resultado": 32.69,
-          "campeon": 9.97,
-          "playoffs": 77.76,
+          "simulaciones": 3008,
+          "prob_resultado": 30.08,
+          "campeon": 9.87,
+          "playoffs": 76.99,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2561,
-          "prob_resultado": 25.61,
-          "campeon": 8.82,
-          "playoffs": 68.96,
+          "simulaciones": 3792,
+          "prob_resultado": 37.92,
+          "campeon": 8.47,
+          "playoffs": 68.33,
           "confiable": true
         }
       ],
       "slug": "boca-juniors",
-      "rival_slug": "platense"
+      "rival_slug": "racing-club"
     },
     {
       "equipo": "Central Córdoba (SdE)",
-      "rival": "Unión",
+      "rival": "Tigre",
       "condicion": "visita",
-      "ronda": 4,
-      "fecha": "10/08/2026",
-      "hora": "21:15",
+      "ronda": 6,
+      "fecha": "24/08/2026",
+      "hora": "19:00",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2354,
-          "prob_resultado": 23.54,
-          "campeon": 1.23,
-          "playoffs": 42.99,
+          "simulaciones": 2338,
+          "prob_resultado": 23.38,
+          "campeon": 1.63,
+          "playoffs": 47.13,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2964,
-          "prob_resultado": 29.64,
-          "campeon": 0.71,
-          "playoffs": 28.17,
+          "simulaciones": 2923,
+          "prob_resultado": 29.23,
+          "campeon": 1.16,
+          "playoffs": 30.24,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 4682,
-          "prob_resultado": 46.82,
-          "campeon": 0.68,
-          "playoffs": 19.09,
+          "simulaciones": 4739,
+          "prob_resultado": 47.39,
+          "campeon": 0.55,
+          "playoffs": 22.81,
           "confiable": true
         }
       ],
       "slug": "central-cordoba-sde",
-      "rival_slug": "union"
+      "rival_slug": "tigre"
     },
     {
       "equipo": "Defensa y Justicia",
@@ -300,26 +300,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2439,
-          "prob_resultado": 24.39,
-          "campeon": 3.28,
-          "playoffs": 62.24,
+          "simulaciones": 2440,
+          "prob_resultado": 24.4,
+          "campeon": 5.74,
+          "playoffs": 83.98,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2927,
-          "prob_resultado": 29.27,
-          "campeon": 2.36,
-          "playoffs": 45.1,
+          "simulaciones": 2989,
+          "prob_resultado": 29.89,
+          "campeon": 3.61,
+          "playoffs": 69.49,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 4634,
-          "prob_resultado": 46.34,
-          "campeon": 1.9,
-          "playoffs": 35.17,
+          "simulaciones": 4571,
+          "prob_resultado": 45.71,
+          "campeon": 3.72,
+          "playoffs": 60.56,
           "confiable": true
         }
       ],
@@ -328,75 +328,75 @@
     },
     {
       "equipo": "Deportivo Riestra",
-      "rival": "Newell's Old Boys",
+      "rival": "Huracán",
       "condicion": "visita",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "19:00",
+      "ronda": 6,
+      "fecha": "22/08/2026",
+      "hora": "21:00",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2750,
-          "prob_resultado": 27.5,
-          "campeon": 1.96,
-          "playoffs": 52.73,
+          "simulaciones": 2426,
+          "prob_resultado": 24.26,
+          "campeon": 3.71,
+          "playoffs": 71.6,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3490,
-          "prob_resultado": 34.9,
-          "campeon": 1.49,
-          "playoffs": 35.62,
+          "simulaciones": 3584,
+          "prob_resultado": 35.84,
+          "campeon": 2.9,
+          "playoffs": 53.57,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3760,
-          "prob_resultado": 37.6,
-          "campeon": 1.17,
-          "playoffs": 26.84,
+          "simulaciones": 3990,
+          "prob_resultado": 39.9,
+          "campeon": 2.06,
+          "playoffs": 44.84,
           "confiable": true
         }
       ],
       "slug": "deportivo-riestra",
-      "rival_slug": "newell-s-old-boys"
+      "rival_slug": "huracan"
     },
     {
       "equipo": "Estudiantes (LP)",
-      "rival": "Gimnasia (LP)",
-      "condicion": "local",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "16:45",
+      "rival": "Sarmiento (J)",
+      "condicion": "visita",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "14:45",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 4841,
-          "prob_resultado": 48.41,
-          "campeon": 4.79,
-          "playoffs": 71.06,
+          "simulaciones": 3886,
+          "prob_resultado": 38.86,
+          "campeon": 4.04,
+          "playoffs": 58.08,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2992,
-          "prob_resultado": 29.92,
-          "campeon": 2.87,
-          "playoffs": 55.38,
+          "simulaciones": 3243,
+          "prob_resultado": 32.43,
+          "campeon": 2.34,
+          "playoffs": 39.38,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2167,
-          "prob_resultado": 21.67,
-          "campeon": 3.23,
-          "playoffs": 45.09,
+          "simulaciones": 2871,
+          "prob_resultado": 28.71,
+          "campeon": 2.06,
+          "playoffs": 31.77,
           "confiable": true
         }
       ],
       "slug": "estudiantes-lp",
-      "rival_slug": "gimnasia-lp"
+      "rival_slug": "sarmiento-j"
     },
     {
       "equipo": "Estudiantes (RC)",
@@ -408,26 +408,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3593,
-          "prob_resultado": 35.93,
-          "campeon": 0.56,
-          "playoffs": 33.26,
+          "simulaciones": 3488,
+          "prob_resultado": 34.88,
+          "campeon": 0.57,
+          "playoffs": 27.47,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3185,
-          "prob_resultado": 31.85,
-          "campeon": 0.38,
-          "playoffs": 18.05,
+          "simulaciones": 3244,
+          "prob_resultado": 32.44,
+          "campeon": 0.37,
+          "playoffs": 16.06,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3222,
-          "prob_resultado": 32.22,
-          "campeon": 0.37,
-          "playoffs": 11.89,
+          "simulaciones": 3268,
+          "prob_resultado": 32.68,
+          "campeon": 0.15,
+          "playoffs": 9.49,
           "confiable": true
         }
       ],
@@ -436,39 +436,39 @@
     },
     {
       "equipo": "Gimnasia (LP)",
-      "rival": "Estudiantes (LP)",
-      "condicion": "visita",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "16:45",
+      "rival": "Gimnasia (M)",
+      "condicion": "local",
+      "ronda": 6,
+      "fecha": "22/08/2026",
+      "hora": "16:00",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2167,
-          "prob_resultado": 21.67,
-          "campeon": 3.55,
-          "playoffs": 78.96,
+          "simulaciones": 4237,
+          "prob_resultado": 42.37,
+          "campeon": 3.73,
+          "playoffs": 87.94,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2992,
-          "prob_resultado": 29.92,
-          "campeon": 2.47,
-          "playoffs": 64.37,
+          "simulaciones": 3123,
+          "prob_resultado": 31.23,
+          "campeon": 3.43,
+          "playoffs": 76.05,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 4841,
-          "prob_resultado": 48.41,
-          "campeon": 2.02,
-          "playoffs": 54.58,
+          "simulaciones": 2640,
+          "prob_resultado": 26.4,
+          "campeon": 2.92,
+          "playoffs": 68.52,
           "confiable": true
         }
       ],
       "slug": "gimnasia-lp",
-      "rival_slug": "estudiantes-lp"
+      "rival_slug": "gimnasia-m"
     },
     {
       "equipo": "Gimnasia (M)",
@@ -480,26 +480,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3491,
-          "prob_resultado": 34.91,
-          "campeon": 2.78,
-          "playoffs": 66.17,
+          "simulaciones": 3425,
+          "prob_resultado": 34.25,
+          "campeon": 2.89,
+          "playoffs": 64.53,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3182,
-          "prob_resultado": 31.82,
-          "campeon": 1.85,
-          "playoffs": 50.0,
+          "simulaciones": 3192,
+          "prob_resultado": 31.92,
+          "campeon": 1.54,
+          "playoffs": 47.34,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3327,
-          "prob_resultado": 33.27,
-          "campeon": 1.74,
-          "playoffs": 38.29,
+          "simulaciones": 3383,
+          "prob_resultado": 33.83,
+          "campeon": 1.3,
+          "playoffs": 35.21,
           "confiable": true
         }
       ],
@@ -508,39 +508,39 @@
     },
     {
       "equipo": "Huracán",
-      "rival": "Sarmiento (J)",
-      "condicion": "visita",
-      "ronda": 5,
-      "fecha": "16/08/2026",
-      "hora": "15:00",
+      "rival": "Deportivo Riestra",
+      "condicion": "local",
+      "ronda": 6,
+      "fecha": "22/08/2026",
+      "hora": "21:00",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3440,
-          "prob_resultado": 34.4,
-          "campeon": 3.63,
-          "playoffs": 68.81,
+          "simulaciones": 3990,
+          "prob_resultado": 39.9,
+          "campeon": 5.04,
+          "playoffs": 79.42,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3403,
-          "prob_resultado": 34.03,
-          "campeon": 2.91,
-          "playoffs": 53.36,
+          "simulaciones": 3584,
+          "prob_resultado": 35.84,
+          "campeon": 3.66,
+          "playoffs": 63.7,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3157,
-          "prob_resultado": 31.57,
-          "campeon": 2.06,
-          "playoffs": 42.13,
+          "simulaciones": 2426,
+          "prob_resultado": 24.26,
+          "campeon": 3.71,
+          "playoffs": 54.86,
           "confiable": true
         }
       ],
       "slug": "huracan",
-      "rival_slug": "sarmiento-j"
+      "rival_slug": "deportivo-riestra"
     },
     {
       "equipo": "Independiente",
@@ -552,26 +552,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 3045,
-          "prob_resultado": 30.45,
-          "campeon": 7.0,
-          "playoffs": 87.03,
+          "simulaciones": 2961,
+          "prob_resultado": 29.61,
+          "campeon": 7.63,
+          "playoffs": 87.4,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3128,
-          "prob_resultado": 31.28,
-          "campeon": 5.82,
-          "playoffs": 75.9,
+          "simulaciones": 3127,
+          "prob_resultado": 31.27,
+          "campeon": 5.85,
+          "playoffs": 74.32,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 3827,
-          "prob_resultado": 38.27,
-          "campeon": 5.67,
-          "playoffs": 67.21,
+          "simulaciones": 3912,
+          "prob_resultado": 39.12,
+          "campeon": 5.44,
+          "playoffs": 66.1,
           "confiable": true
         }
       ],
@@ -580,471 +580,471 @@
     },
     {
       "equipo": "Independiente Rivadavia",
-      "rival": "Belgrano",
+      "rival": "Independiente",
       "condicion": "visita",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "19:00",
+      "ronda": 6,
+      "fecha": "22/08/2026",
+      "hora": "18:30",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 2823,
-          "prob_resultado": 28.23,
-          "campeon": 2.55,
-          "playoffs": 60.33,
+          "simulaciones": 2375,
+          "prob_resultado": 23.75,
+          "campeon": 3.71,
+          "playoffs": 74.74,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 3118,
-          "prob_resultado": 31.18,
-          "campeon": 1.64,
-          "playoffs": 42.4,
+          "simulaciones": 3064,
+          "prob_resultado": 30.64,
+          "campeon": 3.3,
+          "playoffs": 58.68,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 4561,
+          "prob_resultado": 45.61,
+          "campeon": 2.61,
+          "playoffs": 47.34,
+          "confiable": true
+        }
+      ],
+      "slug": "independiente-rivadavia",
+      "rival_slug": "independiente"
+    },
+    {
+      "equipo": "Instituto",
+      "rival": "Atlético Tucumán",
+      "condicion": "visita",
+      "ronda": 6,
+      "fecha": "22/08/2026",
+      "hora": "16:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2779,
+          "prob_resultado": 27.79,
+          "campeon": 4.32,
+          "playoffs": 86.47,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3145,
+          "prob_resultado": 31.45,
+          "campeon": 3.78,
+          "playoffs": 71.99,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 4076,
+          "prob_resultado": 40.76,
+          "campeon": 2.28,
+          "playoffs": 64.97,
+          "confiable": true
+        }
+      ],
+      "slug": "instituto",
+      "rival_slug": "atletico-tucuman"
+    },
+    {
+      "equipo": "Lanús",
+      "rival": "Independiente",
+      "condicion": "local",
+      "ronda": 5,
+      "fecha": "17/08/2026",
+      "hora": "17:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3912,
+          "prob_resultado": 39.12,
+          "campeon": 5.14,
+          "playoffs": 79.83,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3127,
+          "prob_resultado": 31.27,
+          "campeon": 4.35,
+          "playoffs": 65.59,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2961,
+          "prob_resultado": 29.61,
+          "campeon": 2.97,
+          "playoffs": 56.23,
+          "confiable": true
+        }
+      ],
+      "slug": "lanus",
+      "rival_slug": "independiente"
+    },
+    {
+      "equipo": "Newell's Old Boys",
+      "rival": "Banfield",
+      "condicion": "local",
+      "ronda": 6,
+      "fecha": "22/08/2026",
+      "hora": "21:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 4042,
+          "prob_resultado": 40.42,
+          "campeon": 1.53,
+          "playoffs": 41.66,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3276,
+          "prob_resultado": 32.76,
+          "campeon": 0.89,
+          "playoffs": 25.4,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2682,
+          "prob_resultado": 26.82,
+          "campeon": 0.63,
+          "playoffs": 18.49,
+          "confiable": true
+        }
+      ],
+      "slug": "newell-s-old-boys",
+      "rival_slug": "banfield"
+    },
+    {
+      "equipo": "Platense",
+      "rival": "Barracas Central",
+      "condicion": "visita",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "14:45",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2656,
+          "prob_resultado": 26.56,
+          "campeon": 1.09,
+          "playoffs": 35.77,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3285,
+          "prob_resultado": 32.85,
+          "campeon": 0.79,
+          "playoffs": 21.46,
           "confiable": true
         },
         {
           "resultado": "pierde",
           "simulaciones": 4059,
           "prob_resultado": 40.59,
-          "campeon": 1.4,
-          "playoffs": 31.66,
-          "confiable": true
-        }
-      ],
-      "slug": "independiente-rivadavia",
-      "rival_slug": "belgrano"
-    },
-    {
-      "equipo": "Instituto",
-      "rival": "Central Córdoba (SdE)",
-      "condicion": "visita",
-      "ronda": 5,
-      "fecha": "16/08/2026",
-      "hora": "15:00",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 2989,
-          "prob_resultado": 29.89,
-          "campeon": 3.21,
-          "playoffs": 73.27,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3206,
-          "prob_resultado": 32.06,
-          "campeon": 2.46,
-          "playoffs": 57.21,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 3805,
-          "prob_resultado": 38.05,
-          "campeon": 1.84,
-          "playoffs": 43.6,
-          "confiable": true
-        }
-      ],
-      "slug": "instituto",
-      "rival_slug": "central-cordoba-sde"
-    },
-    {
-      "equipo": "Lanús",
-      "rival": "Talleres (C)",
-      "condicion": "visita",
-      "ronda": 4,
-      "fecha": "11/08/2026",
-      "hora": "21:00",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 2505,
-          "prob_resultado": 25.05,
-          "campeon": 3.63,
-          "playoffs": 67.62,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3013,
-          "prob_resultado": 30.13,
-          "campeon": 2.69,
-          "playoffs": 49.85,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 4482,
-          "prob_resultado": 44.82,
-          "campeon": 2.14,
-          "playoffs": 41.14,
-          "confiable": true
-        }
-      ],
-      "slug": "lanus",
-      "rival_slug": "talleres-c"
-    },
-    {
-      "equipo": "Newell's Old Boys",
-      "rival": "Deportivo Riestra",
-      "condicion": "local",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "19:00",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 3760,
-          "prob_resultado": 37.6,
-          "campeon": 2.45,
-          "playoffs": 57.66,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3490,
-          "prob_resultado": 34.9,
-          "campeon": 1.69,
-          "playoffs": 40.06,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 2750,
-          "prob_resultado": 27.5,
-          "campeon": 1.09,
-          "playoffs": 30.84,
-          "confiable": true
-        }
-      ],
-      "slug": "newell-s-old-boys",
-      "rival_slug": "deportivo-riestra"
-    },
-    {
-      "equipo": "Platense",
-      "rival": "Boca Juniors",
-      "condicion": "local",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "21:15",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 2561,
-          "prob_resultado": 25.61,
-          "campeon": 0.66,
-          "playoffs": 22.69,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3269,
-          "prob_resultado": 32.69,
-          "campeon": 0.28,
-          "playoffs": 11.38,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 4170,
-          "prob_resultado": 41.7,
-          "campeon": 0.24,
-          "playoffs": 7.48,
+          "campeon": 0.25,
+          "playoffs": 14.09,
           "confiable": true
         }
       ],
       "slug": "platense",
-      "rival_slug": "boca-juniors"
+      "rival_slug": "barracas-central"
     },
     {
       "equipo": "Racing Club",
-      "rival": "Banfield",
+      "rival": "Boca Juniors",
       "condicion": "local",
-      "ronda": 5,
-      "fecha": "14/08/2026",
-      "hora": "20:30",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "21:30",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 5390,
-          "prob_resultado": 53.9,
-          "campeon": 8.03,
-          "playoffs": 85.34,
+          "simulaciones": 3792,
+          "prob_resultado": 37.92,
+          "campeon": 6.12,
+          "playoffs": 73.21,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2703,
-          "prob_resultado": 27.03,
-          "campeon": 7.14,
-          "playoffs": 71.48,
+          "simulaciones": 3008,
+          "prob_resultado": 30.08,
+          "campeon": 5.88,
+          "playoffs": 57.51,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 1907,
-          "prob_resultado": 19.07,
-          "campeon": 5.35,
-          "playoffs": 62.72,
+          "simulaciones": 3200,
+          "prob_resultado": 32.0,
+          "campeon": 3.91,
+          "playoffs": 47.12,
           "confiable": true
         }
       ],
       "slug": "racing-club",
-      "rival_slug": "banfield"
+      "rival_slug": "boca-juniors"
     },
     {
       "equipo": "River Plate",
-      "rival": "Argentinos Juniors",
+      "rival": "Vélez Sarsfield",
       "condicion": "local",
-      "ronda": 5,
-      "fecha": "16/08/2026",
-      "hora": "18:00",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "19:15",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 5343,
-          "prob_resultado": 53.43,
-          "campeon": 10.11,
-          "playoffs": 71.98,
+          "simulaciones": 5321,
+          "prob_resultado": 53.21,
+          "campeon": 6.92,
+          "playoffs": 52.68,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2781,
-          "prob_resultado": 27.81,
-          "campeon": 7.59,
-          "playoffs": 58.5,
+          "simulaciones": 2761,
+          "prob_resultado": 27.61,
+          "campeon": 5.03,
+          "playoffs": 35.53,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 1876,
-          "prob_resultado": 18.76,
-          "campeon": 6.88,
-          "playoffs": 46.27,
+          "simulaciones": 1918,
+          "prob_resultado": 19.18,
+          "campeon": 4.12,
+          "playoffs": 28.57,
           "confiable": true
         }
       ],
       "slug": "river-plate",
-      "rival_slug": "argentinos-juniors"
+      "rival_slug": "velez-sarsfield"
     },
     {
       "equipo": "Rosario Central",
-      "rival": "Barracas Central",
+      "rival": "Talleres (C)",
       "condicion": "visita",
-      "ronda": 5,
-      "fecha": "16/08/2026",
-      "hora": "20:15",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 3297,
-          "prob_resultado": 32.97,
-          "campeon": 4.31,
-          "playoffs": 76.65,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3158,
-          "prob_resultado": 31.58,
-          "campeon": 3.29,
-          "playoffs": 60.86,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 3545,
-          "prob_resultado": 35.45,
-          "campeon": 2.76,
-          "playoffs": 50.78,
-          "confiable": true
-        }
-      ],
-      "slug": "rosario-central",
-      "rival_slug": "barracas-central"
-    },
-    {
-      "equipo": "San Lorenzo",
-      "rival": "Unión",
-      "condicion": "local",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "14:30",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 4432,
-          "prob_resultado": 44.32,
-          "campeon": 2.5,
-          "playoffs": 53.97,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3182,
-          "prob_resultado": 31.82,
-          "campeon": 2.45,
-          "playoffs": 35.86,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 2386,
-          "prob_resultado": 23.86,
-          "campeon": 1.59,
-          "playoffs": 27.12,
-          "confiable": true
-        }
-      ],
-      "slug": "san-lorenzo",
-      "rival_slug": "union"
-    },
-    {
-      "equipo": "Sarmiento (J)",
-      "rival": "Huracán",
-      "condicion": "local",
-      "ronda": 5,
-      "fecha": "16/08/2026",
-      "hora": "15:00",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 3157,
-          "prob_resultado": 31.57,
-          "campeon": 0.79,
-          "playoffs": 29.74,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3403,
-          "prob_resultado": 34.03,
-          "campeon": 0.41,
-          "playoffs": 16.25,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 3440,
-          "prob_resultado": 34.4,
-          "campeon": 0.23,
-          "playoffs": 11.22,
-          "confiable": true
-        }
-      ],
-      "slug": "sarmiento-j",
-      "rival_slug": "huracan"
-    },
-    {
-      "equipo": "Talleres (C)",
-      "rival": "Lanús",
-      "condicion": "local",
-      "ronda": 4,
-      "fecha": "11/08/2026",
-      "hora": "21:00",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 4482,
-          "prob_resultado": 44.82,
-          "campeon": 5.78,
-          "playoffs": 78.74,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3013,
-          "prob_resultado": 30.13,
-          "campeon": 3.92,
-          "playoffs": 62.56,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 2505,
-          "prob_resultado": 25.05,
-          "campeon": 3.91,
-          "playoffs": 54.17,
-          "confiable": true
-        }
-      ],
-      "slug": "talleres-c",
-      "rival_slug": "lanus"
-    },
-    {
-      "equipo": "Tigre",
-      "rival": "Aldosivi",
-      "condicion": "visita",
-      "ronda": 5,
-      "fecha": "15/08/2026",
-      "hora": "14:30",
-      "ramas": [
-        {
-          "resultado": "gana",
-          "simulaciones": 3737,
-          "prob_resultado": 37.37,
-          "campeon": 3.26,
-          "playoffs": 68.58,
-          "confiable": true
-        },
-        {
-          "resultado": "empata",
-          "simulaciones": 3091,
-          "prob_resultado": 30.91,
-          "campeon": 2.94,
-          "playoffs": 51.7,
-          "confiable": true
-        },
-        {
-          "resultado": "pierde",
-          "simulaciones": 3172,
-          "prob_resultado": 31.72,
-          "campeon": 2.33,
-          "playoffs": 40.86,
-          "confiable": true
-        }
-      ],
-      "slug": "tigre",
-      "rival_slug": "aldosivi"
-    },
-    {
-      "equipo": "Unión",
-      "rival": "Central Córdoba (SdE)",
-      "condicion": "local",
-      "ronda": 4,
-      "fecha": "10/08/2026",
+      "ronda": 6,
+      "fecha": "24/08/2026",
       "hora": "21:15",
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 4682,
-          "prob_resultado": 46.82,
-          "campeon": 3.12,
+          "simulaciones": 2658,
+          "prob_resultado": 26.58,
+          "campeon": 5.61,
+          "playoffs": 85.82,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3045,
+          "prob_resultado": 30.45,
+          "campeon": 4.27,
+          "playoffs": 75.07,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 4297,
+          "prob_resultado": 42.97,
+          "campeon": 3.93,
+          "playoffs": 66.65,
+          "confiable": true
+        }
+      ],
+      "slug": "rosario-central",
+      "rival_slug": "talleres-c"
+    },
+    {
+      "equipo": "San Lorenzo",
+      "rival": "Estudiantes (RC)",
+      "condicion": "visita",
+      "ronda": 6,
+      "fecha": "21/08/2026",
+      "hora": "20:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3590,
+          "prob_resultado": 35.9,
+          "campeon": 2.59,
+          "playoffs": 39.97,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3400,
+          "prob_resultado": 34.0,
+          "campeon": 0.91,
+          "playoffs": 22.0,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3010,
+          "prob_resultado": 30.1,
+          "campeon": 0.93,
+          "playoffs": 16.18,
+          "confiable": true
+        }
+      ],
+      "slug": "san-lorenzo",
+      "rival_slug": "estudiantes-rc"
+    },
+    {
+      "equipo": "Sarmiento (J)",
+      "rival": "Estudiantes (LP)",
+      "condicion": "local",
+      "ronda": 6,
+      "fecha": "23/08/2026",
+      "hora": "14:45",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 2871,
+          "prob_resultado": 28.71,
+          "campeon": 1.25,
+          "playoffs": 42.53,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3243,
+          "prob_resultado": 32.43,
+          "campeon": 0.59,
+          "playoffs": 26.52,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3886,
+          "prob_resultado": 38.86,
+          "campeon": 0.44,
+          "playoffs": 18.66,
+          "confiable": true
+        }
+      ],
+      "slug": "sarmiento-j",
+      "rival_slug": "estudiantes-lp"
+    },
+    {
+      "equipo": "Talleres (C)",
+      "rival": "Gimnasia (M)",
+      "condicion": "visita",
+      "ronda": 5,
+      "fecha": "17/08/2026",
+      "hora": "21:30",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3383,
+          "prob_resultado": 33.83,
+          "campeon": 4.29,
           "playoffs": 67.43,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2964,
-          "prob_resultado": 29.64,
-          "campeon": 2.43,
-          "playoffs": 50.71,
+          "simulaciones": 3192,
+          "prob_resultado": 31.92,
+          "campeon": 3.01,
+          "playoffs": 47.81,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2354,
-          "prob_resultado": 23.54,
-          "campeon": 2.17,
-          "playoffs": 42.82,
+          "simulaciones": 3425,
+          "prob_resultado": 34.25,
+          "campeon": 2.42,
+          "playoffs": 40.12,
+          "confiable": true
+        }
+      ],
+      "slug": "talleres-c",
+      "rival_slug": "gimnasia-m"
+    },
+    {
+      "equipo": "Tigre",
+      "rival": "Central Córdoba (SdE)",
+      "condicion": "local",
+      "ronda": 6,
+      "fecha": "24/08/2026",
+      "hora": "19:00",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 4739,
+          "prob_resultado": 47.39,
+          "campeon": 3.42,
+          "playoffs": 77.06,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 2923,
+          "prob_resultado": 29.23,
+          "campeon": 2.81,
+          "playoffs": 61.07,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 2338,
+          "prob_resultado": 23.38,
+          "campeon": 2.48,
+          "playoffs": 51.45,
+          "confiable": true
+        }
+      ],
+      "slug": "tigre",
+      "rival_slug": "central-cordoba-sde"
+    },
+    {
+      "equipo": "Unión",
+      "rival": "Aldosivi",
+      "condicion": "visita",
+      "ronda": 6,
+      "fecha": "21/08/2026",
+      "hora": "14:30",
+      "ramas": [
+        {
+          "resultado": "gana",
+          "simulaciones": 3686,
+          "prob_resultado": 36.86,
+          "campeon": 2.28,
+          "playoffs": 45.47,
+          "confiable": true
+        },
+        {
+          "resultado": "empata",
+          "simulaciones": 3056,
+          "prob_resultado": 30.56,
+          "campeon": 0.95,
+          "playoffs": 28.01,
+          "confiable": true
+        },
+        {
+          "resultado": "pierde",
+          "simulaciones": 3258,
+          "prob_resultado": 32.58,
+          "campeon": 0.95,
+          "playoffs": 22.1,
           "confiable": true
         }
       ],
       "slug": "union",
-      "rival_slug": "central-cordoba-sde"
+      "rival_slug": "aldosivi"
     },
     {
       "equipo": "Vélez Sarsfield",
@@ -1056,26 +1056,26 @@
       "ramas": [
         {
           "resultado": "gana",
-          "simulaciones": 4634,
-          "prob_resultado": 46.34,
-          "campeon": 10.23,
-          "playoffs": 96.5,
+          "simulaciones": 4571,
+          "prob_resultado": 45.71,
+          "campeon": 9.8,
+          "playoffs": 98.18,
           "confiable": true
         },
         {
           "resultado": "empata",
-          "simulaciones": 2927,
-          "prob_resultado": 29.27,
-          "campeon": 8.17,
-          "playoffs": 90.47,
+          "simulaciones": 2989,
+          "prob_resultado": 29.89,
+          "campeon": 7.86,
+          "playoffs": 94.21,
           "confiable": true
         },
         {
           "resultado": "pierde",
-          "simulaciones": 2439,
-          "prob_resultado": 24.39,
-          "campeon": 7.54,
-          "playoffs": 86.14,
+          "simulaciones": 2440,
+          "prob_resultado": 24.4,
+          "campeon": 8.07,
+          "playoffs": 91.19,
           "confiable": true
         }
       ],
