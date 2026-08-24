@@ -1,39 +1,21 @@
 {
   "torneo": "Clausura",
   "temporada": "2026",
-  "partidos_jugados": 60,
+  "partidos_jugados": 75,
   "clasifican_por_zona": 8,
   "equipos": [
     {
-      "equipo": "Vélez Sarsfield",
-      "zona": "A",
-      "puesto": 1,
-      "pj": 4,
-      "pg": 3,
-      "pe": 1,
-      "pp": 0,
-      "gf": 6,
-      "gc": 2,
-      "dif": 4,
-      "pts": 10,
-      "slug": "velez-sarsfield",
-      "colores": [
-        "#FFFFFF",
-        "#1A3A8F"
-      ]
-    },
-    {
       "equipo": "Instituto",
       "zona": "A",
-      "puesto": 2,
-      "pj": 4,
-      "pg": 3,
+      "puesto": 1,
+      "pj": 5,
+      "pg": 4,
       "pe": 0,
       "pp": 1,
-      "gf": 4,
+      "gf": 5,
       "gc": 2,
-      "dif": 2,
-      "pts": 9,
+      "dif": 3,
+      "pts": 12,
       "slug": "instituto",
       "colores": [
         "#C8102E",
@@ -41,17 +23,71 @@
       ]
     },
     {
-      "equipo": "Defensa y Justicia",
+      "equipo": "Vélez Sarsfield",
+      "zona": "A",
+      "puesto": 2,
+      "pj": 5,
+      "pg": 3,
+      "pe": 2,
+      "pp": 0,
+      "gf": 7,
+      "gc": 3,
+      "dif": 4,
+      "pts": 11,
+      "slug": "velez-sarsfield",
+      "colores": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ]
+    },
+    {
+      "equipo": "Gimnasia (M)",
       "zona": "A",
       "puesto": 3,
-      "pj": 4,
+      "pj": 5,
+      "pg": 3,
+      "pe": 0,
+      "pp": 2,
+      "gf": 6,
+      "gc": 3,
+      "dif": 3,
+      "pts": 9,
+      "slug": "gimnasia-m",
+      "colores": [
+        "#FFFFFF",
+        "#111111"
+      ]
+    },
+    {
+      "equipo": "Independiente",
+      "zona": "A",
+      "puesto": 4,
+      "pj": 5,
+      "pg": 3,
+      "pe": 0,
+      "pp": 2,
+      "gf": 6,
+      "gc": 3,
+      "dif": 3,
+      "pts": 9,
+      "slug": "independiente",
+      "colores": [
+        "#D31820",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "equipo": "Defensa y Justicia",
+      "zona": "A",
+      "puesto": 5,
+      "pj": 5,
       "pg": 2,
-      "pe": 1,
+      "pe": 2,
       "pp": 1,
-      "gf": 5,
-      "gc": 6,
+      "gf": 6,
+      "gc": 7,
       "dif": -1,
-      "pts": 7,
+      "pts": 8,
       "slug": "defensa-y-justicia",
       "colores": [
         "#1E7B3C",
@@ -59,16 +95,52 @@
       ]
     },
     {
-      "equipo": "Deportivo Riestra",
+      "equipo": "Newell's Old Boys",
       "zona": "A",
-      "puesto": 4,
-      "pj": 4,
+      "puesto": 6,
+      "pj": 5,
       "pg": 2,
-      "pe": 0,
+      "pe": 1,
       "pp": 2,
       "gf": 6,
-      "gc": 3,
-      "dif": 3,
+      "gc": 5,
+      "dif": 1,
+      "pts": 7,
+      "slug": "newell-s-old-boys",
+      "colores": [
+        "#D6001C",
+        "#111111"
+      ]
+    },
+    {
+      "equipo": "Estudiantes (LP)",
+      "zona": "A",
+      "puesto": 7,
+      "pj": 5,
+      "pg": 2,
+      "pe": 0,
+      "pp": 3,
+      "gf": 7,
+      "gc": 5,
+      "dif": 2,
+      "pts": 6,
+      "slug": "estudiantes-lp",
+      "colores": [
+        "#D6001C",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "equipo": "Deportivo Riestra",
+      "zona": "A",
+      "puesto": 8,
+      "pj": 5,
+      "pg": 2,
+      "pe": 0,
+      "pp": 3,
+      "gf": 6,
+      "gc": 5,
+      "dif": 1,
       "pts": 6,
       "slug": "deportivo-riestra",
       "colores": [
@@ -79,14 +151,14 @@
     {
       "equipo": "Lanús",
       "zona": "A",
-      "puesto": 5,
-      "pj": 4,
+      "puesto": 9,
+      "pj": 5,
       "pg": 2,
       "pe": 0,
-      "pp": 2,
-      "gf": 5,
-      "gc": 3,
-      "dif": 2,
+      "pp": 3,
+      "gf": 6,
+      "gc": 6,
+      "dif": 0,
       "pts": 6,
       "slug": "lanus",
       "colores": [
@@ -95,52 +167,34 @@
       ]
     },
     {
-      "equipo": "Gimnasia (M)",
+      "equipo": "Boca Juniors",
       "zona": "A",
-      "puesto": 6,
-      "pj": 4,
-      "pg": 2,
-      "pe": 0,
-      "pp": 2,
-      "gf": 3,
-      "gc": 2,
-      "dif": 1,
+      "puesto": 10,
+      "pj": 5,
+      "pg": 1,
+      "pe": 3,
+      "pp": 1,
+      "gf": 5,
+      "gc": 7,
+      "dif": -2,
       "pts": 6,
-      "slug": "gimnasia-m",
+      "slug": "boca-juniors",
       "colores": [
-        "#FFFFFF",
-        "#111111"
-      ]
-    },
-    {
-      "equipo": "Independiente",
-      "zona": "A",
-      "puesto": 7,
-      "pj": 4,
-      "pg": 2,
-      "pe": 0,
-      "pp": 2,
-      "gf": 3,
-      "gc": 2,
-      "dif": 1,
-      "pts": 6,
-      "slug": "independiente",
-      "colores": [
-        "#D31820",
-        "#FFFFFF"
+        "#0A2472",
+        "#F7D117"
       ]
     },
     {
       "equipo": "Central Córdoba (SdE)",
       "zona": "A",
-      "puesto": 8,
-      "pj": 4,
+      "puesto": 11,
+      "pj": 5,
       "pg": 2,
       "pe": 0,
-      "pp": 2,
+      "pp": 3,
       "gf": 3,
-      "gc": 4,
-      "dif": -1,
+      "gc": 5,
+      "dif": -2,
       "pts": 6,
       "slug": "central-cordoba-sde",
       "colores": [
@@ -149,52 +203,52 @@
       ]
     },
     {
-      "equipo": "Boca Juniors",
+      "equipo": "San Lorenzo",
       "zona": "A",
-      "puesto": 9,
-      "pj": 4,
-      "pg": 1,
-      "pe": 2,
-      "pp": 1,
-      "gf": 4,
-      "gc": 6,
+      "puesto": 12,
+      "pj": 5,
+      "pg": 2,
+      "pe": 0,
+      "pp": 3,
+      "gf": 2,
+      "gc": 4,
       "dif": -2,
-      "pts": 5,
-      "slug": "boca-juniors",
+      "pts": 6,
+      "slug": "san-lorenzo",
       "colores": [
-        "#0A2472",
-        "#F7D117"
+        "#0A2A6B",
+        "#C8102E"
       ]
     },
     {
-      "equipo": "Newell's Old Boys",
+      "equipo": "Platense",
       "zona": "A",
-      "puesto": 10,
-      "pj": 4,
+      "puesto": 13,
+      "pj": 5,
       "pg": 1,
-      "pe": 1,
+      "pe": 2,
       "pp": 2,
-      "gf": 4,
-      "gc": 5,
-      "dif": -1,
-      "pts": 4,
-      "slug": "newell-s-old-boys",
+      "gf": 5,
+      "gc": 9,
+      "dif": -4,
+      "pts": 5,
+      "slug": "platense",
       "colores": [
-        "#D6001C",
-        "#111111"
+        "#6B4A2F",
+        "#FFFFFF"
       ]
     },
     {
       "equipo": "Unión",
       "zona": "A",
-      "puesto": 11,
-      "pj": 4,
+      "puesto": 14,
+      "pj": 5,
       "pg": 1,
       "pe": 1,
-      "pp": 2,
+      "pp": 3,
       "gf": 5,
-      "gc": 7,
-      "dif": -2,
+      "gc": 8,
+      "dif": -3,
       "pts": 4,
       "slug": "union",
       "colores": [
@@ -203,34 +257,16 @@
       ]
     },
     {
-      "equipo": "Platense",
-      "zona": "A",
-      "puesto": 12,
-      "pj": 4,
-      "pg": 1,
-      "pe": 1,
-      "pp": 2,
-      "gf": 4,
-      "gc": 8,
-      "dif": -4,
-      "pts": 4,
-      "slug": "platense",
-      "colores": [
-        "#6B4A2F",
-        "#FFFFFF"
-      ]
-    },
-    {
       "equipo": "Talleres (C)",
       "zona": "A",
-      "puesto": 13,
-      "pj": 4,
+      "puesto": 15,
+      "pj": 5,
       "pg": 1,
       "pe": 0,
-      "pp": 3,
-      "gf": 5,
-      "gc": 7,
-      "dif": -2,
+      "pp": 4,
+      "gf": 6,
+      "gc": 10,
+      "dif": -4,
       "pts": 3,
       "slug": "talleres-c",
       "colores": [
@@ -239,52 +275,16 @@
       ]
     },
     {
-      "equipo": "Estudiantes (LP)",
-      "zona": "A",
-      "puesto": 14,
-      "pj": 4,
-      "pg": 1,
-      "pe": 0,
-      "pp": 3,
-      "gf": 3,
-      "gc": 5,
-      "dif": -2,
-      "pts": 3,
-      "slug": "estudiantes-lp",
-      "colores": [
-        "#D6001C",
-        "#FFFFFF"
-      ]
-    },
-    {
-      "equipo": "San Lorenzo",
-      "zona": "A",
-      "puesto": 15,
-      "pj": 4,
-      "pg": 1,
-      "pe": 0,
-      "pp": 3,
-      "gf": 1,
-      "gc": 4,
-      "dif": -3,
-      "pts": 3,
-      "slug": "san-lorenzo",
-      "colores": [
-        "#0A2A6B",
-        "#C8102E"
-      ]
-    },
-    {
       "equipo": "Argentinos Juniors",
       "zona": "B",
       "puesto": 1,
-      "pj": 4,
+      "pj": 5,
       "pg": 4,
       "pe": 0,
-      "pp": 0,
+      "pp": 1,
       "gf": 9,
-      "gc": 3,
-      "dif": 6,
+      "gc": 5,
+      "dif": 4,
       "pts": 12,
       "slug": "argentinos-juniors",
       "colores": [
@@ -293,53 +293,17 @@
       ]
     },
     {
-      "equipo": "Gimnasia (LP)",
-      "zona": "B",
-      "puesto": 2,
-      "pj": 4,
-      "pg": 3,
-      "pe": 0,
-      "pp": 1,
-      "gf": 6,
-      "gc": 3,
-      "dif": 3,
-      "pts": 9,
-      "slug": "gimnasia-lp",
-      "colores": [
-        "#123A7A",
-        "#FFFFFF"
-      ]
-    },
-    {
-      "equipo": "Barracas Central",
-      "zona": "B",
-      "puesto": 3,
-      "pj": 4,
-      "pg": 3,
-      "pe": 0,
-      "pp": 1,
-      "gf": 3,
-      "gc": 2,
-      "dif": 1,
-      "pts": 9,
-      "slug": "barracas-central",
-      "colores": [
-        "#C8102E",
-        "#FFFFFF"
-      ]
-    },
-    {
       "equipo": "Belgrano",
       "zona": "B",
-      "puesto": 4,
-      "pj": 4,
-      "pg": 2,
+      "puesto": 2,
+      "pj": 5,
+      "pg": 3,
       "pe": 1,
       "pp": 1,
-      "gf": 4,
+      "gf": 6,
       "gc": 2,
-      "dif": 2,
-      "pts": 7,
+      "dif": 4,
+      "pts": 10,
       "slug": "belgrano",
       "colores": [
         "#5CACEE",
@@ -347,71 +311,17 @@
       ]
     },
     {
-      "equipo": "Huracán",
+      "equipo": "Rosario Central",
       "zona": "B",
-      "puesto": 5,
-      "pj": 4,
-      "pg": 2,
-      "pe": 1,
-      "pp": 1,
-      "gf": 4,
-      "gc": 2,
-      "dif": 2,
-      "pts": 7,
-      "slug": "huracan",
-      "colores": [
-        "#FFFFFF",
-        "#E01A2B"
-      ]
-    },
-    {
-      "equipo": "Tigre",
-      "zona": "B",
-      "puesto": 6,
-      "pj": 4,
-      "pg": 2,
-      "pe": 1,
-      "pp": 1,
-      "gf": 4,
-      "gc": 2,
-      "dif": 2,
-      "pts": 7,
-      "slug": "tigre",
-      "colores": [
-        "#1B3D8F",
-        "#C8102E"
-      ]
-    },
-    {
-      "equipo": "Independiente Rivadavia",
-      "zona": "B",
-      "puesto": 7,
-      "pj": 4,
-      "pg": 2,
+      "puesto": 3,
+      "pj": 5,
+      "pg": 3,
       "pe": 1,
       "pp": 1,
       "gf": 5,
-      "gc": 4,
-      "dif": 1,
-      "pts": 7,
-      "slug": "independiente-rivadavia",
-      "colores": [
-        "#1B3D8F",
-        "#FFFFFF"
-      ]
-    },
-    {
-      "equipo": "Rosario Central",
-      "zona": "B",
-      "puesto": 8,
-      "pj": 4,
-      "pg": 2,
-      "pe": 1,
-      "pp": 1,
-      "gf": 4,
       "gc": 3,
-      "dif": 1,
-      "pts": 7,
+      "dif": 2,
+      "pts": 10,
       "slug": "rosario-central",
       "colores": [
         "#1A56A8",
@@ -421,15 +331,15 @@
     {
       "equipo": "Sarmiento (J)",
       "zona": "B",
-      "puesto": 9,
-      "pj": 4,
-      "pg": 2,
+      "puesto": 4,
+      "pj": 5,
+      "pg": 3,
       "pe": 0,
       "pp": 2,
-      "gf": 8,
+      "gf": 10,
       "gc": 8,
-      "dif": 0,
-      "pts": 6,
+      "dif": 2,
+      "pts": 9,
       "slug": "sarmiento-j",
       "colores": [
         "#1E7B3C",
@@ -437,17 +347,53 @@
       ]
     },
     {
+      "equipo": "Barracas Central",
+      "zona": "B",
+      "puesto": 5,
+      "pj": 5,
+      "pg": 3,
+      "pe": 0,
+      "pp": 2,
+      "gf": 3,
+      "gc": 3,
+      "dif": 0,
+      "pts": 9,
+      "slug": "barracas-central",
+      "colores": [
+        "#C8102E",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "equipo": "Gimnasia (LP)",
+      "zona": "B",
+      "puesto": 6,
+      "pj": 5,
+      "pg": 3,
+      "pe": 0,
+      "pp": 2,
+      "gf": 6,
+      "gc": 7,
+      "dif": -1,
+      "pts": 9,
+      "slug": "gimnasia-lp",
+      "colores": [
+        "#123A7A",
+        "#FFFFFF"
+      ]
+    },
+    {
       "equipo": "Atlético Tucumán",
       "zona": "B",
-      "puesto": 10,
-      "pj": 4,
-      "pg": 1,
+      "puesto": 7,
+      "pj": 5,
+      "pg": 2,
       "pe": 2,
       "pp": 1,
-      "gf": 3,
+      "gf": 4,
       "gc": 2,
-      "dif": 1,
-      "pts": 5,
+      "dif": 2,
+      "pts": 8,
       "slug": "atletico-tucuman",
       "colores": [
         "#5CC0F2",
@@ -455,16 +401,88 @@
       ]
     },
     {
-      "equipo": "Racing Club",
+      "equipo": "Tigre",
       "zona": "B",
-      "puesto": 11,
-      "pj": 4,
-      "pg": 1,
+      "puesto": 8,
+      "pj": 5,
+      "pg": 2,
+      "pe": 2,
+      "pp": 1,
+      "gf": 4,
+      "gc": 2,
+      "dif": 2,
+      "pts": 8,
+      "slug": "tigre",
+      "colores": [
+        "#1B3D8F",
+        "#C8102E"
+      ]
+    },
+    {
+      "equipo": "Huracán",
+      "zona": "B",
+      "puesto": 9,
+      "pj": 5,
+      "pg": 2,
       "pe": 1,
       "pp": 2,
       "gf": 4,
+      "gc": 4,
+      "dif": 0,
+      "pts": 7,
+      "slug": "huracan",
+      "colores": [
+        "#FFFFFF",
+        "#E01A2B"
+      ]
+    },
+    {
+      "equipo": "Independiente Rivadavia",
+      "zona": "B",
+      "puesto": 10,
+      "pj": 5,
+      "pg": 2,
+      "pe": 1,
+      "pp": 2,
+      "gf": 5,
       "gc": 6,
-      "dif": -2,
+      "dif": -1,
+      "pts": 7,
+      "slug": "independiente-rivadavia",
+      "colores": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "equipo": "Banfield",
+      "zona": "B",
+      "puesto": 11,
+      "pj": 5,
+      "pg": 2,
+      "pe": 1,
+      "pp": 2,
+      "gf": 4,
+      "gc": 5,
+      "dif": -1,
+      "pts": 7,
+      "slug": "banfield",
+      "colores": [
+        "#0E6B3D",
+        "#FFFFFF"
+      ]
+    },
+    {
+      "equipo": "Racing Club",
+      "zona": "B",
+      "puesto": 12,
+      "pj": 5,
+      "pg": 1,
+      "pe": 1,
+      "pp": 3,
+      "gf": 4,
+      "gc": 7,
+      "dif": -3,
       "pts": 4,
       "slug": "racing-club",
       "colores": [
@@ -473,34 +491,16 @@
       ]
     },
     {
-      "equipo": "Banfield",
-      "zona": "B",
-      "puesto": 12,
-      "pj": 4,
-      "pg": 1,
-      "pe": 1,
-      "pp": 2,
-      "gf": 3,
-      "gc": 5,
-      "dif": -2,
-      "pts": 4,
-      "slug": "banfield",
-      "colores": [
-        "#0E6B3D",
-        "#FFFFFF"
-      ]
-    },
-    {
       "equipo": "Estudiantes (RC)",
       "zona": "B",
       "puesto": 13,
-      "pj": 4,
+      "pj": 5,
       "pg": 1,
       "pe": 1,
-      "pp": 2,
+      "pp": 3,
       "gf": 2,
-      "gc": 5,
-      "dif": -3,
+      "gc": 6,
+      "dif": -4,
       "pts": 4,
       "slug": "estudiantes-rc",
       "colores": [
@@ -509,39 +509,39 @@
       ]
     },
     {
-      "equipo": "Aldosivi",
-      "zona": "B",
-      "puesto": 14,
-      "pj": 4,
-      "pg": 0,
-      "pe": 1,
-      "pp": 3,
-      "gf": 3,
-      "gc": 6,
-      "dif": -3,
-      "pts": 1,
-      "slug": "aldosivi",
-      "colores": [
-        "#1E7B3C",
-        "#F7D117"
-      ]
-    },
-    {
       "equipo": "River Plate",
       "zona": "B",
-      "puesto": 15,
-      "pj": 4,
-      "pg": 0,
+      "puesto": 14,
+      "pj": 5,
+      "pg": 1,
       "pe": 0,
       "pp": 4,
-      "gf": 0,
+      "gf": 2,
       "gc": 4,
-      "dif": -4,
-      "pts": 0,
+      "dif": -2,
+      "pts": 3,
       "slug": "river-plate",
       "colores": [
         "#FFFFFF",
         "#D10A2E"
+      ]
+    },
+    {
+      "equipo": "Aldosivi",
+      "zona": "B",
+      "puesto": 15,
+      "pj": 5,
+      "pg": 0,
+      "pe": 2,
+      "pp": 3,
+      "gf": 3,
+      "gc": 6,
+      "dif": -3,
+      "pts": 2,
+      "slug": "aldosivi",
+      "colores": [
+        "#1E7B3C",
+        "#F7D117"
       ]
     }
   ]
