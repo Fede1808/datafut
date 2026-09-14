@@ -1,7 +1,7 @@
 {
   "torneo": "Clausura",
   "temporada": "2026",
-  "proxima_ronda": 7,
+  "proxima_ronda": 9,
   "partidos": [
     {
       "ronda": 1,
@@ -2208,6 +2208,50 @@
       "dia": "2026-08-31",
       "hora": null,
       "aplazado": false,
+      "local": "Defensa y Justicia",
+      "visita": "Platense",
+      "local_slug": "defensa-y-justicia",
+      "visita_slug": "platense",
+      "colores_local": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 7,
+      "dia": "2026-08-31",
+      "hora": null,
+      "aplazado": false,
+      "local": "Estudiantes (LP)",
+      "visita": "Newell's Old Boys",
+      "local_slug": "estudiantes-lp",
+      "visita_slug": "newell-s-old-boys",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 0
+    },
+    {
+      "ronda": 7,
+      "dia": "2026-08-31",
+      "hora": null,
+      "aplazado": false,
       "local": "Independiente Rivadavia",
       "visita": "Racing Club",
       "local_slug": "independiente-rivadavia",
@@ -2227,60 +2271,8 @@
     },
     {
       "ronda": 7,
-      "dia": "2026-08-31",
-      "hora": "19:00",
-      "aplazado": false,
-      "local": "Defensa y Justicia",
-      "visita": "Platense",
-      "local_slug": "defensa-y-justicia",
-      "visita_slug": "platense",
-      "colores_local": [
-        "#1E7B3C",
-        "#F7D117"
-      ],
-      "colores_visita": [
-        "#6B4A2F",
-        "#FFFFFF"
-      ],
-      "prob": {
-        "local": 46.5,
-        "empate": 30.4,
-        "visita": 23.1
-      },
-      "estimado": false,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 7,
-      "dia": "2026-08-31",
-      "hora": "19:00",
-      "aplazado": false,
-      "local": "Estudiantes (LP)",
-      "visita": "Newell's Old Boys",
-      "local_slug": "estudiantes-lp",
-      "visita_slug": "newell-s-old-boys",
-      "colores_local": [
-        "#D6001C",
-        "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#D6001C",
-        "#111111"
-      ],
-      "prob": {
-        "local": 48.5,
-        "empate": 29.7,
-        "visita": 21.8
-      },
-      "estimado": false,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 7,
-      "dia": "2026-08-31",
-      "hora": "21:15",
+      "dia": "2026-09-01",
+      "hora": null,
       "aplazado": false,
       "local": "Instituto",
       "visita": "San Lorenzo",
@@ -2294,19 +2286,15 @@
         "#0A2A6B",
         "#C8102E"
       ],
-      "prob": {
-        "local": 36.3,
-        "empate": 34.0,
-        "visita": 29.7
-      },
+      "prob": null,
       "estimado": false,
-      "goles_local": null,
-      "goles_visita": null
+      "goles_local": 1,
+      "goles_visita": 0
     },
     {
       "ronda": 7,
-      "dia": "2026-08-31",
-      "hora": "21:15",
+      "dia": "2026-09-01",
+      "hora": null,
       "aplazado": false,
       "local": "Tigre",
       "visita": "Barracas Central",
@@ -2320,45 +2308,15 @@
         "#C8102E",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 45.6,
-        "empate": 30.6,
-        "visita": 23.9
-      },
+      "prob": null,
       "estimado": false,
-      "goles_local": null,
-      "goles_visita": null
+      "goles_local": 0,
+      "goles_visita": 0
     },
     {
       "ronda": 8,
       "dia": "2026-09-04",
-      "hora": "16:45",
-      "aplazado": false,
-      "local": "Estudiantes (RC)",
-      "visita": "Sarmiento (J)",
-      "local_slug": "estudiantes-rc",
-      "visita_slug": "sarmiento-j",
-      "colores_local": [
-        "#5CC0F2",
-        "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#1E7B3C",
-        "#FFFFFF"
-      ],
-      "prob": {
-        "local": 37.2,
-        "empate": 33.8,
-        "visita": 28.9
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 8,
-      "dia": "2026-09-04",
-      "hora": "19:00",
+      "hora": null,
       "aplazado": false,
       "local": "Belgrano",
       "visita": "Huracán",
@@ -2372,19 +2330,37 @@
         "#FFFFFF",
         "#E01A2B"
       ],
-      "prob": {
-        "local": 38.4,
-        "empate": 33.4,
-        "visita": 28.2
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
     },
     {
       "ronda": 8,
       "dia": "2026-09-04",
-      "hora": "19:00",
+      "hora": null,
+      "aplazado": false,
+      "local": "Estudiantes (RC)",
+      "visita": "Sarmiento (J)",
+      "local_slug": "estudiantes-rc",
+      "visita_slug": "sarmiento-j",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 2
+    },
+    {
+      "ronda": 8,
+      "dia": "2026-09-04",
+      "hora": null,
       "aplazado": false,
       "local": "Platense",
       "visita": "Deportivo Riestra",
@@ -2398,19 +2374,15 @@
         "#111111",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 35.5,
-        "empate": 36.1,
-        "visita": 28.4
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
     },
     {
       "ronda": 8,
       "dia": "2026-09-05",
-      "hora": "13:30",
+      "hora": null,
       "aplazado": false,
       "local": "Aldosivi",
       "visita": "Banfield",
@@ -2424,19 +2396,15 @@
         "#0E6B3D",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 33.3,
-        "empate": 31.8,
-        "visita": 34.9
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 3,
+      "goles_visita": 1
     },
     {
       "ronda": 8,
       "dia": "2026-09-05",
-      "hora": "14:30",
+      "hora": null,
       "aplazado": false,
       "local": "Gimnasia (LP)",
       "visita": "Tigre",
@@ -2450,19 +2418,15 @@
         "#1B3D8F",
         "#C8102E"
       ],
-      "prob": {
-        "local": 39.6,
-        "empate": 31.6,
-        "visita": 28.8
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 1
     },
     {
       "ronda": 8,
       "dia": "2026-09-05",
-      "hora": "16:30",
+      "hora": null,
       "aplazado": false,
       "local": "Gimnasia (M)",
       "visita": "Boca Juniors",
@@ -2476,19 +2440,15 @@
         "#0A2472",
         "#F7D117"
       ],
-      "prob": {
-        "local": 27.9,
-        "empate": 30.9,
-        "visita": 41.2
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 2
     },
     {
       "ronda": 8,
       "dia": "2026-09-05",
-      "hora": "19:00",
+      "hora": null,
       "aplazado": false,
       "local": "San Lorenzo",
       "visita": "Talleres (C)",
@@ -2502,71 +2462,15 @@
         "#0B2C6F",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 39.3,
-        "empate": 32.9,
-        "visita": 27.8
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 8,
-      "dia": "2026-09-05",
-      "hora": "21:15",
-      "aplazado": false,
-      "local": "Vélez Sarsfield",
-      "visita": "Estudiantes (LP)",
-      "local_slug": "velez-sarsfield",
-      "visita_slug": "estudiantes-lp",
-      "colores_local": [
-        "#FFFFFF",
-        "#1A3A8F"
-      ],
-      "colores_visita": [
-        "#D6001C",
-        "#FFFFFF"
-      ],
-      "prob": {
-        "local": 41.4,
-        "empate": 31.4,
-        "visita": 27.2
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
     },
     {
       "ronda": 8,
       "dia": "2026-09-06",
-      "hora": "14:45",
-      "aplazado": false,
-      "local": "Rosario Central",
-      "visita": "Newell's Old Boys",
-      "local_slug": "rosario-central",
-      "visita_slug": "newell-s-old-boys",
-      "colores_local": [
-        "#1A56A8",
-        "#FFD100"
-      ],
-      "colores_visita": [
-        "#D6001C",
-        "#111111"
-      ],
-      "prob": {
-        "local": 46.5,
-        "empate": 30.0,
-        "visita": 23.5
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 8,
-      "dia": "2026-09-06",
-      "hora": "17:00",
+      "hora": null,
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Independiente",
@@ -2580,19 +2484,15 @@
         "#D31820",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 31.4,
-        "empate": 31.9,
-        "visita": 36.7
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 1
     },
     {
       "ronda": 8,
       "dia": "2026-09-06",
-      "hora": "17:00",
+      "hora": null,
       "aplazado": false,
       "local": "Lanús",
       "visita": "Defensa y Justicia",
@@ -2606,19 +2506,15 @@
         "#1E7B3C",
         "#F7D117"
       ],
-      "prob": {
-        "local": 43.2,
-        "empate": 29.1,
-        "visita": 27.7
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
     },
     {
       "ronda": 8,
       "dia": "2026-09-06",
-      "hora": "19:15",
+      "hora": null,
       "aplazado": false,
       "local": "River Plate",
       "visita": "Independiente Rivadavia",
@@ -2632,45 +2528,59 @@
         "#1B3D8F",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 58.7,
-        "empate": 25.1,
-        "visita": 16.2
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 3,
+      "goles_visita": 1
     },
     {
       "ronda": 8,
       "dia": "2026-09-06",
-      "hora": "21:30",
+      "hora": null,
       "aplazado": false,
-      "local": "Racing Club",
-      "visita": "Atlético Tucumán",
-      "local_slug": "racing-club",
-      "visita_slug": "atletico-tucuman",
+      "local": "Rosario Central",
+      "visita": "Newell's Old Boys",
+      "local_slug": "rosario-central",
+      "visita_slug": "newell-s-old-boys",
       "colores_local": [
-        "#5CC0F2",
-        "#FFFFFF"
+        "#1A56A8",
+        "#FFD100"
       ],
       "colores_visita": [
-        "#5CC0F2",
+        "#D6001C",
+        "#111111"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 8,
+      "dia": "2026-09-06",
+      "hora": null,
+      "aplazado": false,
+      "local": "Vélez Sarsfield",
+      "visita": "Estudiantes (LP)",
+      "local_slug": "velez-sarsfield",
+      "visita_slug": "estudiantes-lp",
+      "colores_local": [
+        "#FFFFFF",
+        "#1A3A8F"
+      ],
+      "colores_visita": [
+        "#D6001C",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 54.7,
-        "empate": 26.4,
-        "visita": 18.9
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 0
     },
     {
       "ronda": 8,
       "dia": "2026-09-07",
-      "hora": "19:00",
+      "hora": null,
       "aplazado": false,
       "local": "Barracas Central",
       "visita": "Argentinos Juniors",
@@ -2684,19 +2594,37 @@
         "#D6001C",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 33.3,
-        "empate": 32.2,
-        "visita": 34.5
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 0
     },
     {
       "ronda": 8,
       "dia": "2026-09-07",
-      "hora": "21:15",
+      "hora": null,
+      "aplazado": false,
+      "local": "Racing Club",
+      "visita": "Atlético Tucumán",
+      "local_slug": "racing-club",
+      "visita_slug": "atletico-tucuman",
+      "colores_local": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CC0F2",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 2
+    },
+    {
+      "ronda": 8,
+      "dia": "2026-09-08",
+      "hora": null,
       "aplazado": false,
       "local": "Unión",
       "visita": "Instituto",
@@ -2710,45 +2638,15 @@
         "#C8102E",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 41.7,
-        "empate": 31.5,
-        "visita": 26.8
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 3,
+      "goles_visita": 2
     },
     {
       "ronda": 9,
       "dia": "2026-09-11",
-      "hora": "17:00",
-      "aplazado": false,
-      "local": "Newell's Old Boys",
-      "visita": "Vélez Sarsfield",
-      "local_slug": "newell-s-old-boys",
-      "visita_slug": "velez-sarsfield",
-      "colores_local": [
-        "#D6001C",
-        "#111111"
-      ],
-      "colores_visita": [
-        "#FFFFFF",
-        "#1A3A8F"
-      ],
-      "prob": {
-        "local": 34.7,
-        "empate": 32.4,
-        "visita": 32.9
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 9,
-      "dia": "2026-09-11",
-      "hora": "19:15",
+      "hora": null,
       "aplazado": false,
       "local": "Defensa y Justicia",
       "visita": "Gimnasia (M)",
@@ -2762,97 +2660,37 @@
         "#FFFFFF",
         "#111111"
       ],
-      "prob": {
-        "local": 46.3,
-        "empate": 29.0,
-        "visita": 24.7
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 0
     },
     {
       "ronda": 9,
       "dia": "2026-09-11",
-      "hora": "21:30",
+      "hora": null,
       "aplazado": false,
-      "local": "Boca Juniors",
-      "visita": "Central Córdoba (SdE)",
-      "local_slug": "boca-juniors",
-      "visita_slug": "central-cordoba-sde",
-      "colores_local": [
-        "#0A2472",
-        "#F7D117"
-      ],
-      "colores_visita": [
-        "#111111",
-        "#FFFFFF"
-      ],
-      "prob": {
-        "local": 60.7,
-        "empate": 25.0,
-        "visita": 14.2
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 9,
-      "dia": "2026-09-12",
-      "hora": "14:45",
-      "aplazado": false,
-      "local": "Estudiantes (LP)",
-      "visita": "Platense",
-      "local_slug": "estudiantes-lp",
-      "visita_slug": "platense",
+      "local": "Newell's Old Boys",
+      "visita": "Vélez Sarsfield",
+      "local_slug": "newell-s-old-boys",
+      "visita_slug": "velez-sarsfield",
       "colores_local": [
         "#D6001C",
-        "#FFFFFF"
+        "#111111"
       ],
       "colores_visita": [
-        "#6B4A2F",
-        "#FFFFFF"
+        "#FFFFFF",
+        "#1A3A8F"
       ],
-      "prob": {
-        "local": 49.0,
-        "empate": 30.5,
-        "visita": 20.5
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
     },
     {
       "ronda": 9,
       "dia": "2026-09-12",
-      "hora": "14:45",
-      "aplazado": false,
-      "local": "Independiente Rivadavia",
-      "visita": "Aldosivi",
-      "local_slug": "independiente-rivadavia",
-      "visita_slug": "aldosivi",
-      "colores_local": [
-        "#1B3D8F",
-        "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#1E7B3C",
-        "#F7D117"
-      ],
-      "prob": {
-        "local": 54.0,
-        "empate": 27.4,
-        "visita": 18.7
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 9,
-      "dia": "2026-09-12",
-      "hora": "17:30",
+      "hora": null,
       "aplazado": false,
       "local": "Atlético Tucumán",
       "visita": "River Plate",
@@ -2866,19 +2704,81 @@
         "#FFFFFF",
         "#D10A2E"
       ],
-      "prob": {
-        "local": 25.6,
-        "empate": 28.7,
-        "visita": 45.6
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 2
     },
     {
       "ronda": 9,
       "dia": "2026-09-12",
-      "hora": "20:00",
+      "hora": null,
+      "aplazado": false,
+      "local": "Boca Juniors",
+      "visita": "Central Córdoba (SdE)",
+      "local_slug": "boca-juniors",
+      "visita_slug": "central-cordoba-sde",
+      "colores_local": [
+        "#0A2472",
+        "#F7D117"
+      ],
+      "colores_visita": [
+        "#111111",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 3,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 9,
+      "dia": "2026-09-12",
+      "hora": null,
+      "aplazado": false,
+      "local": "Estudiantes (LP)",
+      "visita": "Platense",
+      "local_slug": "estudiantes-lp",
+      "visita_slug": "platense",
+      "colores_local": [
+        "#D6001C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#6B4A2F",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 9,
+      "dia": "2026-09-12",
+      "hora": null,
+      "aplazado": false,
+      "local": "Independiente Rivadavia",
+      "visita": "Aldosivi",
+      "local_slug": "independiente-rivadavia",
+      "visita_slug": "aldosivi",
+      "colores_local": [
+        "#1B3D8F",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#1E7B3C",
+        "#F7D117"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 4,
+      "goles_visita": 3
+    },
+    {
+      "ronda": 9,
+      "dia": "2026-09-12",
+      "hora": null,
       "aplazado": false,
       "local": "Talleres (C)",
       "visita": "Unión",
@@ -2892,71 +2792,15 @@
         "#C8102E",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 46.6,
-        "empate": 29.8,
-        "visita": 23.5
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 1
     },
     {
       "ronda": 9,
       "dia": "2026-09-13",
-      "hora": "14:45",
-      "aplazado": false,
-      "local": "Sarmiento (J)",
-      "visita": "Belgrano",
-      "local_slug": "sarmiento-j",
-      "visita_slug": "belgrano",
-      "colores_local": [
-        "#1E7B3C",
-        "#FFFFFF"
-      ],
-      "colores_visita": [
-        "#5CACEE",
-        "#FFFFFF"
-      ],
-      "prob": {
-        "local": 33.9,
-        "empate": 33.2,
-        "visita": 32.9
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 9,
-      "dia": "2026-09-13",
-      "hora": "14:45",
-      "aplazado": false,
-      "local": "Tigre",
-      "visita": "Rosario Central",
-      "local_slug": "tigre",
-      "visita_slug": "rosario-central",
-      "colores_local": [
-        "#1B3D8F",
-        "#C8102E"
-      ],
-      "colores_visita": [
-        "#1A56A8",
-        "#FFD100"
-      ],
-      "prob": {
-        "local": 38.8,
-        "empate": 31.2,
-        "visita": 30.0
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
-    },
-    {
-      "ronda": 9,
-      "dia": "2026-09-13",
-      "hora": "17:00",
+      "hora": null,
       "aplazado": false,
       "local": "Argentinos Juniors",
       "visita": "Gimnasia (LP)",
@@ -2970,19 +2814,15 @@
         "#123A7A",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 47.5,
-        "empate": 30.3,
-        "visita": 22.2
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
     },
     {
       "ronda": 9,
       "dia": "2026-09-13",
-      "hora": "19:15",
+      "hora": null,
       "aplazado": false,
       "local": "Independiente",
       "visita": "San Lorenzo",
@@ -2996,19 +2836,59 @@
         "#0A2A6B",
         "#C8102E"
       ],
-      "prob": {
-        "local": 42.7,
-        "empate": 33.3,
-        "visita": 24.0
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
     },
     {
       "ronda": 9,
       "dia": "2026-09-13",
-      "hora": "21:30",
+      "hora": null,
+      "aplazado": false,
+      "local": "Sarmiento (J)",
+      "visita": "Belgrano",
+      "local_slug": "sarmiento-j",
+      "visita_slug": "belgrano",
+      "colores_local": [
+        "#1E7B3C",
+        "#FFFFFF"
+      ],
+      "colores_visita": [
+        "#5CACEE",
+        "#FFFFFF"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 1,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 9,
+      "dia": "2026-09-13",
+      "hora": null,
+      "aplazado": false,
+      "local": "Tigre",
+      "visita": "Rosario Central",
+      "local_slug": "tigre",
+      "visita_slug": "rosario-central",
+      "colores_local": [
+        "#1B3D8F",
+        "#C8102E"
+      ],
+      "colores_visita": [
+        "#1A56A8",
+        "#FFD100"
+      ],
+      "prob": null,
+      "estimado": false,
+      "goles_local": 0,
+      "goles_visita": 1
+    },
+    {
+      "ronda": 9,
+      "dia": "2026-09-14",
+      "hora": null,
       "aplazado": false,
       "local": "Huracán",
       "visita": "Racing Club",
@@ -3022,14 +2902,10 @@
         "#5CC0F2",
         "#FFFFFF"
       ],
-      "prob": {
-        "local": 35.8,
-        "empate": 31.9,
-        "visita": 32.3
-      },
-      "estimado": true,
-      "goles_local": null,
-      "goles_visita": null
+      "prob": null,
+      "estimado": false,
+      "goles_local": 2,
+      "goles_visita": 1
     },
     {
       "ronda": 9,
@@ -3049,11 +2925,11 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.0,
-        "empate": 31.5,
-        "visita": 25.5
+        "local": 42.7,
+        "empate": 31.6,
+        "visita": 25.7
       },
-      "estimado": true,
+      "estimado": false,
       "goles_local": null,
       "goles_visita": null
     },
@@ -3075,11 +2951,11 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.5,
-        "empate": 33.4,
+        "local": 38.4,
+        "empate": 33.5,
         "visita": 28.1
       },
-      "estimado": true,
+      "estimado": false,
       "goles_local": null,
       "goles_visita": null
     },
@@ -3101,18 +2977,18 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 48.1,
-        "empate": 31.3,
-        "visita": 20.6
+        "local": 48.8,
+        "empate": 31.0,
+        "visita": 20.1
       },
-      "estimado": true,
+      "estimado": false,
       "goles_local": null,
       "goles_visita": null
     },
     {
       "ronda": 10,
       "dia": "2026-09-18",
-      "hora": "19:00",
+      "hora": "18:00",
       "aplazado": false,
       "local": "Central Córdoba (SdE)",
       "visita": "Defensa y Justicia",
@@ -3127,8 +3003,8 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 36.0,
-        "empate": 30.1,
+        "local": 35.8,
+        "empate": 30.3,
         "visita": 33.9
       },
       "estimado": true,
@@ -3153,9 +3029,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 57.4,
+        "local": 57.2,
         "empate": 26.5,
-        "visita": 16.1
+        "visita": 16.3
       },
       "estimado": true,
       "goles_local": null,
@@ -3179,9 +3055,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 41.3,
-        "empate": 31.8,
-        "visita": 26.9
+        "local": 42.0,
+        "empate": 31.5,
+        "visita": 26.5
       },
       "estimado": true,
       "goles_local": null,
@@ -3205,9 +3081,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.1,
-        "empate": 34.0,
-        "visita": 27.9
+        "local": 39.8,
+        "empate": 33.4,
+        "visita": 26.8
       },
       "estimado": true,
       "goles_local": null,
@@ -3231,9 +3107,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.8,
-        "empate": 32.3,
-        "visita": 32.8
+        "local": 35.5,
+        "empate": 32.2,
+        "visita": 32.3
       },
       "estimado": true,
       "goles_local": null,
@@ -3257,8 +3133,8 @@
         "#E01A2B"
       ],
       "prob": {
-        "local": 54.6,
-        "empate": 27.9,
+        "local": 54.8,
+        "empate": 27.7,
         "visita": 17.5
       },
       "estimado": true,
@@ -3283,9 +3159,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 36.4,
-        "empate": 32.0,
-        "visita": 31.5
+        "local": 36.6,
+        "empate": 32.1,
+        "visita": 31.3
       },
       "estimado": true,
       "goles_local": null,
@@ -3309,9 +3185,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 30.7,
-        "empate": 33.4,
-        "visita": 35.9
+        "local": 30.6,
+        "empate": 33.5,
+        "visita": 35.8
       },
       "estimado": true,
       "goles_local": null,
@@ -3335,9 +3211,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 38.8,
-        "empate": 33.1,
-        "visita": 28.1
+        "local": 38.6,
+        "empate": 33.2,
+        "visita": 28.2
       },
       "estimado": true,
       "goles_local": null,
@@ -3361,9 +3237,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.4,
-        "empate": 31.3,
-        "visita": 28.4
+        "local": 40.1,
+        "empate": 31.4,
+        "visita": 28.5
       },
       "estimado": true,
       "goles_local": null,
@@ -3387,9 +3263,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 50.1,
-        "empate": 30.6,
-        "visita": 19.3
+        "local": 50.6,
+        "empate": 30.5,
+        "visita": 18.9
       },
       "estimado": true,
       "goles_local": null,
@@ -3413,9 +3289,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 46.3,
+        "local": 46.5,
         "empate": 30.8,
-        "visita": 22.9
+        "visita": 22.7
       },
       "estimado": true,
       "goles_local": null,
@@ -3439,9 +3315,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.3,
+        "local": 34.5,
         "empate": 30.6,
-        "visita": 35.1
+        "visita": 34.9
       },
       "estimado": true,
       "goles_local": null,
@@ -3465,9 +3341,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 37.4,
-        "empate": 31.3,
-        "visita": 31.3
+        "local": 37.2,
+        "empate": 31.4,
+        "visita": 31.4
       },
       "estimado": true,
       "goles_local": null,
@@ -3492,8 +3368,8 @@
       ],
       "prob": {
         "local": 39.0,
-        "empate": 30.5,
-        "visita": 30.5
+        "empate": 30.7,
+        "visita": 30.2
       },
       "estimado": true,
       "goles_local": null,
@@ -3517,9 +3393,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 47.5,
-        "empate": 31.0,
-        "visita": 21.4
+        "local": 47.3,
+        "empate": 31.1,
+        "visita": 21.7
       },
       "estimado": true,
       "goles_local": null,
@@ -3543,8 +3419,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.2,
-        "empate": 30.5,
+        "local": 44.3,
+        "empate": 30.3,
         "visita": 25.4
       },
       "estimado": true,
@@ -3569,9 +3445,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 40.5,
-        "empate": 31.9,
-        "visita": 27.6
+        "local": 40.4,
+        "empate": 32.1,
+        "visita": 27.5
       },
       "estimado": true,
       "goles_local": null,
@@ -3595,9 +3471,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.5,
-        "empate": 30.3,
-        "visita": 26.2
+        "local": 43.4,
+        "empate": 30.6,
+        "visita": 26.0
       },
       "estimado": true,
       "goles_local": null,
@@ -3621,9 +3497,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.6,
-        "empate": 30.9,
-        "visita": 30.5
+        "local": 38.5,
+        "empate": 31.1,
+        "visita": 30.4
       },
       "estimado": true,
       "goles_local": null,
@@ -3647,9 +3523,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 45.5,
-        "empate": 30.9,
-        "visita": 23.6
+        "local": 45.6,
+        "empate": 31.0,
+        "visita": 23.4
       },
       "estimado": true,
       "goles_local": null,
@@ -3673,9 +3549,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 54.0,
+        "local": 53.8,
         "empate": 28.7,
-        "visita": 17.3
+        "visita": 17.6
       },
       "estimado": true,
       "goles_local": null,
@@ -3700,8 +3576,8 @@
       ],
       "prob": {
         "local": 22.1,
-        "empate": 29.3,
-        "visita": 48.6
+        "empate": 29.1,
+        "visita": 48.9
       },
       "estimado": true,
       "goles_local": null,
@@ -3725,8 +3601,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.6,
-        "empate": 30.8,
+        "local": 44.3,
+        "empate": 31.1,
         "visita": 24.6
       },
       "estimado": true,
@@ -3751,9 +3627,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 56.3,
+        "local": 56.1,
         "empate": 27.0,
-        "visita": 16.7
+        "visita": 16.9
       },
       "estimado": true,
       "goles_local": null,
@@ -3777,9 +3653,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 25.2,
-        "empate": 30.7,
-        "visita": 44.1
+        "local": 25.1,
+        "empate": 30.6,
+        "visita": 44.3
       },
       "estimado": true,
       "goles_local": null,
@@ -3804,8 +3680,8 @@
       ],
       "prob": {
         "local": 44.6,
-        "empate": 32.6,
-        "visita": 22.8
+        "empate": 32.7,
+        "visita": 22.7
       },
       "estimado": true,
       "goles_local": null,
@@ -3829,9 +3705,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 49.0,
-        "empate": 29.2,
-        "visita": 21.8
+        "local": 47.5,
+        "empate": 29.4,
+        "visita": 23.1
       },
       "estimado": true,
       "goles_local": null,
@@ -3855,9 +3731,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 48.3,
+        "local": 48.4,
         "empate": 31.3,
-        "visita": 20.4
+        "visita": 20.3
       },
       "estimado": true,
       "goles_local": null,
@@ -3882,8 +3758,8 @@
       ],
       "prob": {
         "local": 36.5,
-        "empate": 31.8,
-        "visita": 31.7
+        "empate": 31.7,
+        "visita": 31.9
       },
       "estimado": true,
       "goles_local": null,
@@ -3907,9 +3783,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 37.4,
-        "empate": 32.0,
-        "visita": 30.6
+        "local": 37.9,
+        "empate": 31.7,
+        "visita": 30.4
       },
       "estimado": true,
       "goles_local": null,
@@ -3933,9 +3809,9 @@
         "#E01A2B"
       ],
       "prob": {
-        "local": 34.5,
-        "empate": 33.3,
-        "visita": 32.3
+        "local": 34.4,
+        "empate": 33.5,
+        "visita": 32.1
       },
       "estimado": true,
       "goles_local": null,
@@ -3959,9 +3835,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 32.3,
-        "empate": 31.0,
-        "visita": 36.8
+        "local": 32.2,
+        "empate": 31.2,
+        "visita": 36.6
       },
       "estimado": true,
       "goles_local": null,
@@ -3985,9 +3861,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.7,
+        "local": 42.8,
         "empate": 30.5,
-        "visita": 26.8
+        "visita": 26.7
       },
       "estimado": true,
       "goles_local": null,
@@ -4011,9 +3887,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 41.6,
-        "empate": 31.1,
-        "visita": 27.3
+        "local": 43.2,
+        "empate": 30.6,
+        "visita": 26.1
       },
       "estimado": true,
       "goles_local": null,
@@ -4037,9 +3913,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 27.8,
-        "empate": 31.8,
-        "visita": 40.4
+        "local": 27.9,
+        "empate": 31.7,
+        "visita": 40.3
       },
       "estimado": true,
       "goles_local": null,
@@ -4063,8 +3939,8 @@
         "#1A3A8F"
       ],
       "prob": {
-        "local": 38.6,
-        "empate": 31.2,
+        "local": 38.5,
+        "empate": 31.3,
         "visita": 30.2
       },
       "estimado": true,
@@ -4089,9 +3965,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 33.3,
-        "empate": 33.6,
-        "visita": 33.0
+        "local": 33.2,
+        "empate": 33.8,
+        "visita": 33.1
       },
       "estimado": true,
       "goles_local": null,
@@ -4115,9 +3991,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 50.4,
-        "empate": 28.5,
-        "visita": 21.2
+        "local": 49.9,
+        "empate": 28.6,
+        "visita": 21.4
       },
       "estimado": true,
       "goles_local": null,
@@ -4141,9 +4017,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 67.0,
-        "empate": 22.4,
-        "visita": 10.6
+        "local": 67.7,
+        "empate": 22.0,
+        "visita": 10.3
       },
       "estimado": true,
       "goles_local": null,
@@ -4167,9 +4043,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.9,
-        "empate": 29.9,
-        "visita": 25.2
+        "local": 44.6,
+        "empate": 29.8,
+        "visita": 25.6
       },
       "estimado": true,
       "goles_local": null,
@@ -4193,8 +4069,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.2,
-        "empate": 35.7,
+        "local": 40.1,
+        "empate": 35.8,
         "visita": 24.1
       },
       "estimado": true,
@@ -4220,8 +4096,8 @@
       ],
       "prob": {
         "local": 39.3,
-        "empate": 32.0,
-        "visita": 28.8
+        "empate": 32.1,
+        "visita": 28.6
       },
       "estimado": true,
       "goles_local": null,
@@ -4245,9 +4121,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.1,
-        "empate": 31.6,
-        "visita": 25.3
+        "local": 43.3,
+        "empate": 31.5,
+        "visita": 25.2
       },
       "estimado": true,
       "goles_local": null,
@@ -4271,9 +4147,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 39.7,
-        "empate": 30.2,
-        "visita": 30.1
+        "local": 40.1,
+        "empate": 30.1,
+        "visita": 29.8
       },
       "estimado": true,
       "goles_local": null,
@@ -4297,9 +4173,9 @@
         "#FFD100"
       ],
       "prob": {
-        "local": 36.7,
-        "empate": 30.6,
-        "visita": 32.7
+        "local": 37.0,
+        "empate": 30.7,
+        "visita": 32.3
       },
       "estimado": true,
       "goles_local": null,
@@ -4323,9 +4199,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.7,
-        "empate": 32.8,
-        "visita": 32.5
+        "local": 34.5,
+        "empate": 32.7,
+        "visita": 32.8
       },
       "estimado": true,
       "goles_local": null,
@@ -4376,8 +4252,8 @@
       ],
       "prob": {
         "local": 51.6,
-        "empate": 28.6,
-        "visita": 19.8
+        "empate": 28.7,
+        "visita": 19.7
       },
       "estimado": true,
       "goles_local": null,
@@ -4401,7 +4277,7 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 45.4,
+        "local": 45.3,
         "empate": 30.0,
         "visita": 24.7
       },
@@ -4427,9 +4303,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.6,
-        "empate": 33.8,
-        "visita": 25.6
+        "local": 40.5,
+        "empate": 33.6,
+        "visita": 25.9
       },
       "estimado": true,
       "goles_local": null,
@@ -4453,8 +4329,8 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 43.0,
-        "empate": 32.3,
+        "local": 42.8,
+        "empate": 32.6,
         "visita": 24.6
       },
       "estimado": true,
@@ -4479,9 +4355,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 42.2,
+        "local": 41.4,
         "empate": 31.7,
-        "visita": 26.1
+        "visita": 26.9
       },
       "estimado": true,
       "goles_local": null,
@@ -4505,9 +4381,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.6,
+        "local": 44.4,
         "empate": 32.0,
-        "visita": 23.4
+        "visita": 23.6
       },
       "estimado": true,
       "goles_local": null,
@@ -4531,9 +4407,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 42.2,
-        "empate": 30.9,
-        "visita": 26.9
+        "local": 42.6,
+        "empate": 30.7,
+        "visita": 26.6
       },
       "estimado": true,
       "goles_local": null,
@@ -4558,8 +4434,8 @@
       ],
       "prob": {
         "local": 45.2,
-        "empate": 30.2,
-        "visita": 24.6
+        "empate": 30.4,
+        "visita": 24.4
       },
       "estimado": true,
       "goles_local": null,
@@ -4583,8 +4459,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 36.2,
-        "empate": 32.3,
+        "local": 36.0,
+        "empate": 32.4,
         "visita": 31.5
       },
       "estimado": true,
@@ -4609,9 +4485,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.7,
+        "local": 44.6,
         "empate": 30.1,
-        "visita": 25.2
+        "visita": 25.3
       },
       "estimado": true,
       "goles_local": null,
@@ -4635,9 +4511,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.4,
-        "empate": 32.5,
-        "visita": 29.2
+        "local": 38.3,
+        "empate": 32.6,
+        "visita": 29.1
       },
       "estimado": true,
       "goles_local": null,
@@ -4661,9 +4537,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 48.4,
-        "empate": 29.9,
-        "visita": 21.8
+        "local": 47.2,
+        "empate": 30.0,
+        "visita": 22.9
       },
       "estimado": true,
       "goles_local": null,
@@ -4687,9 +4563,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 31.0,
+        "local": 31.3,
         "empate": 31.5,
-        "visita": 37.5
+        "visita": 37.2
       },
       "estimado": true,
       "goles_local": null,
@@ -4713,9 +4589,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 45.5,
+        "local": 45.4,
         "empate": 30.5,
-        "visita": 24.0
+        "visita": 24.2
       },
       "estimado": true,
       "goles_local": null,
@@ -4739,9 +4615,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 37.8,
+        "local": 37.5,
         "empate": 31.4,
-        "visita": 30.9
+        "visita": 31.1
       },
       "estimado": true,
       "goles_local": null,
@@ -4765,9 +4641,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 46.0,
-        "empate": 31.4,
-        "visita": 22.5
+        "local": 46.4,
+        "empate": 31.5,
+        "visita": 22.1
       },
       "estimado": true,
       "goles_local": null,
@@ -4791,8 +4667,8 @@
         "#1A3A8F"
       ],
       "prob": {
-        "local": 32.0,
-        "empate": 31.6,
+        "local": 31.8,
+        "empate": 31.8,
         "visita": 36.4
       },
       "estimado": true,
@@ -4817,9 +4693,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 45.6,
-        "empate": 31.3,
-        "visita": 23.2
+        "local": 46.0,
+        "empate": 31.0,
+        "visita": 23.0
       },
       "estimado": true,
       "goles_local": null,
@@ -4843,9 +4719,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.3,
-        "empate": 32.0,
-        "visita": 25.6
+        "local": 44.1,
+        "empate": 31.5,
+        "visita": 24.4
       },
       "estimado": true,
       "goles_local": null,
@@ -4869,9 +4745,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 34.0,
+        "local": 33.7,
         "empate": 32.5,
-        "visita": 33.5
+        "visita": 33.8
       },
       "estimado": true,
       "goles_local": null,
@@ -4895,8 +4771,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 37.7,
-        "empate": 34.9,
+        "local": 37.8,
+        "empate": 34.8,
         "visita": 27.4
       },
       "estimado": true,
@@ -4921,9 +4797,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 51.3,
-        "empate": 26.8,
-        "visita": 21.9
+        "local": 51.9,
+        "empate": 26.5,
+        "visita": 21.5
       },
       "estimado": true,
       "goles_local": null,
@@ -4947,9 +4823,9 @@
         "#E01A2B"
       ],
       "prob": {
-        "local": 41.5,
+        "local": 41.3,
         "empate": 32.1,
-        "visita": 26.4
+        "visita": 26.5
       },
       "estimado": true,
       "goles_local": null,
@@ -4973,9 +4849,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 44.0,
-        "empate": 32.5,
-        "visita": 23.5
+        "local": 43.7,
+        "empate": 32.7,
+        "visita": 23.6
       },
       "estimado": true,
       "goles_local": null,
@@ -4999,9 +4875,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 44.5,
-        "empate": 29.4,
-        "visita": 26.0
+        "local": 44.2,
+        "empate": 29.7,
+        "visita": 26.1
       },
       "estimado": true,
       "goles_local": null,
@@ -5025,9 +4901,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.6,
-        "empate": 30.2,
-        "visita": 25.1
+        "local": 44.2,
+        "empate": 30.4,
+        "visita": 25.4
       },
       "estimado": true,
       "goles_local": null,
@@ -5051,9 +4927,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 35.8,
-        "empate": 31.4,
-        "visita": 32.9
+        "local": 36.3,
+        "empate": 31.3,
+        "visita": 32.5
       },
       "estimado": true,
       "goles_local": null,
@@ -5077,9 +4953,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.9,
-        "empate": 31.6,
-        "visita": 33.5
+        "local": 35.0,
+        "empate": 31.7,
+        "visita": 33.3
       },
       "estimado": true,
       "goles_local": null,
@@ -5103,8 +4979,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 45.8,
-        "empate": 30.8,
+        "local": 45.5,
+        "empate": 31.1,
         "visita": 23.4
       },
       "estimado": true,
@@ -5130,8 +5006,8 @@
       ],
       "prob": {
         "local": 40.5,
-        "empate": 30.0,
-        "visita": 29.5
+        "empate": 29.9,
+        "visita": 29.6
       },
       "estimado": true,
       "goles_local": null,
@@ -5155,9 +5031,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.1,
-        "empate": 31.2,
-        "visita": 30.7
+        "local": 38.2,
+        "empate": 31.3,
+        "visita": 30.4
       },
       "estimado": true,
       "goles_local": null,
@@ -5181,9 +5057,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 36.4,
-        "empate": 34.3,
-        "visita": 29.3
+        "local": 36.5,
+        "empate": 34.4,
+        "visita": 29.1
       },
       "estimado": true,
       "goles_local": null,
@@ -5207,9 +5083,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 48.0,
-        "empate": 30.1,
-        "visita": 21.9
+        "local": 47.8,
+        "empate": 30.2,
+        "visita": 22.0
       },
       "estimado": true,
       "goles_local": null,
@@ -5233,9 +5109,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 33.4,
+        "local": 32.8,
         "empate": 33.1,
-        "visita": 33.4
+        "visita": 34.2
       },
       "estimado": true,
       "goles_local": null,
@@ -5261,7 +5137,7 @@
       "prob": {
         "local": 42.7,
         "empate": 32.5,
-        "visita": 24.8
+        "visita": 24.7
       },
       "estimado": true,
       "goles_local": null,
@@ -5285,9 +5161,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.9,
-        "empate": 31.0,
-        "visita": 25.0
+        "local": 44.7,
+        "empate": 30.6,
+        "visita": 24.7
       },
       "estimado": true,
       "goles_local": null,
@@ -5311,9 +5187,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 46.2,
-        "empate": 29.3,
-        "visita": 24.5
+        "local": 44.8,
+        "empate": 29.4,
+        "visita": 25.8
       },
       "estimado": true,
       "goles_local": null,
@@ -5337,9 +5213,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 41.0,
-        "empate": 31.3,
-        "visita": 27.7
+        "local": 40.8,
+        "empate": 31.2,
+        "visita": 28.0
       },
       "estimado": true,
       "goles_local": null,
@@ -5363,8 +5239,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.6,
-        "empate": 31.8,
+        "local": 42.4,
+        "empate": 32.0,
         "visita": 25.6
       },
       "estimado": true,
@@ -5389,9 +5265,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 63.4,
-        "empate": 23.1,
-        "visita": 13.5
+        "local": 62.8,
+        "empate": 23.3,
+        "visita": 13.9
       },
       "estimado": true,
       "goles_local": null,
@@ -5415,9 +5291,9 @@
         "#FFD100"
       ],
       "prob": {
-        "local": 32.0,
-        "empate": 32.2,
-        "visita": 35.8
+        "local": 32.3,
+        "empate": 32.1,
+        "visita": 35.7
       },
       "estimado": true,
       "goles_local": null,
@@ -5442,8 +5318,8 @@
       ],
       "prob": {
         "local": 42.5,
-        "empate": 33.0,
-        "visita": 24.5
+        "empate": 33.2,
+        "visita": 24.4
       },
       "estimado": true,
       "goles_local": null,
@@ -5467,9 +5343,9 @@
         "#D10A2E"
       ],
       "prob": {
-        "local": 19.1,
-        "empate": 26.5,
-        "visita": 54.4
+        "local": 19.3,
+        "empate": 26.4,
+        "visita": 54.3
       },
       "estimado": true,
       "goles_local": null,
@@ -5495,7 +5371,7 @@
       "prob": {
         "local": 42.0,
         "empate": 32.9,
-        "visita": 25.2
+        "visita": 25.1
       },
       "estimado": true,
       "goles_local": null,
@@ -5519,9 +5395,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.1,
+        "local": 41.7,
         "empate": 31.1,
-        "visita": 26.8
+        "visita": 27.2
       },
       "estimado": true,
       "goles_local": null,
@@ -5545,9 +5421,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 30.4,
-        "empate": 30.2,
-        "visita": 39.4
+        "local": 30.7,
+        "empate": 30.4,
+        "visita": 38.8
       },
       "estimado": true,
       "goles_local": null,
@@ -5571,8 +5447,8 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 54.4,
-        "empate": 27.0,
+        "local": 54.3,
+        "empate": 27.1,
         "visita": 18.5
       },
       "estimado": true,
@@ -5597,8 +5473,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 35.7,
-        "empate": 30.4,
+        "local": 35.5,
+        "empate": 30.6,
         "visita": 33.9
       },
       "estimado": true,
@@ -5623,9 +5499,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.9,
+        "local": 39.1,
         "empate": 32.0,
-        "visita": 29.1
+        "visita": 28.9
       },
       "estimado": true,
       "goles_local": null,
@@ -5649,9 +5525,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.0,
-        "empate": 30.8,
-        "visita": 29.2
+        "local": 41.7,
+        "empate": 30.1,
+        "visita": 28.2
       },
       "estimado": true,
       "goles_local": null,
@@ -5675,9 +5551,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.0,
-        "empate": 33.9,
-        "visita": 22.1
+        "local": 43.7,
+        "empate": 34.0,
+        "visita": 22.3
       },
       "estimado": true,
       "goles_local": null,
@@ -5727,9 +5603,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 53.7,
-        "empate": 28.7,
-        "visita": 17.6
+        "local": 54.1,
+        "empate": 28.6,
+        "visita": 17.4
       },
       "estimado": true,
       "goles_local": null,
@@ -5754,8 +5630,8 @@
       ],
       "prob": {
         "local": 44.4,
-        "empate": 33.5,
-        "visita": 22.1
+        "empate": 33.6,
+        "visita": 22.0
       },
       "estimado": true,
       "goles_local": null,
@@ -5779,9 +5655,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.4,
-        "empate": 30.9,
-        "visita": 28.7
+        "local": 40.2,
+        "empate": 31.2,
+        "visita": 28.6
       },
       "estimado": true,
       "goles_local": null,
@@ -5805,9 +5681,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 47.4,
+        "local": 47.3,
         "empate": 30.9,
-        "visita": 21.7
+        "visita": 21.8
       },
       "estimado": true,
       "goles_local": null,
@@ -5831,9 +5707,9 @@
         "#1A3A8F"
       ],
       "prob": {
-        "local": 35.4,
-        "empate": 32.0,
-        "visita": 32.6
+        "local": 35.8,
+        "empate": 31.9,
+        "visita": 32.4
       },
       "estimado": true,
       "goles_local": null,
