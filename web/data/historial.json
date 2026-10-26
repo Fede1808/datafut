@@ -2431,7 +2431,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Atlético Tucumán|River Plate",
@@ -2450,7 +2454,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Banfield|Barracas Central",
@@ -2469,7 +2477,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Boca Juniors|Central Córdoba (SdE)",
@@ -2488,7 +2500,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 3,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Defensa y Justicia|Gimnasia (M)",
@@ -2507,7 +2523,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Deportivo Riestra|Lanús",
@@ -2526,7 +2546,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 3,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Estudiantes (LP)|Platense",
@@ -2545,7 +2569,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Huracán|Racing Club",
@@ -2564,7 +2592,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Independiente|San Lorenzo",
@@ -2583,7 +2615,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Aldosivi|Independiente Rivadavia",
@@ -2602,7 +2638,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 4,
+      "goles_visita": 3,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Estudiantes (RC)|Instituto",
@@ -2621,7 +2661,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Newell's Old Boys|Vélez Sarsfield",
@@ -2640,7 +2684,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Belgrano|Sarmiento (J)",
@@ -2659,7 +2707,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Talleres (C)|Unión",
@@ -2678,7 +2730,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Rosario Central|Tigre",
@@ -2697,7 +2753,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 1,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Aldosivi|Atlético Tucumán",
@@ -2716,7 +2776,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Barracas Central|Independiente Rivadavia",
@@ -2735,7 +2799,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 1,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Belgrano|Estudiantes (RC)",
@@ -2754,7 +2822,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Central Córdoba (SdE)|Defensa y Justicia",
@@ -2773,7 +2845,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 2,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Banfield|Gimnasia (LP)",
@@ -2792,7 +2868,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 2,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Deportivo Riestra|Gimnasia (M)",
@@ -2811,7 +2891,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 0,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Instituto|Talleres (C)",
@@ -2830,7 +2914,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 3,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Estudiantes (LP)|Lanús",
@@ -2849,7 +2937,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Newell's Old Boys|Platense",
@@ -2868,7 +2960,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 1,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Racing Club|Sarmiento (J)",
@@ -2887,7 +2983,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 3,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Huracán|River Plate",
@@ -2906,7 +3006,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Argentinos Juniors|Rosario Central",
@@ -2925,7 +3029,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Boca Juniors|San Lorenzo",
@@ -2944,7 +3052,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Independiente|Unión",
@@ -2963,7 +3075,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Tigre|Vélez Sarsfield",
@@ -2982,7 +3098,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 3,
+      "goles_visita": 2,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Argentinos Juniors|Tigre",
@@ -3001,7 +3121,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Atlético Tucumán|Barracas Central",
@@ -3020,7 +3144,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 3,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Banfield|Rosario Central",
@@ -3039,7 +3167,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Boca Juniors|Unión",
@@ -3058,7 +3190,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 3,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Defensa y Justicia|San Lorenzo",
@@ -3077,7 +3213,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 3,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Central Córdoba (SdE)|Deportivo Riestra",
@@ -3096,7 +3236,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Estudiantes (LP)|Gimnasia (M)",
@@ -3115,7 +3259,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 3,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Estudiantes (RC)|Racing Club",
@@ -3134,7 +3282,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Aldosivi|Huracán",
@@ -3153,7 +3305,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Independiente|Instituto",
@@ -3172,7 +3328,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 4,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Gimnasia (LP)|Independiente Rivadavia",
@@ -3191,7 +3351,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Lanús|Newell's Old Boys",
@@ -3210,7 +3374,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 0,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-River Plate|Sarmiento (J)",
@@ -3229,7 +3397,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Belgrano|Talleres (C)",
@@ -3248,7 +3420,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 1,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Platense|Vélez Sarsfield",
@@ -3267,7 +3443,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 2,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Aldosivi|Sarmiento (J)",
@@ -3286,7 +3466,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 3,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Barracas Central|Huracán",
@@ -3305,7 +3489,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Central Córdoba (SdE)|Estudiantes (LP)",
@@ -3324,7 +3512,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 2,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Atlético Tucumán|Gimnasia (LP)",
@@ -3343,7 +3535,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Gimnasia (M)|Newell's Old Boys",
@@ -3362,7 +3558,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Boca Juniors|Instituto",
@@ -3381,7 +3581,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 2,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Lanús|Vélez Sarsfield",
@@ -3400,7 +3604,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Argentinos Juniors|Platense",
@@ -3419,7 +3627,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Belgrano|Racing Club",
@@ -3438,7 +3650,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Estudiantes (RC)|River Plate",
@@ -3457,7 +3673,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Independiente Rivadavia|Rosario Central",
@@ -3476,7 +3696,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 5,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Deportivo Riestra|San Lorenzo",
@@ -3495,7 +3719,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Independiente|Talleres (C)",
@@ -3514,7 +3742,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 0,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Banfield|Tigre",
@@ -3533,7 +3765,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Defensa y Justicia|Unión",
@@ -3552,7 +3788,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Atlético Tucumán|Rosario Central",
@@ -3571,7 +3811,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 3,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Argentinos Juniors|Banfield",
@@ -3590,7 +3834,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 1,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Belgrano|River Plate",
@@ -3609,7 +3857,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 3,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Boca Juniors|Talleres (C)",
@@ -3628,7 +3880,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Defensa y Justicia|Instituto",
@@ -3647,7 +3903,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 1,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Deportivo Riestra|Unión",
@@ -3666,7 +3926,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Estudiantes (LP)|San Lorenzo",
@@ -3685,7 +3949,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Aldosivi|Estudiantes (RC)",
@@ -3704,7 +3972,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Gimnasia (LP)|Huracán",
@@ -3723,7 +3995,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 2,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Independiente Rivadavia|Tigre",
@@ -3742,7 +4018,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 2,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Central Córdoba (SdE)|Newell's Old Boys",
@@ -3761,7 +4041,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 2,
+      "goles_visita": 1,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Lanús|Platense",
@@ -3780,7 +4064,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 0,
+      "goles_visita": 1,
+      "ganador": "visita"
+    }
   },
   {
     "clave": "2026-Clausura-Independiente|Racing Club",
@@ -3799,7 +4087,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Barracas Central|Sarmiento (J)",
@@ -3818,7 +4110,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 1,
+      "ganador": "empate"
+    }
   },
   {
     "clave": "2026-Clausura-Gimnasia (M)|Vélez Sarsfield",
@@ -3837,7 +4133,11 @@
       "registrado": "2026-07-28T12:39:04+00:00"
     },
     "cuotas": null,
-    "resultado": null
+    "resultado": {
+      "goles_local": 1,
+      "goles_visita": 0,
+      "ganador": "local"
+    }
   },
   {
     "clave": "2026-Clausura-Aldosivi|Belgrano",
