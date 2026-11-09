@@ -21,9 +21,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.3,
+        "local": 42.1,
         "empate": 31.5,
-        "visita": 26.2
+        "visita": 26.5
       },
       "estimado": false,
       "goles_local": null,
@@ -47,9 +47,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 36.4,
+        "local": 35.8,
         "empate": 33.9,
-        "visita": 29.7
+        "visita": 30.3
       },
       "estimado": false,
       "goles_local": null,
@@ -73,9 +73,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 51.0,
-        "empate": 29.8,
-        "visita": 19.2
+        "local": 51.6,
+        "empate": 29.4,
+        "visita": 19.0
       },
       "estimado": false,
       "goles_local": null,
@@ -99,9 +99,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 34.6,
+        "local": 34.4,
         "empate": 30.0,
-        "visita": 35.4
+        "visita": 35.6
       },
       "estimado": true,
       "goles_local": null,
@@ -151,9 +151,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.2,
-        "empate": 31.4,
-        "visita": 26.4
+        "local": 42.6,
+        "empate": 31.2,
+        "visita": 26.2
       },
       "estimado": true,
       "goles_local": null,
@@ -177,9 +177,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.5,
-        "empate": 34.1,
-        "visita": 27.5
+        "local": 39.2,
+        "empate": 33.9,
+        "visita": 26.9
       },
       "estimado": true,
       "goles_local": null,
@@ -229,9 +229,9 @@
         "#E01A2B"
       ],
       "prob": {
-        "local": 55.1,
+        "local": 55.2,
         "empate": 27.6,
-        "visita": 17.3
+        "visita": 17.1
       },
       "estimado": true,
       "goles_local": null,
@@ -255,9 +255,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.6,
-        "empate": 31.5,
-        "visita": 29.9
+        "local": 38.4,
+        "empate": 31.4,
+        "visita": 30.3
       },
       "estimado": true,
       "goles_local": null,
@@ -281,9 +281,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 29.9,
+        "local": 29.8,
         "empate": 33.4,
-        "visita": 36.7
+        "visita": 36.9
       },
       "estimado": true,
       "goles_local": null,
@@ -307,9 +307,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 38.2,
+        "local": 38.3,
         "empate": 33.4,
-        "visita": 28.5
+        "visita": 28.3
       },
       "estimado": true,
       "goles_local": null,
@@ -333,7 +333,7 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.8,
+        "local": 40.7,
         "empate": 31.3,
         "visita": 28.0
       },
@@ -359,9 +359,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 51.0,
-        "empate": 30.1,
-        "visita": 18.9
+        "local": 51.3,
+        "empate": 29.9,
+        "visita": 18.8
       },
       "estimado": true,
       "goles_local": null,
@@ -385,9 +385,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 47.5,
+        "local": 47.1,
         "empate": 30.3,
-        "visita": 22.3
+        "visita": 22.6
       },
       "estimado": true,
       "goles_local": null,
@@ -411,9 +411,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.7,
+        "local": 34.5,
         "empate": 30.3,
-        "visita": 35.0
+        "visita": 35.1
       },
       "estimado": true,
       "goles_local": null,
@@ -437,9 +437,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 38.7,
-        "empate": 30.8,
-        "visita": 30.5
+        "local": 38.5,
+        "empate": 30.6,
+        "visita": 30.9
       },
       "estimado": true,
       "goles_local": null,
@@ -464,8 +464,8 @@
       ],
       "prob": {
         "local": 39.9,
-        "empate": 30.5,
-        "visita": 29.6
+        "empate": 30.4,
+        "visita": 29.7
       },
       "estimado": true,
       "goles_local": null,
@@ -490,8 +490,8 @@
       ],
       "prob": {
         "local": 45.7,
-        "empate": 31.2,
-        "visita": 23.2
+        "empate": 31.0,
+        "visita": 23.3
       },
       "estimado": true,
       "goles_local": null,
@@ -515,8 +515,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.3,
-        "empate": 30.0,
+        "local": 43.4,
+        "empate": 29.9,
         "visita": 26.7
       },
       "estimado": true,
@@ -541,9 +541,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 41.1,
+        "local": 41.0,
         "empate": 31.9,
-        "visita": 27.0
+        "visita": 27.1
       },
       "estimado": true,
       "goles_local": null,
@@ -567,9 +567,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.7,
+        "local": 42.6,
         "empate": 30.5,
-        "visita": 26.7
+        "visita": 27.0
       },
       "estimado": true,
       "goles_local": null,
@@ -593,8 +593,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 37.6,
-        "empate": 31.4,
+        "local": 37.5,
+        "empate": 31.5,
         "visita": 31.0
       },
       "estimado": true,
@@ -619,9 +619,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 46.1,
-        "empate": 30.8,
-        "visita": 23.1
+        "local": 45.9,
+        "empate": 30.9,
+        "visita": 23.2
       },
       "estimado": true,
       "goles_local": null,
@@ -645,9 +645,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 53.6,
-        "empate": 28.6,
-        "visita": 17.8
+        "local": 53.4,
+        "empate": 28.7,
+        "visita": 17.9
       },
       "estimado": true,
       "goles_local": null,
@@ -671,9 +671,9 @@
         "#D10A2E"
       ],
       "prob": {
-        "local": 21.9,
+        "local": 21.7,
         "empate": 28.9,
-        "visita": 49.2
+        "visita": 49.3
       },
       "estimado": true,
       "goles_local": null,
@@ -697,9 +697,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.6,
-        "empate": 31.2,
-        "visita": 25.2
+        "local": 44.1,
+        "empate": 31.0,
+        "visita": 24.9
       },
       "estimado": true,
       "goles_local": null,
@@ -723,7 +723,7 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 57.1,
+        "local": 57.0,
         "empate": 26.5,
         "visita": 16.4
       },
@@ -749,9 +749,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 25.2,
-        "empate": 30.1,
-        "visita": 44.7
+        "local": 24.9,
+        "empate": 30.0,
+        "visita": 45.1
       },
       "estimado": true,
       "goles_local": null,
@@ -775,9 +775,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.2,
-        "empate": 32.6,
-        "visita": 23.2
+        "local": 43.7,
+        "empate": 32.7,
+        "visita": 23.6
       },
       "estimado": true,
       "goles_local": null,
@@ -801,9 +801,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 49.2,
-        "empate": 29.0,
-        "visita": 21.8
+        "local": 48.9,
+        "empate": 29.1,
+        "visita": 22.0
       },
       "estimado": true,
       "goles_local": null,
@@ -827,9 +827,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 48.9,
-        "empate": 30.9,
-        "visita": 20.2
+        "local": 48.6,
+        "empate": 31.0,
+        "visita": 20.4
       },
       "estimado": true,
       "goles_local": null,
@@ -853,9 +853,9 @@
         "#FFD100"
       ],
       "prob": {
-        "local": 35.6,
-        "empate": 31.6,
-        "visita": 32.9
+        "local": 35.3,
+        "empate": 31.5,
+        "visita": 33.2
       },
       "estimado": true,
       "goles_local": null,
@@ -879,9 +879,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 37.8,
-        "empate": 31.4,
-        "visita": 30.7
+        "local": 37.7,
+        "empate": 31.5,
+        "visita": 30.8
       },
       "estimado": true,
       "goles_local": null,
@@ -905,9 +905,9 @@
         "#E01A2B"
       ],
       "prob": {
-        "local": 35.0,
-        "empate": 33.3,
-        "visita": 31.7
+        "local": 35.3,
+        "empate": 33.2,
+        "visita": 31.5
       },
       "estimado": true,
       "goles_local": null,
@@ -931,9 +931,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 31.9,
-        "empate": 30.6,
-        "visita": 37.5
+        "local": 31.7,
+        "empate": 30.5,
+        "visita": 37.7
       },
       "estimado": true,
       "goles_local": null,
@@ -957,9 +957,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.3,
+        "local": 43.6,
         "empate": 30.2,
-        "visita": 26.4
+        "visita": 26.2
       },
       "estimado": true,
       "goles_local": null,
@@ -985,7 +985,7 @@
       "prob": {
         "local": 40.6,
         "empate": 31.5,
-        "visita": 28.0
+        "visita": 27.8
       },
       "estimado": true,
       "goles_local": null,
@@ -1009,9 +1009,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 28.8,
-        "empate": 31.4,
-        "visita": 39.8
+        "local": 28.7,
+        "empate": 31.3,
+        "visita": 40.0
       },
       "estimado": true,
       "goles_local": null,
@@ -1037,7 +1037,7 @@
       "prob": {
         "local": 38.8,
         "empate": 31.1,
-        "visita": 30.0
+        "visita": 30.1
       },
       "estimado": true,
       "goles_local": null,
@@ -1061,9 +1061,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 32.8,
+        "local": 32.9,
         "empate": 33.8,
-        "visita": 33.4
+        "visita": 33.3
       },
       "estimado": true,
       "goles_local": null,
@@ -1087,8 +1087,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 49.4,
-        "empate": 28.8,
+        "local": 49.6,
+        "empate": 28.7,
         "visita": 21.8
       },
       "estimado": true,
@@ -1113,9 +1113,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 68.3,
-        "empate": 21.5,
-        "visita": 10.2
+        "local": 68.6,
+        "empate": 21.4,
+        "visita": 10.0
       },
       "estimado": true,
       "goles_local": null,
@@ -1139,9 +1139,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 46.8,
+        "local": 46.6,
         "empate": 28.9,
-        "visita": 24.3
+        "visita": 24.5
       },
       "estimado": true,
       "goles_local": null,
@@ -1165,9 +1165,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.6,
-        "empate": 35.8,
-        "visita": 23.6
+        "local": 41.3,
+        "empate": 35.5,
+        "visita": 23.2
       },
       "estimado": true,
       "goles_local": null,
@@ -1191,9 +1191,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 39.0,
-        "empate": 32.1,
-        "visita": 28.9
+        "local": 39.3,
+        "empate": 32.0,
+        "visita": 28.7
       },
       "estimado": true,
       "goles_local": null,
@@ -1217,9 +1217,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 42.7,
-        "empate": 31.4,
-        "visita": 25.8
+        "local": 43.1,
+        "empate": 31.3,
+        "visita": 25.6
       },
       "estimado": true,
       "goles_local": null,
@@ -1244,7 +1244,7 @@
       ],
       "prob": {
         "local": 39.1,
-        "empate": 30.0,
+        "empate": 30.1,
         "visita": 30.9
       },
       "estimado": true,
@@ -1269,9 +1269,9 @@
         "#FFD100"
       ],
       "prob": {
-        "local": 35.8,
+        "local": 35.6,
         "empate": 30.5,
-        "visita": 33.6
+        "visita": 33.9
       },
       "estimado": true,
       "goles_local": null,
@@ -1295,9 +1295,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.3,
-        "empate": 32.8,
-        "visita": 32.9
+        "local": 34.0,
+        "empate": 32.7,
+        "visita": 33.3
       },
       "estimado": true,
       "goles_local": null,
@@ -1321,9 +1321,9 @@
         "#D10A2E"
       ],
       "prob": {
-        "local": 27.9,
+        "local": 27.6,
         "empate": 30.3,
-        "visita": 41.8
+        "visita": 42.1
       },
       "estimado": true,
       "goles_local": null,
@@ -1347,9 +1347,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 52.6,
-        "empate": 28.3,
-        "visita": 19.2
+        "local": 52.2,
+        "empate": 28.4,
+        "visita": 19.4
       },
       "estimado": true,
       "goles_local": null,
@@ -1374,8 +1374,8 @@
       ],
       "prob": {
         "local": 44.5,
-        "empate": 29.8,
-        "visita": 25.6
+        "empate": 29.7,
+        "visita": 25.8
       },
       "estimado": true,
       "goles_local": null,
@@ -1399,9 +1399,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 39.7,
-        "empate": 33.7,
-        "visita": 26.6
+        "local": 39.0,
+        "empate": 33.8,
+        "visita": 27.3
       },
       "estimado": true,
       "goles_local": null,
@@ -1426,8 +1426,8 @@
       ],
       "prob": {
         "local": 42.9,
-        "empate": 32.3,
-        "visita": 24.7
+        "empate": 32.2,
+        "visita": 24.9
       },
       "estimado": true,
       "goles_local": null,
@@ -1451,9 +1451,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 41.5,
+        "local": 41.3,
         "empate": 31.2,
-        "visita": 27.3
+        "visita": 27.5
       },
       "estimado": true,
       "goles_local": null,
@@ -1477,9 +1477,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.8,
-        "empate": 32.0,
-        "visita": 24.2
+        "local": 43.3,
+        "empate": 32.1,
+        "visita": 24.6
       },
       "estimado": true,
       "goles_local": null,
@@ -1504,8 +1504,8 @@
       ],
       "prob": {
         "local": 42.5,
-        "empate": 30.3,
-        "visita": 27.2
+        "empate": 30.2,
+        "visita": 27.3
       },
       "estimado": true,
       "goles_local": null,
@@ -1529,9 +1529,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 45.9,
-        "empate": 30.1,
-        "visita": 24.0
+        "local": 46.0,
+        "empate": 30.2,
+        "visita": 23.9
       },
       "estimado": true,
       "goles_local": null,
@@ -1555,9 +1555,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 35.2,
-        "empate": 32.4,
-        "visita": 32.4
+        "local": 35.3,
+        "empate": 32.5,
+        "visita": 32.2
       },
       "estimado": true,
       "goles_local": null,
@@ -1581,9 +1581,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.6,
-        "empate": 30.0,
-        "visita": 25.4
+        "local": 44.5,
+        "empate": 30.1,
+        "visita": 25.5
       },
       "estimado": true,
       "goles_local": null,
@@ -1607,9 +1607,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 37.9,
-        "empate": 32.4,
-        "visita": 29.7
+        "local": 37.7,
+        "empate": 32.3,
+        "visita": 30.0
       },
       "estimado": true,
       "goles_local": null,
@@ -1633,9 +1633,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 49.3,
+        "local": 49.0,
         "empate": 29.5,
-        "visita": 21.2
+        "visita": 21.4
       },
       "estimado": true,
       "goles_local": null,
@@ -1660,8 +1660,8 @@
       ],
       "prob": {
         "local": 31.1,
-        "empate": 31.4,
-        "visita": 37.5
+        "empate": 31.3,
+        "visita": 37.6
       },
       "estimado": true,
       "goles_local": null,
@@ -1685,9 +1685,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 46.5,
+        "local": 46.3,
         "empate": 29.9,
-        "visita": 23.5
+        "visita": 23.8
       },
       "estimado": true,
       "goles_local": null,
@@ -1711,9 +1711,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 36.7,
+        "local": 36.5,
         "empate": 31.4,
-        "visita": 31.9
+        "visita": 32.1
       },
       "estimado": true,
       "goles_local": null,
@@ -1737,9 +1737,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 47.4,
-        "empate": 30.8,
-        "visita": 21.8
+        "local": 47.8,
+        "empate": 30.6,
+        "visita": 21.6
       },
       "estimado": true,
       "goles_local": null,
@@ -1763,9 +1763,9 @@
         "#1A3A8F"
       ],
       "prob": {
-        "local": 31.0,
-        "empate": 31.2,
-        "visita": 37.8
+        "local": 30.8,
+        "empate": 31.1,
+        "visita": 38.0
       },
       "estimado": true,
       "goles_local": null,
@@ -1789,9 +1789,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 46.3,
-        "empate": 30.8,
-        "visita": 23.0
+        "local": 46.5,
+        "empate": 30.7,
+        "visita": 22.8
       },
       "estimado": true,
       "goles_local": null,
@@ -1815,9 +1815,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 41.9,
-        "empate": 32.1,
-        "visita": 26.0
+        "local": 41.7,
+        "empate": 32.2,
+        "visita": 26.1
       },
       "estimado": true,
       "goles_local": null,
@@ -1841,9 +1841,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 32.9,
+        "local": 32.7,
         "empate": 32.4,
-        "visita": 34.7
+        "visita": 34.8
       },
       "estimado": true,
       "goles_local": null,
@@ -1867,9 +1867,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.2,
-        "empate": 34.2,
-        "visita": 25.6
+        "local": 41.0,
+        "empate": 33.8,
+        "visita": 25.1
       },
       "estimado": true,
       "goles_local": null,
@@ -1893,8 +1893,8 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 52.2,
-        "empate": 26.5,
+        "local": 52.1,
+        "empate": 26.6,
         "visita": 21.3
       },
       "estimado": true,
@@ -1919,9 +1919,9 @@
         "#E01A2B"
       ],
       "prob": {
-        "local": 42.4,
+        "local": 42.7,
         "empate": 31.8,
-        "visita": 25.8
+        "visita": 25.5
       },
       "estimado": true,
       "goles_local": null,
@@ -1945,9 +1945,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 43.0,
+        "local": 43.1,
         "empate": 33.0,
-        "visita": 23.9
+        "visita": 24.0
       },
       "estimado": true,
       "goles_local": null,
@@ -1971,9 +1971,9 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 43.0,
+        "local": 43.3,
         "empate": 29.8,
-        "visita": 27.2
+        "visita": 26.9
       },
       "estimado": true,
       "goles_local": null,
@@ -1997,9 +1997,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.9,
-        "empate": 30.3,
-        "visita": 25.8
+        "local": 44.2,
+        "empate": 30.2,
+        "visita": 25.6
       },
       "estimado": true,
       "goles_local": null,
@@ -2023,7 +2023,7 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 36.1,
+        "local": 36.2,
         "empate": 30.9,
         "visita": 32.9
       },
@@ -2049,9 +2049,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.5,
+        "local": 34.3,
         "empate": 31.7,
-        "visita": 33.8
+        "visita": 34.0
       },
       "estimado": true,
       "goles_local": null,
@@ -2075,9 +2075,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 45.0,
-        "empate": 31.1,
-        "visita": 23.9
+        "local": 44.9,
+        "empate": 31.0,
+        "visita": 24.1
       },
       "estimado": true,
       "goles_local": null,
@@ -2101,8 +2101,8 @@
         "#D10A2E"
       ],
       "prob": {
-        "local": 40.8,
-        "empate": 29.8,
+        "local": 40.6,
+        "empate": 30.0,
         "visita": 29.4
       },
       "estimado": true,
@@ -2127,7 +2127,7 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 39.1,
+        "local": 38.9,
         "empate": 31.2,
         "visita": 29.8
       },
@@ -2153,9 +2153,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 35.8,
+        "local": 34.9,
         "empate": 34.5,
-        "visita": 29.7
+        "visita": 30.6
       },
       "estimado": true,
       "goles_local": null,
@@ -2180,8 +2180,8 @@
       ],
       "prob": {
         "local": 46.5,
-        "empate": 30.1,
-        "visita": 23.5
+        "empate": 29.8,
+        "visita": 23.7
       },
       "estimado": true,
       "goles_local": null,
@@ -2205,9 +2205,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 32.4,
-        "empate": 32.6,
-        "visita": 35.0
+        "local": 32.0,
+        "empate": 32.4,
+        "visita": 35.6
       },
       "estimado": true,
       "goles_local": null,
@@ -2231,9 +2231,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 43.0,
-        "empate": 32.3,
-        "visita": 24.7
+        "local": 42.4,
+        "empate": 32.4,
+        "visita": 25.1
       },
       "estimado": true,
       "goles_local": null,
@@ -2257,9 +2257,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.9,
-        "empate": 30.3,
-        "visita": 25.7
+        "local": 44.4,
+        "empate": 30.1,
+        "visita": 25.4
       },
       "estimado": true,
       "goles_local": null,
@@ -2283,9 +2283,9 @@
         "#111111"
       ],
       "prob": {
-        "local": 47.2,
-        "empate": 29.2,
-        "visita": 23.6
+        "local": 46.8,
+        "empate": 29.4,
+        "visita": 23.8
       },
       "estimado": true,
       "goles_local": null,
@@ -2309,9 +2309,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 41.1,
-        "empate": 31.2,
-        "visita": 27.7
+        "local": 40.9,
+        "empate": 31.3,
+        "visita": 27.8
       },
       "estimado": true,
       "goles_local": null,
@@ -2335,9 +2335,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 43.1,
-        "empate": 31.5,
-        "visita": 25.4
+        "local": 43.4,
+        "empate": 31.4,
+        "visita": 25.1
       },
       "estimado": true,
       "goles_local": null,
@@ -2361,8 +2361,8 @@
         "#F7D117"
       ],
       "prob": {
-        "local": 62.6,
-        "empate": 23.2,
+        "local": 62.7,
+        "empate": 23.3,
         "visita": 14.1
       },
       "estimado": true,
@@ -2387,9 +2387,9 @@
         "#FFD100"
       ],
       "prob": {
-        "local": 31.5,
-        "empate": 31.8,
-        "visita": 36.8
+        "local": 31.3,
+        "empate": 31.7,
+        "visita": 37.0
       },
       "estimado": true,
       "goles_local": null,
@@ -2413,9 +2413,9 @@
         "#C8102E"
       ],
       "prob": {
-        "local": 43.1,
-        "empate": 32.8,
-        "visita": 24.1
+        "local": 43.0,
+        "empate": 32.7,
+        "visita": 24.2
       },
       "estimado": true,
       "goles_local": null,
@@ -2439,9 +2439,9 @@
         "#D10A2E"
       ],
       "prob": {
-        "local": 19.1,
-        "empate": 26.1,
-        "visita": 54.7
+        "local": 18.9,
+        "empate": 26.2,
+        "visita": 54.9
       },
       "estimado": true,
       "goles_local": null,
@@ -2465,9 +2465,9 @@
         "#E01A2B"
       ],
       "prob": {
-        "local": 42.2,
+        "local": 42.4,
         "empate": 32.9,
-        "visita": 24.9
+        "visita": 24.7
       },
       "estimado": true,
       "goles_local": null,
@@ -2491,9 +2491,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 41.9,
+        "local": 41.8,
         "empate": 30.9,
-        "visita": 27.2
+        "visita": 27.3
       },
       "estimado": true,
       "goles_local": null,
@@ -2518,8 +2518,8 @@
       ],
       "prob": {
         "local": 31.4,
-        "empate": 30.3,
-        "visita": 38.3
+        "empate": 30.2,
+        "visita": 38.4
       },
       "estimado": true,
       "goles_local": null,
@@ -2569,9 +2569,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 34.2,
-        "empate": 30.3,
-        "visita": 35.5
+        "local": 33.9,
+        "empate": 30.4,
+        "visita": 35.7
       },
       "estimado": true,
       "goles_local": null,
@@ -2595,9 +2595,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 39.3,
-        "empate": 31.9,
-        "visita": 28.8
+        "local": 39.6,
+        "empate": 31.8,
+        "visita": 28.6
       },
       "estimado": true,
       "goles_local": null,
@@ -2621,9 +2621,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 40.4,
+        "local": 40.2,
         "empate": 30.2,
-        "visita": 29.4
+        "visita": 29.6
       },
       "estimado": true,
       "goles_local": null,
@@ -2647,9 +2647,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.2,
-        "empate": 33.9,
-        "visita": 21.9
+        "local": 44.8,
+        "empate": 33.7,
+        "visita": 21.5
       },
       "estimado": true,
       "goles_local": null,
@@ -2673,8 +2673,8 @@
         "#111111"
       ],
       "prob": {
-        "local": 42.4,
-        "empate": 31.6,
+        "local": 42.6,
+        "empate": 31.4,
         "visita": 26.0
       },
       "estimado": true,
@@ -2699,9 +2699,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 55.5,
-        "empate": 27.7,
-        "visita": 16.8
+        "local": 56.0,
+        "empate": 27.4,
+        "visita": 16.6
       },
       "estimado": true,
       "goles_local": null,
@@ -2725,9 +2725,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 44.2,
+        "local": 44.0,
         "empate": 33.6,
-        "visita": 22.3
+        "visita": 22.5
       },
       "estimado": true,
       "goles_local": null,
@@ -2751,9 +2751,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 39.9,
-        "empate": 31.0,
-        "visita": 29.1
+        "local": 40.3,
+        "empate": 30.8,
+        "visita": 28.9
       },
       "estimado": true,
       "goles_local": null,
@@ -2777,9 +2777,9 @@
         "#FFFFFF"
       ],
       "prob": {
-        "local": 46.8,
-        "empate": 30.8,
-        "visita": 22.4
+        "local": 47.1,
+        "empate": 30.7,
+        "visita": 22.2
       },
       "estimado": true,
       "goles_local": null,

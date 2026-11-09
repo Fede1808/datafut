@@ -8,50 +8,26 @@
         "#1E7B3C",
         "#F7D117"
       ],
-      "ataque": -0.122,
-      "defensa": -0.2118,
+      "ataque": -0.1271,
+      "defensa": -0.2119,
       "campeon": 0.0,
       "playoffs": 0.0,
-      "descenso": 98.74,
+      "descenso": 100.0,
       "descenso_promedio": 0.0,
-      "descenso_anual": 98.74,
+      "descenso_anual": 100.0,
       "puntos": {
-        "promedio": 12.5,
+        "promedio": 11.0,
         "p10": 11,
-        "p50": 12,
-        "p90": 15
+        "p50": 11,
+        "p90": 11
       },
       "puntos_dist": {
         "desde": 11,
         "probs": [
-          33.95,
-          29.2,
-          6.23,
-          19.7,
-          7.97,
-          0.0,
-          2.95
+          100.0
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Independiente Rivadavia",
-          "rival_slug": "independiente-rivadavia",
-          "gf": 3,
-          "gc": 4,
-          "condicion": "visita",
-          "fecha": "2026-09-12"
-        },
-        {
-          "r": "G",
-          "rival": "Atlético Tucumán",
-          "rival_slug": "atletico-tucuman",
-          "gf": 1,
-          "gc": 0,
-          "condicion": "local",
-          "fecha": "2026-09-21"
-        },
         {
           "r": "P",
           "rival": "Huracán",
@@ -87,13 +63,31 @@
           "gc": 0,
           "condicion": "local",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "P",
+          "rival": "Racing Club",
+          "rival_slug": "racing-club",
+          "gf": 1,
+          "gc": 2,
+          "condicion": "visita",
+          "fecha": "2026-10-31"
+        },
+        {
+          "r": "P",
+          "rival": "River Plate",
+          "rival_slug": "river-plate",
+          "gf": 0,
+          "gc": 2,
+          "condicion": "local",
+          "fecha": "2026-11-05"
         }
       ],
       "rendimiento": {
-        "pj": 30,
+        "pj": 32,
         "pts": 19,
-        "pts_esperados": 31.4,
-        "dif": -12.4
+        "pts_esperados": 32.8,
+        "dif": -13.8
       },
       "stats": null
     },
@@ -105,41 +99,29 @@
         "#D6001C",
         "#FFFFFF"
       ],
-      "ataque": 0.0542,
-      "defensa": 0.1243,
-      "campeon": 6.77,
+      "ataque": 0.0557,
+      "defensa": 0.1262,
+      "campeon": 6.83,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 30.9,
-        "p10": 29,
-        "p50": 31,
+        "promedio": 32.6,
+        "p10": 31,
+        "p50": 32,
         "p90": 34
       },
       "puntos_dist": {
-        "desde": 28,
+        "desde": 31,
         "probs": [
-          8.11,
-          19.88,
-          10.02,
-          22.41,
-          25.35,
+          24.67,
+          33.51,
           0.0,
-          14.23
+          41.82
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Gimnasia (LP)",
-          "rival_slug": "gimnasia-lp",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "P",
           "rival": "Rosario Central",
@@ -184,13 +166,22 @@
           "gc": 0,
           "condicion": "local",
           "fecha": "2026-10-27"
+        },
+        {
+          "r": "G",
+          "rival": "Atlético Tucumán",
+          "rival_slug": "atletico-tucuman",
+          "gf": 2,
+          "gc": 1,
+          "condicion": "visita",
+          "fecha": "2026-11-03"
         }
       ],
       "rendimiento": {
-        "pj": 33,
-        "pts": 62,
-        "pts_esperados": 55.4,
-        "dif": 6.6
+        "pj": 34,
+        "pts": 65,
+        "pts_esperados": 56.7,
+        "dif": 8.3
       },
       "stats": null
     },
@@ -202,41 +193,29 @@
         "#5CC0F2",
         "#FFFFFF"
       ],
-      "ataque": -0.0017,
-      "defensa": -0.0657,
-      "campeon": 0.7,
-      "playoffs": 15.67,
+      "ataque": -0.0035,
+      "defensa": -0.0671,
+      "campeon": 0.0,
+      "playoffs": 0.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 19.4,
+        "promedio": 18.1,
         "p10": 17,
-        "p50": 20,
-        "p90": 21
+        "p50": 18,
+        "p90": 20
       },
       "puntos_dist": {
         "desde": 17,
         "probs": [
-          14.5,
-          24.37,
-          9.71,
-          23.32,
-          18.81,
+          42.53,
+          31.18,
           0.0,
-          9.29
+          26.29
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "River Plate",
-          "rival_slug": "river-plate",
-          "gf": 1,
-          "gc": 2,
-          "condicion": "local",
-          "fecha": "2026-09-12"
-        },
         {
           "r": "P",
           "rival": "Aldosivi",
@@ -281,13 +260,22 @@
           "gc": 0,
           "condicion": "visita",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "P",
+          "rival": "Argentinos Juniors",
+          "rival_slug": "argentinos-juniors",
+          "gf": 1,
+          "gc": 2,
+          "condicion": "local",
+          "fecha": "2026-11-03"
         }
       ],
       "rendimiento": {
-        "pj": 30,
+        "pj": 31,
         "pts": 31,
-        "pts_esperados": 38.4,
-        "dif": -7.4
+        "pts_esperados": 39.7,
+        "dif": -8.7
       },
       "stats": null
     },
@@ -299,41 +287,29 @@
         "#0E6B3D",
         "#FFFFFF"
       ],
-      "ataque": -0.0543,
-      "defensa": -0.0023,
-      "campeon": 0.07,
-      "playoffs": 1.92,
+      "ataque": -0.0552,
+      "defensa": -0.0068,
+      "campeon": 0.0,
+      "playoffs": 0.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 16.7,
+        "promedio": 15.6,
         "p10": 14,
-        "p50": 17,
-        "p90": 20
+        "p50": 15,
+        "p90": 17
       },
       "puntos_dist": {
         "desde": 14,
         "probs": [
-          11.87,
-          21.0,
-          9.26,
-          25.23,
-          21.2,
+          26.29,
+          31.18,
           0.0,
-          11.44
+          42.53
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Barracas Central",
-          "rival_slug": "barracas-central",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-14"
-        },
         {
           "r": "E",
           "rival": "Gimnasia (LP)",
@@ -378,13 +354,22 @@
           "gc": 1,
           "condicion": "local",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "P",
+          "rival": "Independiente Rivadavia",
+          "rival_slug": "independiente-rivadavia",
+          "gf": 1,
+          "gc": 3,
+          "condicion": "visita",
+          "fecha": "2026-11-03"
         }
       ],
       "rendimiento": {
-        "pj": 30,
+        "pj": 31,
         "pts": 32,
-        "pts_esperados": 34.7,
-        "dif": -2.7
+        "pts_esperados": 35.5,
+        "dif": -3.5
       },
       "stats": null
     },
@@ -396,41 +381,29 @@
         "#C8102E",
         "#FFFFFF"
       ],
-      "ataque": -0.0573,
-      "defensa": -0.0408,
-      "campeon": 2.84,
-      "playoffs": 96.56,
+      "ataque": -0.0527,
+      "defensa": -0.0429,
+      "campeon": 2.89,
+      "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 24.3,
-        "p10": 22,
+        "promedio": 24.2,
+        "p10": 23,
         "p50": 24,
         "p90": 26
       },
       "puntos_dist": {
-        "desde": 22,
+        "desde": 23,
         "probs": [
-          17.46,
-          24.93,
-          9.59,
-          23.55,
-          17.13,
+          38.94,
+          29.67,
           0.0,
-          7.34
+          31.39
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Banfield",
-          "rival_slug": "banfield",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "visita",
-          "fecha": "2026-09-14"
-        },
         {
           "r": "P",
           "rival": "Independiente Rivadavia",
@@ -475,13 +448,22 @@
           "gc": 1,
           "condicion": "local",
           "fecha": "2026-10-26"
+        },
+        {
+          "r": "E",
+          "rival": "Belgrano",
+          "rival_slug": "belgrano",
+          "gf": 2,
+          "gc": 2,
+          "condicion": "visita",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 43,
-        "pts_esperados": 32.4,
-        "dif": 10.6
+        "pj": 31,
+        "pts": 44,
+        "pts_esperados": 33.3,
+        "dif": 10.7
       },
       "stats": null
     },
@@ -493,50 +475,26 @@
         "#5CACEE",
         "#FFFFFF"
       ],
-      "ataque": -0.0139,
-      "defensa": 0.0564,
-      "campeon": 3.92,
-      "playoffs": 98.82,
+      "ataque": -0.0112,
+      "defensa": 0.049,
+      "campeon": 4.33,
+      "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 24.9,
+        "promedio": 23.0,
         "p10": 23,
-        "p50": 25,
-        "p90": 28
+        "p50": 23,
+        "p90": 23
       },
       "puntos_dist": {
-        "desde": 22,
+        "desde": 23,
         "probs": [
-          8.82,
-          19.63,
-          10.18,
-          24.63,
-          23.66,
-          0.0,
-          13.08
+          100.0
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Sarmiento (J)",
-          "rival_slug": "sarmiento-j",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "visita",
-          "fecha": "2026-09-13"
-        },
-        {
-          "r": "G",
-          "rival": "Estudiantes (RC)",
-          "rival_slug": "estudiantes-rc",
-          "gf": 2,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-20"
-        },
         {
           "r": "G",
           "rival": "Talleres (C)",
@@ -572,13 +530,31 @@
           "gc": 1,
           "condicion": "visita",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "E",
+          "rival": "Barracas Central",
+          "rival_slug": "barracas-central",
+          "gf": 2,
+          "gc": 2,
+          "condicion": "local",
+          "fecha": "2026-11-01"
+        },
+        {
+          "r": "P",
+          "rival": "Gimnasia (LP)",
+          "rival_slug": "gimnasia-lp",
+          "gf": 1,
+          "gc": 2,
+          "condicion": "visita",
+          "fecha": "2026-11-05"
         }
       ],
       "rendimiento": {
-        "pj": 34,
-        "pts": 58,
-        "pts_esperados": 49.1,
-        "dif": 8.9
+        "pj": 36,
+        "pts": 59,
+        "pts_esperados": 52.3,
+        "dif": 6.7
       },
       "stats": null
     },
@@ -590,41 +566,29 @@
         "#0A2472",
         "#F7D117"
       ],
-      "ataque": 0.2517,
-      "defensa": 0.2404,
-      "campeon": 15.52,
+      "ataque": 0.2493,
+      "defensa": 0.2463,
+      "campeon": 18.37,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 30.4,
-        "p10": 28,
-        "p50": 30,
+        "promedio": 31.9,
+        "p10": 30,
+        "p50": 33,
         "p90": 33
       },
       "puntos_dist": {
-        "desde": 27,
+        "desde": 30,
         "probs": [
-          5.56,
-          13.05,
-          7.6,
-          24.05,
-          27.34,
+          18.84,
+          26.42,
           0.0,
-          22.4
+          54.74
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Central Córdoba (SdE)",
-          "rival_slug": "central-cordoba-sde",
-          "gf": 3,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-12"
-        },
         {
           "r": "G",
           "rival": "San Lorenzo",
@@ -669,13 +633,22 @@
           "gc": 0,
           "condicion": "visita",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "G",
+          "rival": "River Plate",
+          "rival_slug": "river-plate",
+          "gf": 1,
+          "gc": 0,
+          "condicion": "local",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 31,
-        "pts": 58,
-        "pts_esperados": 53.8,
-        "dif": 4.2
+        "pj": 32,
+        "pts": 61,
+        "pts_esperados": 55.3,
+        "dif": 5.7
       },
       "stats": null
     },
@@ -687,41 +660,29 @@
         "#111111",
         "#FFFFFF"
       ],
-      "ataque": -0.0455,
-      "defensa": -0.1217,
+      "ataque": -0.051,
+      "defensa": -0.1228,
       "campeon": 0.0,
       "playoffs": 0.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 12.4,
+        "promedio": 11.3,
         "p10": 10,
-        "p50": 13,
-        "p90": 14
+        "p50": 11,
+        "p90": 13
       },
       "puntos_dist": {
         "desde": 10,
         "probs": [
-          15.36,
-          24.77,
-          9.58,
-          23.11,
-          18.72,
+          36.27,
+          29.98,
           0.0,
-          8.46
+          33.75
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Boca Juniors",
-          "rival_slug": "boca-juniors",
-          "gf": 1,
-          "gc": 3,
-          "condicion": "visita",
-          "fecha": "2026-09-12"
-        },
         {
           "r": "E",
           "rival": "Defensa y Justicia",
@@ -766,13 +727,22 @@
           "gc": 5,
           "condicion": "local",
           "fecha": "2026-10-26"
+        },
+        {
+          "r": "P",
+          "rival": "Platense",
+          "rival_slug": "platense",
+          "gf": 0,
+          "gc": 2,
+          "condicion": "visita",
+          "fecha": "2026-11-02"
         }
       ],
       "rendimiento": {
-        "pj": 30,
+        "pj": 31,
         "pts": 26,
-        "pts_esperados": 29.7,
-        "dif": -3.7
+        "pts_esperados": 30.3,
+        "dif": -4.3
       },
       "stats": null
     },
@@ -784,41 +754,29 @@
         "#1E7B3C",
         "#F7D117"
       ],
-      "ataque": 0.1117,
-      "defensa": -0.0047,
-      "campeon": 5.31,
+      "ataque": 0.1093,
+      "defensa": -0.003,
+      "campeon": 5.69,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 29.3,
-        "p10": 27,
-        "p50": 30,
+        "promedio": 28.8,
+        "p10": 28,
+        "p50": 28,
         "p90": 31
       },
       "puntos_dist": {
-        "desde": 27,
+        "desde": 28,
         "probs": [
-          16.74,
-          25.12,
-          7.57,
-          26.78,
-          16.3,
+          54.74,
+          26.42,
           0.0,
-          7.49
+          18.84
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Gimnasia (M)",
-          "rival_slug": "gimnasia-m",
-          "gf": 2,
-          "gc": 0,
-          "condicion": "local",
-          "fecha": "2026-09-11"
-        },
         {
           "r": "E",
           "rival": "Central Córdoba (SdE)",
@@ -863,13 +821,22 @@
           "gc": 1,
           "condicion": "visita",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "E",
+          "rival": "Independiente",
+          "rival_slug": "independiente",
+          "gf": 1,
+          "gc": 1,
+          "condicion": "local",
+          "fecha": "2026-11-02"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 46,
-        "pts_esperados": 37.6,
-        "dif": 8.4
+        "pj": 31,
+        "pts": 47,
+        "pts_esperados": 39.2,
+        "dif": 7.8
       },
       "stats": null
     },
@@ -881,41 +848,29 @@
         "#111111",
         "#FFFFFF"
       ],
-      "ataque": -0.1681,
-      "defensa": 0.1577,
+      "ataque": -0.1765,
+      "defensa": 0.1433,
       "campeon": 0.0,
       "playoffs": 0.0,
-      "descenso": 1.26,
+      "descenso": 0.0,
       "descenso_promedio": 0.0,
-      "descenso_anual": 1.26,
+      "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 14.4,
+        "promedio": 13.0,
         "p10": 12,
-        "p50": 14,
-        "p90": 16
+        "p50": 13,
+        "p90": 15
       },
       "puntos_dist": {
         "desde": 12,
         "probs": [
-          13.16,
-          25.49,
-          11.49,
-          22.46,
-          19.67,
+          44.97,
+          33.89,
           0.0,
-          7.73
+          21.14
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Lanús",
-          "rival_slug": "lanus",
-          "gf": 0,
-          "gc": 3,
-          "condicion": "local",
-          "fecha": "2026-09-14"
-        },
         {
           "r": "E",
           "rival": "Gimnasia (M)",
@@ -960,13 +915,22 @@
           "gc": 1,
           "condicion": "visita",
           "fecha": "2026-10-27"
+        },
+        {
+          "r": "P",
+          "rival": "Talleres (C)",
+          "rival_slug": "talleres-c",
+          "gf": 0,
+          "gc": 3,
+          "condicion": "local",
+          "fecha": "2026-10-31"
         }
       ],
       "rendimiento": {
-        "pj": 30,
+        "pj": 31,
         "pts": 23,
-        "pts_esperados": 37.9,
-        "dif": -14.9
+        "pts_esperados": 39.3,
+        "dif": -16.3
       },
       "stats": null
     },
@@ -978,41 +942,29 @@
         "#D6001C",
         "#FFFFFF"
       ],
-      "ataque": 0.1111,
-      "defensa": 0.082,
-      "campeon": 0.11,
-      "playoffs": 1.62,
+      "ataque": 0.1152,
+      "defensa": 0.0758,
+      "campeon": 0.0,
+      "playoffs": 0.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 16.9,
+        "promedio": 16.2,
         "p10": 15,
-        "p50": 17,
-        "p90": 20
+        "p50": 16,
+        "p90": 18
       },
       "puntos_dist": {
-        "desde": 14,
+        "desde": 15,
         "probs": [
-          9.12,
-          18.46,
-          9.61,
-          25.39,
-          23.44,
+          39.66,
+          31.75,
           0.0,
-          13.98
+          28.59
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Platense",
-          "rival_slug": "platense",
-          "gf": 2,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-12"
-        },
         {
           "r": "P",
           "rival": "Lanús",
@@ -1057,13 +1009,22 @@
           "gc": 3,
           "condicion": "visita",
           "fecha": "2026-10-26"
+        },
+        {
+          "r": "E",
+          "rival": "Instituto",
+          "rival_slug": "instituto",
+          "gf": 3,
+          "gc": 3,
+          "condicion": "local",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 45,
-        "pts_esperados": 46.2,
-        "dif": -1.2
+        "pj": 31,
+        "pts": 46,
+        "pts_esperados": 47.9,
+        "dif": -1.9
       },
       "stats": null
     },
@@ -1075,41 +1036,29 @@
         "#5CC0F2",
         "#FFFFFF"
       ],
-      "ataque": -0.2178,
-      "defensa": -0.1131,
+      "ataque": -0.2183,
+      "defensa": -0.1225,
       "campeon": 0.0,
       "playoffs": 0.0,
       "descenso": 100.0,
       "descenso_promedio": 100.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 11.1,
+        "promedio": 9.8,
         "p10": 9,
-        "p50": 11,
-        "p90": 13
+        "p50": 9,
+        "p90": 12
       },
       "puntos_dist": {
         "desde": 9,
         "probs": [
-          19.11,
-          27.71,
-          9.24,
-          23.99,
-          14.52,
+          55.73,
+          27.04,
           0.0,
-          5.43
+          17.23
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Instituto",
-          "rival_slug": "instituto",
-          "gf": 1,
-          "gc": 2,
-          "condicion": "visita",
-          "fecha": "2026-09-15"
-        },
         {
           "r": "P",
           "rival": "Belgrano",
@@ -1154,13 +1103,22 @@
           "gc": 2,
           "condicion": "visita",
           "fecha": "2026-10-26"
+        },
+        {
+          "r": "P",
+          "rival": "Gimnasia (LP)",
+          "rival_slug": "gimnasia-lp",
+          "gf": 1,
+          "gc": 2,
+          "condicion": "local",
+          "fecha": "2026-10-30"
         }
       ],
       "rendimiento": {
-        "pj": 30,
+        "pj": 31,
         "pts": 14,
-        "pts_esperados": 27.6,
-        "dif": -13.6
+        "pts_esperados": 28.6,
+        "dif": -14.6
       },
       "stats": null
     },
@@ -1172,50 +1130,26 @@
         "#123A7A",
         "#FFFFFF"
       ],
-      "ataque": -0.0087,
-      "defensa": -0.0126,
-      "campeon": 3.8,
+      "ataque": -0.0039,
+      "defensa": -0.0111,
+      "campeon": 3.61,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 27.9,
-        "p10": 26,
-        "p50": 28,
+        "promedio": 31.0,
+        "p10": 31,
+        "p50": 31,
         "p90": 31
       },
       "puntos_dist": {
-        "desde": 25,
+        "desde": 31,
         "probs": [
-          9.28,
-          20.19,
-          10.72,
-          23.09,
-          23.05,
-          0.0,
-          13.67
+          100.0
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Argentinos Juniors",
-          "rival_slug": "argentinos-juniors",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "visita",
-          "fecha": "2026-09-13"
-        },
-        {
-          "r": "E",
-          "rival": "Banfield",
-          "rival_slug": "banfield",
-          "gf": 2,
-          "gc": 2,
-          "condicion": "local",
-          "fecha": "2026-09-19"
-        },
         {
           "r": "E",
           "rival": "Independiente Rivadavia",
@@ -1251,13 +1185,31 @@
           "gc": 0,
           "condicion": "local",
           "fecha": "2026-10-23"
+        },
+        {
+          "r": "G",
+          "rival": "Estudiantes (RC)",
+          "rival_slug": "estudiantes-rc",
+          "gf": 2,
+          "gc": 1,
+          "condicion": "visita",
+          "fecha": "2026-10-30"
+        },
+        {
+          "r": "G",
+          "rival": "Belgrano",
+          "rival_slug": "belgrano",
+          "gf": 2,
+          "gc": 1,
+          "condicion": "local",
+          "fecha": "2026-11-05"
         }
       ],
       "rendimiento": {
-        "pj": 32,
-        "pts": 54,
-        "pts_esperados": 39.9,
-        "dif": 14.1
+        "pj": 34,
+        "pts": 60,
+        "pts_esperados": 42.9,
+        "dif": 17.1
       },
       "stats": null
     },
@@ -1270,40 +1222,28 @@
         "#111111"
       ],
       "ataque": -0.0106,
-      "defensa": -0.0385,
-      "campeon": 2.42,
-      "playoffs": 83.23,
+      "defensa": -0.0325,
+      "campeon": 2.74,
+      "playoffs": 91.09,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 22.6,
-        "p10": 20,
-        "p50": 23,
-        "p90": 26
+        "promedio": 22.5,
+        "p10": 21,
+        "p50": 22,
+        "p90": 24
       },
       "puntos_dist": {
-        "desde": 20,
+        "desde": 21,
         "probs": [
-          13.62,
-          22.11,
-          8.67,
-          26.17,
-          19.17,
+          28.77,
+          30.62,
           0.0,
-          10.26
+          40.61
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Defensa y Justicia",
-          "rival_slug": "defensa-y-justicia",
-          "gf": 0,
-          "gc": 2,
-          "condicion": "visita",
-          "fecha": "2026-09-11"
-        },
         {
           "r": "E",
           "rival": "Deportivo Riestra",
@@ -1348,13 +1288,22 @@
           "gc": 2,
           "condicion": "local",
           "fecha": "2026-10-23"
+        },
+        {
+          "r": "E",
+          "rival": "Lanús",
+          "rival_slug": "lanus",
+          "gf": 1,
+          "gc": 1,
+          "condicion": "visita",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 39,
-        "pts_esperados": 33.2,
-        "dif": 5.8
+        "pj": 31,
+        "pts": 40,
+        "pts_esperados": 33.8,
+        "dif": 6.2
       },
       "stats": null
     },
@@ -1366,41 +1315,29 @@
         "#FFFFFF",
         "#E01A2B"
       ],
-      "ataque": -0.0347,
-      "defensa": 0.1319,
-      "campeon": 3.26,
-      "playoffs": 52.52,
+      "ataque": -0.0408,
+      "defensa": 0.129,
+      "campeon": 1.01,
+      "playoffs": 16.99,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 21.7,
+        "promedio": 20.1,
         "p10": 19,
-        "p50": 22,
-        "p90": 25
+        "p50": 20,
+        "p90": 22
       },
       "puntos_dist": {
         "desde": 19,
         "probs": [
-          10.91,
-          22.05,
-          10.63,
-          24.1,
-          21.6,
+          41.82,
+          33.51,
           0.0,
-          10.71
+          24.67
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Racing Club",
-          "rival_slug": "racing-club",
-          "gf": 2,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-14"
-        },
         {
           "r": "G",
           "rival": "River Plate",
@@ -1445,13 +1382,22 @@
           "gc": 2,
           "condicion": "visita",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "P",
+          "rival": "Tigre",
+          "rival_slug": "tigre",
+          "gf": 0,
+          "gc": 2,
+          "condicion": "local",
+          "fecha": "2026-10-30"
         }
       ],
       "rendimiento": {
-        "pj": 32,
+        "pj": 33,
         "pts": 43,
-        "pts_esperados": 43.6,
-        "dif": -0.6
+        "pts_esperados": 45.1,
+        "dif": -2.1
       },
       "stats": null
     },
@@ -1463,41 +1409,29 @@
         "#D31820",
         "#FFFFFF"
       ],
-      "ataque": 0.0546,
-      "defensa": 0.143,
-      "campeon": 3.85,
-      "playoffs": 67.02,
+      "ataque": 0.053,
+      "defensa": 0.1453,
+      "campeon": 3.35,
+      "playoffs": 62.63,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 21.9,
+        "promedio": 21.7,
         "p10": 20,
-        "p50": 22,
-        "p90": 25
+        "p50": 21,
+        "p90": 23
       },
       "puntos_dist": {
-        "desde": 19,
+        "desde": 20,
         "probs": [
-          8.36,
-          20.24,
-          10.36,
-          23.75,
-          23.55,
+          21.14,
+          33.89,
           0.0,
-          13.74
+          44.97
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "San Lorenzo",
-          "rival_slug": "san-lorenzo",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "G",
           "rival": "Unión",
@@ -1542,13 +1476,22 @@
           "gc": 1,
           "condicion": "local",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "E",
+          "rival": "Defensa y Justicia",
+          "rival_slug": "defensa-y-justicia",
+          "gf": 1,
+          "gc": 1,
+          "condicion": "visita",
+          "fecha": "2026-11-02"
         }
       ],
       "rendimiento": {
-        "pj": 31,
-        "pts": 43,
-        "pts_esperados": 45.3,
-        "dif": -2.3
+        "pj": 32,
+        "pts": 44,
+        "pts_esperados": 46.5,
+        "dif": -2.5
       },
       "stats": null
     },
@@ -1560,41 +1503,29 @@
         "#1B3D8F",
         "#FFFFFF"
       ],
-      "ataque": 0.0553,
-      "defensa": -0.0402,
-      "campeon": 2.37,
-      "playoffs": 46.53,
+      "ataque": 0.0651,
+      "defensa": -0.0394,
+      "campeon": 4.24,
+      "playoffs": 94.54,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 21.8,
-        "p10": 19,
-        "p50": 22,
+        "promedio": 23.2,
+        "p10": 22,
+        "p50": 23,
         "p90": 25
       },
       "puntos_dist": {
-        "desde": 19,
+        "desde": 22,
         "probs": [
-          10.73,
-          20.78,
-          8.91,
-          25.5,
-          21.34,
+          40.61,
+          30.62,
           0.0,
-          12.74
+          28.77
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Aldosivi",
-          "rival_slug": "aldosivi",
-          "gf": 4,
-          "gc": 3,
-          "condicion": "local",
-          "fecha": "2026-09-12"
-        },
         {
           "r": "G",
           "rival": "Barracas Central",
@@ -1639,13 +1570,22 @@
           "gc": 1,
           "condicion": "visita",
           "fecha": "2026-10-27"
+        },
+        {
+          "r": "G",
+          "rival": "Banfield",
+          "rival_slug": "banfield",
+          "gf": 3,
+          "gc": 1,
+          "condicion": "local",
+          "fecha": "2026-11-03"
         }
       ],
       "rendimiento": {
-        "pj": 31,
-        "pts": 53,
-        "pts_esperados": 45.0,
-        "dif": 8.0
+        "pj": 32,
+        "pts": 56,
+        "pts_esperados": 47.0,
+        "dif": 9.0
       },
       "stats": null
     },
@@ -1657,41 +1597,29 @@
         "#C8102E",
         "#FFFFFF"
       ],
-      "ataque": 0.0031,
-      "defensa": 0.0241,
-      "campeon": 8.1,
+      "ataque": 0.0144,
+      "defensa": 0.0158,
+      "campeon": 7.79,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
         "promedio": 34.6,
-        "p10": 32,
-        "p50": 35,
-        "p90": 38
+        "p10": 33,
+        "p50": 34,
+        "p90": 36
       },
       "puntos_dist": {
-        "desde": 32,
+        "desde": 33,
         "probs": [
-          12.54,
-          23.48,
-          9.16,
-          24.96,
-          19.78,
+          26.57,
+          31.26,
           0.0,
-          10.08
+          42.17
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Estudiantes (RC)",
-          "rival_slug": "estudiantes-rc",
-          "gf": 2,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-15"
-        },
         {
           "r": "G",
           "rival": "Talleres (C)",
@@ -1736,12 +1664,21 @@
           "gc": 0,
           "condicion": "local",
           "fecha": "2026-10-27"
+        },
+        {
+          "r": "E",
+          "rival": "Estudiantes (LP)",
+          "rival_slug": "estudiantes-lp",
+          "gf": 3,
+          "gc": 3,
+          "condicion": "visita",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 53,
-        "pts_esperados": 43.5,
+        "pj": 31,
+        "pts": 54,
+        "pts_esperados": 44.5,
         "dif": 9.5
       },
       "stats": null
@@ -1754,41 +1691,29 @@
         "#6B1229",
         "#FFFFFF"
       ],
-      "ataque": 0.0932,
-      "defensa": 0.0225,
-      "campeon": 4.33,
+      "ataque": 0.0903,
+      "defensa": 0.024,
+      "campeon": 2.97,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 27.1,
+        "promedio": 26.4,
         "p10": 25,
-        "p50": 27,
-        "p90": 30
+        "p50": 26,
+        "p90": 28
       },
       "puntos_dist": {
-        "desde": 24,
+        "desde": 25,
         "probs": [
-          8.53,
-          17.16,
-          8.92,
-          23.88,
-          24.8,
+          33.75,
+          29.98,
           0.0,
-          16.71
+          36.27
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Deportivo Riestra",
-          "rival_slug": "deportivo-riestra",
-          "gf": 3,
-          "gc": 0,
-          "condicion": "visita",
-          "fecha": "2026-09-14"
-        },
         {
           "r": "G",
           "rival": "Estudiantes (LP)",
@@ -1833,13 +1758,22 @@
           "gc": 1,
           "condicion": "visita",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "E",
+          "rival": "Gimnasia (M)",
+          "rival_slug": "gimnasia-m",
+          "gf": 1,
+          "gc": 1,
+          "condicion": "local",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 45,
-        "pts_esperados": 43.7,
-        "dif": 1.3
+        "pj": 31,
+        "pts": 46,
+        "pts_esperados": 45.8,
+        "dif": 0.2
       },
       "stats": null
     },
@@ -1851,41 +1785,29 @@
         "#D6001C",
         "#111111"
       ],
-      "ataque": -0.0403,
-      "defensa": 0.0177,
-      "campeon": 2.65,
-      "playoffs": 94.33,
+      "ataque": -0.0424,
+      "defensa": 0.0191,
+      "campeon": 2.78,
+      "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 23.6,
-        "p10": 21,
-        "p50": 24,
-        "p90": 27
+        "promedio": 23.1,
+        "p10": 22,
+        "p50": 23,
+        "p90": 25
       },
       "puntos_dist": {
-        "desde": 21,
+        "desde": 22,
         "probs": [
-          11.52,
-          22.34,
-          10.08,
-          24.54,
-          20.78,
+          42.17,
+          31.26,
           0.0,
-          10.74
+          26.57
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Vélez Sarsfield",
-          "rival_slug": "velez-sarsfield",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-11"
-        },
         {
           "r": "G",
           "rival": "Platense",
@@ -1930,13 +1852,22 @@
           "gc": 0,
           "condicion": "visita",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "E",
+          "rival": "Unión",
+          "rival_slug": "union",
+          "gf": 1,
+          "gc": 1,
+          "condicion": "local",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 36,
-        "pts_esperados": 34.9,
-        "dif": 1.1
+        "pj": 31,
+        "pts": 37,
+        "pts_esperados": 36.5,
+        "dif": 0.5
       },
       "stats": null
     },
@@ -1948,41 +1879,29 @@
         "#6B4A2F",
         "#FFFFFF"
       ],
-      "ataque": -0.1246,
-      "defensa": 0.0321,
-      "campeon": 0.03,
-      "playoffs": 0.96,
+      "ataque": -0.1221,
+      "defensa": 0.0375,
+      "campeon": 0.05,
+      "playoffs": 3.07,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 16.6,
-        "p10": 14,
-        "p50": 17,
-        "p90": 18
+        "promedio": 18.0,
+        "p10": 17,
+        "p50": 18,
+        "p90": 20
       },
       "puntos_dist": {
-        "desde": 14,
+        "desde": 17,
         "probs": [
-          11.13,
-          22.7,
-          10.15,
-          24.5,
-          21.97,
+          42.95,
+          34.17,
           0.0,
-          9.55
+          22.88
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Estudiantes (LP)",
-          "rival_slug": "estudiantes-lp",
-          "gf": 1,
-          "gc": 2,
-          "condicion": "visita",
-          "fecha": "2026-09-12"
-        },
         {
           "r": "P",
           "rival": "Newell's Old Boys",
@@ -2027,13 +1946,22 @@
           "gc": 1,
           "condicion": "visita",
           "fecha": "2026-10-23"
+        },
+        {
+          "r": "G",
+          "rival": "Central Córdoba (SdE)",
+          "rival_slug": "central-cordoba-sde",
+          "gf": 2,
+          "gc": 0,
+          "condicion": "local",
+          "fecha": "2026-11-02"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 30,
-        "pts_esperados": 37.4,
-        "dif": -7.4
+        "pj": 31,
+        "pts": 33,
+        "pts_esperados": 39.6,
+        "dif": -6.6
       },
       "stats": null
     },
@@ -2045,41 +1973,29 @@
         "#5CC0F2",
         "#FFFFFF"
       ],
-      "ataque": 0.2208,
-      "defensa": 0.0646,
+      "ataque": 0.2196,
+      "defensa": 0.0654,
       "campeon": 0.0,
       "playoffs": 0.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 15.5,
-        "p10": 13,
+        "promedio": 16.5,
+        "p10": 15,
         "p50": 16,
         "p90": 18
       },
       "puntos_dist": {
-        "desde": 12,
+        "desde": 15,
         "probs": [
-          4.46,
-          11.87,
-          7.12,
-          25.59,
-          27.72,
+          31.39,
+          29.67,
           0.0,
-          23.24
+          38.94
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Huracán",
-          "rival_slug": "huracan",
-          "gf": 1,
-          "gc": 2,
-          "condicion": "visita",
-          "fecha": "2026-09-14"
-        },
         {
           "r": "G",
           "rival": "Sarmiento (J)",
@@ -2124,13 +2040,22 @@
           "gc": 1,
           "condicion": "visita",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "G",
+          "rival": "Aldosivi",
+          "rival_slug": "aldosivi",
+          "gf": 2,
+          "gc": 1,
+          "condicion": "local",
+          "fecha": "2026-10-31"
         }
       ],
       "rendimiento": {
-        "pj": 32,
-        "pts": 37,
-        "pts_esperados": 47.8,
-        "dif": -10.8
+        "pj": 33,
+        "pts": 40,
+        "pts_esperados": 49.7,
+        "dif": -9.7
       },
       "stats": null
     },
@@ -2142,50 +2067,26 @@
         "#FFFFFF",
         "#D10A2E"
       ],
-      "ataque": 0.3563,
-      "defensa": 0.1974,
-      "campeon": 12.84,
-      "playoffs": 99.93,
+      "ataque": 0.3521,
+      "defensa": 0.2039,
+      "campeon": 12.6,
+      "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 26.1,
-        "p10": 24,
+        "promedio": 26.0,
+        "p10": 26,
         "p50": 26,
-        "p90": 29
+        "p90": 26
       },
       "puntos_dist": {
-        "desde": 23,
+        "desde": 26,
         "probs": [
-          7.9,
-          16.29,
-          7.72,
-          28.38,
-          23.76,
-          0.0,
-          15.95
+          100.0
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Atlético Tucumán",
-          "rival_slug": "atletico-tucuman",
-          "gf": 2,
-          "gc": 1,
-          "condicion": "visita",
-          "fecha": "2026-09-12"
-        },
-        {
-          "r": "P",
-          "rival": "Huracán",
-          "rival_slug": "huracan",
-          "gf": 1,
-          "gc": 2,
-          "condicion": "local",
-          "fecha": "2026-09-19"
-        },
         {
           "r": "G",
           "rival": "Estudiantes (RC)",
@@ -2221,13 +2122,31 @@
           "gc": 0,
           "condicion": "local",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "P",
+          "rival": "Boca Juniors",
+          "rival_slug": "boca-juniors",
+          "gf": 0,
+          "gc": 1,
+          "condicion": "visita",
+          "fecha": "2026-11-01"
+        },
+        {
+          "r": "G",
+          "rival": "Aldosivi",
+          "rival_slug": "aldosivi",
+          "gf": 2,
+          "gc": 0,
+          "condicion": "visita",
+          "fecha": "2026-11-05"
         }
       ],
       "rendimiento": {
-        "pj": 34,
-        "pts": 59,
-        "pts_esperados": 63.1,
-        "dif": -4.1
+        "pj": 36,
+        "pts": 62,
+        "pts_esperados": 66.4,
+        "dif": -4.4
       },
       "stats": null
     },
@@ -2239,41 +2158,29 @@
         "#1A56A8",
         "#FFD100"
       ],
-      "ataque": 0.1073,
-      "defensa": 0.0469,
-      "campeon": 7.45,
+      "ataque": 0.1086,
+      "defensa": 0.0485,
+      "campeon": 7.26,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 31.3,
-        "p10": 29,
-        "p50": 31,
+        "promedio": 32.9,
+        "p10": 31,
+        "p50": 34,
         "p90": 34
       },
       "puntos_dist": {
-        "desde": 28,
+        "desde": 31,
         "probs": [
-          5.33,
-          13.71,
-          9.33,
-          24.22,
-          27.77,
+          17.23,
+          27.04,
           0.0,
-          19.64
+          55.73
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Tigre",
-          "rival_slug": "tigre",
-          "gf": 1,
-          "gc": 0,
-          "condicion": "visita",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "G",
           "rival": "Argentinos Juniors",
@@ -2318,13 +2225,22 @@
           "gc": 0,
           "condicion": "local",
           "fecha": "2026-10-25"
+        },
+        {
+          "r": "G",
+          "rival": "Sarmiento (J)",
+          "rival_slug": "sarmiento-j",
+          "gf": 2,
+          "gc": 1,
+          "condicion": "visita",
+          "fecha": "2026-10-31"
         }
       ],
       "rendimiento": {
-        "pj": 33,
-        "pts": 60,
-        "pts_esperados": 52.6,
-        "dif": 7.4
+        "pj": 34,
+        "pts": 63,
+        "pts_esperados": 54.3,
+        "dif": 8.7
       },
       "stats": null
     },
@@ -2336,41 +2252,29 @@
         "#0A2A6B",
         "#C8102E"
       ],
-      "ataque": -0.0558,
-      "defensa": 0.1548,
-      "campeon": 1.52,
-      "playoffs": 31.71,
+      "ataque": -0.0527,
+      "defensa": 0.1527,
+      "campeon": 1.33,
+      "playoffs": 28.99,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 20.7,
-        "p10": 18,
-        "p50": 21,
-        "p90": 24
+        "promedio": 20.6,
+        "p10": 19,
+        "p50": 20,
+        "p90": 22
       },
       "puntos_dist": {
-        "desde": 18,
+        "desde": 19,
         "probs": [
-          10.2,
-          21.94,
-          10.59,
-          24.51,
-          22.37,
+          22.88,
+          34.17,
           0.0,
-          10.39
+          42.95
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Independiente",
-          "rival_slug": "independiente",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "visita",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "P",
           "rival": "Boca Juniors",
@@ -2415,13 +2319,22 @@
           "gc": 0,
           "condicion": "local",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "E",
+          "rival": "Vélez Sarsfield",
+          "rival_slug": "velez-sarsfield",
+          "gf": 2,
+          "gc": 2,
+          "condicion": "visita",
+          "fecha": "2026-10-31"
         }
       ],
       "rendimiento": {
-        "pj": 31,
-        "pts": 41,
-        "pts_esperados": 39.2,
-        "dif": 1.8
+        "pj": 32,
+        "pts": 42,
+        "pts_esperados": 40.1,
+        "dif": 1.9
       },
       "stats": null
     },
@@ -2433,41 +2346,29 @@
         "#1E7B3C",
         "#FFFFFF"
       ],
-      "ataque": -0.1433,
-      "defensa": -0.0605,
-      "campeon": 2.2,
-      "playoffs": 87.98,
+      "ataque": -0.1447,
+      "defensa": -0.0621,
+      "campeon": 2.5,
+      "playoffs": 88.47,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 23.3,
+        "promedio": 22.0,
         "p10": 21,
-        "p50": 23,
-        "p90": 25
+        "p50": 22,
+        "p90": 24
       },
       "puntos_dist": {
         "desde": 21,
         "probs": [
-          16.99,
-          25.72,
-          9.44,
-          22.63,
-          17.9,
+          46.93,
+          30.64,
           0.0,
-          7.32
+          22.43
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Belgrano",
-          "rival_slug": "belgrano",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "P",
           "rival": "Racing Club",
@@ -2512,13 +2413,22 @@
           "gc": 2,
           "condicion": "visita",
           "fecha": "2026-10-23"
+        },
+        {
+          "r": "P",
+          "rival": "Rosario Central",
+          "rival_slug": "rosario-central",
+          "gf": 1,
+          "gc": 2,
+          "condicion": "local",
+          "fecha": "2026-10-31"
         }
       ],
       "rendimiento": {
-        "pj": 30,
+        "pj": 31,
         "pts": 40,
-        "pts_esperados": 32.2,
-        "dif": 7.8
+        "pts_esperados": 33.1,
+        "dif": 6.9
       },
       "stats": null
     },
@@ -2530,41 +2440,29 @@
         "#0B2C6F",
         "#FFFFFF"
       ],
-      "ataque": 0.0697,
-      "defensa": 0.0581,
+      "ataque": 0.0759,
+      "defensa": 0.0634,
       "campeon": 0.0,
       "playoffs": 0.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 11.7,
-        "p10": 9,
-        "p50": 12,
+        "promedio": 13.5,
+        "p10": 12,
+        "p50": 13,
         "p90": 15
       },
       "puntos_dist": {
-        "desde": 9,
+        "desde": 12,
         "probs": [
-          10.81,
-          20.94,
-          10.7,
-          22.75,
-          22.99,
+          28.59,
+          31.75,
           0.0,
-          11.81
+          39.66
         ]
       },
       "ultimos": [
-        {
-          "r": "G",
-          "rival": "Unión",
-          "rival_slug": "union",
-          "gf": 2,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "P",
           "rival": "Instituto",
@@ -2609,13 +2507,22 @@
           "gc": 2,
           "condicion": "local",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "G",
+          "rival": "Deportivo Riestra",
+          "rival_slug": "deportivo-riestra",
+          "gf": 3,
+          "gc": 0,
+          "condicion": "visita",
+          "fecha": "2026-10-31"
         }
       ],
       "rendimiento": {
-        "pj": 31,
-        "pts": 35,
-        "pts_esperados": 42.0,
-        "dif": -7.0
+        "pj": 32,
+        "pts": 38,
+        "pts_esperados": 43.3,
+        "dif": -5.3
       },
       "stats": null
     },
@@ -2627,41 +2534,29 @@
         "#1B3D8F",
         "#C8102E"
       ],
-      "ataque": -0.0059,
-      "defensa": 0.0068,
+      "ataque": -0.0029,
+      "defensa": 0.0128,
       "campeon": 0.0,
-      "playoffs": 0.07,
+      "playoffs": 0.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 15.8,
-        "p10": 14,
-        "p50": 16,
+        "promedio": 17.7,
+        "p10": 16,
+        "p50": 17,
         "p90": 19
       },
       "puntos_dist": {
-        "desde": 13,
+        "desde": 16,
         "probs": [
-          9.85,
-          20.59,
-          9.59,
-          25.46,
-          22.67,
+          22.43,
+          30.64,
           0.0,
-          11.84
+          46.93
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Rosario Central",
-          "rival_slug": "rosario-central",
-          "gf": 0,
-          "gc": 1,
-          "condicion": "local",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "P",
           "rival": "Vélez Sarsfield",
@@ -2706,13 +2601,22 @@
           "gc": 1,
           "condicion": "local",
           "fecha": "2026-10-24"
+        },
+        {
+          "r": "G",
+          "rival": "Huracán",
+          "rival_slug": "huracan",
+          "gf": 2,
+          "gc": 0,
+          "condicion": "visita",
+          "fecha": "2026-10-30"
         }
       ],
       "rendimiento": {
-        "pj": 30,
-        "pts": 33,
-        "pts_esperados": 42.0,
-        "dif": -9.0
+        "pj": 31,
+        "pts": 36,
+        "pts_esperados": 43.2,
+        "dif": -7.2
       },
       "stats": null
     },
@@ -2724,41 +2628,29 @@
         "#C8102E",
         "#FFFFFF"
       ],
-      "ataque": 0.0198,
-      "defensa": -0.0295,
-      "campeon": 0.85,
-      "playoffs": 21.13,
+      "ataque": 0.0185,
+      "defensa": -0.027,
+      "campeon": 0.52,
+      "playoffs": 14.22,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 19.5,
-        "p10": 17,
-        "p50": 20,
+        "promedio": 19.4,
+        "p10": 18,
+        "p50": 19,
         "p90": 21
       },
       "puntos_dist": {
-        "desde": 17,
+        "desde": 18,
         "probs": [
-          13.07,
-          23.84,
-          10.5,
-          24.45,
-          18.63,
+          33.54,
+          31.54,
           0.0,
-          9.51
+          34.92
         ]
       },
       "ultimos": [
-        {
-          "r": "P",
-          "rival": "Talleres (C)",
-          "rival_slug": "talleres-c",
-          "gf": 1,
-          "gc": 2,
-          "condicion": "visita",
-          "fecha": "2026-09-13"
-        },
         {
           "r": "P",
           "rival": "Independiente",
@@ -2803,13 +2695,22 @@
           "gc": 1,
           "condicion": "local",
           "fecha": "2026-10-26"
+        },
+        {
+          "r": "E",
+          "rival": "Newell's Old Boys",
+          "rival_slug": "newell-s-old-boys",
+          "gf": 1,
+          "gc": 1,
+          "condicion": "visita",
+          "fecha": "2026-11-01"
         }
       ],
       "rendimiento": {
-        "pj": 32,
-        "pts": 41,
-        "pts_esperados": 45.2,
-        "dif": -4.2
+        "pj": 33,
+        "pts": 42,
+        "pts_esperados": 46.3,
+        "dif": -4.3
       },
       "stats": null
     },
@@ -2821,41 +2722,29 @@
         "#FFFFFF",
         "#1A3A8F"
       ],
-      "ataque": 0.0897,
-      "defensa": 0.1267,
-      "campeon": 9.09,
+      "ataque": 0.0911,
+      "defensa": 0.1237,
+      "campeon": 9.14,
       "playoffs": 100.0,
       "descenso": 0.0,
       "descenso_promedio": 0.0,
       "descenso_anual": 0.0,
       "puntos": {
-        "promedio": 30.0,
+        "promedio": 29.3,
         "p10": 28,
-        "p50": 30,
-        "p90": 33
+        "p50": 29,
+        "p90": 31
       },
       "puntos_dist": {
-        "desde": 27,
+        "desde": 28,
         "probs": [
-          8.04,
-          18.82,
-          9.67,
-          23.1,
-          25.7,
+          34.92,
+          31.54,
           0.0,
-          14.67
+          33.54
         ]
       },
       "ultimos": [
-        {
-          "r": "E",
-          "rival": "Newell's Old Boys",
-          "rival_slug": "newell-s-old-boys",
-          "gf": 1,
-          "gc": 1,
-          "condicion": "visita",
-          "fecha": "2026-09-11"
-        },
         {
           "r": "G",
           "rival": "Tigre",
@@ -2900,13 +2789,22 @@
           "gc": 0,
           "condicion": "visita",
           "fecha": "2026-10-26"
+        },
+        {
+          "r": "E",
+          "rival": "San Lorenzo",
+          "rival_slug": "san-lorenzo",
+          "gf": 2,
+          "gc": 2,
+          "condicion": "local",
+          "fecha": "2026-10-31"
         }
       ],
       "rendimiento": {
-        "pj": 31,
-        "pts": 55,
-        "pts_esperados": 44.4,
-        "dif": 10.6
+        "pj": 32,
+        "pts": 56,
+        "pts_esperados": 46.2,
+        "dif": 9.8
       },
       "stats": null
     }
